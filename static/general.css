@@ -1,0 +1,73 @@
+/* CSS reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: unset;
+  box-sizing: border-box;
+}
+
+/* Font faces */
+@font-face {
+  font-family: spaceGrotesk;
+  src: url("./fonts/space-grotesk-variable.ttf");
+}
+
+@font-face {
+  font-family: spaceMonoRegular;
+  src: url("./fonts/space-mono-regular.ttf");
+}
+
+@font-face {
+  font-family: spaceMonoBold;
+  src: url("./fonts/space-mono-bold.ttf");
+}
+
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 100 900;
+  src: local("Roboto"), local("Roboto Regular"),
+    url("./fonts/roboto-variable.ttf") format("truetype");
+}
+
+body {
+  /* Theme */
+  --space-100: #181932;
+  --space-60: #4a5069;
+  --space-30: #969aaa;
+
+  --cleanroom-100: #eb5d34;
+  --cleanroom-60: #ff9f7d;
+  --cleanroom-30: #feceba;
+
+  --ultra-100: #292f6b;
+  --ultra-60: #6170a1;
+  --ultra-30: #abb1cb;
+
+  --white: #fff;
+
+  /* Font families */
+  --heading: spaceGrotesk;
+  --paragraph: spaceMonoRegular;
+  --paragraph-bold: spaceMonoBold;
+  --subtext: Roboto;
+}
+
+a,
+span,
+input,
+button,
+select,
+textarea {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+*::selection{
+    background: var(--cleanroom-60);
+    color: var(--space-100);
+}
