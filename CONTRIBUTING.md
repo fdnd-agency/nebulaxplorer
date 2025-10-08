@@ -1,22 +1,31 @@
 # Arrangements for working together
 
-## Code conventions
-For our code conventions, we use the [FDND code conventions](https://docs.fdnd.nl/conventies.html).
+## Code conventies
+Voor onze code conventies gebruiken we de [FDND code conventies](https://docs.fdnd.nl/conventies.html).
 
 ### HTML conventies
-Use structured and semantic HTML. Do not nest content unnecessarily deeply. Avoid deep nesting of section elements and associated heading levels. Where necessary, link to another URL with more information. Make use of built-in HTML features (e.g., the powerful form validation of form elements). Use 1 tab for indentation. Use double quotes for attributes.
+- Use structured and semantic HTML.
+- Do not nest content unnecessarily deeply.
+- Avoid deep nesting of section elements and associated heading levels.
+- Where necessary, link to another URL with more information. Make use of built-in HTML features (e.g., the powerful form validation of form elements).
+- Use 1 tab for indentation.
+- Use double quotes for attributes.
+- Give your HTML some breathing room.
+- **Our rule** use classes for CSS and data attributes for javascript.
 
-### CSS conventions
-1 tab – for indentation.
-Follow HTML order in CSS
-Structure your code from generic to specific
-Take advantage of the cascade and inheritance, and use utility classes to prevent code repetition (DRY)
-Use kebab-case in naming classes en id's.
-
-
-
-### Comments
-The writing of comments in our code.
+### CSS conventies
+- 1 tab – for indentation.
+- Follow HTML order in CSS
+- Structure your code from generic to specific
+- Take advantage of the cascade and inheritance, and use utility classes to prevent code repetition (DRY)
+- Use kebab-case in naming classes en id's.
+- Nest media queries
+- Give your CSS some breathing room.
+- **Our rule** Use classes for CSS and data attributes for javascript.
+- **Our rule** Make use of nested CSS
+- **Our rule** Make use of CSS variables
+- **Our rule** Adhere to the naming conventions for animations & variable names
+  - (For example `anim-fade-up`, `anim-move-right` & `--primary-color`, `--size-XL`)
 
 
 ## Team Canvas
