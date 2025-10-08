@@ -13,8 +13,10 @@ Structure your code from generic to specific
 Take advantage of the cascade and inheritance, and use utility classes to prevent code repetition (DRY)
 Use kebab-case in naming classes en id's.
 
+
+
 ### Comments
-Het schrijven van comments in de code.
+The writing of comments in our code.
 
 
 ## Team Canvas
