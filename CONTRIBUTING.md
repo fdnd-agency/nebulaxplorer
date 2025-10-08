@@ -27,6 +27,8 @@ Voor onze code conventies gebruiken we de [FDND code conventies](https://docs.fd
 - **Our rule** Adhere to the naming conventions for animations & variable names
   - (For example `anim-fade-up`, `anim-move-right` & `--primary-color`, `--size-XL`)
 
+### Comments
+The writing of comments in our code for complex pieces of code (mainly for CSS & JS).
 
 ## Team Canvas
 <img width="875" height="617" alt="Screenshot 2025-09-24 at 16 38 01" src="https://github.com/user-attachments/assets/ce8504c2-5857-4a85-8430-fdbc0f97100c" />
