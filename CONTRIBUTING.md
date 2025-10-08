@@ -1,12 +1,12 @@
 # Afspraken voor samenwerken
 
-## Code conventies
+## Code conventions
 Voor onze code conventies gebruiken we de [FDND code conventies](https://docs.fdnd.nl/conventies.html).
 
 ### HTML conventies
 Use structured and semantic HTML. Do not nest content unnecessarily deeply. Avoid deep nesting of section elements and associated heading levels. Where necessary, link to another URL with more information. Make use of built-in HTML features (e.g., the powerful form validation of form elements). Use 1 tab for indentation. Use double quotes for attributes.
 
-### CSS conventies
+### CSS conventions
 1 tab – for indentation.
 Follow HTML order in CSS
 Structure your code from generic to specific
