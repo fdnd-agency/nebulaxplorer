@@ -72,3 +72,56 @@ Wat moet er in de oplevering zitten?
 - [ ] User test
 - [ ] Responsive + Device test
 - [ ] Html validator
+
+## Retrospect 10/10/2025
+
+### Set The Stage 
+
+#### Renzo
+
+Renzo vindt Marcin een teamspeler, luistert veel & werkt hard & helpt veel. Hij vindt ook dat Stella creatieve gedachten binnen ontwerp had, een andere point-of-view en inzichten op design, een sterke teamlid is, en heel creatief. 
+
+#### Marcin
+
+Marcin vindt dat Renzo is goed met spreken en dat hij houdt dingen simpel. Marcin vindt dat Stella goed is in inrichten van projectboard, proactief. 
+
+#### Stella
+
+Stella vindt ook dat Renzo in goed in spreken en zorgen dat alles duidelijk is met de opdrachtgever, en dat Marcin heel detail-focused en goed in het planning is /team lead te zijn
+
+
+### Good Bad & Ugly
+
+#### Renzo 
+
+Renzoheeft het gevoel dat we soms te apart werken, the ugly is dat het een trage start was, maar de good was dat we goede samenwerking hebben. 
+
+#### Marcin
+Marcin - Bad push protection hebben we niet, Good planning is netjes, design phase duurt te lang. 
+
+#### Stella
+Stella - good was dat er veel desgin verschil was, the bad was dat de projectboard kon beter onderhouden worden en de ugly was dat de design duurt te lang en we hebben nog geen code
+
+
+### Wish Granted 
+
+#### Renzo
+
+Renzo wilt dat we echt als team kunnen werken.
+
+#### Marcin
+
+Marcin wilt dat we een heel duidelijke design hebben.
+
+#### Stella
+
+Stella wilt dat we een projectboard met een duidelijke richting hebben.
+
+
+### Pitch
+
+Afpsraken voor de volgende sprint:
+
+1. Probeer altijd minimaal 1 issue op je naam te hebben zodat je ten alle tijden iets kan doen aan het project.
+2. Duidelijke issues schrijven en goed indelen in het project board.
+
