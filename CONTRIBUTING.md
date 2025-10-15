@@ -127,9 +127,6 @@ Afpsraken voor de volgende sprint:
 
 
 
-
-
-
 ## DoR & DoD
 
 ### DoR
