@@ -85,7 +85,23 @@ textarea {
   font-weight: inherit;
 }
 
-*::selection{
-    background: var(--cleanroom-60);
-    color: var(--space-100);
+*::selection {
+  background: var(--cleanroom-60);
+  color: var(--space-100);
+}
+
+main {
+  --grid-columns: 4;
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: 1.25rem;
+
+  @media (min-width: 56.25rem) {
+    --grid-columns: 12;
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
+  }
+
+  > * {
+    margin: 0 1.5rem;
+  }
 }
