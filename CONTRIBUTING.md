@@ -125,3 +125,27 @@ Afpsraken voor de volgende sprint:
 1. Probeer altijd minimaal 1 issue op je naam te hebben zodat je ten alle tijden iets kan doen aan het project.
 2. Duidelijke issues schrijven en goed indelen in het project board.
 
+
+
+
+
+
+## DoR & DoD
+
+### DoR
+- [ ] Planning poker
+- [ ] Design
+- [ ] Description
+- [ ] Eisen
+
+
+### DoD
+- [ ] Uitvoerig testen
+  - [ ] HTML Validator
+  - [ ] WCAG
+  - [ ] Webpage test
+  - [ ] Browserstack
+  - [ ] User test
+- [ ] Project heeft een live link
+- [ ] Project is gepushed naar main
+
