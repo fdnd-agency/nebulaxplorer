@@ -34,19 +34,37 @@
 
 body {
   /* Theme */
-  --space-100: #181932;
-  --space-60: #4a5069;
-  --space-30: #969aaa;
+  --space-170: hsl(238, 51%, 31%);
+  --space-160: hsl(238, 43%, 26%);
+  --space-140: hsl(237, 40%, 21%);
+  --space-100: hsl(238, 35%, 15%);
+  --space-60: hsl(228, 17%, 35%);
+  --space-30: hsl(228, 11%, 63%);
+  --space-10: hsl(243, 10%, 61%);
 
-  --cleanroom-100: #eb5d34;
-  --cleanroom-60: #ff9f7d;
-  --cleanroom-30: #feceba;
+  --cleanroom-170: hsl(14, 86%, 43%);
+  --cleanroom-160: hsl(13, 84%, 48%);
+  --cleanroom-140: hsl(14, 83%, 52%);
+  --cleanroom-100: hsl(13, 82%, 56%);
+  --cleanroom-60: hsl(16, 100%, 75%);
+  --cleanroom-30: hsl(18, 97%, 86%);
+  --cleanroom-10: hsl(18, 100%, 90%);
 
-  --ultra-100: #292f6b;
-  --ultra-60: #6170a1;
-  --ultra-30: #abb1cb;
+  --ultra-170: hsl(234, 58%, 43%);
+  --ultra-160: hsl(235, 52%, 38%);
+  --ultra-140: hsl(234, 48%, 34%);
+  --ultra-100: hsl(235, 45%, 29%);
+  --ultra-60: hsl(226, 25%, 51%);
+  --ultra-30: hsl(229, 24%, 73%);
+  --ultra-10: hsl(230, 18%, 80%);
 
-  --white: #fff;
+  --black: hsl(0, 0%, 0%);
+  --dark-grey: hsl(0, 0%, 20%);
+  --grey: hsl(0, 0%, 40%);
+  --light-grey: hsl(0, 0%, 60%);
+  --lightest-grey: hsl(0, 0%, 80%);
+  --white: hsl(0, 0%, 100%);
+ 
 
   /* Font families */
   --heading: spaceGrotesk;
@@ -67,7 +85,21 @@ textarea {
   font-weight: inherit;
 }
 
-*::selection{
-    background: var(--cleanroom-60);
-    color: var(--space-100);
+*::selection {
+  background: var(--cleanroom-60);
+  color: var(--space-100);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1.25rem;
+
+  @media (min-width: 56.25rem) {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  > * {
+    margin: 0 1.5rem;
+  }
 }
