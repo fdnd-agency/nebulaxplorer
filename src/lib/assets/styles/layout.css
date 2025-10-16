@@ -1,0 +1,18 @@
+.main-navigation {
+  background: var(--space-100);
+  color: var(--white);
+  li {
+    svg{
+        display: none;
+    }
+    &.exact-active {
+      > svg {
+        display: block;
+      }
+    }
+    a {
+      position: relative;
+      display: inline-block;
+    }
+  }
+}
