@@ -1,12 +1,4 @@
 header.main-navigation {
-  /* Accurate sizing of mobile menu button(s) */
-  --padding: .5rem;
-  --font-size: 1rem;
-  --lines-spacing: .375rem;
-  --lines-height: .125rem;
-  --text--line-spacing: .25rem;
-  /* --menu-button--height: calc((var(--padding) * 2) + var(--font-size) + (var(--lines-spacing) * 2)) */
-
   display: flex;
   background: transparent;
   color: var(--white);
