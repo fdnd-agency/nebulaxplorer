@@ -6,6 +6,7 @@
   padding: 0;
   border: unset;
   box-sizing: border-box;
+  line-height: 1;
 }
 
 /* Font faces */
@@ -71,6 +72,11 @@ body {
   --paragraph: spaceMonoRegular;
   --paragraph-bold: spaceMonoBold;
   --subtext: Roboto;
+
+  /* Styling */
+  background: var(--space-100);
+  color: var(--white);
+  font-family: var(--paragraph);
 }
 
 a,
@@ -83,6 +89,7 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
+  text-decoration: none;
 }
 
 *::selection {
