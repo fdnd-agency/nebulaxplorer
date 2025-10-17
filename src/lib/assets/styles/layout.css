@@ -82,10 +82,6 @@ header.main-navigation {
         display: block;
         width: fit-content;
 
-        svg {
-          display: none;
-        }
-
         &:first-child {
           padding: 0.5rem;
           display: flex;
@@ -96,9 +92,7 @@ header.main-navigation {
         }
 
         &.exact-active {
-          > svg {
-            display: block;
-          }
+
         }
 
         @media (min-width: 56.25rem) {

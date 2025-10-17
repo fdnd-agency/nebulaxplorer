@@ -47,7 +47,9 @@
             ? "parent-active"
             : ""}
       >
-        <PageArrow />
+        {#if isExactActive("/") || isParentActive("/")}
+          <PageArrow />
+        {/if}
         <a href="/" aria-current={isExactActive("/") ? "page" : undefined}>
           home
         </a>
@@ -59,7 +61,9 @@
             ? "parent-active"
             : ""}
       >
-        <PageArrow />
+        {#if isExactActive("/mission") || isParentActive("/mission")}
+          <PageArrow />
+        {/if}
         <a
           href="/mission"
           aria-current={isExactActive("/mission") ? "page" : undefined}
@@ -74,7 +78,9 @@
             ? "parent-active"
             : ""}
       >
-        <PageArrow />
+        {#if isExactActive("/scientific") || isParentActive("/scientific")}
+          <PageArrow />
+        {/if}
         <a
           href="/scientific"
           aria-current={isExactActive("/scientific") ? "page" : undefined}
@@ -89,7 +95,9 @@
             ? "parent-active"
             : ""}
       >
-        <PageArrow />
+        {#if isExactActive("/news") || isParentActive("/news")}
+          <PageArrow />
+        {/if}
         <a
           href="/news"
           aria-current={isExactActive("/news") ? "page" : undefined}
@@ -104,7 +112,9 @@
             ? "parent-active"
             : ""}
       >
-        <PageArrow />
+        {#if isExactActive("/team") || isParentActive("/team")}
+          <PageArrow />
+        {/if}
         <a
           href="/team"
           aria-current={isExactActive("/team") ? "page" : undefined}
@@ -119,7 +129,9 @@
             ? "parent-active"
             : ""}
       >
-        <PageArrow />
+        {#if isExactActive("/careers") || isParentActive("/careers")}
+          <PageArrow />
+        {/if}
         <a
           href="/careers"
           aria-current={isExactActive("/careers") ? "page" : undefined}
@@ -129,11 +141,13 @@
       <li
         class={isExactActive("/partners")
           ? "exact-active"
-          : isParentActive("/careers")
+          : isParentActive("/partners")
             ? "parent-active"
             : ""}
       >
-        <PageArrow />
+        {#if isExactActive("/partners") || isParentActive("/partners")}
+          <PageArrow />
+        {/if}
         <a
           href="/partners"
           aria-current={isExactActive("/partners") ? "page" : undefined}
