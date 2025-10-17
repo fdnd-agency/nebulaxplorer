@@ -4,7 +4,6 @@
   import PageArrow from "$lib/assets/icons/PageArrow.svelte";
   import "$lib/assets/styles/general.css";
   import "$lib/assets/styles/layout.css";
-  
 
   const isParentActive = (path) => {
     return $page.url.pathname.startsWith(`${path}/`);
@@ -22,8 +21,25 @@
 </svelte:head>
 
 <header class="main-navigation">
-  <nav>
+  <a
+    href="#menu"
+    class="burger"
+    aria-expanded="false"
+    aria-controls="nav-items"
+  >
+    menu
+    <span class="lines"></span>
+    <span class="lines"></span>
+    <span class="lines"></span>
+  </a>
+  <nav id="menu">
     <ul>
+      <li>
+        <a href="#">
+          close
+          <div></div>
+        </a>
+      </li>
       <li
         class={isExactActive("/")
           ? "exact-active"
