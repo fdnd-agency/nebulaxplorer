@@ -34,6 +34,10 @@
 
 body {
   /* Theme */
+
+  /* 100 is the main color of every palet */
+
+  /* The space colors are being used for the base of the website */
   --space-170: hsl(238, 51%, 31%);
   --space-160: hsl(238, 43%, 26%);
   --space-140: hsl(237, 40%, 21%);
@@ -42,6 +46,8 @@ body {
   --space-30: hsl(228, 11%, 63%);
   --space-10: hsl(243, 10%, 61%);
 
+
+  /* The cleanroom colors are being used for the accent colors */
   --cleanroom-170: hsl(14, 86%, 43%);
   --cleanroom-160: hsl(13, 84%, 48%);
   --cleanroom-140: hsl(14, 83%, 52%);
@@ -50,6 +56,8 @@ body {
   --cleanroom-30: hsl(18, 97%, 86%);
   --cleanroom-10: hsl(18, 100%, 90%);
 
+
+  /* The ultra colors are being used for the details */
   --ultra-170: hsl(234, 58%, 43%);
   --ultra-160: hsl(235, 52%, 38%);
   --ultra-140: hsl(234, 48%, 34%);
@@ -58,13 +66,13 @@ body {
   --ultra-30: hsl(229, 24%, 73%);
   --ultra-10: hsl(230, 18%, 80%);
 
+  /* These colors are being used for the content */
   --black: hsl(0, 0%, 0%);
   --dark-grey: hsl(0, 0%, 20%);
   --grey: hsl(0, 0%, 40%);
   --light-grey: hsl(0, 0%, 60%);
   --lightest-grey: hsl(0, 0%, 80%);
   --white: hsl(0, 0%, 100%);
- 
 
   /* Font families */
   --heading: spaceGrotesk;
