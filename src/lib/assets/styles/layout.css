@@ -61,8 +61,42 @@ header.main-navigation {
     width: 100%;
     transition: transform 0.3s ease;
 
+    a.menu-button {
+      &::before {
+        content: "";
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        transform: unset;
+        background: var(--space-low-opacity);
+        inset: unset;
+        z-index: -10;
+        inset: unset;
+        top: 0;
+        left: -100vw;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+    }
     &:target {
       transform: translateX(0%);
+      a.menu-button {
+        &::before {
+          content: "";
+          position: fixed;
+          width: 100vw;
+          height: 100vh;
+          transform: unset;
+          inset: unset;
+          z-index: -1;
+          inset: unset;
+          top: 0;
+          left: -100vw;
+          opacity: 1;
+          pointer-events: visibleFill;
+        }
+      }
     }
 
     @media (min-width: 56.25rem) {
