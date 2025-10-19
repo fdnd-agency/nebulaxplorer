@@ -23,7 +23,7 @@
 <header class="main-navigation">
   <a
     href="#menu"
-    class="burger"
+    class="menu-button"
     aria-expanded="false"
     aria-controls="nav-items"
   >
@@ -35,9 +35,10 @@
   <nav id="menu">
     <ul>
       <li>
-        <a href="#">
-          close
-          <div></div>
+        <a href="#" class="menu-button">
+          menu
+          <span class="lines"></span>
+          <span class="lines"></span>
         </a>
       </li>
       <li
