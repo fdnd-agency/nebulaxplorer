@@ -12,6 +12,7 @@ header.main-navigation {
     background: var(--space-100);
     justify-content: initial;
     position: sticky;
+    top: 0;
   }
 
   a {
@@ -28,6 +29,8 @@ header.main-navigation {
       align-items: center;
       flex-direction: column;
       justify-content: space-between;
+      position: fixed;
+      top: 0;
 
       @media (min-width: 56.25rem) {
         display: none;
