@@ -1,1 +1,6 @@
-// place files you want to import through the `$lib` alias in this folder.
+// Assets
+
+// General components
+export { default as Hero } from './components/Hero/Hero.svelte';
+
+
