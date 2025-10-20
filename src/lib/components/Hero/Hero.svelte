@@ -28,6 +28,7 @@
 <style>
   .hero {
     position: relative;
+    padding: 3.5rem 4rem 2.25rem 4rem;
 
     :global(picture) {
       display: contents;
