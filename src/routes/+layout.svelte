@@ -7,14 +7,18 @@
   import "$lib/assets/styles/general.css";
   import "$lib/assets/styles/layout.css";
 
+  // Are we on a slug page?
+  // ex; on a detail page of the news page
   const isParentActive = (path) => {
     return $page.url.pathname.startsWith(`${path}/`);
   };
 
+  // Are we on this exact page?
   const isExactActive = (path) => {
     return $page.url.pathname === path;
   };
 
+  // Path is the path to the page and label is the text that will be displayed in the <a> tag
   const navItems = [
     { path: "/", label: "home" },
     { path: "/mission", label: "mission" },
@@ -46,12 +50,14 @@
   </a>
   <nav id="menu">
     <ul>
+      <!-- Include this button separately as this is our close button -->
       <li>
         <a href="#" class="menu-button">
           menu
           <span class="lines"></span>
         </a>
       </li>
+      <!-- Loop over each object -->
       {#each navItems as { path, label }}
         <li
           class={isExactActive(path)
