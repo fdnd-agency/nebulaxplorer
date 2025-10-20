@@ -200,16 +200,22 @@ header.main-navigation {
           }
 
           &.menu-button {
+            /* source: https://codepen.io/preetha-vaishnavi-the-reactor/pen/emYEWby */
             > .lines {
-              transform-origin: left;
-              &:nth-child(1) {
-                margin: 0;
-                transform: rotate(20deg);
-              }
-              &:nth-child(2) {
-                margin: 0;
-                transform: rotate(-20deg);
-              }
+              --thickness: 2px;
+              --gradient: #fff0 90deg, var(--white) 0;
+              background: conic-gradient(
+                  from 90deg at var(--thickness) var(--thickness),
+                  var(--gradient)
+                )
+                calc(100% + var(--thickness) / 2)
+                calc(100% + var(--thickness) / 2) / calc(50% + var(--thickness))
+                calc(50% + var(--thickness));
+              transform-origin: unset;
+              height: unset;
+              width: 1.875rem;
+              aspect-ratio: 1;
+              rotate: 45deg;
             }
           }
         }

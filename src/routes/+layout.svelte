@@ -38,7 +38,6 @@
         <a href="#" class="menu-button">
           menu
           <span class="lines"></span>
-          <span class="lines"></span>
         </a>
       </li>
       <li
