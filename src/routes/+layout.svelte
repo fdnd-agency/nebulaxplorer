@@ -1,4 +1,6 @@
 <script>
+  export const prerender = true;
+
   import { page } from "$app/stores";
   import favicon from "$lib/assets/icons/favicon.svg";
   import PageArrow from "$lib/assets/icons/PageArrow.svelte";
@@ -12,6 +14,16 @@
   const isExactActive = (path) => {
     return $page.url.pathname === path;
   };
+
+  const navItems = [
+    { path: "/", label: "home" },
+    { path: "/mission", label: "mission" },
+    { path: "/scientific", label: "scientific" },
+    { path: "/news", label: "news" },
+    { path: "/team", label: "team" },
+    { path: "/careers", label: "careers" },
+    { path: "/partners", label: "partners" },
+  ];
 
   let { children } = $props();
 </script>
@@ -40,121 +52,25 @@
           <span class="lines"></span>
         </a>
       </li>
-      <li
-        class={isExactActive("/")
-          ? "exact-active"
-          : isParentActive("/")
-            ? "parent-active"
-            : ""}
-      >
-        {#if isExactActive("/") || isParentActive("/")}
-          <PageArrow />
-        {/if}
-        <a href="/" aria-current={isExactActive("/") ? "page" : undefined}>
-          home
-        </a>
-      </li>
-      <li
-        class={isExactActive("/mission")
-          ? "exact-active"
-          : isParentActive("/mission")
-            ? "parent-active"
-            : ""}
-      >
-        {#if isExactActive("/mission") || isParentActive("/mission")}
-          <PageArrow />
-        {/if}
-        <a
-          href="/mission"
-          aria-current={isExactActive("/mission") ? "page" : undefined}
+      {#each navItems as { path, label }}
+        <li
+          class={isExactActive(path)
+            ? "exact-active"
+            : isParentActive(path)
+              ? "parent-active"
+              : ""}
         >
-          mission
-        </a>
-      </li>
-      <li
-        class={isExactActive("/scientific")
-          ? "exact-active"
-          : isParentActive("/scientific")
-            ? "parent-active"
-            : ""}
-      >
-        {#if isExactActive("/scientific") || isParentActive("/scientific")}
-          <PageArrow />
-        {/if}
-        <a
-          href="/scientific"
-          aria-current={isExactActive("/scientific") ? "page" : undefined}
-        >
-          scientific
-        </a>
-      </li>
-      <li
-        class={isExactActive("/news")
-          ? "exact-active"
-          : isParentActive("/news")
-            ? "parent-active"
-            : ""}
-      >
-        {#if isExactActive("/news") || isParentActive("/news")}
-          <PageArrow />
-        {/if}
-        <a
-          href="/news"
-          aria-current={isExactActive("/news") ? "page" : undefined}
-        >
-          news
-        </a>
-      </li>
-      <li
-        class={isExactActive("/team")
-          ? "exact-active"
-          : isParentActive("/team")
-            ? "parent-active"
-            : ""}
-      >
-        {#if isExactActive("/team") || isParentActive("/team")}
-          <PageArrow />
-        {/if}
-        <a
-          href="/team"
-          aria-current={isExactActive("/team") ? "page" : undefined}
-        >
-          team
-        </a>
-      </li>
-      <li
-        class={isExactActive("/careers")
-          ? "exact-active"
-          : isParentActive("/careers")
-            ? "parent-active"
-            : ""}
-      >
-        {#if isExactActive("/careers") || isParentActive("/careers")}
-          <PageArrow />
-        {/if}
-        <a
-          href="/careers"
-          aria-current={isExactActive("/careers") ? "page" : undefined}
-          >careers</a
-        >
-      </li>
-      <li
-        class={isExactActive("/partners")
-          ? "exact-active"
-          : isParentActive("/partners")
-            ? "parent-active"
-            : ""}
-      >
-        {#if isExactActive("/partners") || isParentActive("/partners")}
-          <PageArrow />
-        {/if}
-        <a
-          href="/partners"
-          aria-current={isExactActive("/partners") ? "page" : undefined}
-        >
-          partners
-        </a>
-      </li>
+          {#if isExactActive(path) || isParentActive(path)}
+            <PageArrow />
+          {/if}
+          <a
+            href={path}
+            aria-current={isExactActive(path) ? "page" : undefined}
+          >
+            {label}
+          </a>
+        </li>
+      {/each}
     </ul>
   </nav>
 </header>
