@@ -6,6 +6,8 @@ header.main-navigation {
   background: transparent;
   justify-content: flex-end;
   color: var(--white);
+  z-index: 10;
+  position: relative;
 
   @media (min-width: 56.25rem) {
     padding: 1.5rem 4rem 1.25rem 5.5rem;
