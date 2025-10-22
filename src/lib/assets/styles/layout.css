@@ -6,6 +6,8 @@ header.main-navigation {
   background: transparent;
   justify-content: flex-end;
   color: var(--white);
+  z-index: 10;
+  position: relative;
 
   @supports (animation-timeline: view()) {
     animation: anim-timeline--header-opacity 1ms ease both;
