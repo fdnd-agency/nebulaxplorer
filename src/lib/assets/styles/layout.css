@@ -1,0 +1,240 @@
+/* MARK: HEADER
+ */
+header.main-navigation {
+  font-family: SpaceGrotesk;
+  display: flex;
+  background: transparent;
+  justify-content: flex-end;
+  color: var(--white);
+
+  @media (min-width: 56.25rem) {
+    padding: 1.5rem 4rem 1.25rem 5.5rem;
+    background: var(--space-100);
+    justify-content: initial;
+    position: sticky;
+    top: 0;
+  }
+
+  a {
+    transition: font-weight 0.3s ease-in-out;
+
+    &.menu-button {
+      background: var(--cleanroom-100);
+      text-align: center;
+      aspect-ratio: 1;
+      padding: 0.5rem;
+      color: inherit;
+      background: var(--ultra-170);
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-between;
+      position: fixed;
+      top: 0;
+
+      @media (min-width: 56.25rem) {
+        display: none;
+      }
+
+      span.lines {
+        height: 0.125rem;
+        width: 85%;
+        background: currentColor;
+        &:first-child {
+          margin-top: 0.25rem;
+        }
+        display: block;
+        & + .lines {
+          margin-top: 0.375rem;
+        }
+      }
+    }
+  }
+
+  nav {
+    background: var(--ultra-170);
+    transform: translateX(100%);
+    justify-self: end;
+    position: fixed;
+    height: 100%;
+    max-width: 22.5rem;
+    width: 100%;
+    transition: transform 0.3s ease;
+
+    a.menu-button {
+      &::before {
+        content: "";
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        transform: unset;
+        background: var(--space-low-opacity);
+        inset: unset;
+        z-index: -10;
+        inset: unset;
+        top: 0;
+        left: -100vw;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+    }
+    &:target {
+      transform: translateX(0%);
+      a.menu-button {
+        &::before {
+          content: "";
+          position: fixed;
+          width: 100vw;
+          height: 100vh;
+          transform: unset;
+          inset: unset;
+          z-index: -1;
+          inset: unset;
+          top: 0;
+          left: -100vw;
+          opacity: 1;
+          pointer-events: visibleFill;
+        }
+      }
+    }
+
+    @media (min-width: 56.25rem) {
+      background: inherit;
+      transform: translateX(0%);
+      position: initial;
+      width: initial;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      width: fit-content;
+      width: 100%;
+      padding: 1rem 2rem;
+      /* Based on close button & open button (top right) */
+      padding-top: calc(1rem + 0.375rem + 0.375rem + 0.25rem + 1rem + 1rem);
+      /* desktop */
+      @media (min-width: 56.25rem) {
+        align-items: flex-end;
+        padding-top: 1rem;
+        gap: 1.5rem;
+        width: initial;
+        flex-direction: row;
+      }
+
+      li {
+        display: flex;
+        flex-direction: row-reverse;
+        width: fit-content;
+        align-items: center;
+
+        &:first-child {
+          display: flex;
+          position: fixed;
+          top: 0;
+          right: 0;
+          align-self: flex-end;
+        }
+
+        &.exact-active {
+          font-weight: 800;
+        }
+
+        svg {
+          transform: rotate(180deg);
+          animation: anim-arrow--opacity 3s linear infinite;
+          path {
+            fill: var(--white);
+          }
+        }
+        @media (min-width: 56.25rem) {
+          display: block;
+          &:hover {
+            a {
+              font-weight: 800;
+              color: var(--cleanroom-60);
+
+              &::before {
+                transform: scaleX(1);
+                transform-origin: left;
+              }
+            }
+          }
+
+          svg {
+            transform: rotateZ(90deg);
+          }
+        }
+        @media (min-width: 56.25rem) {
+          display: flex;
+          flex-direction: column;
+
+          svg,
+          svg path {
+            fill: var(--cleanroom-100);
+          }
+
+          &:first-child {
+            display: none;
+          }
+        }
+
+        a {
+          font-weight: inherit;
+          padding: 0.25rem 0.5rem;
+          position: relative;
+          display: inline-block;
+
+          &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.3s ease-in-out;
+            transform: scaleX(0);
+            transform-origin: right;
+            background: var(--ultra-60);
+            z-index: -1;
+          }
+
+          &.menu-button {
+            /* source: https://codepen.io/preetha-vaishnavi-the-reactor/pen/emYEWby */
+            > .lines {
+              --thickness: 2px;
+              --gradient: #fff0 90deg, var(--white) 0;
+              background: conic-gradient(
+                  from 90deg at var(--thickness) var(--thickness),
+                  var(--gradient)
+                )
+                calc(100% + var(--thickness) / 2)
+                calc(100% + var(--thickness) / 2) / calc(50% + var(--thickness))
+                calc(50% + var(--thickness));
+              transform-origin: unset;
+              height: unset;
+              width: 1.875rem;
+              aspect-ratio: 1;
+              rotate: 45deg;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes anim-arrow--opacity {
+  30% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0.6;
+  }
+  55% {
+    opacity: 0.6;
+  }
+  70% {
+    opacity: 1;
+  }
+}
