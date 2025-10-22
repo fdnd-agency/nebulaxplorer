@@ -42,11 +42,6 @@
 <img src={blackholeImage} alt="Black Hole"/>
 
 <style>
-    :global(body) {
-        background-color: var(--space-100);
-        color: var(--white);
-        width: 100vw;
-    }
 
     h2 {
         position: relative;
