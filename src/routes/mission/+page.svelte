@@ -39,7 +39,7 @@
     eleifend quis ipsum. Aenean ut diam euismod, gravida libero ac, luctus est.
 </p>
 
-<img src={blackholeImage} alt="Black Hole"/>
+<enhanced:img src={blackholeImage} alt="Black Hole"/>
 
 <style>
 
@@ -71,7 +71,7 @@
         color: var(--cleanroom-100);
     }
 
-    img {
+    enhanced\:img {
         height: 250px;
         width: auto;
 
