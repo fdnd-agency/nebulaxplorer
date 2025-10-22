@@ -110,6 +110,7 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1.25rem;
+  margin-inline: 1.5rem;
 
   @media (min-width: 56.25rem) {
     grid-template-columns: repeat(12, 1fr);
@@ -117,6 +118,8 @@ main {
 
   > * {
     padding: 0 1.5rem;
+    /* Bleed out of the grid (this is just for the background colors */
+    margin-inline: -1.5rem;
     grid-column: 1 / -1;
   }
 }
