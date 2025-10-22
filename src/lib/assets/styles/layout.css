@@ -7,9 +7,19 @@ header.main-navigation {
   justify-content: flex-end;
   color: var(--white);
 
+  @supports (animation-timeline: view()) {
+    animation: anim-timeline--header-opacity 1ms ease both;
+    animation-timeline: scroll(root);
+    animation-range: 2rem 8rem;
+  }
+  
   @media (min-width: 56.25rem) {
     padding: 1.5rem 4rem 1.25rem 5.5rem;
     background: var(--space-100);
+    @supports (animation-timeline: view()) {
+      background: transparent;
+    }
+
     justify-content: initial;
     position: sticky;
     top: 0;
@@ -19,6 +29,7 @@ header.main-navigation {
     transition: font-weight 0.3s ease-in-out;
 
     &.menu-button {
+      height: 3.75rem;
       background: var(--cleanroom-100);
       text-align: center;
       aspect-ratio: 1;
@@ -200,6 +211,8 @@ header.main-navigation {
           }
 
           &.menu-button {
+            height: 3.75rem;
+
             /* source: https://codepen.io/preetha-vaishnavi-the-reactor/pen/emYEWby */
             > .lines {
               --thickness: 2px;
@@ -236,5 +249,11 @@ header.main-navigation {
   }
   70% {
     opacity: 1;
+  }
+}
+
+@keyframes anim-timeline--header-opacity {
+  to {
+    background-color: var(--space-100);
   }
 }
