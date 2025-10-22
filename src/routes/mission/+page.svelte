@@ -91,22 +91,4 @@
             /* z-index: 10; */
         }
     }
-    
-    /* BELANGRIJK: Zorg ervoor dat de container zich relatief gedraagt.
-       Als de afbeelding zich moet centreren t.o.v. de hele component,
-       moet je de outer div van je Svelte-component (of het element dat
-       de tekst en afbeelding bevat) deze positie geven.
-       
-       Stel dat je component er zo uitziet:
-       <div class="content-wrapper">
-         <img .../>
-         <h2 .../>
-         <p .../>
-         </div>
-       
-       ...dan moet je dit toevoegen aan je <style>:
-    */
-    
-    /* Als je geen wrapper gebruikt, moet je misschien de <h2> of een andere
-       vaste container position: relative; geven als dat kan */
 </style>
