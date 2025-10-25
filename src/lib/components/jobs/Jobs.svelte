@@ -51,7 +51,7 @@
       <p>{job.location}</p>
     </div>
     <div class="job-image">
-      <img src="/src/lib/assets/images/WerkenbijSRON.jpg" alt="{job.role} in {job.location}"> 
+      <img src="/src/lib/assets/images/WerkenbijSRON.jpg" alt="Shows two Sron workers"> 
     </div>
   </li>
   {/each}
