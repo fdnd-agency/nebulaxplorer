@@ -1,5 +1,8 @@
 <script>
     import blackholeImage from "$lib/assets/blackhole.jpg";
+  import blackholeImage from "$lib/assets/blackhole.jpg?enhanced";
+  import Hero from "$lib/components/Hero/Hero.svelte";
+  import logo from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
 </script>
 
 <h2>What are we <span>up</span> to?</h2>
@@ -122,274 +125,92 @@
       What happens up there, starts down here.
     </div>
   </footer>
+<Hero
+  pageTitle="Mission"
+  sronIcon={logo}
+  background={{ alt: "", file: blackholeImage }}
+/>
 
 <style>
+  .paragraph-block {
+    display: grid;
+    grid-template-columns: subgrid;
+    gap: inherit;
+    row-gap: unset;
 
-    h2 {
-        position: relative;
+    > *:not(enhanced\:img, img, picture) {
+      grid-column: 1 / -1;
+      max-width: 43.75rem;
+      padding-left: none;
+
+      @media (min-width: 36.25rem) {
+        grid-column: 1 / 4;
+        padding-right: 1.5rem;
+      }
+      @media (min-width: 56.25rem) {
+        padding-left: 2.5rem;
+        grid-column: 1 / 8;
+      }
     }
 
-    h2,
-    h3 {
-        font-family: var(--heading);
+    .text-title {
+      * + * {
+        margin-top: 0.5rem;
+      }
     }
 
-    p {
-        font-family: var(--paragraph);
-    }
-
-    h3,
-    h2,
-    p {
-        grid-column: 1 / 9;
-    }
-
-    .mission-brief,
-    h3 {
-        color: var(--cleanroom-100);
-    }
-
-    span {
-        color: var(--cleanroom-100);
-    }
-
-    enhanced\:img {
-        height: 250px;
-        width: auto;
-
-
-        @media (min-width: 1183px) {
-            position: absolute;
-            right: 0;
-            top: 50%; 
-            transform: translateY(-50%);
-            max-width: 400px;
-            height: auto;
-            /* z-index: 10; */
+    .text-content {
+      * + p {
+        margin-top: 0.5rem;
+        @media (min-width: 56.25rem) {
+          padding-left: 1.5rem;
         }
-    }
- a,
-    span,
-    input,
-    button,
-    select,
-    textarea {
-      color: inherit;
-      font-family: inherit;
-      font-size: inherit;
-      font-weight: inherit;
-    }
-    *::selection {
-      background: var(--cleanroom-60);
-      color: var(--space-100);
-    }
-
-    body {
-      margin: 0;
-      background: var(--space-100);
-    }
-
-    .footer {
-      background-color: var(--space-100);
-      color: var(--white);
-      font-family: var(--paragraph);
-    }
-
-    .footer-top-border {
-      border-top: 4px solid var(--cleanroom-100);
-    }
-
-    .footer-content {
-      padding: 3rem 1.5rem 0;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      margin-bottom: 8rem;
-    }
-
-    @media (min-width: 56.25rem) {
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
       }
-      .footer-content {
-        padding: 3rem 2rem 0;
+
+      p + *,
+      .text-content--title + * {
+        margin-top: 2rem;
       }
     }
 
-    .logo-section {
-      margin-bottom: 2rem;
-    }
-
-    .academy-logo {
-      font-family: var(--heading);
-      font-size: 2.5rem;
-      font-weight: bold;
-      letter-spacing: 0.05em;
-      line-height: 1.2;
-    }
-
-    .logo-star {
-      color: var(--cleanroom-100);
-      font-size: 1.5rem;
-      vertical-align: middle;
-    }
-
-    .academy-text {
-      color: var(--cleanroom-100);
-    }
-
-    .nav-section {
-      border-top: 1px solid var(--space-60);
-      padding-top: 1rem;
-    }
-
-    .nav-divider {
-      border-top: 1px solid var(--space-60);
-      padding-top: 1rem;
-      margin-top: 1rem;
-    }
-
-    .nav-link {
-      display: block;
-      padding: 0.5rem 0;
-      text-decoration: none;
-      color: var(--white);
-      transition: color 0.2s;
-    }
-
-    .nav-link:hover {
-      color: var(--cleanroom-60);
-    }
-
-    .nav-link.highlight {
-      color: var(--cleanroom-100);
-    }
-
-    .right-column {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .subscribe-text {
-      font-size: 1.125rem;
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-    }
-
-    .subscribe-form {
-      display: flex;
-      gap: 0;
-    }
-
-    .email-input {
-      flex: 1;
-      padding: 0.75rem 1rem;
-      background-color: var(--white);
-      color: var(--space-100);
-      font-family: var(--paragraph);
-      font-size: 1rem;
-      outline: none;
-      border: none;
-    }
-
-    .email-input::placeholder {
-      color: var(--space-60);
-    }
-
-    .submit-button {
-      padding: 0.75rem 1.5rem;
-      background-color: var(--white);
-      color: var(--space-100);
-      cursor: pointer;
-      font-size: 1.25rem;
-      font-weight: bold;
-      transition: background-color 0.2s;
-      border: none;
-    }
-
-    .submit-button:hover {
-      background-color: var(--cleanroom-30);
-    }
-
-    .bottom-section {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
+    .text-content,
+    picture {
       margin-top: 3rem;
-      flex-direction: column;
-      gap: 2rem;
     }
 
-    @media (min-width: 56.25rem) {
-      .bottom-section {
-        flex-direction: row;
-        gap: 0;
+    picture {
+      grid-column: 4 / -1;
+      height: fit-content;
+
+      display: none;
+
+      @media (min-width: 36.25rem) {
+        display: block;
+      }
+
+      @media (min-width: 56.25rem) {
+        grid-column: 8 / -1;
+      }
+
+      enhanced\:img,
+      img {
+        width: 100%;
+        object-fit: cover;
+        max-height: 22.8125rem;
       }
     }
 
-    .sron-logo {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
+    .subtitle span {
+      color: var(--cleanroom-100);
     }
+  }
 
-    .sron-icon {
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+  /* util classes */
+  .orange {
+    color: var(--cleanroom-100);
+  }
 
-    .sron-text-logo {
-      font-family: var(--heading);
-      font-size: 2.5rem;
-      font-weight: bold;
-      letter-spacing: 0.1em;
-    }
-
-    .sron-subtitle {
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      margin-top: -0.25rem;
-      line-height: 1.3;
-    }
-
-    .social-icons {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .social-link {
-      color: var(--white);
-      transition: color 0.2s;
-      display: block;
-    }
-
-    .social-link:hover {
-      color: var(--cleanroom-60);
-    }
-
-    .footer-banner {
-      background-color: var(--cleanroom-100);
-      text-align: center;
-      font-family: var(--paragraph);
-      font-size: 0.875rem;
-      letter-spacing: 0.05em;
-      padding: 0.5rem 1rem;
-    }
-
-    @media (min-width: 56.25rem) {
-      .footer-banner {
-        padding: 0.5rem 1rem;
-      }
-    }
+  enhanced\:img {
+    width: auto;
+  }
 </style>
