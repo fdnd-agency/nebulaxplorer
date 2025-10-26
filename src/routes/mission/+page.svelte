@@ -1,5 +1,4 @@
 <script>
-    import blackholeImage from "$lib/assets/blackhole.jpg";
   import blackholeImage from "$lib/assets/blackhole.jpg?enhanced";
   import Hero from "$lib/components/Hero/Hero.svelte";
   import logo from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
