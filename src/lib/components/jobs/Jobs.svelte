@@ -39,8 +39,7 @@
   ];
 </script>
 
-
-
+<section class="grid-wrapper">
 <ul class="jobs-grid">
   {#each jobs as job}
   <li class="job-card">
@@ -51,75 +50,86 @@
       <p>{job.location}</p>
     </div>
     <div class="job-image">
-      <img src="/src/lib/assets/images/WerkenbijSRON.jpg" alt="Shows two Sron workers"> 
+      <img src="/src/lib/assets/images/WerkenbijSRON.jpg" alt="{job.role} in {job.location}"> 
     </div>
   </li>
   {/each}
 </ul>
+</section>
+
+
 
 <style>
 
-  .jobs-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    padding: 2rem;
-    list-style: none;
-    justify-content: right;
-  }
+.grid-wrapper{
+  display: inherit;
+  grid-template-columns: inherit;
 
-  .job-card {
-    width: 23.31rem;
-    height: 40rem;
-    background: var(--space-110);
+  .jobs-grid{
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 4 / -1;
+    gap: 1rem;
+
+    list-style: none;
+}
+
+.job-card{
+  grid-column: span 3;
+   background: var(--space-110);
     overflow: hidden;
     border-top: 3px solid var(--white);
     border-bottom: 3px solid var(--white);
-    display: flex;
-    flex-direction: column;
-  }
+}
 
-  .job-info {
-    padding: 1.5rem 2rem 0 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-
-  h3 {
+.job-info{
+   padding: 1.5rem 2rem 0 2rem;
+       gap: 0.5rem;
+   h3{
     font-family: var(--heading);
     font-weight: 400;
     font-size: 1.3rem;
     line-height: 1.75rem;
     color: var(--white);
-  }
-  p { 
+   }
+   p{
     font-family: var(--heading);
     font-weight: 400;
     font-size: 1.2rem;
-    color: var(--white); 
-  }
-  }
+    color: var(--white);
+   }
+}
 
-  .job-label {
+.job-label {
     font-family: var(--subtext);
     font-weight: 700;
     font-size: 1rem;
     line-height: 1.4rem;
     color: var(--cleanroom-100);
-    text-transform: lowercase;
+ 
   }
 
-  .job-image {
+
+}
+  
+   .job-image {
     width: 100%;
     height: 28.125rem;
     overflow: hidden;
     margin-top: auto;
-  }
 
-  .job-image img {
+    img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
   }
+  }
+
+ 
+
+ 
+
+
+ 
 </style>
