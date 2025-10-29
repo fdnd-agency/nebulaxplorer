@@ -96,12 +96,12 @@
       }
     }
 
-    .text-content,
-    picture {
+    :global(.text-content),
+    :global(picture) {
       margin-top: 3rem;
     }
 
-    picture {
+    :global(picture) {
       grid-column: 4 / -1;
       height: fit-content;
 
@@ -115,8 +115,8 @@
         grid-column: 8 / -1;
       }
 
-      enhanced\:img,
-      img {
+      :global(enhanced\:img),
+      :global(img) {
         width: 100%;
         object-fit: cover;
         max-height: 22.8125rem;
@@ -133,7 +133,7 @@
     color: var(--cleanroom-100);
   }
 
-  enhanced\:img {
+  :global(enhanced\:img) {
     width: auto;
   }
 </style>
