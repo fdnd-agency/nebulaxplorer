@@ -42,8 +42,28 @@ Wat moet er in de oplevering zitten?
 - [x] [`README.md`](#readme)
 - [ ] [Alles moet getest zijn](#testen)
 - [x] [Projectboard](#projectboard)
+- [x] Opdrachtgever
 - [ ] Live staan + live link
 - [x] Geen open pull requests
+
+#### Opdrachtgever
+- [ ] Presentatie voorbereid (geen powerpoint!) voor de sprint review
+- [ ] Vragen voor de opdrachtgever voorbereiden
+- [ ] Agenda opgezet
+- [ ] Maakt een afspraak voor de sprint review
+- [x] Projectboard
+- [x] Moscow is toegepast
+- [x] User stories zijn gepokerd en hebben een waarde
+- [ ] User stories in juiste fase
+
+#### Epics
+- [x] User stories, als ... wil ik ... zodat ik ...
+- [x] Issues/User stories sluiten
+- [x] Backlog met user stories
+- [x] Optioneel: deadlines op user stories
+- [x] Refinement
+- [x] DoD
+- [x] DoR
 
 ##### Projectboard
 - [x] Moscow is toegepast
@@ -52,13 +72,13 @@ Wat moet er in de oplevering zitten?
 - [x] Backlog met issues die niet opgepakt worden
 
 ##### Refactor
-- [ ] Structuur van je mappen
-- [ ] Netjes uitlijnen van code
-- [ ] Ongebruikte code is verwijderd
-- [ ] Ongebruikte files zijn verwijderd
-- [ ] Comments in code
-- [ ] Comments met bronnen
-- [ ] Conventies uit `CONTRIBUTING.md` zijn gehandhaafd
+- [x] Structuur van je mappen
+- [x] Netjes uitlijnen van code
+- [x] Ongebruikte code is verwijderd
+- [x] Ongebruikte files zijn verwijderd
+- [x] Comments in code
+- [x] Comments met bronnen
+- [x] Conventies uit `CONTRIBUTING.md` zijn gehandhaafd
 
 ##### README
 - [x] Informatie voor installatie
