@@ -1,25 +1,25 @@
-# NEBULA Xplorer bij SRON
-Omschrijving van het project
+# NEBULA Xplorer - a project by SRON
+Project description
 
 ## Design
 [Design Challenge](https://github.com/fdnd-agency/nebulaxplorer/wiki/Design-Challenge)
 
 figma link
-Ontwerpkeuzes uitleggen, inclusief screenshots
-Functionaliteiten uitleg
+Design choices, including screenshots
+Explanation of functionalities
 
 ## Datamodel
-Datamodel vanuit mermaid
+Datamodel from mermaid
 
-## Installatie
+## Installation
 
-Informatie voor installatie, indien nodig een stukje code voor uitleg
+How to install
 
-## Wil je meedoen?
-Uitleg hoe kun je bijdragen
+## Want to contribute?
+How people can contribute
 
-## Licentie
-Link naar de licentie
+## Licenses
+Licenses
 
 
 
