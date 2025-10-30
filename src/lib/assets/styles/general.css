@@ -83,7 +83,7 @@ body {
   --subtext: spaceMonoBold;
 
   /* Styling */
-  background: var(--space-100);
+  background: var(--ultra-10);
   color: var(--white);
   font-family: var(--paragraph);
 }
@@ -101,8 +101,9 @@ textarea {
   text-decoration: none;
 }
 
+
 *::selection {
-  background: var(--cleanroom-60);
+  background: var(--ultra-10);;
   color: var(--space-100);
 }
 

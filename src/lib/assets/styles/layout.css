@@ -19,7 +19,7 @@ header.main-navigation {
     padding: 1.5rem 4rem 1.25rem 5.5rem;
     background: var(--space-100);
     @supports (animation-timeline: view()) {
-      background: transparent;
+      background: var(--space-100);
     }
 
     justify-content: initial;

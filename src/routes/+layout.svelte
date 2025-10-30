@@ -1,5 +1,4 @@
 <script>
-  export const prerender = true;
 
   import { page } from "$app/stores";
   import favicon from "$lib/assets/icons/favicon.svg";

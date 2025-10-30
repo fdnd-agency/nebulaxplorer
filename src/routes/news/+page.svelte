@@ -1,7 +1,7 @@
 <script>
-  import blackholeImage from "$lib/assets/blackhole2.jpg";
+  import blackholeImage from "$lib/assets/images/blue-background.png?enhanced";
   import Hero from "$lib/components/Hero/Hero.svelte";
-  import logo from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
+  import logo from "$lib/assets/logos/SRON_Academy_OnWhite.svg";
 </script>
  
 
@@ -86,10 +86,15 @@
       }
     }
  
+    .subtitle,.heading{
+      color: var(--ultra-100);
+    }
+
     .subtitle span {
       color: var(--cleanroom-100);
     }
   }
+
  
   /* util classes */
   .orange {
