@@ -3,7 +3,6 @@
 *::before,
 *::after {
   margin: 0;
-  padding: 0;
   border: unset;
   box-sizing: border-box;
   line-height: 1;

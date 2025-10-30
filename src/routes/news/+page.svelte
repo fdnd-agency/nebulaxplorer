@@ -2,6 +2,7 @@
   import blackholeImage from "$lib/assets/images/blue-background.png?enhanced";
   import Hero from "$lib/components/Hero/Hero.svelte";
   import logo from "$lib/assets/logos/SRON_Academy_OnWhite.svg";
+  import Newscards from "$lib/components/Newscards/Newscards.svelte";
 </script>
  
 
@@ -18,10 +19,11 @@
   </div>
  
   <section class="news-snippets">
-  
   </section>
 </section>
- 
+   <Newscards 
+  /> 
+
 <style>
   .paragraph-block {
     display: grid;
