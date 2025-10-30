@@ -34,22 +34,18 @@ This project has been developed in SvelteKit, content is retrieved from Directus
 
 Follow the steps below to use this repository for yourself!
 
-**1. Install node js:**
-
-```npm install```
-
-**2. Clone the repository:**
+**1. Clone the repository:**
 
 ```git clone https://github.com/fdnd-agency/nebulaxplorer.git```
 
-**3. Open the repository**
+**2. Open the repository**
 
 in GitHub Desktop, then navigate to *'Open the repository in your external editor'*
 
-**4. In the terminal**
+**3. In the terminal**
 
 Type the command:
-npm install
+```npm install```
 
 Then:
 ```npm run dev```
