@@ -1,2 +1,102 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script>
+  import blackholeImage from "$lib/assets/blackhole2.jpg";
+  import Hero from "$lib/components/Hero/Hero.svelte";
+  import logo from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
+</script>
+ 
+
+<Hero
+  pageTitle="News"
+  sronIcon={logo}
+  background={{ alt: "", file: blackholeImage }}
+/>
+ 
+<section class="paragraph-block">
+  <div class="text-title">
+    <h2 class="subtitle">Our latest <span class="orange">developments</span></h2>
+    <p class="heading">Currently <span class="orange">12</span> available</p>
+  </div>
+ 
+  <section class="news-snippets">
+  
+  </section>
+</section>
+ 
+<style>
+  .paragraph-block {
+    display: grid;
+    grid-template-columns: subgrid;
+    gap: inherit;
+    row-gap: unset;
+ 
+    > *:not(enhanced\:img, img, picture) {
+      grid-column: 1 / -1;
+      max-width: 43.75rem;
+      padding-left: none;
+ 
+      @media (min-width: 36.25rem) {
+        grid-column: 1 / 4;
+        padding-right: 1.5rem;
+      }
+      @media (min-width: 56.25rem) {
+        padding-left: 2.5rem;
+        grid-column: 1 / 8;
+      }
+    }
+ 
+    .text-title {
+      * + * {
+        margin-top: 0.5rem;
+      }
+    }
+ 
+    .text-content article {
+      * + p {
+        margin-top: 0.5rem;
+        @media (min-width: 56.25rem) {
+          padding-left: 1.5rem;
+        }
+      }
+    }
+ 
+    :global(.text-content),
+    :global(picture) {
+      margin-top: 3rem;
+    }
+ 
+    :global(picture) {
+      grid-column: 4 / -1;
+      height: fit-content;
+ 
+      display: none;
+ 
+      @media (min-width: 36.25rem) {
+        display: block;
+      }
+ 
+      @media (min-width: 56.25rem) {
+        grid-column: 8 / -1;
+      }
+ 
+      :global(enhanced\:img),
+      :global(img) {
+        width: 100%;
+        object-fit: cover;
+        max-height: 22.8125rem;
+      }
+    }
+ 
+    .subtitle span {
+      color: var(--cleanroom-100);
+    }
+  }
+ 
+  /* util classes */
+  .orange {
+    color: var(--cleanroom-100);
+  }
+ 
+  :global(enhanced\:img) {
+    width: auto;
+  }
+</style>
