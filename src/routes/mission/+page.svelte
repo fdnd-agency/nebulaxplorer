@@ -59,6 +59,39 @@
   <enhanced:img src={blackholeImage} alt="Black Hole" />
 </section>
 
+
+<section class="steps-block">
+    <h3 class="white subtitle text-content--title">The <span class="orange">steps to</span> take before <span class="orange">launch</span></h3>
+    <div class="steps-content">
+      
+      <div class="step-item">
+        <span class="step-number">1</span>
+        <enhanced:img class="steps-img" src={blackholeImage} alt="Step 1 for launch" />
+      </div>
+
+      <div class="step-item">
+        <span class="step-number">2</span>
+        <enhanced:img class="steps-img" src={blackholeImage} alt="Step 2 for launch" />
+      </div>
+
+      <div class="step-item">
+        <span class="step-number">3</span>
+        <enhanced:img class="steps-img" src={blackholeImage} alt="Step 3 for launch" />
+      </div>
+      
+      <div class="step-item">
+        <span class="step-number">4</span>
+        <enhanced:img class="steps-img" src={blackholeImage} alt="Step 4 for launch" />
+      </div>
+
+      <div class="step-item">
+        <span class="step-number">5</span>
+        <enhanced:img class="steps-img" src={blackholeImage} alt="Step 5 for launch" />
+      </div>
+      
+    </div>
+</section>
+
 <style>
   .paragraph-block {
     display: grid;
@@ -127,6 +160,96 @@
       color: var(--cleanroom-100);
     }
   }
+
+.steps-block {
+    display: grid;
+    grid-template-columns: subgrid;
+    gap: inherit;
+    row-gap: unset;
+    grid-column: 1 / -1; 
+    max-width: 100%;
+}
+
+.steps-block .text-content--title {
+    grid-column: 1 / -1; 
+    margin-bottom: 1.5rem;
+}
+
+.steps-content {
+    grid-column: 1 / -1;
+    display: flex;
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch; 
+    margin-inline: calc(-.1 * 1.5rem );
+    padding-inline: 1.5rem;
+    gap: 0;
+}
+
+.step-item {
+    position: relative;
+    flex: 0 0 80vw;
+    scroll-snap-align: start; 
+    margin-right: 1.5rem; 
+}
+
+.step-item:last-child {
+    margin-right: 0;
+}
+
+
+@media (min-width: 56.25rem) {
+    .steps-content {
+        display: grid; 
+        grid-template-columns: repeat(5, 1fr);
+        margin-inline: 0;
+        padding-inline: 0;
+        gap: 1.5rem; 
+        overflow-x: visible;
+        scroll-snap-type: none;
+    }
+    
+    .step-item {
+        flex: initial; 
+        margin-right: 0;
+    }
+}
+
+.step-item {
+    position: relative;
+}
+
+.steps-img {
+  width: 241px;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 8px;
+    z-index: 1; 
+}
+
+.step-number {
+    position: absolute;
+    background-color: var(--cleanroom-100); 
+    color: var(--space-100); 
+    font-family: var(--heading);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    font-weight: 700;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.step-item :global(enhanced\:img) {
+    width: 100%;
+}
+
+
+
 
   /* util classes */
   .orange {
