@@ -133,10 +133,10 @@ Afpsraken voor de volgende sprint:
 ## DoR & DoD
 
 ### DoR
-- [ ] Planning poker
+- [x] Planning poker
 - [ ] Design
-- [ ] Description
-- [ ] Eisen
+- [x] Description
+- [x] Eisen
 
 
 ### DoD
