@@ -241,6 +241,7 @@
     .text-content article {
       * + p {
         margin-top: 0.5rem;
+        line-height: 1.5;
         @media (min-width: 56.25rem) {
           padding-left: 1.5rem;
         }
@@ -402,6 +403,7 @@
     .text-content-right article {
       * + p {
         margin-top: 0.5rem;
+        line-height: 1.5;
         @media (min-width: 56.25rem) {
           padding-left: 1.5rem;
         }
@@ -463,6 +465,7 @@
     .text-content-3 article {
       * + p {
         margin-top: 0.5rem;
+        line-height: 1.5;
         @media (min-width: 56.25rem) {
           padding-left: 1.5rem;
         }
