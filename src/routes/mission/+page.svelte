@@ -519,4 +519,13 @@
   :global(enhanced\:img) {
     width: auto;
   }
+
+  h2, h3 {
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    h4 {
+      font-weight: 500;
+    }
 </style>
