@@ -227,7 +227,6 @@
     > *:not(enhanced\:img, img, picture) {
       grid-column: 1 / -1;
       max-width: 43.75rem;
-      padding-left: none;
 
       @media (min-width: 36.25rem) {
         grid-column: 1 / 4;
@@ -236,12 +235,6 @@
       @media (min-width: 56.25rem) {
         padding-left: 2.5rem;
         grid-column: 1 / 8;
-      }
-    }
-
-    .text-title {
-      * + * {
-        margin-top: 0.5rem;
       }
     }
 
@@ -394,7 +387,6 @@
     > *:not(enhanced\:img, img, picture) {
       grid-column: 1 / -1;
       max-width: 43.75rem;
-      padding-left: none;
 
       @media (min-width: 36.25rem) {
         grid-column: 1 / 4;
@@ -424,7 +416,6 @@
     :global(picture) {
       grid-column: 4 / -1;
       height: fit-content;
-
       display: none;
 
       @media (min-width: 36.25rem) {
@@ -457,7 +448,6 @@
     > *:not(enhanced\:img, img, picture) {
       grid-column: 1 / -1;
       max-width: 43.75rem;
-      padding-left: none;
 
       @media (min-width: 36.25rem) {
         grid-column: 1 / 4;
@@ -504,10 +494,6 @@
         object-fit: cover;
         max-height: 22.8125rem;
       }
-    }
-
-    .subtitle span {
-      color: var(--cleanroom-100);
     }
   }
 
