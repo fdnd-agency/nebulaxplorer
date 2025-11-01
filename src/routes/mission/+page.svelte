@@ -4,11 +4,16 @@
   import logo from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
 </script>
 
+
+<!-- HERO BLOCK -->
+
 <Hero
   pageTitle="Mission"
   sronIcon={logo}
   background={{ alt: "", file: blackholeImage }}
 />
+
+<!-- FIRST PARAGRAPH + IMG BLOCK -->
 
 <section class="paragraph-block">
   <div class="text-title">
@@ -59,6 +64,8 @@
   <enhanced:img src={blackholeImage} alt="Black Hole" />
 </section>
 
+
+<!-- STEPS BLOCK -->
 
 <section class="steps-block">
   <h3 class="subtitle text-content--title">
@@ -113,6 +120,8 @@
   </div>
 </section>
 
+<!-- SECOND IMG + PARAGRAPH BLOCK -->
+
 <section class="paragraph-block-right">
   <enhanced:img class="paragraph-img-left" src={blackholeImage} alt="Black Hole" />
   <section class="text-content-right">
@@ -155,6 +164,53 @@
       </p>
     </article>
   </section>
+</section>
+
+<!-- THIRD PARAGRAPH + IMG BLOCK -->
+
+<section class="paragraph-block-3">
+
+  <section class="text-content-3">
+    <h3 class="orange subtitle text-content--title">Mission brief</h3>
+
+    <article>
+      <h4 class="orange heading">Mission in development</h4>
+      <p>
+        NEBULA – Xplorer staat voor “Netherlands Educational Satellite for
+        Exploration of Binary-Linked Astrophysics – X-ray Observer”. Ongeveer
+        vierhonderd studenten helpen SRON, veertien Nederlandse
+        onderwijsinstellingen en vele industriële partners om deze ruimtemissie
+        te ontwikkelen van begin tot eind, onder leiding van wetenschappers en
+        ingenieurs.
+      </p>
+    </article>
+
+    <article>
+      <h4 class="orange heading">Questions surrounding X-ray binaries</h4>
+      <p>
+        Veel van de helderste objecten in het heelal zijn röntgendubbelsterren.
+        Dit zijn combinaties van een extreem compact object, zoals een zwart gat
+        of een neutronenster, en een begeleidende ster. Het compacte object
+        onttrekt in de loop van de tijd de materie van zijn begeleidende ster.
+        Hierbij komt veel energie vrij in een gebundelde straal—een jet.
+        Wetenschappers begrijpen dit proces is nog niet helemaal, en zeker de
+        aard van de stroom van materie vlak naast het zwarte gat blijft een
+        groot mysterie.
+      </p>
+    </article>
+    <article class="article">
+      <h4 class="orange heading">Questions surrounding X-ray binaries</h4>
+      <p>
+        NEBULA-Xplorer gaat onderzoeken hoe jets vormen en hoe deze
+        röntgendubbelsterren evolueren. Hiervoor observeert hij deze objecten
+        voor lange periodes om te zien hoe de emissie van deze bronnen varieert
+        op tijdschalen van milliseconden tot weken. Deze lange observatietijd
+         maakt het mogelijk om röntgenactiviteit te combineren met gegevens uit
+        andere golflengtes van andere telescopen.
+      </p>
+    </article>
+  </section>
+  <enhanced:img src={blackholeImage} alt="Black Hole" />
 </section>
 
 <style>
@@ -386,6 +442,84 @@
         max-height: 31.8rem;
       }
     }
+  }
+
+  /* THIRD PARAGRAPH + IMG BLOCK */
+
+  .paragraph-block-3 {
+    display: grid;
+    grid-template-columns: subgrid;
+    gap: inherit;
+    row-gap: unset;
+    margin-bottom: 1rem;
+    background-color: var(--white);
+
+    > *:not(enhanced\:img, img, picture) {
+      grid-column: 1 / -1;
+      max-width: 43.75rem;
+      padding-left: none;
+
+      @media (min-width: 36.25rem) {
+        grid-column: 1 / 4;
+        padding-right: 1.5rem;
+      }
+      @media (min-width: 56.25rem) {
+        padding-left: 2.5rem;
+        grid-column: 1 / 8;
+      }
+    }
+
+
+    .text-content-3 article {
+      * + p {
+        margin-top: 0.5rem;
+        @media (min-width: 56.25rem) {
+          padding-left: 1.5rem;
+        }
+      }
+    }
+
+    :global(.text-content),
+    :global(picture) {
+      margin-top: 3rem;
+    }
+
+    :global(picture) {
+      grid-column: 4 / -1;
+      height: fit-content;
+
+      display: none;
+
+      @media (min-width: 36.25rem) {
+        display: block;
+      }
+
+      @media (min-width: 56.25rem) {
+        grid-column: 8 / -1;
+      }
+
+      :global(enhanced\:img),
+      :global(img) {
+        width: 100%;
+        object-fit: cover;
+        max-height: 22.8125rem;
+      }
+    }
+
+    .subtitle span {
+      color: var(--cleanroom-100);
+    }
+  }
+
+  .text-content-3 article {
+    p {
+      color: var(--space-100);
+      font-weight: 500;
+    }
+  }
+
+  .article {
+    margin-bottom: 2rem;
   }
 
   /* util classes */
