@@ -61,7 +61,7 @@
 
 
 <section class="steps-block">
-    <h3 class="white subtitle text-content--title">The <span class="orange">steps to</span> take before <span class="orange">launch</span></h3>
+    <h3 class="subtitle text-content--title">The <span class="orange">steps to</span> take before <span class="orange">launch</span></h3>
     <div class="steps-content">
       
       <div class="step-item">
@@ -168,6 +168,12 @@
     row-gap: unset;
     grid-column: 1 / -1; 
     max-width: 100%;
+    background-color: var(--white);
+}
+
+.text-content--title {
+  color: var(--space-100);
+  margin-top: 2rem;
 }
 
 .steps-block .text-content--title {
@@ -224,7 +230,8 @@
     height: 420px;
     object-fit: cover;
     border-radius: 8px;
-    z-index: 1; 
+    z-index: 1;
+    margin-bottom: 3rem;
 }
 
 .step-number {
