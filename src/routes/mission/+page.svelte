@@ -274,10 +274,6 @@
         max-height: 22.8125rem;
       }
     }
-
-    .subtitle span {
-      color: var(--cleanroom-100);
-    }
   }
 
    /* STEPS BLOCK */
