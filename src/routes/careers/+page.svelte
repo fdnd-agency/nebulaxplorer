@@ -11,4 +11,4 @@
 <!-- Always provide alt and file path WITHIN background -->
 <Hero pageTitle="Careers" background={{ alt: "Two merging black holes", file: heroImg }} sronIcon={logo} />
 
-    <Jobs />
+<Jobs />

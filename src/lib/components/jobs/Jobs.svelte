@@ -61,6 +61,8 @@
 
 <style>
 
+  
+
 .grid-wrapper{
   display: inherit;
   grid-template-columns: inherit;
@@ -125,11 +127,5 @@
     object-position: center;
   }
   }
-
- 
-
- 
-
-
  
 </style>
