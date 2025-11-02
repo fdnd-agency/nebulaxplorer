@@ -528,4 +528,8 @@
     h4 {
       font-weight: 500;
     }
+
+    article + article {
+  margin-top: 2rem;
+}
 </style>
