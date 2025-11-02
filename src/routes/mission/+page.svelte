@@ -74,7 +74,7 @@
   </h3>
   <ul class="steps-content">
     <li class="step-item">
-      <span class="step-number">1</span>
+      <span class="step-number caption">1</span>
       <enhanced:img
         class="steps-img"
         src={blackholeImage}
@@ -83,7 +83,7 @@
     </li>
 
     <li class="step-item">
-      <span class="step-number">2</span>
+      <span class="step-number caption">2</span>
       <enhanced:img
         class="steps-img"
         src={blackholeImage}
@@ -92,7 +92,7 @@
     </li>
 
     <li class="step-item">
-      <span class="step-number">3</span>
+      <span class="step-number caption">3</span>
       <enhanced:img
         class="steps-img"
         src={blackholeImage}
@@ -101,7 +101,7 @@
     </li>
 
     <li class="step-item">
-      <span class="step-number">4</span>
+      <span class="step-number caption">4</span>
       <enhanced:img
         class="steps-img"
         src={blackholeImage}
@@ -110,7 +110,7 @@
     </li>
 
     <li class="step-item">
-      <span class="step-number">5</span>
+      <span class="step-number caption">5</span>
       <enhanced:img
         class="steps-img"
         src={blackholeImage}
@@ -362,8 +362,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.75rem;
-    font-weight: 700;
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 50%;
