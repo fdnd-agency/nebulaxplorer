@@ -23,8 +23,9 @@ You can check out our [Figma prototypes](https://www.figma.com/design/MDGKGDUMzx
 
 ## Datamodel
 
-<img width="800" height="497" alt="Screenshot 2025-09-24 152516" src="https://github.com/user-attachments/assets/843e59bc-a243-466b-bf5c-506df138b20d" />
-*Datamodel from mermaid*
+![Datamodel](./src/lib/assets/images/diagram-2025-11-02-190342.png)
+
+_Datamodel from mermaid_
 
 Our website includes a total of 7 main pages; Home, Mission, Scientific, News, Team, Careers and Partners. Four of these will eventually have their own detail pages, for example for articles, staff or partnership profiles, or job openings.
 
