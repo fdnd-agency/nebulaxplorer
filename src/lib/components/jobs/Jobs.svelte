@@ -49,9 +49,9 @@
       <span class="job-label location">location</span>
       <p>{job.location}</p>
     </div>
-   <!-- <div class="job-image">
+    <div class="job-image">
       <img src="/src/lib/assets/images/WerkenbijSRON.jpg" alt="{job.role} in {job.location}"> 
-    </div>  -->
+    </div>  
   </li>
   {/each}
 </ul>
@@ -60,8 +60,6 @@
 
 
 <style>
-
-  
 
   .grid-wrapper{
     display: grid;
@@ -84,13 +82,6 @@
     background: var(--space-100-low-opacity);
     border-top: 3px solid var(--white);
     border-bottom: 3px solid var(--white);
-
-  @media (min-width: 56.25rem) {
-      background: inherit;
-      transform: translateX(0%);
-      position: initial;
-      width: initial;
-    }
   }
   .job-info{
      padding: 2rem;
@@ -140,7 +131,7 @@
   }
 
   
-/* .grid-wrapper{
+.grid-wrapper{
   display: inherit;
   grid-template-columns: inherit;
 
