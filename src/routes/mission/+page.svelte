@@ -72,52 +72,52 @@
     The <span class="orange">steps to</span> take before
     <span class="orange">launch</span>
   </h3>
-  <div class="steps-content">
-    <div class="step-item">
+  <ul class="steps-content">
+    <li class="step-item">
       <span class="step-number">1</span>
       <enhanced:img
         class="steps-img"
         src={blackholeImage}
         alt="Step 1 for launch"
       />
-    </div>
+    </li>
 
-    <div class="step-item">
+    <li class="step-item">
       <span class="step-number">2</span>
       <enhanced:img
         class="steps-img"
         src={blackholeImage}
         alt="Step 2 for launch"
       />
-    </div>
+    </li>
 
-    <div class="step-item">
+    <li class="step-item">
       <span class="step-number">3</span>
       <enhanced:img
         class="steps-img"
         src={blackholeImage}
         alt="Step 3 for launch"
       />
-    </div>
+    </li>
 
-    <div class="step-item">
+    <li class="step-item">
       <span class="step-number">4</span>
       <enhanced:img
         class="steps-img"
         src={blackholeImage}
         alt="Step 4 for launch"
       />
-    </div>
+    </li>
 
-    <div class="step-item">
+    <li class="step-item">
       <span class="step-number">5</span>
       <enhanced:img
         class="steps-img"
         src={blackholeImage}
         alt="Step 5 for launch"
       />
-    </div>
-  </div>
+    </li>
+  </ul>
 </section>
 
 <!-- SECOND IMG + PARAGRAPH BLOCK -->
