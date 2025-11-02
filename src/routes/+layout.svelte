@@ -52,7 +52,7 @@
     <ul>
       <!-- Include this button separately as this is our close button -->
       <li>
-        <a href="#" class="menu-button">
+        <a href="/" class="menu-button">
           menu
           <span class="lines"></span>
         </a>
