@@ -346,10 +346,10 @@
   }
 
   .steps-img {
-    width: 241px;
-    height: 420px;
+    width: 15.063rem;
+    height: 26.25rem;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: .5rem;
     z-index: 1;
     margin-bottom: 3rem;
   }
@@ -368,7 +368,7 @@
     height: 3.5rem;
     border-radius: 50%;
     z-index: 5;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 .25rem .375rem rgba(0, 0, 0, 0.3);
   }
 
   .step-item :global(enhanced\:img) {
