@@ -1,48 +1,58 @@
-# Description of the project
-A web-based interface for the Nebula Xplorer project at SRON, built with Svelte. Designed to explore, visualize, and interact with nebular data in an intuitive way. The project is about building a website for a new project within SRON that informs stakeholders about the project and invites them to work on the project or invest in the project.
+# NEBULA Xplorer - a project by SRON
 
+The NEBULA Xplorer website was given to us as a project from SRON, the Space Research Organisation of the Netherlands. Its primary purpose is being a deep source of information on everything to do with the NEBULA Xplorer, a sattelite designed to research X-ray binary black holes and their relationships with companion stars over long periods of time. The project as a whole is a combined effort of over 400 students from within the Netherlands.
 
-# Installation information
+**Live link:**
 
-## sv
+## Design
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Our designs are all based on the [Design Challenge](https://github.com/fdnd-agency/nebulaxplorer/wiki/Design-Challenge) from FDND Agency.
 
-### Creating a project
+You can check out our [Figma prototypes](https://www.figma.com/design/MDGKGDUMzxOx2Ozwp3Mtku/S14--Nebula-explorer?node-id=644-210&p=f&t=OmPcuvANXQAtuUJ0-0) for more designs.
 
-If you're seeing this, you've probably already done this step. Congrats!
+<img width="856" height="817" alt="Screenshot 2025-10-30 185200" src="https://github.com/user-attachments/assets/a8cb5109-3eda-48ea-828c-7f2b6a3b325b" />
+<img width="853" height="646" alt="Screenshot 2025-10-30 185222" src="https://github.com/user-attachments/assets/acf66853-d388-4b9d-bd3a-655906c3d274" />
+<img width="1245" height="827" alt="Screenshot 2025-10-30 183241" src="https://github.com/user-attachments/assets/deb1d575-eb93-4c95-9f4b-300bbafb59f8" />
 
-```sh
-# create a new project in the current directory
-npx sv create
+**Our goals for this project are to build a multi-page website that:**
 
-# create a new project in my-app
-npx sv create my-app
-```
+- helps scientists visualize and interpret complex astronomical data from this mission
+- assists engineers with explanations about the technologies of the instrument and satellite
+- gives educational and industrial partners the opportunity to showcase themselves
+- keeps students connected with each other
 
-### Developing
+## Datamodel
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+![Datamodel](./src/lib/assets/images/diagram-2025-11-02-190342.png)
 
-```sh
-npm run dev
+_Datamodel from mermaid_
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+Our website includes a total of 7 main pages; Home, Mission, Scientific, News, Team, Careers and Partners. Four of these will eventually have their own detail pages, for example for articles, staff or partnership profiles, or job openings.
 
-### Building
+## Installation
 
-To create a production version of your app:
+This project has been developed in SvelteKit, content is retrieved from Directus CMS, and version control takes place here on GitHub.
 
-```sh
-npm run build
-```
+Follow the steps below to use this repository for yourself!
 
-You can preview the production build with `npm run preview`.
+**1. Clone the repository:**
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+`git clone https://github.com/fdnd-agency/nebulaxplorer.git`
 
+**2. Open the repository**
 
-# Explaining design choices
-The design choices made by the team are based on the briefing we had with Martin Grim of SRON. Here we discussed the necessities of the project and what it should look like. The new website should have the same look and feel of the current website and with the same style.
+in GitHub Desktop, then navigate to _'Open the repository in your external editor'_
+
+**3. In the terminal**
+
+Type the command:
+`npm install`
+
+Then:
+`npm run dev`
+
+All done!
+
+## Licenses
+
+This project is licensed under the terms of the MIT license.
