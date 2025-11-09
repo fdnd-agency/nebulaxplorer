@@ -1,0 +1,5 @@
+title: "Nebula Xplorer"
+status: "in progress"
+main_link: "https://nebulaxplorer.agency.fdnd.nl/"
+dev_link: "https://nebulaxplorer.dev.fdnd.nl/"
+tech_stack: ["SvelteKit", "Directus"]
