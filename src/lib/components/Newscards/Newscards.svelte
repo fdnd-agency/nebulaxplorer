@@ -90,6 +90,7 @@
     </div>
   </li>
   {/each}
+
 </ul>
 </section>
 
@@ -103,7 +104,7 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap: 2rem;
-    padding-bottom: 2rem;
+    padding-bottom: 6rem;
     list-style: none;
 }
 
@@ -113,6 +114,7 @@
     border-radius: 0.2rem;
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding-bottom: 3rem;
 
     &:hover {
       transform: translateY(-0.5rem);

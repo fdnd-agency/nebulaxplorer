@@ -2,6 +2,7 @@
   import blackholeImage from "$lib/assets/images/blue-background.png?enhanced";
   import Hero from "$lib/components/Hero/Hero.svelte";
   import logo from "$lib/assets/logos/SRON_Academy_OnWhite.svg";
+  import Breadcrumb from "$lib/components/Breadcrumb/Breadcrumb.svelte";
   import Newscards from "$lib/components/Newscards/Newscards.svelte";
 </script>
  
@@ -12,16 +13,17 @@
   background={{ alt: "", file: blackholeImage }}
 />
  
+<Breadcrumb 
+  /> 
+
 <section class="paragraph-block">
   <div class="text-title">
     <h2 class="subtitle">Our latest <span class="orange">developments</span></h2>
     <p class="heading">Currently <span class="orange">12</span> available</p>
   </div>
- 
-  <section class="news-snippets">
   </section>
-</section>
-   <Newscards 
+   
+<Newscards 
   /> 
 
 <style>
