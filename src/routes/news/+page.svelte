@@ -93,14 +93,14 @@
     }
 
     .subtitle span {
-      color: var(--cleanroom-100);
+      color: var(--cleanroom-140);
     }
   }
 
  
   /* util classes */
   .orange {
-    color: var(--cleanroom-100);
+    color: var(--cleanroom-140);
   }
  
   :global(enhanced\:img) {
