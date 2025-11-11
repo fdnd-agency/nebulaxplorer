@@ -87,9 +87,14 @@
         max-height: 22.8125rem;
       }
     }
+
+    .heading{
+      padding-bottom: 3rem;
+    }
  
     .subtitle,.heading{
-      color: var(--ultra-100);
+      color: var(--space-140);
+      font-weight: 400;
     }
 
     .subtitle span {
@@ -106,4 +111,5 @@
   :global(enhanced\:img) {
     width: auto;
   }
+
 </style>

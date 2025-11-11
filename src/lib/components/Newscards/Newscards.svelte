@@ -103,7 +103,7 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap: 2rem;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
     list-style: none;
 }
 
@@ -121,8 +121,8 @@
 }
 
 .news-info{
-    padding: 1.5rem 2rem 1rem 2rem;
-    gap: 0.5rem;
+    padding: 0.75rem 0.75rem 0rem 0.75rem;
+
    h3{
     font-family: var(--heading);
     font-weight: 400;
@@ -144,16 +144,16 @@
     font-weight: 900;
     font-size: 1rem;
     line-height: 1.4rem;
-    color: var(--ultra-140);
+    color: var(--space-140);
  
   }
 
 }
   
    .news-image {
-    border-top: 0.3rem solid var(--ultra-140);
+    border-top: 0.3rem solid var(--space-140);
     width: 100%;
-    height: 28.125rem;
+    height: 16.5rem;
     overflow: hidden;
     margin-top: auto;
 
