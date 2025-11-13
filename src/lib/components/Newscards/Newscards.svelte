@@ -125,7 +125,10 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap: 2rem;
+    row-gap: 4rem;
     padding-bottom: 6rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
     list-style: none;
 }
 }
