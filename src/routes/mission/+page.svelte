@@ -427,9 +427,15 @@
 
       :global(enhanced\:img),
       :global(img) {
+        display: none;
+
+        @media (min-width: 36.25rem) {
+        display: block;
         width: 100%;
         object-fit: cover;
-        max-height: 31.8rem;
+        max-height: 22.8125rem;
+        }
+
       }
     }
   }
