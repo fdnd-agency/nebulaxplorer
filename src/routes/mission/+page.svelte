@@ -302,6 +302,7 @@
     grid-column: 1 / -1;
     display: flex;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     margin-inline: calc(-0.1 * 1.5rem);
