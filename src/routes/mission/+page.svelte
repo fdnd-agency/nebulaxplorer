@@ -74,48 +74,78 @@
   </h3>
   <ul class="steps-content">
     <li class="step-item">
-      <span class="step-number caption">1</span>
-      <enhanced:img
-        class="steps-img"
-        src={blackholeImage}
-        alt="Step 1 for launch"
-      />
+      <input type="checkbox" id="step-1" class="step-checkbox" />
+      <label for="step-1" class="step-label">
+        <span class="step-number caption">1</span>
+        <enhanced:img
+          class="steps-img"
+          src={blackholeImage}
+          alt="Step 1 for launch"
+        />
+        <p class="steps-img-overlay">
+          The first step to take before Nebula launches.
+        </p>
+      </label>
     </li>
 
     <li class="step-item">
-      <span class="step-number caption">2</span>
-      <enhanced:img
-        class="steps-img"
-        src={blackholeImage}
-        alt="Step 2 for launch"
-      />
+      <input type="checkbox" id="step-2" class="step-checkbox" />
+      <label for="step-2" class="step-label">
+        <span class="step-number caption">2</span>
+        <enhanced:img
+          class="steps-img"
+          src={blackholeImage}
+          alt="Step 2 for launch"
+        />
+        <p class="steps-img-overlay">
+          The second step to take before Nebula launches.
+        </p>
+      </label>
     </li>
 
     <li class="step-item">
-      <span class="step-number caption">3</span>
-      <enhanced:img
-        class="steps-img"
-        src={blackholeImage}
-        alt="Step 3 for launch"
-      />
+      <input type="checkbox" id="step-3" class="step-checkbox" />
+      <label for="step-3" class="step-label">
+        <span class="step-number caption">3</span>
+        <enhanced:img
+          class="steps-img"
+          src={blackholeImage}
+          alt="Step 3 for launch"
+        />
+        <p class="steps-img-overlay">
+          The third step to take before Nebula launches.
+        </p>
+      </label>
     </li>
 
     <li class="step-item">
-      <span class="step-number caption">4</span>
-      <enhanced:img
-        class="steps-img"
-        src={blackholeImage}
-        alt="Step 4 for launch"
-      />
+      <input type="checkbox" id="step-4" class="step-checkbox" />
+      <label for="step-4" class="step-label">
+        <span class="step-number caption">4</span>
+        <enhanced:img
+          class="steps-img"
+          src={blackholeImage}
+          alt="Step 4 for launch"
+        />
+        <p class="steps-img-overlay">
+          The fourth step to take before Nebula launches.
+        </p>
+      </label>
     </li>
 
     <li class="step-item">
-      <span class="step-number caption">5</span>
-      <enhanced:img
-        class="steps-img"
-        src={blackholeImage}
-        alt="Step 5 for launch"
-      />
+      <input type="checkbox" id="step-5" class="step-checkbox" />
+      <label for="step-5" class="step-label">
+        <span class="step-number caption">5</span>
+        <enhanced:img
+          class="steps-img"
+          src={blackholeImage}
+          alt="Step 5 for launch"
+        />
+        <p class="steps-img-overlay">
+          The fifth step to take before Nebula launches.
+        </p>
+      </label>
     </li>
   </ul>
 </section>
@@ -123,7 +153,11 @@
 <!-- SECOND IMG + PARAGRAPH BLOCK -->
 
 <section class="paragraph-block-right">
-  <enhanced:img class="paragraph-img-left" src={blackholeImage} alt="Black Hole" />
+  <enhanced:img
+    class="paragraph-img-left"
+    src={blackholeImage}
+    alt="Black Hole"
+  />
   <section class="text-content-right">
     <h3 class="orange subtitle text-content--title">Mission brief</h3>
 
@@ -276,7 +310,7 @@
     }
   }
 
-   /* STEPS BLOCK */
+  /* STEPS BLOCK */
 
   .steps-block {
     display: grid;
@@ -316,6 +350,16 @@
     margin-right: 1.5rem;
   }
 
+  .step-checkbox {
+    display: none;
+  }
+
+  .step-label {
+    display: block;
+    position: relative;
+    cursor: pointer;
+  }
+
   .step-item:last-child {
     margin-right: 0;
   }
@@ -337,21 +381,58 @@
     }
   }
 
-  .step-item {
-    position: relative;
-  }
-
   .steps-img {
+    display: block;
     width: 15.063rem;
     height: 20.5rem;
     object-fit: cover;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     z-index: 1;
     margin-bottom: 3rem;
 
     @media (min-width: 56.25rem) {
-    height: 26.25rem;
+      height: 26.25rem;
+    }
   }
+
+  .steps-img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15.063rem;
+    height: 20.5rem;
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    transition: 0.5s ease;
+    opacity: 0;
+    z-index: 9;
+    pointer-events: none;
+  }
+
+  /* Mobile: use checkbox checked state */
+  .step-checkbox:checked ~ .step-label .steps-img-overlay {
+    opacity: 1;
+  }
+
+  /* Desktop: use hover only */
+  @media (min-width: 56.25rem) {
+    .step-checkbox:checked ~ .step-label .steps-img-overlay {
+      opacity: 0;
+    }
+
+    .step-label:hover .steps-img-overlay {
+      opacity: 1;
+    }
+
+    .steps-img-overlay {
+      height: 26.25rem;
+    }
   }
 
   .step-number {
@@ -367,6 +448,7 @@
     border-radius: 50%;
     z-index: 5;
     box-shadow: 0 .25rem .375rem rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.3);
   }
 
   .step-item :global(enhanced\:img) {
@@ -374,7 +456,7 @@
   }
 
 
- /* SECOND PARAGRAPH BLOCK */
+  /* SECOND PARAGRAPH BLOCK */
 
   .paragraph-block-right {
     display: grid;
@@ -431,12 +513,11 @@
         display: none;
 
         @media (min-width: 36.25rem) {
-        display: block;
-        width: 100%;
-        object-fit: cover;
-        max-height: 22.8125rem;
+          display: block;
+          width: 100%;
+          object-fit: cover;
+          max-height: 22.8125rem;
         }
-
       }
     }
   }
@@ -525,15 +606,15 @@
   }
 
   h2, h3 {
-      font-weight: 600;
-      line-height: 1.5;
-    }
+    font-weight: 600;
+    line-height: 1.5;
+  }
 
-    h4 {
-      font-weight: 500;
-    }
+  h4 {
+    font-weight: 500;
+  }
 
-    article + article {
-  margin-top: 2rem;
-}
+  article + article {
+    margin-top: 2rem;
+  }
 </style>
