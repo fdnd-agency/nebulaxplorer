@@ -6,7 +6,6 @@
   export { hero }
 </script>
 
-
 <!-- HERO BLOCK -->
 {#snippet hero()}
 <Hero
@@ -29,8 +28,8 @@
     <article>
       <h4 class="orange heading">Mission in development</h4>
       <p>
-        NEBULA – Xplorer staat voor “Netherlands Educational Satellite for
-        Exploration of Binary-Linked Astrophysics – X-ray Observer”. Ongeveer
+        NEBULA – Xplorer staat voor "Netherlands Educational Satellite for
+        Exploration of Binary-Linked Astrophysics – X-ray Observer". Ongeveer
         vierhonderd studenten helpen SRON, veertien Nederlandse
         onderwijsinstellingen en vele industriële partners om deze ruimtemissie
         te ontwikkelen van begin tot eind, onder leiding van wetenschappers en
@@ -58,14 +57,13 @@
         röntgendubbelsterren evolueren. Hiervoor observeert hij deze objecten
         voor lange periodes om te zien hoe de emissie van deze bronnen varieert
         op tijdschalen van milliseconden tot weken. Deze lange observatietijd
-         maakt het mogelijk om röntgenactiviteit te combineren met gegevens uit
+        maakt het mogelijk om röntgenactiviteit te combineren met gegevens uit
         andere golflengtes van andere telescopen.
       </p>
     </article>
   </section>
   <enhanced:img src={blackholeImage} alt="Black Hole" />
 </section>
-
 
 <!-- STEPS BLOCK -->
 
@@ -166,8 +164,8 @@
     <article>
       <h4 class="orange heading">Mission in development</h4>
       <p>
-        NEBULA – Xplorer staat voor “Netherlands Educational Satellite for
-        Exploration of Binary-Linked Astrophysics – X-ray Observer”. Ongeveer
+        NEBULA – Xplorer staat voor "Netherlands Educational Satellite for
+        Exploration of Binary-Linked Astrophysics – X-ray Observer". Ongeveer
         vierhonderd studenten helpen SRON, veertien Nederlandse
         onderwijsinstellingen en vele industriële partners om deze ruimtemissie
         te ontwikkelen van begin tot eind, onder leiding van wetenschappers en
@@ -195,7 +193,7 @@
         röntgendubbelsterren evolueren. Hiervoor observeert hij deze objecten
         voor lange periodes om te zien hoe de emissie van deze bronnen varieert
         op tijdschalen van milliseconden tot weken. Deze lange observatietijd
-         maakt het mogelijk om röntgenactiviteit te combineren met gegevens uit
+        maakt het mogelijk om röntgenactiviteit te combineren met gegevens uit
         andere golflengtes van andere telescopen.
       </p>
     </article>
@@ -205,15 +203,14 @@
 <!-- THIRD PARAGRAPH + IMG BLOCK -->
 
 <section class="paragraph-block-3">
-
   <section class="text-content-3">
     <h3 class="orange subtitle text-content--title">Mission brief</h3>
 
     <article>
       <h4 class="orange heading">Mission in development</h4>
       <p>
-        NEBULA – Xplorer staat voor “Netherlands Educational Satellite for
-        Exploration of Binary-Linked Astrophysics – X-ray Observer”. Ongeveer
+        NEBULA – Xplorer staat voor "Netherlands Educational Satellite for
+        Exploration of Binary-Linked Astrophysics – X-ray Observer". Ongeveer
         vierhonderd studenten helpen SRON, veertien Nederlandse
         onderwijsinstellingen en vele industriële partners om deze ruimtemissie
         te ontwikkelen van begin tot eind, onder leiding van wetenschappers en
@@ -241,7 +238,7 @@
         röntgendubbelsterren evolueren. Hiervoor observeert hij deze objecten
         voor lange periodes om te zien hoe de emissie van deze bronnen varieert
         op tijdschalen van milliseconden tot weken. Deze lange observatietijd
-         maakt het mogelijk om röntgenactiviteit te combineren met gegevens uit
+        maakt het mogelijk om röntgenactiviteit te combineren met gegevens uit
         andere golflengtes van andere telescopen.
       </p>
     </article>
@@ -449,7 +446,6 @@
     height: 3.5rem;
     border-radius: 50%;
     z-index: 5;
-    box-shadow: 0 .25rem .375rem rgba(0, 0, 0, 0.3);
     box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.3);
   }
 
