@@ -314,7 +314,6 @@
 
   .step-item {
     position: relative;
-    flex: 0 0 80vw;
     scroll-snap-align: start;
     margin-right: 1.5rem;
   }
@@ -346,11 +345,15 @@
 
   .steps-img {
     width: 15.063rem;
-    height: 26.25rem;
+    height: 20.5rem;
     object-fit: cover;
     border-radius: .5rem;
     z-index: 1;
     margin-bottom: 3rem;
+
+    @media (min-width: 56.25rem) {
+    height: 26.25rem;
+  }
   }
 
   .step-number {
@@ -369,7 +372,7 @@
   }
 
   .step-item :global(enhanced\:img) {
-    width: 100%;
+    width: 15.063rem;
   }
 
 
