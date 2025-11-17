@@ -1,5 +1,5 @@
 <script>
-  const newscards = [
+  const NewsCards = [
     {
       id: 1,
       title: "XRISM ziet verrassend trage en dichte wind van neutronenster",
@@ -77,7 +77,7 @@
 
 <section class="grid-wrapper">
 <ul class="news-grid">
-  {#each newscards as newscard}
+  {#each NewsCards as newscard}
   <li class="news-card">
     <div class="news-image">
       <img src="/src/lib/assets/images/placeholder2.png" alt="{newscard.title}"> 

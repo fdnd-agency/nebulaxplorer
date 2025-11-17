@@ -3,7 +3,7 @@
   import Hero from "$lib/components/Hero/Hero.svelte";
   import logo from "$lib/assets/logos/SRON_Academy_OnWhite.svg";
   import Breadcrumb from "$lib/components/Breadcrumb/Breadcrumb.svelte";
-  import Newscards from "$lib/components/Newscards/Newscards.svelte";
+  import NewsCards from "$lib/components/NewsCards/NewsCards.svelte";
 </script>
  
 
@@ -23,7 +23,7 @@
   </div>
   </section>
    
-<Newscards 
+<NewsCards 
   /> 
 
 <style>
