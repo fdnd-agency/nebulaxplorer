@@ -40,7 +40,7 @@
 </script>
 
 <article class="jobs-list-wrapper">
-<ul class="jobs-grid">
+<ul class="jobs-list-grid">
   {#each jobs as job}
   <li class="job-card">
     <div class="job-info">
@@ -50,7 +50,7 @@
       <p>{job.location}</p>
     </div>
     <div class="job-image">
-      <img src="/src/lib/assets/images/WerkenbijSRON.jpg" alt="{job.role} in {job.location}"> 
+      <img src="/src/lib/assets/images/WerkenbijSRON.jpg" alt=""> 
     </div>  
   </li>
   {/each}
@@ -62,18 +62,17 @@
 <style>
 
 .jobs-list-wrapper{
-  padding: 5rem;
-  
-  .jobs-grid{
-    list-style: none;
-    display: grid;
-    grid-template-columns: subgrid;
-    grid-column: 4 / -1;
-    gap: 1rem;
-  }
+  padding: 2rem;
 }
+
+.jobs-list-grid{
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  }
+
 .job-card {
-  grid-column: span 3;
   background: var(--space-100-low-opacity);
   border-top: 3px solid var(--white);
   border-bottom: 3px solid var(--white);
@@ -82,7 +81,6 @@
  .job-info {
   padding: 2rem;
 
-  gap: 0.5rem;
   h3 {
     font-family: var(--heading);
     font-weight: 400;
@@ -99,8 +97,8 @@
 }
 
 .job-image {
-  width: 100%;
-  height: 28.125rem;
+  width: auto;
+  height: 28rem;
   overflow: hidden;
   margin-top: auto;
   margin-bottom: auto;
@@ -116,10 +114,36 @@
   font-family: var(--subtext);
   font-weight: 700;
   font-size: 1rem;
-  line-height: 1.4rem;
+  line-height: 2rem;
   color: var(--cleanroom-100);
 }
 .job-label.location {
   margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .jobs-list-wrapper {
+    padding: 5rem;
+  }
+
+  .jobs-list-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1200px ){
+
+  .jobs-list-wrapper{
+    padding: 10rem;
+  }
+
+   .jobs-list-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
 }
 </style>
