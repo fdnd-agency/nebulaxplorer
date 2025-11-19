@@ -61,6 +61,65 @@
 
 <style>
 
-
+.jobs-list-wrapper{
+  padding: 5rem;
+  
+  .jobs-grid{
+    list-style: none;
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 4 / -1;
+    gap: 1rem;
+  }
+}
+.job-card {
+  grid-column: span 3;
+  background: var(--space-100-low-opacity);
+  border-top: 3px solid var(--white);
+  border-bottom: 3px solid var(--white);
+}
  
+ .job-info {
+  padding: 2rem;
+
+  gap: 0.5rem;
+  h3 {
+    font-family: var(--heading);
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 1.75rem;
+    color: var(--white);
+  }
+  p {
+    font-family: var(--heading);
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: var(--white);
+  }
+}
+
+.job-image {
+  width: 100%;
+  height: 28.125rem;
+  overflow: hidden;
+  margin-top: auto;
+  margin-bottom: auto;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+  }
+}
+
+.job-label {
+  font-family: var(--subtext);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.4rem;
+  color: var(--cleanroom-100);
+}
+.job-label.location {
+  margin-top: 2rem;
+}
 </style>
