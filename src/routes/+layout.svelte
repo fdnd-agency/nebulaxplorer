@@ -5,8 +5,6 @@
   import "$lib/assets/styles/general.css";
   import "$lib/assets/styles/layout.css";
 
-  import { hero } from "./mission/+page.svelte";
-
   // Are we on a slug page?
   // ex; on a detail page of the news page
   const isParentActive = (path) => {
@@ -30,7 +28,6 @@
   ];
 
   let { children } = $props();
-  console.log(hero);
   
 </script>
 
@@ -54,7 +51,7 @@
     <ul>
       <!-- Include this button separately as this is our close button -->
       <li>
-        <a href="/" class="menu-button">
+        <a href="#" class="menu-button">
           menu
           <span class="lines"></span>
         </a>
