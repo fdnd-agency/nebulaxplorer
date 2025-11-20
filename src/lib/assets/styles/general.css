@@ -12,17 +12,17 @@
 /* Font faces */
 @font-face {
   font-family: spaceGrotesk;
-  src: url("./fonts/space-grotesk-variable.ttf");
+  src: url("/fonts/space-grotesk-variable.ttf");
 }
 
 @font-face {
   font-family: spaceMonoRegular;
-  src: url("./fonts/space-mono-regular.ttf");
+  src: url("/fonts/space-mono-regular.ttf");
 }
 
 @font-face {
   font-family: spaceMonoBold;
-  src: url("./fonts/space-mono-bold.ttf");
+  src: url("/fonts/space-mono-bold.ttf");
 }
 
 @font-face {
@@ -30,7 +30,7 @@
   font-style: normal;
   font-weight: 100 900;
   src: local("Roboto"), local("Roboto Regular"),
-    url("./fonts/roboto-variable.ttf") format("truetype");
+    url("/fonts/roboto-variable.ttf") format("truetype");
 }
 
 body {
