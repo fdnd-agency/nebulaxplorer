@@ -6,7 +6,7 @@
   import "$lib/assets/styles/general.css";
   import "$lib/assets/styles/layout.css";
 
-  // Are we on a slug page?
+   // Are we on a slug page?
   // ex; on a detail page of the news page
   const isParentActive = (path) => {
     return $page.url.pathname.startsWith(`${path}/`);
@@ -49,7 +49,7 @@
   </a>
   <nav id="menu">
     <ul>
-      <!-- Include this button separately as this is our close button -->
+<!-- Include this button separately as this is our close button -->
       <li>
         <a href="/" class="menu-button">
           menu
