@@ -98,7 +98,7 @@
 
 .job-image {
   width: auto;
-  height: 28rem;
+  height:  28.125rem;
   overflow: hidden;
   margin-top: auto;
   margin-bottom: auto;
