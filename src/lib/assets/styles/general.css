@@ -3,7 +3,6 @@
 *::before,
 *::after {
   margin: 0;
-  padding: 0;
   border: unset;
   box-sizing: border-box;
   line-height: 1;
@@ -102,8 +101,9 @@ textarea {
   text-decoration: none;
 }
 
+
 *::selection {
-  background: var(--cleanroom-60);
+  background: var(--cleanroom-60);;
   color: var(--space-100);
 }
 

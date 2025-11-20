@@ -1,2 +1,6 @@
-<h1>Home Page</h1>
-<p>coming soon</p>
+<script>
+  import NewsComponent from "$lib/components/News-Component/News-Component.svelte";
+</script>
+
+<NewsComponent 
+  /> 
