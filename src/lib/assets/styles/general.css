@@ -4,7 +4,7 @@
 *::after {
   margin: 0;
   border: unset;
-
+  box-sizing: border-box;
   line-height: 1;
 }
 
@@ -83,7 +83,7 @@ body {
   --subtext: spaceMonoBold;
 
   /* Styling */
-  background: var(--ultra-10);
+  background: var(--space-100);
   color: var(--white);
   font-family: var(--paragraph);
 }
@@ -103,7 +103,7 @@ textarea {
 
 
 *::selection {
-  background: var(--ultra-10);;
+  background: var(--cleanroom-60);;
   color: var(--space-100);
 }
 
