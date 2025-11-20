@@ -43,6 +43,15 @@
       color: var(--cleanroom-100);
     }
 
+    /* Truncate when too long, helps with REALLY large titles */
+    span {
+      flex-shrink: 1;
+      min-width: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
     a:hover {
       text-decoration: underline;
       text-underline-offset: 0.125rem;
