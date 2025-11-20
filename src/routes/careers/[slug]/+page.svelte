@@ -1,6 +1,10 @@
 <script>
-    import Breadcrumb from "$lib/components/Breadcrumb/Breadcrumb.svelte";
+  import Breadcrumb from "$lib/components/Breadcrumb/Breadcrumb.svelte";
 </script>
+
 <h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
-<Breadcrumb/>
+<p>
+  Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the
+  documentation
+</p>
+<Breadcrumb />
