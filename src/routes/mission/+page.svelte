@@ -1,18 +1,20 @@
-<script>
+<script module>
   import blackholeImage from "$lib/assets/blackhole.jpg?enhanced";
   import Hero from "$lib/components/Hero/Hero.svelte";
   import logo from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
+
+  export { hero }
 </script>
 
 
 <!-- HERO BLOCK -->
-
+{#snippet hero()}
 <Hero
   pageTitle="Mission"
   sronIcon={logo}
   background={{ alt: "", file: blackholeImage }}
 />
-
+{/snippet}
 <!-- FIRST PARAGRAPH + IMG BLOCK -->
 
 <section class="paragraph-block">

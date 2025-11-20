@@ -1,13 +1,13 @@
 <script>
-  export const prerender = true;
-
   import { page } from "$app/stores";
   import favicon from "$lib/assets/icons/favicon.svg";
   import PageArrow from "$lib/assets/icons/PageArrow.svelte";
   import "$lib/assets/styles/general.css";
   import "$lib/assets/styles/layout.css";
 
-   // Are we on a slug page?
+  import { hero } from "./mission/+page.svelte";
+
+  // Are we on a slug page?
   // ex; on a detail page of the news page
   const isParentActive = (path) => {
     return $page.url.pathname.startsWith(`${path}/`);
@@ -30,6 +30,8 @@
   ];
 
   let { children } = $props();
+  console.log(hero);
+  
 </script>
 
 <svelte:head>
@@ -50,7 +52,7 @@
   </a>
   <nav id="menu">
     <ul>
-<!-- Include this button separately as this is our close button -->
+      <!-- Include this button separately as this is our close button -->
       <li>
         <a href="/" class="menu-button">
           menu
@@ -80,6 +82,7 @@
     </ul>
   </nav>
 </header>
+
 <main>
   {@render children?.()}
 </main>
