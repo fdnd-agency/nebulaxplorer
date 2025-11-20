@@ -134,8 +134,7 @@
 }
 
 @media (min-width: 1200px ){
-
-  .jobs-list-wrapper{
+.jobs-list-wrapper{
     padding: 10rem;
   }
 
