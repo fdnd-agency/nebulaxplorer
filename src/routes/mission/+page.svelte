@@ -81,7 +81,10 @@
           alt="Step 1 for launch"
         />
         <p class="steps-img-overlay">
-          The first step to take before Nebula launches.
+          Instrument Fabrication and Assembly<br /><br />
+          Complete the final construction and assembly of all satellite subsystems,
+          including the compact X-ray telescope. This involves integrating the specially
+          designed cylindrical mirrors.
         </p>
       </label>
     </li>
@@ -96,7 +99,9 @@
           alt="Step 2 for launch"
         />
         <p class="steps-img-overlay">
-          The second step to take before Nebula launches.
+          Comprehensive Subsystem and Component Testing<br /><br />
+          Conduct rigorous functional and performance testing on all individual components.
+          This specifically includes verifying the performance of the camera's electronics.
         </p>
       </label>
     </li>
@@ -111,7 +116,10 @@
           alt="Step 3 for launch"
         />
         <p class="steps-img-overlay">
-          The third step to take before Nebula launches.
+          Structural and Thermal Model Verification<br /><br />
+          Subject the satellite model (or flight hardware) to intense Structural-Thermal-Vacuum
+          (STV) testing. This step confirms that the final design can withstand the
+          immense vibrations and acoustic pressures of launch.
         </p>
       </label>
     </li>
@@ -126,7 +134,10 @@
           alt="Step 4 for launch"
         />
         <p class="steps-img-overlay">
-          The fourth step to take before Nebula launches.
+          Finalize Mission Operations and Ground Segment Readiness<br /><br />
+          Establish and validate the mission's long-term observation plan, focusing
+          on X-ray binaries for extended periods (milliseconds to weeks). This includes
+          preparing the ground station for telemetry.
         </p>
       </label>
     </li>
@@ -141,7 +152,10 @@
           alt="Step 5 for launch"
         />
         <p class="steps-img-overlay">
-          The fifth step to take before Nebula launches.
+          Satellite Integration with Launch Platform<br /><br />
+          Based on the earlier research into alternative launch platforms, finalize
+          the selection and begin the physical integration of the NEBULA–Xplorer
+          spacecraft with the chosen launch vehicle/dispenser system. 
         </p>
       </label>
     </li>
@@ -245,7 +259,6 @@
 </section>
 
 <style>
-
   /* FIRST PARAGRAPH BLOCK */
 
   .paragraph-block {
@@ -272,7 +285,7 @@
     .text-content article {
       * + p {
         margin-top: 0.5rem;
-        line-height: 1.5;
+        line-height: 1.7;
         @media (min-width: 56.25rem) {
           padding-left: 1.5rem;
         }
@@ -317,6 +330,7 @@
     grid-column: 1 / -1;
     max-width: 100%;
     background-color: var(--white);
+    padding-bottom: 2rem;
   }
 
   .text-content--title {
@@ -385,10 +399,11 @@
     object-fit: cover;
     border-radius: 0.5rem;
     z-index: 1;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 
     @media (min-width: 56.25rem) {
       height: 26.25rem;
+      margin-bottom: 1.5rem;
     }
   }
 
@@ -396,7 +411,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 15.063rem;
+    width: 100%;
     height: 20.5rem;
     background: rgba(0, 0, 0, 0.5); /* Black see-through */
     color: white;
@@ -448,9 +463,8 @@
   }
 
   .step-item :global(enhanced\:img) {
-    width: 15.063rem;
+    width: 22rem;
   }
-
 
   /* SECOND PARAGRAPH BLOCK */
 
@@ -542,7 +556,6 @@
       }
     }
 
-
     .text-content-3 article {
       * + p {
         margin-top: 0.5rem;
@@ -601,7 +614,8 @@
     width: auto;
   }
 
-  h2, h3 {
+  h2,
+  h3 {
     font-weight: 600;
     line-height: 1.5;
   }
