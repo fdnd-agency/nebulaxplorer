@@ -4,7 +4,6 @@
   import logo from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
 </script>
 
-
 <!-- HERO BLOCK -->
 
 <Hero
@@ -27,8 +26,8 @@
     <article>
       <h4 class="orange heading">Mission in development</h4>
       <p>
-        NEBULA – Xplorer staat voor “Netherlands Educational Satellite for
-        Exploration of Binary-Linked Astrophysics – X-ray Observer”. Ongeveer
+        NEBULA – Xplorer staat voor "Netherlands Educational Satellite for
+        Exploration of Binary-Linked Astrophysics – X-ray Observer". Ongeveer
         vierhonderd studenten helpen SRON, veertien Nederlandse
         onderwijsinstellingen en vele industriële partners om deze ruimtemissie
         te ontwikkelen van begin tot eind, onder leiding van wetenschappers en
@@ -56,14 +55,13 @@
         röntgendubbelsterren evolueren. Hiervoor observeert hij deze objecten
         voor lange periodes om te zien hoe de emissie van deze bronnen varieert
         op tijdschalen van milliseconden tot weken. Deze lange observatietijd
-         maakt het mogelijk om röntgenactiviteit te combineren met gegevens uit
+        maakt het mogelijk om röntgenactiviteit te combineren met gegevens uit
         andere golflengtes van andere telescopen.
       </p>
     </article>
   </section>
   <enhanced:img src={blackholeImage} alt="Black Hole" />
 </section>
-
 
 <!-- STEPS BLOCK -->
 
@@ -74,48 +72,92 @@
   </h3>
   <ul class="steps-content">
     <li class="step-item">
-      <span class="step-number caption">1</span>
-      <enhanced:img
-        class="steps-img"
-        src={blackholeImage}
-        alt="Step 1 for launch"
-      />
+      <input type="checkbox" id="step-1" class="step-checkbox" />
+      <label for="step-1" class="step-label">
+        <span class="step-number caption">1</span>
+        <enhanced:img
+          class="steps-img"
+          src={blackholeImage}
+          alt="Step 1 for launch"
+        />
+        <p class="steps-img-overlay">
+          Instrument Fabrication and Assembly<br /><br />
+          Complete the final construction and assembly of all satellite subsystems,
+          including the compact X-ray telescope. This involves integrating the specially
+          designed cylindrical mirrors.
+        </p>
+      </label>
     </li>
 
     <li class="step-item">
-      <span class="step-number caption">2</span>
-      <enhanced:img
-        class="steps-img"
-        src={blackholeImage}
-        alt="Step 2 for launch"
-      />
+      <input type="checkbox" id="step-2" class="step-checkbox" />
+      <label for="step-2" class="step-label">
+        <span class="step-number caption">2</span>
+        <enhanced:img
+          class="steps-img"
+          src={blackholeImage}
+          alt="Step 2 for launch"
+        />
+        <p class="steps-img-overlay">
+          Comprehensive Subsystem and Component Testing<br /><br />
+          Conduct rigorous functional and performance testing on all individual components.
+          This specifically includes verifying the performance of the camera's electronics.
+        </p>
+      </label>
     </li>
 
     <li class="step-item">
-      <span class="step-number caption">3</span>
-      <enhanced:img
-        class="steps-img"
-        src={blackholeImage}
-        alt="Step 3 for launch"
-      />
+      <input type="checkbox" id="step-3" class="step-checkbox" />
+      <label for="step-3" class="step-label">
+        <span class="step-number caption">3</span>
+        <enhanced:img
+          class="steps-img"
+          src={blackholeImage}
+          alt="Step 3 for launch"
+        />
+        <p class="steps-img-overlay">
+          Structural and Thermal Model Verification<br /><br />
+          Subject the satellite model (or flight hardware) to intense Structural-Thermal-Vacuum
+          (STV) testing. This step confirms that the final design can withstand the
+          immense vibrations and acoustic pressures of launch.
+        </p>
+      </label>
     </li>
 
     <li class="step-item">
-      <span class="step-number caption">4</span>
-      <enhanced:img
-        class="steps-img"
-        src={blackholeImage}
-        alt="Step 4 for launch"
-      />
+      <input type="checkbox" id="step-4" class="step-checkbox" />
+      <label for="step-4" class="step-label">
+        <span class="step-number caption">4</span>
+        <enhanced:img
+          class="steps-img"
+          src={blackholeImage}
+          alt="Step 4 for launch"
+        />
+        <p class="steps-img-overlay">
+          Finalize Mission Operations and Ground Segment Readiness<br /><br />
+          Establish and validate the mission's long-term observation plan, focusing
+          on X-ray binaries for extended periods (milliseconds to weeks). This includes
+          preparing the ground station for telemetry.
+        </p>
+      </label>
     </li>
 
     <li class="step-item">
-      <span class="step-number caption">5</span>
-      <enhanced:img
-        class="steps-img"
-        src={blackholeImage}
-        alt="Step 5 for launch"
-      />
+      <input type="checkbox" id="step-5" class="step-checkbox" />
+      <label for="step-5" class="step-label">
+        <span class="step-number caption">5</span>
+        <enhanced:img
+          class="steps-img"
+          src={blackholeImage}
+          alt="Step 5 for launch"
+        />
+        <p class="steps-img-overlay">
+          Satellite Integration with Launch Platform<br /><br />
+          Based on the earlier research into alternative launch platforms, finalize
+          the selection and begin the physical integration of the NEBULA–Xplorer
+          spacecraft with the chosen launch vehicle/dispenser system. 
+        </p>
+      </label>
     </li>
   </ul>
 </section>
@@ -123,15 +165,19 @@
 <!-- SECOND IMG + PARAGRAPH BLOCK -->
 
 <section class="paragraph-block-right">
-  <enhanced:img class="paragraph-img-left" src={blackholeImage} alt="Black Hole" />
+  <enhanced:img
+    class="paragraph-img-left"
+    src={blackholeImage}
+    alt="Black Hole"
+  />
   <section class="text-content-right">
     <h3 class="orange subtitle text-content--title">Mission brief</h3>
 
     <article>
       <h4 class="orange heading">Mission in development</h4>
       <p>
-        NEBULA – Xplorer staat voor “Netherlands Educational Satellite for
-        Exploration of Binary-Linked Astrophysics – X-ray Observer”. Ongeveer
+        NEBULA – Xplorer staat voor "Netherlands Educational Satellite for
+        Exploration of Binary-Linked Astrophysics – X-ray Observer". Ongeveer
         vierhonderd studenten helpen SRON, veertien Nederlandse
         onderwijsinstellingen en vele industriële partners om deze ruimtemissie
         te ontwikkelen van begin tot eind, onder leiding van wetenschappers en
@@ -159,7 +205,7 @@
         röntgendubbelsterren evolueren. Hiervoor observeert hij deze objecten
         voor lange periodes om te zien hoe de emissie van deze bronnen varieert
         op tijdschalen van milliseconden tot weken. Deze lange observatietijd
-         maakt het mogelijk om röntgenactiviteit te combineren met gegevens uit
+        maakt het mogelijk om röntgenactiviteit te combineren met gegevens uit
         andere golflengtes van andere telescopen.
       </p>
     </article>
@@ -169,15 +215,14 @@
 <!-- THIRD PARAGRAPH + IMG BLOCK -->
 
 <section class="paragraph-block-3">
-
   <section class="text-content-3">
     <h3 class="orange subtitle text-content--title">Mission brief</h3>
 
     <article>
       <h4 class="orange heading">Mission in development</h4>
       <p>
-        NEBULA – Xplorer staat voor “Netherlands Educational Satellite for
-        Exploration of Binary-Linked Astrophysics – X-ray Observer”. Ongeveer
+        NEBULA – Xplorer staat voor "Netherlands Educational Satellite for
+        Exploration of Binary-Linked Astrophysics – X-ray Observer". Ongeveer
         vierhonderd studenten helpen SRON, veertien Nederlandse
         onderwijsinstellingen en vele industriële partners om deze ruimtemissie
         te ontwikkelen van begin tot eind, onder leiding van wetenschappers en
@@ -205,7 +250,7 @@
         röntgendubbelsterren evolueren. Hiervoor observeert hij deze objecten
         voor lange periodes om te zien hoe de emissie van deze bronnen varieert
         op tijdschalen van milliseconden tot weken. Deze lange observatietijd
-         maakt het mogelijk om röntgenactiviteit te combineren met gegevens uit
+        maakt het mogelijk om röntgenactiviteit te combineren met gegevens uit
         andere golflengtes van andere telescopen.
       </p>
     </article>
@@ -214,7 +259,6 @@
 </section>
 
 <style>
-
   /* FIRST PARAGRAPH BLOCK */
 
   .paragraph-block {
@@ -241,7 +285,7 @@
     .text-content article {
       * + p {
         margin-top: 0.5rem;
-        line-height: 1.5;
+        line-height: 1.7;
         @media (min-width: 56.25rem) {
           padding-left: 1.5rem;
         }
@@ -276,7 +320,7 @@
     }
   }
 
-   /* STEPS BLOCK */
+  /* STEPS BLOCK */
 
   .steps-block {
     display: grid;
@@ -286,6 +330,7 @@
     grid-column: 1 / -1;
     max-width: 100%;
     background-color: var(--white);
+    padding-bottom: 2rem;
   }
 
   .text-content--title {
@@ -302,6 +347,7 @@
     grid-column: 1 / -1;
     display: flex;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     margin-inline: calc(-0.1 * 1.5rem);
@@ -311,9 +357,18 @@
 
   .step-item {
     position: relative;
-    flex: 0 0 80vw;
     scroll-snap-align: start;
     margin-right: 1.5rem;
+  }
+
+  .step-checkbox {
+    display: none;
+  }
+
+  .step-label {
+    display: block;
+    position: relative;
+    cursor: pointer;
   }
 
   .step-item:last-child {
@@ -337,17 +392,59 @@
     }
   }
 
-  .step-item {
-    position: relative;
+  .steps-img {
+    display: block;
+    width: 15.063rem;
+    height: 20.5rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    z-index: 1;
+    margin-bottom: 1rem;
+
+    @media (min-width: 56.25rem) {
+      height: 26.25rem;
+      margin-bottom: 1.5rem;
+    }
   }
 
-  .steps-img {
-    width: 15.063rem;
-    height: 26.25rem;
-    object-fit: cover;
-    border-radius: .5rem;
-    z-index: 1;
-    margin-bottom: 3rem;
+  .steps-img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20.5rem;
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    transition: 0.5s ease;
+    opacity: 0;
+    z-index: 9;
+    pointer-events: none;
+  }
+
+  /* Mobile: use checkbox checked state */
+  .step-checkbox:checked ~ .step-label .steps-img-overlay {
+    opacity: 1;
+  }
+
+  /* Desktop: use hover only */
+  @media (min-width: 56.25rem) {
+    .step-checkbox:checked ~ .step-label .steps-img-overlay {
+      opacity: 0;
+    }
+
+    .step-label:hover .steps-img-overlay {
+      opacity: 1;
+    }
+
+    .steps-img-overlay {
+      height: 26.25rem;
+    }
   }
 
   .step-number {
@@ -362,15 +459,14 @@
     height: 3.5rem;
     border-radius: 50%;
     z-index: 5;
-    box-shadow: 0 .25rem .375rem rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.3);
   }
 
   .step-item :global(enhanced\:img) {
-    width: 100%;
+    width: 22rem;
   }
 
-
- /* SECOND PARAGRAPH BLOCK */
+  /* SECOND PARAGRAPH BLOCK */
 
   .paragraph-block-right {
     display: grid;
@@ -424,9 +520,14 @@
 
       :global(enhanced\:img),
       :global(img) {
-        width: 100%;
-        object-fit: cover;
-        max-height: 31.8rem;
+        display: none;
+
+        @media (min-width: 36.25rem) {
+          display: block;
+          width: 100%;
+          object-fit: cover;
+          max-height: 22.8125rem;
+        }
       }
     }
   }
@@ -454,7 +555,6 @@
         grid-column: 1 / 8;
       }
     }
-
 
     .text-content-3 article {
       * + p {
@@ -514,16 +614,17 @@
     width: auto;
   }
 
-  h2, h3 {
-      font-weight: 600;
-      line-height: 1.5;
-    }
+  h2,
+  h3 {
+    font-weight: 600;
+    line-height: 1.5;
+  }
 
-    h4 {
-      font-weight: 500;
-    }
+  h4 {
+    font-weight: 500;
+  }
 
-    article + article {
-  margin-top: 2rem;
-}
+  article + article {
+    margin-top: 2rem;
+  }
 </style>
