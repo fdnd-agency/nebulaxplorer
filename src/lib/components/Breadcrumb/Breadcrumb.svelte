@@ -8,7 +8,7 @@
     .split("/")
     .filter((segment) => segment !== "");
 
-  console.log(pathSegments, pathSegments.length);
+  const { contrast = "white-on-space" } = $props();
 </script>
 
 <nav class="breadcrumb-path">
