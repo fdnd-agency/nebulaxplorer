@@ -23,6 +23,7 @@
 </script>
 
 <section class="grid-wrapper">
+  <h1 class="news_section_title">News, blogs & events</h1>
 <ul class="news-grid">
   {#each NewsCards as newscard}
   <li class="news-card">
@@ -76,7 +77,7 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
-    padding-top: 4rem;
+    padding-top: 0.5rem;
     padding-bottom: 3rem;
     padding-left: 0;
     list-style: none;
@@ -120,6 +121,30 @@
       transform: translateY(-0.5rem);
       box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
     }
+}
+
+.news_section_title {
+  font-family: SpaceGrotesk;
+  font-size: clamp(2rem, 3.5vw + 1rem, 2.875rem);
+  line-height: clamp(2.5rem, 3.5vw + 1rem, 3.125rem);
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--ultra-140);
+  background-color: var(--white);
+  padding-left: 3.5rem;
+  padding-top: 2rem;
+
+  @media (min-width: 56.25rem) {
+    font-weight: 400;
+  }
+
+  @media (min-width: 400px) {
+    padding-left: 3.5rem;
+  }
+
+  @media (min-width: 1600px) {
+    padding-left: 4rem;}
 }
 
 .news-info{
