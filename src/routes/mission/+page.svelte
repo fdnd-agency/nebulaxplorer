@@ -237,7 +237,7 @@
   <p>
     If you are interested in getting involved with the science case writing
     process or want to express support for the mission, <br> please contact the
-    mission PI Benjamin Ricketts at <a class="orange" href="mailto: b.ricketts(at).sron.nl">b.ricketts(at).sron.nl.</a>
+    mission PI Benjamin Ricketts at <a class="orange" href="mailto: b.ricketts(at).sron.nl">b.ricketts(at).sron.nl</a>.
   </p>
 </article>
 
@@ -428,6 +428,7 @@
 
     .steps-img-overlay {
       height: 26.25rem;
+      width: 100%;
     }
   }
 
