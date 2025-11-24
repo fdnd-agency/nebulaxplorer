@@ -426,10 +426,23 @@
       opacity: 1;
     }
 
+    .step-item {
+      width: 22rem;
+      flex: initial;
+      margin-right: 0;
+    }
+
+    .steps-img {
+      height: 26.25rem;
+      margin-bottom: 1.5rem;
+      width: 100%;
+    }
+
     .steps-img-overlay {
       height: 26.25rem;
       width: 100%;
     }
+
   }
 
   .step-number {
@@ -445,10 +458,6 @@
     border-radius: 50%;
     z-index: 5;
     box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.3);
-  }
-
-  .step-item :global(enhanced\:img) {
-    width: 22rem;
   }
 
   /* SECOND PARAGRAPH BLOCK */
