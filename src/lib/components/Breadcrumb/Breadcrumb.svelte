@@ -68,7 +68,8 @@
 
     .arrow {
       display: contents;
-      color: var(--cleanroom-100);
+      /* Arrow colors */
+      color: var(--arrow-color);
     }
 
     /* Truncate when too long, helps with REALLY large titles */
