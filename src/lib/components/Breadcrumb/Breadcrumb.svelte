@@ -11,7 +11,7 @@
   const { contrast = "white-on-space" } = $props();
 </script>
 
-<nav class="breadcrumb-path">
+<nav class={`breadcrumb-path ${contrast}`}>
   <a href="/" class="crumb subheading">home</a>
   {#each pathSegments as segment, index}
     <span class="arrow">
