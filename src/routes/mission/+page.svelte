@@ -232,14 +232,14 @@
   <enhanced:img src={blackholeImage} alt="Black Hole" />
 </section>
 
-<section class="getting-involved">
+<article class="getting-involved">
   <h4 class="orange heading">Getting involved</h4>
   <p>
     If you are interested in getting involved with the science case writing
-    process or want to express support for the mission, please contact the
-    mission PI Benjamin Ricketts at b.ricketts(at).sron.nl.
+    process or want to express support for the mission, <br> please contact the
+    mission PI Benjamin Ricketts at <a class="orange" href="mailto: b.ricketts(at).sron.nl">b.ricketts(at).sron.nl.</a>
   </p>
-</section>
+</article>
 
 <style>
   /* FIRST PARAGRAPH BLOCK */
@@ -283,8 +283,9 @@
     :global(picture) {
       grid-column: 4 / -1;
       height: fit-content;
-
       display: none;
+      position: sticky;
+      top: 20%;
 
       @media (min-width: 36.25rem) {
         display: block;
@@ -590,6 +591,17 @@
 
   .article {
     margin-bottom: 2rem;
+  }
+
+  .getting-involved {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+
+    p {
+      margin-top: 1rem;
+      padding: 0 3rem 0 3rem;
+    }
   }
 
   /* util classes */

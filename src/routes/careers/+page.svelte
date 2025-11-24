@@ -1,7 +1,7 @@
 <script>
   import { Hero } from "$lib";
-  import Jobs from "$lib/components/jobs/Jobs.svelte";
-  import Breadcrumb from "$lib/components/Breadcrumb/Breadcrumb.svelte";
+  import Jobs from "$lib/components/molecules/jobs/Jobs.svelte";
+  import Breadcrumb from "$lib/components/molecules/Breadcrumb/Breadcrumb.svelte";
 
   // ! NOTE: important to include ?enhanced, otherwise no optimization takes place nor does it get rendered !
   import heroImg from "$lib/assets/images/grav-waves.jpg?enhanced"
