@@ -38,6 +38,34 @@
     gap: 0.75rem;
     align-items: center;
 
+
+    
+    /* color schemes */
+
+    /* defaults */
+    --arrow-color: var(--cleanroom-100);
+    --text-color: var(--white);
+
+    /* explicit */
+    &.white-on-space {
+      --arrow-color: var(--cleanroom-100);
+      --text-color: var(--white);
+    }
+
+    &.space-on-gray {
+      --arrow-color: var(--cleanroom-100);
+      --text-color: var(--space-100);
+    }
+
+    &.white-on-cleanroom {
+      --arrow-color: var(--space-100);
+      --text-color: var(--white);
+    }
+
+    
+    /* Text colors */
+    color: var(--text-color);
+
     .arrow {
       display: contents;
       color: var(--cleanroom-100);
