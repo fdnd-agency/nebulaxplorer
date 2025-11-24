@@ -1,8 +1,8 @@
 <script module>
   import blackholeImage from "$lib/assets/blackhole.jpg?enhanced";
-  import Hero from "$lib/components/Hero/Hero.svelte";
+  import Hero from "$lib/components/molecules/Hero/Hero.svelte";
   import logo from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
-  import Breadcrumb from "../../lib/components/Breadcrumb/Breadcrumb.svelte";
+  import Breadcrumb from "../../lib/components/molecules/Breadcrumb/Breadcrumb.svelte";
 </script>
 
 <!-- HERO BLOCK -->
@@ -40,38 +40,13 @@
       </p>
 
       <p>
-        By observing
-        black holes in this energy range, we can also measure the spin of black
-        holes by observing the relativistic smearing of emission resulting from
-        the illumination of the disk by the corona or by measuring the inner
-        radius of the accretion disk through broad continuum fitting.
-        Understanding the spin population of black holes within X-ray binaries
-        has major implications for stellar evolution in binary systems which are
-        estimated to make up to 85% of star systems in our universe.</p>
-    </article>
-
-    <article>
-      <h4 class="orange heading">Questions surrounding X-ray binaries</h4>
-      <p>
-        Veel van de helderste objecten in het heelal zijn röntgendubbelsterren.
-        Dit zijn combinaties van een extreem compact object, zoals een zwart gat
-        of een neutronenster, en een begeleidende ster. Het compacte object
-        onttrekt in de loop van de tijd de materie van zijn begeleidende ster.
-        Hierbij komt veel energie vrij in een gebundelde straal—een jet.
-        Wetenschappers begrijpen dit proces is nog niet helemaal, en zeker de
-        aard van de stroom van materie vlak naast het zwarte gat blijft een
-        groot mysterie.
-      </p>
-    </article>
-    <article>
-      <h4 class="orange heading">Questions surrounding X-ray binaries</h4>
-      <p>
-        NEBULA-Xplorer gaat onderzoeken hoe jets vormen en hoe deze
-        röntgendubbelsterren evolueren. Hiervoor observeert hij deze objecten
-        voor lange periodes om te zien hoe de emissie van deze bronnen varieert
-        op tijdschalen van milliseconden tot weken. Deze lange observatietijd
-        maakt het mogelijk om röntgenactiviteit te combineren met gegevens uit
-        andere golflengtes van andere telescopen.
+        By observing black holes in this energy range, we can also measure the
+        spin of black holes by observing the relativistic smearing of emission
+        resulting from the illumination of the disk by the corona or by
+        measuring the inner radius of the accretion disk through broad continuum
+        fitting. Understanding the spin population of black holes within X-ray
+        binaries has major implications for stellar evolution in binary systems
+        which are estimated to make up to 85% of star systems in our universe.
       </p>
     </article>
   </section>
@@ -189,39 +164,25 @@
     <h3 class="orange subtitle text-content--title">Mission brief</h3>
 
     <article>
-      <h4 class="orange heading">Mission in development</h4>
+      <h4 class="orange heading">Multi-messenger physics</h4>
       <p>
-        NEBULA – Xplorer staat voor "Netherlands Educational Satellite for
-        Exploration of Binary-Linked Astrophysics – X-ray Observer". Ongeveer
-        vierhonderd studenten helpen SRON, veertien Nederlandse
-        onderwijsinstellingen en vele industriële partners om deze ruimtemissie
-        te ontwikkelen van begin tot eind, onder leiding van wetenschappers en
-        ingenieurs.
+        NEBULA-Xplorer frames the multi-wavelength campaigns required to
+        understand jet and accretion physics at the forefront of its design:
+        emphasizing the ability to maximize X-ray observations of time
+        uncertain, fast evolving changes in the accretion flow by tying together
+        fine time resolution of 1 microsecond and the ability to maintain as
+        close to continuous observations of targets as possible.
       </p>
-    </article>
 
-    <article>
-      <h4 class="orange heading">Questions surrounding X-ray binaries</h4>
       <p>
-        Veel van de helderste objecten in het heelal zijn röntgendubbelsterren.
-        Dit zijn combinaties van een extreem compact object, zoals een zwart gat
-        of een neutronenster, en een begeleidende ster. Het compacte object
-        onttrekt in de loop van de tijd de materie van zijn begeleidende ster.
-        Hierbij komt veel energie vrij in een gebundelde straal—een jet.
-        Wetenschappers begrijpen dit proces is nog niet helemaal, en zeker de
-        aard van de stroom van materie vlak naast het zwarte gat blijft een
-        groot mysterie.
-      </p>
-    </article>
-    <article>
-      <h4 class="orange heading">Questions surrounding X-ray binaries</h4>
-      <p>
-        NEBULA-Xplorer gaat onderzoeken hoe jets vormen en hoe deze
-        röntgendubbelsterren evolueren. Hiervoor observeert hij deze objecten
-        voor lange periodes om te zien hoe de emissie van deze bronnen varieert
-        op tijdschalen van milliseconden tot weken. Deze lange observatietijd
-        maakt het mogelijk om röntgenactiviteit te combineren met gegevens uit
-        andere golflengtes van andere telescopen.
+        During longer observations, NEBULA-Xplorer will transmit timing
+        information key to understanding when ballistic jet ejections are
+        launched to the ground to trigger observations from competitive
+        ground-based facilities such as the radio interferometer SKA and mm
+        observatory AMT to maximize the effectiveness of multi-wavelength
+        observations of jets. NEBULA-Xplorer will also work with optical
+        facilities to better understand how activity in the outer accretion disk
+        of these systems propagates into the inner-most regions.
       </p>
     </article>
   </section>
@@ -234,43 +195,50 @@
     <h3 class="orange subtitle text-content--title">Mission brief</h3>
 
     <article>
-      <h4 class="orange heading">Mission in development</h4>
+      <h4 class="orange heading">Time-domain Astrophysics</h4>
       <p>
-        NEBULA – Xplorer staat voor "Netherlands Educational Satellite for
-        Exploration of Binary-Linked Astrophysics – X-ray Observer". Ongeveer
-        vierhonderd studenten helpen SRON, veertien Nederlandse
-        onderwijsinstellingen en vele industriële partners om deze ruimtemissie
-        te ontwikkelen van begin tot eind, onder leiding van wetenschappers en
-        ingenieurs.
+        As a non-imaging X-ray timing observatory, NEBULA-Xplorer’s core science
+        focuses on interpreting the variability of emission from the sources
+        that it observes. This includes more traditional ways of thinking about
+        variability such as looking for quasi-periodic signals in source light
+        curve and phase-folded pulse profile modeling of neutron star surfaces
+        but also includes topics such as “dipping” in the light curve produced
+        by clumps of material produced by winds from both the accretion disk and
+        companion star in these systems obscuring the central accretion engine.
       </p>
-    </article>
 
-    <article>
-      <h4 class="orange heading">Questions surrounding X-ray binaries</h4>
       <p>
-        Veel van de helderste objecten in het heelal zijn röntgendubbelsterren.
-        Dit zijn combinaties van een extreem compact object, zoals een zwart gat
-        of een neutronenster, en een begeleidende ster. Het compacte object
-        onttrekt in de loop van de tijd de materie van zijn begeleidende ster.
-        Hierbij komt veel energie vrij in een gebundelde straal—een jet.
-        Wetenschappers begrijpen dit proces is nog niet helemaal, en zeker de
-        aard van de stroom van materie vlak naast het zwarte gat blijft een
-        groot mysterie.
+        Frequently, changes in variability are affected by multiple phenomena in
+        the system that evolve on different time scales, making it difficult to
+        understand how important each phenomenon is to driving transient
+        outbursts or is linked to the fundamental process of accretion.
+        NEBULA-Xplorer’s emphasis on performing continuous longer observations
+        of individual sources will allow us to understand the short-term
+        variability of emission and how that changes on timescales of days to
+        weeks.
       </p>
-    </article>
-    <article class="article">
-      <h4 class="orange heading">Questions surrounding X-ray binaries</h4>
+
       <p>
-        NEBULA-Xplorer gaat onderzoeken hoe jets vormen en hoe deze
-        röntgendubbelsterren evolueren. Hiervoor observeert hij deze objecten
-        voor lange periodes om te zien hoe de emissie van deze bronnen varieert
-        op tijdschalen van milliseconden tot weken. Deze lange observatietijd
-        maakt het mogelijk om röntgenactiviteit te combineren met gegevens uit
-        andere golflengtes van andere telescopen.
+        NEBULA-Xplorer’s moderate energy resolution and high timing resolution
+        will also allow us to perform spectral-timing analysis of bright
+        systems, like that of the NICER telescope. Spectral timing allows for
+        the investigation of how variability changes with energy, which can be
+        used to trace how the geometry of X-ray sources changes through time as
+        well as understand the distances between different parts of the system
+        through modeling of light travel time within the system.
       </p>
     </article>
   </section>
   <enhanced:img src={blackholeImage} alt="Black Hole" />
+</section>
+
+<section class="getting-involved">
+  <h4 class="orange heading">Getting involved</h4>
+  <p>
+    If you are interested in getting involved with the science case writing
+    process or want to express support for the mission, please contact the
+    mission PI Benjamin Ricketts at b.ricketts(at).sron.nl.
+  </p>
 </section>
 
 <style>
@@ -577,6 +545,7 @@
         line-height: 1.5;
         @media (min-width: 56.25rem) {
           padding-left: 1.5rem;
+          margin-bottom: 1.5rem;
         }
       }
     }
@@ -598,6 +567,9 @@
 
       @media (min-width: 56.25rem) {
         grid-column: 8 / -1;
+        position: sticky;
+        top: 30%;
+        margin-bottom: 1.5rem;
       }
 
       :global(enhanced\:img),
