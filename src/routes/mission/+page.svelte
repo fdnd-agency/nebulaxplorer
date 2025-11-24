@@ -2,18 +2,18 @@
   import blackholeImage from "$lib/assets/blackhole.jpg?enhanced";
   import Hero from "$lib/components/Hero/Hero.svelte";
   import logo from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
-
-  export { hero }
+  import Breadcrumb from "../../lib/components/Breadcrumb/Breadcrumb.svelte";
 </script>
 
 <!-- HERO BLOCK -->
-{#snippet hero()}
 <Hero
   pageTitle="Mission"
   sronIcon={logo}
   background={{ alt: "", file: blackholeImage }}
 />
-{/snippet}
+
+<Breadcrumb />
+
 <!-- FIRST PARAGRAPH + IMG BLOCK -->
 
 <section class="paragraph-block">
@@ -26,15 +26,28 @@
     <h3 class="orange subtitle text-content--title">Mission brief</h3>
 
     <article>
-      <h4 class="orange heading">Mission in development</h4>
+      <h4 class="orange heading">Dense matter and compact objects</h4>
       <p>
-        NEBULA – Xplorer staat voor "Netherlands Educational Satellite for
-        Exploration of Binary-Linked Astrophysics – X-ray Observer". Ongeveer
-        vierhonderd studenten helpen SRON, veertien Nederlandse
-        onderwijsinstellingen en vele industriële partners om deze ruimtemissie
-        te ontwikkelen van begin tot eind, onder leiding van wetenschappers en
-        ingenieurs.
+        NEBULA-Xplorer will investigate compact objects such as neutron stars
+        and black hole X-ray binaries within our Milky Way. By investigating
+        these objects, we can learn about fundamental physics such as strong
+        gravity and the equation of state of neutron stars. We can also learn
+        about accretion processes in extreme environments, unable to be
+        reproduced in lab conditions. NEBULA-Xplorer’s coverage of the 0.5-12keV
+        energy range will allow us to observe both the inner-most regions of
+        these systems, where light is most affected by the gravity of compact
+        objects and the magnetic environment of neutron stars.
       </p>
+
+      <p>
+        By observing
+        black holes in this energy range, we can also measure the spin of black
+        holes by observing the relativistic smearing of emission resulting from
+        the illumination of the disk by the corona or by measuring the inner
+        radius of the accretion disk through broad continuum fitting.
+        Understanding the spin population of black holes within X-ray binaries
+        has major implications for stellar evolution in binary systems which are
+        estimated to make up to 85% of star systems in our universe.</p>
     </article>
 
     <article>
@@ -157,7 +170,7 @@
           Satellite Integration with Launch Platform<br /><br />
           Based on the earlier research into alternative launch platforms, finalize
           the selection and begin the physical integration of the NEBULA–Xplorer
-          spacecraft with the chosen launch vehicle/dispenser system. 
+          spacecraft with the chosen launch vehicle/dispenser system.
         </p>
       </label>
     </li>
