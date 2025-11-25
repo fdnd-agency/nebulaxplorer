@@ -80,7 +80,7 @@
   {#each NewsCards as newscard}
   <li class="news-card">
     <div class="news-image">
-      <img src="/src/lib/assets/images/placeholder2.png" alt="{newscard.title}"> 
+      <img src="/src/lib/assets/images/placeholder2.jpg" alt="{newscard.title}"> 
     </div>
     <div class="news-info">
       <span class="news-label"></span>
