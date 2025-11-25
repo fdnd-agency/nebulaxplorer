@@ -77,10 +77,12 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
-    padding-top: 0.5rem;
-    padding-bottom: 3rem;
-    padding-left: 0;
+    padding-top: 4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     list-style: none;
+    background-color: rgb(255, 255, 255);
+    border-bottom: var(--cleanroom-100) 0.5rem solid;
 }
 
 @media (min-width: 700px) {
@@ -90,8 +92,11 @@
     grid-template-rows: repeat(1, 1fr);
     gap: 2rem;
     padding-bottom: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem; 
     list-style: none;
     background-color: rgb(255, 255, 255);
+    border-bottom: var(--cleanroom-100) 0.5rem solid;
 }
 }
 
@@ -106,6 +111,7 @@
     padding-left: 4rem;
     padding-right: 4rem;
     list-style: none;
+    border-bottom: var(--cleanroom-100) 0.75rem solid;
 }
 }
 
@@ -129,21 +135,21 @@
   line-height: clamp(2.5rem, 3.5vw + 1rem, 3.125rem);
   letter-spacing: -0.01em;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--ultra-140);
   background-color: var(--white);
   padding-left: 3.5rem;
   padding-top: 2rem;
 
-  @media (min-width: 56.25rem) {
-    font-weight: 400;
+  @media (min-width: 1000px) {
+    font-weight: 500;
   }
 
   @media (min-width: 400px) {
-    padding-left: 3.5rem;
+    padding-left: 2.2rem;
   }
 
-  @media (min-width: 1600px) {
+  @media (min-width: 1000px) {
     padding-left: 4rem;}
 }
 
@@ -195,9 +201,8 @@
   .read-more-card{
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    transform: translateY(-0.5rem);
     &:hover {
-      transform: translateY(-1rem);
+      transform: translateY(-0.5rem);
       box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
     }
 }
