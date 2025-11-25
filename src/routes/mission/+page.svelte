@@ -60,94 +60,129 @@
     The <span class="orange">steps to</span> take before
     <span class="orange">launch</span>
   </h3>
-  <ul class="steps-content">
+  <ul
+    class="steps-content"
+    role="region"
+    aria-label="De stappen voor de lancering"
+  >
     <li class="step-item">
-      <input type="checkbox" id="step-1" class="step-checkbox" />
-      <label for="step-1" class="step-label">
-        <span class="step-number caption">1</span>
-        <enhanced:img
-          class="steps-img"
-          src={blackholeImage}
-          alt="Step 1 for launch"
-        />
-        <p class="steps-img-overlay">
-          Instrument Fabrication and Assembly<br /><br />
-          Complete the final construction and assembly of all satellite subsystems,
-          including the compact X-ray telescope. This involves integrating the specially
-          designed cylindrical mirrors.
-        </p>
-      </label>
+      <div
+        tabindex="0"
+        role="button"
+        aria-label="Step 1: Instrument Fabrication and Assembly"
+      >
+        <input type="checkbox" id="step-1" class="step-checkbox" />
+        <label for="step-1" class="step-label">
+          <span class="step-number caption">1</span>
+          <enhanced:img
+            class="steps-img"
+            src={blackholeImage}
+            alt="Step 1 for launch"
+          />
+          <p class="steps-img-overlay">
+            Instrument Fabrication and Assembly<br /><br />
+            Complete the final construction and assembly of all satellite subsystems,
+            including the compact X-ray telescope. This involves integrating the
+            specially designed cylindrical mirrors.
+          </p>
+        </label>
+      </div>
     </li>
 
     <li class="step-item">
-      <input type="checkbox" id="step-2" class="step-checkbox" />
-      <label for="step-2" class="step-label">
-        <span class="step-number caption">2</span>
-        <enhanced:img
-          class="steps-img"
-          src={blackholeImage}
-          alt="Step 2 for launch"
-        />
-        <p class="steps-img-overlay">
-          Comprehensive Subsystem and Component Testing<br /><br />
-          Conduct rigorous functional and performance testing on all individual components.
-          This specifically includes verifying the performance of the camera's electronics.
-        </p>
-      </label>
+      <div
+        tabindex="0"
+        role="button"
+        aria-label="Step 2: omprehensive Subsystem and Component Testing"
+      >
+        <input type="checkbox" id="step-2" class="step-checkbox" />
+        <label for="step-2" class="step-label">
+          <span class="step-number caption">2</span>
+          <enhanced:img
+            class="steps-img"
+            src={blackholeImage}
+            alt="Step 2 for launch"
+          />
+          <p class="steps-img-overlay">
+            Comprehensive Subsystem and Component Testing<br /><br />
+            Conduct rigorous functional and performance testing on all individual
+            components. This specifically includes verifying the performance of the
+            camera's electronics.
+          </p>
+        </label>
+      </div>
     </li>
 
     <li class="step-item">
-      <input type="checkbox" id="step-3" class="step-checkbox" />
-      <label for="step-3" class="step-label">
-        <span class="step-number caption">3</span>
-        <enhanced:img
-          class="steps-img"
-          src={blackholeImage}
-          alt="Step 3 for launch"
-        />
-        <p class="steps-img-overlay">
-          Structural and Thermal Model Verification<br /><br />
-          Subject the satellite model (or flight hardware) to intense Structural-Thermal-Vacuum
-          (STV) testing. This step confirms that the final design can withstand the
-          immense vibrations and acoustic pressures of launch.
-        </p>
-      </label>
+      <div
+        tabindex="0"
+        role="button"
+        aria-label="Step 3: Structural and Thermal Model Verification"
+      >
+        <input type="checkbox" id="step-3" class="step-checkbox" />
+        <label for="step-3" class="step-label">
+          <span class="step-number caption">3</span>
+          <enhanced:img
+            class="steps-img"
+            src={blackholeImage}
+            alt="Step 3 for launch"
+          />
+          <p class="steps-img-overlay">
+            Structural and Thermal Model Verification<br /><br />
+            Subject the satellite model (or flight hardware) to intense Structural-Thermal-Vacuum
+            (STV) testing. This step confirms that the final design can withstand
+            the immense vibrations and acoustic pressures of launch.
+          </p>
+        </label>
+      </div>
     </li>
 
     <li class="step-item">
-      <input type="checkbox" id="step-4" class="step-checkbox" />
-      <label for="step-4" class="step-label">
-        <span class="step-number caption">4</span>
-        <enhanced:img
-          class="steps-img"
-          src={blackholeImage}
-          alt="Step 4 for launch"
-        />
-        <p class="steps-img-overlay">
-          Finalize Mission Operations and Ground Segment Readiness<br /><br />
-          Establish and validate the mission's long-term observation plan, focusing
-          on X-ray binaries for extended periods (milliseconds to weeks). This includes
-          preparing the ground station for telemetry.
-        </p>
-      </label>
+      <div
+        tabindex="0"
+        role="button"
+        aria-label="Step 4: Finalize Mission Operations"
+      >
+        <input type="checkbox" id="step-4" class="step-checkbox" />
+        <label for="step-4" class="step-label">
+          <span class="step-number caption">4</span>
+          <enhanced:img
+            class="steps-img"
+            src={blackholeImage}
+            alt="Step 4 for launch"
+          />
+          <p class="steps-img-overlay">
+            Finalize Mission Operations and Ground Segment Readiness<br /><br />
+            Establish and validate the mission's long-term observation plan, focusing
+            on X-ray binaries for extended periods (milliseconds to weeks). This
+            includes preparing the ground station for telemetry.
+          </p>
+        </label>
+      </div>
     </li>
 
     <li class="step-item">
-      <input type="checkbox" id="step-5" class="step-checkbox" />
-      <label for="step-5" class="step-label">
-        <span class="step-number caption">5</span>
-        <enhanced:img
-          class="steps-img"
-          src={blackholeImage}
-          alt="Step 5 for launch"
-        />
-        <p class="steps-img-overlay">
-          Satellite Integration with Launch Platform<br /><br />
-          Based on the earlier research into alternative launch platforms, finalize
-          the selection and begin the physical integration of the NEBULA–Xplorer
-          spacecraft with the chosen launch vehicle/dispenser system.
-        </p>
-      </label>
+      <div
+        tabindex="0"
+        role="button"
+        aria-label="Step 5: Satellite Integration with Launch Platform"
+      >
+        <input type="checkbox" id="step-5" class="step-checkbox" />
+        <label for="step-5" class="step-label">
+          <span class="step-number caption">5</span>
+          <enhanced:img
+            class="steps-img"
+            src={blackholeImage}
+            alt="Step 5 for launch"
+          />
+          <p class="steps-img-overlay">
+            Satellite Integration with Launch Platform<br /><br />
+            Based on the earlier research into alternative launch platforms, finalize
+            the selection and begin the physical integration of the NEBULA–Xplorer
+            spacecraft with the chosen launch vehicle/dispenser system.
+          </p>
+        </label>
+      </div>
     </li>
   </ul>
 </section>
@@ -236,8 +271,11 @@
   <h4 class="orange heading">Getting involved</h4>
   <p>
     If you are interested in getting involved with the science case writing
-    process or want to express support for the mission, <br> please contact the
-    mission PI Benjamin Ricketts at <a class="orange" href="mailto: b.ricketts(at).sron.nl">b.ricketts(at).sron.nl</a>.
+    process or want to express support for the mission, <br /> please contact
+    the mission PI Benjamin Ricketts at
+    <a class="orange" href="mailto: b.ricketts(at).sron.nl"
+      >b.ricketts(at).sron.nl</a
+    >.
   </p>
 </article>
 
@@ -345,6 +383,22 @@
     margin-right: 1.5rem;
   }
 
+
+  .step-item > div[tabindex="0"]:focus .steps-img-overlay {
+    opacity: 1; 
+  }
+
+  .step-item > div[tabindex="0"]:focus .steps-img-overlay {
+    opacity: 1;
+  }
+
+  @media (min-width: 56.25rem) {
+    .step-item > div[tabindex="0"]:hover .steps-img-overlay,
+    .step-item > div[tabindex="0"]:focus .steps-img-overlay {
+      opacity: 1;
+    }
+  }
+
   .step-checkbox {
     display: none;
   }
@@ -442,7 +496,6 @@
       height: 26.25rem;
       width: 100%;
     }
-
   }
 
   .step-number {
