@@ -693,9 +693,9 @@
     padding: 2rem 1.5rem;
     margin-block: 2rem 0;
     background-color: var(--cleanroom-100);
-    border-left: 3px solid var(--white);
-    border-bottom-left-radius: 20px;
-    border-top-left-radius: 20px;
+    border-left: 0.188rem solid var(--white);
+    border-bottom-left-radius: 1.25rem;
+    border-top-left-radius: 1.25rem;
   }
 
   .testimonial-content {
