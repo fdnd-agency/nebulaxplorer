@@ -23,7 +23,6 @@
   </div>
 
   <section class="text-content">
-    <h3 class="orange subtitle text-content--title">Mission brief</h3>
 
     <article>
       <h4 class="orange heading">Dense matter and compact objects</h4>
@@ -196,7 +195,6 @@
     alt="Black Hole"
   />
   <section class="text-content-right">
-    <h3 class="orange subtitle text-content--title">Mission brief</h3>
 
     <article>
       <h4 class="orange heading">Multi-messenger physics</h4>
@@ -227,7 +225,6 @@
 
 <section class="paragraph-block-3">
   <section class="text-content-3">
-    <h3 class="orange subtitle text-content--title">Mission brief</h3>
 
     <article>
       <h4 class="orange heading">Time-domain Astrophysics</h4>
@@ -393,6 +390,7 @@
   }
 
   @media (min-width: 56.25rem) {
+
     .step-item > div[tabindex="0"]:hover .steps-img-overlay,
     .step-item > div[tabindex="0"]:focus .steps-img-overlay {
       opacity: 1;
@@ -451,7 +449,7 @@
     left: 0;
     width: 100%;
     height: 20.5rem;
-    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    background: rgba(0, 0, 0, 0.5); 
     color: white;
     display: flex;
     align-items: center;
@@ -465,12 +463,10 @@
     pointer-events: none;
   }
 
-  /* Mobile: use checkbox checked state */
   .step-checkbox:checked ~ .step-label .steps-img-overlay {
     opacity: 1;
   }
 
-  /* Desktop: use hover only */
   @media (min-width: 56.25rem) {
     .step-checkbox:checked ~ .step-label .steps-img-overlay {
       opacity: 0;
@@ -684,6 +680,7 @@
 
   h4 {
     font-weight: 500;
+    padding-top: 1.5rem;
   }
 
   article + article {
