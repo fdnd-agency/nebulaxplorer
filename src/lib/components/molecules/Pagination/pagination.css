@@ -13,7 +13,7 @@ nav.pagination-container {
   }
 
   &.space-on-gray {
-    --arrow-color: var(--cleanroom-100);
+    --arrow-color: var(--ultra-100);
     --text-color: var(--space-100);
   }
 
