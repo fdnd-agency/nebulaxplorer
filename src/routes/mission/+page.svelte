@@ -274,8 +274,8 @@
   </p>
 </article>
 
-<div class="testimonial-container">
-  <div class="testimonial-content">
+<figure class="testimonial-container">
+  <blockquote class="testimonial-content">
     <Quote />
     <p class="testimonial-text">
       Working with SRON's Nebula Xplorer team has been an incredible experience.
@@ -283,9 +283,9 @@
       me so much about space instrumentation and teamwork. The dedication and
       expertise of everyone involved is truly inspiring.
     </p>
-  </div>
+  </blockquote>
 
-  <div class="testimonial-author">
+  <figcaption class="testimonial-author">
     <img
       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop"
       alt="Jane Doe"
@@ -297,8 +297,8 @@
       <h3 class="paragraph">Jane Doe</h3>
       <p class="supporting">Engineering Student</p>
     </article>
-  </div>
-</div>
+  </figcaption>
+</figure>
 
 <style>
   /* FIRST PARAGRAPH BLOCK */
