@@ -306,6 +306,8 @@
       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop"
       alt="Jane Doe"
       class="author-image"
+      loading="lazy"
+      decoding="async"
     />
     <article class="author-info">
       <h3 class="author-name">Jane Doe</h3>
