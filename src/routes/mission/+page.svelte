@@ -294,8 +294,8 @@
       decoding="async"
     />
     <article class="author-info">
-      <h3 class="author-name">Jane Doe</h3>
-      <p class="author-role">Engineering Student</p>
+      <h3 class="paragraph">Jane Doe</h3>
+      <p class="supporting">Engineering Student</p>
     </article>
   </div>
 </div>
@@ -733,13 +733,11 @@
     gap: 0.25rem;
   }
 
-  .author-name {
-    font-size: 1rem;
+  .paragraph {
     color: var(--space-100);
   }
 
-  .author-role {
-    font-size: 0.8125rem;
+  .supporting {
     color: var(--space-100);
   }
 
