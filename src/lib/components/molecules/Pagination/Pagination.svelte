@@ -4,7 +4,6 @@
   import "./pagination.css";
 
   const { pagination } = $props();
-  console.log(pagination);
 
   const jobs = [
     {
