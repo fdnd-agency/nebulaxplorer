@@ -3,7 +3,7 @@
   import Arrow from "$lib/assets/icons/Arrow.svelte";
   import "./pagination.css";
 
-  const { pagination } = $props();
+  const { pagination, contrast = "white-on-space" } = $props();
 
   const jobs = [
     {
@@ -45,7 +45,7 @@
   ];
 </script>
 
-<nav class="heading pagination-container">
+<nav class="heading pagination-container {contrast}">
   <!-- Previous button -->
   {#if pagination.currentPage > 1}
     <a
