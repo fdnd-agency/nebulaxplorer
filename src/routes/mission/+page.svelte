@@ -691,8 +691,7 @@
     align-items: flex-start;
     gap: 2rem;
     padding: 2rem 1.5rem;
-    max-width: 100%;
-    margin: 2rem 0;
+    margin-block: 2rem 0;
     background-color: var(--cleanroom-100);
     border-left: 3px solid var(--white);
     border-bottom-left-radius: 20px;
