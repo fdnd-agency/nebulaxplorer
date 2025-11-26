@@ -23,7 +23,6 @@
   </div>
 
   <section class="text-content">
-
     <article>
       <h4 class="orange heading">Dense matter and compact objects</h4>
       <p>
@@ -195,7 +194,6 @@
     alt="Black Hole"
   />
   <section class="text-content-right">
-
     <article>
       <h4 class="orange heading">Multi-messenger physics</h4>
       <p>
@@ -225,7 +223,6 @@
 
 <section class="paragraph-block-3">
   <section class="text-content-3">
-
     <article>
       <h4 class="orange heading">Time-domain Astrophysics</h4>
       <p>
@@ -275,6 +272,43 @@
     >.
   </p>
 </article>
+
+<div class="testimonial-container">
+  <div class="testimonial-content">
+    <svg
+      class="quote-icon"
+      width="48"
+      height="48"
+      viewBox="0 0 48 48"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 28C12 24.686 14.686 22 18 22V18C12.477 18 8 22.477 8 28V34C8 36.209 9.791 38 12 38H18C20.209 38 22 36.209 22 34V28C22 25.791 20.209 24 18 24H12ZM32 28C32 24.686 34.686 22 38 22V18C32.477 18 28 22.477 28 28V34C28 36.209 29.791 38 32 38H38C40.209 38 42 36.209 42 34V28C42 25.791 40.209 24 38 24H32Z"
+        fill="currentColor"
+        opacity="0.2"
+      />
+    </svg>
+    <p class="testimonial-text">
+      Working with SRON's Nebula Xplorer team has been an incredible experience.
+      Being part of the mission to prepare the Nebula Xplorer for launch taught
+      me so much about space instrumentation and teamwork. The dedication and
+      expertise of everyone involved is truly inspiring.
+    </p>
+  </div>
+
+  <div class="testimonial-author">
+    <img
+      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop"
+      alt="Jane Doe"
+      class="author-image"
+    />
+    <article class="author-info">
+      <h3 class="author-name">Jane Doe</h3>
+      <p class="author-role">Engineering Student</p>
+    </article>
+  </div>
+</div>
 
 <style>
   /* FIRST PARAGRAPH BLOCK */
@@ -380,9 +414,8 @@
     margin-right: 1.5rem;
   }
 
-
   .step-item > div[tabindex="0"]:focus .steps-img-overlay {
-    opacity: 1; 
+    opacity: 1;
   }
 
   .step-item > div[tabindex="0"]:focus .steps-img-overlay {
@@ -390,7 +423,6 @@
   }
 
   @media (min-width: 56.25rem) {
-
     .step-item > div[tabindex="0"]:hover .steps-img-overlay,
     .step-item > div[tabindex="0"]:focus .steps-img-overlay {
       opacity: 1;
@@ -449,7 +481,7 @@
     left: 0;
     width: 100%;
     height: 20.5rem;
-    background: rgba(0, 0, 0, 0.5); 
+    background: rgba(0, 0, 0, 0.5);
     color: white;
     display: flex;
     align-items: center;
@@ -660,6 +692,81 @@
     p {
       margin-top: 1rem;
       padding: 0 3rem 0 3rem;
+    }
+  }
+
+  .testimonial-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+    max-width: 100%;
+    margin: 2rem 0;
+    background-color: var(--cleanroom-100);
+    border-left: 3px solid var(--white);
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+  }
+
+  .testimonial-content {
+    flex: 1;
+  }
+
+  .testimonial-text {
+    font-size: 1rem;
+    margin: 0;
+    color: var(--space-100);
+    line-height: 1.5;
+    font-weight: 500;
+    max-width: 50rem;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    min-width: auto;
+  }
+
+  .author-image {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .author-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .author-name {
+    font-size: 1rem;
+    color: var(--space-100);
+  }
+
+  .author-role {
+    font-size: 0.8125rem;
+    color: var(--space-100);
+  }
+
+  @media (min-width: 56.25rem) {
+    .testimonial-container {
+      flex-direction: row;
+      align-items: center;
+      gap: 4rem;
+      padding: 3rem 2.5rem;
+    }
+
+    .testimonial-author {
+      min-width: 13.75rem;
+    }
+
+    .testimonial-text {
+      max-width: 52rem;
     }
   }
 
