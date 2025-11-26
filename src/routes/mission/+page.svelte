@@ -292,7 +292,7 @@
       class="author-image"
       loading="lazy"
       decoding="async"
-    />
+    /> 
     <article class="author-info">
       <h3 class="paragraph">Jane Doe</h3>
       <p class="supporting">Engineering Student</p>
@@ -694,8 +694,11 @@
     margin-block: 2rem 0;
     background-color: var(--cleanroom-100);
     border-left: 0.188rem solid var(--white);
-    border-bottom-left-radius: 1.25rem;
-    border-top-left-radius: 1.25rem;
+    border-right: 0.188rem solid var(--white);
+    border-bottom-right-radius: 3.25rem;
+    border-top-left-radius: 3.25rem;
+    margin-inline: auto;
+    margin-bottom: 3rem;
   }
 
   .testimonial-content {
@@ -708,7 +711,6 @@
     color: var(--space-100);
     line-height: 1.5;
     font-weight: 500;
-    max-width: 50rem;
   }
 
   .testimonial-author {
@@ -719,8 +721,8 @@
   }
 
   .author-image {
-    width: 4.5rem;
-    height: 4.5rem;
+    width: 5.5rem;
+    height: 5.5rem;
     border-radius: 50%;
     object-fit: cover;
     flex-shrink: 0;
@@ -746,10 +748,16 @@
       align-items: center;
       gap: 4rem;
       padding: 3rem 2.5rem;
+      width: 70rem;
     }
 
     .testimonial-author {
       min-width: 13.75rem;
+    }
+
+    .author-image {
+      width: 6.5rem;
+      height: 6.5rem;
     }
 
     .testimonial-text {
