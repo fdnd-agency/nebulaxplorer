@@ -36,6 +36,10 @@ nav.pagination-container {
     &:first-child,
     &:last-child {
       color: var(--arrow-color);
+
+      &.disabled {
+        opacity: 0.6;
+      }
     }
   }
 

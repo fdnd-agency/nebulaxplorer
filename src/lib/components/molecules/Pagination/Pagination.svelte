@@ -108,7 +108,7 @@
         <Arrow height="20" width="12" />
       </a>
     {:else}
-      <span class="heading page-indicator disabled" aria-hidden="true"
+      <span class="heading pagination-indicator disabled" aria-hidden="true"
         ><Arrow height="20" width="12" /></span
       >
     {/if}
