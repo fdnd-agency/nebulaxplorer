@@ -690,13 +690,11 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 2rem;
-    padding: 2rem 1.5rem;
-    margin-block: 2rem 0;
+    padding: 2.5rem 1.5rem 2rem 1.5rem; 
+    margin-block: 2.5rem 0; 
     background-color: var(--cleanroom-100);
     border-left: 0.188rem solid var(--white);
     border-right: 0.188rem solid var(--white);
-    border-bottom-right-radius: 6.25rem;
-    border-top-left-radius: 6.25rem;
     margin-inline: auto;
     margin-bottom: 3rem;
   }
@@ -748,7 +746,7 @@
       align-items: center;
       gap: 4rem;
       padding: 3rem 2.5rem;
-      width: 70rem;
+      width: 100%;
     }
 
     .testimonial-author {
