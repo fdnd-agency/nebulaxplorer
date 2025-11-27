@@ -34,7 +34,7 @@ nav.pagination-container {
     }
 
     &:first-child,
-    :last-child {
+    &:last-child {
       color: var(--arrow-color);
     }
   }
