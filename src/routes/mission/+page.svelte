@@ -691,11 +691,11 @@
     align-items: flex-start;
     gap: 2rem;
     padding: 2.5rem 1.5rem 2rem 1.5rem; 
-    margin-block: 2.5rem 0; 
-    background-color: var(--cleanroom-100);
-    border-left: 0.188rem solid var(--white);
-    border-right: 0.188rem solid var(--white);
+    margin-top: 2.5rem; 
     margin-bottom: 3rem;
+    background-color: var(--cleanroom-100);
+    border-left: .1875rem solid var(--white);
+    border-right: .1875rem solid var(--white);
   }
 
   .testimonial-content {
