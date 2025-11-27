@@ -695,8 +695,8 @@
     background-color: var(--cleanroom-100);
     border-left: 0.188rem solid var(--white);
     border-right: 0.188rem solid var(--white);
-    border-bottom-right-radius: 3.25rem;
-    border-top-left-radius: 3.25rem;
+    border-bottom-right-radius: 6.25rem;
+    border-top-left-radius: 6.25rem;
     margin-inline: auto;
     margin-bottom: 3rem;
   }
