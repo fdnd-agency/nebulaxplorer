@@ -3,6 +3,7 @@
   import Hero from "$lib/components/molecules/Hero/Hero.svelte";
   import logo from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
   import Breadcrumb from "../../lib/components/molecules/Breadcrumb/Breadcrumb.svelte";
+  import Quote from "$lib/components/atoms/Quote-icon/Quote.svelte";
 </script>
 
 <!-- HERO BLOCK -->
@@ -23,7 +24,6 @@
   </div>
 
   <section class="text-content">
-
     <article>
       <h4 class="orange heading">Dense matter and compact objects</h4>
       <p>
@@ -195,7 +195,6 @@
     alt="Black Hole"
   />
   <section class="text-content-right">
-
     <article>
       <h4 class="orange heading">Multi-messenger physics</h4>
       <p>
@@ -225,7 +224,6 @@
 
 <section class="paragraph-block-3">
   <section class="text-content-3">
-
     <article>
       <h4 class="orange heading">Time-domain Astrophysics</h4>
       <p>
@@ -275,6 +273,32 @@
     >.
   </p>
 </article>
+
+<figure class="testimonial-container">
+  <blockquote class="testimonial-content">
+    <Quote />
+    <p class="testimonial-text">
+      Working with SRON's Nebula Xplorer team has been an incredible experience.
+      Being part of the mission to prepare the Nebula Xplorer for launch taught
+      me so much about space instrumentation and teamwork. The dedication and
+      expertise of everyone involved is truly inspiring.
+    </p>
+  </blockquote>
+
+  <figcaption class="testimonial-author">
+    <img
+      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop"
+      alt="Jane Doe"
+      class="author-image"
+      loading="lazy"
+      decoding="async"
+    /> 
+    <article class="author-info">
+      <h3 class="paragraph">Jane Doe</h3>
+      <p class="supporting">Engineering Student</p>
+    </article>
+  </figcaption>
+</figure>
 
 <style>
   /* FIRST PARAGRAPH BLOCK */
@@ -380,9 +404,8 @@
     margin-right: 1.5rem;
   }
 
-
   .step-item > div[tabindex="0"]:focus .steps-img-overlay {
-    opacity: 1; 
+    opacity: 1;
   }
 
   .step-item > div[tabindex="0"]:focus .steps-img-overlay {
@@ -390,7 +413,6 @@
   }
 
   @media (min-width: 56.25rem) {
-
     .step-item > div[tabindex="0"]:hover .steps-img-overlay,
     .step-item > div[tabindex="0"]:focus .steps-img-overlay {
       opacity: 1;
@@ -449,7 +471,7 @@
     left: 0;
     width: 100%;
     height: 20.5rem;
-    background: rgba(0, 0, 0, 0.5); 
+    background: rgba(0, 0, 0, 0.5);
     color: white;
     display: flex;
     align-items: center;
@@ -660,6 +682,82 @@
     p {
       margin-top: 1rem;
       padding: 0 3rem 0 3rem;
+    }
+  }
+
+  .testimonial-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2.5rem 1.5rem 2rem 1.5rem; 
+    margin-top: 2.5rem; 
+    margin-bottom: 3rem;
+    background-color: var(--cleanroom-100);
+    border-left: .1875rem solid var(--white);
+    border-right: .1875rem solid var(--white);
+  }
+
+  .testimonial-content {
+    flex: 1;
+  }
+
+  .testimonial-text {
+    font-size: 1rem;
+    margin: 0;
+    color: var(--space-100);
+    line-height: 1.5;
+    font-weight: 500;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    min-width: auto;
+  }
+
+  .author-image {
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .author-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .paragraph {
+    color: var(--space-100);
+  }
+
+  .supporting {
+    color: var(--space-100);
+  }
+
+  @media (min-width: 56.25rem) {
+    .testimonial-container {
+      flex-direction: row;
+      align-items: center;
+      gap: 4rem;
+      padding: 3rem 2.5rem;
+    }
+
+    .testimonial-author {
+      min-width: 13.75rem;
+    }
+
+    .author-image {
+      width: 6.5rem;
+      height: 6.5rem;
+    }
+
+    .testimonial-text {
+      max-width: 70ch;
     }
   }
 
