@@ -103,7 +103,7 @@ textarea {
 
 
 *::selection {
-  background: var(--cleanroom-60);;
+  background: var(--cleanroom-60);
   color: var(--space-100);
 }
 

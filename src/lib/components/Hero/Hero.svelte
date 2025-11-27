@@ -15,14 +15,6 @@
     <p class="subheading">{paragraph}</p>
   {/if}
 
-  {#if background.file}
-    <enhanced:img
-      src={background.file}
-      alt={background.alt}
-      class="hero-bg"
-      sizes="100vw"
-    />
-  {/if}
 
  {#if sronIcon}
     <img src={sronIcon} alt="Logo of SRON Academy" class="hero-logo" />
