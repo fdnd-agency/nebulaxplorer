@@ -695,8 +695,8 @@
     background-color: var(--cleanroom-100);
     border-left: 0.188rem solid var(--white);
     border-right: 0.188rem solid var(--white);
-    margin-inline: auto;
     margin-bottom: 3rem;
+    width: 100vw;
   }
 
   .testimonial-content {
@@ -746,7 +746,7 @@
       align-items: center;
       gap: 4rem;
       padding: 3rem 2.5rem;
-      width: 100%;
+      width: 100vw;
     }
 
     .testimonial-author {
@@ -759,7 +759,7 @@
     }
 
     .testimonial-text {
-      max-width: 52rem;
+      max-width: 70ch;
     }
   }
 
