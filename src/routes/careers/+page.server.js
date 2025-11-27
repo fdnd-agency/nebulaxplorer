@@ -3,7 +3,7 @@ import {getPaginationItems} from "$lib/utils/paginate.js";
 
 export async function load({ url }) {
   const currentPage = Number(url.searchParams.get("page")) || 1;
-  const limit = 1;
+  const limit = 9;
   const offset = (currentPage - 1) * limit;
 
   const response = await fetch(
@@ -12,9 +12,7 @@ export async function load({ url }) {
 
   const json = await response.json();
 
-  const fakeCount = 25;
-
-  const totalPages = Math.ceil(fakeCount ? fakeCount : json.meta.total_count / limit);
+  const totalPages = Math.ceil(json.meta.total_count / limit);
 
   const pagination = {
     currentPage,
