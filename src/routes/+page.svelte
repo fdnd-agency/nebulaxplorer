@@ -1,2 +1,6 @@
-<h1>Home Page</h1>
-<p>coming soon</p>
+<script>
+    import Mission from "$lib/components/atoms/Mission.svelte"
+</script>
+
+
+<Mission />
