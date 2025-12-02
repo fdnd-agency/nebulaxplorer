@@ -6,6 +6,8 @@
   import logo from "$lib/assets/logos/SRON_Academy_OnOrange.svg";
 </script>
  
+<div class="scientific-page">
+
 <Header
   pageTitle="scientific"
   sronIcon={logo}
@@ -25,11 +27,17 @@
 <ScientificCards 
   /> 
 
+</div>
+
 <style>
- 
-:global(body) {
-    background-color: var(--cleanroom-100); 
-  }
+
+.scientific-page {
+  background-color: var(--cleanroom-100);
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  margin-inline: 0;
+}
 
 
   .paragraph-block {
@@ -123,6 +131,7 @@
   :global(enhanced\:img) {
     width: auto;
   }
+
 
 
 </style>
