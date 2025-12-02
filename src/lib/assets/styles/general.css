@@ -10,27 +10,16 @@
 }
 
 /* Font faces */
-@font-face {
-  font-family: spaceGrotesk;
-  src: url("/fonts/space-grotesk-variable.ttf");
-}
+/* @font-face {
+  font-family: labelshort;
+  src: url("/fonts/labelshort.woff2") format("woff2"),
+    url("/fonts/labelshort.woff") format("woff");
+} */
 
 @font-face {
-  font-family: spaceMonoRegular;
-  src: url("/fonts/space-mono-regular.ttf");
-}
-
-@font-face {
-  font-family: spaceMonoBold;
-  src: url("/fonts/space-mono-bold.ttf");
-}
-
-@font-face {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 100 900;
-  src: local("Roboto"), local("Roboto Regular"),
-    url("/fonts/roboto-variable.ttf") format("truetype");
+  font-family: risopop;
+  src: url("/fonts/risopop.woff2") format("woff2"),
+    url("/fonts/risopop.woff") format("woff");
 }
 
 html{
@@ -40,52 +29,10 @@ html{
 body {
   /* Theme */
 
-  /* 100 is the main color of every palet */
-
-  /* The space colors are being used for the base of the website */
-  --space-170: hsl(238, 51%, 31%);
-  --space-160: hsl(238, 43%, 26%);
-  --space-140: hsl(237, 40%, 21%);
-  --space-100: hsl(238, 35%, 15%);
-  --space-100-low-opacity: hsla(238, 40%, 13%, 0.904);
-  --space-60: hsl(228, 17%, 35%);
-  --space-30: hsl(228, 11%, 63%);
-  --space-10: hsl(243, 10%, 61%);
-  --space-low-opacity: hsla(238, 35%, 15%, 0.5);
-
-  /* The cleanroom colors are being used for the accent colors */
-  --cleanroom-170: hsl(14, 86%, 43%);
-  --cleanroom-160: hsl(13, 84%, 48%);
-  --cleanroom-140: hsl(14, 83%, 52%);
-  --cleanroom-100: hsl(13, 82%, 56%);
-  --cleanroom-60: hsl(16, 100%, 75%);
-  --cleanroom-30: hsl(18, 97%, 86%);
-  --cleanroom-10: hsl(18, 100%, 90%);
-  --cleanroom-low-opacity: hsla(13, 82%, 56%, 0.5);
-
-  /* The ultra colors are being used for the details */
-  --ultra-170: hsl(234, 58%, 43%);
-  --ultra-160: hsl(235, 52%, 38%);
-  --ultra-140: hsl(234, 48%, 34%);
-  --ultra-100: hsl(235, 45%, 29%);
-  --ultra-60: hsl(226, 25%, 51%);
-  --ultra-30: hsl(229, 24%, 73%);
-  --ultra-10: hsl(230, 18%, 80%);
-  --ultra-low-opacity: hsla(235, 45%, 29%, 0.5);
-
-  /* These colors are being used for the content */
-  --black: hsl(0, 0%, 0%);
-  --dark-grey: hsl(0, 0%, 20%);
-  --grey: hsl(0, 0%, 40%);
-  --light-grey: hsl(0, 0%, 60%);
-  --lightest-grey: hsl(0, 0%, 80%);
-  --white: hsl(0, 0%, 100%);
-  --white-low-opacity: hsla(0, 0%, 100%, 0.5);
-
   /* Font families */
-  --heading: spaceGrotesk;
-  --paragraph: Roboto;
-  --subtext: spaceMonoBold;
+  --heading: labelshort;
+  --paragraph: risopop;
+  --subtext: labelshort;
 
   /* Styling */
   background: var(--space-100);
@@ -137,21 +84,21 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .title {
-  font-family: SpaceGrotesk;
+  font-family: var(--heading);
   font-size: clamp(2.5rem, 5vw + 1rem, 4.375rem);
   line-height: clamp(2.5rem, 5vw + 1rem, 4.625rem);
   letter-spacing: -0.02em;
 }
 
 .subtitle {
-  font-family: SpaceGrotesk;
+  font-family: var(--heading);
   font-size: clamp(2.25rem, 4.1vw + 1rem, 3.75rem);
   line-height: calc(1em + 0.25rem);
   letter-spacing: -0.02em;
 }
 
 .section_title {
-  font-family: SpaceGrotesk;
+  font-family: var(--heading);
   font-size: clamp(2rem, 3.5vw + 1rem, 2.875rem);
   line-height: clamp(2.5rem, 3.5vw + 1rem, 3.125rem);
   letter-spacing: -0.01em;
@@ -164,7 +111,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .heading {
-  font-family: SpaceGrotesk;
+  font-family: var(--heading);
   font-size: clamp(1.5rem, 1.8vw + 1rem, 2.25rem);
   line-height: clamp(2rem, 1.8vw + 1rem, 2.5rem);
   font-weight: 500;
@@ -175,14 +122,14 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .subheading {
-  font-family: SpaceGrotesk;
+  font-family: var(--heading);
   font-size: clamp(1.125rem, 2vw + 0.5rem, 1.75rem);
   line-height: clamp(2rem, 2vw + 0.5rem, 2.5rem);
   font-weight: 500;
 }
 
 .caption {
-  font-family: SpaceGrotesk;
+  font-family: var(--heading);
   font-size: clamp(1.125rem, 2vw + 0.5rem, 1.75rem);
   line-height: clamp(2rem, 2vw + 0.5rem, 2.5rem);
 }
@@ -201,7 +148,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .link {
-  font-family: SpaceGrotesk;
+  font-family: var(--heading);
   font-size: clamp(1.125rem, 1.5vw + 0.75rem, 1.375rem);
   line-height: clamp(1.625rem, 1.5vw + 1rem, 2rem);
 }
