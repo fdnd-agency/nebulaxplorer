@@ -6,7 +6,7 @@
   import "$lib/assets/styles/layout.css";
 
   // Are we on a slug page?
-  // ex; on a detail page of the news page
+  // ex; on a detail page of the scientific page
   const isParentActive = (path) => {
     return $page.url.pathname.startsWith(`${path}/`);
   };
@@ -21,7 +21,7 @@
     { path: "/", label: "home" },
     { path: "/mission", label: "mission" },
     { path: "/scientific", label: "scientific" },
-    { path: "/news", label: "news" },
+    { path: "/scientific", label: "scientific" },
     { path: "/team", label: "team" },
     { path: "/careers", label: "careers" },
     { path: "/partners", label: "partners" },
