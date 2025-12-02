@@ -1,11 +1,11 @@
 <script>
-  import blackholeImage from "$lib/assets/images/blackhole2.jpg?enhanced";
+  import Hero from "$lib/components/molecules/Hero/Hero.svelte";
+  import blackholeImage from "$lib/assets/blackhole.jpg?enhanced";
+  import ScientificCards from "$lib/components/molecules/scientific/scientificcards.svelte";
+  import Breadcrumb from "$lib/components/molecules/Breadcrumb/Breadcrumb.svelte";
   import logo from "$lib/assets/logos/SRON_Academy_OnWhite.svg";
-  import Breadcrumb from "$lib/components/Breadcrumb/Breadcrumb.svelte";
-  import scientificCards from "$lib/components/scientificCards/scientificCards.svelte";
 </script>
  
-
 <Hero
   pageTitle="scientific"
   sronIcon={logo}
@@ -22,7 +22,7 @@
   </div>
   </section>
    
-<scientificCards 
+<ScientificCards 
   /> 
 
 <style>

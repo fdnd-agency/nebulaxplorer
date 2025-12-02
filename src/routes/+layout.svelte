@@ -20,7 +20,7 @@
   const navItems = [
     { path: "/", label: "home" },
     { path: "/mission", label: "mission" },
-    { path: "/scientific", label: "scientific" },
+    { path: "/news", label: "news" },
     { path: "/scientific", label: "scientific" },
     { path: "/team", label: "team" },
     { path: "/careers", label: "careers" },
