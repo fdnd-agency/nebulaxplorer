@@ -1,13 +1,15 @@
 <script>
   import PopsLogo from "$lib/assets/icons/pops-logo.svelte";
   import { Canvas } from "@threlte/core";
-
+  import { Scene } from "$lib";
 </script>
 
 <footer>
-  <Canvas>
-    
-  </Canvas>
+  <div class="canvas">
+    <Canvas>
+      <Scene />
+    </Canvas>
+  </div>
   <a href="/">
     <PopsLogo />
   </a>
@@ -39,6 +41,16 @@
 
 <style>
   footer {
+    div.canvas {
+      pointer-events: none;
+      z-index: 1000;
+      position: absolute;
+      top: -100%;
+      left: 0;
+      width: 100%;
+
+      height: 200%;
+    }
     border-top: 6px solid var(--primary);
     padding: 3rem 1.5rem;
     padding-top: 3.375rem;

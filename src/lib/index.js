@@ -1,4 +1,4 @@
 // Assets
-import './assets/styles/general.css';
 
+export { default as Scene } from './components/Scene/Scene.svelte';
 
