@@ -34,8 +34,16 @@ body {
   --paragraph: risopop;
   --subtext: labelshort;
 
+  --soft-accent: #FCF9CE;
+  --soft-bg: #D2E4EF;
+
+  --primary: #52A8D8;
+  --secondary: #991565;
+  --mixed: #521565;
+
+
   /* Styling */
-  background: var(--space-100);
+  background: var(--soft-bg);
   color: var(--white);
   font-family: var(--paragraph);
 }
@@ -63,6 +71,8 @@ main {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1.25rem;
   margin-inline: 1.5rem;
+  min-height: 100vh;
+  align-items: end;
 
   @media (min-width: 56.25rem) {
     grid-template-columns: repeat(12, 1fr);
