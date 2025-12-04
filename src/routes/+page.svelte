@@ -1,8 +1,13 @@
 <script>
   import PopsLogo from "$lib/assets/icons/pops-logo.svelte";
+  import { Canvas } from "@threlte/core";
+
 </script>
 
 <footer>
+  <Canvas>
+    
+  </Canvas>
   <a href="/">
     <PopsLogo />
   </a>
@@ -22,7 +27,10 @@
     <form>
       <label>
         Subscribe to our news letter
-        <input type="email" name="email" />
+        <div class="group">
+          <input type="email" name="email" />
+          <button>send</button>
+        </div>
       </label>
       <div class="socials"></div>
     </form>
@@ -40,28 +48,27 @@
     background: var(--soft-accent);
     position: relative;
 
-    &::after{
-        content: "";
-        width: 100%;
-        height: 6px;
-        background: var(--secondary);
-        position: absolute;
-        top: 0;
-        left: 0;
-
+    &::after {
+      content: "";
+      width: 100%;
+      height: 6px;
+      background: var(--secondary);
+      position: absolute;
+      top: 0;
+      left: 0;
     }
 
     .information {
       display: flex;
       flex-wrap: wrap;
-        gap: 1.5rem;
+      gap: 1.5rem;
       > ul {
         width: clamp(7rem, 12vw, 12.875rem);
         list-style: none;
-        border-right: .1875rem solid var(--primary);
+        border-right: 0.1875rem solid var(--primary);
 
-        &:nth-child(2){
-            border-color: var(--secondary);
+        &:nth-child(2) {
+          border-color: var(--secondary);
         }
 
         > li {
@@ -69,24 +76,28 @@
             margin-top: 0.75rem;
           }
 
-          &:nth-child(3){
+          &:nth-child(3) {
             color: var(--primary);
           }
 
-          &:nth-child(4){
+          &:nth-child(4) {
             color: var(--secondary);
           }
         }
       }
 
-      form{
+      form {
         label {
+          display: flex;
+          flex-direction: column;
+          .group {
+            width: 100%;
             display: flex;
-            flex-direction: column;
-
             input {
-                margin-top: .75rem;
+              margin-top: 0.75rem;
+              background: #dae9d0;
             }
+          }
         }
       }
     }
