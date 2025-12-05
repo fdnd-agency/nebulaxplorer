@@ -2,6 +2,7 @@
   import { Hero } from "$lib";
   import Jobs from "$lib/components/molecules/jobs/Jobs.svelte";
   import Breadcrumb from "$lib/components/molecules/Breadcrumb/Breadcrumb.svelte";
+
   import Pagination from "$lib/components/molecules/Pagination/Pagination.svelte";
 
   // ! NOTE: important to include ?enhanced, otherwise no optimization takes place nor does it get rendered !
@@ -10,7 +11,6 @@
 
   const { data } = $props();
   const { vacancies, pagination } = $derived(data);
-  
 </script>
 
 <!-- Always provide alt and file path WITHIN background -->
