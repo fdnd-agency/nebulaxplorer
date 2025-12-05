@@ -1,7 +1,7 @@
 <script>
-  import PopsLogo from "$lib/assets/icons/pops-logo.svelte";
+  import PopsLogo from "$lib/assets/icons/Pops-logo.svelte";
   import { Canvas } from "@threlte/core";
-  import { Scene } from "$lib";
+  import Scene from "$lib/components/Scene/Scene.svelte";
 </script>
 
 <footer>
