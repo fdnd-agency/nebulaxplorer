@@ -41,6 +41,8 @@
 
 <style>
   footer {
+    flex-wrap: wrap;
+    
     div.canvas {
       pointer-events: none;
       z-index: 1000;
