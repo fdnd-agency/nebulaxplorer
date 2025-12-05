@@ -2,7 +2,7 @@
   import blackholeImage from "$lib/assets/blackhole.jpg?enhanced";
   import Hero from "$lib/components/molecules/Hero/Hero.svelte";
   import logo from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
-  import Breadcrumb from "../../lib/components/molecules/Breadcrumb/Breadcrumb.svelte";
+  import Breadcrumb from "$lib/components/molecules/Breadcrumb/Breadcrumb.svelte";
   import Quote from "$lib/components/atoms/Quote-icon/Quote.svelte";
 </script>
 
@@ -292,7 +292,7 @@
       class="author-image"
       loading="lazy"
       decoding="async"
-    /> 
+    />
     <article class="author-info">
       <h3 class="paragraph">Jane Doe</h3>
       <p class="supporting">Engineering Student</p>
@@ -690,12 +690,12 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 2rem;
-    padding: 2.5rem 1.5rem 2rem 1.5rem; 
-    margin-top: 2.5rem; 
+    padding: 2.5rem 1.5rem 2rem 1.5rem;
+    margin-top: 2.5rem;
     margin-bottom: 3rem;
     background-color: var(--cleanroom-100);
-    border-left: .1875rem solid var(--white);
-    border-right: .1875rem solid var(--white);
+    border-left: 0.1875rem solid var(--white);
+    border-right: 0.1875rem solid var(--white);
   }
 
   .testimonial-content {
