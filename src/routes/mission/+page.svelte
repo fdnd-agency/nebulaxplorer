@@ -52,6 +52,82 @@
   <enhanced:img src={blackholeImage} alt="Black Hole" />
 </section>
 
+<!-- SECOND IMG + PARAGRAPH BLOCK -->
+
+<section class="paragraph-block-right">
+  <enhanced:img
+    class="paragraph-img-left"
+    src={blackholeImage}
+    alt="Black Hole"
+  />
+  <section class="text-content-right">
+    <article>
+      <h4 class="orange heading">Multi-messenger physics</h4>
+      <p>
+        NEBULA-Xplorer frames the multi-wavelength campaigns required to
+        understand jet and accretion physics at the forefront of its design:
+        emphasizing the ability to maximize X-ray observations of time
+        uncertain, fast evolving changes in the accretion flow by tying together
+        fine time resolution of 1 microsecond and the ability to maintain as
+        close to continuous observations of targets as possible.
+      </p>
+
+      <p>
+        During longer observations, NEBULA-Xplorer will transmit timing
+        information key to understanding when ballistic jet ejections are
+        launched to the ground to trigger observations from competitive
+        ground-based facilities such as the radio interferometer SKA and mm
+        observatory AMT to maximize the effectiveness of multi-wavelength
+        observations of jets. NEBULA-Xplorer will also work with optical
+        facilities to better understand how activity in the outer accretion disk
+        of these systems propagates into the inner-most regions.
+      </p>
+    </article>
+  </section>
+</section>
+
+<!-- THIRD PARAGRAPH + IMG BLOCK -->
+
+<section class="paragraph-block-3">
+  <section class="text-content-3">
+    <article>
+      <h4 class="orange heading">Time-domain Astrophysics</h4>
+      <p>
+        As a non-imaging X-ray timing observatory, NEBULA-Xplorer’s core science
+        focuses on interpreting the variability of emission from the sources
+        that it observes. This includes more traditional ways of thinking about
+        variability such as looking for quasi-periodic signals in source light
+        curve and phase-folded pulse profile modeling of neutron star surfaces
+        but also includes topics such as “dipping” in the light curve produced
+        by clumps of material produced by winds from both the accretion disk and
+        companion star in these systems obscuring the central accretion engine.
+      </p>
+
+      <p>
+        Frequently, changes in variability are affected by multiple phenomena in
+        the system that evolve on different time scales, making it difficult to
+        understand how important each phenomenon is to driving transient
+        outbursts or is linked to the fundamental process of accretion.
+        NEBULA-Xplorer’s emphasis on performing continuous longer observations
+        of individual sources will allow us to understand the short-term
+        variability of emission and how that changes on timescales of days to
+        weeks.
+      </p>
+
+      <p>
+        NEBULA-Xplorer’s moderate energy resolution and high timing resolution
+        will also allow us to perform spectral-timing analysis of bright
+        systems, like that of the NICER telescope. Spectral timing allows for
+        the investigation of how variability changes with energy, which can be
+        used to trace how the geometry of X-ray sources changes through time as
+        well as understand the distances between different parts of the system
+        through modeling of light travel time within the system.
+      </p>
+    </article>
+  </section>
+  <enhanced:img src={blackholeImage} alt="Black Hole" />
+</section>
+
 <!-- STEPS BLOCK -->
 
 <section class="steps-block">
@@ -186,82 +262,6 @@
   </ul>
 </section>
 
-<!-- SECOND IMG + PARAGRAPH BLOCK -->
-
-<section class="paragraph-block-right">
-  <enhanced:img
-    class="paragraph-img-left"
-    src={blackholeImage}
-    alt="Black Hole"
-  />
-  <section class="text-content-right">
-    <article>
-      <h4 class="orange heading">Multi-messenger physics</h4>
-      <p>
-        NEBULA-Xplorer frames the multi-wavelength campaigns required to
-        understand jet and accretion physics at the forefront of its design:
-        emphasizing the ability to maximize X-ray observations of time
-        uncertain, fast evolving changes in the accretion flow by tying together
-        fine time resolution of 1 microsecond and the ability to maintain as
-        close to continuous observations of targets as possible.
-      </p>
-
-      <p>
-        During longer observations, NEBULA-Xplorer will transmit timing
-        information key to understanding when ballistic jet ejections are
-        launched to the ground to trigger observations from competitive
-        ground-based facilities such as the radio interferometer SKA and mm
-        observatory AMT to maximize the effectiveness of multi-wavelength
-        observations of jets. NEBULA-Xplorer will also work with optical
-        facilities to better understand how activity in the outer accretion disk
-        of these systems propagates into the inner-most regions.
-      </p>
-    </article>
-  </section>
-</section>
-
-<!-- THIRD PARAGRAPH + IMG BLOCK -->
-
-<section class="paragraph-block-3">
-  <section class="text-content-3">
-    <article>
-      <h4 class="orange heading">Time-domain Astrophysics</h4>
-      <p>
-        As a non-imaging X-ray timing observatory, NEBULA-Xplorer’s core science
-        focuses on interpreting the variability of emission from the sources
-        that it observes. This includes more traditional ways of thinking about
-        variability such as looking for quasi-periodic signals in source light
-        curve and phase-folded pulse profile modeling of neutron star surfaces
-        but also includes topics such as “dipping” in the light curve produced
-        by clumps of material produced by winds from both the accretion disk and
-        companion star in these systems obscuring the central accretion engine.
-      </p>
-
-      <p>
-        Frequently, changes in variability are affected by multiple phenomena in
-        the system that evolve on different time scales, making it difficult to
-        understand how important each phenomenon is to driving transient
-        outbursts or is linked to the fundamental process of accretion.
-        NEBULA-Xplorer’s emphasis on performing continuous longer observations
-        of individual sources will allow us to understand the short-term
-        variability of emission and how that changes on timescales of days to
-        weeks.
-      </p>
-
-      <p>
-        NEBULA-Xplorer’s moderate energy resolution and high timing resolution
-        will also allow us to perform spectral-timing analysis of bright
-        systems, like that of the NICER telescope. Spectral timing allows for
-        the investigation of how variability changes with energy, which can be
-        used to trace how the geometry of X-ray sources changes through time as
-        well as understand the distances between different parts of the system
-        through modeling of light travel time within the system.
-      </p>
-    </article>
-  </section>
-  <enhanced:img src={blackholeImage} alt="Black Hole" />
-</section>
-
 <article class="getting-involved">
   <h4 class="orange heading">Getting involved</h4>
   <p>
@@ -361,6 +361,151 @@
         max-height: 22.8125rem;
       }
     }
+  }
+
+  /* SECOND PARAGRAPH BLOCK */
+
+  .paragraph-block-right {
+    display: grid;
+    grid-template-columns: subgrid;
+    gap: inherit;
+    row-gap: unset;
+    padding-bottom: 2rem;
+    background-color: var(--white);
+    color: var(--space-100);
+    font-weight: 500;
+
+    > *:not(enhanced\:img, img, picture) {
+      grid-column: 1 / -1;
+      max-width: 43.75rem;
+
+      @media (min-width: 36.25rem) {
+        grid-column: 1 / 4;
+        padding-right: 1.5rem;
+      }
+      @media (min-width: 56.25rem) {
+        padding-left: 2.5rem;
+        grid-column: 6 / 12;
+        align-items: right;
+      }
+    }
+
+    .text-content-right article {
+      * + p {
+        margin-top: 0.5rem;
+        line-height: 1.5;
+        @media (min-width: 56.25rem) {
+          padding-left: 1.5rem;
+        }
+      }
+    }
+
+    :global(.text-content),
+    :global(picture) {
+      margin-top: 3rem;
+    }
+
+    :global(picture) {
+      grid-column: 4 / -1;
+      height: fit-content;
+      display: none;
+
+      @media (min-width: 36.25rem) {
+        display: block;
+      }
+
+      @media (min-width: 56.25rem) {
+        grid-column: 1 / 6;
+      }
+
+      :global(enhanced\:img),
+      :global(img) {
+        display: none;
+
+        @media (min-width: 36.25rem) {
+          display: block;
+          width: 100%;
+          object-fit: cover;
+          max-height: 22.8125rem;
+        }
+      }
+    }
+  }
+
+  /* THIRD PARAGRAPH + IMG BLOCK */
+
+  .paragraph-block-3 {
+    display: grid;
+    grid-template-columns: subgrid;
+    gap: inherit;
+    row-gap: unset;
+    margin-bottom: 1rem;
+
+    > *:not(enhanced\:img, img, picture) {
+      grid-column: 1 / -1;
+      max-width: 43.75rem;
+
+      @media (min-width: 36.25rem) {
+        grid-column: 1 / 4;
+        padding-right: 1.5rem;
+      }
+      @media (min-width: 56.25rem) {
+        padding-left: 2.5rem;
+        grid-column: 1 / 8;
+      }
+    }
+
+    .text-content-3 article {
+      * + p {
+        margin-top: 0.5rem;
+        line-height: 1.5;
+        @media (min-width: 56.25rem) {
+          padding-left: 1.5rem;
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+
+    :global(.text-content),
+    :global(picture) {
+      margin-top: 3rem;
+    }
+
+    :global(picture) {
+      grid-column: 4 / -1;
+      height: fit-content;
+
+      display: none;
+
+      @media (min-width: 36.25rem) {
+        display: block;
+      }
+
+      @media (min-width: 56.25rem) {
+        grid-column: 8 / -1;
+        position: sticky;
+        top: 30%;
+        margin-bottom: 1.5rem;
+      }
+
+      :global(enhanced\:img),
+      :global(img) {
+        width: 100%;
+        object-fit: cover;
+        max-height: 22.8125rem;
+      }
+    }
+  }
+
+  .text-content-3 article {
+    p {
+      color: var(--white);
+      font-weight: 500;
+    }
+  }
+
+  .article {
+    margin-bottom: 2rem;
   }
 
   /* STEPS BLOCK */
@@ -531,148 +676,8 @@
     box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.3);
   }
 
-  /* SECOND PARAGRAPH BLOCK */
 
-  .paragraph-block-right {
-    display: grid;
-    grid-template-columns: subgrid;
-    gap: inherit;
-    row-gap: unset;
-    margin-bottom: 2rem;
-
-    > *:not(enhanced\:img, img, picture) {
-      grid-column: 1 / -1;
-      max-width: 43.75rem;
-
-      @media (min-width: 36.25rem) {
-        grid-column: 1 / 4;
-        padding-right: 1.5rem;
-      }
-      @media (min-width: 56.25rem) {
-        padding-left: 2.5rem;
-        grid-column: 6 / 12;
-        align-items: right;
-      }
-    }
-
-    .text-content-right article {
-      * + p {
-        margin-top: 0.5rem;
-        line-height: 1.5;
-        @media (min-width: 56.25rem) {
-          padding-left: 1.5rem;
-        }
-      }
-    }
-
-    :global(.text-content),
-    :global(picture) {
-      margin-top: 3rem;
-    }
-
-    :global(picture) {
-      grid-column: 4 / -1;
-      height: fit-content;
-      display: none;
-
-      @media (min-width: 36.25rem) {
-        display: block;
-      }
-
-      @media (min-width: 56.25rem) {
-        grid-column: 1 / 6;
-      }
-
-      :global(enhanced\:img),
-      :global(img) {
-        display: none;
-
-        @media (min-width: 36.25rem) {
-          display: block;
-          width: 100%;
-          object-fit: cover;
-          max-height: 22.8125rem;
-        }
-      }
-    }
-  }
-
-  /* THIRD PARAGRAPH + IMG BLOCK */
-
-  .paragraph-block-3 {
-    display: grid;
-    grid-template-columns: subgrid;
-    gap: inherit;
-    row-gap: unset;
-    margin-bottom: 1rem;
-    background-color: var(--white);
-
-    > *:not(enhanced\:img, img, picture) {
-      grid-column: 1 / -1;
-      max-width: 43.75rem;
-
-      @media (min-width: 36.25rem) {
-        grid-column: 1 / 4;
-        padding-right: 1.5rem;
-      }
-      @media (min-width: 56.25rem) {
-        padding-left: 2.5rem;
-        grid-column: 1 / 8;
-      }
-    }
-
-    .text-content-3 article {
-      * + p {
-        margin-top: 0.5rem;
-        line-height: 1.5;
-        @media (min-width: 56.25rem) {
-          padding-left: 1.5rem;
-          margin-bottom: 1.5rem;
-        }
-      }
-    }
-
-    :global(.text-content),
-    :global(picture) {
-      margin-top: 3rem;
-    }
-
-    :global(picture) {
-      grid-column: 4 / -1;
-      height: fit-content;
-
-      display: none;
-
-      @media (min-width: 36.25rem) {
-        display: block;
-      }
-
-      @media (min-width: 56.25rem) {
-        grid-column: 8 / -1;
-        position: sticky;
-        top: 30%;
-        margin-bottom: 1.5rem;
-      }
-
-      :global(enhanced\:img),
-      :global(img) {
-        width: 100%;
-        object-fit: cover;
-        max-height: 22.8125rem;
-      }
-    }
-  }
-
-  .text-content-3 article {
-    p {
-      color: var(--space-100);
-      font-weight: 500;
-    }
-  }
-
-  .article {
-    margin-bottom: 2rem;
-  }
+  /* GETTING INVOLVED */
 
   .getting-involved {
     padding-left: 1.5rem;
@@ -684,6 +689,9 @@
       padding: 0 3rem 0 3rem;
     }
   }
+
+
+  /* TESTIMONIAL BLOCK */
 
   .testimonial-container {
     display: flex;
