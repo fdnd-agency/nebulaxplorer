@@ -1,66 +1,29 @@
 <script>
-  import { onMount } from "svelte";
 
-  onMount(async () => {
-    try {
-      const { gsap } = await import("gsap");
-      const { SplitText } = await import("gsap/SplitText");
-      gsap.registerPlugin(SplitText);
-
-      await document.fonts.ready;
-      gsap.set(".split", { opacity: 1 });
-
-      const split = SplitText.create(".split", { type: "chars, words", mask: "chars" });
-
-      const tween = gsap.from(split.chars, {
-        duration: 2,
-        yPercent: "random([-150, 150])",
-        xPercent: "random([-150, 150])",
-        stagger: { from: "random", amount: 0.6 },
-        ease: "power3.out"
-      });
-
-      const btn = document.querySelector("button");
-      if (btn) btn.addEventListener("click", () => tween.play(0));
-    } catch (err) {
-      console.error("GSAP init failed:", err);
-    }
-  });
 </script>
 
-<!-- Poem -->
-
+<!-- Button & Text -->
+<div class="main"></div>
 <section class="poem">
 <div class="container">
-<p class="heading">Nevertheless</p>
-<p class="heading">Trotzdem</p>
-  <p class="split">
-    her call sounds like <br>
-all kinds of fruit; green and purple <br>
-                         a loud laugh.— <br>
-she just needs to let herself <br>
-fall <br>
-cherries and grapes
-  </p>
-</div>
+<p class="heading">Text</p>
+<p class="secondary">Text</p>
+<h2 class="tertiary">Text</h2>
 
-<p class="secondary">Translated from the author</p>
-<h2 class="tertiary">Annette C. Boehm</h2>
-<p class="secondary">November 2024</p>
-<button>Replay</button>
+
+<button>Button</button>
+
+
 </section>
 
 
- <style>
+<style>
 
-@import url('https://fonts.googleapis.com/css2?family=Modak&display=swap');
+/* Text Styling */
+
 @import url('https://fonts.googleapis.com/css2?family=Sirivennela&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap');
 
-.modak-regular {
-  font-family: "Modak", system-ui;
-  font-weight: 400;
-}
 
 .sirivennela-regular {
   font-family: "Sirivennela", sans-serif;
@@ -75,59 +38,9 @@ cherries and grapes
   font-style: normal;
 }
 
- .poem {
-  margin:0;
-  padding:0;
-  width:100%;
-  height:100vh;
-  background-color: #EA96BD;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction: column;
-  font-family: dynapuff;
-  background: #0e100f;
-  background: radial-gradient(129% 99% at 112% 85%, #f0b5eb, #C489C1 90%),    
-    url('https://assets.codepen.io/16327/noise-e82662fe.png');  
-  background-blend-mode: color-dodge;
-}
-
-.container {
-  max-width: 80vw;
-}
-
-.split {
-  opacity: 0;
-  text-align:center;
-  font-size: clamp(2rem, 6rem, 3vw);
-  letter-spacing: 0.05rem;
-  will-change: transform;
-  color: #3B6919;
-}
-
-.split * {
-  will-change: transform;
-}
-
-button {
-  display: inline-block;
-  outline: none;
-  padding: 8px 14px;
-  background: transparent;
-  border: solid 4px #0c4509;
-  color: #0c4509;
-  text-decoration: none;
-  border-radius: 99px;
-  padding: 12px 25px;
-  text-transform: uppercase;
-  font-weight: 600;
-  cursor: pointer;
-  line-height: 18px;
-}
-
 .heading{
 font-size: 3rem;
-font-family: modak;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   text-align:center;
   color: #f0b5eb;  
   margin: 0;
@@ -136,12 +49,73 @@ font-family: modak;
 .secondary{
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align:center;
-  color: #3B6919;  
+  color: #6b1856;  
 }
 
 .tertiary{
 font-family: sirivennela;
   text-align:center;
-  color: #3B6919;  
+  color: #a10f7d;  
+}
+
+/* Layout */
+
+ .poem {
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100vh;
+  background-color: #32262f;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction: column;
+  font-family: dynapuff;
+}
+
+.container {
+  max-width: 80vw;
+}
+
+/* Button */
+
+button {
+  display: inline-block;
+  outline: none;
+  padding: 8px 14px;
+  background: transparent;
+  border: solid 4px #a10f7d;
+  color: #a10f7d;
+  text-decoration: none;
+  border-radius: 99px;
+  padding: 12px 25px;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  line-height: 18px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* Stars */ 
+
+.main {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 1px;
+    width: 1px;
+    background-color: #fff;
+    border-radius: 50%; 
+  box-shadow: 24vw 9vh 1px 0px #fff,12vw -24vh 0px 1px #fff,-45vw -22vh 0px 0px #fff,-37vw -40vh 0px 1px #fff,29vw 19vh 0px 1px #fff,4vw -8vh 0px 1px #fff,-5vw 21vh 1px 1px #fff,-27vw 26vh 1px 1px #fff,-47vw -3vh 1px 1px #fff,-28vw -30vh 0px 1px #fff,-43vw -27vh 0px 1px #fff,4vw 22vh 1px 1px #fff,36vw 23vh 0px 0px #fff,-21vw 24vh 1px 1px #fff,-16vw 2vh 1px 0px #fff,-16vw -6vh 0px 0px #fff,5vw 26vh 0px 0px #fff,-34vw 41vh 0px 0px #fff,1vw 42vh 1px 1px #fff,11vw -13vh 1px 1px #fff,48vw -8vh 1px 0px #fff,22vw -15vh 0px 0px #fff,45vw 49vh 0px 0px #fff,43vw -27vh 1px 1px #fff,20vw -2vh 0px 0px #fff,8vw 22vh 0px 1px #fff,39vw 48vh 1px 1px #fff,-21vw -11vh 0px 1px #fff,-40vw 45vh 0px 1px #fff,11vw -30vh 1px 0px #fff,26vw 30vh 1px 0px #fff,45vw -29vh 0px 1px #fff,-2vw 18vh 0px 0px #fff,-29vw -45vh 1px 0px #fff,-7vw -27vh 1px 1px #fff,42vw 24vh 0px 0px #fff,45vw -48vh 1px 0px #fff,-36vw -18vh 0px 0px #fff,-44vw 13vh 0px 1px #fff,36vw 16vh 0px 1px #fff,40vw 24vh 0px 0px #fff,18vw 11vh 0px 0px #fff,-15vw -23vh 1px 0px #fff,-24vw 48vh 0px 1px #fff,27vw -45vh 1px 0px #fff,-2vw -24vh 0px 1px #fff,-15vw -28vh 0px 0px #fff,-43vw 13vh 1px 0px #fff,7vw 27vh 1px 0px #fff,47vw 5vh 0px 0px #fff,-45vw 15vh 1px 1px #fff,-5vw -28vh 0px 1px #fff,38vw 25vh 1px 1px #fff,-39vw -1vh 1px 0px #fff,5vw 0vh 1px 0px #fff,49vw 13vh 0px 0px #fff,48vw 10vh 0px 1px #fff,19vw -28vh 0px 0px #fff,4vw 7vh 0px 0px #fff,21vw 21vh 1px 1px #fff,-15vw -15vh 0px 1px #fff,-6vw -42vh 1px 0px #fff,-15vw 48vh 1px 1px #fff,-23vw 25vh 1px 1px #fff,-48vw 25vh 0px 1px #fff,-31vw -19vh 0px 1px #fff,4vw 37vh 1px 1px #fff,-43vw 28vh 0px 0px #fff,3vw -25vh 0px 1px #fff,-39vw 14vh 0px 1px #fff,-40vw 31vh 0px 1px #fff,35vw -36vh 1px 1px #fff,16vw 49vh 0px 0px #fff,6vw 39vh 0px 0px #fff,3vw -35vh 0px 1px #fff,-44vw -2vh 1px 0px #fff,-6vw 21vh 1px 0px #fff,48vw 9vh 1px 1px #fff,-43vw 30vh 1px 1px #fff,29vw -12vh 1px 1px #fff,-48vw 13vh 1px 0px #fff,-42vw 32vh 1px 1px #fff,34vw 15vh 1px 1px #fff,29vw -37vh 1px 1px #fff,28vw 2vh 0px 0px #fff;
+  animation: zoom 16s alternate infinite; 
+}
+
+@keyframes zoom {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.5);
+    }
 }
  </style>
