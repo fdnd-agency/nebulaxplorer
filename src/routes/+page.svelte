@@ -1,17 +1,22 @@
 <script>
 
+
 </script>
 
 <!-- Button & Text -->
-<div class="main"></div>
-<section class="poem">
+
+
+<div class="stars"></div>
+<section class="background">
 <div class="container">
-<p class="heading">Text</p>
-<p class="secondary">Text</p>
-<h2 class="tertiary">Text</h2>
 
 
-<button>Button</button>
+<main>
+  <div class="button-outer">    
+    <img src="../src/lib/assets/images/star.svg" alt="portal" class="portal"/>
+      <h1> Text </h1> 
+  </div>  
+</main>
 
 
 </section>
@@ -21,15 +26,7 @@
 
 /* Text Styling */
 
-@import url('https://fonts.googleapis.com/css2?family=Sirivennela&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap');
-
-
-.sirivennela-regular {
-  font-family: "Sirivennela", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
 
 .dynapuff {
   font-family: "DynaPuff", system-ui;
@@ -38,29 +35,13 @@
   font-style: normal;
 }
 
-.heading{
-font-size: 3rem;
-font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  text-align:center;
-  color: #f0b5eb;  
-  margin: 0;
-}
-
-.secondary{
-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  text-align:center;
-  color: #6b1856;  
-}
-
-.tertiary{
-font-family: sirivennela;
-  text-align:center;
-  color: #a10f7d;  
+h1{
+  color: #64054c;  
 }
 
 /* Layout */
 
- .poem {
+ .background {
   margin:0;
   padding:0;
   width:100%;
@@ -96,9 +77,26 @@ button {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+.button-outer {
+  width: 100%;
+  height: 50%;
+  background:#58508D;
+  border-color: #f0b5eb;
+  border-width: 2rem;
+  border-radius: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+portal {
+  width: 30%;
+  max-height: 30%;
+}
+
 /* Stars */ 
 
-.main {
+.stars {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -107,7 +105,7 @@ button {
     background-color: #fff;
     border-radius: 50%; 
   box-shadow: 24vw 9vh 1px 0px #fff,12vw -24vh 0px 1px #fff,-45vw -22vh 0px 0px #fff,-37vw -40vh 0px 1px #fff,29vw 19vh 0px 1px #fff,4vw -8vh 0px 1px #fff,-5vw 21vh 1px 1px #fff,-27vw 26vh 1px 1px #fff,-47vw -3vh 1px 1px #fff,-28vw -30vh 0px 1px #fff,-43vw -27vh 0px 1px #fff,4vw 22vh 1px 1px #fff,36vw 23vh 0px 0px #fff,-21vw 24vh 1px 1px #fff,-16vw 2vh 1px 0px #fff,-16vw -6vh 0px 0px #fff,5vw 26vh 0px 0px #fff,-34vw 41vh 0px 0px #fff,1vw 42vh 1px 1px #fff,11vw -13vh 1px 1px #fff,48vw -8vh 1px 0px #fff,22vw -15vh 0px 0px #fff,45vw 49vh 0px 0px #fff,43vw -27vh 1px 1px #fff,20vw -2vh 0px 0px #fff,8vw 22vh 0px 1px #fff,39vw 48vh 1px 1px #fff,-21vw -11vh 0px 1px #fff,-40vw 45vh 0px 1px #fff,11vw -30vh 1px 0px #fff,26vw 30vh 1px 0px #fff,45vw -29vh 0px 1px #fff,-2vw 18vh 0px 0px #fff,-29vw -45vh 1px 0px #fff,-7vw -27vh 1px 1px #fff,42vw 24vh 0px 0px #fff,45vw -48vh 1px 0px #fff,-36vw -18vh 0px 0px #fff,-44vw 13vh 0px 1px #fff,36vw 16vh 0px 1px #fff,40vw 24vh 0px 0px #fff,18vw 11vh 0px 0px #fff,-15vw -23vh 1px 0px #fff,-24vw 48vh 0px 1px #fff,27vw -45vh 1px 0px #fff,-2vw -24vh 0px 1px #fff,-15vw -28vh 0px 0px #fff,-43vw 13vh 1px 0px #fff,7vw 27vh 1px 0px #fff,47vw 5vh 0px 0px #fff,-45vw 15vh 1px 1px #fff,-5vw -28vh 0px 1px #fff,38vw 25vh 1px 1px #fff,-39vw -1vh 1px 0px #fff,5vw 0vh 1px 0px #fff,49vw 13vh 0px 0px #fff,48vw 10vh 0px 1px #fff,19vw -28vh 0px 0px #fff,4vw 7vh 0px 0px #fff,21vw 21vh 1px 1px #fff,-15vw -15vh 0px 1px #fff,-6vw -42vh 1px 0px #fff,-15vw 48vh 1px 1px #fff,-23vw 25vh 1px 1px #fff,-48vw 25vh 0px 1px #fff,-31vw -19vh 0px 1px #fff,4vw 37vh 1px 1px #fff,-43vw 28vh 0px 0px #fff,3vw -25vh 0px 1px #fff,-39vw 14vh 0px 1px #fff,-40vw 31vh 0px 1px #fff,35vw -36vh 1px 1px #fff,16vw 49vh 0px 0px #fff,6vw 39vh 0px 0px #fff,3vw -35vh 0px 1px #fff,-44vw -2vh 1px 0px #fff,-6vw 21vh 1px 0px #fff,48vw 9vh 1px 1px #fff,-43vw 30vh 1px 1px #fff,29vw -12vh 1px 1px #fff,-48vw 13vh 1px 0px #fff,-42vw 32vh 1px 1px #fff,34vw 15vh 1px 1px #fff,29vw -37vh 1px 1px #fff,28vw 2vh 0px 0px #fff;
-  animation: zoom 16s alternate infinite; 
+  animation: zoom 10s alternate infinite; 
 }
 
 @keyframes zoom {
