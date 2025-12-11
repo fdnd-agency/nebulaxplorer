@@ -31,7 +31,7 @@
   
 </script>
 
-<svelte:head>
+<!-- <svelte:head>
   <link rel="icon" href={favicon} />
 </svelte:head>
 
@@ -49,14 +49,14 @@
   </a>
   <nav id="menu">
     <ul>
-      <!-- Include this button separately as this is our close button -->
+      <!-- Include this button separately as this is our close button 
       <li>
         <a href="#" class="menu-button">
           menu
           <span class="lines"></span>
         </a>
       </li>
-      <!-- Loop over each object -->
+      Loop over each object
       {#each navItems as { path, label }}
         <li
           class={isExactActive(path)
@@ -78,7 +78,7 @@
       {/each}
     </ul>
   </nav>
-</header>
+</header> -->
 
 <main>
   {@render children?.()}
