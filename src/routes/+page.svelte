@@ -12,7 +12,7 @@
     const buttonTl = (el) => {
       const tl = gsap
         .timeline()
-        .to(el, { duration: 0.05, scale: 0.9 })
+        .to(el, { duration: 0.1, scale: 0.9 })
         .to(el, { duration: 0.1, rotation: "5deg" })
         .to(el, { duration: 0.1, rotation: "-5deg" })
         .to(el, { duration: 0.1, rotation: "0", scale: 1 });
@@ -70,42 +70,7 @@
 <main>
 
   <div>
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 60 55">
-    <g>
-      <path id="p1" d="M28 53c-6.5-34.41-16.04-14.34-20 0" />
-      <path id="p2" d="M29 53c5.74-35.6 21.18-56.57 28 0" />
-      <path id="p3" d="M28 51c.2-12.6-18-57.5-25 2" />
-      <path id="p4" d="M29 51.54C28.81 39.63 39.9-.23 49 53" />
-      <path id="p5" d="M29 51c1-49.5-14.5-58.5-14 2" />
-      <path id="p6" d="M29.04 50.82C28.12-3.02 42.45-12.8 42 53" />
-      <path id="p7" d="M28.98 50.64C29.34-7.9 23.83-18.53 24 53" />
-      <path id="p8" d="M28.98 50.64C29.34-7.9 23.83-18.53 24 53" />
-      <path id="p9" d="M29.04 50.82C28.12-3.02 42.45-12.8 42 53" />
-      <path id="p10" d="M29 51c1-49.5-14.5-58.5-14 2" />
-      <path id="p11" d="M29 51.54C28.81 39.63 39.9-.23 49 53" />
-      <path id="p12" d="M28 51c.2-12.6-18-57.5-25 2" />
-      <path id="p13" d="M29 53c5.74-35.6 21.18-56.57 28 0" />
-      <path id="p14" d="M28 53c-6.5-34.41-16.04-14.34-20 0" />
-    </g>
-
-    <g class="confetti">
-      <path id="c1" fill="#F7BB83" d="M24 49h6v2h-6z" />
-      <path id="c2" fill="#99E6D8" d="M26 49h6v2h-6z" />
-      <path id="c3" fill="#AB78DA" d="M28 49h6v2h-6z" />
-      <path id="c4" fill="#F4D569" d="M30 49h6v2h-6z" />
-      <path id="c5" fill="#7ED16A" d="M32 49h6v2h-6z" />
-      <path id="c6" fill="#6AACD1" d="M34 49h6v2h-6z" />
-      <path id="c7" fill="#EB8D93" d="M36 49h6v2h-6z" />
-      <path id="c8" fill="#F7BB83" d="M24 49h6v2h-6z" />
-      <path id="c9" fill="#99E6D8" d="M26 49h6v2h-6z" />
-      <path id="c10" fill="#AB78DA" d="M28 49h6v2h-6z" />
-      <path id="c11" fill="#F4D569" d="M30 49h6v2h-6z" />
-      <path id="c12" fill="#7ED16A" d="M32 49h6v2h-6z" />
-      <path id="c13" fill="#6AACD1" d="M34 49h6v2h-6z" />
-      <path id="c14" fill="#EB8D93" d="M36 49h6v2h-6z" />
-    </g>
-  </svg>
-  <button data-target="button">Submit</button>
+  <button data-target="button">button</button>
 </div>
 </main>
 
@@ -181,62 +146,6 @@ button {
     100%{
         transform: scale(1.5);
     }
-}
-
-body {
-  background-color: #313752;
-  display: grid;
-  font-family: "Orelega One", sans-serif;
-  min-height: 100vh;
-  place-items: center;
-}
-
-div {
-  position: relative;
-  text-align: center;
-}
-
-svg {
-  bottom: 0;
-  left: 50%;
-  position: absolute;
-  transform: translateX(-50%);
-  width: 400px;
-  z-index: -1;
-}
-
-.confetti {
-  path {
-    opacity: 0;
-  }
-}
-
-button {
-  background-color: #202541;
-  border: unset;
-  border-radius: 999px;
-  color: $primary;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 1.5rem;
-  letter-spacing: 0.5px;
-  padding: 1rem 2rem;
-
-  :hover {
-    box-shadow: 0 0.25rem 0.75rem -0.125rem rgba(black, 0.2),
-      0 0.25rem 1rem -0.75rem rgba($primary, 0.5);
-    color: lighten($primary, 10%);
-    transition-duration: 0.15s;
-    transition-property: box-shadow, color;
-    transition-timing-function: ease-out;
-  }
-
-  :active {
-    box-shadow: unset;
-    transition-duration: 0.15s;
-    transition-property: box-shadow;
-    transition-timing-function: ease-out;
-  }
 }
 
  </style>
