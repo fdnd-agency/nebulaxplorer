@@ -8,6 +8,8 @@
   export let data;
 </script>
 
+<!-- <Mission {data} /> -->
+
 <!-- HERO BLOCK -->
 <Hero
   pageTitle="Mission"
