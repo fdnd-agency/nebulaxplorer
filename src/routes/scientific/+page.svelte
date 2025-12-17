@@ -1,9 +1,12 @@
+
+
 <script>
   import Header from "$lib/components/molecules/Header/Header.svelte";
   import blackholeImage from "$lib/assets/blackhole.jpg?enhanced";
   import ScientificCards from "$lib/components/molecules/scientific/scientificcards.svelte";
   import Breadcrumb from "$lib/components/molecules/Breadcrumb/Breadcrumb.svelte";
   import logo from "$lib/assets/logos/SRON_Academy_OnOrange.svg";
+
 </script>
  
 <div class="scientific-page">
@@ -15,7 +18,7 @@
 />
  
 <Breadcrumb 
-  /> 
+  />  
 
 <section class="paragraph-block">
   <div class="text-title">

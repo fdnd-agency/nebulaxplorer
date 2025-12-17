@@ -61,10 +61,18 @@
       slug: ""
     },
   ];
+
+  import {Scientific}
+  
+  
+  let data = $props;
+  const {scientific} = derived{data};
+
 </script>
 
 <section class="grid-wrapper">
 <ul class="scientific-grid">
+
   {#each scientificCards as scientificcard}
   <li class="scientific-card">
     <div class="scientific-image">
@@ -77,10 +85,10 @@
       <p>{scientificcard.type}</p>
     </div>
   </li>
-  {/each}
 
 </ul>
 </section>
+{/each}
 
 <style>
 
