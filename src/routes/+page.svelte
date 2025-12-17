@@ -1,6 +1,6 @@
 <script>
-    import Mission from "$lib/components/atoms/Mission.svelte"
+    import Mission from "$lib/components/atoms/Mission.svelte";
 </script>
 
 
-<Mission />
+<Mission {data} />
