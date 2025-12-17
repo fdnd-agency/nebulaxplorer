@@ -169,7 +169,3 @@ Afpsraken voor de volgende sprint:
 - [ ] Project heeft een live link
 - [ ] Project is gepushed naar main
 
-
-## Post-mortem Scrum
-
-A post-mortem in Scrum (emergency meeting) is a structured meeting after a sprint or project to reflect on what went well, what didn't, and how to improve processes for the future, focusing on continuous improvement, identifying root causes, and sharing lessons learned without blame

@@ -15,20 +15,30 @@
     <p class="subheading">{paragraph}</p>
   {/if}
 
+  {#if background.file}
+    <enhanced:img
+      src={background.file}
+      alt={background.alt}
+      class="hero-bg"
+      sizes="100vw"
+    />
+  {/if}
 
- {#if sronIcon}
+  {#if sronIcon}
     <img src={sronIcon} alt="Logo of SRON Academy" class="hero-logo" />
-{/if}
+  {/if}
   <h1 class="title">{pageTitle}</h1>
 </section>
 
 <style>
   .hero {
     --menu-button-size: 3.75rem;
+
     border-bottom: 0.1875rem solid var(--cleanroom-100);
     position: relative;
     padding: 1.5rem;
     padding-top: 5.25rem;
+    
     @media (min-width: 56.25rem) {
       padding: 3.5rem 4rem 2.25rem 4rem;
     }
@@ -63,11 +73,5 @@
       max-width: 36.375rem;
       display: block;
     }
-
-    .title {
-      color: var(--space-140);
-      font-weight: 400;
-      }
-    }
-
+  }
 </style>
