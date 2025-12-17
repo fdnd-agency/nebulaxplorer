@@ -2,11 +2,8 @@
   import blackholeImage from "$lib/assets/blackhole.jpg?enhanced";
   import Hero from "$lib/components/Hero/Hero.svelte";
   import logo from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
-  import Breadcrumb from "$lib/components/molecules/Breadcrumb/Breadcrumb.svelte";
-  import Quote from "$lib/components/atoms/Quote-icon/Quote.svelte";
-  import Mission from "$lib/components/atoms/Mission.svelte";
-  export let data;
 </script>
+
 
 <!-- HERO BLOCK -->
 
@@ -67,6 +64,7 @@
   <enhanced:img src={blackholeImage} alt="Black Hole" />
 </section>
 
+
 <!-- STEPS BLOCK -->
 
 <section class="steps-block">
@@ -125,11 +123,7 @@
 <!-- SECOND IMG + PARAGRAPH BLOCK -->
 
 <section class="paragraph-block-right">
-  <enhanced:img
-    class="paragraph-img-left"
-    src={blackholeImage}
-    alt="Black Hole"
-  />
+  <enhanced:img class="paragraph-img-left" src={blackholeImage} alt="Black Hole" />
   <section class="text-content-right">
     <h3 class="orange subtitle text-content--title">Mission brief</h3>
 
@@ -175,6 +169,7 @@
 <!-- THIRD PARAGRAPH + IMG BLOCK -->
 
 <section class="paragraph-block-3">
+
   <section class="text-content-3">
     <h3 class="orange subtitle text-content--title">Mission brief</h3>
 
@@ -219,6 +214,7 @@
 </section>
 
 <style>
+
   /* FIRST PARAGRAPH BLOCK */
 
   .paragraph-block {
@@ -280,7 +276,7 @@
     }
   }
 
-  /* STEPS BLOCK */
+   /* STEPS BLOCK */
 
   .steps-block {
     display: grid;
@@ -373,7 +369,8 @@
     width: 100%;
   }
 
-  /* SECOND PARAGRAPH BLOCK */
+
+ /* SECOND PARAGRAPH BLOCK */
 
   .paragraph-block-right {
     display: grid;
@@ -458,6 +455,7 @@
       }
     }
 
+
     .text-content-3 article {
       * + p {
         margin-top: 0.5rem;
@@ -516,17 +514,16 @@
     width: auto;
   }
 
-  h2,
-  h3 {
-    font-weight: 600;
-    line-height: 1.5;
-  }
+  h2, h3 {
+      font-weight: 600;
+      line-height: 1.5;
+    }
 
-  h4 {
-    font-weight: 500;
-  }
+    h4 {
+      font-weight: 500;
+    }
 
-  article + article {
-    margin-top: 2rem;
-  }
+    article + article {
+  margin-top: 2rem;
+}
 </style>
