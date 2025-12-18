@@ -1,94 +1,28 @@
 <script>
-  const scientificCards = [
-    {
-      id: 1,
-      title: "XRISM ziet verrassend trage en dichte wind van neutronenster",
-      slug: ""
-    },
-    {
-      id: 2,
-      title: "XRISM ziet verrassend trage en dichte wind van neutronenster",
-      slug: ""
-    },
-    {
-      id: 3,
-      title: "XRISM ziet verrassend trage en dichte wind van neutronenster",
-      slug: ""
-    },
-    {
-      id: 4,
-      title: "XRISM ziet verrassend trage en dichte wind van neutronenster",
-      slug: ""
-    },
-    {
-      id: 5,
-      title: "XRISM ziet verrassend trage en dichte wind van neutronenster",
-      slug: ""
-    },
-    {
-      id: 6,
-      title: "XRISM ziet verrassend trage en dichte wind van neutronenster",
-      slug: ""
-    },
-        {
-      id: 7,
-      title: "Videos from our cleanrooms",
-      slug: ""
-    },
-    {
-      id: 8,
-      title: "XRISM ziet verrassend trage en dichte wind van neutronenster",
-      slug: ""
-    },
-    {
-      id: 9,
-      title: "XRISM ziet verrassend trage en dichte wind van neutronenster",
-      slug: ""
-    },
-    {
-      id: 10,
-      title: "XRISM ziet verrassend trage en dichte wind van neutronenster",
-      slug: ""
-    },
-    {
-      id: 11,
-      title: "Ver infrarood detectoren voor PRIMA ondersteund door NSO Instrumentenprogramma test",
-      slug: ""
-    },
-    {
-      id: 12,
-      title: "How do stars and planets form?",
-      slug: ""
-    },
-  ];
-
-  import {Scientific}
-  
-  
-  let data = $props;
-  const {scientific} = derived{data};
+ 
+  let { data } = $props();
 
 </script>
 
 <section class="grid-wrapper">
 <ul class="scientific-grid">
 
-  {#each scientificCards as scientificcard}
+  {#each data.scientific as scientificcard}
   <li class="scientific-card">
     <div class="scientific-image">
-      <img src="../src/lib/assets/images/grav-waves.jpg" alt="{scientificcard.title}"> 
+      <img src="$lib/assets/images/grav-waves.jpg" alt="{scientificcard.title}">
     </div>
     <div class="scientific-info">
       <span class="scientific-label"></span>
       <h3>{scientificcard.title}</h3>
       <span class="scientific-label"></span>
-      <p>{scientificcard.type}</p>
+      <p>{scientificcard.content}</p>
     </div>
   </li>
+  {/each}
 
 </ul>
 </section>
-{/each}
 
 <style>
 

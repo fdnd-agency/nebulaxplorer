@@ -3,10 +3,9 @@
 <script>
   import Header from "$lib/components/molecules/Header/Header.svelte";
   import blackholeImage from "$lib/assets/blackhole.jpg?enhanced";
-  import ScientificCards from "$lib/components/molecules/scientific/scientificcards.svelte";
-  import Breadcrumb from "$lib/components/molecules/Breadcrumb/Breadcrumb.svelte";
+  import Scientificcards from "$lib/components/molecules/scientific/scientificcards.svelte";
   import logo from "$lib/assets/logos/SRON_Academy_OnOrange.svg";
-
+export let data;
 </script>
  
 <div class="scientific-page">
@@ -17,8 +16,6 @@
   background={{ alt: "", file: blackholeImage }}
 />
  
-<Breadcrumb 
-  />  
 
 <section class="paragraph-block">
   <div class="text-title">
@@ -27,7 +24,7 @@
   </div>
   </section>
    
-<ScientificCards 
+<Scientificcards {data}
   /> 
 
 </div>
