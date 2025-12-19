@@ -1,19 +1,13 @@
 <script module>
   import blackholeImage from "$lib/assets/blackhole.jpg?enhanced";
-  import Hero from "$lib/components/molecules/Hero/Hero.svelte";
   import logo from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
-  import Breadcrumb from "$lib/components/molecules/Breadcrumb/Breadcrumb.svelte";
-  import Quote from "$lib/components/atoms/Quote-icon/Quote.svelte";
 </script>
 
-<!-- HERO BLOCK -->
-<Hero
-  pageTitle="Mission"
-  sronIcon={logo}
-  background={{ alt: "", file: blackholeImage }}
-/>
 
-<Breadcrumb />
+<!-- HERO BLOCK -->
+
+
+<!-- <Breadcrumb /> -->
 
 <!-- FIRST PARAGRAPH + IMG BLOCK -->
 
@@ -127,6 +121,7 @@
   </section>
   <enhanced:img src={blackholeImage} alt="Black Hole" />
 </section>
+
 
 <!-- STEPS BLOCK -->
 
@@ -262,21 +257,9 @@
   </ul>
 </section>
 
-<article class="getting-involved">
-  <h4 class="orange heading">Getting involved</h4>
-  <p>
-    If you are interested in getting involved with the science case writing
-    process or want to express support for the mission, <br /> please contact
-    the mission PI Benjamin Ricketts at
-    <a class="orange" href="mailto: b.ricketts(at).sron.nl"
-      >b.ricketts(at).sron.nl</a
-    >.
-  </p>
-</article>
-
 <figure class="testimonial-container">
   <blockquote class="testimonial-content">
-    <Quote />
+    <!-- <Quote /> -->
     <p class="testimonial-text">
       Working with SRON's Nebula Xplorer team has been an incredible experience.
       Being part of the mission to prepare the Nebula Xplorer for launch taught
@@ -301,6 +284,7 @@
 </figure>
 
 <style>
+
   /* FIRST PARAGRAPH BLOCK */
 
   .paragraph-block {
@@ -455,6 +439,7 @@
       }
     }
 
+
     .text-content-3 article {
       * + p {
         margin-top: 0.5rem;
@@ -504,9 +489,9 @@
     }
   }
 
-  .article {
+  /* .article {
     margin-bottom: 2rem;
-  }
+  } */
 
   /* STEPS BLOCK */
 
@@ -678,7 +663,7 @@
 
 
   /* GETTING INVOLVED */
-
+/* 
   .getting-involved {
     padding-left: 1.5rem;
     margin-bottom: 1.5rem;
@@ -688,7 +673,7 @@
       margin-top: 1rem;
       padding: 0 3rem 0 3rem;
     }
-  }
+  } */
 
 
   /* TESTIMONIAL BLOCK */
@@ -778,18 +763,17 @@
     width: auto;
   }
 
-  h2,
-  h3 {
-    font-weight: 600;
-    line-height: 1.5;
-  }
+  h2, h3 {
+      font-weight: 600;
+      line-height: 1.5;
+    }
 
   h4 {
     font-weight: 500;
     padding-top: 1.5rem;
   }
 
-  article + article {
-    margin-top: 2rem;
-  }
+    /* article + article {
+  margin-top: 2rem;
+} */
 </style>
