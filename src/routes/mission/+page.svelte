@@ -1,18 +1,13 @@
 <script module>
   import blackholeImage from "$lib/assets/blackhole.jpg?enhanced";
-  import Hero from "$lib/components/molecules/Hero/Hero.svelte";
   import logo from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
 </script>
 
 
 <!-- HERO BLOCK -->
-<Hero
-  pageTitle="Mission"
-  sronIcon={logo}
-  background={{ alt: "", file: blackholeImage }}
-/>
 
-<Breadcrumb />
+
+<!-- <Breadcrumb /> -->
 
 <!-- FIRST PARAGRAPH + IMG BLOCK -->
 
@@ -264,7 +259,7 @@
 
 <figure class="testimonial-container">
   <blockquote class="testimonial-content">
-    <Quote />
+    <!-- <Quote /> -->
     <p class="testimonial-text">
       Working with SRON's Nebula Xplorer team has been an incredible experience.
       Being part of the mission to prepare the Nebula Xplorer for launch taught
@@ -494,9 +489,9 @@
     }
   }
 
-  .article {
+  /* .article {
     margin-bottom: 2rem;
-  }
+  } */
 
   /* STEPS BLOCK */
 
@@ -668,7 +663,7 @@
 
 
   /* GETTING INVOLVED */
-
+/* 
   .getting-involved {
     padding-left: 1.5rem;
     margin-bottom: 1.5rem;
@@ -678,7 +673,7 @@
       margin-top: 1rem;
       padding: 0 3rem 0 3rem;
     }
-  }
+  } */
 
 
   /* TESTIMONIAL BLOCK */
@@ -778,7 +773,7 @@
     padding-top: 1.5rem;
   }
 
-    article + article {
+    /* article + article {
   margin-top: 2rem;
-}
+} */
 </style>

@@ -1,4 +1,4 @@
-<svg
+<!-- <svg
     class="quote-icon"
     width="48"
     height="48"
@@ -14,4 +14,4 @@
         fill="currentColor"
         opacity="0.2"
     />
-</svg>
+</svg> -->

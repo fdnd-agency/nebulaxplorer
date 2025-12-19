@@ -4,4 +4,4 @@
   import NewsComponent from "$lib/components/News-Component/News-Component.svelte";
 </script>
 
-<Mission {data} />
+<!-- <Mission {data} /> -->
