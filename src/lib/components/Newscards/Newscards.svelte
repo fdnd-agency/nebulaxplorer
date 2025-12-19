@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
   const NewsCards = [
     {
       id: 1,
@@ -191,4 +191,4 @@
     object-position: center;
   }
   }
-</style>
+</style> -->

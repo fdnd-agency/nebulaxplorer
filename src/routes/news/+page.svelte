@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
   import blackholeImage from "$lib/assets/images/blackhole2.jpg?enhanced";
   import logo from "$lib/assets/logos/SRON_Academy_OnWhite.svg";
   import Breadcrumb from "$lib/components/Breadcrumb/Breadcrumb.svelte";
@@ -118,4 +118,4 @@
     width: auto;
   }
 
-</style>
+</style> -->
