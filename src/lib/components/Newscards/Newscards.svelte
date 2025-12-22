@@ -11,6 +11,7 @@
 
 
   let { data } = $props();
+  console.log('Newscards data:', data);
 
 </script>
 
