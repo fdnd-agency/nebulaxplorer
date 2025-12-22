@@ -1,8 +1,11 @@
 <script>
+  import { Hero } from "$lib";
   import blackholeImage from "$lib/assets/images/blackhole2.jpg?enhanced";
   import logo from "$lib/assets/logos/SRON_Academy_OnWhite.svg";
   import Breadcrumb from "$lib/components/Breadcrumb/Breadcrumb.svelte";
-  import NewsCards from "$lib/components/NewsCards/NewsCards.svelte";
+  import Newscards from "$lib/components/Newscards/Newscards.svelte";
+
+export let data;
 </script>
  
 
@@ -22,7 +25,7 @@
   </div>
   </section>
    
-<NewsCards 
+<Newscards data={data}
   /> 
 
 <style>
@@ -55,15 +58,6 @@
     .text-title {
       * + * {
         margin-top: 0.5rem;
-      }
-    }
- 
-    .text-content article {
-      * + p {
-        margin-top: 0.5rem;
-        @media (min-width: 56.25rem) {
-          padding-left: 1.5rem;
-        }
       }
     }
  

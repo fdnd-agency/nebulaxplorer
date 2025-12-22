@@ -37,7 +37,7 @@
 
 <header class="main-navigation">
   <a
-    href="#menu"
+    href="menu"
     class="menu-button"
     aria-expanded="false"
     aria-controls="nav-items"

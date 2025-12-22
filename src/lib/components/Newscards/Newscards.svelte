@@ -1,4 +1,5 @@
 <script>
+  import placeholder from "$lib/assets/images/placeholder2.jpg";
   const NewsCards = [
     {
       id: 1,
@@ -6,91 +7,28 @@
       type: "News",
       slug: ""
     },
-    {
-      id: 2,
-      title: "XRISM ziet verrassend trage en dichte wind van neutronenster",
-      type: "Event",
-      slug: ""
-    },
-    {
-      id: 3,
-      title: "XRISM ziet verrassend trage en dichte wind van neutronenster",
-      type: "News",
-      slug: ""
-    },
-    {
-      id: 4,
-      title: "XRISM ziet verrassend trage en dichte wind van neutronenster",
-      type: "News",
-      slug: ""
-    },
-    {
-      id: 5,
-      title: "XRISM ziet verrassend trage en dichte wind van neutronenster",
-      type: "Announcement",
-      slug: ""
-    },
-    {
-      id: 6,
-      title: "XRISM ziet verrassend trage en dichte wind van neutronenster",
-      type: "Event",
-      slug: ""
-    },
-        {
-      id: 7,
-      title: "Videos from our cleanrooms",
-      type: "Video",
-      slug: ""
-    },
-    {
-      id: 8,
-      title: "XRISM ziet verrassend trage en dichte wind van neutronenster",
-      type: "Event",
-      slug: ""
-    },
-    {
-      id: 9,
-      title: "XRISM ziet verrassend trage en dichte wind van neutronenster",
-      type: "News",
-      slug: ""
-    },
-    {
-      id: 10,
-      title: "XRISM ziet verrassend trage en dichte wind van neutronenster",
-      type: "News",
-      slug: ""
-    },
-    {
-      id: 11,
-      title: "Ver infrarood detectoren voor PRIMA ondersteund door NSO Instrumentenprogramma test",
-      type: "Announcement",
-      slug: ""
-    },
-    {
-      id: 12,
-      title: "How do stars and planets form?",
-      type: "Article",
-      slug: ""
-    },
   ];
+
+
+  let { data } = $props();
+
 </script>
 
 <section class="grid-wrapper">
 <ul class="news-grid">
-  {#each NewsCards as newscard}
+  {#each data.news as newscard}
   <li class="news-card">
     <div class="news-image">
-      <img src="/src/lib/assets/images/placeholder2.jpg" alt="{newscard.title}"> 
+      <img src={placeholder} alt="{newscard.title}"> 
     </div>
     <div class="news-info">
-      <span class="news-label"></span>
+      <span class="news-label">{newscard.type}</span>
       <h3>{newscard.title}</h3>
       <span class="news-label"></span>
-      <p>{newscard.type}</p>
+      <p>{newscard.content}</p>
     </div>
   </li>
   {/each}
-
 </ul>
 </section>
 
