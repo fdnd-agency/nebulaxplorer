@@ -74,8 +74,16 @@
 <article class="testimonial-container">
     {#each testimonials as testimonial}
         <h2>{testimonial.name}</h2>
+        <span>{testimonial.time}</span>
         <span>{testimonial.status}</span>
         <span>{testimonial.insitution}</span>
         <p>{testimonial.testimonial}</p>
     {/each}
 </article>
+
+<style>
+    .testimonial-container {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+    }
+</style>
