@@ -25,7 +25,7 @@
 <section class="grid-wrapper">
   <h1 class="news_section_title">News, blogs & events</h1>
 <ul class="news-grid">
-  {#each NewsCards as newscard}
+  {#each NewsCards as newscard (newscard.id)}
   <li class="news-card">
     <div class="news-image">
       <img src="/src/lib/assets/images/placeholder2.jpg" alt="{newscard.title}"> 
