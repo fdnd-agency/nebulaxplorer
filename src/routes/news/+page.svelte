@@ -5,6 +5,7 @@
   import Breadcrumb from "$lib/components/Breadcrumb/Breadcrumb.svelte";
   import NewsCards from "$lib/components/NewsCards/NewsCards.svelte";
   export let data;
+  let { news } = data;
 </script>
  
 <Hero
