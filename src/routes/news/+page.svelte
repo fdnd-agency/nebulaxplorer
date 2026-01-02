@@ -6,13 +6,6 @@
   export let data;
 </script>
  
-
-<Hero
-  pageTitle="News"
-  sronIcon={logo}
-  background={{ alt: "", file: blackholeImage }}
-/>
- 
 <Breadcrumb 
   /> 
 
