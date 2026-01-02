@@ -1,4 +1,5 @@
 <script>
+  import { Hero } from "$lib";
   import blackholeImage from "$lib/assets/images/blackhole2.jpg?enhanced";
   import logo from "$lib/assets/logos/SRON_Academy_OnWhite.svg";
   import Breadcrumb from "$lib/components/Breadcrumb/Breadcrumb.svelte";
@@ -6,6 +7,12 @@
   export let data;
 </script>
  
+<Hero
+  pageTitle="News"
+  sronIcon={logo}
+  background={{ alt: "", file: blackholeImage }}
+/>
+
 <Breadcrumb 
   /> 
 
@@ -16,7 +23,7 @@
   </div>
   </section>
    
-<NewsCards {data}
+<NewsCards news={news}
   /> 
 
 <style>

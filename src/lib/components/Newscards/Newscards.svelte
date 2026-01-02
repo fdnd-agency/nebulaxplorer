@@ -1,28 +1,36 @@
 <script>
-let { data } = $props();
-
-  let NewsCards = data.news;
+let { news = [] } = $props();
+  
+  import placeholderImage from "$lib/assets/images/placeholder2.jpg";
 </script>
 
 <section class="grid-wrapper">
+{#if news && news.length > 0}
 <ul class="news-grid">
-
-
-  {#each NewsCards as newscard (newscard.id)}
+{#each news as newscard}
+<a href="/news/{newscard.slug || newscard.id}" class="news-card-link">
+</a>
   <li class="news-card">
     <div class="news-image">
-      <img src="/src/lib/assets/images/placeholder2.jpg" alt="{newscard.title}"> 
+      <img src={newscard.image?.data?.full_url || newscard.image || placeholderImage}
+       alt="{newscard.title}">    
     </div>
     <div class="news-info">
       <span class="news-label"></span>
-      <h3>{newscard.title}</h3>
+      <h3>{newscard.title || "Untitled"}</h3>
       <span class="news-label"></span>
-      <p>{newscard.type}</p>
+     {#if newscard.type || newscard.category}
+     <p>{newscard.type || newscard.category}</p>
+     {/if}
+
     </div>
   </li>
   {/each}
 
 </ul>
+  {:else}
+  <p class="no-news">No news available at this time.</p>
+  {/if}
 </section>
 
 <style>
