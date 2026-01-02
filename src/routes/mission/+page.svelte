@@ -146,7 +146,7 @@
           <span class="step-number caption">1</span>
           <enhanced:img
             class="steps-img"
-            src="$lib/assets/images/review-step-1.jpg"
+            src="$lib/assets/images/sron-review-step-1.jpg"
             alt="Step 1 for launch"
           />
           <p class="steps-img-overlay">
@@ -188,7 +188,7 @@
           <span class="step-number caption">3</span>
           <enhanced:img
             class="steps-img"
-            src="$lib/assets/images/step-3.png"
+            src="$lib/assets/images/nebula-xplorer.jpg"
             alt="Step 3 for launch"
           />
           <p class="steps-img-overlay">
