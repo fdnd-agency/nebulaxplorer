@@ -1,11 +1,13 @@
 <script>
-let { data} = $props();
+let { data } = $props();
 
   let NewsCards = data.news;
 </script>
 
 <section class="grid-wrapper">
 <ul class="news-grid">
+
+
   {#each NewsCards as newscard (newscard.id)}
   <li class="news-card">
     <div class="news-image">
