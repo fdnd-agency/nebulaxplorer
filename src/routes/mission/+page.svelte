@@ -139,7 +139,7 @@
       <div
         tabindex="0"
         role="button"
-        aria-label="Step 1: Instrument Fabrication and Assembly"
+        aria-label="Step 1: Requirements and Design Review"
       >
         <input type="checkbox" id="step-1" class="step-checkbox" />
         <label for="step-1" class="step-label">
@@ -150,10 +150,7 @@
             alt="Step 1 for launch"
           />
           <p class="steps-img-overlay">
-            Instrument Fabrication and Assembly<br /><br />
-            Complete the final construction and assembly of all satellite subsystems,
-            including the compact X-ray telescope. This involves integrating the
-            specially designed cylindrical mirrors.
+            Requirements and Design Review
           </p>
         </label>
       </div>
@@ -163,7 +160,7 @@
       <div
         tabindex="0"
         role="button"
-        aria-label="Step 2: omprehensive Subsystem and Component Testing"
+        aria-label="Step 2: Rapid prototyping of critical technologies"
       >
         <input type="checkbox" id="step-2" class="step-checkbox" />
         <label for="step-2" class="step-label">
@@ -174,10 +171,7 @@
             alt="Step 2 for launch"
           />
           <p class="steps-img-overlay">
-            Comprehensive Subsystem and Component Testing<br /><br />
-            Conduct rigorous functional and performance testing on all individual
-            components. This specifically includes verifying the performance of the
-            camera's electronics.
+            Rapid prototyping of critical technologies
           </p>
         </label>
       </div>
@@ -187,7 +181,7 @@
       <div
         tabindex="0"
         role="button"
-        aria-label="Step 3: Structural and Thermal Model Verification"
+        aria-label="Step 3: Engineering models development"
       >
         <input type="checkbox" id="step-3" class="step-checkbox" />
         <label for="step-3" class="step-label">
@@ -198,10 +192,7 @@
             alt="Step 3 for launch"
           />
           <p class="steps-img-overlay">
-            Structural and Thermal Model Verification<br /><br />
-            Subject the satellite model (or flight hardware) to intense Structural-Thermal-Vacuum
-            (STV) testing. This step confirms that the final design can withstand
-            the immense vibrations and acoustic pressures of launch.
+            Engineering models development
           </p>
         </label>
       </div>
@@ -211,7 +202,7 @@
       <div
         tabindex="0"
         role="button"
-        aria-label="Step 4: Finalize Mission Operations"
+        aria-label="Step 4: Build and test of Flight Model "
       >
         <input type="checkbox" id="step-4" class="step-checkbox" />
         <label for="step-4" class="step-label">
@@ -222,10 +213,7 @@
             alt="Step 4 for launch"
           />
           <p class="steps-img-overlay">
-            Finalize Mission Operations and Ground Segment Readiness<br /><br />
-            Establish and validate the mission's long-term observation plan, focusing
-            on X-ray binaries for extended periods (milliseconds to weeks). This
-            includes preparing the ground station for telemetry.
+            Build and test of Flight Model 
           </p>
         </label>
       </div>
@@ -235,7 +223,7 @@
       <div
         tabindex="0"
         role="button"
-        aria-label="Step 5: Satellite Integration with Launch Platform"
+        aria-label="Step 5: Launch"
       >
         <input type="checkbox" id="step-5" class="step-checkbox" />
         <label for="step-5" class="step-label">
@@ -246,10 +234,7 @@
             alt="Step 5 for launch"
           />
           <p class="steps-img-overlay">
-            Satellite Integration with Launch Platform<br /><br />
-            Based on the earlier research into alternative launch platforms, finalize
-            the selection and begin the physical integration of the NEBULA–Xplorer
-            spacecraft with the chosen launch vehicle/dispenser system.
+            Launch
           </p>
         </label>
       </div>
