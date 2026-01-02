@@ -3,6 +3,7 @@
   import logo from "$lib/assets/logos/SRON_Academy_OnWhite.svg";
   import Breadcrumb from "$lib/components/Breadcrumb/Breadcrumb.svelte";
   import NewsCards from "$lib/components/NewsCards/NewsCards.svelte";
+  export let data;
 </script>
  
 
@@ -22,7 +23,7 @@
   </div>
   </section>
    
-<NewsCards 
+<NewsCards {data}
   /> 
 
 <style>

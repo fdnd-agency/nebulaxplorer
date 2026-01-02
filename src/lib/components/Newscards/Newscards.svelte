@@ -140,8 +140,8 @@
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     padding-bottom: 3rem;
-
-    &:hover {
+}
+    .news-card:hover {
       transform: translateY(-0.5rem);
       box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
     }
