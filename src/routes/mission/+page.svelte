@@ -146,7 +146,7 @@
           <span class="step-number caption">1</span>
           <enhanced:img
             class="steps-img"
-            src={blackholeImage}
+            src="$lib/assets/images/review-step-1.jpg"
             alt="Step 1 for launch"
           />
           <p class="steps-img-overlay">
@@ -167,7 +167,7 @@
           <span class="step-number caption">2</span>
           <enhanced:img
             class="steps-img"
-            src={blackholeImage}
+            src=$lib/assets/images/rapid-step-2.webp
             alt="Step 2 for launch"
           />
           <p class="steps-img-overlay">
@@ -188,7 +188,7 @@
           <span class="step-number caption">3</span>
           <enhanced:img
             class="steps-img"
-            src={blackholeImage}
+            src="$lib/assets/images/step-3.png"
             alt="Step 3 for launch"
           />
           <p class="steps-img-overlay">
@@ -209,7 +209,7 @@
           <span class="step-number caption">4</span>
           <enhanced:img
             class="steps-img"
-            src={blackholeImage}
+            src="$lib/assets/images/aerospace-defense-testing-step-4.jpg"
             alt="Step 4 for launch"
           />
           <p class="steps-img-overlay">
@@ -230,7 +230,7 @@
           <span class="step-number caption">5</span>
           <enhanced:img
             class="steps-img"
-            src={blackholeImage}
+            src="$lib/assets/images/rocket-launch-step-5.jpg"
             alt="Step 5 for launch"
           />
           <p class="steps-img-overlay">
