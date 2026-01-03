@@ -5,7 +5,7 @@
             name: "Rushil Varsnney",
             time: "June 2025 – Feb 2026",
             status: "Internship",
-            insitution: "Aero Space Engineering, TU Delft",
+            institution: "Aero Space Engineering, TU Delft",
             testimonial:
                 "The project all corporate projects wish they could be. The place where agile is actually agile. Heed my words dear reader, this project will serve as valuable experience of the things that can be done right. This was as great experience!",
         },
@@ -73,17 +73,72 @@
 
 <article class="testimonial-container">
     {#each testimonials as testimonial}
-        <h2>{testimonial.name}</h2>
-        <span>{testimonial.time}</span>
-        <span>{testimonial.status}</span>
-        <span>{testimonial.insitution}</span>
-        <p>{testimonial.testimonial}</p>
+        <div>
+            <h2>{testimonial.name}</h2>
+            <span>{testimonial.time}</span>
+            <span>{testimonial.status}</span>
+            <span>{testimonial.institution}</span>
+            <p>"{testimonial.testimonial}"</p>
+        </div>
     {/each}
 </article>
 
 <style>
     .testimonial-container {
         display: grid;
-        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+        grid-auto-rows: 1fr;
+        gap: 1.5rem;
+        max-width: 87.5rem;
+        margin: 0 auto;
+        padding: 2rem;
+        min-height: 100vh;
+    }
+
+    .testimonial-container > div {
+        background: var(--space-140);
+        backdrop-filter: blur(0.625rem);
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        box-shadow: 0 0.625rem 0.9375rem -0.1875rem rgba(0, 0, 0, 0.3);
+        transition: box-shadow 0.3s ease;
+    }
+
+    .testimonial-container > div:hover {
+        box-shadow: 0 1.25rem 1.5625rem -0.3125rem rgba(0, 0, 0, 0.4);
+    }
+
+    .testimonial-container h2 {
+        color: var(--white);
+        font-weight: 600;
+        font-size: 1rem;
+        margin: 0 0 0.25rem 0;
+    }
+
+    .testimonial-container span {
+        color: var(--light-grey);
+        font-size: 0.75rem;
+        display: block;
+        margin: 0.125rem 0;
+    }
+
+    .testimonial-container p {
+        color: #d1d5db;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 0.0625rem solid var(--cleanroom-100);
+        flex: 1;
+    }
+
+    /* Desktop: 2 kolommen vanaf 48rem (768px) */
+    @media (min-width: 48rem) {
+        .testimonial-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 </style>
