@@ -96,7 +96,7 @@
     }
 
     .testimonial-container > div {
-        background: var(--space-140);
+        background: var(--space-100);
         backdrop-filter: blur(0.625rem);
         border-radius: 0.5rem;
         padding: 1.5rem;
