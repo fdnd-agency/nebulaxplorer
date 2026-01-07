@@ -1,5 +1,5 @@
 <script>
-let { news = [] } = $props();
+	export let news = [];
   
   import placeholderImage from "$lib/assets/images/placeholder2.jpg";
 </script>
@@ -8,8 +8,16 @@ let { news = [] } = $props();
 {#if news && news.length > 0}
 <ul class="news-grid">
 {#each news as newscard}
-<a href="/news/{newscard.slug || newscard.id}" class="news-card-link">
+
+ <a
+   href={'/news/$' + (newscard.slug || newscard.id)}
+   class="news-card-link"
+ >
+  <img src={image} alt={newscard.title} />
+     <h3>{newscard.title}</h3>
+  <p>{newscard.excerpt}</p>
 </a>
+
   <li class="news-card">
     <div class="news-image">
       <img src={newscard.image?.data?.full_url || newscard.image || placeholderImage}
