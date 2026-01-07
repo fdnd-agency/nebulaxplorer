@@ -8,32 +8,26 @@
 {#if news && news.length > 0}
 <ul class="news-grid">
 {#each news as newscard}
-
- <a
-   href={'/news/$' + (newscard.slug || newscard.id)}
-   class="news-card-link"
- >
-  <img src={image} alt={newscard.title} />
-     <h3>{newscard.title}</h3>
-  <p>{newscard.excerpt}</p>
-</a>
-
   <li class="news-card">
-    <div class="news-image">
-      <img src={newscard.image?.data?.full_url || newscard.image || placeholderImage}
-       alt="{newscard.title}">    
-    </div>
-    <div class="news-info">
-      <span class="news-label"></span>
-      <h3>{newscard.title || "Untitled"}</h3>
-      <span class="news-label"></span>
-     {#if newscard.type || newscard.category}
-     <p>{newscard.type || newscard.category}</p>
-     {/if}
-
-    </div>
+    <a
+      href={'/news/' + (newscard.slug || newscard.id)}
+      class="news-card-link"
+    >
+      <div class="news-image">
+        <img src={newscard.image?.data?.full_url || newscard.image || placeholderImage}
+         alt="{newscard.title}">    
+      </div>
+      <div class="news-info">
+        <span class="news-label"></span>
+        <h3>{newscard.title || "Untitled"}</h3>
+        <span class="news-label"></span>
+       {#if newscard.type || newscard.category}
+       <p>{newscard.type || newscard.category}</p>
+       {/if}
+      </div>
+    </a>
   </li>
-  {/each}
+{/each}
 
 </ul>
   {:else}

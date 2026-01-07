@@ -4,7 +4,7 @@
   import logo from "$lib/assets/logos/SRON_Academy_OnWhite.svg";
   import Breadcrumb from "$lib/components/Breadcrumb/Breadcrumb.svelte";
   import NewsCards from "$lib/components/NewsCards/NewsCards.svelte";
-  export const data = {};
+  export let data;
 </script>
  
 <Hero
@@ -19,11 +19,11 @@
 <section class="paragraph-block">
   <div class="text-title">
     <h2 class="subtitle">Our latest <span class="orange">developments</span></h2>
-    <p class="heading">Currently <span class="orange">12</span> available</p>
+    <p class="heading">Currently <span class="orange">{data.news.length}</span> available</p>
   </div>
   </section>
    
-<NewsCards news={news}
+<NewsCards news={data.news}
   /> 
 
 <style>
