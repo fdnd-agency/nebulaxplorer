@@ -19,7 +19,7 @@
 <section class="paragraph-block">
   <div class="text-title">
     <h2 class="subtitle">Our latest <span class="orange">developments</span></h2>
-    <p class="heading">Currently <span class="orange">{data.news.length}</span> available</p>
+    <p class="heading">Currently <span class="orange">{data.news.length}</span> available.</p>
   </div>
   </section>
    
