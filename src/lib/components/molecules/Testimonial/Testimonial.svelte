@@ -1,5 +1,6 @@
 <script>
     import mertenImage from "$lib/assets/images/merten.jpg";
+    import rushilImage from "$lib/assets/images/rushil.jpg";
 
     const testimonials = [
         {
@@ -10,7 +11,7 @@
             institution: "Aero Space Engineering, TU Delft",
             testimonial:
                 "The project all corporate projects wish they could be. The place where agile is actually agile. Heed my words dear reader, this project will serve as valuable experience of the things that can be done right. This was as great experience!",
-            image: mertenImage,
+            image: rushilImage,
         },
 
         {
