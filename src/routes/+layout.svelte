@@ -23,7 +23,7 @@
     { path: "/scientific", label: "scientific" },
     { path: "/news", label: "news" },
     { path: "/team", label: "team" },
-    { path: "/careers", label: "careers" },
+    { path: "/assignments", label: "assignments" },
     { path: "/partners", label: "partners" },
   ];
 
