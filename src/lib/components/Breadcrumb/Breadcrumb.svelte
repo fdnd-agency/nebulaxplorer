@@ -8,7 +8,7 @@
 <section class="breadcrumb">
   <h1 class="breadcrumb-words">
     <a href="/"><span class="breadcrumb-home"><u>home</u></span></a>
-     <span class="orange"> > </span> <span class="thin">news</span></h1>
+     <span class="orange"> </span> <span class="thin">news</span></h1>
 </section>
 
 <style>
