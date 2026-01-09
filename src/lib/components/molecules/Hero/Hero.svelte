@@ -7,6 +7,7 @@
     sronIcon,
     paragraph,
     pageTitle = "None set",
+    titleColor,
   } = $props();
 </script>
 
@@ -15,11 +16,19 @@
     <p class="subheading">{paragraph}</p>
   {/if}
 
+  {#if background.file}
+    <enhanced:img
+      src={background.file}
+      alt={background.alt}
+      class="hero-bg"
+      sizes="100vw"
+    />
+  {/if}
 
- {#if sronIcon}
+  {#if sronIcon}
     <img src={sronIcon} alt="Logo of SRON Academy" class="hero-logo" />
-{/if}
-  <h1 class="title">{pageTitle}</h1>
+  {/if}
+  <h1 class="title" style={titleColor && `color: ${titleColor}`}>{pageTitle}</h1>
 </section>
 
 <style>
@@ -39,7 +48,7 @@
     }
 
     /* if a p is present the logo will correctly get margin-top */
-    > p ~ img{
+    > p ~ img {
       margin-top: 1rem;
     }
 
@@ -63,11 +72,5 @@
       max-width: 36.375rem;
       display: block;
     }
-
-    .title {
-      color: var(--space-140);
-      font-weight: 400;
-      }
-    }
-
+  }
 </style>
