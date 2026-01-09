@@ -5,6 +5,7 @@
     const testimonials = [
         {
             id: 1,
+            // TODO: Verify correct spelling of "Rushil Varsnney" with the original source before release.
             name: "Rushil Varsnney",
             time: "June 2025 – Feb 2026",
             status: "Internship",
