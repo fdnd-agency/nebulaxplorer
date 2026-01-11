@@ -21,7 +21,7 @@
     { path: "/", label: "home" },
     { path: "/mission", label: "mission" },
     { path: "/scientific", label: "scientific" },
-    { path: "/news", label: "news" },
+    // { path: "/news", label: "news" },
     { path: "/team", label: "team" },
     { path: "/careers", label: "careers" },
     { path: "/partners", label: "partners" },
@@ -51,7 +51,8 @@
     <ul>
       <!-- Include this button separately as this is our close button -->
       <li>
-        <a href="/" class="menu-button">
+        <!-- blijf van die # af -->
+        <a href="#" class="menu-button">
           menu
           <span class="lines"></span>
         </a>

@@ -1,5 +1,4 @@
-<script>
-  import { Hero } from "$lib";
+<!-- <script>
   import blackholeImage from "$lib/assets/images/blackhole2.jpg?enhanced";
   import logo from "$lib/assets/logos/SRON_Academy_OnWhite.svg";
   import Breadcrumb from "$lib/components/Breadcrumb/Breadcrumb.svelte";
@@ -112,4 +111,4 @@ export let data;
     width: auto;
   }
 
-</style>
+</style> -->
