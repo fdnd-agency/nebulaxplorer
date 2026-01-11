@@ -23,9 +23,6 @@
       <span class="news-type">{newsItem.Type || newsItem.type || newsItem.category}</span>
     {/if}
     <h2 class="subtitle">{newsItem?.title || "Untitled"}</h2>
-    {#if newsItem?.date_published || newsItem?.date}
-      <p class="date">{new Date(newsItem.date_published || newsItem.date).toLocaleDateString()}</p>
-    {/if}
   </div>
 
   {#if newsItem?.image || newsItem?.image?.data}
