@@ -1,5 +1,5 @@
 <script>
-  let {
+  const {
     background = {
       alt: "default background image",
       file,
@@ -9,6 +9,11 @@
     pageTitle = "None set",
     titleColor,
   } = $props();
+
+  // Validation to prevent empty alt text
+  if (!background.alt || background.alt.trim() === "") {
+    throw new Error('The "background.alt" prop must be a non-empty string.');
+  }
 </script>
 
 <section class="hero">
@@ -28,7 +33,9 @@
   {#if sronIcon}
     <img src={sronIcon} alt="Logo of SRON Academy" class="hero-logo" />
   {/if}
-  <h1 class="title" style={titleColor && `color: ${titleColor}`}>{pageTitle}</h1>
+  <h1 class="title" style={titleColor && `color: ${titleColor}`}>
+    {pageTitle}
+  </h1>
 </section>
 
 <style>
