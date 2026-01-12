@@ -1,7 +1,7 @@
 <script>
   import { page } from "$app/stores";
-  import favicon from "$lib/assets/icons/favicon.svg";
-  import PageArrow from "$lib/assets/icons/PageArrow.svelte";
+  import favicon from "$lib/assets/logos/favicon.svg";
+  import PageArrow from "$lib/assets/logos/PageArrow.svelte";
   import "$lib/assets/styles/general.css";
   import "$lib/assets/styles/layout.css";
 
@@ -51,7 +51,7 @@
     <ul>
       <!-- Include this button separately as this is our close button -->
       <li>
-        <!-- blijf van die # af -->
+        <!-- Leave this as # -->
         <a href="#" class="menu-button">
           menu
           <span class="lines"></span>
