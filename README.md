@@ -29,7 +29,13 @@ Our website includes a total of 7 main pages; Home, Mission, Scientific, News, T
 
 ## Features 
 
+The Nebula Xplorer website includes pages about various facets of the Nebula Xplorer mission such as the mission page which shows surface level information about the mission goals, the careers page that shows openings in the team, or the partners page where you can learn more about who is supporting our progress. The website lets you learn more about what it is that we are doing and why, on both a surface level for curious minds and a unique below-the-surface perspective for fellow scientists.
+
 ## Screenshots
+
+<img width="1901" height="899" alt="Screenshot 2026-01-12 152123" src="https://github.com/user-attachments/assets/47cf767a-0a17-4395-a778-fb99c8c1edf2" />
+
+**Missions page ^**
 
 ## Installation
 
