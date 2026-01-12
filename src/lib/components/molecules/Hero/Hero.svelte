@@ -41,7 +41,7 @@
 <style>
   .hero {
     --menu-button-size: 3.75rem;
-    border-bottom: 0.1875rem solid var(--cleanroom-100);
+    border-bottom: .375rem solid var(--cleanroom-100);
     position: relative;
     padding: 1.5rem;
     padding-top: 5.25rem;
