@@ -51,7 +51,7 @@
     <ul>
       <!-- Include this button separately as this is our close button -->
       <li>
-        <!-- blijf van die # af -->
+        <!-- Leave this as # -->
         <a href="#" class="menu-button">
           menu
           <span class="lines"></span>
