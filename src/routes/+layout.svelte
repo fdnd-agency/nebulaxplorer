@@ -1,7 +1,7 @@
 <script>
   import { page } from "$app/stores";
-  import favicon from "$lib/assets/icons/favicon.svg";
-  import PageArrow from "$lib/assets/icons/PageArrow.svelte";
+  import favicon from "$lib/assets/logos/favicon.svg";
+  import PageArrow from "$lib/assets/logos/PageArrow.svelte";
   import "$lib/assets/styles/general.css";
   import "$lib/assets/styles/layout.css";
 
