@@ -1,8 +1,7 @@
 <script>
   import { Hero } from "$lib";
   import Jobs from "$lib/components/molecules/jobs/Jobs.svelte";
-  import Breadcrumb from "$lib/components/molecules/Breadcrumb/Breadcrumb.svelte";
-
+  import { Breadcrumb } from "$lib";
   import Pagination from "$lib/components/molecules/Pagination/Pagination.svelte";
 
   // ! NOTE: important to include ?enhanced, otherwise no optimization takes place nor does it get rendered !
