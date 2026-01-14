@@ -65,11 +65,13 @@
           background: inherit;
           width: 100%;
           display: inline-block;
+          overflow: hidden;
+          overflow: clip;
 
           h2 {
             background: inherit;
             position: absolute;
-            top: 0;
+            top: -1px;
             left: 0;
             transform: translateX(-100%) rotate(-90deg);
             transform-origin: right top;
