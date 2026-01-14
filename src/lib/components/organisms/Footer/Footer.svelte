@@ -41,7 +41,7 @@
     <div class="contents-nav">
       <img src={SRON_Academy_OnSpaceBlue} alt="SRON Academy logo" />
       <nav>
-        <ul>
+        <ul class="link">
           {#each navItems as { path, label }}
             <li>
               <a href={path}>{label}</a>
