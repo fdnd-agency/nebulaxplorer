@@ -57,7 +57,10 @@
         gap: 1.5rem;
         padding-left: 1.5rem;
 
-        li {
+        > li {
+          container-type: inline-size;
+          container-name: location-info;
+
           position: relative;
           background: inherit;
           width: 100%;
@@ -87,37 +90,49 @@
       }
 
       &.contact {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem 0;
+        max-width: 100%;
         margin-block: 1rem;
         position: relative;
         margin-right: 2.25rem;
+        justify-content: space-between;
 
-        @media (min-width: 26.25rem) {
-          gap: 0.5rem 0;
-          display: grid;
-          grid-template: 1fr 1fr / 1fr 1fr;
-          &::after {
-            content: "";
-            position: absolute;
-            height: 100%;
-            width: 0.125rem;
-            background: var(--cleanroom-100);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-          }
+        &::after {
+          content: "";
+          position: absolute;
+          height: 100%;
+          width: 0.125rem;
+          background: var(--cleanroom-100);
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          display: none;
         }
 
         @media (min-width: 56.25rem) {
           align-items: center;
         }
 
-        @media (min-width: 90.625rem) {
-          display: flex;
-          gap: unset;
-          justify-content: space-between;
+        @supports not (container-type: inline-size) {
+          @media (min-width: 26.25rem) {
+            gap: 0.5rem 0;
+            display: grid;
+            grid-template: 1fr 1fr / 1fr 1fr;
+            &::after {
+              display: block;
+            }
+          }
 
-          &::after {
-            display: none;
+          @media (min-width: 90.625rem) {
+            display: flex;
+            flex-direction: row;
+            gap: unset;
+
+            &::after {
+              display: none;
+            }
           }
         }
 
@@ -140,11 +155,51 @@
             justify-self: end;
           }
 
-          @media (min-width: 90.625rem) {
-            &.divider {
-              display: inline-block;
+          @supports not (container-type: inline-size) {
+            @media (min-width: 90.625rem) {
+              &.divider {
+                display: inline-block;
+              }
             }
           }
+        }
+      }
+
+      /* If container queries are not supported; they won't display anyway */
+      /* Horizontal list with lines (divider) */
+      @container location-info (min-width: 700px) {
+        .contact {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          li.divider {
+            display: inline-block;
+          }
+        }
+      }
+
+      /* Two column & row grid */
+      @container location-info (min-width: 350px) and (max-width: 700px) {
+        .contact {
+          display: grid;
+          grid-template: 1fr 1fr / 1fr 1fr;
+
+          &::after {
+            display: block;
+          }
+
+          li.divider {
+            display: none;
+          }
+        }
+      }
+
+      /* Vertical list */
+      @container location-info (max-width: 350px) {
+        .contact {
+          display: flex;
+          flex-direction: column;
         }
       }
     }
