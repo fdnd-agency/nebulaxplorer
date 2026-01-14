@@ -4,6 +4,8 @@
     import logo from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
     import TestimonialHeader from "$lib/components/molecules/TestimonialHeader/TestimonialHeader.svelte";
     import Testimonial from "$lib/components/molecules/Testimonial/Testimonial.svelte";
+
+    let { data } = $props();
 </script>
 
 <Hero
@@ -14,4 +16,4 @@
 
 <TestimonialHeader />
 
-<Testimonial />
+<Testimonial testimonials={data.testimonials} />
