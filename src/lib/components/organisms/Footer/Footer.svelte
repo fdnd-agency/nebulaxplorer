@@ -2,6 +2,8 @@
   import leidenImg from "$lib/assets/images/sron-leiden.webp?enhanced";
   import groningenImg from "$lib/assets/images/sron-groningen.webp?enhanced";
   import SRON_Academy_OnSpaceBlue from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
+
+  const { navItems } = $props();
 </script>
 
 <footer>
@@ -33,7 +35,20 @@
       </ul>
     </li>
   </ul>
-
+  <div class="contents">
+    <div class="contents-nav">
+      <img src={SRON_Academy_OnSpaceBlue} alt="SRON Academy logo" />
+      <nav>
+        <ul>
+          {#each navItems as { path, label }}
+            <li>
+              <a href={path}>{label}</a>
+            </li>
+          {/each}
+        </ul>
+      </nav>
+    </div>
+  </div>
   <p class="footnote supporting">What happens up there, starts down here.</p>
 </footer>
 

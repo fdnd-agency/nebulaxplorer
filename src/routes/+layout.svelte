@@ -85,4 +85,4 @@
   {@render children?.()}
 </main>
 
-<Footer />
+<Footer navItems />
