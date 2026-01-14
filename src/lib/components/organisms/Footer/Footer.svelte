@@ -199,7 +199,7 @@
 
       /* If container queries are not supported; they won't display anyway */
       /* Horizontal list with lines (divider) */
-      @container location-info (min-width: 700px) {
+      @container location-info (min-width: 43.75rem) {
         .contact {
           display: flex;
           flex-direction: row;
