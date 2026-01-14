@@ -2,6 +2,8 @@
   import leidenImg from "$lib/assets/images/sron-leiden.webp?enhanced&w=960;768";
   import groningenImg from "$lib/assets/images/sron-groningen.webp?enhanced&w=960;768";
   import SRON_Academy_OnSpaceBlue from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
+  import SRON_full_white from "$lib/assets/logos/SRON_Full-White.svg";
+  import NWO from "$lib/assets/logos/NWO_logo.svg";
 
   const { navItems } = $props();
 </script>
