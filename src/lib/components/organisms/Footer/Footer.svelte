@@ -236,6 +236,61 @@
       }
     }
 
+    .contents {
+      background: var(--space-100);
+      padding: 2.25rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 4rem;
+      flex-wrap: wrap;
+      .contents-nav {
+        width: 15.625rem;
+        img {
+          width: inherit;
+          margin-bottom: 1.5rem;
+        }
+      }
+
+      nav {
+        display: contents;
+
+        ul {
+          border-top: .1875rem solid var(--white);
+          padding-top: .75rem;
+          width: inherit;
+          background: unset;
+          flex-direction: column;
+          max-height: calc(5em + .75rem + .1875rem);
+          flex-wrap: wrap;
+          align-content: space-between;
+
+          /* If more links get added, be sure to remove or adjust this; if necessary */
+          li {
+            display: contents;
+
+            &:is(:nth-child(5n + 5), :last-child) {
+              color: var(--cleanroom-100);
+            }
+
+            a {
+              display: inline;
+              width: inherit;
+            }
+          }
+        }
+      }
+    }
+
+    .additional {
+      width: 25rem;
+
+      form {
+        input {
+          margin-top: 1.5rem;
+        }
+      }
+    }
+
     .footnote {
       background: var(--cleanroom-100);
       color: var(--space-100);
