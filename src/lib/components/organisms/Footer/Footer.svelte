@@ -47,6 +47,7 @@
               <a href={path}>{label}</a>
             </li>
           {/each}
+          <li><a href="/privacy">privacy</a></li>
         </ul>
       </nav>
     </div>
