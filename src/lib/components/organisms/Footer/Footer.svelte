@@ -212,7 +212,6 @@
       }
 
       /* Two column & row grid */
-      @container location-info (min-width: 350px) and (max-width: 700px) {
       @container location-info (min-width: 21.875rem) and (max-width: 43.75rem) {
         .contact {
           display: grid;
