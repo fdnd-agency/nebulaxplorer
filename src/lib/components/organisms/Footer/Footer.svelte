@@ -101,7 +101,7 @@
           h2 {
             background: inherit;
             position: absolute;
-            top: -1px;
+            top: -0.0625rem;
             left: 0;
             transform: translateX(-100%) rotate(-90deg);
             transform-origin: right top;
