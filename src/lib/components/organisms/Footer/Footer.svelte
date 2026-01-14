@@ -51,6 +51,18 @@
         </ul>
       </nav>
     </div>
+    <div class="additional">
+      <form class="link">
+        <label>
+          Subscribe to our mailing list to receive news and updates about our research and activities.
+        <input type="email">
+        </label>
+      </form>
+      <div class="socials">
+        <img src={NWO} alt="NWO logo">
+        <div class="group"></div>
+      </div>
+    </div>
   </div>
   <p class="footnote supporting">What happens up there, starts down here.</p>
 </footer>
