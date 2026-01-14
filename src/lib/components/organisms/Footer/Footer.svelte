@@ -1,6 +1,6 @@
 <script>
-  import leidenImg from "$lib/assets/images/sron-leiden.webp?enhanced";
-  import groningenImg from "$lib/assets/images/sron-groningen.webp?enhanced";
+  import leidenImg from "$lib/assets/images/sron-leiden.webp?enhanced&w=960;768";
+  import groningenImg from "$lib/assets/images/sron-groningen.webp?enhanced&w=960;768";
   import SRON_Academy_OnSpaceBlue from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
 
   const { navItems } = $props();
