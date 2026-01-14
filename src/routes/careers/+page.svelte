@@ -5,7 +5,7 @@
   import Pagination from "$lib/components/molecules/Pagination/Pagination.svelte";
 
   // ! NOTE: important to include ?enhanced, otherwise no optimization takes place nor does it get rendered !
-  import heroImg from "$lib/assets/images/grav-waves.jpg?enhanced";
+  import heroImg from "$lib/assets/images/grav-waves.jpg?enhanced&w=1920;1440;1024;768";
   import logo from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
 
   const { data } = $props();
