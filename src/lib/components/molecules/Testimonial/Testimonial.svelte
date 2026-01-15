@@ -88,7 +88,7 @@
     {#each testimonials as testimonial}
         <div class="testimonial-card">
             <img
-                src={testimonial.image}
+                src={`https://fdnd-agency.directus.app/assets/${testimonial.image}`}
                 alt={testimonial.name}
                 class="testimonial-image"
             />

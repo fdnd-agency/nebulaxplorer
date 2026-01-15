@@ -1,5 +1,6 @@
 <script>
   import { page } from "$app/stores";
+  import { Footer } from "$lib";
   import favicon from "$lib/assets/logos/favicon.svg";
   import PageArrow from "$lib/assets/logos/PageArrow.svelte";
   import "$lib/assets/styles/general.css";
@@ -28,7 +29,6 @@
   ];
 
   let { children } = $props();
-  
 </script>
 
 <svelte:head>
@@ -84,3 +84,5 @@
 <main>
   {@render children?.()}
 </main>
+<!-- For some reason, passing navItems directly did not pass the prop correctly -->
+<Footer navItems={navItems} />
