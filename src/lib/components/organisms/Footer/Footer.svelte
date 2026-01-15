@@ -78,14 +78,6 @@
         </div>
       </div>
     </div>
-    <div class="disclaimer">
-      <div class="group">
-        <enhanced:img src={NwoIcon} alt="NWO logo" />
-        <p class="supporting">
-          SRON is onderdeel van de instituten-organisatie van NWO-I
-        </p>
-      </div>
-    </div>
   </div>
   <p class="footnote supporting">What happens up there, starts down here.</p>
 </footer>
@@ -310,6 +302,8 @@
       justify-content: space-between;
       flex-direction: column;
       gap: 4rem;
+      max-width: 400px;
+
       form {
         position: relative;
         max-width: 25rem;
