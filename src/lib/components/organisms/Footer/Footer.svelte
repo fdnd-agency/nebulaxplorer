@@ -2,8 +2,11 @@
   import leidenImg from "$lib/assets/images/sron-leiden.webp?enhanced&w=960;768";
   import groningenImg from "$lib/assets/images/sron-groningen.webp?enhanced&w=960;768";
   import SRON_Academy_OnSpaceBlue from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
-  import SRON_full_white from "$lib/assets/logos/SRON_Full-White.svg";
-  import NWO from "$lib/assets/logos/NWO_logo.svg";
+  import SRON_full_white from "$lib/assets/logos/SRON_Full_White.svg";
+  import NwoIcon from "$lib/assets/images/NWO.webp?enhanced";
+  import InstagramIcon from "$lib/assets/logos/Instagram.svelte";
+  import LinkedinIcon from "$lib/assets/logos/Linkedin.svelte";
+  import BskyIcon from "$lib/assets/logos/Bsky.svelte";
 
   const { navItems } = $props();
 </script>
@@ -54,13 +57,33 @@
     <div class="additional">
       <form class="link">
         <label>
-          Subscribe to our mailing list to receive news and updates about our research and activities.
-        <input type="email">
+          Subscribe to our mailing list to receive news and updates about our
+          research and activities.
+          <input class="supporting" type="email" />
         </label>
+        <button><span class="visually-hidden">Submit</span></button>
       </form>
       <div class="socials">
-        <img src={NWO} alt="NWO logo">
-        <div class="group"></div>
+        <img src={SRON_full_white} alt="SRON full white logo" />
+        <div class="group">
+          <a href="">
+            <LinkedinIcon />
+          </a>
+          <a href="">
+            <InstagramIcon />
+          </a>
+          <a href="">
+            <BskyIcon />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="disclaimer">
+      <div class="group">
+        <enhanced:img src={NwoIcon} alt="NWO logo" />
+        <p class="supporting">
+          SRON is onderdeel van de instituten-organisatie van NWO-I
+        </p>
       </div>
     </div>
   </div>
@@ -240,12 +263,12 @@
       background: var(--space-100);
       padding: 2.25rem 1.5rem;
       display: flex;
-      justify-content: space-between;
-      gap: 4rem;
+      gap: 6rem;
       flex-wrap: wrap;
+
       .contents-nav {
-        width: 15.625rem;
         img {
+          max-width: 15.625rem;
           width: inherit;
           margin-bottom: 1.5rem;
         }
@@ -255,14 +278,15 @@
         display: contents;
 
         ul {
-          border-top: .1875rem solid var(--white);
-          padding-top: .75rem;
+          border-top: 0.1875rem solid var(--white);
+          padding-top: 0.75rem;
           width: inherit;
           background: unset;
           flex-direction: column;
-          max-height: calc(5em + .75rem + .1875rem);
+          max-height: calc(5em + 0.75rem + 0.1875rem + (4 * 0.5rem));
           flex-wrap: wrap;
           align-content: space-between;
+          gap: 0.5rem 0;
 
           /* If more links get added, be sure to remove or adjust this; if necessary */
           li {
@@ -282,12 +306,96 @@
     }
 
     .additional {
-      width: 25rem;
-
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      gap: 4rem;
       form {
-        input {
-          margin-top: 1.5rem;
+        position: relative;
+        max-width: 25rem;
+        width: 100%;
+        label {
+          input {
+            border: 1px solid var(--white);
+            border-right: unset;
+            height: 2.5rem;
+            margin-top: 1.5rem;
+            background: var(--space-100);
+            width: 90%;
+          }
         }
+
+        button {
+          cursor: pointer;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 2.5rem;
+          aspect-ratio: 1;
+
+          .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+          }
+        }
+        input:focus-visible,
+        button:focus-visible {
+          outline-offset: 0.25rem;
+          outline-style: dashed;
+          outline-width: 0.125rem;
+          outline-color: var(--cleanroom-100);
+        }
+      }
+
+      .socials {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .group {
+          grid-row: 2;
+          grid-column: span 2;
+          border-top: 0.1875rem solid var(--white);
+          display: flex;
+          flex-direction: row;
+          padding-top: 1rem;
+          gap: 1rem;
+
+          > * {
+            display: grid;
+            place-content: center;
+
+            &:focus-visible {
+              outline-offset: 0.25rem;
+              outline-style: dashed;
+              outline-width: 0.125rem;
+              outline-color: var(--cleanroom-100);
+            }
+          }
+        }
+      }
+    }
+
+    .disclaimer {
+      display: flex;
+      margin-left: auto;
+      align-items: end;
+
+      .group {
+        display: flex;
+        align-items: start;
+        gap: 0.5rem;
+      }
+
+      p {
+        max-width: 12.5rem;
       }
     }
 
@@ -296,6 +404,7 @@
       color: var(--space-100);
       text-align: center;
       display: block;
+      padding: 0 2.25rem;
     }
   }
 </style>
