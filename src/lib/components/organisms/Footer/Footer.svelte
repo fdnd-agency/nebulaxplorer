@@ -7,6 +7,7 @@
   import InstagramIcon from "$lib/assets/logos/Instagram.svelte";
   import LinkedinIcon from "$lib/assets/logos/Linkedin.svelte";
   import BskyIcon from "$lib/assets/logos/Bsky.svelte";
+  import Arrow from "$lib/assets/logos/Arrow.svelte";
 
   const { navItems } = $props();
 </script>
@@ -55,13 +56,17 @@
       </nav>
     </div>
     <div class="additional">
-      <form class="link">
-        <label>
+      <form>
+        <label class="link">
           Subscribe to our mailing list to receive news and updates about our
           research and activities.
           <input class="supporting" type="email" />
         </label>
-        <button><span class="visually-hidden">Submit</span></button>
+        <button
+          ><Arrow width="12" height="20" /><span class="visually-hidden"
+            >Submit</span
+          ></button
+        >
       </form>
       <div class="socials">
         <img src={SRON_full_white} alt="SRON full white logo" />
@@ -255,17 +260,14 @@
       background: var(--space-100);
       padding: 2.25rem 1.5rem;
       display: flex;
-      gap: 6rem;
+      gap: 4rem;
       flex-wrap: wrap;
-
-      @media (min-width: 51.875rem) {
-        justify-content: center;
-      }
+      justify-content: space-between;
 
       .contents-nav {
         img {
-          max-width: 15.625rem;
-          width: inherit;
+          width: 100%;
+          max-width: 20rem;
           margin-bottom: 1.5rem;
         }
       }
@@ -279,22 +281,40 @@
           width: inherit;
           background: unset;
           flex-direction: column;
-          max-height: calc(5em + 0.75rem + 0.1875rem + (4 * 0.5rem));
+          max-height: calc(5.5em + 0.75rem + (4 * 0.5rem));
           flex-wrap: wrap;
           align-content: space-between;
-          gap: 0.5rem 0;
+          gap: 0.5rem 2rem;
+          width: fit-content;
+
+          
 
           /* If more links get added, be sure to remove or adjust this; if necessary */
           li {
             display: contents;
 
             &:is(:nth-child(5n + 5), :last-child) {
-              color: var(--cleanroom-100);
+              color: var(--cleanroom-30);
+            }
+
+            /* Nice inspo https://tobiasahlin.com/blog/previous-sibling-css-has/ */
+            &:hover + li, &:has(+ li:hover) {
+              color: var(--cleanroom-60);
             }
 
             a {
               display: inline;
-              width: inherit;
+              width: fit-content;
+
+              transition: color .3s ease;
+
+              &:hover {
+                color: var(--cleanroom-100);
+              }
+
+              &:active {
+                color: var(--cleanroom-140);
+              }
             }
           }
         }
@@ -313,14 +333,26 @@
         position: relative;
         max-width: 25rem;
         width: 100%;
+
         label {
+          display: block;
+
           input {
             border: 1px solid var(--white);
             border-right: unset;
             height: 2.5rem;
+            padding: 16px 8px;
             margin-top: 1.5rem;
-            background: var(--space-100);
+            background: linear-gradient(
+              to right,
+              var(--space-100) 90%,
+              var(--space-160)
+            );
+            background-size: 200% 100%;
+            background-position: 100% 0%;
             width: 90%;
+
+            transition: background-position 0.75s ease;
           }
         }
 
@@ -331,6 +363,9 @@
           right: 0;
           width: 2.5rem;
           aspect-ratio: 1;
+          color: var(--space-100);
+          display: grid;
+          place-content: center;
 
           .visually-hidden {
             position: absolute;
@@ -344,12 +379,14 @@
             border: 0;
           }
         }
+
         input:focus-visible,
         button:focus-visible {
-          outline-offset: 0.25rem;
-          outline-style: dashed;
+          outline-offset: -0.125rem;
+          outline-style: solid;
           outline-width: 0.125rem;
           outline-color: var(--cleanroom-100);
+          background-position: 0% 0%;
         }
       }
 
