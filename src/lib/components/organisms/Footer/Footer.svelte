@@ -33,7 +33,7 @@
       <ul class="contact paragraph">
         <li>Landleven 12</li>
         <li class="divider"></li>
-        <li>2333 CA Leiden</li>
+        <li>9747 AD Groningen</li>
         <li class="divider"></li>
         <li>The Netherlands</li>
         <li class="divider"></li>
