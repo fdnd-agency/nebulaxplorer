@@ -71,13 +71,13 @@
       <div class="socials">
         <img src={SRON_full_white} alt="SRON full white logo" />
         <div class="group">
-          <a href="">
+          <a href="/">
             <LinkedinIcon />
           </a>
-          <a href="">
+          <a href="/">
             <InstagramIcon />
           </a>
-          <a href="">
+          <a href="/">
             <BskyIcon />
           </a>
         </div>
@@ -170,7 +170,6 @@
         }
 
         @supports not (container-type: inline-size) {
-
           @media (min-width: 26.25rem) {
             gap: 0.5rem 0;
             display: grid;
@@ -212,7 +211,6 @@
           }
 
           @supports not (container-type: inline-size) {
-
             @media (min-width: 90.625rem) {
               &.divider {
                 display: inline-block;
@@ -225,7 +223,6 @@
       /* If container queries are not supported; they won't display anyway */
       /* Horizontal list with lines (divider) */
       @container location-info (min-width: 43.75rem) {
-
         .contact {
           display: flex;
           flex-direction: row;
@@ -239,7 +236,6 @@
 
       /* Two column & row grid */
       @container location-info (min-width: 21.875rem) and (max-width: 43.75rem) {
-
         .contact {
           display: grid;
           grid-template: 1fr 1fr / 1fr 1fr;
@@ -256,7 +252,6 @@
 
       /* Vertical list */
       @container location-info (max-width: 21.875rem) {
-
         .contact {
           display: flex;
           flex-direction: column;
@@ -273,7 +268,6 @@
       justify-content: space-between;
 
       .contents-nav {
-
         img {
           width: 100%;
           max-width: 20rem;
@@ -296,8 +290,6 @@
           gap: 0.5rem 2rem;
           width: fit-content;
 
-          
-
           /* If more links get added, be sure to remove or adjust this; if necessary */
           li {
             display: contents;
@@ -306,16 +298,23 @@
               color: var(--cleanroom-30);
             }
 
-            /* Nice inspo https://tobiasahlin.com/blog/previous-sibling-css-has/ */
-            &:hover + li, &:has(+ li:hover) {
+            &:hover {
               color: var(--cleanroom-60);
+            }
+
+            @supports selector(a:has(b)) {
+              /* Nice inspo https://tobiasahlin.com/blog/previous-sibling-css-has/ */
+              &:hover + li,
+              &:has(+ li:hover) {
+                color: var(--cleanroom-60);
+              }
             }
 
             a {
               display: inline;
               width: fit-content;
 
-              transition: color .3s ease;
+              transition: color 0.3s ease;
 
               &:hover {
                 color: var(--cleanroom-100);
