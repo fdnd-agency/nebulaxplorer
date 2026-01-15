@@ -258,6 +258,10 @@
       gap: 6rem;
       flex-wrap: wrap;
 
+      @media (min-width: 51.875rem) {
+        justify-content: center;
+      }
+
       .contents-nav {
         img {
           max-width: 15.625rem;
