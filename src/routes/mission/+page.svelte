@@ -1,13 +1,22 @@
 <script module>
+  import { Hero } from "$lib";
   import blackholeImage from "$lib/assets/blackhole.jpg?enhanced";
+  import Breadcrumb from "$lib/components/molecules/Breadcrumb/Breadcrumb.svelte";
   import logo from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
+  import heroImg from "$lib/assets/images/grav-waves.jpg?enhanced";
 </script>
 
 
 <!-- HERO BLOCK -->
+<Hero
+  titleColor="var(--white)"
+  pageTitle="Mission"
+  background={{ alt: "Two merging black holes", file: heroImg }}
+  sronIcon={logo}
+/>
 
+<Breadcrumb />
 
-<!-- <Breadcrumb /> -->
 
 <!-- FIRST PARAGRAPH + IMG BLOCK -->
 
@@ -16,7 +25,7 @@
     <h2 class="subtitle">What are we <span class="orange">up</span> to?</h2>
     <p class="heading">What our current project entails</p>
   </div>
-
+ 
   <section class="text-content">
     <article>
       <h4 class="orange heading">Dense matter and compact objects</h4>
