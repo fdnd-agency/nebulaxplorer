@@ -291,9 +291,7 @@
           flex-direction: column;
           max-height: calc(5.5em + 0.75rem + (4 * 0.5rem));
           flex-wrap: wrap;
-          align-content: space-between;
           gap: 0.5rem 2rem;
-          width: fit-content;
 
           /* If more links get added, be sure to remove or adjust this; if necessary */
           li {
