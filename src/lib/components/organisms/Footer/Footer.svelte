@@ -51,7 +51,7 @@
               <a href={path}>{label}</a>
             </li>
           {/each}
-          <li><a href="/privacy">privacy</a></li>
+          <li><a href="/">privacy</a></li>
         </ul>
       </nav>
     </div>
@@ -273,7 +273,7 @@
       justify-content: space-between;
 
       .contents-nav {
-        
+
         img {
           width: 100%;
           max-width: 20rem;
