@@ -73,12 +73,17 @@
         <div class="group">
           <a href="/">
             <LinkedinIcon />
+            <span class="visually-hidden">Linkedin profile</span>
           </a>
           <a href="/">
             <InstagramIcon />
+            <span class="visually-hidden">Instagram profile</span>
+
           </a>
           <a href="/">
             <BskyIcon />
+            <span class="visually-hidden">Bluesky profile</span>
+
           </a>
         </div>
       </div>
@@ -374,18 +379,6 @@
           color: var(--space-100);
           display: grid;
           place-content: center;
-
-          .visually-hidden {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-          }
         }
 
         input:focus-visible,
@@ -434,5 +427,17 @@
       display: block;
       padding: 0 2.25rem;
     }
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
 </style>
