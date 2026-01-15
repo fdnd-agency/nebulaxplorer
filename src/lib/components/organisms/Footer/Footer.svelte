@@ -307,6 +307,7 @@
       flex-direction: column;
       gap: 4rem;
       max-width: 400px;
+      width: 100%;
 
       form {
         position: relative;
