@@ -25,12 +25,39 @@
 
 <style>
 
-    header {
+header {
         padding: 3rem 2rem;
     }
     h1 {
         margin-bottom: 3rem;
     }
+
+    .impact-stats-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .impact-stats {
+        padding: 1.5rem 2rem;
+        border-right: 1px solid var(--light-grey);
+        border-left: 1px solid var(--light-grey);
+
+        h3 {
+            color: var(--cleanroom-100);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            font-size: medium;
+        }
+
+        span {
+            color: var(--light-grey);
+            font-size: larger;
+        }
+    }
+
+
+
+@media (min-width: 48rem) {
 
     .impact-stats-container {
         display: grid;
@@ -60,4 +87,5 @@
     .impact-stats:first-child {
         border-left: none;
     }
+}
 </style>
