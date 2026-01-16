@@ -10,27 +10,36 @@
 
 /* Font faces */
 @font-face {
-  font-family: spaceGrotesk;
-  src: url("/fonts/space-grotesk-variable.ttf");
+  font-family: 'spaceGrotesk';
+  src: url("/fonts/space-grotesk-variable.woff2") format("woff2"),
+       url("/fonts/space-grotesk-variable.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
-  font-family: spaceMonoRegular;
-  src: url("/fonts/space-mono-regular.ttf");
+  font-family: 'spaceMonoRegular';
+  src: url("/fonts/space-mono-regular.woff2") format("woff2"),
+       url("/fonts/space-mono-regular.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
-  font-family: spaceMonoBold;
-  src: url("/fonts/space-mono-bold.ttf");
+  font-family: 'spaceMonoBold';
+  src: url("/fonts/space-mono-bold.woff2") format("woff2"),
+       url("/fonts/space-mono-bold.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
-  font-family: Roboto;
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: 100 900;
   src: local("Roboto"), local("Roboto Regular"),
-    url("/fonts/roboto-variable.ttf") format("truetype");
+       url("/fonts/roboto-variable.woff2") format("woff2"),
+       url("/fonts/roboto-variable.ttf") format("truetype");
+  font-display: swap;
 }
+
 
 html{
   scroll-behavior: smooth;
@@ -207,5 +216,5 @@ h1, h2, h3, h4, h5, h6{
 }
 
 a:focus-visible{
-  outline: 2px dashed var(--cleanroom-140);
+  outline: .125rem dashed var(--cleanroom-140);
 }
