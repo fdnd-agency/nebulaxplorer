@@ -6,7 +6,8 @@
   import NewsCards from "$lib/components/NewsCards/NewsCards.svelte";
   export let data;
 </script>
- 
+
+<title>News - SRON Academy</title>
 <Hero
   pageTitle="News"
   sronIcon={logo}
