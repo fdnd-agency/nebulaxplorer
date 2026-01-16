@@ -1,14 +1,19 @@
 <script>
-    import Hero from "$lib/components/molecules/Hero/Hero.svelte"
+    import { Hero } from "$lib";
     import heroImg from "$lib/assets/images/grav-waves.jpg?enhanced";
+    import logo from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
+    import TestimonialHeader from "$lib/components/molecules/TestimonialHeader/TestimonialHeader.svelte";
+    import Testimonial from "$lib/components/molecules/Testimonial/Testimonial.svelte";
 
-
-    console.log(Hero)
+    let { data } = $props();
 </script>
 
 <Hero
-  pageTitle="Careers"
+  pageTitle="Testimonials"
   background={{ alt: "Two merging black holes", file: heroImg }}
   sronIcon={logo}
 />
 
+<TestimonialHeader />
+
+<Testimonial testimonials={data.testimonials} />

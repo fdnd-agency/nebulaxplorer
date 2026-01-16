@@ -1,7 +1,7 @@
 <script>
   import { page } from "$app/stores";
   import { sanitizeString } from "$lib/utils/sanitize";
-  import Arrow from "$lib/assets/icons/Arrow.svelte";
+  import Arrow from "$lib/assets/logos/Arrow.svelte";
 
   // Split the path into segments and filter out empty strings
   const pathSegments = $page.url.pathname

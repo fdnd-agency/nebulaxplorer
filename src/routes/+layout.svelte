@@ -1,7 +1,8 @@
 <script>
   import { page } from "$app/stores";
-  import favicon from "$lib/assets/icons/favicon.svg";
-  import PageArrow from "$lib/assets/icons/PageArrow.svelte";
+  import { Footer } from "$lib";
+  import favicon from "$lib/assets/logos/favicon.svg";
+  import PageArrow from "$lib/assets/logos/PageArrow.svelte";
   import "$lib/assets/styles/general.css";
   import "$lib/assets/styles/layout.css";
 
@@ -21,14 +22,13 @@
     { path: "/", label: "home" },
     { path: "/mission", label: "mission" },
     { path: "/scientific", label: "scientific" },
-    { path: "/news", label: "news" },
+    // { path: "/news", label: "news" },
     { path: "/team", label: "team" },
     { path: "/careers", label: "careers" },
     { path: "/partners", label: "partners" },
   ];
 
   let { children } = $props();
-  
 </script>
 
 <svelte:head>
@@ -51,7 +51,8 @@
     <ul>
       <!-- Include this button separately as this is our close button -->
       <li>
-        <a href="/" class="menu-button">
+        <!-- Leave this as # -->
+        <a href="#" class="menu-button">
           menu
           <span class="lines"></span>
         </a>
@@ -83,3 +84,5 @@
 <main>
   {@render children?.()}
 </main>
+<!-- For some reason, passing navItems directly did not pass the prop correctly -->
+<Footer navItems={navItems} />
