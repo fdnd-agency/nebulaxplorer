@@ -25,7 +25,7 @@
 <section class="grid-wrapper">
   <h1 class="news_section_title">News, blogs & events</h1>
 <ul class="news-grid">
-  {#each NewsCards as newscard}
+  {#each NewsCards as newscard (newscard.id)}
   <li class="news-card">
     <div class="news-image">
       <img src="/src/lib/assets/images/placeholder2.jpg" alt="{newscard.title}"> 
@@ -122,8 +122,8 @@
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     padding-bottom: 3rem;
-
-    &:hover {
+}
+    .news-card:hover {
       transform: translateY(-0.5rem);
       box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
     }
@@ -180,8 +180,6 @@
     color: var(--space-140);
  
   }
-
-}
   
    .news-image {
     border-top: 0.3rem solid var(--space-140);
@@ -201,11 +199,11 @@
   .read-more-card{
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    &:hover {
+  }
+    .read-more-card:hover {
       transform: translateY(-0.5rem);
       box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
     }
-}
 
      .read-more-image {
     border-top: 0.3rem solid var(--space-140);
