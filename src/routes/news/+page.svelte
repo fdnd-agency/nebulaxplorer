@@ -1,9 +1,11 @@
-<script>
+<!-- <script>
   import { Hero } from "$lib";
   import blackholeImage from "$lib/assets/images/blackhole2.jpg?enhanced";
   import logo from "$lib/assets/logos/SRON_Academy_OnWhite.svg";
   import Breadcrumb from "$lib/components/Breadcrumb/Breadcrumb.svelte";
-  import NewsCards from "$lib/components/NewsCards/NewsCards.svelte";
+  import Newscards from "$lib/components/Newscards/Newscards.svelte";
+
+export let data;
   export let data;
 </script>
 
@@ -60,15 +62,6 @@
       }
     }
  
-    .text-content article {
-      * + p {
-        margin-top: 0.5rem;
-        @media (min-width: 56.25rem) {
-          padding-left: 1.5rem;
-        }
-      }
-    }
- 
     :global(.text-content),
     :global(picture) {
       margin-top: 3rem;
@@ -120,4 +113,4 @@
     width: auto;
   }
 
-</style>
+</style> -->

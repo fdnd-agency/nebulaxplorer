@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
   const NewsCards = [
     {
       id: 1,
@@ -260,4 +260,4 @@
 .read-more-card:hover .overlay {
   opacity: 0.3;
 }
-</style>
+</style> -->
