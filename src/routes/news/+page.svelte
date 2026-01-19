@@ -1,32 +1,30 @@
 <!-- <script>
-  import { Hero } from "$lib";
   import blackholeImage from "$lib/assets/images/blackhole2.jpg?enhanced";
   import logo from "$lib/assets/logos/SRON_Academy_OnWhite.svg";
   import Breadcrumb from "$lib/components/Breadcrumb/Breadcrumb.svelte";
   import Newscards from "$lib/components/Newscards/Newscards.svelte";
 
 export let data;
-  export let data;
 </script>
+ 
 
-<title>News - SRON Academy</title>
 <Hero
   pageTitle="News"
   sronIcon={logo}
   background={{ alt: "", file: blackholeImage }}
 />
-
+ 
 <Breadcrumb 
   /> 
 
 <section class="paragraph-block">
   <div class="text-title">
     <h2 class="subtitle">Our latest <span class="orange">developments</span></h2>
-    <p class="heading">Currently <span class="orange">{data.news.length}</span> available.</p>
+    <p class="heading">Currently <span class="orange">{data.news.length}</span> available</p>
   </div>
   </section>
    
-<NewsCards news={data.news}
+<Newscards data={data}
   /> 
 
 <style>
