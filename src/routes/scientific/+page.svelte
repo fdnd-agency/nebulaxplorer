@@ -4,6 +4,7 @@
   import Header from "$lib/components/molecules/Header/Header.svelte";
   import blackholeImage from "$lib/assets/blackhole.jpg?enhanced";
   import Scientificcards from "$lib/components/molecules/scientific/scientificcards.svelte";
+    import Breadcrumb from "../../lib/components/molecules/Breadcrumb/Breadcrumb.svelte";
   import logo from "$lib/assets/logos/SRON_Academy_OnOrange.svg";
 export let data;
 </script>
@@ -16,11 +17,12 @@ export let data;
   background={{ alt: "", file: blackholeImage }}
 />
  
+  <Breadcrumb contrast="white-on-cleanroom" />
 
 <section class="paragraph-block">
   <div class="text-title">
     <h2 class="subtitle">Our latest <span class="white">scientific</span> developments</h2>
-    <p class="heading">Currently <span class="white">12</span> available</p>
+    <p class="heading">Currently <span class="white">5</span> available</p>
   </div>
   </section>
    

@@ -10,7 +10,7 @@
   {#each data.scientific as scientificcard}
   <li class="scientific-card">
     <div class="scientific-image">
-      <img src="$lib/assets/images/grav-waves.jpg" alt="{scientificcard.title}">
+      <img src="/images/grav-waves.jpg" alt="{scientificcard.title}">
     </div>
     <div class="scientific-info">
       <span class="scientific-label"></span>

@@ -1,7 +1,7 @@
 <script>
 	export let news = [];
   
-  import placeholderImage from "$lib/assets/images/placeholder2.jpg";
+  import placeholderImage from "$lib/assets/images/WerkenbijSRON.jpg?enhanced";
 </script>
 
 <section class="grid-wrapper">
@@ -14,8 +14,7 @@
       class="news-card-link"
     >
       <div class="news-image">
-        <img src={newscard.image?.data?.full_url || newscard.image || placeholderImage}
-         alt="{newscard.title}">    
+        <img src="../src/lib/assets/images/WerkenbijSRON.jpg?enhanced" alt="News Image" />    
       </div>
       <div class="news-info">
         <span class="news-label"></span>
@@ -50,7 +49,7 @@
 .news-grid{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 2rem;
     padding-bottom: 6rem;
     list-style: none;
@@ -60,7 +59,7 @@
 .news-grid{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 2rem;
     row-gap: 4rem;
     padding-bottom: 6rem;
