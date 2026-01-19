@@ -1,11 +1,11 @@
 .assignments-header {
-  padding: 5rem 4rem 0 1.5rem; /* top horizontal bottom */
+  padding: 5rem 4rem 0 1.5rem;
   text-align: left;
   max-width: 100%;
   margin: 0 auto;
 
   h1 {
-    font-size: clamp(2rem, 5vw, 3rem); /* scales between 2rem and 3rem */
+    font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: 0.9rem;
     font-weight: bold;
   }
@@ -29,4 +29,189 @@
 .assignment-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.assignment-card {
+  display: flex;
+  background-color: #25253a;
+  min-height: 11.25rem;
+  padding: 2rem;
+  border-left: 0.5rem solid var(--cleanroom-140);
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--cleanroom-140);
+    transform: translateY(0.25rem);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.assignment-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.assignment-title {
+  font-size: 1.2rem;
+  color: var(--white);
+  font-family: var(--heading);
+}
+
+.assignment-label {
+  font-family: var(--subtext);
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  color: var(--cleanroom-140);
+}
+
+.assignment-location {
+  color: var(--white-low-opacity);
+  font-size: small;
+  font-family: var(--paragraph);
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.assignment-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.assignment-content > .assignment-block:last-child {
+  margin-top: auto;
+}
+
+.sron-apply-btn {
+  display: flex;
+  margin-top: 1.5rem;
+  align-self: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: 2px solid var(--cleanroom-140);
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+
+  font-family: var(--heading);
+  font-size: 0.85rem;
+
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sron-apply-text {
+  max-width: 0;
+  opacity: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.sron-apply-icon {
+  font-size: 1.6rem;
+  color: var(--cleanroom-140);
+  font-weight: 900;
+  border-radius: 50%;
+}
+
+.assignment-card:hover {
+  cursor: pointer;
+  background-color: var(--cleanroom-140);
+
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.assignment-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.assignment-title {
+  font-size: 1.2rem;
+  color: var(--white);
+  font-family: var(--heading);
+  margin: 0;
+}
+
+.assignment-label {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--cleanroom-140);
+  font-family: var(--subtext);
+}
+
+.assignment-location {
+  color: var(--white-low-opacity);
+  font-size: small;
+  font-family: var(--paragraph);
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.assignment-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.assignment-content > .assignment-block:last-child {
+  margin-top: auto;
+}
+
+.assignment-location {
+  margin: 0;
+}
+
+.sron-apply-btn {
+  margin-top: 1.5rem;
+
+  align-self: flex-end;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  background: transparent;
+  border: 2px solid var(--cleanroom-140);
+  color: var(--cleanroom-140);
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+
+  font-family: var(--heading);
+  font-size: 0.85rem;
+
+  overflow: hidden;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.sron-apply-text {
+  max-width: 0;
+  opacity: 0;
+  white-space: nowrap;
+  overflow: hidden;
+
+  transition: all 0.3s ease;
+}
+
+/* =========================
+   HOVER INTERACTIONS
+   ========================= */
+
+.assignment-card:hover .sron-apply-btn {
+  background-color: var(--cleanroom-140);
+  color: #25253a;
+}
+
+.assignment-card:hover .sron-apply-text {
+  max-width: 140px;
+  opacity: 1;
 }
