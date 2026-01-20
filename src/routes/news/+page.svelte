@@ -12,7 +12,7 @@
 <Hero
   pageTitle="News"
   sronIcon={logo}
-  background={{ alt: "background", file: blackholeImage }}
+  background={{ alt: "background image of a black hole", file: blackholeImage }}
 />
 
 <Breadcrumb /> 
