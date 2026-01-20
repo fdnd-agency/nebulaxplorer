@@ -1,5 +1,5 @@
 <script>
-	export let news = [];
+	let { news = [] } = $props();
   
   import placeholderImage from "$lib/assets/images/placeholder2.jpg";
 </script>
@@ -130,4 +130,4 @@
     object-position: center;
   }
   }
-</style> -->
+</style>
