@@ -9,11 +9,10 @@
 </script>
  
 
-<Hero
   pageTitle="News"
   sronIcon={logo}
-  background={{ alt: "background image of a black hole", file: blackholeImage }}
-/>
+  background={{ alt: "", file: blackholeImage }}
+ />
 
 <Breadcrumb /> 
 
