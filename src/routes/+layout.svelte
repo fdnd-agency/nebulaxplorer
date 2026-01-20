@@ -1,6 +1,5 @@
 <script>
   import { page } from "$app/stores";
-  import NewsComponent from "$lib/components/News-Component/News-Component.svelte";
   import { Footer } from "$lib";
   import favicon from "$lib/assets/logos/favicon.svg";
   import PageArrow from "$lib/assets/logos/PageArrow.svelte";
@@ -85,7 +84,5 @@
 <main>
   {@render children?.()}
 </main>
-
-<NewsComponent />
 <!-- For some reason, passing navItems directly did not pass the prop correctly -->
 <Footer navItems={navItems} />
