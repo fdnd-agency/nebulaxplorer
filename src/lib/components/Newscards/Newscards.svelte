@@ -7,24 +7,24 @@
 
 
 <ul class="news-grid">
-{#each news as Newscard}
+{#each news as NewsCard}
   <li class="news-card">
   <a
-  href={'/news/' + (Newscard.slug)}
+  href={'/news/' + (NewsCard.slug)}
   class="news-card-link"
   >
   <div class="news-image">
-  <img src={`https://fdnd-agency.directus.app/assets/${Newscard.image}`}
-  alt="{Newscard.title}">
+  <img src={`https://fdnd-agency.directus.app/assets/${NewsCard.image}`}
+  alt="{NewsCard.title}">
   
   </div>
   
   <div class="news-info">
   <span class="news-label"></span>
-  <h3>{Newscard.title || "Untitled"}</h3>
+  <h3>{NewsCard.title || "Untitled"}</h3>
   <span class="news-label"></span>
-  {#if Newscard.type || Newscard.category}
-  <p>{Newscard.type || Newscard.category}</p>
+  {#if NewsCard.type || NewsCard.category}
+  <p>{NewsCard.type || NewsCard.category}</p>
   {/if}
   </div>
   </a>
@@ -50,14 +50,8 @@
 
 @media (min-width: 1000px) {
 .news-grid{
-    display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    gap: 2rem;
-    row-gap: 4rem;
-    padding: 4rem 6rem;
-    padding-top: unset;
-    list-style: none;
 }
 }
 
@@ -76,34 +70,20 @@
 
 
 .news-info{
-    padding: 0.75rem 0.75rem 0rem 0.75rem;
+    padding: .75rem;
+    padding-bottom: 0;
 
    h3{
-    font-family: var(--heading);
-    font-weight: 400;
-    font-size: 1.3rem;
-    line-height: 1.75rem;
+
     color: var(--ultra-140);
    }
    p{
-    font-family: var(--heading);
-    font-weight: 900;
-    font-size: 1.2rem;
     color: var(--cleanroom-100);
     padding: 0.5rem 0 0.5rem 0;
    }
 }
-
-.news-label {
-    font-family: var(--subtext);
-    font-weight: 900;
-    font-size: 1rem;
-    line-height: 1.4rem;
-    color: var(--space-140);
- 
-  }
   
-   .news-image {
+.news-image {
     border-top: 0.3rem solid var(--space-140);
     width: 100%;
     height: 16.5rem;

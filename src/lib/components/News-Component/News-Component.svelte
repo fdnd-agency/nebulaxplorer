@@ -1,5 +1,5 @@
 <!-- <script>
-  const Newscards = [
+  const NewsCards = [
     {
       id: 1,
       title: "XRISM ziet verrassend trage en dichte wind van neutronenster",
@@ -25,16 +25,16 @@
 <section class="grid-wrapper">
   <h1 class="news_section_title">News, blogs & events</h1>
 <ul class="news-grid">
-  {#each Newscards as Newscard}
+  {#each NewsCards as NewsCard}
   <li class="news-card">
     <div class="news-image">
-      <img src="/src/lib/assets/images/placeholder2.jpg" alt="{Newscard.title}"> 
+      <img src="/src/lib/assets/images/placeholder2.jpg" alt="{NewsCard.title}"> 
     </div>
     <div class="news-info">
       <span class="news-label"></span>
-      <h3>{Newscard.title}</h3>
+      <h3>{NewsCard.title}</h3>
       <span class="news-label"></span>
-      <p>{Newscard.type}</p>
+      <p>{NewsCard.type}</p>
     </div>
   </li>
   {/each}
