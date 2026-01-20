@@ -1,23 +1,21 @@
-<!-- <script>
+ <script>
   import { Hero } from "$lib";
   import blackholeImage from "$lib/assets/images/blackhole2.jpg?enhanced";
   import logo from "$lib/assets/logos/SRON_Academy_OnWhite.svg";
-  import Breadcrumb from "$lib/components/Breadcrumb/Breadcrumb.svelte";
+  import Breadcrumb from "$lib/components/molecules/Breadcrumb/Breadcrumb.svelte";
   import Newscards from "$lib/components/Newscards/Newscards.svelte";
 
-export let data;
-  export let data;
+  const { data } = $props();
 </script>
 
 <title>News - SRON Academy</title>
 <Hero
   pageTitle="News"
   sronIcon={logo}
-  background={{ alt: "", file: blackholeImage }}
+  background={{ alt: "background", file: blackholeImage }}
 />
 
-<Breadcrumb 
-  /> 
+<Breadcrumb /> 
 
 <section class="paragraph-block">
   <div class="text-title">
@@ -26,8 +24,7 @@ export let data;
   </div>
   </section>
    
-<NewsCards news={data.news}
-  /> 
+<Newscards news={data.news} /> 
 
 <style>
  
@@ -113,4 +110,4 @@ export let data;
     width: auto;
   }
 
-</style> -->
+</style>
