@@ -1,8 +1,8 @@
-<!-- <script>
+<script>
   const NewsCards = [
     {
       id: 1,
-      title: "XRISM ziet verrassend trage en dichte wind van neutronenster",
+      title: "Ver-infrarood detectoren voor PRIMA ondersteund door NSO Instrumentenprogramma\ntest",
       type: "News",
       slug: ""
     },
@@ -262,4 +262,4 @@
 .read-more-card:hover .overlay {
   opacity: 0.3;
 }
-</style> -->
+</style>

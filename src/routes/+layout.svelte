@@ -1,5 +1,6 @@
 <script>
   import { page } from "$app/stores";
+  import NewsComponent from "$lib/components/News-Component/News-Component.svelte";
   import { Footer } from "$lib";
   import favicon from "$lib/assets/logos/favicon.svg";
   import PageArrow from "$lib/assets/logos/PageArrow.svelte";
@@ -22,7 +23,7 @@
     { path: "/", label: "home" },
     { path: "/mission", label: "mission" },
     { path: "/scientific", label: "scientific" },
-    // { path: "/news", label: "news" },
+    { path: "/news", label: "news" },
     { path: "/team", label: "team" },
     { path: "/careers", label: "careers" },
     { path: "/partners", label: "partners" },
@@ -84,5 +85,7 @@
 <main>
   {@render children?.()}
 </main>
+
+<NewsComponent />
 <!-- For some reason, passing navItems directly did not pass the prop correctly -->
 <Footer navItems={navItems} />
