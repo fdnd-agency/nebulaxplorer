@@ -1,4 +1,5 @@
-<script>
+<script> 
+// using props now instead of export to be consistent with other pages
 	let { news = [] } = $props();
   
   import placeholderImage from "$lib/assets/images/placeholder2.jpg";

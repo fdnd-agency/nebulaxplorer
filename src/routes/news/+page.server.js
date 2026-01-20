@@ -3,7 +3,8 @@
 export async function load({ fetch }) {
   try {
     const response = await fetch(`${DIRECTUS_NEWS}`);
-
+    
+// if statement pinpointing fetch errors to make troubleshooting easier
     if (!response.ok) {
       console.error(
         `Failed to fetch news: ${response.status} ${response.statusText}`

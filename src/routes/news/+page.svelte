@@ -1,10 +1,12 @@
  <script>
+  // Importing necessary components and assets
   import { Hero } from "$lib";
   import blackholeImage from "$lib/assets/images/blackhole2.jpg?enhanced";
   import logo from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
   import Breadcrumb from "$lib/components/molecules/Breadcrumb/Breadcrumb.svelte";
   import Newscards from "$lib/components/Newscards/Newscards.svelte";
 
+// using $props to be consistent with Svelte runes
   const { data } = $props();
 </script>
  
@@ -26,6 +28,7 @@
    
 <Newscards news={data.news} /> 
 
+<!-- Styles -->
 <style>
  
   :global(body) {
