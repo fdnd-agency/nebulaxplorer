@@ -1,6 +1,5 @@
  <script>
   // Importing necessary components and assets
-  import { Hero } from "$lib";
   import blackholeImage from "$lib/assets/images/blackhole2.jpg?enhanced";
   import logo from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
   import Breadcrumb from "$lib/components/molecules/Breadcrumb/Breadcrumb.svelte";
@@ -10,11 +9,7 @@
   const { data } = $props();
 </script>
 
-<Hero
-  pageTitle="News"
-  sronIcon={logo}
-  background={{ alt: "background image of a black hole", file: blackholeImage }}
- />
+
 
 <Breadcrumb /> 
 
@@ -61,33 +56,7 @@
       }
     }
  
-    :global(.text-content),
-    :global(picture) {
-      margin-top: 3rem;
-    }
- 
-    :global(picture) {
-      grid-column: 4 / -1;
-      height: fit-content;
- 
-      display: none;
- 
-      @media (min-width: 36.25rem) {
-        display: block;
-      }
- 
-      @media (min-width: 56.25rem) {
-        grid-column: 8 / -1;
-      }
- 
-      :global(enhanced\:img),
-      :global(img) {
-        width: 100%;
-        object-fit: cover;
-        max-height: 22.8125rem;
-      }
-    }
-
+   
     .heading{
       padding-bottom: 3rem;
     }
@@ -101,15 +70,4 @@
       color: var(--cleanroom-140);
     }
   }
-
- 
-  /* util classes */
-  .orange {
-    color: var(--cleanroom-140);
-  }
- 
-  :global(enhanced\:img) {
-    width: auto;
-  }
-
 </style>

@@ -5,59 +5,45 @@
   import placeholderImage from "$lib/assets/images/placeholder2.jpg";
 </script>
 
-<section class="grid-wrapper">
-{#if news && news.length > 0}
+
 <ul class="news-grid">
-{#each news as newscard}
+{#each news as Newscard}
   <li class="news-card">
-    <a
-      href={'/news/' + (newscard.slug || newscard.id)}
-      class="news-card-link"
-    >
-      <div class="news-image">
-        <img src={newscard.image?.data?.full_url || newscard.image || placeholderImage}
-         alt="{newscard.title}">    
-      </div>
-      <div class="news-info">
-        <span class="news-label"></span>
-        <h3>{newscard.title || "Untitled"}</h3>
-        <span class="news-label"></span>
-       {#if newscard.type || newscard.category}
-       <p>{newscard.type || newscard.category}</p>
-       {/if}
-      </div>
-    </a>
+  <a
+  href={'/news/' + (Newscard.slug)}
+  class="news-card-link"
+  >
+  <div class="news-image">
+  <img src={Newscard.image?.data?.full_url || Newscard.image || placeholderImage}
+  alt="{Newscard.title}">    
+  </div>
+  
+  <div class="news-info">
+  <span class="news-label"></span>
+  <h3>{Newscard.title || "Untitled"}</h3>
+  <span class="news-label"></span>
+  {#if Newscard.type || Newscard.category}
+  <p>{Newscard.type || Newscard.category}</p>
+  {/if}
+  </div>
+  </a>
   </li>
 {/each}
 
 </ul>
-  {:else}
-  <p class="no-news">No news available at this time.</p>
-  {/if}
-</section>
+
 
 <style>
 
-.grid-wrapper{
-  display: inherit;
-
   .news-grid{
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 2rem;
-    padding-bottom: 6rem;
-    padding-left: 0;
     list-style: none;
 }
 
 @media (min-width: 700px) {
 .news-grid{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 2rem;
-    padding-bottom: 6rem;
-    list-style: none;
+    grid-template-columns: repeat(2fr);
+    grid-template-rows: repeat(3fr);
 }
 }
 
@@ -68,9 +54,8 @@
     grid-template-rows: repeat(3, 1fr);
     gap: 2rem;
     row-gap: 4rem;
-    padding-bottom: 6rem;
-    padding-left: 4rem;
-    padding-right: 4rem;
+    padding: 4rem 6rem;
+    padding-top: unset;
     list-style: none;
 }
 }
@@ -78,7 +63,7 @@
 .news-card{
 
     background-color: var(--white);
-    border-radius: 0.2rem;
+    border-radius: 4px;
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     padding-bottom: 3rem;
@@ -87,7 +72,7 @@
       transform: translateY(-0.5rem);
       box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
     }
-}
+
 
 .news-info{
     padding: 0.75rem 0.75rem 0rem 0.75rem;
