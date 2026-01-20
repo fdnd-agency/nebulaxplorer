@@ -1,5 +1,5 @@
 <script>
- 
+  import scientificImage from "$lib/assets/images/WerkenbijSRON.jpg";
   let { data } = $props();
 
 </script>
@@ -10,7 +10,7 @@
   {#each data.scientific as scientificcard}
   <li class="scientific-card">
     <div class="scientific-image">
-      <img src="/images/grav-waves.jpg" alt="{scientificcard.title}">
+      <img src={scientificImage} alt="{scientificcard.title}">
     </div>
     <div class="scientific-info">
       <span class="scientific-label"></span>

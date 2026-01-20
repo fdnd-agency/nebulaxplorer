@@ -6,7 +6,11 @@
   import Scientificcards from "$lib/components/molecules/scientific/scientificcards.svelte";
     import Breadcrumb from "../../lib/components/molecules/Breadcrumb/Breadcrumb.svelte";
   import logo from "$lib/assets/logos/SRON_Academy_OnOrange.svg";
-export let data;
+    import Pagination from "$lib/components/molecules/Pagination/Pagination.svelte";
+
+  let { data } = $props();
+
+  const { vacancies, pagination } = $derived(data);
 </script>
  
 <div class="scientific-page">
