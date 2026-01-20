@@ -14,8 +14,9 @@
   class="news-card-link"
   >
   <div class="news-image">
-  <img src={Newscard.image?.data?.full_url || Newscard.image || placeholderImage}
-  alt="{Newscard.title}">    
+  <img src={`https://fdnd-agency.directus.app/assets/${Newscard.image}`}
+  alt="{Newscard.title}">
+  
   </div>
   
   <div class="news-info">
