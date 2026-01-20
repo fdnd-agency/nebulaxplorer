@@ -6,14 +6,14 @@
   import Breadcrumb from "$lib/components/molecules/Breadcrumb/Breadcrumb.svelte";
   import Newscards from "$lib/components/Newscards/Newscards.svelte";
 
-// using $props to be consistent with Svelte runes
+// using props to be consistent with Svelte runes
   const { data } = $props();
 </script>
- 
 
+<Hero
   pageTitle="News"
   sronIcon={logo}
-  background={{ alt: "", file: blackholeImage }}
+  background={{ alt: "background image of a black hole", file: blackholeImage }}
  />
 
 <Breadcrumb /> 
