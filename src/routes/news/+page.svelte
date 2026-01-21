@@ -8,6 +8,16 @@
   const { data } = $props();
 </script>
 
+<svelte:head>
+  <style>
+  
+    body {
+      background-color: var(--ultra-10);
+    }
+
+  </style>
+</svelte:head>
+
 <section class="hero">
 
   <img src={logo} alt="Logo of SRON Academy" class="hero-logo" />
@@ -32,9 +42,7 @@
 
 <style>
  
-  :global(body) {
-    background-color: var(--ultra-10); 
-  }
+
 
   .paragraph-block {
     display: grid;
