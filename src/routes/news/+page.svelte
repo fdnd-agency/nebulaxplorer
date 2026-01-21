@@ -1,8 +1,10 @@
-<script>
+<!-- <script>
   import blackholeImage from "$lib/assets/images/blackhole2.jpg?enhanced";
   import logo from "$lib/assets/logos/SRON_Academy_OnWhite.svg";
   import Breadcrumb from "$lib/components/Breadcrumb/Breadcrumb.svelte";
-  import NewsCards from "$lib/components/NewsCards/NewsCards.svelte";
+  import Newscards from "$lib/components/Newscards/Newscards.svelte";
+
+export let data;
 </script>
  
 
@@ -18,11 +20,11 @@
 <section class="paragraph-block">
   <div class="text-title">
     <h2 class="subtitle">Our latest <span class="orange">developments</span></h2>
-    <p class="heading">Currently <span class="orange">12</span> available</p>
+    <p class="heading">Currently <span class="orange">{data.news.length}</span> available</p>
   </div>
   </section>
    
-<NewsCards 
+<Newscards data={data}
   /> 
 
 <style>
@@ -55,15 +57,6 @@
     .text-title {
       * + * {
         margin-top: 0.5rem;
-      }
-    }
- 
-    .text-content article {
-      * + p {
-        margin-top: 0.5rem;
-        @media (min-width: 56.25rem) {
-          padding-left: 1.5rem;
-        }
       }
     }
  
@@ -118,4 +111,4 @@
     width: auto;
   }
 
-</style>
+</style> -->
