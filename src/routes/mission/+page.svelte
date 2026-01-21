@@ -2,7 +2,7 @@
   import { Hero } from "$lib";
   import blackholeImage from "$lib/assets/blackhole.jpg?enhanced";
   import step1Image from "$lib/assets/images/sron-review-step-1.jpg?enhanced";
-  import step2Image from "$lib/assets/images/rapid-step-2.webp?enhanced";
+  import step2Image from "$lib/assets/images/rapid-step-2.jpg?enhanced";
   import step3Image from "$lib/assets/images/nebula-xplorer.jpg?enhanced";
   import step4Image from "$lib/assets/images/aerospace-defense-testing-step-4.jpg?enhanced";
   import step5Image from "$lib/assets/images/rocket-launch-step-5.jpg?enhanced";
