@@ -1,96 +1,87 @@
 .assignments-header {
-  padding: 2rem 1.5rem;
+  margin-bottom: 2.5rem;
 
-  h1 {
-    font-family: spaceGrotesk;
-    font-size: clamp(2rem, 5vw, 3rem);
-    margin-bottom: 0.9rem;
-    font-weight: bold;
+  h2 {
+    margin-bottom: 0.5rem;
   }
 
-  p {
-    font-family: spaceGrotesk;
-    font-size: clamp(1rem, 3vw, 1.25rem);
-    margin-bottom: 0;
-    line-height: 1.6;
-    text-transform: lowercase;
-  }
-}
-
-.assignment-grid {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--space-100-low-opacity);
-
-  margin-bottom: 1rem;
-  overflow: hidden;
-}
-
-.assignment-content {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.assignment-text {
-  flex-grow: 1;
-  padding: 1rem;
-}
-
-.assignment-title {
-  font-family: spaceGrotesk;
-  font-size: clamp(1.5rem, 1.8vw + 1rem, 2.25rem);
-  line-height: clamp(2rem, 1.8vw + 1rem, 2.5rem);
-  font-weight: 500;
-  color: var(--cleanroom-140);
-  margin-bottom: 0.5rem;
-
-  @media (min-width: 56.25rem) {
-    font-size: 1.3rem;
-    font-weight: 400;
-  }
-}
-
-p {
-  font-size: clamp(1rem, 1vw + 0.5rem, 1.125rem);
-  line-height: 1.6rem;
-  letter-spacing: -0.02em;
-  text-transform: capitalize;
-  font-family: roboto;
-  color: var(--ultra-10);
-  margin: 0.25rem 0;
-
-  @media (min-width: 56.25rem) {
-    font-size: 0.9rem;
+  p span {
+    color: var(--cleanroom-140);
   }
 }
 
 .assignments-container {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(18.75rem, 1fr)
-  ); /* used ai help cause i couldnt figure out*/
-  padding: 0 1.5rem 2rem;
-}
+  display: inherit;
+  grid-template-columns: subgrid;
+  gap: inherit;
+  margin-bottom: 4rem;
 
-.apply-button {
-  display: block;
-  font-family: spaceGrotesk;
-  font-weight: 500;
-  width: 100%;
-  padding: 1rem;
-  font-size: 1.4rem;
-  background-color: var(--cleanroom-140);
-  text-align: center;
-  cursor: pointer;
-}
+  .assignment-card {
+    list-style: none;
+    background: var(--space-100-low-opacity);
 
-.apply-button:hover {
-  background-color: var(--cleanroom-60);
-}
+    grid-column: 1 / -1;
 
-.assignments-length {
-  color: var(--cleanroom-140);
+    @media (min-width: 32rem) {
+      grid-column: span 2;
+    }
+
+    @media (min-width: 56.25rem) {
+      grid-column: span 3;
+    }
+
+    a {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      min-height: 11.25rem;
+
+      .assignment-content {
+        padding: 1rem;
+        display: inherit;
+        flex-direction: inherit;
+        justify-content: inherit;
+        height: 100%;
+        color: var(--cleanroom-10);
+
+        .assignment-title {
+          color: var(--cleanroom-140);
+          margin-bottom: 1rem;
+        }
+
+        div {
+          display: inherit;
+          flex-direction: inherit;
+          gap: 0.25rem;
+          p {
+            text-transform: capitalize;
+
+            &:last-child {
+              margin-bottom: 0.5rem;
+            }
+          }
+        }
+
+        /* For the next iteration I recommend changing the capitalization of the values in the fields on Directus instead of capitalizing them with CSS */
+      }
+
+      &:hover {
+        .apply-button {
+          background: var(--ultra-100);
+          color: var(--cleanroom-60);
+        }
+      }
+    }
+  }
+
+  .apply-button {
+    display: inline-block;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    color: var(--space-100);
+    background: var(--cleanroom-100);
+    text-transform: uppercase;
+  }
 }
