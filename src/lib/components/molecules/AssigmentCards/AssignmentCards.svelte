@@ -20,7 +20,7 @@
 					<p>{assignment.study_program}</p>
 					<p>{assignment.location}</p>
 				</div>
-				<a class="apply-button" href={assignment.apply_link || "#"}>Apply</a>
+				<a class="apply-button">Apply</a>
 			</section>
 		</article>
 	{/each}
