@@ -1,14 +1,14 @@
 <script module>
   import { Hero } from "$lib";
   import blackholeImage from "$lib/assets/blackhole.jpg?enhanced";
-  import step1Image from "$lib/assets/images/sron-review-step-1.jpg?enhanced";
-  import step2Image from "$lib/assets/images/rapid-step-2.jpg?enhanced";
-  import step3Image from "$lib/assets/images/nebula-xplorer.jpg?enhanced";
-  import step4Image from "$lib/assets/images/aerospace-defense-testing-step-4.jpg?enhanced";
-  import step5Image from "$lib/assets/images/rocket-launch-step-5.jpg?enhanced";
+  import step1Image from "$lib/assets/images/sron-review-step-1.jpg?enhanced&w=1024;768;512";
+  import step2Image from "$lib/assets/images/Rapid-step-2.jpg?enhanced&w=1024;768;512";
+  import step3Image from "$lib/assets/images/nebula-xplorer.jpg?enhanced&w=1024;768;512";
+  import step4Image from "$lib/assets/images/aerospace-defense-testing-step-4.jpg?enhanced&w=1024;768;512";
+  import step5Image from "$lib/assets/images/rocket-launch-step-5.jpg?enhanced&w=1024;768;512";
   import Breadcrumb from "$lib/components/molecules/Breadcrumb/Breadcrumb.svelte";
   import logo from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
-  import heroImg from "$lib/assets/images/grav-waves.jpg?enhanced&w=1024;768;512";
+  import heroImg from "$lib/assets/images/grav-waves.jpg?enhanced";
 </script>
 
 <!-- HERO BLOCK -->
