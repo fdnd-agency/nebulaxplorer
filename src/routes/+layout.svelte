@@ -105,21 +105,61 @@
 <Footer {navItems} />
 
 <style>
-  nav {
-    /* view-transition-name: main-nav; */
+  /* default reduced-motion friendly transition */
+  :root::view-transition-old(root) {
+    animation: .2s ease both fade-out;
   }
-  @media (min-width: 56.25rem) {
-    .main-navigation {
-      view-transition-name: header;
+
+  :root::view-transition-new(root) {
+    animation: .4s ease .20s both fade-in;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    :root::view-transition-old(root) {
+      animation:
+        .3s ease-in both zoom-out,
+        .7s ease-out both slide-to-top;
     }
-    .exact-active :global(svg) {
-      view-transition-name: active-page;
+
+    :root::view-transition-new(root) {
+      animation:
+        .7s ease-out both slide-to-center,
+        .3s ease-out .5s both zoom-in;
+    }
+  }
+  @keyframes zoom-in {
+    from {
+      scale: 0.85;
+    }
+    to {
+      scale: 1;
     }
   }
 
-  @keyframes fade-in {
+  @keyframes zoom-out {
     from {
-      opacity: 0;
+      scale: 1;
+    }
+    to {
+      scale: 0.85;
+    }
+  }
+
+  @keyframes slide-to-top {
+    from {
+      translate: 0 0;
+    }
+    to {
+      translate: 0 100%;
+    }
+  }
+
+  @keyframes slide-to-center {
+    from {
+      translate: 0 -100%;
+    }
+    to {
+      translate: 0 0%;
     }
   }
 
@@ -129,44 +169,22 @@
     }
   }
 
-  @keyframes zoom-in {
+  @keyframes fade-in {
     from {
-      transform: scale(0.8);
+      opacity: 0;
     }
     to {
-      transform: scale(1);
+      opacity: 1;
     }
   }
 
-  @keyframes zoom-out {
-    to {
-      transform: scale(0.8);
+  /* These only need to happen on desktop */
+  @media (min-width: 56.25rem) {
+    .main-navigation {
+      view-transition-name: header;
     }
-  }
-
-  @keyframes slide-to-top {
-    from {
-      transform: translateY(100%);
+    .exact-active :global(svg) {
+      view-transition-name: active-page;
     }
-  }
-
-  @keyframes slide-to-center {
-    to {
-      transform: translateY(-100%);
-    }
-  }
-
-  :root::view-transition-old(root) {
-    animation:
-      610ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
-      700ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-top,
-      700ms cubic-bezier(0.4, 0, 0.2, 1) both zoom-out;
-  }
-
-  :root::view-transition-new(root) {
-    animation:
-      610ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
-      700ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-center,
-      700ms cubic-bezier(0.4, 0, 0.2, 1) both zoom-in;
   }
 </style>
