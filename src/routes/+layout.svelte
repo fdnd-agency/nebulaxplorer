@@ -97,4 +97,4 @@
   {@render children?.()}
 </main>
 <!-- For some reason, passing navItems directly did not pass the prop correctly -->
-<Footer navItems={navItems} />
+<Footer {navItems} />
