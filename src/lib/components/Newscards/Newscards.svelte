@@ -13,11 +13,20 @@
     <li class="news-card">
       <a href={"/news/"} class="news-card-link">
         <div class="news-image">
-          {NewsCard.images}
           {#if NewsCard.image}
-            <img
-            src="https://fdnd-agency.directus.app/assets/{NewsCard.image}?format=webp"
-            alt="{NewsCard.title}"/>
+            <picture>
+              <source
+                srcset="https://fdnd-agency.directus.app/assets/{NewsCard.image}?format=webp&w=300,
+                        https://fdnd-agency.directus.app/assets/{NewsCard.image}?format=webp&w=600,
+                        https://fdnd-agency.directus.app/assets/{NewsCard.image}?format=webp&w=900"
+              />
+              <img
+                src="https://fdnd-agency.directus.app/assets/{NewsCard.image}"
+                alt="{NewsCard.title}"
+                width="400"
+                height="300"
+              />
+            </picture>
 
           {:else}
             <enhanced:img
@@ -49,26 +58,28 @@
   .news-grid {
     display: grid;
     list-style: none;
+    margin-bottom: 3rem;
   }
 
   @media (min-width: 700px) {
     .news-grid {
       gap: 2rem;
-      grid-template-columns: repeat(2fr);
-      grid-template-rows: repeat(3fr);
+
     }
   }
 
   @media (min-width: 1000px) {
     .news-grid {
       grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(3, 1fr);
     }
   }
 
   .news-card {
+    display: subgrid;
+    grid-column: span 1;
+    grid-row: span 1;
     background-color: var(--white);
-    border-radius: 3px;
+    border-radius: 0.1875rem;
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
     transition:
       transform 0.3s ease,

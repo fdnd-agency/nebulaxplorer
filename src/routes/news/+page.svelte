@@ -1,7 +1,6 @@
  <script>
   // Importing necessary components and assets
-  import blackholeImage from "$lib/assets/images/blackhole2.jpg?enhanced";
-  import logo from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
+  import logo from "$lib/assets/logos/SRON_Academy_OnWhite.svg";
   import Breadcrumb from "$lib/components/molecules/Breadcrumb/Breadcrumb.svelte";
   import NewsCards from "$lib/components/NewsCards/NewsCards.svelte";
 
@@ -11,9 +10,9 @@
 
 <section class="hero">
 
-  <img src="../src/lib/assets/logos/SRON_Academy_OnWhite.svg" alt="Logo of SRON Academy" class="hero-logo" />
+  <img src={logo} alt="Logo of SRON Academy" class="hero-logo" />
 
-  <h1 class="title" style={'color: var(--space-140)'}>
+  <h1 class="title">
     News
   </h1>
 </section>
@@ -61,9 +60,9 @@
     .text-title {
       * + * {
         margin-top: 0.5rem;
+        color: var(--space-140)
       }
     }
- 
    
     .heading{
       padding-bottom: 3rem;
@@ -86,6 +85,7 @@
     padding-top: 5.25rem;
     @media (min-width: 56.25rem) {
       padding: 3.5rem 4rem 2.25rem 4rem;
+      color: var(--space-140);
     }
 
     .hero-logo {
