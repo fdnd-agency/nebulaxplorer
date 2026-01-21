@@ -1,7 +1,6 @@
 <script>
 
   const {
-    sronIcon,
     paragraph,
     pageTitle = "None set",
     titleColor,
@@ -14,11 +13,9 @@
     <p class="subheading">{paragraph}</p>
   {/if}
 
-  {#if sronIcon}
-    <img src={sronIcon} alt="Logo of SRON Academy" class="hero-logo" />
-  {/if}
-  
-  <h1 class="title" style={titleColor && `color: ${titleColor}`}>
+    <img src="../src/lib/assets/logos/SRON_Academy_OnWhite.svg" alt="Logo of SRON Academy" class="hero-logo" />
+
+  <h1 class="title" style={titleColor ? `color: ${titleColor}` : 'color: var(--space-140)'}>
     {pageTitle}
   </h1>
 </section>
