@@ -28,7 +28,7 @@
   {#each NewsCards as NewsCard}
   <li class="news-card">
     <div class="news-image">
-      <img src="/src/lib/assets/images/placeholder2.jpg" alt="{NewsCard.title}"> 
+      <img src="/src/lib/assets/images/placeholderzoomout.jpg" alt="{NewsCard.title}"> 
     </div>
     <div class="news-info">
       <span class="news-label"></span>
@@ -41,7 +41,7 @@
 
       <li class="read-more-card">
     <div class="read-more-image">
-      <img src="/src/lib/assets/images/placeholder2.jpg" alt="Read More"> 
+      <img src="/src/lib/assets/images/placeholderzoomout.jpg" alt="Read More"> 
       <div class="read-more-text">
       <h3>Read more       
       <svg
