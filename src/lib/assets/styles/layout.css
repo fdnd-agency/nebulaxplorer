@@ -85,7 +85,6 @@ header.main-navigation {
   }
 
   nav {
-    width: fit-content;
     background: var(--ultra-170);
     transform: translateX(100%);
     justify-self: end;
