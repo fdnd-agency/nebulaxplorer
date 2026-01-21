@@ -27,6 +27,26 @@ header.main-navigation {
     top: 0;
   }
 
+  & > a[aria-expanded="false"] + nav {
+    transform: translateX(100%);
+
+    &#menu >  ul > li > a.menu-button::before {
+      content: "";
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      transform: unset;
+      background: var(--space-low-opacity);
+      inset: unset;
+      z-index: -10;
+      inset: unset;
+      top: 0;
+      left: -100vw;
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
   a {
     transition: font-weight 0.3s ease-in-out;
 

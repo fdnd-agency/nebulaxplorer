@@ -7,11 +7,15 @@
   import "$lib/assets/styles/layout.css";
   import { onNavigate } from "$app/navigation";
 
+  let expanded = $state(false);
+
   onNavigate((navigation) => {
     if (!document.startViewTransition) return;
 
     return new Promise((resolve) => {
       document.startViewTransition(async () => {
+        expanded = false;
+
         resolve();
         await navigation.complete;
       });
@@ -51,8 +55,9 @@
   <a
     href="#menu"
     class="menu-button"
-    aria-expanded="false"
+    aria-expanded={expanded || "false"}
     aria-controls="nav-items"
+    onclick={() => (expanded = true)}
   >
     menu
     <span class="lines"></span>
@@ -64,7 +69,7 @@
       <!-- Include this button separately as this is our close button -->
       <li>
         <!-- Leave this as # -->
-        <a href="#" class="menu-button">
+        <a href="#" class="menu-button" onclick={() => (expanded = false)}>
           menu
           <span class="lines"></span>
         </a>
@@ -100,12 +105,14 @@
 <Footer {navItems} />
 
 <style>
+  nav {
+    /* view-transition-name: main-nav; */
+  }
   @media (min-width: 56.25rem) {
     .main-navigation {
       view-transition-name: header;
     }
     .exact-active :global(svg) {
-      /* other existing rules */
       view-transition-name: active-page;
     }
   }
