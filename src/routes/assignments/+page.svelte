@@ -1,6 +1,7 @@
 <script>
-  import Assignments from '$lib/components/molecules/assignments/assignments.svelte';
-  export let data;
+    import AssignmentCards from "$lib/components/molecules/AssigmentCards/AssignmentCards.svelte";
+  const { data } = $props();
+  const { vacancies: assignments } = data;
 </script>
 
-<Assignments assignments={data.vacancies} />
+<AssignmentCards {assignments}/>

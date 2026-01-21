@@ -1,0 +1,96 @@
+.assignments-header {
+  padding: 2rem 1.5rem;
+
+  h1 {
+    font-family: spaceGrotesk;
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 0.9rem;
+    font-weight: bold;
+  }
+
+  p {
+    font-family: spaceGrotesk;
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    margin-bottom: 0;
+    line-height: 1.6;
+    text-transform: lowercase;
+  }
+}
+
+.assignment-grid {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--space-100-low-opacity);
+
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.assignment-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.assignment-text {
+  flex-grow: 1;
+  padding: 1rem;
+}
+
+.assignment-title {
+  font-family: spaceGrotesk;
+  font-size: clamp(1.5rem, 1.8vw + 1rem, 2.25rem);
+  line-height: clamp(2rem, 1.8vw + 1rem, 2.5rem);
+  font-weight: 500;
+  color: var(--cleanroom-140);
+  margin-bottom: 0.5rem;
+
+  @media (min-width: 56.25rem) {
+    font-size: 1.3rem;
+    font-weight: 400;
+  }
+}
+
+p {
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.125rem);
+  line-height: 1.6rem;
+  letter-spacing: -0.02em;
+  text-transform: capitalize;
+  font-family: roboto;
+  color: var(--ultra-10);
+  margin: 0.25rem 0;
+
+  @media (min-width: 56.25rem) {
+    font-size: 0.9rem;
+  }
+}
+
+.assignments-container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(18.75rem, 1fr)
+  ); /* used ai help cause i couldnt figure out*/
+  padding: 0 1.5rem 2rem;
+}
+
+.apply-button {
+  display: block;
+  font-family: spaceGrotesk;
+  font-weight: 500;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.4rem;
+  background-color: var(--cleanroom-140);
+  text-align: center;
+  cursor: pointer;
+}
+
+.apply-button:hover {
+  background-color: var(--cleanroom-60);
+}
+
+.assignments-length {
+  color: var(--cleanroom-140);
+}
