@@ -129,27 +129,44 @@
     }
   }
 
-  @keyframes slide-from-right {
+  @keyframes zoom-in {
     from {
-      transform: translateX(15%);
+      transform: scale(0.8);
+    }
+    to {
+      transform: scale(1);
     }
   }
 
-  @keyframes slide-to-left {
+  @keyframes zoom-out {
     to {
-      transform: translateX(-5%);
+      transform: scale(0.8);
+    }
+  }
+
+  @keyframes slide-to-top {
+    from {
+      transform: translateY(100%);
+    }
+  }
+
+  @keyframes slide-to-center {
+    to {
+      transform: translateY(-100%);
     }
   }
 
   :root::view-transition-old(root) {
     animation:
-      90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
-      300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+      610ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+      700ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-top,
+      700ms cubic-bezier(0.4, 0, 0.2, 1) both zoom-out;
   }
 
   :root::view-transition-new(root) {
     animation:
-      210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
-      300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+      610ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+      700ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-center,
+      700ms cubic-bezier(0.4, 0, 0.2, 1) both zoom-in;
   }
 </style>
