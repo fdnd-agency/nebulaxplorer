@@ -10,7 +10,14 @@
   const { data } = $props();
 </script>
 
-<Heronews pageTitle="News" sronIcon={logo} />
+<section class="hero">
+
+  <img src="../src/lib/assets/logos/SRON_Academy_OnWhite.svg" alt="Logo of SRON Academy" class="hero-logo" />
+
+  <h1 class="title" style={'color: var(--space-140)'}>
+    News
+  </h1>
+</section>
 
 <Breadcrumb /> 
 
@@ -24,6 +31,7 @@
 <NewsCards news={data.news} /> 
 
 <!-- Styles -->
+
 <style>
  
   :global(body) {
@@ -69,6 +77,22 @@
 
     .subtitle span {
       color: var(--cleanroom-140);
+    }
+  }
+
+   .hero {
+    --menu-button-size: 3.75rem;
+    position: relative;
+    padding: 1.5rem;
+    padding-top: 5.25rem;
+    @media (min-width: 56.25rem) {
+      padding: 3.5rem 4rem 2.25rem 4rem;
+    }
+
+    .hero-logo {
+      width: clamp(10rem, calc(25vw + 5rem), 60rem);
+      max-width: 36.375rem;
+      display: block;
     }
   }
 </style>
