@@ -8,7 +8,7 @@
   import step5Image from "$lib/assets/images/rocket-launch-step-5.jpg?enhanced";
   import Breadcrumb from "$lib/components/molecules/Breadcrumb/Breadcrumb.svelte";
   import logo from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
-  import heroImg from "$lib/assets/images/grav-waves.jpg?enhanced";
+  import heroImg from "$lib/assets/images/grav-waves.jpg?enhanced&w=1024;768;512";
 </script>
 
 
