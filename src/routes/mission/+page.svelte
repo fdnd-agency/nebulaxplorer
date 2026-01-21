@@ -1,6 +1,11 @@
 <script module>
   import { Hero } from "$lib";
   import blackholeImage from "$lib/assets/blackhole.jpg?enhanced";
+  import step1Image from "$lib/assets/images/sron-review-step-1.jpg?enhanced";
+  import step2Image from "$lib/assets/images/rapid-step-2.webp?enhanced";
+  import step3Image from "$lib/assets/images/nebula-xplorer.jpg?enhanced";
+  import step4Image from "$lib/assets/images/aerospace-defense-testing-step-4.jpg?enhanced";
+  import step5Image from "$lib/assets/images/rocket-launch-step-5.jpg?enhanced";
   import Breadcrumb from "$lib/components/molecules/Breadcrumb/Breadcrumb.svelte";
   import logo from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
   import heroImg from "$lib/assets/images/grav-waves.jpg?enhanced";
@@ -155,7 +160,7 @@
           <span class="step-number caption">1</span>
           <enhanced:img
             class="steps-img"
-            src="$lib/assets/images/sron-review-step-1.jpg"
+            src={step1Image}
             alt="Step 1 for launch"
           />
           <p class="steps-img-overlay">
@@ -176,7 +181,7 @@
           <span class="step-number caption">2</span>
           <enhanced:img
             class="steps-img"
-            src=$lib/assets/images/rapid-step-2.webp
+            src={step2Image}
             alt="Step 2 for launch"
           />
           <p class="steps-img-overlay">
@@ -197,7 +202,7 @@
           <span class="step-number caption">3</span>
           <enhanced:img
             class="steps-img"
-            src="$lib/assets/images/nebula-xplorer.jpg"
+            src={step3Image}
             alt="Step 3 for launch"
           />
           <p class="steps-img-overlay">
@@ -218,7 +223,7 @@
           <span class="step-number caption">4</span>
           <enhanced:img
             class="steps-img"
-            src="$lib/assets/images/aerospace-defense-testing-step-4.jpg"
+            src={step4Image}
             alt="Step 4 for launch"
           />
           <p class="steps-img-overlay">
@@ -239,7 +244,7 @@
           <span class="step-number caption">5</span>
           <enhanced:img
             class="steps-img"
-            src="$lib/assets/images/rocket-launch-step-5.jpg"
+            src={step5Image}
             alt="Step 5 for launch"
           />
           <p class="steps-img-overlay">
