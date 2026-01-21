@@ -4,7 +4,6 @@
   import logo from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
   import Breadcrumb from "$lib/components/molecules/Breadcrumb/Breadcrumb.svelte";
   import NewsCards from "$lib/components/NewsCards/NewsCards.svelte";
-  import Heronews from "$lib/components/molecules/Hero/Heronews.svelte";
 
 // using props to be consistent with Svelte runes
   const { data } = $props();
@@ -19,7 +18,7 @@
   </h1>
 </section>
 
-<Breadcrumb /> 
+<Breadcrumb contrast="space-on-gray" /> 
 
 <section class="paragraph-block">
   <div class="text-title">
