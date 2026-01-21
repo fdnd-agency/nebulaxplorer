@@ -1,13 +1,25 @@
 <script module>
+  import { Hero } from "$lib";
   import blackholeImage from "$lib/assets/blackhole.jpg?enhanced";
+  import step1Image from "$lib/assets/images/sron-review-step-1.jpg?enhanced&w=1024;768;512";
+  import step2Image from "$lib/assets/images/Rapid-step-2.jpg?enhanced&w=1024;768;512";
+  import step3Image from "$lib/assets/images/nebula-xplorer.jpg?enhanced&w=1024;768;512";
+  import step4Image from "$lib/assets/images/aerospace-defense-testing-step-4.jpg?enhanced&w=1024;768;512";
+  import step5Image from "$lib/assets/images/rocket-launch-step-5.jpg?enhanced&w=1024;768;512";
+  import Breadcrumb from "$lib/components/molecules/Breadcrumb/Breadcrumb.svelte";
   import logo from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
+  import heroImg from "$lib/assets/images/grav-waves.jpg?enhanced";
 </script>
 
-
 <!-- HERO BLOCK -->
+<Hero
+  titleColor="var(--white)"
+  pageTitle="Mission"
+  background={{ alt: "Two merging black holes", file: heroImg }}
+  sronIcon={logo}
+/>
 
-
-<!-- <Breadcrumb /> -->
+<Breadcrumb />
 
 <!-- FIRST PARAGRAPH + IMG BLOCK -->
 
@@ -122,7 +134,6 @@
   <enhanced:img src={blackholeImage} alt="Black Hole" />
 </section>
 
-
 <!-- STEPS BLOCK -->
 
 <section class="steps-block">
@@ -139,22 +150,17 @@
       <div
         tabindex="0"
         role="button"
-        aria-label="Step 1: Instrument Fabrication and Assembly"
+        aria-label="Step 1: Requirements and Design Review"
       >
         <input type="checkbox" id="step-1" class="step-checkbox" />
         <label for="step-1" class="step-label">
           <span class="step-number caption">1</span>
           <enhanced:img
             class="steps-img"
-            src={blackholeImage}
+            src={step1Image}
             alt="Step 1 for launch"
           />
-          <p class="steps-img-overlay">
-            Instrument Fabrication and Assembly<br /><br />
-            Complete the final construction and assembly of all satellite subsystems,
-            including the compact X-ray telescope. This involves integrating the
-            specially designed cylindrical mirrors.
-          </p>
+          <p class="steps-img-overlay">Requirements and Design Review</p>
         </label>
       </div>
     </li>
@@ -163,21 +169,18 @@
       <div
         tabindex="0"
         role="button"
-        aria-label="Step 2: omprehensive Subsystem and Component Testing"
+        aria-label="Step 2: Rapid prototyping of critical technologies"
       >
         <input type="checkbox" id="step-2" class="step-checkbox" />
         <label for="step-2" class="step-label">
           <span class="step-number caption">2</span>
           <enhanced:img
             class="steps-img"
-            src={blackholeImage}
+            src={step2Image}
             alt="Step 2 for launch"
           />
           <p class="steps-img-overlay">
-            Comprehensive Subsystem and Component Testing<br /><br />
-            Conduct rigorous functional and performance testing on all individual
-            components. This specifically includes verifying the performance of the
-            camera's electronics.
+            Rapid prototyping of critical technologies
           </p>
         </label>
       </div>
@@ -187,22 +190,17 @@
       <div
         tabindex="0"
         role="button"
-        aria-label="Step 3: Structural and Thermal Model Verification"
+        aria-label="Step 3: Engineering models development"
       >
         <input type="checkbox" id="step-3" class="step-checkbox" />
         <label for="step-3" class="step-label">
           <span class="step-number caption">3</span>
           <enhanced:img
             class="steps-img"
-            src={blackholeImage}
+            src={step3Image}
             alt="Step 3 for launch"
           />
-          <p class="steps-img-overlay">
-            Structural and Thermal Model Verification<br /><br />
-            Subject the satellite model (or flight hardware) to intense Structural-Thermal-Vacuum
-            (STV) testing. This step confirms that the final design can withstand
-            the immense vibrations and acoustic pressures of launch.
-          </p>
+          <p class="steps-img-overlay">Engineering models development</p>
         </label>
       </div>
     </li>
@@ -211,46 +209,32 @@
       <div
         tabindex="0"
         role="button"
-        aria-label="Step 4: Finalize Mission Operations"
+        aria-label="Step 4: Build and test of Flight Model "
       >
         <input type="checkbox" id="step-4" class="step-checkbox" />
         <label for="step-4" class="step-label">
           <span class="step-number caption">4</span>
           <enhanced:img
             class="steps-img"
-            src={blackholeImage}
+            src={step4Image}
             alt="Step 4 for launch"
           />
-          <p class="steps-img-overlay">
-            Finalize Mission Operations and Ground Segment Readiness<br /><br />
-            Establish and validate the mission's long-term observation plan, focusing
-            on X-ray binaries for extended periods (milliseconds to weeks). This
-            includes preparing the ground station for telemetry.
-          </p>
+          <p class="steps-img-overlay">Build and test of Flight Model</p>
         </label>
       </div>
     </li>
 
     <li class="step-item">
-      <div
-        tabindex="0"
-        role="button"
-        aria-label="Step 5: Satellite Integration with Launch Platform"
-      >
+      <div tabindex="0" role="button" aria-label="Step 5: Launch">
         <input type="checkbox" id="step-5" class="step-checkbox" />
         <label for="step-5" class="step-label">
           <span class="step-number caption">5</span>
           <enhanced:img
             class="steps-img"
-            src={blackholeImage}
+            src={step5Image}
             alt="Step 5 for launch"
           />
-          <p class="steps-img-overlay">
-            Satellite Integration with Launch Platform<br /><br />
-            Based on the earlier research into alternative launch platforms, finalize
-            the selection and begin the physical integration of the NEBULA–Xplorer
-            spacecraft with the chosen launch vehicle/dispenser system.
-          </p>
+          <p class="steps-img-overlay">Launch</p>
         </label>
       </div>
     </li>
@@ -284,7 +268,6 @@
 </figure>
 
 <style>
-
   /* FIRST PARAGRAPH BLOCK */
 
   .paragraph-block {
@@ -439,7 +422,6 @@
       }
     }
 
-
     .text-content-3 article {
       * + p {
         margin-top: 0.5rem;
@@ -540,6 +522,11 @@
 
   .step-item > div[tabindex="0"]:focus .steps-img-overlay {
     opacity: 1;
+  }
+
+  #step-2 ~ .step-label .steps-img,
+  #step-3 ~ .step-label .steps-img {
+    object-fit: contain;
   }
 
   @media (min-width: 56.25rem) {
@@ -661,9 +648,8 @@
     box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.3);
   }
 
-
   /* GETTING INVOLVED */
-/* 
+  /* 
   .getting-involved {
     padding-left: 1.5rem;
     margin-bottom: 1.5rem;
@@ -674,7 +660,6 @@
       padding: 0 3rem 0 3rem;
     }
   } */
-
 
   /* TESTIMONIAL BLOCK */
 
@@ -764,16 +749,16 @@
   }
 
   h2, h3 {
-      font-weight: 600;
-      line-height: 1.5;
-    }
+    font-weight: 600;
+    line-height: 1.5;
+  }
 
   h4 {
     font-weight: 500;
     padding-top: 1.5rem;
   }
 
-    /* article + article {
+  /* article + article {
   margin-top: 2rem;
 } */
 </style>

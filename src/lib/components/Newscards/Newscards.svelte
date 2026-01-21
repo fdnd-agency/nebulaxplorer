@@ -1,97 +1,38 @@
 <script>
-  const NewsCards = [
-    {
-      id: 1,
-      title: "XRISM ziet verrassend trage en dichte wind van neutronenster",
-      type: "News",
-      slug: ""
-    },
-    {
-      id: 2,
-      title: "XRISM ziet verrassend trage en dichte wind van neutronenster",
-      type: "Event",
-      slug: ""
-    },
-    {
-      id: 3,
-      title: "XRISM ziet verrassend trage en dichte wind van neutronenster",
-      type: "News",
-      slug: ""
-    },
-    {
-      id: 4,
-      title: "XRISM ziet verrassend trage en dichte wind van neutronenster",
-      type: "News",
-      slug: ""
-    },
-    {
-      id: 5,
-      title: "XRISM ziet verrassend trage en dichte wind van neutronenster",
-      type: "Announcement",
-      slug: ""
-    },
-    {
-      id: 6,
-      title: "XRISM ziet verrassend trage en dichte wind van neutronenster",
-      type: "Event",
-      slug: ""
-    },
-        {
-      id: 7,
-      title: "Videos from our cleanrooms",
-      type: "Video",
-      slug: ""
-    },
-    {
-      id: 8,
-      title: "XRISM ziet verrassend trage en dichte wind van neutronenster",
-      type: "Event",
-      slug: ""
-    },
-    {
-      id: 9,
-      title: "XRISM ziet verrassend trage en dichte wind van neutronenster",
-      type: "News",
-      slug: ""
-    },
-    {
-      id: 10,
-      title: "XRISM ziet verrassend trage en dichte wind van neutronenster",
-      type: "News",
-      slug: ""
-    },
-    {
-      id: 11,
-      title: "Ver infrarood detectoren voor PRIMA ondersteund door NSO Instrumentenprogramma test",
-      type: "Announcement",
-      slug: ""
-    },
-    {
-      id: 12,
-      title: "How do stars and planets form?",
-      type: "Article",
-      slug: ""
-    },
-  ];
+	export let news = [];
+  
+  import placeholderImage from "$lib/assets/images/placeholder2.jpg";
 </script>
 
 <section class="grid-wrapper">
+{#if news && news.length > 0}
 <ul class="news-grid">
-  {#each NewsCards as newscard}
+{#each news as newscard}
   <li class="news-card">
-    <div class="news-image">
-      <img src="/src/lib/assets/images/placeholder2.jpg" alt="{newscard.title}"> 
-    </div>
-    <div class="news-info">
-      <span class="news-label"></span>
-      <h3>{newscard.title}</h3>
-      <span class="news-label"></span>
-      <p>{newscard.type}</p>
-    </div>
+    <a
+      href={'/news/' + (newscard.slug || newscard.id)}
+      class="news-card-link"
+    >
+      <div class="news-image">
+        <img src={newscard.image?.data?.full_url || newscard.image || placeholderImage}
+         alt="{newscard.title}">    
+      </div>
+      <div class="news-info">
+        <span class="news-label"></span>
+        <h3>{newscard.title || "Untitled"}</h3>
+        <span class="news-label"></span>
+       {#if newscard.type || newscard.category}
+       <p>{newscard.type || newscard.category}</p>
+       {/if}
+      </div>
+    </a>
   </li>
-  {/each}
+{/each}
 
 </ul>
+  {:else}
+  <p class="no-news">No news available at this time.</p>
+  {/if}
 </section>
 
 <style>
@@ -140,8 +81,8 @@
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     padding-bottom: 3rem;
-
-    &:hover {
+}
+    .news-card:hover {
       transform: translateY(-0.5rem);
       box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
     }
@@ -174,8 +115,6 @@
     color: var(--space-140);
  
   }
-
-}
   
    .news-image {
     border-top: 0.3rem solid var(--space-140);
@@ -191,4 +130,4 @@
     object-position: center;
   }
   }
-</style>
+</style> -->
