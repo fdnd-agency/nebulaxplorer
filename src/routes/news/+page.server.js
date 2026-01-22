@@ -2,7 +2,7 @@
 
 export async function load({ fetch }) {
   try {
-    const response = await fetch(`${DIRECTUS_NEWS}`);
+    const response = await fetch("https://fdnd-agency.directus.app/items/nebula_xplorer_news");
     
 // if statement pinpointing fetch errors to make troubleshooting easier
     if (!response.ok) {
@@ -18,6 +18,6 @@ export async function load({ fetch }) {
     return { news: Array.isArray(data) ? data : [] };
   } catch (error) {
     console.error("Error loading news:", error);
-    return { news: [] };
+    return { news: json.data };
   }
 }
