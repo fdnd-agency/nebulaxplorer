@@ -31,7 +31,33 @@ Our website includes a total of 7 main pages; Home, Mission, Scientific, News, T
 
 ## Features 
 
-The Nebula Xplorer website includes pages about various facets of the Nebula Xplorer mission such as the mission page which shows surface level information about the mission goals, the careers page that shows openings in the team, or the partners page where you can learn more about who is supporting our progress. The website lets you learn more about what it is that we are doing and why, on both a surface level for curious minds and a unique below-the-surface perspective for fellow scientists.
+The Nebula Xplorer website includes many features designed to make the user experience as seamless and exciting as possible. The team has added **view-transitions** when navigating between pages, **hover animations** for user feedback, **pagination** on the assignments page in case the number of available assignments is too high to display comfortably on a single page and **responsivity** on all pages so that the site can easily be viewed on any device. these should also be displayed using an image.
+
+
+<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/fb6e6eef-2f56-491f-8cef-64f7c3e9801a" />
+
+^ a scrolling view-transition between pages makes navigation pleasurable
+
+<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/d31beeb4-0284-444c-b387-6a12c43b67fd" />
+
+^ Pagination helps keep the page short enough for the user to easily navigate & understand
+
+<img width="500" height="700" alt="image" src="https://github.com/user-attachments/assets/7c55e3a7-bcb3-4933-9dac-2596361486c3" />
+<img width="300" height="800" alt="image" src="https://github.com/user-attachments/assets/7e2aa59d-af68-4e2f-b5ba-65b23eee8aae" />
+
+^ The site changes layout seamlessly between desktop, tablet and mobile versions
+
+<img width="1401" height="696" alt="image" src="https://github.com/user-attachments/assets/ac8a48a2-e4e9-486f-98f6-6d819bba2ba2" />
+
+^ Hover animations guide the user and give feedback on interactions
+
+<img width="497" height="511" alt="image" src="https://github.com/user-attachments/assets/40fe3b87-d602-4bd6-aa77-9b1bab90484e" />
+
+^ "Read More" tab without hover state
+
+<img width="508" height="483" alt="image" src="https://github.com/user-attachments/assets/96809b4b-7458-4df6-b233-e2fc20c73d6f" />
+
+^ "Read More" tab with hover state
 
 ## Installation
 
