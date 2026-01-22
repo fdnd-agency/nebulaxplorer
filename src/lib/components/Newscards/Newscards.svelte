@@ -16,9 +16,9 @@
           {#if NewsCard.image}
             <picture>
               <source
-                srcset="https://fdnd-agency.directus.app/assets/{NewsCard.image}?format=jpg&w=300,
-                        https://fdnd-agency.directus.app/assets/{NewsCard.image}?format=jpg&w=600,
-                        https://fdnd-agency.directus.app/assets/{NewsCard.image}?format=jpg&w=900"
+                srcset="https://fdnd-agency.directus.app/assets/{NewsCard.image}?format=webp&w=300,
+                        https://fdnd-agency.directus.app/assets/{NewsCard.image}?format=webp&w=600,
+                        https://fdnd-agency.directus.app/assets/{NewsCard.image}?format=webp&w=900"
               />
               <img
                 src="https://fdnd-agency.directus.app/assets/{NewsCard.image}?format=jpg&w=400&h=300"
