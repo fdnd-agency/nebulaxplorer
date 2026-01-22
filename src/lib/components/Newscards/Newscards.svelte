@@ -8,6 +8,7 @@
 
 </script>
 
+
 <ul class="news-grid">
   {#each news as NewsCard}
     <li class="news-card">
@@ -65,6 +66,12 @@
     .news-grid {
       gap: 2rem;
 
+    }
+  }
+
+    @media (min-width: 650px) {
+    .news-grid {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
