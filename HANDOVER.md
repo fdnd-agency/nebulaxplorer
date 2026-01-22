@@ -6,8 +6,7 @@
 
 ### Home page
 
-The home page is currently made of of components showcasing snippets from the other pages, eg. News, Scientific. 
-These can still be worked on to link them back to the pages that they belong to, or to individual detail pages, for example news articles or direct links to sponsor's websites.
+The home page is currently made out of components showcasing snippets from every page we have. These snippets represent the overarching and most important pieces of information the different pages talk about. As the home page can be build out of components only, these have to be implemented through `< Component/>`. These can still be worked on to link them back to the pages that they belong to, or to individual detail pages, for example news articles or direct links to sponsor's websites.
 
 ### Mission page
 
