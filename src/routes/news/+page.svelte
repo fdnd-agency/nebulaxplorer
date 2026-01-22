@@ -36,7 +36,7 @@
   </div>
   </section>
    
-<NewsCards news={data.news} /> 
+<!-- <NewsCards news={data.news} /> -->
 
 <!-- Styles -->
 
