@@ -1,6 +1,6 @@
 # NEBULA Xplorer - a project by SRON
 
-The NEBULA Xplorer website was given to us as a project from SRON, the Space Research Organisation of the Netherlands. Its primary purpose is being a deep source of information on everything to do with the NEBULA Xplorer, a sattelite designed to research X-ray binary black holes and their relationships with companion stars over long periods of time. The project as a whole is a combined effort of over 400 students from within the Netherlands.
+The NEBULA Xplorer website was given to us as a project from SRON, the Space Research Organisation of the Netherlands. Its primary purpose is being a deep source of information on everything to do with the NEBULA Xplorer, a satelite designed to research X-ray binary black holes and their relationships with companion stars over long periods of time. The project as a whole is a combined effort of over 400 students from within the Netherlands.
 
 **Live link:**
 
@@ -28,6 +28,10 @@ You can check out our [Figma prototypes](https://www.figma.com/design/MDGKGDUMzx
 _Datamodel from mermaid_
 
 Our website includes a total of 7 main pages; Home, Mission, Scientific, News, Team, Careers and Partners. Four of these will eventually have their own detail pages, for example for articles, staff or partnership profiles, or job openings.
+
+## Features 
+
+The Nebula Xplorer website includes pages about various facets of the Nebula Xplorer mission such as the mission page which shows surface level information about the mission goals, the careers page that shows openings in the team, or the partners page where you can learn more about who is supporting our progress. The website lets you learn more about what it is that we are doing and why, on both a surface level for curious minds and a unique below-the-surface perspective for fellow scientists.
 
 ## Installation
 
