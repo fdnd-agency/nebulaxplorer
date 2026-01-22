@@ -55,7 +55,7 @@
 
 <style>
   .news-grid {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1fr);
     display: grid;
     list-style: none;
     margin-bottom: 3rem;
