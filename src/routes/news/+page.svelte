@@ -2,7 +2,7 @@
   // Importing necessary components and assets
   import logo from "$lib/assets/logos/SRON_Academy_OnWhite.svg";
   import Breadcrumb from "$lib/components/molecules/Breadcrumb/Breadcrumb.svelte";
-  import NewsCards from "$lib/components/Newscards/NewsCards.svelte";
+  import NewsCards from "$lib/components/Newscards/Newscards.svelte";
 
 // using props to be consistent with Svelte runes
   const { data } = $props();
