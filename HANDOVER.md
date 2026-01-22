@@ -1,9 +1,5 @@
 # Handover Instructions
 
-`code`
-
-Example: [GitHub](https://github.com)
-
 ## Current Status
 
 *The current status of the project, how different pages are going*
@@ -23,9 +19,13 @@ The news page also has no detail pages for the actual articles. This might be a 
 
 ### Scientific page
 
+The scientific page is not yet complete, however it is currently comprised of the following: header, hero, breadcrumb, scientific news cards, and the footer. It also doesn't use any CMS data yet, so this would be a good place to start.
+
 ### Assignments page
 
 ### Sponsors page
+
+The sponsors page has not been developed yet. The design can be found [here](https://www.figma.com/design/MDGKGDUMzxOx2Ozwp3Mtku/S14--Nebula-explorer?node-id=1388-169&p=f&t=EHz75x2wFPctHVlo-0) .
 
 ## Points of attention
 
