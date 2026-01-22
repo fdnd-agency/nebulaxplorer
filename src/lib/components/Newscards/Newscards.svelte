@@ -2,7 +2,7 @@
   // using props now instead of export to be consistent with other pages
   let { news = [] } = $props();
 
-  import placeholderImage from "$lib/assets/images/placeholderzoomout.jpg?enhanced";
+  import placeholderImage from "$lib/assets/images/placeholderzoomout.jpg?enhanced&w=1920;1440;1024;768";
   import logo from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
 
 
@@ -16,12 +16,12 @@
           {#if NewsCard.image}
             <picture>
               <source
-                srcset="https://fdnd-agency.directus.app/assets/{NewsCard.image}?format=webp&w=300,
-                        https://fdnd-agency.directus.app/assets/{NewsCard.image}?format=webp&w=600,
-                        https://fdnd-agency.directus.app/assets/{NewsCard.image}?format=webp&w=900"
+                srcset="https://fdnd-agency.directus.app/assets/{NewsCard.image}?format=jpg&w=300,
+                        https://fdnd-agency.directus.app/assets/{NewsCard.image}?format=jpg&w=600,
+                        https://fdnd-agency.directus.app/assets/{NewsCard.image}?format=jpg&w=900"
               />
               <img
-                src="https://fdnd-agency.directus.app/assets/{NewsCard.image}"
+                src="https://fdnd-agency.directus.app/assets/{NewsCard.image}?format=jpg&w=400&h=300"
                 alt="{NewsCard.title}"
                 width="400"
                 height="300"
