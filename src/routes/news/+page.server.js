@@ -15,9 +15,9 @@ export async function load({ fetch }) {
     const json = await response.json();
     const data = json.data || json || [];
 
-    return { news: Array.isArray(data) ? data : [] };
-  } catch (error) {
-    console.error("Error loading news:", error);
-    return { news: json.data };
-  }
+  return { news: Array.isArray(data) ? data : [] };
+} catch (error) {
+  console.error("Error loading news:", error);
+  return { news: [] };
+}
 }

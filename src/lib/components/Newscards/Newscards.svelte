@@ -12,7 +12,7 @@
 <ul class="news-grid">
   {#each news as NewsCard}
     <li class="news-card">
-      <a href={"/news/"} class="news-card-link">
+      <a href={"/news/${NewsCard.slug || NewsCard.id}"} class="news-card-link">
         <div class="news-image">
           {#if NewsCard.image}
             <picture>
