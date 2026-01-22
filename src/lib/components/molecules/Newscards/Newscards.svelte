@@ -15,8 +15,8 @@
       <a href={"/news/${NewsCard.slug || NewsCard.id}"} class="news-card-link">
         <div class="news-image">
           {#if NewsCard.image}
-            <picture>
-              <source
+            <picture class="news-image">
+              <source type="image/webp"
                 srcset="https://fdnd-agency.directus.app/assets/{NewsCard.image}?format=webp&w=300,
                         https://fdnd-agency.directus.app/assets/{NewsCard.image}?format=webp&w=600,
                         https://fdnd-agency.directus.app/assets/{NewsCard.image}?format=webp&w=900"
@@ -39,11 +39,9 @@
 
         </div>
         <div class="news-info">
-          <span class="news-label"> </span>
           <h3>
             {NewsCard.title || "Untitled"}
           </h3>
-          <span class="news-label"> </span>
           {#if NewsCard.type || NewsCard.category}
             <p>
               {NewsCard.type || NewsCard.category}
@@ -57,6 +55,7 @@
 
 <style>
   .news-grid {
+    grid-template-columns: repeat(1, 1fr);
     display: grid;
     list-style: none;
     margin-bottom: 3rem;
@@ -82,16 +81,12 @@
   }
 
   .news-card {
-    display: subgrid;
-    grid-column: span 1;
-    grid-row: span 1;
     background-color: var(--white);
     border-radius: 0.1875rem;
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
     transition:
       transform 0.3s ease,
       box-shadow 0.3s ease;
-    padding-bottom: 3rem;
   }
   .news-card:hover {
     transform: translateY(-0.5rem);
@@ -101,6 +96,7 @@
   .news-info {
     padding: 0.75rem;
     padding-bottom: 0;
+    padding-bottom: 3rem;
 
     h3 {
       color: var(--ultra-140);
@@ -110,6 +106,8 @@
       padding: 0.5rem 0 0.5rem 0;
     }
   }
+
+
 
   .news-image {
     border-top: 0.3rem solid var(--space-140);

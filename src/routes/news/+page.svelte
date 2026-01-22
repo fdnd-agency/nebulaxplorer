@@ -1,7 +1,7 @@
  <script>
   import logo from "$lib/assets/logos/SRON_Academy_OnWhite.svg";
   import Breadcrumb from "$lib/components/molecules/Breadcrumb/Breadcrumb.svelte";
-  import NewsCards from "$lib/components/Newscards/Newscards.svelte";
+  import NewsCards from "$lib/components/molecules/Newscards/Newscards.svelte";
 
   const { data } = $props();
 </script>
@@ -28,10 +28,10 @@
 <Breadcrumb contrast="space-on-gray" /> 
 
 <section class="paragraph-block">
-  <div class="text-title">
+
     <h2 class="subtitle">Our latest <span class="orange">developments</span></h2>
     <p class="heading">Currently <span class="orange">{data.news.length}</span> available</p>
-  </div>
+
   </section>
    
  <NewsCards news={data.news} /> 
@@ -72,10 +72,12 @@
     .heading{
       padding-bottom: 3rem;
     }
+    .heading span {
+      color: var(--cleanroom-140);
+    }
  
     .subtitle,.heading{
       color: var(--space-140);
-      font-weight: 400;
     }
 
     .subtitle span {
