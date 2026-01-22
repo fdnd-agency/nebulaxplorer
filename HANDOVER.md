@@ -11,6 +11,8 @@ These can still be worked on to link them back to the pages that they belong to,
 
 ### Mission page
 
+The mission page is currently made out of three different sections of content. The first section of content are the three blocks of text that explain what the mission is about and what NEBULA is working on. The second section is the "Steps to take before launch" block with all the necessary steps to take before NEBULA can launch. The last section is a testimonial block with a testimonial from a student working on NEBULA. Ofcourse this page has a header, hero and footer visible at all times.
+
 ### News page
 
 The news page is currently comprised of the header and footer that are on every page, as well as a custom hero section, and a section with the individual news cards. 
@@ -22,6 +24,9 @@ The news page also has no detail pages for the actual articles. This might be a 
 The scientific page is not yet complete, however it is currently comprised of the following: header, hero, breadcrumb, scientific news cards, and the footer. It also doesn't use any CMS data yet, so this would be a good place to start.
 
 ### Assignments page
+
+### Testimonial page
+The testimonial page has the testimonials gathered on the page of all the students that worked on the NEBULA project, these testimonials are all pulled from Directus and displayed on this page. This page also has a header and footer visible at all times.
 
 ### Sponsors page
 
