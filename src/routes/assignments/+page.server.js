@@ -14,9 +14,6 @@ export async function load({ url }) {
 
   const totalPages = Math.ceil(json.meta.total_count / limit);
 
-  console.log(totalPages);
-  
-
   const pagination = {
     currentPage,
     limit,
