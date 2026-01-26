@@ -38,8 +38,6 @@
     gap: 0.75rem;
     align-items: center;
 
-
-    
     /* color schemes */
 
     /* defaults */
@@ -84,6 +82,10 @@
     a:hover {
       text-decoration: underline;
       text-underline-offset: 0.125rem;
+    }
+
+    @media (min-width: 56.25rem) {
+      padding-left:4rem;
     }
   }
 </style>
