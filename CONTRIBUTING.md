@@ -28,7 +28,18 @@ Voor onze code conventies gebruiken we de [FDND code conventies](https://docs.fd
   - (For example `anim-fade-up`, `anim-move-right` & `--primary-color`, `--size-XL`)
 
 ### Comments
-The writing of comments in our code for complex pieces of code (mainly for CSS & JS).
+
+The writing of comments in our code for complex pieces of code (mainly for CSS & JS).`
+
+## Git conventions
+
+- Issues, commit messages, branch names and pull requests should be in English
+- Branch names should follow the format: issue number - issue title e.g. `42-fix-login-bug`
+- Branches and Pull Requests should be created from `dev`
+- Every branch should have an issue associated with it
+- Commit messages should follow the format specified in Conventional Commits (https://docs.fdnd.nl/conventies.html#conventional-commits)
+- There should be at least one approving review (by a human) before merging a pull request
+- Merge dev into your feature branch before opening a Pull Request
 
 ## Team Canvas
 <img width="875" height="617" alt="Screenshot 2025-09-24 at 16 38 01" src="https://github.com/user-attachments/assets/ce8504c2-5857-4a85-8430-fdbc0f97100c" />
