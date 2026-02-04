@@ -46,7 +46,8 @@ The writing of comments in our code for complex pieces of code (mainly for CSS &
 
 ## Team Canvas
 
-<img width="875" height="617" alt="Screenshot 2025-09-24 at 16 38 01" src="https://github.com/user-attachments/assets/ce8504c2-5857-4a85-8430-fdbc0f97100c" />
+<img width="1000" alt="image" src="https://github.com/user-attachments/assets/2d0521a5-cfb2-4b47-af88-a8f1a9d3aae1" />
+
 
 ## Sitemap
 
