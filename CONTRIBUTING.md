@@ -1,9 +1,11 @@
 # Arrangements for working together
 
 ## Code conventies
+
 Voor onze code conventies gebruiken we de [FDND code conventies](https://docs.fdnd.nl/conventies.html).
 
 ### HTML conventies
+
 - Use structured and semantic HTML.
 - Do not nest content unnecessarily deeply.
 - Avoid deep nesting of section elements and associated heading levels.
@@ -14,6 +16,7 @@ Voor onze code conventies gebruiken we de [FDND code conventies](https://docs.fd
 - **Our rule** use classes for CSS and data attributes for javascript.
 
 ### CSS conventies
+
 - 1 tab – for indentation.
 - Follow HTML order in CSS
 - Structure your code from generic to specific
@@ -42,30 +45,31 @@ The writing of comments in our code for complex pieces of code (mainly for CSS &
 - Merge dev into your feature branch before opening a Pull Request
 
 ## Team Canvas
+
 <img width="875" height="617" alt="Screenshot 2025-09-24 at 16 38 01" src="https://github.com/user-attachments/assets/ce8504c2-5857-4a85-8430-fdbc0f97100c" />
 
 ## Sitemap
+
 ![Image](https://github.com/user-attachments/assets/5ab5ed17-69d2-44c1-9017-134ad9890b50)
 
 ## DoR & DoD
 
 ### DoR
-- [x] Planning poker
-- [ ] Design
-- [x] Description
-- [x] Eisen
 
+- The story is correctly formatted (as a user… I want to... because)
+- The story has a clear description
+- The story has clear requirements
+- Dependencies have been identified
+- The story has been assigned an amount of story points
+- The story has been assigned a priority
 
 ### DoD
-- [ ] Uitvoerig testen
-  - [ ] HTML Validator
-  - [ ] WCAG
-  - [ ] Webpage test
-  - [ ] Browserstack
-  - [ ] User test
-- [ ] Project heeft een live link
-- [ ] Project is gepushed naar main
 
+- Requirements have been met
+- The story has been tested
+- The story has been merged into the dev branch
+- The code has been reviewed
+- The code complies with RAPPE (Responsive, Accessible, Performance, Progressive Enhancement)
 
 ## Post-mortem Scrum
 
