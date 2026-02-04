@@ -32,7 +32,7 @@ Voor onze code conventies gebruiken we de [FDND code conventies](https://docs.fd
 
 ### Comments
 
-The writing of comments in our code for complex pieces of code (mainly for CSS & JS).`
+The writing of comments in our code for complex pieces of code (mainly for CSS & JS).
 
 ## Git conventions
 
