@@ -6,7 +6,7 @@
 
 ### Home page
 
-The home page is currently made out of components showcasing snippets from every page we have. These snippets represent the overarching and most important pieces of information the different pages talk about. As the home page can be build out of components only, these have to be implemented through `< Component/>`. These can still be worked on to link them back to the pages that they belong to, or to individual detail pages, for example news articles or direct links to sponsor's websites.
+The home page is currently empty, but should be(?) made out of components showcasing snippets from every page we have. These snippets represent the overarching and most important pieces of information the different pages talk about. As the home page can be built out of components only, these have to be implemented through `< Component/>`. These can still be worked on to link them back to the pages that they belong to, or to individual detail pages, for example news articles or direct links to sponsor's websites.
 
 ### Mission page
 
@@ -14,7 +14,7 @@ The mission page is currently made out of three different sections of content. T
 
 ### News page
 
-The news page is currently comprised of the header and footer that are on every page, as well as a custom hero section, and a section with the individual news cards. 
+The news page is currently not yet merged into the dev branch. It is comprised of the header and footer that are on every page, as well as a custom hero section, and a section with the individual news cards. 
 The custom hero section has no background image, in order to differentiate it from the rest of the website. This is because the client wanted the news page to feel separate. 
 The news page also has no detail pages for the actual articles. This might be a good first step to take to make the page more interactive and also more useful. 
 
@@ -43,4 +43,4 @@ before showing scientific articles written by the students and workers on the SR
 *What should the next team start with? what direction should the project go in?*
 
 For the news page, a big first step would be to create detail pages for news articles, and have these link to the current news cards. This could be enhanced with a page transition. 
-Another idea is to implement the pagination that is available on the assigments page, for when there are too many news cards to comfortably show on one page.
+Another idea is to implement the pagination that is available on the assignments page, for when there are too many news cards to comfortably show on one page.
