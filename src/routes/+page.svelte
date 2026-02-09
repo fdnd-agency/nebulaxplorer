@@ -1,3 +1,7 @@
+<script>
+  import nebulaSatellite from '$lib/assets/images/nebula-satellite.png?enhanced&w=900;450'
+</script>
+
 <section class="section-paragraph-picture">
 	<h2 class="section_title">Over Nebula Xplorer</h2>
 	<p class="paragraph">
@@ -15,8 +19,9 @@
 		ontwerpers en technici voor het Nederlandse ruimteonderzoek.
 	</p>
 	<enhanced:img
-		src="$lib/assets/images/nebula-satellite.png"
-		alt="The Nebula Xplorer Satellite" />
+		src={nebulaSatellite}
+		alt="The Nebula Xplorer Satellite"
+    sizes="(min-width:500px) 900px, (min-width:300px) 450px" />
 </section>
 
 <style>
