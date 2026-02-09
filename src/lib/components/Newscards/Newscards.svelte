@@ -10,7 +10,7 @@
 			{#each news as newscard}
 				<li class="news-card">
 					<a
-						href={'/news/' + (newscard.slug || newscard.id)}
+						href={'/news/' + (newscard.slug | f | newscard.id)}
 						class="news-card-link">
 						<div class="news-image">
 							<img
@@ -35,7 +35,6 @@
 		<p class="no-news">No news available at this time.</p>
 	{/if}
 </section>
- -->
 
 <style>
 	.grid-wrapper {
