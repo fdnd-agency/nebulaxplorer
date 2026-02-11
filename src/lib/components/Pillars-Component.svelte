@@ -116,11 +116,14 @@
 
   .pillar a {
     text-align: center;
+    font-size: clamp(1em, 5vw, 1.2em);
+    font-family: var(--heading);
 
     @media (width > 600px) {
       padding-block-start: 1em;
       padding-block-end: 1em;
       text-align: start;
+      font-size: unset;
     }
   }
 
