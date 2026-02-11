@@ -46,7 +46,7 @@
 
 <section>
   
-<h2>Pillars</h2>
+<h2 class="section_title">Pillars</h2>
   <!-- TODO: make the things inside this #each loop into a seperate component partial -->
   <ul>
     {#each dummydata as data}
@@ -60,6 +60,11 @@
 </section>
 
 <style>
+
+section{
+		padding-inline: clamp(1rem, 5vw, 3.5rem);
+}
+
   ul {
     display: flex;
     justify-content: center;
