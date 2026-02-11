@@ -29,11 +29,7 @@
 	<ul class="news-grid">
 		{#each NewsCards as newscard}
 			<li class="news-card">
-				<img
-					src={newscard.image}
-					alt={newscard.title}
-					height="240"
-					width="240" />
+				<img src={newscard.image} alt="" height="240" width="240" />
 				<h3 class=""><a href={newscard.slug}>{newscard.title}</a></h3>
 				<p>{newscard.type}</p>
 			</li>
