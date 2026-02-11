@@ -10,7 +10,7 @@
 			{#each news as newscard}
 				<li class="news-card">
 					<a
-						href={'/news/' + (newscard.slug | f | newscard.id)}
+						href={'/news/' + (newscard.slug || newscard.id)}
 						class="news-card-link">
 						<div class="news-image">
 							<img
