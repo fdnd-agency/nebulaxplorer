@@ -60,9 +60,12 @@
 </section>
 
 <style>
-  section {
+  ul {
     display: flex;
     justify-content: center;
+    flex-direction: row;
+    padding-block-start: 1em;
+    padding-block-end: 1.5em;
 
     @media (width < 600px) {
       flex-direction: column;
@@ -74,25 +77,51 @@
     position: relative;
     margin: 5px;
 
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    
+    align-items: center;
+    grid-template-columns: clamp(1em, 30vw, 6.5em) 1fr;
+    width: 100%;
+
+    background-color: #292E6B;
 
     @media (width > 600px) {
+      display: flex;
+      align-items: center;
+
       flex-grow: 1;
       flex-shrink: 1;
       flex-basis: 0;
+
+      flex-direction: column;
       max-width: 250px;
+
     }
+
+    
+
   }
 
   .pillar img {
     width: 100%;
     height: 100%;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
+
+    @media (width > 600px) {
+      max-height: unset;
+      max-width: unset;
+    }
   }
 
   .pillar a {
-    margin-top: auto;
+    text-align: center;
+
+    @media (width > 600px) {
+      padding-block-start: 1em;
+      padding-block-end: 1em;
+      text-align: start;
+    }
   }
 
   .pillar:hover {
