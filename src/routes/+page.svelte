@@ -5,6 +5,13 @@
 	import logo from '$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg'
 </script>
 
+<svelte:head>
+	<title>Home</title>
+	<meta
+		name="description"
+		content="NEBULA-Xplorer will investigate how jets form and how X-ray binaries evolve. It will observe these objects for long periods of time to see how their emission varies on time scales from milliseconds to weeks." />
+</svelte:head>
+
 <Hero
 	titleColor="var(--white)"
 	pageTitle="Nebula Xplorer"

@@ -11,6 +11,13 @@
 	import heroImg from '$lib/assets/images/grav-waves.jpg?enhanced'
 </script>
 
+<svelte:head>
+	<title>Mission</title>
+	<meta
+		name="description"
+		content="NEBULA-Xplorer will investigate how jets form and how X-ray binaries evolve. It will observe these objects for long periods of time to see how their emission varies on time scales from milliseconds to weeks." />
+</svelte:head>
+
 <!-- HERO BLOCK -->
 <Hero
 	titleColor="var(--white)"

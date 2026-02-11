@@ -4,6 +4,13 @@
 	import heroImg from '$lib/assets/images/grav-waves.jpg?enhanced'
 </script>
 
+<svelte:head>
+	<title>Team</title>
+	<meta
+		name="description"
+		content="The team page features the different teams who have worked on the Nebula Xplorer mission over the years." />
+</svelte:head>
+
 <!-- HERO BLOCK -->
 <Hero
 	titleColor="var(--white)"
