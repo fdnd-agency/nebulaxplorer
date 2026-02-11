@@ -6,7 +6,7 @@
 
 	// Components
 	import Hero from '$lib/components/molecules/Hero/Hero.svelte'
-	import News from '$lib/components/News-Component/News-Component.svelte'
+	import News from '$lib/components/NewsComponent/NewsComponent.svelte'
 </script>
 
 <Hero
