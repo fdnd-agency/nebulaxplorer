@@ -1,31 +1,29 @@
 <script module>
-	import { Hero } from "$lib";
-	import blackholeImage from "$lib/assets/blackhole.jpg?enhanced";
-	import step1Image from "$lib/assets/images/sron-review-step-1.jpg?enhanced&w=1024;768;512";
-	import step2Image from "$lib/assets/images/Rapid-step-2.jpg?enhanced&w=1024;768;512";
-	import step3Image from "$lib/assets/images/nebula-xplorer.jpg?enhanced&w=1024;768;512";
-	import step4Image from "$lib/assets/images/aerospace-defense-testing-step-4.jpg?enhanced&w=1024;768;512";
-	import step5Image from "$lib/assets/images/rocket-launch-step-5.jpg?enhanced&w=1024;768;512";
-	import Breadcrumb from "$lib/components/molecules/Breadcrumb/Breadcrumb.svelte";
-	import logo from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
-	import heroImg from "$lib/assets/images/grav-waves.jpg?enhanced";
+	import { Hero } from '$lib'
+	import blackholeImage from '$lib/assets/blackhole.jpg?enhanced'
+	import step1Image from '$lib/assets/images/sron-review-step-1.jpg?enhanced&w=1024;768;512'
+	import step2Image from '$lib/assets/images/Rapid-step-2.jpg?enhanced&w=1024;768;512'
+	import step3Image from '$lib/assets/images/nebula-xplorer.jpg?enhanced&w=1024;768;512'
+	import step4Image from '$lib/assets/images/aerospace-defense-testing-step-4.jpg?enhanced&w=1024;768;512'
+	import step5Image from '$lib/assets/images/rocket-launch-step-5.jpg?enhanced&w=1024;768;512'
+	import Breadcrumb from '$lib/components/molecules/Breadcrumb/Breadcrumb.svelte'
+	import logo from '$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg'
+	import heroImg from '$lib/assets/images/grav-waves.jpg?enhanced'
 </script>
 
 <svelte:head>
 	<title>Mission</title>
 	<meta
 		name="description"
-		content="NEBULA-Xplorer will investigate how jets form and how X-ray binaries evolve. It will observe these objects for long periods of time to see how their emission varies on time scales from milliseconds to weeks."
-	/>
+		content="NEBULA-Xplorer will investigate how jets form and how X-ray binaries evolve. It will observe these objects for long periods of time to see how their emission varies on time scales from milliseconds to weeks." />
 </svelte:head>
 
 <!-- HERO BLOCK -->
 <Hero
 	titleColor="var(--white)"
 	pageTitle="Mission"
-	background={{ alt: "Two merging black holes", file: heroImg }}
-	sronIcon={logo}
-/>
+	background={{ alt: 'Two merging black holes', file: heroImg }}
+	sronIcon={logo} />
 
 <Breadcrumb />
 
@@ -41,25 +39,27 @@
 		<article>
 			<h4 class="orange heading">Dense matter and compact objects</h4>
 			<p>
-				NEBULA-Xplorer will investigate compact objects such as neutron stars
-				and black hole X-ray binaries within our Milky Way. By investigating
-				these objects, we can learn about fundamental physics such as strong
-				gravity and the equation of state of neutron stars. We can also learn
-				about accretion processes in extreme environments, unable to be
-				reproduced in lab conditions. NEBULA-Xplorer’s coverage of the 0.5-12keV
-				energy range will allow us to observe both the inner-most regions of
-				these systems, where light is most affected by the gravity of compact
+				NEBULA-Xplorer will investigate compact objects such as neutron
+				stars and black hole X-ray binaries within our Milky Way. By
+				investigating these objects, we can learn about fundamental
+				physics such as strong gravity and the equation of state of
+				neutron stars. We can also learn about accretion processes in
+				extreme environments, unable to be reproduced in lab conditions.
+				NEBULA-Xplorer’s coverage of the 0.5-12keV energy range will
+				allow us to observe both the inner-most regions of these
+				systems, where light is most affected by the gravity of compact
 				objects and the magnetic environment of neutron stars.
 			</p>
 
 			<p>
-				By observing black holes in this energy range, we can also measure the
-				spin of black holes by observing the relativistic smearing of emission
-				resulting from the illumination of the disk by the corona or by
-				measuring the inner radius of the accretion disk through broad continuum
-				fitting. Understanding the spin population of black holes within X-ray
-				binaries has major implications for stellar evolution in binary systems
-				which are estimated to make up to 85% of star systems in our universe.
+				By observing black holes in this energy range, we can also
+				measure the spin of black holes by observing the relativistic
+				smearing of emission resulting from the illumination of the disk
+				by the corona or by measuring the inner radius of the accretion
+				disk through broad continuum fitting. Understanding the spin
+				population of black holes within X-ray binaries has major
+				implications for stellar evolution in binary systems which are
+				estimated to make up to 85% of star systems in our universe.
 			</p>
 		</article>
 	</section>
@@ -72,29 +72,30 @@
 	<enhanced:img
 		class="paragraph-img-left"
 		src={blackholeImage}
-		alt="Black Hole"
-	/>
+		alt="Black Hole" />
 	<section class="text-content-right">
 		<article>
 			<h4 class="orange heading">Multi-messenger physics</h4>
 			<p>
 				NEBULA-Xplorer frames the multi-wavelength campaigns required to
-				understand jet and accretion physics at the forefront of its design:
-				emphasizing the ability to maximize X-ray observations of time
-				uncertain, fast evolving changes in the accretion flow by tying together
-				fine time resolution of 1 microsecond and the ability to maintain as
-				close to continuous observations of targets as possible.
+				understand jet and accretion physics at the forefront of its
+				design: emphasizing the ability to maximize X-ray observations
+				of time uncertain, fast evolving changes in the accretion flow
+				by tying together fine time resolution of 1 microsecond and the
+				ability to maintain as close to continuous observations of
+				targets as possible.
 			</p>
 
 			<p>
 				During longer observations, NEBULA-Xplorer will transmit timing
-				information key to understanding when ballistic jet ejections are
-				launched to the ground to trigger observations from competitive
-				ground-based facilities such as the radio interferometer SKA and mm
-				observatory AMT to maximize the effectiveness of multi-wavelength
-				observations of jets. NEBULA-Xplorer will also work with optical
-				facilities to better understand how activity in the outer accretion disk
-				of these systems propagates into the inner-most regions.
+				information key to understanding when ballistic jet ejections
+				are launched to the ground to trigger observations from
+				competitive ground-based facilities such as the radio
+				interferometer SKA and mm observatory AMT to maximize the
+				effectiveness of multi-wavelength observations of jets.
+				NEBULA-Xplorer will also work with optical facilities to better
+				understand how activity in the outer accretion disk of these
+				systems propagates into the inner-most regions.
 			</p>
 		</article>
 	</section>
@@ -107,35 +108,38 @@
 		<article>
 			<h4 class="orange heading">Time-domain Astrophysics</h4>
 			<p>
-				As a non-imaging X-ray timing observatory, NEBULA-Xplorer’s core science
-				focuses on interpreting the variability of emission from the sources
-				that it observes. This includes more traditional ways of thinking about
-				variability such as looking for quasi-periodic signals in source light
-				curve and phase-folded pulse profile modeling of neutron star surfaces
-				but also includes topics such as “dipping” in the light curve produced
-				by clumps of material produced by winds from both the accretion disk and
-				companion star in these systems obscuring the central accretion engine.
+				As a non-imaging X-ray timing observatory, NEBULA-Xplorer’s core
+				science focuses on interpreting the variability of emission from
+				the sources that it observes. This includes more traditional
+				ways of thinking about variability such as looking for
+				quasi-periodic signals in source light curve and phase-folded
+				pulse profile modeling of neutron star surfaces but also
+				includes topics such as “dipping” in the light curve produced by
+				clumps of material produced by winds from both the accretion
+				disk and companion star in these systems obscuring the central
+				accretion engine.
 			</p>
 
 			<p>
-				Frequently, changes in variability are affected by multiple phenomena in
-				the system that evolve on different time scales, making it difficult to
-				understand how important each phenomenon is to driving transient
-				outbursts or is linked to the fundamental process of accretion.
-				NEBULA-Xplorer’s emphasis on performing continuous longer observations
-				of individual sources will allow us to understand the short-term
-				variability of emission and how that changes on timescales of days to
-				weeks.
+				Frequently, changes in variability are affected by multiple
+				phenomena in the system that evolve on different time scales,
+				making it difficult to understand how important each phenomenon
+				is to driving transient outbursts or is linked to the
+				fundamental process of accretion. NEBULA-Xplorer’s emphasis on
+				performing continuous longer observations of individual sources
+				will allow us to understand the short-term variability of
+				emission and how that changes on timescales of days to weeks.
 			</p>
 
 			<p>
-				NEBULA-Xplorer’s moderate energy resolution and high timing resolution
-				will also allow us to perform spectral-timing analysis of bright
-				systems, like that of the NICER telescope. Spectral timing allows for
-				the investigation of how variability changes with energy, which can be
-				used to trace how the geometry of X-ray sources changes through time as
-				well as understand the distances between different parts of the system
-				through modeling of light travel time within the system.
+				NEBULA-Xplorer’s moderate energy resolution and high timing
+				resolution will also allow us to perform spectral-timing
+				analysis of bright systems, like that of the NICER telescope.
+				Spectral timing allows for the investigation of how variability
+				changes with energy, which can be used to trace how the geometry
+				of X-ray sources changes through time as well as understand the
+				distances between different parts of the system through modeling
+				of light travel time within the system.
 			</p>
 		</article>
 	</section>
@@ -152,23 +156,22 @@
 	<ul
 		class="steps-content"
 		role="region"
-		aria-label="De stappen voor de lancering"
-	>
+		aria-label="De stappen voor de lancering">
 		<li class="step-item">
 			<div
 				tabindex="0"
 				role="button"
-				aria-label="Step 1: Requirements and Design Review"
-			>
+				aria-label="Step 1: Requirements and Design Review">
 				<input type="checkbox" id="step-1" class="step-checkbox" />
 				<label for="step-1" class="step-label">
 					<span class="step-number caption">1</span>
 					<enhanced:img
 						class="steps-img"
 						src={step1Image}
-						alt="Step 1 for launch"
-					/>
-					<p class="steps-img-overlay">Requirements and Design Review</p>
+						alt="Step 1 for launch" />
+					<p class="steps-img-overlay">
+						Requirements and Design Review
+					</p>
 				</label>
 			</div>
 		</li>
@@ -177,16 +180,14 @@
 			<div
 				tabindex="0"
 				role="button"
-				aria-label="Step 2: Rapid prototyping of critical technologies"
-			>
+				aria-label="Step 2: Rapid prototyping of critical technologies">
 				<input type="checkbox" id="step-2" class="step-checkbox" />
 				<label for="step-2" class="step-label">
 					<span class="step-number caption">2</span>
 					<enhanced:img
 						class="steps-img"
 						src={step2Image}
-						alt="Step 2 for launch"
-					/>
+						alt="Step 2 for launch" />
 					<p class="steps-img-overlay">
 						Rapid prototyping of critical technologies
 					</p>
@@ -198,17 +199,17 @@
 			<div
 				tabindex="0"
 				role="button"
-				aria-label="Step 3: Engineering models development"
-			>
+				aria-label="Step 3: Engineering models development">
 				<input type="checkbox" id="step-3" class="step-checkbox" />
 				<label for="step-3" class="step-label">
 					<span class="step-number caption">3</span>
 					<enhanced:img
 						class="steps-img"
 						src={step3Image}
-						alt="Step 3 for launch"
-					/>
-					<p class="steps-img-overlay">Engineering models development</p>
+						alt="Step 3 for launch" />
+					<p class="steps-img-overlay">
+						Engineering models development
+					</p>
 				</label>
 			</div>
 		</li>
@@ -217,17 +218,17 @@
 			<div
 				tabindex="0"
 				role="button"
-				aria-label="Step 4: Build and test of Flight Model "
-			>
+				aria-label="Step 4: Build and test of Flight Model ">
 				<input type="checkbox" id="step-4" class="step-checkbox" />
 				<label for="step-4" class="step-label">
 					<span class="step-number caption">4</span>
 					<enhanced:img
 						class="steps-img"
 						src={step4Image}
-						alt="Step 4 for launch"
-					/>
-					<p class="steps-img-overlay">Build and test of Flight Model</p>
+						alt="Step 4 for launch" />
+					<p class="steps-img-overlay">
+						Build and test of Flight Model
+					</p>
 				</label>
 			</div>
 		</li>
@@ -240,8 +241,7 @@
 					<enhanced:img
 						class="steps-img"
 						src={step5Image}
-						alt="Step 5 for launch"
-					/>
+						alt="Step 5 for launch" />
 					<p class="steps-img-overlay">Launch</p>
 				</label>
 			</div>
@@ -253,10 +253,11 @@
 	<blockquote class="testimonial-content">
 		<!-- <Quote /> -->
 		<p class="testimonial-text">
-			Working with SRON's Nebula Xplorer team has been an incredible experience.
-			Being part of the mission to prepare the Nebula Xplorer for launch taught
-			me so much about space instrumentation and teamwork. The dedication and
-			expertise of everyone involved is truly inspiring.
+			Working with SRON's Nebula Xplorer team has been an incredible
+			experience. Being part of the mission to prepare the Nebula Xplorer
+			for launch taught me so much about space instrumentation and
+			teamwork. The dedication and expertise of everyone involved is truly
+			inspiring.
 		</p>
 	</blockquote>
 
@@ -266,8 +267,7 @@
 			alt="Jane Doe"
 			class="author-image"
 			loading="lazy"
-			decoding="async"
-		/>
+			decoding="async" />
 		<article class="author-info">
 			<h3 class="paragraph">Jane Doe</h3>
 			<p class="supporting">Engineering Student</p>
@@ -524,11 +524,11 @@
 		margin-right: 1.5rem;
 	}
 
-	.step-item > div[tabindex="0"]:focus .steps-img-overlay {
+	.step-item > div[tabindex='0']:focus .steps-img-overlay {
 		opacity: 1;
 	}
 
-	.step-item > div[tabindex="0"]:focus .steps-img-overlay {
+	.step-item > div[tabindex='0']:focus .steps-img-overlay {
 		opacity: 1;
 	}
 
@@ -538,8 +538,8 @@
 	}
 
 	@media (min-width: 56.25rem) {
-		.step-item > div[tabindex="0"]:hover .steps-img-overlay,
-		.step-item > div[tabindex="0"]:focus .steps-img-overlay {
+		.step-item > div[tabindex='0']:hover .steps-img-overlay,
+		.step-item > div[tabindex='0']:focus .steps-img-overlay {
 			opacity: 1;
 		}
 	}
