@@ -65,6 +65,7 @@
 		}
 
 		.news-card {
+			position: relative;
 			background-color: var(--white);
 			border-radius: 0.2rem;
 			box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
@@ -74,6 +75,11 @@
 			align-self: start;
 
 			&:hover {
+				transform: translateY(-0.5rem);
+				box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+			}
+
+			&:focus-within {
 				transform: translateY(-0.5rem);
 				box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
 			}
@@ -98,6 +104,15 @@
 			color: var(--ultra-140);
 			padding-block: 1rem;
 			padding-inline: clamp(0.75rem, 0.25rem + 1.1vw, 1rem);
+
+			a::after {
+				content: '';
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+			}
 		}
 
 		p {
