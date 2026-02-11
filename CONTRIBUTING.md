@@ -28,7 +28,7 @@ Voor onze code conventies gebruiken we de [FDND code conventies](https://docs.fd
 - **Our rule** Make use of nested CSS
 - **Our rule** Make use of CSS variables
 - **Our rule** Adhere to the naming conventions for animations & variable names
-  - (For example `anim-fade-up`, `anim-move-right` & `--primary-color`, `--size-XL`)
+- (For example `anim-fade-up`, `anim-move-right` & `--primary-color`, `--size-XL`)
 
 ### Comments
 
@@ -47,7 +47,6 @@ The writing of comments in our code for complex pieces of code (mainly for CSS &
 ## Team Canvas
 
 <img width="1000" alt="image" src="https://github.com/user-attachments/assets/2d0521a5-cfb2-4b47-af88-a8f1a9d3aae1" />
-
 
 ## Sitemap
 
