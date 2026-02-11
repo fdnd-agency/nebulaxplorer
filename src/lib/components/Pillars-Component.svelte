@@ -44,38 +44,30 @@
   ];
 </script>
 
+<section>
+  
 <h2>Pillars</h2>
-<article>
   <!-- TODO: make the things inside this #each loop into a seperate component partial -->
-  {#each dummydata as data}
-    <section class="pillar">
+  <ul>
+    {#each dummydata as data}
+    <li class="pillar">
       <img src={data.image.src} alt={data.image.alt} /><!-- width="100%" -->
 
       <a href={data.link}> {data.title}</a>
-    </section>
+    </li>
   {/each}
-</article>
+  </ul>
+</section>
 
 <style>
-  @media (width < 600px) {
-    article {
+  section {
+    display: flex;
+    justify-content: center;
+
+    @media (width < 600px) {
       flex-direction: column;
       align-items: center;
     }
-  }
-
-  @media (width > 600px) {
-    .pillar {
-      flex-grow: 1;
-      flex-shrink: 1;
-      flex-basis: 0;
-      max-width: 250px;
-    }
-  }
-
-  article {
-    display: flex;
-    justify-content: center;
   }
 
   .pillar {
@@ -84,6 +76,13 @@
 
     display: flex;
     flex-direction: column;
+
+    @media (width > 600px) {
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 0;
+      max-width: 250px;
+    }
   }
 
   .pillar img {
