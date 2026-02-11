@@ -51,7 +51,7 @@
   <ul>
     {#each dummydata as data}
     <li class="pillar">
-      <img src={data.image.src} alt={data.image.alt} /><!-- width="100%" -->
+      <img src={data.image.src} alt={data.image.alt} />
 
       <a href={data.link}> {data.title}</a>
     </li>
