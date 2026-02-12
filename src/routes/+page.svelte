@@ -7,7 +7,7 @@
 	// Components
 	import Hero from '$lib/components/molecules/Hero/Hero.svelte'
 	import News from '$lib/components/NewsComponent/NewsComponent.svelte'
-  import PillarsComponent from '$lib/components/PillarsComponent.svelte'
+	import PillarsComponent from '$lib/components/PillarsComponent.svelte'
 </script>
 
 <svelte:head>
@@ -59,7 +59,6 @@
 			5vw,
 			3.5rem
 		); /* TODO: make this the standard padding for sections in general.css */
-
 
 		@media (min-width: 1000px) {
 			grid-template-columns: 2fr 1fr;
