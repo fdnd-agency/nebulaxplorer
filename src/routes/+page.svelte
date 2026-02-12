@@ -7,6 +7,7 @@
 	// Components
 	import Hero from '$lib/components/molecules/Hero/Hero.svelte'
 	import News from '$lib/components/NewsComponent/NewsComponent.svelte'
+  import PillarsComponent from '$lib/components/PillarsComponent.svelte'
 </script>
 
 <svelte:head>
@@ -46,18 +47,21 @@
 		sizes="(min-width:500px) 900px, (min-width:300px) 450px" />
 </section>
 
+<PillarsComponent />
+
 <style>
 	.section-paragraph-picture {
 		display: grid;
 		gap: 2rem;
-		padding: 3rem 1rem;
+		padding-block: 3rem;
+		padding-inline: clamp(
+			1rem,
+			5vw,
+			3.5rem
+		); /* TODO: make this the standard padding for sections in general.css */
 
-		@media (min-width: 500px) {
-			padding: 3rem 2rem;
-		}
 
 		@media (min-width: 1000px) {
-			padding: 3rem 3rem;
 			grid-template-columns: 2fr 1fr;
 		}
 

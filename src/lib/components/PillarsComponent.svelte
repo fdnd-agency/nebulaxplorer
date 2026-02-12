@@ -1,0 +1,145 @@
+<script>
+	import placeholder1 from '$lib/assets/images/placeholder1.jpg'
+	import gravwaves from '$lib/assets/images/grav-waves.jpg'
+	import placeholder2 from '$lib/assets/images/placeholder2.jpg'
+	const dummydata = [
+		{
+			link: '#',
+			image: {
+				src: placeholder1,
+				alt: 'a guy holding a thing',
+			},
+			title: 'technology',
+		},
+		{
+			link: '#',
+			image: {
+				src: gravwaves,
+				alt: 'a scientist sciencing',
+			},
+			title: 'science',
+		},
+
+		{
+			link: '#',
+			image: {
+				src: placeholder2,
+				alt: 'a guy holding a thing',
+			},
+			title: 'instrumentation',
+		},
+		{
+			link: '#',
+			image: {
+				src: placeholder1,
+				alt: 'a guy holding a thing',
+			},
+			title: 'placeholder',
+		},
+		{
+			link: '#',
+			image: {
+				src: placeholder1,
+				alt: 'a guy holding a thing',
+			},
+			title: 'lorem ipsum',
+		},
+	]
+</script>
+
+<section>
+	<h2 class="section_title">Pillars</h2>
+	<!-- TODO: make the things inside this #each loop into a seperate component partial -->
+	<ul>
+		{#each dummydata as data}
+			<li class="pillar">
+				<img src={data.image.src} alt={data.image.alt} />
+
+				<a href={data.link}> {data.title}</a>
+			</li>
+		{/each}
+	</ul>
+</section>
+
+<style>
+	section {
+		padding-inline: clamp(1rem, 5vw, 3.5rem);
+	}
+
+	ul {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		padding-block-start: 1em;
+		padding-block-end: 1.5em;
+		align-items: center;
+
+		@media (min-width: 600px) {
+			flex-direction: row;
+			align-items: unset;
+		}
+	}
+
+	.pillar {
+		position: relative;
+		margin: 5px;
+
+		display: grid;
+
+		align-items: center;
+		grid-template-columns: clamp(1em, 30vw, 6.5em) 1fr;
+		width: 100%;
+
+		background-color: #292e6b;
+
+		@media (min-width: 600px) {
+			display: flex;
+			align-items: center;
+
+			flex-grow: 1;
+			flex-shrink: 1;
+			flex-basis: 0;
+
+			flex-direction: column;
+		}
+	}
+
+	.pillar img {
+		width: 100%;
+		height: 100%;
+		aspect-ratio: 1 / 1;
+		object-fit: cover;
+
+		@media (min-width: 600px) {
+			max-height: unset;
+			max-width: unset;
+		}
+	}
+
+	.pillar a {
+		text-align: center;
+		font-size: clamp(1em, 5vw, 1.2em);
+		font-family: var(--heading);
+
+		@media (min-width: 600px) {
+			padding-block-start: 1em;
+			padding-block-end: 1em;
+			text-align: start;
+			font-size: unset;
+			text-wrap: nowrap;
+		}
+	}
+
+	.pillar:hover {
+		text-decoration: underline;
+	}
+
+	a::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+	}
+</style>

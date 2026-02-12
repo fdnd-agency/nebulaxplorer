@@ -2,7 +2,7 @@
 
 ## Current Status
 
-*The current status of the project, how different pages are going*
+_The current status of the project, how different pages are going_
 
 ### Home page
 
@@ -14,9 +14,9 @@ The mission page is currently made out of three different sections of content. T
 
 ### News page
 
-The news page is currently not yet merged into the dev branch. It is comprised of the header and footer that are on every page, as well as a custom hero section, and a section with the individual news cards. 
-The custom hero section has no background image, in order to differentiate it from the rest of the website. This is because the client wanted the news page to feel separate. 
-The news page also has no detail pages for the actual articles. This might be a good first step to take to make the page more interactive and also more useful. 
+The news page is currently not yet merged into the dev branch. It is comprised of the header and footer that are on every page, as well as a custom hero section, and a section with the individual news cards.
+The custom hero section has no background image, in order to differentiate it from the rest of the website. This is because the client wanted the news page to feel separate.
+The news page also has no detail pages for the actual articles. This might be a good first step to take to make the page more interactive and also more useful.
 
 ### Scientific page
 
@@ -25,6 +25,7 @@ The scientific page is not yet complete, however it is currently comprised of th
 ### Assignments page
 
 ### Testimonial page
+
 The testimonial page has the testimonials gathered on the page of all the students that worked on the NEBULA project, these testimonials are all pulled from Directus and displayed on this page. This page also has a header and footer visible at all times.
 
 ### Sponsors page
@@ -33,14 +34,14 @@ The sponsors page has not been developed yet. The design can be found [here](htt
 
 ## Points of attention
 
-*any problems that we are running into, what needs* **immediate attention**
+_any problems that we are running into, what needs_ **immediate attention**
 
 - The scientific page is not finished, and should include one or two in-depth paragraphs about the nitty-gritty of the project,
-before showing scientific articles written by the students and workers on the SRON team. 
+  before showing scientific articles written by the students and workers on the SRON team.
 
 ## First steps
 
-*What should the next team start with? what direction should the project go in?*
+_What should the next team start with? what direction should the project go in?_
 
-For the news page, a big first step would be to create detail pages for news articles, and have these link to the current news cards. This could be enhanced with a page transition. 
+For the news page, a big first step would be to create detail pages for news articles, and have these link to the current news cards. This could be enhanced with a page transition.
 Another idea is to implement the pagination that is available on the assignments page, for when there are too many news cards to comfortably show on one page.

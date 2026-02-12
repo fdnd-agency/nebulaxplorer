@@ -2,8 +2,7 @@
 	<title>Partners</title>
 	<meta
 		name="description"
-		content="The partners page features the valued partners and sponsors of the Nebula Xplorer project."
-	/>
+		content="The partners page features the valued partners and sponsors of the Nebula Xplorer project." />
 </svelte:head>
 
 <h1>Welcome to SvelteKit</h1>
