@@ -119,11 +119,15 @@
 	}
 
 	.pillar a {
-		text-align: center;
 		font-size: clamp(1em, 5vw, 1.2em);
 		font-family: var(--heading);
 		width: 100%;
+		height: 100%;
 		background-color: #292e6b;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
 		@media (min-width: 600px) {
 			padding-block-start: 1em;
