@@ -1,5 +1,5 @@
 <script>
-	import PillarsComponent from '$lib/components/Pillars-Component.svelte'
+	import PillarsComponent from '$lib/components/PillarsComponent.svelte'
 	import nebulaSatellite from '$lib/assets/images/nebula-satellite.png?enhanced&w=900;450'
 	import Hero from '$lib/components/molecules/Hero/Hero.svelte'
 	import heroImg from '$lib/assets/images/grav-waves.jpg?enhanced'
