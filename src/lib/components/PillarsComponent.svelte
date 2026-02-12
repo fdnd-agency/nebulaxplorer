@@ -144,7 +144,6 @@
 		@media (min-width: 600px) {
 			img {
 				transform: scale(1.15);
-				transition: 0.3s;
 			}
 		}
 
