@@ -6,5 +6,5 @@ export async function load({ url }) {
 		`${DIRECTUS_NEWS}?sort=-date&limit=${limit}&fields=id,type,title,image`
 	).then((response) => response.json())
 
-	return { newsItems: newsItemsResponse.data }
+	return { newsItems: newsItemsResponse.data ?? [] }
 }
