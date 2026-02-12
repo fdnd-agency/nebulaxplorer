@@ -101,7 +101,6 @@
 			flex-basis: 0;
 
 			flex-direction: column;
-			max-width: 250px;
 		}
 	}
 

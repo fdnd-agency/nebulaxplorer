@@ -49,6 +49,7 @@
 	.section-paragraph-picture {
 		display: grid;
 		gap: 2rem;
+		padding-block: 3rem;
 		padding-inline: clamp(
 			1rem,
 			5vw,
