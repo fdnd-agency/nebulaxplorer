@@ -49,19 +49,14 @@
 	.section-paragraph-picture {
 		display: grid;
 		gap: 2rem;
-		/* padding: 3rem 1rem; */
 		padding-inline: clamp(
 			1rem,
 			5vw,
 			3.5rem
 		); /* TODO: make this the standard padding for sections in general.css */
 
-		/* @media (min-width: 500px) {
-			padding: 3rem 2rem;
-		} */
 
 		@media (min-width: 1000px) {
-			/* padding: 3rem 3rem; */
 			grid-template-columns: 2fr 1fr;
 		}
 
