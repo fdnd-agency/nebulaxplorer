@@ -1,9 +1,9 @@
 <script>
-  import PillarsComponent from "$lib/components/Pillars-Component.svelte";
-	import nebulaSatellite from "$lib/assets/images/nebula-satellite.png?enhanced&w=900;450";
-	import Hero from "$lib/components/molecules/Hero/Hero.svelte";
-	import heroImg from "$lib/assets/images/grav-waves.jpg?enhanced";
-	import logo from "$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg";
+	import PillarsComponent from '$lib/components/Pillars-Component.svelte'
+	import nebulaSatellite from '$lib/assets/images/nebula-satellite.png?enhanced&w=900;450'
+	import Hero from '$lib/components/molecules/Hero/Hero.svelte'
+	import heroImg from '$lib/assets/images/grav-waves.jpg?enhanced'
+	import logo from '$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg'
 </script>
 
 <svelte:head>
@@ -50,7 +50,11 @@
 		display: grid;
 		gap: 2rem;
 		/* padding: 3rem 1rem; */
-		padding-inline: clamp(1rem, 5vw, 3.5rem); /* TODO: make this the standard padding for sections in general.css */
+		padding-inline: clamp(
+			1rem,
+			5vw,
+			3.5rem
+		); /* TODO: make this the standard padding for sections in general.css */
 
 		/* @media (min-width: 500px) {
 			padding: 3rem 2rem;

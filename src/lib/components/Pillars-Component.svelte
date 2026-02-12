@@ -1,147 +1,141 @@
 <script>
-  const dummydata = [
-    {
-      link: "#",
-      image: {
-        src: "/src/lib/assets/images/placeholder1.jpg",
-        alt: "a guy holding a thing",
-      },
-      title: "technology",
-    },
-    {
-      link: "#",
-      image: {
-        src: "/src/lib/assets/images/grav-waves.jpg",
-        alt: "a scientist sciencing",
-      },
-      title: "science",
-    },
+	const dummydata = [
+		{
+			link: '#',
+			image: {
+				src: '/src/lib/assets/images/placeholder1.jpg',
+				alt: 'a guy holding a thing',
+			},
+			title: 'technology',
+		},
+		{
+			link: '#',
+			image: {
+				src: '/src/lib/assets/images/grav-waves.jpg',
+				alt: 'a scientist sciencing',
+			},
+			title: 'science',
+		},
 
-    {
-      link: "#",
-      image: {
-        src: "/src/lib/assets/images/placeholder2.jpg",
-        alt: "a guy holding a thing",
-      },
-      title: "instrumentation",
-    },
-    {
-      link: "#",
-      image: {
-        src: "/src/lib/assets/images/placeholder1.jpg",
-        alt: "a guy holding a thing",
-      },
-      title: "placeholder",
-    },
-    {
-      link: "#",
-      image: {
-        src: "/src/lib/assets/images/placeholder1.jpg",
-        alt: "a guy holding a thing",
-      },
-      title: "lorem ipsum",
-    },
-  ];
+		{
+			link: '#',
+			image: {
+				src: '/src/lib/assets/images/placeholder2.jpg',
+				alt: 'a guy holding a thing',
+			},
+			title: 'instrumentation',
+		},
+		{
+			link: '#',
+			image: {
+				src: '/src/lib/assets/images/placeholder1.jpg',
+				alt: 'a guy holding a thing',
+			},
+			title: 'placeholder',
+		},
+		{
+			link: '#',
+			image: {
+				src: '/src/lib/assets/images/placeholder1.jpg',
+				alt: 'a guy holding a thing',
+			},
+			title: 'lorem ipsum',
+		},
+	]
 </script>
 
 <section>
-  
-<h2 class="section_title">Pillars</h2>
-  <!-- TODO: make the things inside this #each loop into a seperate component partial -->
-  <ul>
-    {#each dummydata as data}
-    <li class="pillar">
-      <img src={data.image.src} alt={data.image.alt} />
+	<h2 class="section_title">Pillars</h2>
+	<!-- TODO: make the things inside this #each loop into a seperate component partial -->
+	<ul>
+		{#each dummydata as data}
+			<li class="pillar">
+				<img src={data.image.src} alt={data.image.alt} />
 
-      <a href={data.link}> {data.title}</a>
-    </li>
-  {/each}
-  </ul>
+				<a href={data.link}> {data.title}</a>
+			</li>
+		{/each}
+	</ul>
 </section>
 
 <style>
-
-section{
+	section {
 		padding-inline: clamp(1rem, 5vw, 3.5rem);
-}
+	}
 
-  ul {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    padding-block-start: 1em;
-    padding-block-end: 1.5em;
+	ul {
+		display: flex;
+		justify-content: center;
+		flex-direction: row;
+		padding-block-start: 1em;
+		padding-block-end: 1.5em;
 
-    @media (width < 600px) {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
+		@media (width < 600px) {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
 
-  .pillar {
-    position: relative;
-    margin: 5px;
+	.pillar {
+		position: relative;
+		margin: 5px;
 
-    display: grid;
-    
-    align-items: center;
-    grid-template-columns: clamp(1em, 30vw, 6.5em) 1fr;
-    width: 100%;
+		display: grid;
 
-    background-color: #292E6B;
+		align-items: center;
+		grid-template-columns: clamp(1em, 30vw, 6.5em) 1fr;
+		width: 100%;
 
-    @media (width > 600px) {
-      display: flex;
-      align-items: center;
+		background-color: #292e6b;
 
-      flex-grow: 1;
-      flex-shrink: 1;
-      flex-basis: 0;
+		@media (width > 600px) {
+			display: flex;
+			align-items: center;
 
-      flex-direction: column;
-      max-width: 250px;
+			flex-grow: 1;
+			flex-shrink: 1;
+			flex-basis: 0;
 
-    }
+			flex-direction: column;
+			max-width: 250px;
+		}
+	}
 
-    
+	.pillar img {
+		width: 100%;
+		height: 100%;
+		aspect-ratio: 1 / 1;
+		object-fit: cover;
 
-  }
+		@media (width > 600px) {
+			max-height: unset;
+			max-width: unset;
+		}
+	}
 
-  .pillar img {
-    width: 100%;
-    height: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
+	.pillar a {
+		text-align: center;
+		font-size: clamp(1em, 5vw, 1.2em);
+		font-family: var(--heading);
 
-    @media (width > 600px) {
-      max-height: unset;
-      max-width: unset;
-    }
-  }
+		@media (width > 600px) {
+			padding-block-start: 1em;
+			padding-block-end: 1em;
+			text-align: start;
+			font-size: unset;
+		}
+	}
 
-  .pillar a {
-    text-align: center;
-    font-size: clamp(1em, 5vw, 1.2em);
-    font-family: var(--heading);
+	.pillar:hover {
+		text-decoration: underline;
+	}
 
-    @media (width > 600px) {
-      padding-block-start: 1em;
-      padding-block-end: 1em;
-      text-align: start;
-      font-size: unset;
-    }
-  }
-
-  .pillar:hover {
-    text-decoration: underline;
-  }
-
-  a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-  }
+	a::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+	}
 </style>
