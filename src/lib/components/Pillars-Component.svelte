@@ -69,13 +69,14 @@
 	ul {
 		display: flex;
 		justify-content: center;
-		flex-direction: row;
+		flex-direction: column;
 		padding-block-start: 1em;
 		padding-block-end: 1.5em;
+		align-items: center;
 
-		@media (width < 600px) {
-			flex-direction: column;
-			align-items: center;
+		@media (width > 600px) {
+			flex-direction: row;
+			align-items: unset;
 		}
 	}
 
@@ -126,6 +127,7 @@
 			padding-block-end: 1em;
 			text-align: start;
 			font-size: unset;
+			text-wrap: nowrap;
 		}
 	}
 
