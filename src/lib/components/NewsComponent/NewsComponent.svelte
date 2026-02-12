@@ -1,25 +1,26 @@
 <script>
+	import placeholder from '$lib/assets/images/placeholder2.jpg'
 	const NewsCards = [
 		{
 			id: 1,
 			title: 'XRISM ziet verrassend trage en dichte wind van neutronenster',
 			type: 'News',
 			slug: '',
-			image: '/src/lib/assets/images/placeholder2.jpg',
+			image: placeholder,
 		},
 		{
 			id: 2,
 			title: 'SRON Open Dagen op 5 en 11 oktober 2025',
 			type: 'Event',
 			slug: '',
-			image: '/src/lib/assets/images/placeholder2.jpg',
+			image: placeholder,
 		},
 		{
 			id: 3,
 			title: 'Nieuw ontwerp verandert glanzend aluminium in een absorber om de eerste sterrenstelsels te observeren',
 			type: 'News',
 			slug: '',
-			image: '/src/lib/assets/images/placeholder2.jpg',
+			image: placeholder,
 		},
 	]
 </script>
@@ -30,7 +31,7 @@
 		{#each NewsCards as newscard}
 			<li class="news-card">
 				<img src={newscard.image} alt="" height="240" width="240" />
-				<h3 class=""><a href={newscard.slug}>{newscard.title}</a></h3>
+				<h3><a href={newscard.slug}>{newscard.title}</a></h3>
 				<p>{newscard.type}</p>
 			</li>
 		{/each}
