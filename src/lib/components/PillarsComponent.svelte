@@ -134,6 +134,7 @@
 			padding-block-end: 1em;
 			font-size: unset;
 			text-wrap: nowrap;
+			height: auto;
 		}
 	}
 
