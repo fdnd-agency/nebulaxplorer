@@ -74,7 +74,7 @@
 		padding-block-end: 1.5em;
 		align-items: center;
 
-		@media (width > 600px) {
+		@media (min-width: 600px) {
 			flex-direction: row;
 			align-items: unset;
 		}
@@ -92,7 +92,7 @@
 
 		background-color: #292e6b;
 
-		@media (width > 600px) {
+		@media (min-width: 600px) {
 			display: flex;
 			align-items: center;
 
@@ -111,7 +111,7 @@
 		aspect-ratio: 1 / 1;
 		object-fit: cover;
 
-		@media (width > 600px) {
+		@media (min-width: 600px) {
 			max-height: unset;
 			max-width: unset;
 		}
@@ -122,7 +122,7 @@
 		font-size: clamp(1em, 5vw, 1.2em);
 		font-family: var(--heading);
 
-		@media (width > 600px) {
+		@media (min-width: 600px) {
 			padding-block-start: 1em;
 			padding-block-end: 1em;
 			text-align: start;
