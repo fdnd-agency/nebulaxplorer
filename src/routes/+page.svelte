@@ -1,9 +1,13 @@
 <script>
-	import PillarsComponent from '$lib/components/PillarsComponent.svelte'
+	// Images
 	import nebulaSatellite from '$lib/assets/images/nebula-satellite.png?enhanced&w=900;450'
-	import Hero from '$lib/components/molecules/Hero/Hero.svelte'
 	import heroImg from '$lib/assets/images/grav-waves.jpg?enhanced'
 	import logo from '$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg'
+
+	// Components
+	import Hero from '$lib/components/molecules/Hero/Hero.svelte'
+	import News from '$lib/components/NewsComponent/NewsComponent.svelte'
+  import PillarsComponent from '$lib/components/PillarsComponent.svelte'
 </script>
 
 <svelte:head>
@@ -18,6 +22,8 @@
 	pageTitle="Nebula Xplorer"
 	background={{ alt: 'Two merging black holes', file: heroImg }}
 	sronIcon={logo} />
+
+<News />
 
 <section class="section-paragraph-picture">
 	<h2 class="section_title">Over Nebula Xplorer</h2>
@@ -42,8 +48,6 @@
 </section>
 
 <PillarsComponent />
-
-<!-- <Mission {data} /> -->
 
 <style>
 	.section-paragraph-picture {
