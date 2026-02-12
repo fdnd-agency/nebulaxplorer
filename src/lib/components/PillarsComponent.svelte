@@ -89,8 +89,7 @@
 		align-items: center;
 		grid-template-columns: clamp(1em, 30vw, 6.5em) 1fr;
 		width: 100%;
-
-		background-color: #292e6b;
+		overflow: hidden;
 
 		@media (min-width: 600px) {
 			display: flex;
@@ -109,6 +108,9 @@
 		height: 100%;
 		aspect-ratio: 1 / 1;
 		object-fit: cover;
+		transition: 0.3s;
+		position: relative;
+		z-index: -1;
 
 		@media (min-width: 600px) {
 			max-height: unset;
@@ -120,18 +122,35 @@
 		text-align: center;
 		font-size: clamp(1em, 5vw, 1.2em);
 		font-family: var(--heading);
+		width: 100%;
+		background-color: #292e6b;
 
 		@media (min-width: 600px) {
 			padding-block-start: 1em;
 			padding-block-end: 1em;
-			text-align: start;
 			font-size: unset;
 			text-wrap: nowrap;
 		}
 	}
 
-	.pillar:hover {
+	.pillar:hover,
+	.pillar:focus-within {
 		text-decoration: underline;
+
+		@media (min-width: 600px) {
+			img {
+				transform: scale(1.15);
+				transition: 0.3s;
+			}
+		}
+
+		a:focus-visible {
+			outline: none;
+		}
+	}
+
+	.pillar:focus-within {
+		outline: 0.125rem dashed var(--cleanroom-140);
 	}
 
 	a::after {
@@ -141,5 +160,6 @@
 		right: 0;
 		top: 0;
 		bottom: 0;
+		z-index: 1;
 	}
 </style>
