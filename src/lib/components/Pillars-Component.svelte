@@ -1,9 +1,12 @@
 <script>
+	import placeholder1 from '$lib/assets/images/placeholder1.jpg'
+	import gravwaves from '$lib/assets/images/grav-waves.jpg'
+	import placeholder2 from '$lib/assets/images/placeholder2.jpg'
 	const dummydata = [
 		{
 			link: '#',
 			image: {
-				src: '/src/lib/assets/images/placeholder1.jpg',
+				src: placeholder1,
 				alt: 'a guy holding a thing',
 			},
 			title: 'technology',
@@ -11,7 +14,7 @@
 		{
 			link: '#',
 			image: {
-				src: '/src/lib/assets/images/grav-waves.jpg',
+				src: gravwaves,
 				alt: 'a scientist sciencing',
 			},
 			title: 'science',
@@ -20,7 +23,7 @@
 		{
 			link: '#',
 			image: {
-				src: '/src/lib/assets/images/placeholder2.jpg',
+				src: placeholder2,
 				alt: 'a guy holding a thing',
 			},
 			title: 'instrumentation',
@@ -28,7 +31,7 @@
 		{
 			link: '#',
 			image: {
-				src: '/src/lib/assets/images/placeholder1.jpg',
+				src: placeholder1,
 				alt: 'a guy holding a thing',
 			},
 			title: 'placeholder',
@@ -36,7 +39,7 @@
 		{
 			link: '#',
 			image: {
-				src: '/src/lib/assets/images/placeholder1.jpg',
+				src: placeholder1,
 				alt: 'a guy holding a thing',
 			},
 			title: 'lorem ipsum',
