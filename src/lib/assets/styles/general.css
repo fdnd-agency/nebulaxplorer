@@ -100,6 +100,9 @@ body {
 	--paragraph: Roboto;
 	--subtext: spaceMonoBold;
 
+	/* Focus outline */
+	--default-focus: 0.125rem dashed var(--cleanroom-140);
+
 	/* Styling */
 	background: var(--space-100);
 	color: var(--white);
