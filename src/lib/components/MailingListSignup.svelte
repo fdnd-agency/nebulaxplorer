@@ -25,10 +25,12 @@
 	}
 
 	div {
-		max-width: 800px;
+		max-width: 1000px;
 		margin-inline: auto;
 		border: 1px solid var(--cleanroom-100);
-		padding: clamp(1rem, 5vw, 2rem);
+		border-radius: 50px 0;
+		padding-block: 2rem;
+		padding-inline: clamp(1rem, 0.25rem + 4vw, 5rem);
 		container-type: inline-size;
 	}
 
