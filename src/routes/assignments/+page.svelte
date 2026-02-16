@@ -1,8 +1,8 @@
 <script>
 	import { Hero } from '$lib'
 	import { Breadcrumb } from '$lib'
-	import AssignmentCards from '$lib/components/molecules/AssigmentCards/AssignmentCards.svelte'
-	import Pagination from '$lib/components/molecules/Pagination/Pagination.svelte'
+	import AssignmentCards from '$lib/components/molecules/AssignmentCards.svelte'
+	import Pagination from '$lib/components/molecules/Pagination.svelte'
 
 	// ! NOTE: important to include ?enhanced, otherwise no optimization takes place nor does it get rendered !
 	import heroImg from '$lib/assets/images/grav-waves.jpg?enhanced&w=1920;1440;1024;768'

@@ -6,7 +6,7 @@
 	import step3Image from '$lib/assets/images/nebula-xplorer.jpg?enhanced&w=1024;768;512'
 	import step4Image from '$lib/assets/images/aerospace-defense-testing-step-4.jpg?enhanced&w=1024;768;512'
 	import step5Image from '$lib/assets/images/rocket-launch-step-5.jpg?enhanced&w=1024;768;512'
-	import Breadcrumb from '$lib/components/molecules/Breadcrumb/Breadcrumb.svelte'
+	import Breadcrumb from '$lib/components/molecules/Breadcrumb.svelte'
 	import logo from '$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg'
 	import heroImg from '$lib/assets/images/grav-waves.jpg?enhanced'
 </script>

@@ -2,8 +2,8 @@
 	import { Hero } from '$lib'
 	import heroImg from '$lib/assets/images/grav-waves.jpg?enhanced'
 	import logo from '$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg'
-	import TestimonialHeader from '$lib/components/molecules/TestimonialHeader/TestimonialHeader.svelte'
-	import Testimonial from '$lib/components/molecules/Testimonial/Testimonial.svelte'
+	import TestimonialHeader from '$lib/components/molecules/TestimonialHeader.svelte'
+	import Testimonial from '$lib/components/molecules/Testimonial.svelte'
 
 	let { data } = $props()
 </script>
