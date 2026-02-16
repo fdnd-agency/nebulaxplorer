@@ -114,7 +114,7 @@
 
 	.link-readmore {
 		display: block;
-		padding-block: 1rem 1rem;
+		padding-block: 1rem;
 		padding-inline: 1rem;
 		margin-block: 2rem 0;
 		margin-inline: auto;
