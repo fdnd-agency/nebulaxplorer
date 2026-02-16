@@ -45,7 +45,7 @@
 	</ul>
 	<div class="contents">
 		<img src={SRON_Academy_OnSpaceBlue} alt="SRON Academy logo" class="footerImg SronAcademyLogo"/>
-		<div class="line"></div>
+		<div class="line"></div> <!-- this is a seperate element because what is supposed to be above and below this line changes with viewport width. If we can give a css grid line a border i would prefer that i think. But i', mot sure if that's even posible. This works fine -->
 			<nav>
 				<ul class="link">
 					{#each navItems as { path, label }}
@@ -56,25 +56,22 @@
 					<li><a href="/">privacy</a></li>
 				</ul>
 			</nav>
-		<div class="additional">
+
 			
-			<div class="socials">
-				<img src={SRON_full_white} alt="SRON full white logo" class="footerImg SronLogo"/>
-				<div class="group">
-					<a href="/">
-						<LinkedinIcon />
-						<span class="visually-hidden">Linkedin profile</span>
-					</a>
-					<a href="/">
-						<InstagramIcon />
-						<span class="visually-hidden">Instagram profile</span>
-					</a>
-					<a href="/">
-						<BskyIcon />
-						<span class="visually-hidden">Bluesky profile</span>
-					</a>
-				</div>
-			</div>
+		<img src={SRON_full_white} alt="SRON full white logo" class="footerImg SronLogo"/>
+		<div class="socials">
+				<a href="/">
+					<LinkedinIcon />
+					<span class="visually-hidden">Linkedin profile</span>
+				</a>
+				<a href="/">
+					<InstagramIcon />
+					<span class="visually-hidden">Instagram profile</span>
+				</a>
+				<a href="/">
+					<BskyIcon />
+					<span class="visually-hidden">Bluesky profile</span>
+				</a>
 		</div>
 	</div>
 	<p class="footnote supporting">What happens up there, starts down here.</p>
@@ -252,6 +249,7 @@
 			background: var(--space-100);
 			padding: 2.25rem 1.5rem;
 			display: grid;
+			gap: 2rem;
 			grid-template-areas: 
 			"academy"
 			"line"
@@ -259,9 +257,17 @@
 			"sron"
 			"socials"
 			;
-			gap: 2rem;
-			/* flex-wrap: wrap; */
-			/* justify-content: space-between;	 */
+			
+			@media(min-width: 700px){
+				grid-template-areas: 
+				"academy academy sron sron"
+				"line line line line"
+				"nav nav nav socials"
+				;
+
+				gap: 0;
+			}
+			
 		} 
 
 		.SronAcademyLogo{
@@ -279,8 +285,7 @@
 		
 
 		.footerImg {
-				width: 100%;
-				max-width: 20rem;
+				width: 20rem;
 				margin-bottom: 1.5rem;
 			}
 
@@ -291,10 +296,12 @@
 				padding-top: 0.75rem;
 				width: inherit;
 				background: unset;
-				/* max-height: calc(5.5em + 0.75rem + (4 * 0.5rem)); maybe useful for desktop? */
 				
 				display: flex;
 				flex-direction: column;
+				@media(min-width: 600px){
+					flex-direction: row;
+				}
 				flex-wrap: wrap;
 				gap: 0.5rem 2rem;
 
@@ -343,86 +350,56 @@
 		flex-direction: column;
 		gap: 4rem;
 		max-width: 400px;
+
+		position: relative;
+		max-width: 25rem;
 		width: 100%;
 
-		form {
-			position: relative;
-			max-width: 25rem;
-			width: 100%;
+		label {
+			display: block;
 
-			label {
-				display: block;
+			input {
+				border: 1px solid var(--white);
+				border-right: unset;
+				height: 2.5rem;
+				padding: 16px 8px;
+				margin-top: 1.5rem;
+				background: linear-gradient(
+					to right,
+					var(--space-100) 90%,
+					var(--space-160)
+				);
+				background-size: 200% 100%;
+				background-position: 100% 0%;
+				width: 90%;
 
-				input {
-					border: 1px solid var(--white);
-					border-right: unset;
-					height: 2.5rem;
-					padding: 16px 8px;
-					margin-top: 1.5rem;
-					background: linear-gradient(
-						to right,
-						var(--space-100) 90%,
-						var(--space-160)
-					);
-					background-size: 200% 100%;
-					background-position: 100% 0%;
-					width: 90%;
-
-					transition: background-position 0.75s ease;
-				}
-			}
-/* 
-			button {
-				cursor: pointer;
-				position: absolute;
-				bottom: 0;
-				right: 0;
-				width: 2.5rem;
-				aspect-ratio: 1;
-				color: var(--space-100);
-				display: grid;
-				place-content: center;
-			}
-
-			input:focus-visible,
-			button:focus-visible {
-				outline-offset: -0.125rem;
-				outline-style: solid;
-				outline-width: 0.125rem;
-				outline-color: var(--cleanroom-100);
-				background-position: 0% 0%;
-			} */
-		}
-
-		.socials {
-			grid-area: socials;
-			display: flex;
-			flex-direction: column;
-			gap: 1rem;
-
-			.group {
-				grid-row: 2;
-				grid-column: span 2;
-				/* border-top: 0.1875rem solid var(--white); not sure if we'll keep this for the desktop nav */
-				display: flex;
-				flex-direction: row;
-				padding-top: 1rem;
-				gap: 1rem;
-
-				> * {
-					display: grid;
-					place-content: center;
-
-					&:focus-visible {
-						outline-offset: 0.25rem;
-						outline-style: dashed;
-						outline-width: 0.125rem;
-						outline-color: var(--cleanroom-100);
-					}
-				}
+				transition: background-position 0.75s ease;
 			}
 		}
 	}
+
+	.socials {			
+		grid-area: socials;
+		display: flex;
+		justify-content: space-evenly;
+		flex-direction: row;
+		padding-top: 1rem;
+		gap: 1rem;
+		margin-inline-start: 1em;
+		max-width: 150px;
+
+
+		/* &:focus-visible {
+			outline-offset: 0.25rem;
+			outline-style: dashed;
+			outline-width: 0.125rem;
+			outline-color: var(--cleanroom-100);
+			not sure if this is still useful..
+		} */
+		
+	}
+	
+	
 
 	.footnote {
 		background: var(--cleanroom-100);
