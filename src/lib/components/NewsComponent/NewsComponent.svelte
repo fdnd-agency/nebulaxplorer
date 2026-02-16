@@ -1,37 +1,22 @@
 <script>
-	import placeholder from '$lib/assets/images/placeholder2.jpg'
-	const NewsCards = [
-		{
-			id: 1,
-			title: 'XRISM ziet verrassend trage en dichte wind van neutronenster',
-			type: 'News',
-			slug: '',
-			image: placeholder,
-		},
-		{
-			id: 2,
-			title: 'SRON Open Dagen op 5 en 11 oktober 2025',
-			type: 'Event',
-			slug: '',
-			image: placeholder,
-		},
-		{
-			id: 3,
-			title: 'Nieuw ontwerp verandert glanzend aluminium in een absorber om de eerste sterrenstelsels te observeren',
-			type: 'News',
-			slug: '',
-			image: placeholder,
-		},
-	]
+	import defaultImage from '$lib/assets/images/nebula-satellite.png'
+
+	let { newsCards } = $props()
 </script>
 
 <section>
 	<h2 class="section_title news_section_title">News, blogs & events</h2>
 	<ul class="news-grid">
-		{#each NewsCards as newscard}
+		{#each newsCards as newscard}
 			<li class="news-card">
-				<img src={newscard.image} alt="" height="240" width="240" />
-				<h3><a href={newscard.slug}>{newscard.title}</a></h3>
+				<img
+					src={newscard.image
+						? `https://fdnd-agency.directus.app/assets/${newscard.image}`
+						: defaultImage}
+					alt=""
+					height="240"
+					width="240" />
+				<h3><a href={`/news/${newscard.id}`}>{newscard.title}</a></h3>
 				<p>{newscard.type}</p>
 			</li>
 		{/each}
