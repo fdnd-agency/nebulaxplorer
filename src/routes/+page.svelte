@@ -9,6 +9,8 @@
 	import News from '$lib/components/NewsComponent/NewsComponent.svelte'
 	import PillarsComponent from '$lib/components/PillarsComponent.svelte'
 	import MailingListSignup from '$lib/components/MailingListSignup.svelte'
+
+	let { data } = $props()
 </script>
 
 <svelte:head>
@@ -24,7 +26,7 @@
 	background={{ alt: 'Two merging black holes', file: heroImg }}
 	sronIcon={logo} />
 
-<News />
+<News newsCards={data.newsItems} />
 
 <section class="section-paragraph-picture">
 	<h2 class="section_title">Over Nebula Xplorer</h2>
