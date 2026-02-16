@@ -50,7 +50,6 @@
 	.news-card {
 		position: relative;
 		background-color: var(--white);
-		border-radius: 0.2rem;
 		box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
 		transition:
 			transform 0.3s ease,
@@ -65,6 +64,8 @@
 		&:focus-within {
 			transform: translateY(-0.5rem);
 			box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+			outline: var(--default-focus);
+			outline-offset: 12px;
 		}
 	}
 
@@ -88,6 +89,10 @@
 		padding-block: 1rem;
 		padding-inline: clamp(0.75rem, 0.25rem + 1.1vw, 1rem);
 
+		a {
+			outline: none;
+		}
+
 		a::after {
 			content: '';
 			position: absolute;
@@ -109,8 +114,12 @@
 
 	.link-readmore {
 		display: block;
-		width: 100%;
-		padding-block: 2rem 1rem;
+		padding-block: 1rem;
+		padding-inline: 1rem;
+		margin-block: 2rem 0;
+		margin-inline: auto;
+		width: max-content;
+
 		font-family: var(--paragraph);
 		font-weight: 500;
 		text-align: center;
