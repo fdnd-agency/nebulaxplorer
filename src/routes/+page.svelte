@@ -5,10 +5,10 @@
 	import logo from '$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg'
 
 	// Components
-	import Hero from '$lib/components/molecules/Hero/Hero.svelte'
-	import News from '$lib/components/NewsComponent/NewsComponent.svelte'
-	import PillarsComponent from '$lib/components/PillarsComponent.svelte'
-	import MailingListSignup from '$lib/components/MailingListSignup.svelte'
+	import Hero from '$lib/components/organisms/Hero.svelte'
+	import News from '$lib/components/organisms/NewsComponent.svelte'
+	import PillarsComponent from '$lib/components/organisms/PillarsComponent.svelte'
+	import MailingListSignup from '$lib/components/molecules/MailingListSignup.svelte'
 
 	let { data } = $props()
 </script>
