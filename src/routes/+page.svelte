@@ -8,6 +8,7 @@
 	import Hero from '$lib/components/molecules/Hero/Hero.svelte'
 	import News from '$lib/components/NewsComponent/NewsComponent.svelte'
 	import PillarsComponent from '$lib/components/PillarsComponent.svelte'
+	import MailingListSignup from '$lib/components/MailingListSignup.svelte'
 
 	let { data } = $props()
 </script>
@@ -50,6 +51,8 @@
 </section>
 
 <PillarsComponent />
+
+<MailingListSignup />
 
 <style>
 	.section-paragraph-picture {
