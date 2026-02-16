@@ -93,13 +93,13 @@
 			background-color 0.2s,
 			color 0.2s;
 
-		&:focus {
+		&:focus-visible {
 			outline: var(--default-focus);
 			outline-offset: 4px;
 		}
 
 		&:hover,
-		&:focus {
+		&:focus-visible {
 			background-color: transparent;
 			color: white;
 			border-left: 1px solid white;
