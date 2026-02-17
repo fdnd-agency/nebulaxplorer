@@ -29,6 +29,7 @@ export { default as LinkedIn } from './assets/logos/Linkedin.svelte'
 export { default as PageArrow } from './assets/logos/PageArrow.svelte'
 
 // Logo SVGs
+export { default as favIcon } from './assets/logos/favicon.svg'
 export { default as sronAcademyLogoOnOrange } from './assets/logos/SRON_Academy_OnOrange.svg'
 export { default as sronAcademyLogoOnSpaceBlue } from './assets/logos/SRON_Academy_OnSpaceBlue.svg'
 export { default as sronAcademyLogoOnWhite } from './assets/logos/SRON_Academy_OnWhite.svg'
