@@ -1,7 +1,6 @@
 <script>
 	import { page } from '$app/state'
-	import Arrow from '$lib/assets/logos/Arrow.svelte'
-	import './pagination.css'
+	import { Arrow } from '$lib'
 
 	const { pagination, contrast = 'white-on-space' } = $props()
 
