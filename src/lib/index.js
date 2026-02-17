@@ -42,6 +42,7 @@ export { default as sronLogoSmallWhite } from './assets/logos/SRON_Small_White.s
 
 // Images
 export { default as aeroDefenseTestingStep4 } from './assets/images/aerospace-defense-testing-step-4.jpg'
+export { default as blackhole } from './assets/images/blackhole.jpg'
 export { default as blackhole2 } from './assets/images/blackhole2.jpg'
 export { default as blackhole2Webp } from './assets/images/blackhole2.webp'
 export { default as diagram } from './assets/images/diagram-2025-11-02-190342.png'
@@ -62,8 +63,9 @@ export { default as sronReviewStep1 } from './assets/images/sron-review-step-1.j
 export { default as werkenbijSRON } from './assets/images/WerkenbijSRON.jpg'
 
 // Enhanced Images
+export { default as blackholeEnhanced } from './assets/images/blackhole.jpg?enhanced'
 export { default as nebulaSatelliteEnhanced } from './assets/images/nebula-satellite.png?enhanced'
-export { default as gravWavesEnhanced } from './assets/images/grav-waves.jpg?enhanced'
+export { default as gravWavesEnhanced } from './assets/images/grav-waves.jpg?enhanced&w=1920;1440;1024;768'
 
 // UTILITIES
 // Utils
