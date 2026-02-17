@@ -45,7 +45,6 @@ export { default as aeroDefenseTestingStep4 } from './assets/images/aerospace-de
 export { default as blackhole } from './assets/images/blackhole.jpg'
 export { default as blackhole2 } from './assets/images/blackhole2.jpg'
 export { default as blackhole2Webp } from './assets/images/blackhole2.webp'
-export { default as diagram } from './assets/images/diagram-2025-11-02-190342.png'
 export { default as gravWaves } from './assets/images/grav-waves.jpg'
 export { default as mertenImage } from './assets/images/merten.jpg'
 export { default as missionImage } from './assets/images/mission.jpg'
