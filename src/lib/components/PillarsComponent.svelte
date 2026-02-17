@@ -73,6 +73,7 @@
 		padding-block-start: 1em;
 		padding-block-end: 1.5em;
 		align-items: center;
+		list-style: none;
 
 		@media (min-width: 600px) {
 			flex-direction: row;
