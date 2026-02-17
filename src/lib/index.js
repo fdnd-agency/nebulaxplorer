@@ -57,8 +57,8 @@ export { default as placeholder2 } from './assets/images/placeholder2.jpg'
 export { default as rapidStep2 } from './assets/images/Rapid-step-2.jpg'
 export { default as rocketLaunchStep5 } from './assets/images/rocket-launch-step-5.jpg'
 export { default as rushilImage } from './assets/images/rushil.jpg'
-export { default as sronGroningen } from './assets/images/sron-groningen.webp?enhanced'
-export { default as sronLeiden } from './assets/images/sron-leiden.webp?enhanced'
+export { default as sronGroningen } from './assets/images/sron-groningen.webp'
+export { default as sronLeiden } from './assets/images/sron-leiden.webp'
 export { default as sronReviewStep1 } from './assets/images/sron-review-step-1.jpg'
 export { default as werkenbijSRON } from './assets/images/WerkenbijSRON.jpg'
 
@@ -71,6 +71,8 @@ export { default as rapidStep2Enhanced } from './assets/images/Rapid-step-2.jpg?
 export { default as nebulaXplorerEnhanced } from './assets/images/nebula-xplorer.jpg?enhanced&w=1024;768;512'
 export { default as aeroDefenseTestingStep4Enhanced } from './assets/images/aerospace-defense-testing-step-4.jpg?enhanced&w=1024;768;512'
 export { default as rocketLaunchStep5Enhanced } from './assets/images/rocket-launch-step-5.jpg?enhanced&w=1024;768;512'
+export { default as sronGroningenEnhanced } from './assets/images/sron-groningen.webp?enhanced'
+export { default as sronLeidenEnhanced } from './assets/images/sron-leiden.webp?enhanced'
 
 // UTILITIES
 // Utils
