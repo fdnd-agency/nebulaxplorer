@@ -66,6 +66,11 @@ export { default as werkenbijSRON } from './assets/images/WerkenbijSRON.jpg'
 export { default as blackholeEnhanced } from './assets/images/blackhole.jpg?enhanced'
 export { default as nebulaSatelliteEnhanced } from './assets/images/nebula-satellite.png?enhanced'
 export { default as gravWavesEnhanced } from './assets/images/grav-waves.jpg?enhanced&w=1920;1440;1024;768'
+export { default as sronReviewStep1Enhanced } from './assets/images/sron-review-step-1.jpg?enhanced&w=1024;768;512'
+export { default as rapidStep2Enhanced } from './assets/images/Rapid-step-2.jpg?enhanced&w=1024;768;512'
+export { default as nebulaXplorerEnhanced } from './assets/images/nebula-xplorer.jpg?enhanced&w=1024;768;512'
+export { default as aeroDefenseTestingStep4Enhanced } from './assets/images/aerospace-defense-testing-step-4.jpg?enhanced&w=1024;768;512'
+export { default as rocketLaunchStep5Enhanced } from './assets/images/rocket-launch-step-5.jpg?enhanced&w=1024;768;512'
 
 // UTILITIES
 // Utils
