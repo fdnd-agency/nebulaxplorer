@@ -397,15 +397,6 @@
 			width: 120px;
 			
 		}
-
-
-		/* &:focus-visible {
-			outline-offset: 0.25rem;
-			outline-style: dashed;
-			outline-width: 0.125rem;
-			outline-color: var(--cleanroom-100);
-			not sure if this is still useful..
-		} */
 		
 	}
 	
@@ -417,18 +408,5 @@
 		text-align: center;
 		display: block;
 		padding: 0 2.25rem;
-	}
-
-
-	.visually-hidden {
-		position: absolute;
-		width: 1px;
-		height: 1px;
-		padding: 0;
-		margin: -1px;
-		overflow: hidden;
-		clip: rect(0, 0, 0, 0);
-		white-space: nowrap;
-		border: 0;
 	}
 </style>

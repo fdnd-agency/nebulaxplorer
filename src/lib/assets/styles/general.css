@@ -100,6 +100,9 @@ body {
 	--paragraph: Roboto;
 	--subtext: spaceMonoBold;
 
+	/* Focus outline */
+	--default-focus: 0.125rem dashed var(--cleanroom-140);
+
 	/* Styling */
 	background: var(--space-100);
 	color: var(--white);
@@ -225,5 +228,17 @@ h6 {
 }
 
 a:focus-visible {
-	outline: 0.125rem dashed var(--cleanroom-140);
+	outline: var(--default-focus);
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
 }

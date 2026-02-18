@@ -2,6 +2,7 @@
  */
 header.main-navigation {
 	font-family: SpaceGrotesk;
+	text-transform: capitalize;
 	display: flex;
 	background: transparent;
 	justify-content: flex-end;
