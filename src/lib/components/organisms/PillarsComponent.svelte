@@ -1,7 +1,6 @@
 <script>
-	import placeholder1 from '$lib/assets/images/placeholder1.jpg'
-	import gravwaves from '$lib/assets/images/grav-waves.jpg'
-	import placeholder2 from '$lib/assets/images/placeholder2.jpg'
+	import { placeholder1, gravWaves as gravwaves, placeholder2 } from '$lib'
+
 	const dummydata = [
 		{
 			link: '#',

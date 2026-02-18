@@ -1,12 +1,12 @@
 <script>
-	import { Hero } from '$lib'
-	import { Breadcrumb } from '$lib'
-	import AssignmentCards from '$lib/components/molecules/AssigmentCards/AssignmentCards.svelte'
-	import Pagination from '$lib/components/molecules/Pagination/Pagination.svelte'
-
-	// ! NOTE: important to include ?enhanced, otherwise no optimization takes place nor does it get rendered !
-	import heroImg from '$lib/assets/images/grav-waves.jpg?enhanced&w=1920;1440;1024;768'
-	import logo from '$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg'
+	import {
+		Hero,
+		Breadcrumb,
+		AssignmentCards,
+		Pagination,
+		gravWavesEnhanced as heroImg,
+		sronAcademyLogoOnSpaceBlue as logo,
+	} from '$lib'
 
 	const { data } = $props()
 	const { vacancies, pagination } = $derived(data)

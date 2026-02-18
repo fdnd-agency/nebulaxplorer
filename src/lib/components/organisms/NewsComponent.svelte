@@ -1,5 +1,5 @@
 <script>
-	import defaultImage from '$lib/assets/images/nebula-satellite.png'
+	import { nebulaSatellite as defaultImage } from '$lib'
 
 	let { newsCards } = $props()
 </script>
