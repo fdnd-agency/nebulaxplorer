@@ -1,7 +1,7 @@
 <script>
 	import {
-		sronLeiden as leidenImg,
-		sronGroningen as groningenImg,
+		sronLeidenEnhanced as leidenImg,
+		sronGroningenEnhanced as groningenImg,
 		sronAcademyLogoOnSpaceBlue as SRON_Academy_OnSpaceBlue,
 		sronLogoFullWhite as SRON_full_white,
 		nwoIcon as NwoIcon,
