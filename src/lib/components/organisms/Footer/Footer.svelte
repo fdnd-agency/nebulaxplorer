@@ -49,7 +49,7 @@
 			alt="SRON Academy logo"
 			class="footerImg SronAcademyLogo" />
 		<div class="line"></div>
-		<!-- this is a seperate element because what is supposed to be above and below this line changes with viewport width. If we can give a css grid line a border i would prefer that i think. But i', mot sure if that's even posible. This works fine -->
+		<!-- this is a seperate element because what is supposed to be above and below this line changes with viewport width. If we can give a css grid line a border I would prefer that I think. But I'm, not sure if that's even posible. This works fine though. -->
 		<nav>
 			<ul class="link">
 				{#each navItems as { path, label }}
