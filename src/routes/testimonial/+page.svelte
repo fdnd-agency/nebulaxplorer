@@ -1,9 +1,11 @@
 <script>
-	import { Hero } from '$lib'
-	import heroImg from '$lib/assets/images/grav-waves.jpg?enhanced'
-	import logo from '$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg'
-	import TestimonialHeader from '$lib/components/molecules/TestimonialHeader/TestimonialHeader.svelte'
-	import Testimonial from '$lib/components/molecules/Testimonial/Testimonial.svelte'
+	import {
+		Hero,
+		gravWavesEnhanced as heroImg,
+		sronAcademyLogoOnSpaceBlue as logo,
+		TestimonialHeader,
+		Testimonial,
+	} from '$lib'
 
 	let { data } = $props()
 </script>

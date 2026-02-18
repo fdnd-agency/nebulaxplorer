@@ -1,11 +1,9 @@
 <script>
 	import { page } from '$app/stores'
-	import { Footer } from '$lib'
-	import favicon from '$lib/assets/logos/favicon.svg'
-	import PageArrow from '$lib/assets/logos/PageArrow.svelte'
+	import { onNavigate } from '$app/navigation'
+	import { Footer, favIcon as favicon, PageArrow } from '$lib'
 	import '$lib/assets/styles/general.css'
 	import '$lib/assets/styles/layout.css'
-	import { onNavigate } from '$app/navigation'
 
 	let expanded = $state(false)
 
