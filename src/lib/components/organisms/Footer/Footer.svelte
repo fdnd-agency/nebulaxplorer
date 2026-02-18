@@ -59,20 +59,26 @@
 
 			
 		<img src={SRON_full_white} alt="SRON full white logo" class="footerImg SronLogo"/>
-		<div class="socials">
-				<a href="/">
-					<LinkedinIcon />
-					<span class="visually-hidden">Linkedin profile</span>
-				</a>
-				<a href="/">
-					<InstagramIcon />
-					<span class="visually-hidden">Instagram profile</span>
-				</a>
-				<a href="/">
-					<BskyIcon />
-					<span class="visually-hidden">Bluesky profile</span>
-				</a>
-		</div>
+		<ul class="socials">
+				<li>
+					<a href="/">
+						<LinkedinIcon />
+						<span class="visually-hidden">Linkedin profile</span>
+					</a>
+				</li>
+				<li>
+					<a href="/">
+						<InstagramIcon />
+						<span class="visually-hidden">Instagram profile</span>
+					</a>
+				</li>
+				<li>
+					<a href="/">
+						<BskyIcon />
+						<span class="visually-hidden">Bluesky profile</span>
+					</a>
+			</li>
+		</ul>
 	</div>
 	<p class="footnote supporting">What happens up there, starts down here.</p>
 </footer>
@@ -89,7 +95,11 @@
 			list-style: none;
 			padding: 0;
 			display: flex;
+			flex-direction: column;
+
+			@media (min-width: 600px){
 				flex-direction: row;
+			}
 
 			&.locations {
 				gap: 1.5rem;
@@ -292,7 +302,7 @@
 		.footerImg {
 				width: 20rem;
 				max-width: 95%;
-				margin-block: 0.7rem;		
+				margin-block: 1.5rem;		
 			}
 
 		nav {
