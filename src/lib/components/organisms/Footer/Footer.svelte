@@ -44,39 +44,45 @@
 		</li>
 	</ul>
 	<div class="contents">
-		<img src={SRON_Academy_OnSpaceBlue} alt="SRON Academy logo" class="footerImg SronAcademyLogo"/>
-		<div class="line"></div> <!-- this is a seperate element because what is supposed to be above and below this line changes with viewport width. If we can give a css grid line a border i would prefer that i think. But i', mot sure if that's even posible. This works fine -->
-			<nav>
-				<ul class="link">
-					{#each navItems as { path, label }}
-						<li>
-							<a href={path}>{label}</a>
-						</li>
-					{/each}
-					<li><a href="/">privacy</a></li>
-				</ul>
-			</nav>
+		<img
+			src={SRON_Academy_OnSpaceBlue}
+			alt="SRON Academy logo"
+			class="footerImg SronAcademyLogo" />
+		<div class="line"></div>
+		<!-- this is a seperate element because what is supposed to be above and below this line changes with viewport width. If we can give a css grid line a border i would prefer that i think. But i', mot sure if that's even posible. This works fine -->
+		<nav>
+			<ul class="link">
+				{#each navItems as { path, label }}
+					<li>
+						<a href={path}>{label}</a>
+					</li>
+				{/each}
+				<li><a href="/">privacy</a></li>
+			</ul>
+		</nav>
 
-			
-		<img src={SRON_full_white} alt="SRON full white logo" class="footerImg SronLogo"/>
+		<img
+			src={SRON_full_white}
+			alt="SRON full white logo"
+			class="footerImg SronLogo" />
 		<ul class="socials">
-				<li>
-					<a href="/">
-						<LinkedinIcon />
-						<span class="visually-hidden">Linkedin profile</span>
-					</a>
-				</li>
-				<li>
-					<a href="/">
-						<InstagramIcon />
-						<span class="visually-hidden">Instagram profile</span>
-					</a>
-				</li>
-				<li>
-					<a href="/">
-						<BskyIcon />
-						<span class="visually-hidden">Bluesky profile</span>
-					</a>
+			<li>
+				<a href="/">
+					<LinkedinIcon />
+					<span class="visually-hidden">Linkedin profile</span>
+				</a>
+			</li>
+			<li>
+				<a href="/">
+					<InstagramIcon />
+					<span class="visually-hidden">Instagram profile</span>
+				</a>
+			</li>
+			<li>
+				<a href="/">
+					<BskyIcon />
+					<span class="visually-hidden">Bluesky profile</span>
+				</a>
 			</li>
 		</ul>
 	</div>
@@ -97,7 +103,7 @@
 			display: flex;
 			flex-direction: column;
 
-			@media (min-width: 600px){
+			@media (min-width: 600px) {
 				flex-direction: row;
 			}
 
@@ -261,49 +267,45 @@
 			display: grid;
 			align-items: center;
 			gap: 1rem;
-			grid-template-areas: 
-			"academy"
-			"line"
-			"nav"
-			"sron"
-			"socials"
-			;
-			
-			@media(min-width: 700px){
-				grid-template-areas: 
-				"academy academy sron sron"
-				"line line line line"
-				"nav nav nav socials"
-				;
+			grid-template-areas:
+				'academy'
+				'line'
+				'nav'
+				'sron'
+				'socials';
+
+			@media (min-width: 700px) {
+				grid-template-areas:
+					'academy academy sron sron'
+					'line line line line'
+					'nav nav nav socials';
 
 				gap: 0;
 			}
-			
-		} 
+		}
 
-		.SronAcademyLogo{
+		.SronAcademyLogo {
 			grid-area: academy;
 		}
 
-		.SronLogo{
+		.SronLogo {
 			grid-area: sron;
 
-			@media(min-width: 700px){
+			@media (min-width: 700px) {
 				justify-self: right;
 			}
 		}
 
-		.line{
-		grid-area: line;
-		border-top: 0.1875rem solid var(--white);
+		.line {
+			grid-area: line;
+			border-top: 0.1875rem solid var(--white);
 		}
-		
 
 		.footerImg {
-				width: 20rem;
-				max-width: 95%;
-				margin-block: 1.5rem;		
-			}
+			width: 20rem;
+			max-width: 95%;
+			margin-block: 1.5rem;
+		}
 
 		nav {
 			grid-area: nav;
@@ -312,10 +314,10 @@
 				padding-top: 0.75rem;
 				width: inherit;
 				background: unset;
-				
+
 				display: flex;
 				flex-direction: column;
-				@media(min-width: 600px){
+				@media (min-width: 600px) {
 					flex-direction: row;
 				}
 				flex-wrap: wrap;
@@ -394,7 +396,7 @@
 		}
 	}
 
-	.socials {			
+	.socials {
 		grid-area: socials;
 		display: flex;
 		justify-content: space-between;
@@ -402,15 +404,11 @@
 		padding-top: 1rem;
 		max-width: 120px;
 
-		@media(min-width: 700px){
-			justify-self: end;		
+		@media (min-width: 700px) {
+			justify-self: end;
 			width: 120px;
-			
 		}
-		
 	}
-	
-	
 
 	.footnote {
 		background: var(--cleanroom-100);
