@@ -107,11 +107,11 @@
 <style>
 	/* default reduced-motion friendly transition */
 	:root::view-transition-old(root) {
-		animation: 0.2s ease both fade-out;
+		animation: 1ms ease both fade-out;
 	}
 
 	:root::view-transition-new(root) {
-		animation: 0.4s ease 0.2s both fade-in;
+		animation: 1ms ease 0.2s both fade-in;
 	}
 
 	@media (prefers-reduced-motion: no-preference) {
