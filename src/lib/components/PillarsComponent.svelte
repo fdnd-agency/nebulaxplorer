@@ -142,7 +142,7 @@
 	.pillar:focus-within {
 		text-decoration: underline;
 
-		@media (min-width: 600px) {
+		@media (min-width: 600px) and (prefers-reduced-motion: no-preference) {
 			img {
 				transform: scale(1.15);
 			}
