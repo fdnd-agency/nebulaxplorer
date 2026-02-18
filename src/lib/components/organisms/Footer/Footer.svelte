@@ -249,7 +249,8 @@
 			background: var(--space-100);
 			padding: 2.25rem 1.5rem;
 			display: grid;
-			gap: 2rem;
+			align-items: center;
+			gap: 1rem;
 			grid-template-areas: 
 			"academy"
 			"line"
@@ -276,6 +277,10 @@
 
 		.SronLogo{
 			grid-area: sron;
+
+			@media(min-width: 700px){
+				justify-self: right;
+			}
 		}
 
 		.line{
@@ -286,7 +291,8 @@
 
 		.footerImg {
 				width: 20rem;
-				margin-bottom: 1.5rem;
+				max-width: 95%;
+				margin-block: 0.7rem;		
 			}
 
 		nav {
@@ -381,12 +387,16 @@
 	.socials {			
 		grid-area: socials;
 		display: flex;
-		justify-content: space-evenly;
+		justify-content: space-between;
 		flex-direction: row;
 		padding-top: 1rem;
-		gap: 1rem;
-		margin-inline-start: 1em;
-		max-width: 150px;
+		max-width: 120px;
+
+		@media(min-width: 700px){
+			justify-self: end;		
+			width: 120px;
+			
+		}
 
 
 		/* &:focus-visible {
