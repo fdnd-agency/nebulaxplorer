@@ -134,10 +134,17 @@
 		text-align: center;
 		text-transform: uppercase;
 		color: var(--cleanroom-100);
-		transition: transform 0.3s ease;
 
 		&:hover {
-			transform: translateY(-0.5rem);
+			text-decoration: underline 1px;
+		}
+
+		@media (prefers-reduced-motion: no-preference) {
+			transition: transform 0.3s ease;
+
+			&:hover {
+				transform: translateY(-0.5rem);
+			}
 		}
 	}
 </style>
