@@ -56,16 +56,25 @@
 			box-shadow 0.3s ease;
 		align-self: start;
 
-		&:hover {
-			transform: translateY(-0.5rem);
+		&:hover,
+		&:focus-within {
 			box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+
+			a {
+				text-decoration: underline 1px;
+			}
 		}
 
 		&:focus-within {
-			transform: translateY(-0.5rem);
-			box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
 			outline: var(--default-focus);
 			outline-offset: 12px;
+		}
+
+		@media (prefers-reduced-motion: no-preference) {
+			&:hover,
+			&:focus-within {
+				transform: translateY(-0.5rem);
+			}
 		}
 	}
 
