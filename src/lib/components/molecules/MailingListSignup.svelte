@@ -12,6 +12,7 @@
 					id="email"
 					name="email"
 					placeholder="Enter your email address..."
+					autocomplete="email"
 					required />
 			</label>
 			<button type="submit">Subscribe</button>
