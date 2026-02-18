@@ -308,7 +308,7 @@
 		.footerImg {
 			width: 20rem;
 			max-width: 95%;
-			margin-block: 1.5rem;
+			margin-block-end: 1.5rem;
 		}
 
 		nav {
