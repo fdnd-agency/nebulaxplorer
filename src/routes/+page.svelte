@@ -1,14 +1,13 @@
 <script>
-	// Images
-	import nebulaSatellite from '$lib/assets/images/nebula-satellite.png?enhanced&w=900;450'
-	import heroImg from '$lib/assets/images/grav-waves.jpg?enhanced'
-	import logo from '$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg'
-
-	// Components
-	import Hero from '$lib/components/molecules/Hero/Hero.svelte'
-	import News from '$lib/components/NewsComponent/NewsComponent.svelte'
-	import PillarsComponent from '$lib/components/PillarsComponent.svelte'
-	import MailingListSignup from '$lib/components/MailingListSignup.svelte'
+	import {
+		Hero,
+		NewsComponent as News,
+		PillarsComponent,
+		MailingListSignup,
+		nebulaSatelliteEnhanced,
+		gravWavesEnhanced as heroImg,
+		sronAcademyLogoOnSpaceBlue as logo,
+	} from '$lib'
 
 	let { data } = $props()
 </script>
@@ -45,7 +44,7 @@
 		ontwerpers en technici voor het Nederlandse ruimteonderzoek.
 	</p>
 	<enhanced:img
-		src={nebulaSatellite}
+		src={nebulaSatelliteEnhanced}
 		alt="The Nebula Xplorer Satellite"
 		sizes="(min-width:500px) 900px, (min-width:300px) 450px" />
 </section>
