@@ -153,6 +153,7 @@ header.main-navigation {
 			padding-top: calc(
 				1rem + 0.375rem + 0.375rem + 0.25rem + 1rem + 1rem
 			);
+			list-style: none;
 			/* desktop */
 			@media (min-width: 56.25rem) {
 				align-items: flex-end;
