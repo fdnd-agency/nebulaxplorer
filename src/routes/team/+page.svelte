@@ -1,7 +1,9 @@
 <script module>
-	import { Hero } from '$lib'
-	import logo from '$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg'
-	import heroImg from '$lib/assets/images/grav-waves.jpg?enhanced'
+	import {
+		Hero,
+		sronAcademyLogoOnSpaceBlue as logo,
+		gravWavesEnhanced as heroImg,
+	} from '$lib'
 </script>
 
 <svelte:head>

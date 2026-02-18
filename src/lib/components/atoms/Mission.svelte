@@ -1,5 +1,5 @@
 <script>
-	import satelliteImage from '$lib/assets/images/nebula-xplorer.jpg'
+	import { nebulaSatellite as satelliteImage } from '$lib'
 </script>
 
 <section class="mission-brief-container mission-grid">

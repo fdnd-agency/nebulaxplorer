@@ -1,6 +1,5 @@
 <script>
-	import mertenImage from '$lib/assets/images/merten.jpg'
-	import rushilImage from '$lib/assets/images/rushil.jpg'
+	import { mertenImage, rushilImage } from '$lib'
 
 	let { testimonials } = $props()
 </script>
