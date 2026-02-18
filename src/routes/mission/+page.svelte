@@ -2,6 +2,7 @@
 	import {
 		Hero,
 		Breadcrumb,
+		ScientificTestimonial,
 		blackholeEnhanced as blackholeImage,
 		sronReviewStep1Enhanced as step1Image,
 		rapidStep2Enhanced as step2Image,
@@ -30,6 +31,7 @@
 <Breadcrumb />
 
 <!-- FIRST PARAGRAPH + IMG BLOCK -->
+<ScientificTestimonial />
 
 <section class="paragraph-block">
 	<div class="text-title">
