@@ -97,7 +97,7 @@
 		position: relative;
 
 		ul {
-			background: var(--ultra-100);
+			
 			list-style: none;
 			padding: 0;
 			display: flex;
@@ -108,6 +108,8 @@
 			}
 
 			&.locations {
+				
+			background: var(--ultra-100);
 				gap: 1.5rem;
 				padding-left: 1.5rem;
 
@@ -358,40 +360,6 @@
 						}
 					}
 				}
-			}
-		}
-	}
-
-	.additional {
-		display: flex;
-		justify-content: space-between;
-		flex-direction: column;
-		gap: 4rem;
-		max-width: 400px;
-
-		position: relative;
-		max-width: 25rem;
-		width: 100%;
-
-		label {
-			display: block;
-
-			input {
-				border: 1px solid var(--white);
-				border-right: unset;
-				height: 2.5rem;
-				padding: 16px 8px;
-				margin-top: 1.5rem;
-				background: linear-gradient(
-					to right,
-					var(--space-100) 90%,
-					var(--space-160)
-				);
-				background-size: 200% 100%;
-				background-position: 100% 0%;
-				width: 90%;
-
-				transition: background-position 0.75s ease;
 			}
 		}
 	}
