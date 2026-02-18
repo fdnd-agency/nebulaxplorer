@@ -1,7 +1,7 @@
 <script>
 	export let news = []
 
-	import placeholderImage from '$lib/assets/images/placeholder2.jpg'
+	import { placeholder2 as placeholderImage } from '$lib'
 </script>
 
 <section class="grid-wrapper">

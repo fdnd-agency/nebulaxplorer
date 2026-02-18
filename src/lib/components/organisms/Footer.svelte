@@ -1,13 +1,15 @@
 <script>
-	import leidenImg from '$lib/assets/images/sron-leiden.webp?enhanced&w=960;768'
-	import groningenImg from '$lib/assets/images/sron-groningen.webp?enhanced&w=960;768'
-	import SRON_Academy_OnSpaceBlue from '$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg'
-	import SRON_full_white from '$lib/assets/logos/SRON_Full_White.svg'
-	import NwoIcon from '$lib/assets/images/NWO.webp?enhanced'
-	import InstagramIcon from '$lib/assets/logos/Instagram.svelte'
-	import LinkedinIcon from '$lib/assets/logos/Linkedin.svelte'
-	import BskyIcon from '$lib/assets/logos/Bsky.svelte'
-	import Arrow from '$lib/assets/logos/Arrow.svelte'
+	import {
+		sronLeidenEnhanced as leidenImg,
+		sronGroningenEnhanced as groningenImg,
+		sronAcademyLogoOnSpaceBlue as SRON_Academy_OnSpaceBlue,
+		sronLogoFullWhite as SRON_full_white,
+		nwoIcon as NwoIcon,
+		Instagram as InstagramIcon,
+		LinkedIn as LinkedinIcon,
+		Bsky as BskyIcon,
+		Arrow,
+	} from '$lib'
 
 	const { navItems } = $props()
 </script>

@@ -1,11 +1,9 @@
 <script>
 	import { page } from '$app/stores'
-	import { Footer } from '$lib'
-	import favicon from '$lib/assets/logos/favicon.svg'
-	import PageArrow from '$lib/assets/logos/PageArrow.svelte'
+	import { onNavigate } from '$app/navigation'
+	import { Footer, favIcon as favicon, PageArrow } from '$lib'
 	import '$lib/assets/styles/general.css'
 	import '$lib/assets/styles/layout.css'
-	import { onNavigate } from '$app/navigation'
 
 	let expanded = $state(false)
 
@@ -107,11 +105,11 @@
 <style>
 	/* default reduced-motion friendly transition */
 	:root::view-transition-old(root) {
-		animation: 0.2s ease both fade-out;
+		animation: unset;
 	}
 
 	:root::view-transition-new(root) {
-		animation: 0.4s ease 0.2s both fade-in;
+		animation: unset;
 	}
 
 	@media (prefers-reduced-motion: no-preference) {

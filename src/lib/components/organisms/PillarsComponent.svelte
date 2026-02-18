@@ -1,7 +1,6 @@
 <script>
-	import placeholder1 from '$lib/assets/images/placeholder1.jpg'
-	import gravwaves from '$lib/assets/images/grav-waves.jpg'
-	import placeholder2 from '$lib/assets/images/placeholder2.jpg'
+	import { placeholder1, gravWaves as gravwaves, placeholder2 } from '$lib'
+
 	const dummydata = [
 		{
 			link: '#',
@@ -73,6 +72,7 @@
 		padding-block-start: 1em;
 		padding-block-end: 1.5em;
 		align-items: center;
+		list-style: none;
 
 		@media (min-width: 600px) {
 			flex-direction: row;
@@ -142,7 +142,7 @@
 	.pillar:focus-within {
 		text-decoration: underline;
 
-		@media (min-width: 600px) {
+		@media (min-width: 600px) and (prefers-reduced-motion: no-preference) {
 			img {
 				transform: scale(1.15);
 			}

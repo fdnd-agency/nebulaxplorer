@@ -1,14 +1,16 @@
 <script module>
-	import { Hero } from '$lib'
-	import blackholeImage from '$lib/assets/blackhole.jpg?enhanced'
-	import step1Image from '$lib/assets/images/sron-review-step-1.jpg?enhanced&w=1024;768;512'
-	import step2Image from '$lib/assets/images/Rapid-step-2.jpg?enhanced&w=1024;768;512'
-	import step3Image from '$lib/assets/images/nebula-xplorer.jpg?enhanced&w=1024;768;512'
-	import step4Image from '$lib/assets/images/aerospace-defense-testing-step-4.jpg?enhanced&w=1024;768;512'
-	import step5Image from '$lib/assets/images/rocket-launch-step-5.jpg?enhanced&w=1024;768;512'
-	import Breadcrumb from '$lib/components/molecules/Breadcrumb/Breadcrumb.svelte'
-	import logo from '$lib/assets/logos/SRON_Academy_OnSpaceBlue.svg'
-	import heroImg from '$lib/assets/images/grav-waves.jpg?enhanced'
+	import {
+		Hero,
+		Breadcrumb,
+		blackholeEnhanced as blackholeImage,
+		sronReviewStep1Enhanced as step1Image,
+		rapidStep2Enhanced as step2Image,
+		nebulaXplorerEnhanced as step3Image,
+		aeroDefenseTestingStep4Enhanced as step4Image,
+		rocketLaunchStep5Enhanced as step5Image,
+		sronAcademyLogoOnSpaceBlue as logo,
+		gravWavesEnhanced as heroImg,
+	} from '$lib'
 </script>
 
 <svelte:head>
@@ -318,8 +320,11 @@
 			grid-column: 4 / -1;
 			height: fit-content;
 			display: none;
-			position: sticky;
-			top: 20%;
+
+			@media (prefers-reduced-motion: no-preference) {
+				position: sticky;
+				top: 20%;
+			}
 
 			@media (min-width: 36.25rem) {
 				display: block;
@@ -458,9 +463,12 @@
 
 			@media (min-width: 56.25rem) {
 				grid-column: 8 / -1;
-				position: sticky;
-				top: 30%;
-				margin-bottom: 1.5rem;
+
+				@media (prefers-reduced-motion: no-preference) {
+					position: sticky;
+					top: 30%;
+					margin-bottom: 1.5rem;
+				}
 			}
 
 			:global(enhanced\:img),

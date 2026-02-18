@@ -1,5 +1,5 @@
 <script>
-	import defaultImage from '$lib/assets/images/nebula-satellite.png'
+	import { nebulaSatellite as defaultImage } from '$lib'
 
 	let { newsCards } = $props()
 </script>
@@ -56,16 +56,25 @@
 			box-shadow 0.3s ease;
 		align-self: start;
 
-		&:hover {
-			transform: translateY(-0.5rem);
+		&:hover,
+		&:focus-within {
 			box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+
+			a {
+				text-decoration: underline 1px;
+			}
 		}
 
 		&:focus-within {
-			transform: translateY(-0.5rem);
-			box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
 			outline: var(--default-focus);
 			outline-offset: 12px;
+		}
+
+		@media (prefers-reduced-motion: no-preference) {
+			&:hover,
+			&:focus-within {
+				transform: translateY(-0.5rem);
+			}
 		}
 	}
 
@@ -125,10 +134,17 @@
 		text-align: center;
 		text-transform: uppercase;
 		color: var(--cleanroom-100);
-		transition: transform 0.3s ease;
 
 		&:hover {
-			transform: translateY(-0.5rem);
+			text-decoration: underline 1px;
+		}
+
+		@media (prefers-reduced-motion: no-preference) {
+			transition: transform 0.3s ease;
+
+			&:hover {
+				transform: translateY(-0.5rem);
+			}
 		}
 	}
 </style>
