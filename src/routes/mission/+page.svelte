@@ -31,7 +31,6 @@
 <Breadcrumb />
 
 <!-- FIRST PARAGRAPH + IMG BLOCK -->
-<ScientificTestimonial />
 
 <section class="paragraph-block">
 	<div class="text-title">
@@ -252,6 +251,8 @@
 		</li>
 	</ul>
 </section>
+
+<ScientificTestimonial />
 
 <figure class="testimonial-container">
 	<blockquote class="testimonial-content">
