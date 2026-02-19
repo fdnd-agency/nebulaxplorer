@@ -289,14 +289,16 @@
 		}
 
 		.SronAcademyLogo {
-			grid-area: academy;
+			grid-area: academy;			
 		}
 
 		.SronLogo {
 			grid-area: sron;
+			margin-block-start: 1rem;
 
 			@media (min-width: 700px) {
 				justify-self: right;
+				margin-block-start: unset;
 			}
 		}
 
@@ -308,7 +310,12 @@
 		.footerImg {
 			width: 20rem;
 			max-width: 95%;
-			margin-block-end: 1.5rem;
+
+			@media (min-width: 700px) {
+				margin-block-end: 1.5rem;
+			}
+
+			
 		}
 
 		nav {
@@ -371,12 +378,12 @@
 		display: flex;
 		justify-content: space-between;
 		flex-direction: row;
-		padding-top: 1rem;
 		max-width: 120px;
 
 		@media (min-width: 700px) {
 			justify-self: end;
 			width: 120px;
+			padding-top: 1rem;
 		}
 	}
 
