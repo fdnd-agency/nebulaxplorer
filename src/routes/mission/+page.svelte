@@ -322,8 +322,11 @@
 			grid-column: 4 / -1;
 			height: fit-content;
 			display: none;
-			position: sticky;
-			top: 20%;
+
+			@media (prefers-reduced-motion: no-preference) {
+				position: sticky;
+				top: 20%;
+			}
 
 			@media (min-width: 36.25rem) {
 				display: block;
@@ -462,9 +465,12 @@
 
 			@media (min-width: 56.25rem) {
 				grid-column: 8 / -1;
-				position: sticky;
-				top: 30%;
-				margin-bottom: 1.5rem;
+
+				@media (prefers-reduced-motion: no-preference) {
+					position: sticky;
+					top: 30%;
+					margin-bottom: 1.5rem;
+				}
 			}
 
 			:global(enhanced\:img),
