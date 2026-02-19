@@ -46,49 +46,47 @@
 		</li>
 	</ul>
 	<div class="contents">
-		<div class="contents-nav">
-			<img src={SRON_Academy_OnSpaceBlue} alt="SRON Academy logo" />
-			<nav>
-				<ul class="link">
-					{#each navItems as { path, label }}
-						<li>
-							<a href={path}>{label}</a>
-						</li>
-					{/each}
-					<li><a href="/">privacy</a></li>
-				</ul>
-			</nav>
-		</div>
-		<div class="additional">
-			<form>
-				<label class="link">
-					Subscribe to our mailing list to receive news and updates
-					about our research and activities.
-					<input class="supporting" type="email" />
-				</label>
-				<button
-					><Arrow width="12" height="20" /><span
-						class="visually-hidden">Submit</span
-					></button>
-			</form>
-			<div class="socials">
-				<img src={SRON_full_white} alt="SRON full white logo" />
-				<div class="group">
-					<a href="/">
-						<LinkedinIcon />
-						<span class="visually-hidden">Linkedin profile</span>
-					</a>
-					<a href="/">
-						<InstagramIcon />
-						<span class="visually-hidden">Instagram profile</span>
-					</a>
-					<a href="/">
-						<BskyIcon />
-						<span class="visually-hidden">Bluesky profile</span>
-					</a>
-				</div>
-			</div>
-		</div>
+		<img
+			src={SRON_Academy_OnSpaceBlue}
+			alt="SRON Academy logo"
+			class="footerImg SronAcademyLogo" />
+		<div class="line"></div>
+		<!-- this is a seperate element because what is supposed to be above and below this line changes with viewport width. If we can give a css grid line a border I would prefer that I think. But I'm, not sure if that's even posible. This works fine though. -->
+		<nav>
+			<ul class="link">
+				{#each navItems as { path, label }}
+					<li>
+						<a href={path}>{label}</a>
+					</li>
+				{/each}
+				<li><a href="/">privacy</a></li>
+			</ul>
+		</nav>
+
+		<img
+			src={SRON_full_white}
+			alt="SRON full white logo"
+			class="footerImg SronLogo" />
+		<ul class="socials">
+			<li>
+				<a href="/">
+					<LinkedinIcon />
+					<span class="visually-hidden">Linkedin profile</span>
+				</a>
+			</li>
+			<li>
+				<a href="/">
+					<InstagramIcon />
+					<span class="visually-hidden">Instagram profile</span>
+				</a>
+			</li>
+			<li>
+				<a href="/">
+					<BskyIcon />
+					<span class="visually-hidden">Bluesky profile</span>
+				</a>
+			</li>
+		</ul>
 	</div>
 	<p class="footnote supporting">What happens up there, starts down here.</p>
 </footer>
@@ -101,17 +99,19 @@
 		position: relative;
 
 		ul {
-			background: var(--ultra-100);
+			
 			list-style: none;
 			padding: 0;
 			display: flex;
 			flex-direction: column;
 
-			@media (min-width: 56.25rem) {
+			@media (min-width: 600px) {
 				flex-direction: row;
 			}
 
 			&.locations {
+				
+			background: var(--ultra-100);
 				gap: 1.5rem;
 				padding-left: 1.5rem;
 
@@ -268,163 +268,130 @@
 		.contents {
 			background: var(--space-100);
 			padding: 2.25rem 1.5rem;
-			display: flex;
-			gap: 4rem;
-			flex-wrap: wrap;
-			justify-content: space-between;
+			display: grid;
+			align-items: center;
+			gap: 1rem;
+			grid-template-areas:
+				'academy'
+				'line'
+				'nav'
+				'sron'
+				'socials';
 
-			.contents-nav {
-				img {
-					width: 100%;
-					max-width: 20rem;
-					margin-bottom: 1.5rem;
-				}
-			}
+			@media (min-width: 700px) {
+				grid-template-areas:
+					'academy academy sron sron'
+					'line line line line'
+					'nav nav nav socials';
 
-			nav {
-				display: contents;
-
-				ul {
-					border-top: 0.1875rem solid var(--white);
-					padding-top: 0.75rem;
-					width: inherit;
-					background: unset;
-					flex-direction: column;
-					max-height: calc(5.5em + 0.75rem + (4 * 0.5rem));
-					flex-wrap: wrap;
-					gap: 0.5rem 2rem;
-
-					/* If more links get added, be sure to remove or adjust this; if necessary */
-					li {
-						display: contents;
-
-						&:is(:nth-child(5n + 5), :last-child) {
-							color: var(--cleanroom-30);
-						}
-
-						&:hover {
-							color: var(--cleanroom-60);
-						}
-
-						@supports selector(a:has(b)) {
-							/* Nice inspo https://tobiasahlin.com/blog/previous-sibling-css-has/ */
-							&:hover + li,
-							&:has(+ li:hover) {
-								color: var(--cleanroom-60);
-							}
-						}
-
-						a {
-							display: inline;
-							width: fit-content;
-
-							transition: color 0.3s ease;
-
-							&:hover {
-								color: var(--cleanroom-100);
-							}
-
-							&:active {
-								color: var(--cleanroom-140);
-							}
-						}
-					}
-				}
+				gap: 0;
 			}
 		}
 
-		.additional {
-			display: flex;
-			justify-content: space-between;
-			flex-direction: column;
-			gap: 4rem;
-			max-width: 400px;
-			width: 100%;
+		.SronAcademyLogo {
+			grid-area: academy;			
+		}
 
-			form {
-				position: relative;
-				max-width: 25rem;
-				width: 100%;
+		.SronLogo {
+			grid-area: sron;
+			margin-block-start: 1rem;
 
-				label {
-					display: block;
+			@media (min-width: 700px) {
+				justify-self: right;
+				margin-block-start: unset;
+			}
+		}
 
-					input {
-						border: 1px solid var(--white);
-						border-right: unset;
-						height: 2.5rem;
-						padding: 16px 8px;
-						margin-top: 1.5rem;
-						background: linear-gradient(
-							to right,
-							var(--space-100) 90%,
-							var(--space-160)
-						);
-						background-size: 200% 100%;
-						background-position: 100% 0%;
-						width: 90%;
+		.line {
+			grid-area: line;
+			border-top: 0.1875rem solid var(--white);
+		}
 
-						transition: background-position 0.75s ease;
-					}
-				}
+		.footerImg {
+			width: 20rem;
+			max-width: 95%;
 
-				button {
-					cursor: pointer;
-					position: absolute;
-					bottom: 0;
-					right: 0;
-					width: 2.5rem;
-					aspect-ratio: 1;
-					color: var(--space-100);
-					display: grid;
-					place-content: center;
-				}
-
-				input:focus-visible,
-				button:focus-visible {
-					outline-offset: -0.125rem;
-					outline-style: solid;
-					outline-width: 0.125rem;
-					outline-color: var(--cleanroom-100);
-					background-position: 0% 0%;
-				}
+			@media (min-width: 700px) {
+				margin-block-end: 1.5rem;
 			}
 
-			.socials {
+			
+		}
+
+		nav {
+			grid-area: nav;
+
+			ul {
+				padding-top: 0.75rem;
+				width: inherit;
+				background: unset;
+
 				display: flex;
 				flex-direction: column;
-				gap: 1rem;
-
-				.group {
-					grid-row: 2;
-					grid-column: span 2;
-					border-top: 0.1875rem solid var(--white);
-					display: flex;
+				@media (min-width: 600px) {
 					flex-direction: row;
-					padding-top: 1rem;
-					gap: 1rem;
+				}
+				flex-wrap: wrap;
+				gap: 0.5rem 2rem;
 
-					> * {
-						display: grid;
-						place-content: center;
+				/* If more links get added, be sure to remove or adjust this; if necessary */
+				li {
+					display: contents;
 
-						&:focus-visible {
-							outline-offset: 0.25rem;
-							outline-style: dashed;
-							outline-width: 0.125rem;
-							outline-color: var(--cleanroom-100);
+					&:is(:nth-child(5n + 5), :last-child) {
+						color: var(--cleanroom-30);
+					}
+
+					&:hover {
+						color: var(--cleanroom-60);
+					}
+
+					@supports selector(a:has(b)) {
+						/* Nice inspo https://tobiasahlin.com/blog/previous-sibling-css-has/ */
+						&:hover + li,
+						&:has(+ li:hover) {
+							color: var(--cleanroom-60);
+						}
+					}
+
+					a {
+						display: inline;
+						width: fit-content;
+
+						transition: color 0.3s ease;
+
+						&:hover {
+							color: var(--cleanroom-100);
+						}
+
+						&:active {
+							color: var(--cleanroom-140);
 						}
 					}
 				}
 			}
 		}
+	}
 
-		.footnote {
-			background: var(--cleanroom-100);
-			color: var(--space-100);
-			text-align: center;
-			display: block;
-			padding: 0 2.25rem;
+	.socials {
+		grid-area: socials;
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row;
+		max-width: 120px;
+
+		@media (min-width: 700px) {
+			justify-self: end;
+			width: 120px;
+			padding-top: 1rem;
 		}
+	}
+
+	.footnote {
+		background: var(--cleanroom-100);
+		color: var(--space-100);
+		text-align: center;
+		display: block;
+		padding: 0 2.25rem;
 	}
 </style>
