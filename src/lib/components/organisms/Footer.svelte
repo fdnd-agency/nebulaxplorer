@@ -11,7 +11,7 @@
 		Bsky as BskyIcon,
 		Arrow,
 		FooterLocations,
-		FooterNav
+		FooterNav,
 	} from '$lib'
 
 	const { navItems } = $props()

@@ -9,7 +9,7 @@
 		LinkedIn as LinkedinIcon,
 		Bsky as BskyIcon,
 		Arrow,
-		Footnote
+		Footnote,
 	} from '$lib'
 
 	const { navItems } = $props()
@@ -63,112 +63,109 @@
 </footer>
 
 <style>
-		.contents {
-			background: var(--space-100);
-			padding: 2.25rem 1.5rem;
-			display: grid;
-			align-items: center;
-			gap: 1rem;
+	.contents {
+		background: var(--space-100);
+		padding: 2.25rem 1.5rem;
+		display: grid;
+		align-items: center;
+		gap: 1rem;
+		grid-template-areas:
+			'academy'
+			'line'
+			'nav'
+			'sron'
+			'socials';
+
+		@media (min-width: 700px) {
 			grid-template-areas:
-				'academy'
-				'line'
-				'nav'
-				'sron'
-				'socials';
+				'academy academy sron sron'
+				'line line line line'
+				'nav nav nav socials';
 
-			@media (min-width: 700px) {
-				grid-template-areas:
-					'academy academy sron sron'
-					'line line line line'
-					'nav nav nav socials';
+			gap: 0;
+		}
+	}
 
-				gap: 0;
+	.SronAcademyLogo {
+		grid-area: academy;
+	}
+
+	.SronLogo {
+		grid-area: sron;
+		margin-block-start: 1rem;
+
+		@media (min-width: 700px) {
+			justify-self: right;
+			margin-block-start: unset;
+		}
+	}
+
+	.line {
+		grid-area: line;
+		border-top: 0.1875rem solid var(--white);
+	}
+
+	.footerImg {
+		width: 20rem;
+		max-width: 95%;
+
+		@media (min-width: 700px) {
+			margin-block-end: 1.5rem;
+		}
+	}
+
+	nav {
+		grid-area: nav;
+
+		ul {
+			padding-top: 0.75rem;
+			width: inherit;
+			background: unset;
+			display: flex;
+			flex-direction: column;
+			@media (min-width: 600px) {
+				flex-direction: row;
 			}
-		}
+			flex-wrap: wrap;
+			gap: 0.5rem 2rem;
 
-		.SronAcademyLogo {
-			grid-area: academy;			
-		}
+			/* If more links get added, be sure to remove or adjust this; if necessary */
+			li {
+				display: contents;
 
-		.SronLogo {
-			grid-area: sron;
-			margin-block-start: 1rem;
-
-			@media (min-width: 700px) {
-				justify-self: right;
-				margin-block-start: unset;
-			}
-		}
-
-		.line {
-			grid-area: line;
-			border-top: 0.1875rem solid var(--white);
-		}
-
-		.footerImg {
-			width: 20rem;
-			max-width: 95%;
-
-			@media (min-width: 700px) {
-				margin-block-end: 1.5rem;
-			}
-
-			
-		}
-
-		nav {
-			grid-area: nav;
-
-			ul {
-				padding-top: 0.75rem;
-				width: inherit;
-				background: unset;
-				display: flex;
-				flex-direction: column;
-				@media (min-width: 600px) {
-					flex-direction: row;
+				&:is(:nth-child(5n + 5), :last-child) {
+					color: var(--cleanroom-30);
 				}
-				flex-wrap: wrap;
-				gap: 0.5rem 2rem;
 
-				/* If more links get added, be sure to remove or adjust this; if necessary */
-				li {
-					display: contents;
+				&:hover {
+					color: var(--cleanroom-60);
+				}
 
-					&:is(:nth-child(5n + 5), :last-child) {
-						color: var(--cleanroom-30);
-					}
-
-					&:hover {
+				@supports selector(a:has(b)) {
+					/* Nice inspo https://tobiasahlin.com/blog/previous-sibling-css-has/ */
+					&:hover + li,
+					&:has(+ li:hover) {
 						color: var(--cleanroom-60);
 					}
+				}
 
-					@supports selector(a:has(b)) {
-						/* Nice inspo https://tobiasahlin.com/blog/previous-sibling-css-has/ */
-						&:hover + li,
-						&:has(+ li:hover) {
-							color: var(--cleanroom-60);
-						}
+				a {
+					display: inline;
+					width: fit-content;
+
+					transition: color 0.3s ease;
+
+					&:hover {
+						color: var(--cleanroom-100);
 					}
 
-					a {
-						display: inline;
-						width: fit-content;
-
-						transition: color 0.3s ease;
-
-						&:hover {
-							color: var(--cleanroom-100);
-						}
-
-						&:active {
-							color: var(--cleanroom-140);
-						}
+					&:active {
+						color: var(--cleanroom-140);
 					}
 				}
 			}
 		}
-	
+	}
 
 	.socials {
 		list-style: none;
@@ -184,5 +181,4 @@
 			padding-top: 1rem;
 		}
 	}
-
 </style>

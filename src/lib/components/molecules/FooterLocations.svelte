@@ -10,7 +10,6 @@
 		Bsky as BskyIcon,
 		Arrow,
 	} from '$lib'
-
 </script>
 
 <footer>
@@ -44,7 +43,6 @@
 			</ul>
 		</li>
 	</ul>
-	
 </footer>
 
 <style>
@@ -55,7 +53,6 @@
 		position: relative;
 
 		ul {
-			
 			list-style: none;
 			padding: 0;
 			display: flex;
@@ -66,8 +63,7 @@
 			}
 
 			&.locations {
-				
-			background: var(--ultra-100);
+				background: var(--ultra-100);
 				gap: 1.5rem;
 				padding-left: 1.5rem;
 
@@ -220,7 +216,5 @@
 				}
 			}
 		}
-
-	
 	}
 </style>

@@ -1,7 +1,7 @@
 <p class="supporting">What happens up there, starts down here.</p>
 
 <style>
-    p{
+	p {
 		background: var(--cleanroom-100);
 		color: var(--space-100);
 		text-align: center;
