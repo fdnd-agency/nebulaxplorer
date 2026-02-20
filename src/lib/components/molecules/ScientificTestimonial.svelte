@@ -1,7 +1,5 @@
 <script>
 	import { rushilImage } from '$lib'
-
-	let { testimonial } = $props()
 </script>
 
 <section>
