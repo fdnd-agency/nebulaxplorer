@@ -9,6 +9,7 @@
 		LinkedIn as LinkedinIcon,
 		Bsky as BskyIcon,
 		Arrow,
+		Footnote
 	} from '$lib'
 
 	const { navItems } = $props()
@@ -58,7 +59,7 @@
 			</li>
 		</ul>
 	</div>
-	<p class="footnote supporting">What happens up there, starts down here.</p>
+	<Footnote />
 </footer>
 
 <style>
@@ -184,11 +185,4 @@
 		}
 	}
 
-	.footnote {
-		background: var(--cleanroom-100);
-		color: var(--space-100);
-		text-align: center;
-		display: block;
-		padding: 0 2.25rem;
-	}
 </style>

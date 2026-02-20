@@ -18,6 +18,7 @@ export { default as FooterNav } from './components/molecules/FooterNav.svelte'
 
 // Atoms
 export { default as Mission } from './components/atoms/Mission.svelte'
+export {default as Footnote } from "./components/atoms/FooterFootnote.svelte"
 
 // ASSETS
 // Icons
