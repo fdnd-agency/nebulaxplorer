@@ -40,6 +40,8 @@ export { default as sronLogoFullWhite } from './assets/logos/SRON_Full_White.svg
 export { default as sronLogoSmallBlack } from './assets/logos/SRON_Small_Black.svg'
 export { default as sronLogoSmallBlue } from './assets/logos/SRON_Small_Blue.svg'
 export { default as sronLogoSmallWhite } from './assets/logos/SRON_Small_White.svg'
+export { default as nebulaLogoWhite } from './assets/logos/nebula_white.svg'
+export { default as nebulaLogoBlack } from './assets/logos/nebula_black.svg'
 
 // Images
 export { default as aeroDefenseTestingStep4 } from './assets/images/aerospace-defense-testing-step-4.jpg'
