@@ -1,10 +1,11 @@
 <script>
+	import { nebulaLogoWhite, blackholeHeroEnhanced } from '$lib'
 	const {
 		background = {
-			alt: 'default background image',
-			file,
+			alt: 'A quasi-black hole',
+			file: blackholeHeroEnhanced,
 		},
-		sronIcon,
+		sronIcon = nebulaLogoWhite,
 		paragraph,
 		pageTitle = 'None set',
 		titleColor,

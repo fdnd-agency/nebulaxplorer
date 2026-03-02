@@ -14,8 +14,4 @@
 </svelte:head>
 
 <!-- HERO BLOCK -->
-<Hero
-	titleColor="var(--white)"
-	pageTitle="Team"
-	background={{ alt: 'Two merging black holes', file: heroImg }}
-	sronIcon={logo} />
+<Hero titleColor="var(--white)" pageTitle="Team" />

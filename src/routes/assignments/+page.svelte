@@ -22,11 +22,7 @@
 <!-- Always provide alt and file path WITHIN background -->
 <!-- titleColor controls the title color based on the provided css var provided -->
 
-<Hero
-	titleColor="var(--white)"
-	pageTitle="Assignments"
-	background={{ alt: 'Two merging black holes', file: heroImg }}
-	sronIcon={logo} />
+<Hero titleColor="var(--white)" pageTitle="Assignments" />
 
 <Breadcrumb />
 

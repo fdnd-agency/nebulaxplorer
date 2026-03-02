@@ -19,11 +19,7 @@
 		content="NEBULA-Xplorer will investigate how jets form and how X-ray binaries evolve. It will observe these objects for long periods of time to see how their emission varies on time scales from milliseconds to weeks." />
 </svelte:head>
 
-<Hero
-	titleColor="var(--white)"
-	pageTitle="Nebula Xplorer"
-	background={{ alt: 'Two merging black holes', file: heroImg }}
-	sronIcon={logo} />
+<Hero titleColor="var(--white)" pageTitle="Nebula Xplorer" />
 
 <News newsCards={data.newsItems} />
 
