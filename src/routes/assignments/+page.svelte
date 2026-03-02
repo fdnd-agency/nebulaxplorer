@@ -4,7 +4,7 @@
 		Breadcrumb,
 		AssignmentCards,
 		Pagination,
-		gravWavesEnhanced as heroImg,
+		blackholeHeroEnhanced as heroImg,
 		sronAcademyLogoOnSpaceBlue as logo,
 	} from '$lib'
 

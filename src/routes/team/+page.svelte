@@ -2,7 +2,7 @@
 	import {
 		Hero,
 		sronAcademyLogoOnSpaceBlue as logo,
-		gravWavesEnhanced as heroImg,
+		blackholeHeroEnhanced as heroImg,
 	} from '$lib'
 </script>
 
