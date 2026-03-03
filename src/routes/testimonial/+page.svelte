@@ -1,7 +1,7 @@
 <script>
 	import {
 		Hero,
-		gravWavesEnhanced as heroImg,
+		blackholeHeroEnhanced as heroImg,
 		sronAcademyLogoOnSpaceBlue as logo,
 		TestimonialHeader,
 		Testimonial,
@@ -10,10 +10,7 @@
 	let { data } = $props()
 </script>
 
-<Hero
-	pageTitle="Testimonials"
-	background={{ alt: 'Two merging black holes', file: heroImg }}
-	sronIcon={logo} />
+<Hero pageTitle="Testimonials" />
 
 <TestimonialHeader />
 

@@ -2,7 +2,7 @@
 	import {
 		Hero,
 		sronAcademyLogoOnSpaceBlue as logo,
-		gravWavesEnhanced as heroImg,
+		blackholeHeroEnhanced as heroImg,
 	} from '$lib'
 </script>
 
@@ -14,8 +14,4 @@
 </svelte:head>
 
 <!-- HERO BLOCK -->
-<Hero
-	titleColor="var(--white)"
-	pageTitle="Partners"
-	background={{ alt: 'Two merging black holes', file: heroImg }}
-	sronIcon={logo} />
+<Hero titleColor="var(--white)" pageTitle="Partners" />
