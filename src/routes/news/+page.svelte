@@ -21,7 +21,7 @@
 			Our latest <span class="orange">developments</span>
 		</h2>
 		<p class="heading">
-			Currently <span class="orange">{data.news.length}</span> available
+			Currently <span class="orange">{data.pagination.totalItems}</span> available
 		</p>
 	</div>
 </section>
