@@ -7,7 +7,7 @@ export async function load({ url }) {
 	const offset = (currentPage - 1) * limit
 
 	const newsItems = await fetch(
-		`${DIRECTUS_NEWS}?limit=${limit}&offset=${offset}&meta=total_count`
+		`${DIRECTUS_NEWS}?limit=${limit}&offset=${offset}&sort=-date&meta=total_count`
 	).then((response) => response.json())
 
 	const totalPages = Math.ceil(newsItems.meta.total_count / limit)
