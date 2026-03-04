@@ -5,7 +5,7 @@
 	} from '$lib'
 </script>
 
-<footer>
+<section>
 	<ul class="locations">
 		<li>
 			<h2>Leiden</h2>
@@ -36,10 +36,10 @@
 			</ul>
 		</li>
 	</ul>
-</footer>
+</section>
 
 <style>
-	footer {
+	section {
 		border-top: 0.375rem solid var(--cleanroom-100);
 		background: var(--space-100);
 		padding: 0;

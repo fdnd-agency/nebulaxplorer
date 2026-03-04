@@ -11,7 +11,6 @@
 	const { navItems } = $props()
 </script>
 
-<footer>
 	<div class="contents">
 		<img
 			src={SRON_Academy_OnSpaceBlue}
@@ -56,7 +55,6 @@
 		</ul>
 	</div>
 	<Footnote />
-</footer>
 
 <style>
 	.contents {
