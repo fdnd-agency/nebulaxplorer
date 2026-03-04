@@ -1,7 +1,7 @@
 <script>
-	export let news = []
-
 	import { placeholder2 as placeholderImage } from '$lib'
+
+	let { news } = $props()
 </script>
 
 <section class="grid-wrapper">

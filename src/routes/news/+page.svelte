@@ -1,10 +1,9 @@
 <script>
 	import { Hero, Breadcrumb, Newscards, Pagination } from '$lib'
 
-  // export let data;
-  let { data } = $props()
+	let { data } = $props()
 </script>
- 
+
 <svelte:head>
 	<title>News</title>
 	<meta
@@ -18,6 +17,18 @@
 <Breadcrumb />
 
 <section class="paragraph-block">
+	<div class="text-title">
+		<h2 class="subtitle">
+			Our latest <span class="orange">developments</span>
+		</h2>
+		<p class="heading">
+			Currently <span class="orange">{data.news.length}</span> available
+		</p>
+	</div>
+</section>
+
+<Newscards news={data.news} />
+
 <Pagination pagination={data.pagination} />
 
 <style>
