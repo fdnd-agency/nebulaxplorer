@@ -1,5 +1,5 @@
 <script>
-  import { Hero, Breadcrumb, Newscards, sronAcademyLogoOnSpaceBlue as logo, blackholeEnhanced as blackholeImage } from "$lib";
+	import { Hero, Breadcrumb, Newscards, Pagination } from '$lib'
 
   // export let data;
   let { data } = $props()
@@ -13,24 +13,12 @@
 	/>
 </svelte:head>
 
-<Hero
-  pageTitle="News"
-  sronIcon={logo}
-  background={{ alt: "Black Hole", file: blackholeImage }}
-/>
- 
-<Breadcrumb 
-  /> 
+<Hero pageTitle="News" />
+
+<Breadcrumb />
 
 <section class="paragraph-block">
-  <div class="text-title">
-    <h2 class="subtitle">Our latest <span class="orange">developments</span></h2>
-    <p class="heading">Currently <span class="orange">{data.news.length}</span> available</p>
-  </div>
-  </section>
-   
-<Newscards data={data.news}
-  /> 
+<Pagination pagination={data.pagination} />
 
 <style>
  
