@@ -6,16 +6,25 @@ export async function load({ url }) {
 	const limit = 9
 	const offset = (currentPage - 1) * limit
 
-	const newsItems = await fetch(
-		`${DIRECTUS_NEWS}?limit=${limit}&offset=${offset}&sort=-date&meta=total_count`
-	).then((response) => response.json())
+	let newsItems = []
+	let totalPages = 1
+	let totalItems = 0
 
-	const totalPages = Math.ceil(newsItems.meta.total_count / limit)
+	try {
+		newsItems = await fetch(
+			`${DIRECTUS_NEWS}?limit=${limit}&offset=${offset}&sort=-date&meta=total_count`
+		).then((response) => response.json())
+
+		totalPages = Math.ceil(newsItems.meta.total_count / limit)
+		totalItems = newsItems.meta.total_count
+	} catch (error) {
+		console.error(error)
+	}
 
 	const pagination = {
 		currentPage,
 		limit,
-		totalItems: newsItems.meta.total_count,
+		totalItems,
 		totalPages,
 		items: getPaginationItems(currentPage, totalPages),
 	}
