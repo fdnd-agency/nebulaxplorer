@@ -5,36 +5,34 @@
 	} from '$lib'
 </script>
 
-	<ul class="locations">
-		<li>
-			<h2>Leiden</h2>
-			<enhanced:img src={leidenImg} alt="The SRON building in Leiden" />
-			<ul class="contact paragraph">
-				<li>Niels Bohrweg 4</li>
-				<li class="divider"></li>
-				<li>2333 CA Leiden</li>
-				<li class="divider"></li>
-				<li>The Netherlands</li>
-				<li class="divider"></li>
-				<li><a href="tel:+31887775600">+31 (0)88 777 56 00</a></li>
-			</ul>
-		</li>
-		<li>
-			<h2>Groningen</h2>
-			<enhanced:img
-				src={groningenImg}
-				alt="The SRON building in Groningen" />
-			<ul class="contact paragraph">
-				<li>Landleven 12</li>
-				<li class="divider"></li>
-				<li>9747 AD Groningen</li>
-				<li class="divider"></li>
-				<li>The Netherlands</li>
-				<li class="divider"></li>
-				<li><a href="tel:+31503634074">+31 (0)50 363 40 74</a></li>
-			</ul>
-		</li>
-	</ul>
+<ul class="locations">
+	<li>
+		<h2>Leiden</h2>
+		<enhanced:img src={leidenImg} alt="The SRON building in Leiden" />
+		<ul class="contact paragraph">
+			<li>Niels Bohrweg 4</li>
+			<li class="divider"></li>
+			<li>2333 CA Leiden</li>
+			<li class="divider"></li>
+			<li>The Netherlands</li>
+			<li class="divider"></li>
+			<li><a href="tel:+31887775600">+31 (0)88 777 56 00</a></li>
+		</ul>
+	</li>
+	<li>
+		<h2>Groningen</h2>
+		<enhanced:img src={groningenImg} alt="The SRON building in Groningen" />
+		<ul class="contact paragraph">
+			<li>Landleven 12</li>
+			<li class="divider"></li>
+			<li>9747 AD Groningen</li>
+			<li class="divider"></li>
+			<li>The Netherlands</li>
+			<li class="divider"></li>
+			<li><a href="tel:+31503634074">+31 (0)50 363 40 74</a></li>
+		</ul>
+	</li>
+</ul>
 
 <style>
 	.locations {
@@ -77,7 +75,8 @@
 				padding: 1rem 2rem;
 			}
 
-			picture { /* vscode seems to think that this selector isn't used, but it most assuredly is */
+			picture {
+				/* vscode seems to think that this selector isn't used, but it most assuredly is */
 				display: contents;
 
 				enhanced\:img {
@@ -204,6 +203,4 @@
 			flex-direction: column;
 		}
 	}
-
-	
 </style>

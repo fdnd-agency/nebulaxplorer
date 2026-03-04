@@ -11,50 +11,50 @@
 	const { navItems } = $props()
 </script>
 
-	<div class="contents">
-		<img
-			src={SRON_Academy_OnSpaceBlue}
-			alt="SRON Academy logo"
-			class="footerImg SronAcademyLogo" />
-		<div class="line"></div>
-		<!-- this is a seperate element because what is supposed to be above and below this line changes with viewport width. If we can give a css grid line a border I would prefer that I think. But I'm, not sure if that's even posible. This works fine though. -->
-		<nav>
-			<ul class="link">
-				{#each navItems as { path, label }}
-					<li>
-						<a href={path}>{label}</a>
-					</li>
-				{/each}
-				<li><a href="/">privacy</a></li>
-			</ul>
-		</nav>
-
-		<img
-			src={SRON_full_white}
-			alt="SRON full white logo"
-			class="footerImg SronLogo" />
-		<ul class="socials">
-			<li>
-				<a href="/">
-					<LinkedinIcon />
-					<span class="visually-hidden">Linkedin profile</span>
-				</a>
-			</li>
-			<li>
-				<a href="/">
-					<InstagramIcon />
-					<span class="visually-hidden">Instagram profile</span>
-				</a>
-			</li>
-			<li>
-				<a href="/">
-					<BskyIcon />
-					<span class="visually-hidden">Bluesky profile</span>
-				</a>
-			</li>
+<div class="contents">
+	<img
+		src={SRON_Academy_OnSpaceBlue}
+		alt="SRON Academy logo"
+		class="footerImg SronAcademyLogo" />
+	<div class="line"></div>
+	<!-- this is a seperate element because what is supposed to be above and below this line changes with viewport width. If we can give a css grid line a border I would prefer that I think. But I'm, not sure if that's even posible. This works fine though. -->
+	<nav>
+		<ul class="link">
+			{#each navItems as { path, label }}
+				<li>
+					<a href={path}>{label}</a>
+				</li>
+			{/each}
+			<li><a href="/">privacy</a></li>
 		</ul>
-	</div>
-	<Footnote />
+	</nav>
+
+	<img
+		src={SRON_full_white}
+		alt="SRON full white logo"
+		class="footerImg SronLogo" />
+	<ul class="socials">
+		<li>
+			<a href="/">
+				<LinkedinIcon />
+				<span class="visually-hidden">Linkedin profile</span>
+			</a>
+		</li>
+		<li>
+			<a href="/">
+				<InstagramIcon />
+				<span class="visually-hidden">Instagram profile</span>
+			</a>
+		</li>
+		<li>
+			<a href="/">
+				<BskyIcon />
+				<span class="visually-hidden">Bluesky profile</span>
+			</a>
+		</li>
+	</ul>
+</div>
+<Footnote />
 
 <style>
 	.contents {
