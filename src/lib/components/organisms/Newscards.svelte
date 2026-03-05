@@ -103,7 +103,6 @@
 	}
 
 	.news-image {
-		border-top: 0.3rem solid var(--space-140);
 		width: 100%;
 		height: 16.5rem;
 		overflow: hidden;
