@@ -8,6 +8,8 @@
 		Footnote,
 	} from '$lib'
 
+	import { resolve } from '$app/paths';
+
 	const { navItems } = $props()
 </script>
 
@@ -20,12 +22,13 @@
 	<!-- this is a seperate element because what is supposed to be above and below this line changes with viewport width. If we can give a css grid line a border I would prefer that I think. But I'm, not sure if that's even posible. This works fine though. -->
 	<nav>
 		<ul class="link">
-			{#each navItems as { path, label }}
+			{#each navItems as { path, label } (path)}
 				<li>
-					<a href={path}>{label}</a>
+					<a href={resolve(path)}>{label}</a>
+					<!-- hrefs now use resolve(). Otherwise the site may break according to https://sveltejs.github.io/eslint-plugin-svelte/rules/no-navigation-without-resolve/ -->
 				</li>
 			{/each}
-			<li><a href="/">privacy</a></li>
+			<li><a href={resolve("/")}>privacy</a></li>
 		</ul>
 	</nav>
 
@@ -35,19 +38,19 @@
 		class="footerImg SronLogo" />
 	<ul class="socials">
 		<li>
-			<a href="/">
+			<a href={resolve("/")}>
 				<LinkedinIcon />
 				<span class="visually-hidden">Linkedin profile</span>
 			</a>
 		</li>
 		<li>
-			<a href="/">
+			<a href={resolve("/")}>
 				<InstagramIcon />
 				<span class="visually-hidden">Instagram profile</span>
 			</a>
 		</li>
 		<li>
-			<a href="/">
+			<a href={resolve("/")}>
 				<BskyIcon />
 				<span class="visually-hidden">Bluesky profile</span>
 			</a>
@@ -117,46 +120,46 @@
 			background: unset;
 			display: flex;
 			flex-direction: column;
-			@media (min-width: 600px) {
-				flex-direction: row;
-			}
+				
+				@media (min-width: 600px) {
+					flex-direction: row;
+				}
 			flex-wrap: wrap;
 			gap: 0.5rem 2rem;
+		}
 
-			/* If more links get added, be sure to remove or adjust this; if necessary */
-			li {
-				display: contents;
+		/* If more links get added, be sure to remove or adjust this; if necessary */
+		li {
+			display: contents;
 
-				&:is(:nth-child(5n + 5), :last-child) {
-					color: var(--cleanroom-30);
-				}
+			&:is(:nth-child(5n + 5), :last-child) {
+				color: var(--cleanroom-30);
+			}
 
-				&:hover {
+			&:hover {
+				color: var(--cleanroom-60);
+			}
+
+			@supports selector(a:has(b)) {
+				/* Nice inspo https://tobiasahlin.com/blog/previous-sibling-css-has/ */
+				&:hover + li,
+				&:has(+ li:hover) {
 					color: var(--cleanroom-60);
 				}
+			}
+		}
+		a {
+			display: inline;
+			width: fit-content;
 
-				@supports selector(a:has(b)) {
-					/* Nice inspo https://tobiasahlin.com/blog/previous-sibling-css-has/ */
-					&:hover + li,
-					&:has(+ li:hover) {
-						color: var(--cleanroom-60);
-					}
-				}
+			transition: color 0.3s ease;
 
-				a {
-					display: inline;
-					width: fit-content;
+			&:hover {
+				color: var(--cleanroom-100);
+			}
 
-					transition: color 0.3s ease;
-
-					&:hover {
-						color: var(--cleanroom-100);
-					}
-
-					&:active {
-						color: var(--cleanroom-140);
-					}
-				}
+			&:active {
+				color: var(--cleanroom-140);
 			}
 		}
 	}
