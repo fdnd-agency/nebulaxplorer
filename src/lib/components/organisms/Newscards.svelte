@@ -66,6 +66,10 @@
 		&:focus-within {
 			transform: translateY(-0.5rem);
 			box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+
+			h3 {
+				text-decoration: underline 1px;
+			}
 		}
 
 		&:focus-within {
