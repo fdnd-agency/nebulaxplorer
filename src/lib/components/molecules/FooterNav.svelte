@@ -8,7 +8,7 @@
 		Footnote,
 	} from '$lib'
 
-	import { resolve } from '$app/paths';
+	import { resolve } from '$app/paths'
 
 	const { navItems } = $props()
 </script>
@@ -28,7 +28,7 @@
 					<!-- hrefs now use resolve(). Otherwise the site may break according to https://sveltejs.github.io/eslint-plugin-svelte/rules/no-navigation-without-resolve/ -->
 				</li>
 			{/each}
-			<li><a href={resolve("/")}>privacy</a></li>
+			<li><a href={resolve('/')}>privacy</a></li>
 		</ul>
 	</nav>
 
@@ -38,19 +38,19 @@
 		class="footerImg SronLogo" />
 	<ul class="socials">
 		<li>
-			<a href={resolve("/")}>
+			<a href={resolve('/')}>
 				<LinkedinIcon />
 				<span class="visually-hidden">Linkedin profile</span>
 			</a>
 		</li>
 		<li>
-			<a href={resolve("/")}>
+			<a href={resolve('/')}>
 				<InstagramIcon />
 				<span class="visually-hidden">Instagram profile</span>
 			</a>
 		</li>
 		<li>
-			<a href={resolve("/")}>
+			<a href={resolve('/')}>
 				<BskyIcon />
 				<span class="visually-hidden">Bluesky profile</span>
 			</a>
@@ -120,10 +120,10 @@
 			background: unset;
 			display: flex;
 			flex-direction: column;
-				
-				@media (min-width: 600px) {
-					flex-direction: row;
-				}
+
+			@media (min-width: 600px) {
+				flex-direction: row;
+			}
 			flex-wrap: wrap;
 			gap: 0.5rem 2rem;
 		}
