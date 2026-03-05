@@ -55,7 +55,6 @@
 
 	.news-card {
 		background-color: var(--white);
-		border-radius: 0.2rem;
 		box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
 		transition:
 			transform 0.3s ease,
