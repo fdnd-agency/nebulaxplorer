@@ -62,9 +62,15 @@
 		padding-bottom: 3rem;
 		max-width: 500px;
 
-		&:hover {
+		&:hover,
+		&:focus-within {
 			transform: translateY(-0.5rem);
 			box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+		}
+
+		&:focus-within {
+			outline: var(--default-focus);
+			outline-offset: 12px;
 		}
 	}
 
