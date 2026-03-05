@@ -9,7 +9,7 @@
 		aeroDefenseTestingStep4Enhanced as step4Image,
 		rocketLaunchStep5Enhanced as step5Image,
 		sronAcademyLogoOnSpaceBlue as logo,
-		gravWavesEnhanced as heroImg,
+		blackholeHeroEnhanced as heroImg,
 	} from '$lib'
 </script>
 
@@ -21,11 +21,7 @@
 </svelte:head>
 
 <!-- HERO BLOCK -->
-<Hero
-	titleColor="var(--white)"
-	pageTitle="Mission"
-	background={{ alt: 'Two merging black holes', file: heroImg }}
-	sronIcon={logo} />
+<Hero titleColor="var(--white)" pageTitle="Mission" />
 
 <Breadcrumb />
 
