@@ -74,16 +74,11 @@
 				padding: 1rem 2rem;
 			}
 
-			picture {
-				/* vscode seems to think that this selector isn't used, but it most assuredly is */
-				display: contents;
-
-				enhanced\:img {
-					width: 100%;
-					height: auto;
-					display: block;
-					object-fit: cover;
-				}
+			enhanced\:img {
+				width: 100%;
+				height: auto;
+				display: block;
+				object-fit: cover;
 			}
 		}
 	}
