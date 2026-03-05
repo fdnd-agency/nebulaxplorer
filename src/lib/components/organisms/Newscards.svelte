@@ -40,7 +40,7 @@
 <style>
 	.news-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 		gap: 2rem;
 		padding-bottom: 6rem;
 		padding-left: 0;
@@ -61,6 +61,7 @@
 			transform 0.3s ease,
 			box-shadow 0.3s ease;
 		padding-bottom: 3rem;
+		max-width: 500px;
 
 		&:hover {
 			transform: translateY(-0.5rem);
