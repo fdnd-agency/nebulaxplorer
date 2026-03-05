@@ -38,41 +38,18 @@
 </section>
 
 <style>
-	.grid-wrapper {
-		display: inherit;
-	}
-
 	.news-grid {
 		display: grid;
-		grid-template-columns: repeat(1, 1fr);
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		gap: 2rem;
 		padding-bottom: 6rem;
 		padding-left: 0;
 		list-style: none;
 	}
 
-	@media (min-width: 700px) {
-		.news-grid {
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-			grid-template-rows: repeat(3, 1fr);
-			gap: 2rem;
-			padding-bottom: 6rem;
-			list-style: none;
-		}
-	}
-
 	@media (min-width: 1000px) {
 		.news-grid {
-			display: grid;
-			grid-template-columns: repeat(4, 1fr);
-			grid-template-rows: repeat(3, 1fr);
-			gap: 2rem;
-			row-gap: 4rem;
-			padding-bottom: 6rem;
-			padding-left: 4rem;
-			padding-right: 4rem;
-			list-style: none;
+			padding-inline: 4rem;
 		}
 	}
 
