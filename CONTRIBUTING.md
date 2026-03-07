@@ -2,7 +2,7 @@
 
 ## Code conventies
 
-Voor onze code conventies gebruiken we de [FDND code conventies](https://docs.fdnd.nl/conventies.html).
+We follow the [FDND code conventies](https://docs.fdnd.nl/conventies.html) in general.
 
 ### HTML conventies
 
