@@ -6,7 +6,7 @@
 			link: '#',
 			image: {
 				src: placeholder1,
-				alt: 'a guy holding a thing',
+				alt: '',
 			},
 			title: 'technology',
 		},
@@ -14,7 +14,7 @@
 			link: '#',
 			image: {
 				src: gravwaves,
-				alt: 'a scientist sciencing',
+				alt: '',
 			},
 			title: 'science',
 		},
@@ -23,7 +23,7 @@
 			link: '#',
 			image: {
 				src: placeholder2,
-				alt: 'a guy holding a thing',
+				alt: '',
 			},
 			title: 'instrumentation',
 		},
@@ -31,7 +31,7 @@
 			link: '#',
 			image: {
 				src: placeholder1,
-				alt: 'a guy holding a thing',
+				alt: '',
 			},
 			title: 'placeholder',
 		},
@@ -39,7 +39,7 @@
 			link: '#',
 			image: {
 				src: placeholder1,
-				alt: 'a guy holding a thing',
+				alt: '',
 			},
 			title: 'lorem ipsum',
 		},

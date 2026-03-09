@@ -1,7 +1,8 @@
-<script module>
+<script>
 	import {
 		Hero,
 		Breadcrumb,
+		ScientificTestimonial,
 		blackholeEnhanced as blackholeImage,
 		sronReviewStep1Enhanced as step1Image,
 		rapidStep2Enhanced as step2Image,
@@ -246,6 +247,8 @@
 		</li>
 	</ul>
 </section>
+
+<ScientificTestimonial />
 
 <figure class="testimonial-container">
 	<blockquote class="testimonial-content">
