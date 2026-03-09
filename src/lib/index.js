@@ -5,6 +5,7 @@ export { default as Footer } from './components/organisms/Footer.svelte'
 export { default as Newscards } from './components/organisms/Newscards.svelte'
 export { default as NewsComponent } from './components/organisms/NewsComponent.svelte'
 export { default as PillarsComponent } from './components/organisms/PillarsComponent.svelte'
+export { default as PartnersCarousel } from './components/organisms/PartnersCarousel.svelte'
 
 // Molecules
 export { default as Breadcrumb } from './components/molecules/Breadcrumb.svelte'
@@ -17,7 +18,6 @@ export { default as TestimonialHeader } from './components/molecules/Testimonial
 export { default as ScientificTestimonial } from './components/molecules/ScientificTestimonial.svelte'
 export { default as FooterLocations } from './components/molecules/FooterLocations.svelte'
 export { default as FooterNav } from './components/molecules/FooterNav.svelte'
-
 
 // Atoms
 export { default as Mission } from './components/atoms/Mission.svelte'
