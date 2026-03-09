@@ -19,7 +19,8 @@
 										newscard.image
 									: placeholderImage}
 								alt={newscard.title}
-								height="264" />
+								height="264"
+								width="264" />
 						</div>
 						<div class="news-info">
 							<span class="news-label"></span>
