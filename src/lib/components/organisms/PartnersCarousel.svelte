@@ -122,15 +122,73 @@
 	]
 </script>
 
-<h2>Educational Partners</h2>
-<ul>
-	{#each sponsors as sponsor}
-		<li><img src={sponsor.image.src} alt={sponsor.image.alt} /></li>
-	{/each}
-</ul>
+<section>
+	<h3 class="subheading">Educational Partners</h3>
+	<ul>
+		{#each sponsors as sponsor}
+			<li><img src={sponsor.image.src} alt={sponsor.image.alt} /></li>
+		{/each}
+	</ul>
 
-<h2>Industrial Partners</h2>
-<ul><li></li></ul>
+	<h3 class="subheading">Industrial Partners</h3>
+	<ul class="reverse">
+		{#each sponsors as sponsor}
+			<li><img src={sponsor.image.src} alt={sponsor.image.alt} /></li>
+		{/each}
+	</ul>
+</section>
 
 <style>
+	section {
+	}
+
+	/* Shamelessly yoinked from https://frontendmasters.com/blog/infinite-marquee-animation-using-modern-css/ */
+	ul {
+		--size: 250px; /* size of the images */
+		--duration: 60s; /* animation duration */
+		--number: 4; /* number of visible images */
+
+		display: flex;
+		flex-direction: row;
+		overflow: hidden;
+		list-style: none;
+		height: 10rem;
+		background-color: white;
+		margin-inline: -1.5rem;
+		margin-block: 1.5rem;
+
+		&:hover li {
+			animation-play-state: paused;
+		}
+	}
+
+	img {
+		max-height: 100%;
+		width: 250px;
+	}
+
+	li {
+		display: flex;
+		align-items: center;
+		padding: 1rem;
+		background-color: white;
+		width: var(--size);
+		offset: shape(
+			from calc(var(--size) / -2) 50%,
+			hline by
+				calc(sibling-count() * max(100% / var(--number), var(--size)))
+		);
+		animation: carousel var(--duration) linear infinite
+			calc(-1 * sibling-index() * var(--duration) / sibling-count());
+	}
+
+	@keyframes carousel {
+		to {
+			offset-distance: 100%;
+		}
+	}
+
+	.reverse li {
+		animation-direction: reverse;
+	}
 </style>

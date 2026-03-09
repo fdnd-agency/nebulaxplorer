@@ -17,4 +17,5 @@
 <!-- HERO BLOCK -->
 <Hero titleColor="var(--white)" pageTitle="Partners" />
 
+<h2 class="section_title">Work with us!</h2>
 <PartnersCarousel />
