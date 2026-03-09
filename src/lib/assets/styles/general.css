@@ -228,6 +228,13 @@ h6 {
 	line-height: clamp(1.625rem, 1.5vw + 1rem, 2rem);
 }
 
+.container-generic {
+	width: 100%;
+	max-width: 1200px;
+	margin-inline: auto;
+	margin-block: 0;
+}
+
 a:focus-visible {
 	outline: var(--default-focus);
 }
