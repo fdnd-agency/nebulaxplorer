@@ -138,7 +138,8 @@ main {
 	}
 
 	> * {
-		padding: 0 1.5rem;
+		padding-block: 0;
+		padding-inline: clamp(1rem, 5vw, 3.5rem);
 		/* Bleed out of the grid (this is just for the background colors */
 		margin-inline: -1.5rem;
 		grid-column: 1 / -1;
