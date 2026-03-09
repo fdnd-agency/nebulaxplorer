@@ -1,10 +1,11 @@
 <script>
+	import { nebulaLogoWhite, blackholeHeroEnhanced } from '$lib'
 	const {
 		background = {
-			alt: 'default background image',
-			file,
+			alt: 'A quasi-black hole',
+			file: blackholeHeroEnhanced,
 		},
-		sronIcon,
+		sronIcon = nebulaLogoWhite,
 		paragraph,
 		pageTitle = 'None set',
 		titleColor,
@@ -46,7 +47,7 @@
 		padding: 1.5rem;
 		padding-top: 5.25rem;
 		@media (min-width: 56.25rem) {
-			padding: 3.5rem 4rem 2.25rem 4rem;
+			padding: 3.5rem 4rem 2.25rem 0.5rem;
 		}
 
 		/* every adjecent elem should have margin-top; except for the picture as that is the background image. */
@@ -76,9 +77,15 @@
 		}
 
 		.hero-logo {
-			width: clamp(10rem, calc(25vw + 5rem), 60rem);
+			width: clamp(12.5rem, 7.15rem + 28.5vw, 25rem);
 			max-width: 36.375rem;
 			display: block;
+		}
+
+		@media (min-width: 56.25rem) {
+			h1 {
+				padding-left: 3.5rem;
+			}
 		}
 	}
 </style>

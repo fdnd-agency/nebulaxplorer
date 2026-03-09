@@ -13,10 +13,15 @@ export { default as MailingListSignup } from './components/molecules/MailingList
 export { default as Pagination } from './components/molecules/Pagination.svelte'
 export { default as Testimonial } from './components/molecules/Testimonial.svelte'
 export { default as TestimonialHeader } from './components/molecules/TestimonialHeader.svelte'
+
 export { default as ScientificTestimonial } from './components/molecules/ScientificTestimonial.svelte'
+export { default as FooterLocations } from './components/molecules/FooterLocations.svelte'
+export { default as FooterNav } from './components/molecules/FooterNav.svelte'
+
 
 // Atoms
 export { default as Mission } from './components/atoms/Mission.svelte'
+export { default as Footnote } from './components/atoms/FooterFootnote.svelte'
 
 // ASSETS
 // Icons
@@ -41,12 +46,15 @@ export { default as sronLogoFullWhite } from './assets/logos/SRON_Full_White.svg
 export { default as sronLogoSmallBlack } from './assets/logos/SRON_Small_Black.svg'
 export { default as sronLogoSmallBlue } from './assets/logos/SRON_Small_Blue.svg'
 export { default as sronLogoSmallWhite } from './assets/logos/SRON_Small_White.svg'
+export { default as nebulaLogoWhite } from './assets/logos/nebula_white.svg'
+export { default as nebulaLogoBlack } from './assets/logos/nebula_black.svg'
 
 // Images
 export { default as aeroDefenseTestingStep4 } from './assets/images/aerospace-defense-testing-step-4.jpg'
 export { default as blackhole } from './assets/images/blackhole.jpg'
 export { default as blackhole2 } from './assets/images/blackhole2.jpg'
 export { default as blackhole2Webp } from './assets/images/blackhole2.webp'
+export { default as blackholeHero } from './assets/images/blackhole-hero.png'
 export { default as gravWaves } from './assets/images/grav-waves.jpg'
 export { default as mertenImage } from './assets/images/merten.jpg'
 export { default as missionImage } from './assets/images/mission.jpg'
@@ -66,6 +74,7 @@ export { default as werkenbijSRON } from './assets/images/WerkenbijSRON.jpg'
 // Enhanced Images
 export { default as aeroDefenseTestingStep4Enhanced } from './assets/images/aerospace-defense-testing-step-4.jpg?enhanced&w=1024;768;512'
 export { default as blackholeEnhanced } from './assets/images/blackhole.jpg?enhanced'
+export { default as blackholeHeroEnhanced } from './assets/images/blackhole-hero.png?enhanced&w=1920;1440;1024;768'
 export { default as gravWavesEnhanced } from './assets/images/grav-waves.jpg?enhanced&w=1920;1440;1024;768'
 export { default as nebulaSatelliteEnhanced } from './assets/images/nebula-satellite.png?enhanced'
 export { default as nebulaXplorerEnhanced } from './assets/images/nebula-xplorer.jpg?enhanced&w=1024;768;512'
