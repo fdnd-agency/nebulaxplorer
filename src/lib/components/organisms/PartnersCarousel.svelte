@@ -1,19 +1,5 @@
 <script>
-	const sponsors = [
-		{
-			link: '#',
-			image: {
-				src: '/src/lib/assets/images/sponsors/astos-logo.jpg',
-				alt: 'Astos',
-			},
-		},
-		{
-			link: '#',
-			image: {
-				src: '/src/lib/assets/images/sponsors/esatan-logo.png',
-				alt: 'Esatan',
-			},
-		},
+	const sponsorsEducational = [
 		{
 			link: '#',
 			image: {
@@ -120,28 +106,42 @@
 			},
 		},
 	]
+
+	const sponsorsIndustrial = [
+		{
+			link: '#',
+			image: {
+				src: '/src/lib/assets/images/sponsors/astos-logo.jpg',
+				alt: 'Astos',
+			},
+		},
+		{
+			link: '#',
+			image: {
+				src: '/src/lib/assets/images/sponsors/esatan-logo.png',
+				alt: 'Esatan',
+			},
+		},
+	]
 </script>
 
 <section>
 	<h3 class="subheading">Educational Partners</h3>
 	<ul>
-		{#each sponsors as sponsor}
+		{#each sponsorsEducational as sponsor}
 			<li><img src={sponsor.image.src} alt={sponsor.image.alt} /></li>
 		{/each}
 	</ul>
 
 	<h3 class="subheading">Industrial Partners</h3>
 	<ul class="reverse">
-		{#each sponsors as sponsor}
+		{#each sponsorsIndustrial as sponsor}
 			<li><img src={sponsor.image.src} alt={sponsor.image.alt} /></li>
 		{/each}
 	</ul>
 </section>
 
 <style>
-	section {
-	}
-
 	/* Shamelessly yoinked from https://frontendmasters.com/blog/infinite-marquee-animation-using-modern-css/ */
 	ul {
 		--size: 250px; /* size of the images */
