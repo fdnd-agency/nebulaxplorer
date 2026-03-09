@@ -60,7 +60,6 @@
 			transform 0.3s ease,
 			box-shadow 0.3s ease;
 		padding-bottom: 3rem;
-		max-width: 500px;
 
 		&:hover,
 		&:focus-within {
