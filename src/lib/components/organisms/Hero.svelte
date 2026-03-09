@@ -18,25 +18,25 @@
 </script>
 
 <section class="hero">
-	{#if paragraph}
-		<p class="subheading">{paragraph}</p>
-	{/if}
-
-	{#if background.file}
-		<enhanced:img
-			src={background.file}
-			alt={background.alt}
-			class="hero-bg"
-			sizes="100vw"
-			fetchpriority="high" />
-	{/if}
-
-	{#if sronIcon}
-		<img src={sronIcon} alt="Logo of SRON Academy" class="hero-logo" />
-	{/if}
-	<h1 class="title" style={titleColor && `color: ${titleColor}`}>
-		{pageTitle}
-	</h1>
+	<div class="container-generic">
+		{#if paragraph}
+			<p class="subheading">{paragraph}</p>
+		{/if}
+		{#if background.file}
+			<enhanced:img
+				src={background.file}
+				alt={background.alt}
+				class="hero-bg"
+				sizes="100vw"
+				fetchpriority="high" />
+		{/if}
+		{#if sronIcon}
+			<img src={sronIcon} alt="Logo of SRON Academy" class="hero-logo" />
+		{/if}
+		<h1 class="title" style={titleColor && `color: ${titleColor}`}>
+			{pageTitle}
+		</h1>
+	</div>
 </section>
 
 <style>

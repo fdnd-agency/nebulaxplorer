@@ -2,30 +2,32 @@
 	const { assignments } = $props()
 </script>
 
-<header class="assignments-header">
-	<h2 class="subtitle">Find a suitable Assignment</h2>
-	<p class="heading">
-		Within the NEBULA Xplorer project there are
-		<span>{assignments.length}</span> assignments available.
-	</p>
-</header>
+<div class="container-generic">
+	<header class="assignments-header">
+		<h2 class="subtitle">Find a suitable Assignment</h2>
+		<p class="heading">
+			Within the NEBULA Xplorer project there are
+			<span>{assignments.length}</span> assignments available.
+		</p>
+	</header>
 
-<ul class="assignments-container">
-	{#each assignments as assignment}
-		<li class="assignment-card">
-			<a href="#">
-				<section class="assignment-content">
-					<h2 class="assignment-title">{assignment.title}</h2>
-					<div>
-						<p>{assignment.study_program}</p>
-						<p>{assignment.location}</p>
-					</div>
-				</section>
-				<p class="apply-button supporting">Apply</p>
-			</a>
-		</li>
-	{/each}
-</ul>
+	<ul class="assignments-container">
+		{#each assignments as assignment}
+			<li class="assignment-card">
+				<a href="#">
+					<section class="assignment-content">
+						<h2 class="assignment-title">{assignment.title}</h2>
+						<div>
+							<p>{assignment.study_program}</p>
+							<p>{assignment.location}</p>
+						</div>
+					</section>
+					<p class="apply-button supporting">Apply</p>
+				</a>
+			</li>
+		{/each}
+	</ul>
+</div>
 
 <style>
 	.assignments-header {
@@ -41,7 +43,7 @@
 	}
 
 	.assignments-container {
-		display: inherit;
+		display: grid;
 		grid-template-columns: subgrid;
 		gap: inherit;
 		margin-bottom: 4rem;

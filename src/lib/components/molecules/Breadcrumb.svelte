@@ -10,31 +10,34 @@
 	const { contrast = 'white-on-space' } = $props()
 </script>
 
-<nav class={`breadcrumb-path ${contrast}`}>
-	<a href="/" class="crumb subheading">home</a>
-	{#each pathSegments as segment, index}
-		<span class="arrow">
-			<Arrow />
-		</span>
-		{#if index + 1 < pathSegments.length}
-			<a
-				href={'/' + pathSegments.slice(0, index + 1).join('/')}
-				class="crumb subheading">
-				{sanitizeString(segment)}
-			</a>
-		{:else}
-			<span class="caption">
-				{sanitizeString(segment)}
+<div class="container-generic">
+	<nav class={`breadcrumb-path ${contrast}`}>
+		<a href="/" class="crumb subheading">home</a>
+		{#each pathSegments as segment, index}
+			<span class="arrow">
+				<Arrow />
 			</span>
-		{/if}
-	{/each}
-</nav>
+			{#if index + 1 < pathSegments.length}
+				<a
+					href={'/' + pathSegments.slice(0, index + 1).join('/')}
+					class="crumb subheading">
+					{sanitizeString(segment)}
+				</a>
+			{:else}
+				<span class="caption">
+					{sanitizeString(segment)}
+				</span>
+			{/if}
+		{/each}
+	</nav>
+</div>
 
 <style>
 	nav.breadcrumb-path {
 		display: inline-flex;
 		gap: 0.75rem;
 		align-items: center;
+		width: 100%;
 
 		/* color schemes */
 
@@ -79,10 +82,6 @@
 		a:hover {
 			text-decoration: underline;
 			text-underline-offset: 0.125rem;
-		}
-
-		@media (min-width: 56.25rem) {
-			padding-left: 4rem;
 		}
 	}
 </style>
