@@ -168,6 +168,9 @@
 	}
 
 	li {
+		--duration: calc(sibling-count() * 6s);
+		--number: min(sibling-count(), 4);
+
 		display: flex;
 		align-items: center;
 		padding: 1rem;
