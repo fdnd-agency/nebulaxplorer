@@ -1,7 +1,7 @@
 <script>
-	export let news = []
-
 	import { placeholder2 as placeholderImage } from '$lib'
+
+	let { news } = $props()
 </script>
 
 <section class="grid-wrapper">
@@ -14,9 +14,10 @@
 						class="news-card-link">
 						<div class="news-image">
 							<img
-								src={newscard.image?.data?.full_url ||
-									newscard.image ||
-									placeholderImage}
+								src={newscard.image
+									? 'https://fdnd-agency.directus.app/assets/' +
+										newscard.image
+									: placeholderImage}
 								alt={newscard.title} />
 						</div>
 						<div class="news-info">
