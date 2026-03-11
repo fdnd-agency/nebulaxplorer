@@ -30,6 +30,10 @@
 </div>
 
 <style>
+	.container-generic {
+		padding: 0;
+	}
+
 	.assignments-header {
 		margin-bottom: 2.5rem;
 
@@ -44,23 +48,13 @@
 
 	.assignments-container {
 		display: grid;
-		grid-template-columns: subgrid;
-		gap: inherit;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 1.25rem;
 		margin-bottom: 4rem;
 
 		.assignment-card {
 			list-style: none;
 			background: var(--space-100-low-opacity);
-
-			grid-column: 1 / -1;
-
-			@media (min-width: 32rem) {
-				grid-column: span 2;
-			}
-
-			@media (min-width: 56.25rem) {
-				grid-column: span 3;
-			}
 
 			a {
 				display: flex;
