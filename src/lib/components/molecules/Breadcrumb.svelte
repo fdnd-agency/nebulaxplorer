@@ -10,27 +10,25 @@
 	const { contrast = 'white-on-space' } = $props()
 </script>
 
-<div class="container-generic">
-	<nav class={`breadcrumb-path ${contrast}`}>
-		<a href="/" class="crumb subheading">home</a>
-		{#each pathSegments as segment, index}
-			<span class="arrow">
-				<Arrow />
+<nav class={`breadcrumb-path ${contrast}`}>
+	<a href="/" class="crumb subheading">home</a>
+	{#each pathSegments as segment, index}
+		<span class="arrow">
+			<Arrow />
+		</span>
+		{#if index + 1 < pathSegments.length}
+			<a
+				href={'/' + pathSegments.slice(0, index + 1).join('/')}
+				class="crumb subheading">
+				{sanitizeString(segment)}
+			</a>
+		{:else}
+			<span class="caption">
+				{sanitizeString(segment)}
 			</span>
-			{#if index + 1 < pathSegments.length}
-				<a
-					href={'/' + pathSegments.slice(0, index + 1).join('/')}
-					class="crumb subheading">
-					{sanitizeString(segment)}
-				</a>
-			{:else}
-				<span class="caption">
-					{sanitizeString(segment)}
-				</span>
-			{/if}
-		{/each}
-	</nav>
-</div>
+		{/if}
+	{/each}
+</nav>
 
 <style>
 	nav.breadcrumb-path {
@@ -38,6 +36,9 @@
 		gap: 0.75rem;
 		align-items: center;
 		width: 100%;
+		max-width: 1200px;
+		margin-inline: auto;
+		padding: 0;
 
 		/* color schemes */
 
