@@ -5,7 +5,7 @@
 </script>
 
 <section>
-	<div class="container-generic">
+	<div class="content-container">
 		<h2 class="section_title news_section_title">Mission Updates</h2>
 		<ul class="news-grid">
 			{#each newsCards as newscard}

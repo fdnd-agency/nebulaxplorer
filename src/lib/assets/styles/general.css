@@ -231,7 +231,7 @@ h6 {
 	line-height: clamp(1.625rem, 1.5vw + 1rem, 2rem);
 }
 
-.container-generic {
+.content-container {
 	width: 100%;
 	max-width: var(--content-width);
 	margin-inline: auto;

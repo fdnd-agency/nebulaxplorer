@@ -24,7 +24,7 @@
 <News newsCards={data.newsItems} />
 
 <section class="section-paragraph-picture">
-	<div class="container-generic">
+	<div class="content-container">
 		<h2 class="section_title">Over Nebula Xplorer</h2>
 		<p class="paragraph">
 			NEBULA – Xplorer staat voor “Netherlands Educational Satellite for

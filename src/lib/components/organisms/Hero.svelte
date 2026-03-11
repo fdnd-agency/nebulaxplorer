@@ -18,7 +18,7 @@
 </script>
 
 <section class="hero">
-	<div class="container-generic">
+	<div class="content-container">
 		{#if paragraph}
 			<p class="subheading">{paragraph}</p>
 		{/if}

@@ -28,7 +28,7 @@
 <!-- FIRST PARAGRAPH + IMG BLOCK -->
 
 <hgroup class="text-title">
-	<div class="container-generic">
+	<div class="content-container">
 		<h2 class="subtitle">
 			What are we <span class="orange">up</span> to?
 		</h2>
@@ -37,7 +37,7 @@
 </hgroup>
 
 <section class="paragraph-block">
-	<div class="container-generic">
+	<div class="content-container">
 		<section class="text-content">
 			<h3 class="orange heading">Dense matter and compact objects</h3>
 			<p>
@@ -70,7 +70,7 @@
 <!-- SECOND IMG + PARAGRAPH BLOCK -->
 
 <section class="paragraph-block paragraph-block-alt">
-	<div class="container-generic">
+	<div class="content-container">
 		<enhanced:img
 			class="paragraph-img-left"
 			src={blackholeImage}
@@ -104,7 +104,7 @@
 <!-- THIRD PARAGRAPH + IMG BLOCK -->
 
 <section class="paragraph-block">
-	<div class="container-generic">
+	<div class="content-container">
 		<section class="text-content">
 			<h3 class="orange heading">Time-domain Astrophysics</h3>
 			<p>

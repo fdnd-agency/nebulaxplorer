@@ -2,7 +2,7 @@
 	const { assignments } = $props()
 </script>
 
-<div class="container-generic">
+<div class="content-container">
 	<header class="assignments-header">
 		<h2 class="subtitle">Find a suitable Assignment</h2>
 		<p class="heading">
@@ -30,7 +30,7 @@
 </div>
 
 <style>
-	.container-generic {
+	.content-container {
 		padding: 0;
 	}
 

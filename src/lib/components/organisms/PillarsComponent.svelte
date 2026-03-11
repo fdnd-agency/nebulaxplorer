@@ -47,7 +47,7 @@
 </script>
 
 <section>
-	<div class="container-generic">
+	<div class="content-container">
 		<h2 class="section_title">Pillars</h2>
 		<!-- TODO: make the things inside this #each loop into a seperate component partial -->
 		<ul>
