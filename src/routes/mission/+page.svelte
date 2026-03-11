@@ -341,6 +341,7 @@
 				> *:not(enhanced\:img, img, picture) {
 					grid-column: 6 / -1;
 					padding-left: 1.5rem;
+					justify-self: flex-end;
 				}
 			}
 
