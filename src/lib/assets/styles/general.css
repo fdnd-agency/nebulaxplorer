@@ -103,6 +103,9 @@ body {
 	/* Focus outline */
 	--default-focus: 0.125rem dashed var(--cleanroom-140);
 
+	/* Sizing */
+	--content-width: 1400px;
+
 	/* Styling */
 	background: var(--space-100);
 	color: var(--white);
@@ -230,7 +233,7 @@ h6 {
 
 .container-generic {
 	width: 100%;
-	max-width: 1200px;
+	max-width: var(--content-width);
 	margin-inline: auto;
 	margin-block: 0;
 }
