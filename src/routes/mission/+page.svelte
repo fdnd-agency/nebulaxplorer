@@ -301,13 +301,14 @@
 			}
 		}
 
-		:global(.text-content),
-		:global(picture) {
+		.text-content,
+		picture {
 			margin-top: 3rem;
 		}
 
-		:global(picture) {
+		picture {
 			grid-column: 8 / -1;
+			grid-row: 1 / 2;
 			height: fit-content;
 			display: none;
 
@@ -315,13 +316,8 @@
 				display: block;
 			}
 
-			@media (min-width: 56.25rem) {
-				grid-row: 1 / 2;
-				grid-column: 8 / -1;
-			}
-
-			:global(enhanced\:img),
-			:global(img) {
+			enhanced\:img,
+			img {
 				width: 100%;
 				object-fit: cover;
 				max-height: 22.8125rem;
@@ -345,16 +341,12 @@
 				}
 			}
 
-			:global(picture) {
+			picture {
 				grid-column: 1 / 6;
 				grid-row: 1 / 2;
 
-				@media (min-width: 56.25rem) {
-					grid-column: 1 / 6;
-				}
-
-				:global(enhanced\:img),
-				:global(img) {
+				enhanced\:img,
+				img {
 					display: none;
 
 					@media (min-width: 36.25rem) {
