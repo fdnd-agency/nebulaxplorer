@@ -66,12 +66,12 @@
 
 <!-- SECOND IMG + PARAGRAPH BLOCK -->
 
-<section class="paragraph-block-right">
+<section class="paragraph-block paragraph-block-alt">
 	<enhanced:img
 		class="paragraph-img-left"
 		src={blackholeImage}
 		alt="Black Hole" />
-	<section class="text-content-right">
+	<section class="text-content">
 		<article>
 			<h4 class="orange heading">Multi-messenger physics</h4>
 			<p>
@@ -101,8 +101,8 @@
 
 <!-- THIRD PARAGRAPH + IMG BLOCK -->
 
-<section class="paragraph-block-3">
-	<section class="text-content-3">
+<section class="paragraph-block">
+	<section class="text-content">
 		<article>
 			<h4 class="orange heading">Time-domain Astrophysics</h4>
 			<p>
@@ -341,54 +341,21 @@
 
 	/* SECOND PARAGRAPH BLOCK */
 
-	.paragraph-block-right {
-		display: grid;
-		grid-template-columns: subgrid;
-		gap: inherit;
-		row-gap: unset;
+	.paragraph-block-alt {
 		padding-bottom: 2rem;
 		background-color: var(--white);
 		color: var(--space-100);
 		font-weight: 500;
 
-		> *:not(enhanced\:img, img, picture) {
-			grid-column: 1 / -1;
-			max-width: 43.75rem;
-
-			@media (min-width: 36.25rem) {
-				grid-column: 1 / 4;
-				padding-right: 1.5rem;
-			}
-			@media (min-width: 56.25rem) {
-				padding-left: 2.5rem;
+		@media (min-width: 56.25rem) {
+			> *:not(enhanced\:img, img, picture) {
 				grid-column: 6 / 12;
 				align-items: right;
 			}
 		}
 
-		.text-content-right article {
-			* + p {
-				margin-top: 0.5rem;
-				line-height: 1.5;
-				@media (min-width: 56.25rem) {
-					padding-left: 1.5rem;
-				}
-			}
-		}
-
-		:global(.text-content),
 		:global(picture) {
-			margin-top: 3rem;
-		}
-
-		:global(picture) {
-			grid-column: 4 / -1;
-			height: fit-content;
-			display: none;
-
-			@media (min-width: 36.25rem) {
-				display: block;
-			}
+			grid-row: 1 / 2;
 
 			@media (min-width: 56.25rem) {
 				grid-column: 1 / 6;
@@ -407,85 +374,6 @@
 			}
 		}
 	}
-
-	/* THIRD PARAGRAPH + IMG BLOCK */
-
-	.paragraph-block-3 {
-		display: grid;
-		grid-template-columns: subgrid;
-		gap: inherit;
-		row-gap: unset;
-		margin-bottom: 1rem;
-
-		> *:not(enhanced\:img, img, picture) {
-			grid-column: 1 / -1;
-			max-width: 43.75rem;
-
-			@media (min-width: 36.25rem) {
-				grid-column: 1 / 4;
-				padding-right: 1.5rem;
-			}
-			@media (min-width: 56.25rem) {
-				padding-left: 2.5rem;
-				grid-column: 1 / 8;
-			}
-		}
-
-		.text-content-3 article {
-			* + p {
-				margin-top: 0.5rem;
-				line-height: 1.5;
-				@media (min-width: 56.25rem) {
-					padding-left: 1.5rem;
-					margin-bottom: 1.5rem;
-				}
-			}
-		}
-
-		:global(.text-content),
-		:global(picture) {
-			margin-top: 3rem;
-		}
-
-		:global(picture) {
-			grid-column: 4 / -1;
-			height: fit-content;
-
-			display: none;
-
-			@media (min-width: 36.25rem) {
-				display: block;
-			}
-
-			@media (min-width: 56.25rem) {
-				grid-column: 8 / -1;
-
-				@media (prefers-reduced-motion: no-preference) {
-					position: sticky;
-					top: 30%;
-					margin-bottom: 1.5rem;
-				}
-			}
-
-			:global(enhanced\:img),
-			:global(img) {
-				width: 100%;
-				object-fit: cover;
-				max-height: 22.8125rem;
-			}
-		}
-	}
-
-	.text-content-3 article {
-		p {
-			color: var(--white);
-			font-weight: 500;
-		}
-	}
-
-	/* .article {
-    margin-bottom: 2rem;
-  } */
 
 	/* STEPS BLOCK */
 
@@ -660,19 +548,6 @@
 		box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.3);
 	}
 
-	/* GETTING INVOLVED */
-	/* 
-  .getting-involved {
-    padding-left: 1.5rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-
-    p {
-      margin-top: 1rem;
-      padding: 0 3rem 0 3rem;
-    }
-  } */
-
 	/* TESTIMONIAL BLOCK */
 
 	.testimonial-container {
@@ -770,8 +645,4 @@
 		font-weight: 500;
 		padding-top: 1.5rem;
 	}
-
-	/* article + article {
-  margin-top: 2rem;
-} */
 </style>
