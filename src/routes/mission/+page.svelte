@@ -26,16 +26,19 @@
 <Breadcrumb />
 
 <!-- FIRST PARAGRAPH + IMG BLOCK -->
+<div class="container-generic">
+	<hgroup class="text-title">
+		<h2 class="subtitle">
+			What are we <span class="orange">up</span> to?
+		</h2>
+		<p class="heading">What our current project entails</p>
+	</hgroup>
+</div>
 
 <section class="paragraph-block">
-	<div class="text-title">
-		<h2 class="subtitle">What are we <span class="orange">up</span> to?</h2>
-		<p class="heading">What our current project entails</p>
-	</div>
-
-	<section class="text-content">
-		<article>
-			<h4 class="orange heading">Dense matter and compact objects</h4>
+	<div class="container-generic">
+		<section class="text-content">
+			<h3 class="orange heading">Dense matter and compact objects</h3>
 			<p>
 				NEBULA-Xplorer will investigate compact objects such as neutron
 				stars and black hole X-ray binaries within our Milky Way. By
@@ -48,7 +51,6 @@
 				systems, where light is most affected by the gravity of compact
 				objects and the magnetic environment of neutron stars.
 			</p>
-
 			<p>
 				By observing black holes in this energy range, we can also
 				measure the spin of black holes by observing the relativistic
@@ -59,21 +61,21 @@
 				implications for stellar evolution in binary systems which are
 				estimated to make up to 85% of star systems in our universe.
 			</p>
-		</article>
-	</section>
-	<enhanced:img src={blackholeImage} alt="Black Hole" />
+		</section>
+		<enhanced:img src={blackholeImage} alt="Black Hole" />
+	</div>
 </section>
 
 <!-- SECOND IMG + PARAGRAPH BLOCK -->
 
 <section class="paragraph-block paragraph-block-alt">
-	<enhanced:img
-		class="paragraph-img-left"
-		src={blackholeImage}
-		alt="Black Hole" />
-	<section class="text-content">
-		<article>
-			<h4 class="orange heading">Multi-messenger physics</h4>
+	<div class="container-generic">
+		<enhanced:img
+			class="paragraph-img-left"
+			src={blackholeImage}
+			alt="Black Hole" />
+		<section class="text-content">
+			<h3 class="orange heading">Multi-messenger physics</h3>
 			<p>
 				NEBULA-Xplorer frames the multi-wavelength campaigns required to
 				understand jet and accretion physics at the forefront of its
@@ -83,7 +85,6 @@
 				ability to maintain as close to continuous observations of
 				targets as possible.
 			</p>
-
 			<p>
 				During longer observations, NEBULA-Xplorer will transmit timing
 				information key to understanding when ballistic jet ejections
@@ -95,16 +96,16 @@
 				understand how activity in the outer accretion disk of these
 				systems propagates into the inner-most regions.
 			</p>
-		</article>
-	</section>
+		</section>
+	</div>
 </section>
 
 <!-- THIRD PARAGRAPH + IMG BLOCK -->
 
 <section class="paragraph-block">
-	<section class="text-content">
-		<article>
-			<h4 class="orange heading">Time-domain Astrophysics</h4>
+	<div class="container-generic">
+		<section class="text-content">
+			<h3 class="orange heading">Time-domain Astrophysics</h3>
 			<p>
 				As a non-imaging X-ray timing observatory, NEBULA-Xplorer’s core
 				science focuses on interpreting the variability of emission from
@@ -117,7 +118,6 @@
 				disk and companion star in these systems obscuring the central
 				accretion engine.
 			</p>
-
 			<p>
 				Frequently, changes in variability are affected by multiple
 				phenomena in the system that evolve on different time scales,
@@ -128,7 +128,6 @@
 				will allow us to understand the short-term variability of
 				emission and how that changes on timescales of days to weeks.
 			</p>
-
 			<p>
 				NEBULA-Xplorer’s moderate energy resolution and high timing
 				resolution will also allow us to perform spectral-timing
@@ -139,9 +138,9 @@
 				distances between different parts of the system through modeling
 				of light travel time within the system.
 			</p>
-		</article>
-	</section>
-	<enhanced:img src={blackholeImage} alt="Black Hole" />
+		</section>
+		<enhanced:img src={blackholeImage} alt="Black Hole" />
+	</div>
 </section>
 
 <!-- STEPS BLOCK -->
@@ -274,11 +273,9 @@
 </figure>
 
 <style>
-	/* FIRST PARAGRAPH BLOCK */
-
-	.paragraph-block {
+	.paragraph-block div {
 		display: grid;
-		grid-template-columns: subgrid;
+		grid-template-columns: repeat(12, 1fr);
 		gap: inherit;
 		row-gap: unset;
 		margin-bottom: 1rem;
@@ -288,16 +285,17 @@
 			max-width: 43.75rem;
 
 			@media (min-width: 36.25rem) {
-				grid-column: 1 / 4;
+				grid-column: 1 / 8;
 				padding-right: 1.5rem;
 			}
 			@media (min-width: 56.25rem) {
 				padding-left: 2.5rem;
-				grid-column: 1 / 8;
 			}
 		}
 
-		.text-content article {
+		.text-content {
+			grid-row: 1 / 2;
+
 			* + p {
 				margin-top: 0.5rem;
 				line-height: 1.7;
@@ -313,20 +311,16 @@
 		}
 
 		:global(picture) {
-			grid-column: 4 / -1;
+			grid-column: 8 / -1;
 			height: fit-content;
 			display: none;
-
-			@media (prefers-reduced-motion: no-preference) {
-				position: sticky;
-				top: 20%;
-			}
 
 			@media (min-width: 36.25rem) {
 				display: block;
 			}
 
 			@media (min-width: 56.25rem) {
+				grid-row: 1 / 2;
 				grid-column: 8 / -1;
 			}
 
@@ -339,37 +333,37 @@
 		}
 	}
 
-	/* SECOND PARAGRAPH BLOCK */
-
 	.paragraph-block-alt {
-		padding-bottom: 2rem;
 		background-color: var(--white);
 		color: var(--space-100);
-		font-weight: 500;
 
-		@media (min-width: 56.25rem) {
-			> *:not(enhanced\:img, img, picture) {
-				grid-column: 6 / 12;
-				align-items: right;
-			}
-		}
+		div {
+			padding-bottom: 2rem;
 
-		:global(picture) {
-			grid-row: 1 / 2;
+			font-weight: 500;
 
 			@media (min-width: 56.25rem) {
-				grid-column: 1 / 6;
+				> *:not(enhanced\:img, img, picture) {
+					grid-column: 6 / 12;
+					align-items: right;
+				}
 			}
 
-			:global(enhanced\:img),
-			:global(img) {
-				display: none;
+			:global(picture) {
+				@media (min-width: 56.25rem) {
+					grid-column: 1 / 6;
+				}
 
-				@media (min-width: 36.25rem) {
-					display: block;
-					width: 100%;
-					object-fit: cover;
-					max-height: 22.8125rem;
+				:global(enhanced\:img),
+				:global(img) {
+					display: none;
+
+					@media (min-width: 36.25rem) {
+						display: block;
+						width: 100%;
+						object-fit: cover;
+						max-height: 22.8125rem;
+					}
 				}
 			}
 		}
