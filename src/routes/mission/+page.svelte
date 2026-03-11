@@ -337,8 +337,8 @@
 			padding-bottom: 2rem;
 			font-weight: 500;
 
-			@media (min-width: 56.25rem) {
-				> *:not(enhanced\:img, img, picture) {
+			> *:not(enhanced\:img, img, picture) {
+				@media (min-width: 36.25rem) {
 					grid-column: 6 / -1;
 					padding-left: 1.5rem;
 					justify-self: flex-end;
@@ -346,6 +346,9 @@
 			}
 
 			:global(picture) {
+				grid-column: 1 / 6;
+				grid-row: 1 / 2;
+
 				@media (min-width: 56.25rem) {
 					grid-column: 1 / 6;
 				}
