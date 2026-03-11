@@ -26,14 +26,15 @@
 <Breadcrumb />
 
 <!-- FIRST PARAGRAPH + IMG BLOCK -->
-<div class="container-generic">
-	<hgroup class="text-title">
+
+<hgroup class="text-title">
+	<div class="container-generic">
 		<h2 class="subtitle">
 			What are we <span class="orange">up</span> to?
 		</h2>
 		<p class="heading">What our current project entails</p>
-	</hgroup>
-</div>
+	</div>
+</hgroup>
 
 <section class="paragraph-block">
 	<div class="container-generic">
@@ -289,9 +290,6 @@
 				grid-column: 1 / 8;
 				padding-right: 1.5rem;
 			}
-			@media (min-width: 56.25rem) {
-				padding-left: 2.5rem;
-			}
 		}
 
 		.text-content {
@@ -300,9 +298,6 @@
 			* + p {
 				margin-top: 0.5rem;
 				line-height: 1.7;
-				@media (min-width: 56.25rem) {
-					padding-left: 1.5rem;
-				}
 			}
 		}
 
@@ -340,13 +335,12 @@
 
 		div {
 			padding-bottom: 2rem;
-
 			font-weight: 500;
 
 			@media (min-width: 56.25rem) {
 				> *:not(enhanced\:img, img, picture) {
-					grid-column: 6 / 12;
-					align-items: right;
+					grid-column: 6 / -1;
+					padding-left: 1.5rem;
 				}
 			}
 
