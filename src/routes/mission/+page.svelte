@@ -279,6 +279,7 @@
 		gap: inherit;
 		row-gap: unset;
 		margin-bottom: 1rem;
+		align-items: center;
 
 		> *:not(enhanced\:img, img, picture) {
 			grid-column: 1 / -1;
