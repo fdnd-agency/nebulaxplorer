@@ -5,23 +5,27 @@
 </script>
 
 <section>
-	<h2 class="section_title news_section_title">Mission Updates</h2>
-	<ul class="news-grid">
-		{#each newsCards as newscard}
-			<li class="news-card">
-				<img
-					src={newscard.image
-						? `https://fdnd-agency.directus.app/assets/${newscard.image}`
-						: defaultImage}
-					alt=""
-					height="240"
-					width="240" />
-				<h3><a href={`/news/${newscard.id}`}>{newscard.title}</a></h3>
-				<p>{newscard.type}</p>
-			</li>
-		{/each}
-	</ul>
-	<a href="/news" class="paragraph link-readmore">Read More</a>
+	<div class="content-container">
+		<h2 class="section_title news_section_title">Mission Updates</h2>
+		<ul class="news-grid">
+			{#each newsCards as newscard}
+				<li class="news-card">
+					<img
+						src={newscard.image
+							? `https://fdnd-agency.directus.app/assets/${newscard.image}`
+							: defaultImage}
+						alt=""
+						height="240"
+						width="240" />
+					<h3>
+						<a href={`/news/${newscard.id}`}>{newscard.title}</a>
+					</h3>
+					<p>{newscard.type}</p>
+				</li>
+			{/each}
+		</ul>
+		<a href="/news" class="paragraph link-readmore">Read More</a>
+	</div>
 </section>
 
 <style>

@@ -77,6 +77,7 @@
 			enhanced\:img {
 				width: 100%;
 				height: auto;
+				max-height: 500px;
 				display: block;
 				object-fit: cover;
 			}
