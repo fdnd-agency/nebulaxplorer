@@ -69,6 +69,7 @@ export { default as rushilImage } from './assets/images/rushil.jpg'
 export { default as sronGroningen } from './assets/images/sron-groningen.webp'
 export { default as sronLeiden } from './assets/images/sron-leiden.webp'
 export { default as sronReviewStep1 } from './assets/images/sron-review-step-1.jpg'
+export { default as teamPhoto } from './assets/images/team-2026.webp'
 export { default as werkenbijSRON } from './assets/images/WerkenbijSRON.jpg'
 
 // Enhanced Images

@@ -1,5 +1,5 @@
 <script>
-	import { Hero, portraitPlaceholder } from '$lib'
+	import { Hero, portraitPlaceholder, teamPhoto } from '$lib'
 
 	let { data } = $props()
 </script>
@@ -16,6 +16,8 @@
 <h2 class="section_title">
 	Who we worked with in <span class="orange">{data.members[0].time}</span>
 </h2>
+
+<img src={teamPhoto} alt="" />
 
 <h3 class="heading">Reflections on the work</h3>
 <ul>
@@ -39,6 +41,10 @@
 		margin-block: 2rem 0;
 	}
 
+	img {
+		height: 400px;
+	}
+
 	ul {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -50,23 +56,23 @@
 		display: grid;
 		grid-template-rows: min-content min-content 1fr;
 		background-color: var(--ultra-100);
-	}
 
-	p {
-		padding: 1rem;
-		font-weight: 700;
-	}
+		p {
+			padding: 1rem;
+			font-weight: 700;
+		}
 
-	blockquote {
-		padding-block: 0 2rem;
-		padding-inline: 1rem;
-	}
+		blockquote {
+			padding-block: 0 2rem;
+			padding-inline: 1rem;
+		}
 
-	img {
-		width: 100%;
-		height: auto;
-		aspect-ratio: 1 / 1;
-		object-fit: cover;
+		img {
+			width: 100%;
+			height: auto;
+			aspect-ratio: 1 / 1;
+			object-fit: cover;
+		}
 	}
 
 	.orange {
