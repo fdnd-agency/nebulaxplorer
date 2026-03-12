@@ -28,16 +28,22 @@
 					? `https://fdnd-agency.directus.app/assets/${member.image}`
 					: portraitPlaceholder}
 				alt=""
-				height="150"
-				width="150" />
+				height="250"
+				width="250" />
 			<p class="link orange">{member.name}</p>
-			<!-- <blockquote class="paragraph">{member.testimonial}</blockquote> -->
-			<details name="testimonial paragraph">
-				<summary>
-					{member.testimonial.split(' ').slice(0, 16).join(' ')}
-				</summary>
-				{member.testimonial.split(' ').slice(16).join(' ')}
-			</details>
+
+			{#if member.testimonial && member.testimonial.split(' ').length > 24}
+				<details name="testimonial" class="paragraph">
+					<summary>
+						{member.testimonial.split(' ').slice(0, 16).join(' ')}
+					</summary>
+					{member.testimonial.split(' ').slice(16).join(' ')}
+				</details>
+			{:else if member.testimonial}
+				<blockquote class="paragraph">{member.testimonial}</blockquote>
+			{:else}
+				<p class="paragraph">No testimonial provided.</p>
+			{/if}
 		</li>
 	{/each}
 </ul>
@@ -45,6 +51,10 @@
 <style>
 	h2 {
 		margin-block: 2rem 0;
+	}
+
+	h3 {
+		margin-block: 3rem 0;
 	}
 
 	img {
