@@ -18,7 +18,6 @@ export { default as ScientificTestimonial } from './components/molecules/Scienti
 export { default as FooterLocations } from './components/molecules/FooterLocations.svelte'
 export { default as FooterNav } from './components/molecules/FooterNav.svelte'
 
-
 // Atoms
 export { default as Mission } from './components/atoms/Mission.svelte'
 export { default as Footnote } from './components/atoms/FooterFootnote.svelte'
@@ -63,6 +62,7 @@ export { default as nebulaXplorer } from './assets/images/nebula-xplorer.jpg'
 export { default as nwoIcon } from './assets/images/NWO.webp'
 export { default as placeholder1 } from './assets/images/placeholder1.jpg'
 export { default as placeholder2 } from './assets/images/placeholder2.jpg'
+export { default as portraitPlaceholder } from './assets/images/portrait-placeholder.webp'
 export { default as rapidStep2 } from './assets/images/Rapid-step-2.jpg'
 export { default as rocketLaunchStep5 } from './assets/images/rocket-launch-step-5.jpg'
 export { default as rushilImage } from './assets/images/rushil.jpg'
