@@ -31,7 +31,13 @@
 				height="150"
 				width="150" />
 			<p class="link orange">{member.name}</p>
-			<blockquote class="paragraph">{member.testimonial}</blockquote>
+			<!-- <blockquote class="paragraph">{member.testimonial}</blockquote> -->
+			<details name="testimonial paragraph">
+				<summary>
+					{member.testimonial.split(' ').slice(0, 16).join(' ')}
+				</summary>
+				{member.testimonial.split(' ').slice(16).join(' ')}
+			</details>
 		</li>
 	{/each}
 </ul>
@@ -62,9 +68,23 @@
 			font-weight: 700;
 		}
 
-		blockquote {
+		blockquote,
+		details {
 			padding-block: 0 2rem;
 			padding-inline: 1rem;
+		}
+
+		details,
+		summary {
+			line-height: 1.5;
+		}
+
+		details summary::after {
+			content: '...';
+		}
+
+		details[open] summary::after {
+			content: '';
 		}
 
 		img {
