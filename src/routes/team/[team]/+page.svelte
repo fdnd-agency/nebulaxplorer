@@ -32,12 +32,12 @@
 				width="250" />
 			<p class="link orange">{member.name}</p>
 
-			{#if member.testimonial && member.testimonial.split(' ').length > 24}
+			{#if member.testimonial && member.testimonial.split(' ').length > 36}
 				<details name="testimonial" class="paragraph">
 					<summary>
-						{member.testimonial.split(' ').slice(0, 16).join(' ')}
+						{member.testimonial.split(' ').slice(0, 24).join(' ')}
 					</summary>
-					{member.testimonial.split(' ').slice(16).join(' ')}
+					{member.testimonial.split(' ').slice(24).join(' ')}
 				</details>
 			{:else if member.testimonial}
 				<blockquote class="paragraph">{member.testimonial}</blockquote>
@@ -50,7 +50,7 @@
 
 <style>
 	h2 {
-		margin-block: 2rem 0;
+		margin-block: 2rem 1rem;
 	}
 
 	h3 {
@@ -103,6 +103,10 @@
 			aspect-ratio: 1 / 1;
 			object-fit: cover;
 		}
+	}
+
+	.paragraph {
+		font-size: 1rem;
 	}
 
 	.orange {
