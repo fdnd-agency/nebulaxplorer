@@ -10,6 +10,7 @@ export { default as PartnersCarousel } from './components/organisms/PartnersCaro
 // Molecules
 export { default as Breadcrumb } from './components/molecules/Breadcrumb.svelte'
 export { default as AssignmentCards } from './components/molecules/AssignmentCards.svelte'
+export { default as CarouselTrack } from './components/molecules/CarouselTrack.svelte'
 export { default as MailingListSignup } from './components/molecules/MailingListSignup.svelte'
 export { default as Pagination } from './components/molecules/Pagination.svelte'
 export { default as Testimonial } from './components/molecules/Testimonial.svelte'
