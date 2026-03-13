@@ -1,5 +1,5 @@
 <script>
-	import { Hero, portraitPlaceholder, teamPhoto } from '$lib'
+	import { Breadcrumb, Hero, portraitPlaceholder, teamPhoto } from '$lib'
 
 	let { data } = $props()
 </script>
@@ -13,52 +13,65 @@
 
 <Hero titleColor="var(--white)" pageTitle="Team" />
 
-<h2 class="section_title">
-	Who we worked with in <span class="orange">{data.members[0].time}</span>
-</h2>
+<Breadcrumb />
 
-<img src={teamPhoto} alt="" />
+<div class="content-container">
+	<h2 class="section_title">
+		Who we worked with in <span class="orange">{data.members[0].time}</span>
+	</h2>
 
-<h3 class="heading">Reflections on the work</h3>
-<ul>
-	{#each data.members as member}
-		<li>
-			<img
-				src={member.image
-					? `https://fdnd-agency.directus.app/assets/${member.image}`
-					: portraitPlaceholder}
-				alt=""
-				height="250"
-				width="250" />
-			<p class="link orange">{member.name}</p>
+	<img src={teamPhoto} alt="" />
 
-			{#if member.testimonial && member.testimonial.split(' ').length > 36}
-				<details name="testimonial" class="paragraph">
-					<summary>
-						{member.testimonial.split(' ').slice(0, 24).join(' ')}
-					</summary>
-					{member.testimonial.split(' ').slice(24).join(' ')}
-				</details>
-			{:else if member.testimonial}
-				<blockquote class="paragraph">{member.testimonial}</blockquote>
-			{:else}
-				<p class="paragraph">No testimonial provided.</p>
-			{/if}
-		</li>
-	{/each}
-</ul>
+	<h3 class="heading">Reflections on the work</h3>
+	<ul>
+		{#each data.members as member}
+			<li>
+				<img
+					src={member.image
+						? `https://fdnd-agency.directus.app/assets/${member.image}`
+						: portraitPlaceholder}
+					alt=""
+					height="250"
+					width="250" />
+				<p class="link orange">{member.name}</p>
+
+				{#if member.testimonial && member.testimonial.split(' ').length > 36}
+					<details name="testimonial" class="paragraph">
+						<summary>
+							{member.testimonial
+								.split(' ')
+								.slice(0, 24)
+								.join(' ')}
+						</summary>
+						{member.testimonial.split(' ').slice(24).join(' ')}
+					</details>
+				{:else if member.testimonial}
+					<blockquote class="paragraph">
+						{member.testimonial}
+					</blockquote>
+				{:else}
+					<p class="paragraph">No testimonial provided.</p>
+				{/if}
+			</li>
+		{/each}
+	</ul>
+</div>
 
 <style>
+	.content-container {
+		padding: 0;
+	}
+
 	h2 {
-		margin-block: 2rem 1rem;
+		margin-block: 2rem;
 	}
 
 	h3 {
-		margin-block: 3rem 0;
+		margin-block: 3rem 1.5rem;
 	}
 
 	img {
-		height: 400px;
+		height: 500px;
 	}
 
 	ul {
@@ -87,6 +100,16 @@
 		details,
 		summary {
 			line-height: 1.5;
+		}
+
+		details::after {
+			content: 'read more';
+			color: var(--cleanroom-100);
+		}
+
+		details[open]::after {
+			content: 'read less';
+			color: var(--cleanroom-100);
 		}
 
 		details summary::after {
