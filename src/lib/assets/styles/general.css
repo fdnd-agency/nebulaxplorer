@@ -103,6 +103,9 @@ body {
 	/* Focus outline */
 	--default-focus: 0.125rem dashed var(--cleanroom-140);
 
+	/* Sizing */
+	--content-width: 1400px;
+
 	/* Styling */
 	background: var(--space-100);
 	color: var(--white);
@@ -138,7 +141,8 @@ main {
 	}
 
 	> * {
-		padding: 0 1.5rem;
+		padding-block: 0;
+		padding-inline: clamp(1rem, 5vw, 3.5rem);
 		/* Bleed out of the grid (this is just for the background colors */
 		margin-inline: -1.5rem;
 		grid-column: 1 / -1;
@@ -225,6 +229,13 @@ h6 {
 	font-family: SpaceGrotesk;
 	font-size: clamp(1.125rem, 1.5vw + 0.75rem, 1.375rem);
 	line-height: clamp(1.625rem, 1.5vw + 1rem, 2rem);
+}
+
+.content-container {
+	width: 100%;
+	max-width: var(--content-width);
+	margin-inline: auto;
+	margin-block: 0;
 }
 
 a:focus-visible {
