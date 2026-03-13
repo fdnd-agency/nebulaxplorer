@@ -25,11 +25,10 @@
 <Breadcrumb />
 
 <div class="content-container">
+	<img src={teamPhoto} alt="" />
 	<h2 class="section_title">
 		Who we worked with in <span class="orange">{data.members[0].time}</span>
 	</h2>
-
-	<img src={teamPhoto} alt="" />
 
 	<h3 class="heading">Reflections on the work</h3>
 	<ul>
