@@ -2,32 +2,38 @@
 	const { assignments } = $props()
 </script>
 
-<header class="assignments-header">
-	<h2 class="subtitle">Find a suitable Assignment</h2>
-	<p class="heading">
-		Within the NEBULA Xplorer project there are
-		<span>{assignments.length}</span> assignments available.
-	</p>
-</header>
+<div class="content-container">
+	<header class="assignments-header">
+		<h2 class="subtitle">Find a suitable Assignment</h2>
+		<p class="heading">
+			Within the NEBULA Xplorer project there are
+			<span>{assignments.length}</span> assignments available.
+		</p>
+	</header>
 
-<ul class="assignments-container">
-	{#each assignments as assignment}
-		<li class="assignment-card">
-			<a href="#">
-				<section class="assignment-content">
-					<h2 class="assignment-title">{assignment.title}</h2>
-					<div>
-						<p>{assignment.study_program}</p>
-						<p>{assignment.location}</p>
-					</div>
-				</section>
-				<p class="apply-button supporting">Apply</p>
-			</a>
-		</li>
-	{/each}
-</ul>
+	<ul class="assignments-container">
+		{#each assignments as assignment}
+			<li class="assignment-card">
+				<a href="#">
+					<section class="assignment-content">
+						<h2 class="assignment-title">{assignment.title}</h2>
+						<div>
+							<p>{assignment.study_program}</p>
+							<p>{assignment.location}</p>
+						</div>
+					</section>
+					<p class="apply-button supporting">Apply</p>
+				</a>
+			</li>
+		{/each}
+	</ul>
+</div>
 
 <style>
+	.content-container {
+		padding: 0;
+	}
+
 	.assignments-header {
 		margin-bottom: 2.5rem;
 
@@ -41,24 +47,14 @@
 	}
 
 	.assignments-container {
-		display: inherit;
-		grid-template-columns: subgrid;
-		gap: inherit;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+		gap: 1.25rem;
 		margin-bottom: 4rem;
 
 		.assignment-card {
 			list-style: none;
 			background: var(--space-100-low-opacity);
-
-			grid-column: 1 / -1;
-
-			@media (min-width: 32rem) {
-				grid-column: span 2;
-			}
-
-			@media (min-width: 56.25rem) {
-				grid-column: span 3;
-			}
 
 			a {
 				display: flex;
