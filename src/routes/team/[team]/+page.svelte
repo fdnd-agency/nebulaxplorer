@@ -20,7 +20,7 @@
 <Hero
 	titleColor="var(--white)"
 	pageTitle="Team"
-	background={{ file: pic, alt: 'test' }} />
+	background={{ file: nebulaTeamBeginning, alt: 'test' }} />
 
 <Breadcrumb />
 
