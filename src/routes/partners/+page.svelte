@@ -20,5 +20,3 @@
 
 <h2 class="section_title">Work with us!</h2>
 <PartnersCarousel />
-
-<Carousel />
