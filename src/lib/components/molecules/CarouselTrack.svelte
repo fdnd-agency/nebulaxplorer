@@ -66,11 +66,13 @@
 		offset: shape(
 			from calc(var(--size) / -2) 50%,
 			hline by
-				calc(sibling-count() * max(100% / var(--number), var(--size)))
+				calc(
+					sibling-count() * max(100% / var(--number, 4), var(--size))
+				)
 		);
 
 		animation-name: scroll;
-		animation-duration: var(--duration);
+		animation-duration: var(--duration, 60s);
 		animation-timing-function: linear;
 		animation-iteration-count: infinite;
 		animation-delay: calc(
