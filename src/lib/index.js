@@ -78,6 +78,7 @@ export { default as blackholeEnhanced } from './assets/images/blackhole.jpg?enha
 export { default as blackholeHeroEnhanced } from './assets/images/blackhole-hero.png?enhanced&w=1920;1440;1024;768'
 export { default as gravWavesEnhanced } from './assets/images/grav-waves.jpg?enhanced&w=1920;1440;1024;768'
 export { default as nebulaSatelliteEnhanced } from './assets/images/nebula-satellite.png?enhanced'
+export { default as nebulaTeamBeginning } from './assets/images/nebula beginning.jpg?enhanced&w=1920;1440;1024;768'
 export { default as nebulaXplorerEnhanced } from './assets/images/nebula-xplorer.jpg?enhanced&w=1024;768;512'
 export { default as rapidStep2Enhanced } from './assets/images/Rapid-step-2.jpg?enhanced&w=1024;768;512'
 export { default as rocketLaunchStep5Enhanced } from './assets/images/rocket-launch-step-5.jpg?enhanced&w=1024;768;512'

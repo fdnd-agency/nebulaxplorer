@@ -1,5 +1,11 @@
 <script>
-	import { Breadcrumb, Hero, portraitPlaceholder, teamPhoto } from '$lib'
+	import {
+		Breadcrumb,
+		Hero,
+		nebulaTeamBeginning,
+		portraitPlaceholder,
+		teamPhoto,
+	} from '$lib'
 
 	let { data } = $props()
 </script>
@@ -11,7 +17,10 @@
 		content="The team page features the different teams who have worked on the Nebula Xplorer mission over the years." />
 </svelte:head>
 
-<Hero titleColor="var(--white)" pageTitle="Team" />
+<Hero
+	titleColor="var(--white)"
+	pageTitle="Team"
+	background={{ file: pic, alt: 'test' }} />
 
 <Breadcrumb />
 
