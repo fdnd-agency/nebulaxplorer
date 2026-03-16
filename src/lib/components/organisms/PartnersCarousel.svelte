@@ -1,109 +1,128 @@
 <script>
-	import { CarouselTrack } from '$lib'
+	import {
+		CarouselTrack,
+		logoHogeschoolUtrecht,
+		logoHogeschoolVanAmsterdam,
+		logoInhollandUniversity,
+		logoLis,
+		logoErasmusUniversiteitRotterdam,
+		logoMboRijnland,
+		logoOverdehaagse,
+		logoRocMondriaan,
+		logoRocNova,
+		logoRugr,
+		logoSaxion,
+		logoTechniekCollegeRotterdam,
+		logoTuDelft,
+		logoUl,
+		logoUva,
+		logoAstos,
+		logoEsatan,
+	} from '$lib'
 
 	const sponsorsEducational = [
 		{
 			link: '#',
 			image: {
-				src: '/src/lib/assets/images/sponsors/hogeschool-utrecht-logo.png',
+				src: logoHogeschoolUtrecht,
 				alt: 'Hogeschool Utrecht',
 			},
 		},
 		{
 			link: '#',
 			image: {
-				src: '/src/lib/assets/images/sponsors/hogeschool-van-amsterdam-logo.png',
+				src: logoHogeschoolVanAmsterdam,
 				alt: 'Hogeschool van Amsterdam',
 			},
 		},
 		{
 			link: '#',
 			image: {
-				src: '/src/lib/assets/images/sponsors/inholland-university-logo.png',
+				src: logoInhollandUniversity,
 				alt: 'Inholland University',
 			},
 		},
 		{
 			link: '#',
 			image: {
-				src: '/src/lib/assets/images/sponsors/lis-logo.jpeg',
+				src: logoLis,
 				alt: 'Leidse Instrumentmakers School',
 			},
 		},
 		{
 			link: '#',
 			image: {
-				src: '/src/lib/assets/images/sponsors/erasmus-universiteit-rotterdam-logo.png',
+				src: logoErasmusUniversiteitRotterdam,
 				alt: 'Erasmus Universiteit Rotterdam',
 			},
 		},
 		{
 			link: '#',
 			image: {
-				src: '/src/lib/assets/images/sponsors/mbo-rijnland-logo.png',
+				src: logoMboRijnland,
 				alt: 'Mbo Rijnland',
 			},
 		},
 		{
 			link: '#',
 			image: {
-				src: '/src/lib/assets/images/sponsors/overdehaagse-logo.png',
+				src: logoOverdehaagse,
 				alt: 'De Haagse Hogeschool',
 			},
 		},
 		{
 			link: '#',
 			image: {
-				src: '/src/lib/assets/images/sponsors/roc-mondriaan-logo.png',
+				src: logoRocMondriaan,
 				alt: 'ROC Mondriaan',
 			},
 		},
 		{
 			link: '#',
 			image: {
-				src: '/src/lib/assets/images/sponsors/roc-nova-logo.png',
+				src: logoRocNova,
 				alt: 'ROC Nova',
 			},
 		},
 		{
 			link: '#',
 			image: {
-				src: '/src/lib/assets/images/sponsors/rugr-logo.gif',
+				src: logoRugr,
 				alt: 'Rijksuniversiteit Groningen',
 			},
 		},
 		{
 			link: '#',
 			image: {
-				src: '/src/lib/assets/images/sponsors/saxion-logo.jpg',
+				src: logoSaxion,
 				alt: 'Saxion',
 			},
 		},
 		{
 			link: '#',
 			image: {
-				src: '/src/lib/assets/images/sponsors/techniek-college-rotterdam-logo.png',
+				src: logoTechniekCollegeRotterdam,
 				alt: 'Techniek College Rotterdam',
 			},
 		},
 		{
 			link: '#',
 			image: {
-				src: '/src/lib/assets/images/sponsors/tu-delft-logo.png',
+				src: logoTuDelft,
 				alt: 'TU Delft',
 			},
 		},
 		{
 			link: '#',
 			image: {
-				src: '/src/lib/assets/images/sponsors/ul-logo.jpg',
+				src: logoUl,
 				alt: 'Universiteit Leiden',
 			},
 		},
 		{
 			link: '#',
 			image: {
-				src: '/src/lib/assets/images/sponsors/uva-logo.webp',
+				src: logoUva,
 				alt: 'Universiteit van Amsterdam',
 			},
 		},
@@ -113,14 +132,14 @@
 		{
 			link: '#',
 			image: {
-				src: '/src/lib/assets/images/sponsors/astos-logo.jpg',
+				src: logoAstos,
 				alt: 'Astos',
 			},
 		},
 		{
 			link: '#',
 			image: {
-				src: '/src/lib/assets/images/sponsors/esatan-logo.png',
+				src: logoEsatan,
 				alt: 'Esatan',
 			},
 		},

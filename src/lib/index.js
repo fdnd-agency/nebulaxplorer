@@ -50,6 +50,25 @@ export { default as sronLogoSmallWhite } from './assets/logos/SRON_Small_White.s
 export { default as nebulaLogoWhite } from './assets/logos/nebula_white.svg'
 export { default as nebulaLogoBlack } from './assets/logos/nebula_black.svg'
 
+// Company logos
+export { default as logoAstos } from './assets/images/sponsors/astos-logo.jpg'
+export { default as logoErasmusUniversiteitRotterdam } from './assets/images/sponsors/erasmus-universiteit-rotterdam-logo.png'
+export { default as logoEsatan } from './assets/images/sponsors/esatan-logo.png'
+export { default as logoHogeschoolUtrecht } from './assets/images/sponsors/hogeschool-utrecht-logo.png'
+export { default as logoHogeschoolVanAmsterdam } from './assets/images/sponsors/hogeschool-van-amsterdam-logo.png'
+export { default as logoInhollandUniversity } from './assets/images/sponsors/inholland-university-logo.png'
+export { default as logoLis } from './assets/images/sponsors/lis-logo.jpeg'
+export { default as logoMboRijnland } from './assets/images/sponsors/mbo-rijnland-logo.png'
+export { default as logoOverdehaagse } from './assets/images/sponsors/overdehaagse-logo.png'
+export { default as logoRocMondriaan } from './assets/images/sponsors/roc-mondriaan-logo.png'
+export { default as logoRocNova } from './assets/images/sponsors/roc-nova-logo.png'
+export { default as logoRugr } from './assets/images/sponsors/rugr-logo.gif'
+export { default as logoSaxion } from './assets/images/sponsors/saxion-logo.jpg'
+export { default as logoTechniekCollegeRotterdam } from './assets/images/sponsors/techniek-college-rotterdam-logo.png'
+export { default as logoTuDelft } from './assets/images/sponsors/tu-delft-logo.png'
+export { default as logoUl } from './assets/images/sponsors/ul-logo.jpg'
+export { default as logoUva } from './assets/images/sponsors/uva-logo.webp'
+
 // Images
 export { default as aeroDefenseTestingStep4 } from './assets/images/aerospace-defense-testing-step-4.jpg'
 export { default as blackhole } from './assets/images/blackhole.jpg'
