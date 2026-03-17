@@ -18,7 +18,6 @@ export { default as ScientificTestimonial } from './components/molecules/Scienti
 export { default as FooterLocations } from './components/molecules/FooterLocations.svelte'
 export { default as FooterNav } from './components/molecules/FooterNav.svelte'
 
-
 // Atoms
 export { default as Mission } from './components/atoms/Mission.svelte'
 export { default as Footnote } from './components/atoms/FooterFootnote.svelte'
@@ -26,6 +25,7 @@ export { default as Footnote } from './components/atoms/FooterFootnote.svelte'
 // ASSETS
 // Icons
 export { default as Quote } from './components/icons/Quote.svelte'
+export { default as MailIcon } from './components/icons/MailIcon.svelte'
 
 // Logo Components
 export { default as Arrow } from './assets/logos/Arrow.svelte'
