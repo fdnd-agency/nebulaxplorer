@@ -65,11 +65,12 @@
 <style>
 	section div {
 		display: grid;
-		gap: 3rem;
-		padding-block: 3.5rem 4rem;
+		gap: 2rem;
+		padding-block: 4rem 5rem;
 
 		@media (min-width: 1000px) {
 			grid-template-columns: 2fr 1fr;
+			gap: 3rem;
 		}
 
 		h2 {
