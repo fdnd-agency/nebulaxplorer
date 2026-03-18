@@ -45,7 +45,7 @@
 			</a>
 		</li>
 		<li>
-			<a href={resolve('/')}>
+			<a href="https://www.linkedin.com/company/nebula-xplorer/">
 				<LinkedinIcon />
 				<span class="visually-hidden">Linkedin profile</span>
 			</a>
