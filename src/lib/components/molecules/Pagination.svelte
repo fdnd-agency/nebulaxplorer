@@ -117,6 +117,7 @@
 		align-items: center;
 		display: flex;
 		gap: 1rem;
+		padding-block-end: 3rem;
 
 		--arrow-color: var(--cleanroom-100);
 		--text-color: var(--white);
