@@ -69,7 +69,7 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 2rem;
-		padding-block: 4rem 5rem;
+		padding-block: calc(2rem + 2vw);
 		justify-content: center;
 
 		h2 {

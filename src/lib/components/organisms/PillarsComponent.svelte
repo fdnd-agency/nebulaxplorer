@@ -64,7 +64,7 @@
 <style>
 	section {
 		padding-inline: clamp(1rem, 5vw, 3.5rem);
-		padding-block: 3rem;
+		padding-block: calc(1rem + 2vw);
 	}
 
 	ul {
