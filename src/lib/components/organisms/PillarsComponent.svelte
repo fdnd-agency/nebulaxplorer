@@ -9,7 +9,7 @@
 
 	const dummydata = [
 		{
-			link: '/pillars/technology',
+			link: '/technology',
 			image: {
 				src: placeholder1,
 				alt: '',
@@ -17,7 +17,7 @@
 			title: 'technology',
 		},
 		{
-			link: '/pillars/science',
+			link: '/science',
 			image: {
 				src: gravWaves,
 				alt: '',
@@ -26,7 +26,7 @@
 		},
 
 		{
-			link: '/pillars/instrumentation',
+			link: '/instrumentation',
 			image: {
 				src: placeholder2,
 				alt: '',
@@ -34,7 +34,7 @@
 			title: 'instrumentation',
 		},
 		{
-			link: '/pillars/education',
+			link: '/education',
 			image: {
 				src: sronOpenDay,
 				alt: '',
@@ -42,7 +42,7 @@
 			title: 'education',
 		},
 		{
-			link: '/pillars/environment',
+			link: '/environment',
 			image: {
 				src: impact,
 				alt: '',
