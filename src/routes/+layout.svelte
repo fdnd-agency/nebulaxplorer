@@ -9,13 +9,37 @@
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return
+		if (navigation.to.url.hash) return
 
 		return new Promise((resolve) => {
-			document.startViewTransition(async () => {
+			const transition = document.startViewTransition(async () => {
 				expanded = false
 
 				resolve()
 				await navigation.complete
+
+				// Manually scroll to hash after view transition completes
+				// if (navigation.to.url.hash) {
+				// 	transition.finished.then(() => {
+				// 		const element = document.getElementById(
+				// 			navigation.to.url.hash.slice(1)
+				// 		)
+				// 		if (element) {
+				// 			element.scrollIntoView({ behavior: 'smooth' })
+				// 		}
+				// 	})
+				// }
+
+				// if (navigation.to.url.hash) {
+				// 	setTimeout(() => {
+				// 		const element = document.getElementById(
+				// 			navigation.to.url.hash.slice(1)
+				// 		)
+				// 		if (element) {
+				// 			element.scrollIntoView({ behavior: 'smooth' })
+				// 		}
+				// 	}, 100)
+				// }
 			})
 		})
 	})
