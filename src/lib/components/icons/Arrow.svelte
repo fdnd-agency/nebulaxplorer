@@ -1,5 +1,5 @@
 <script>
-	const { width = '9', height = '16', rotate = '0deg' } = $props()
+	const { width = '9', height = '16', rotate = '0deg', title = '' } = $props()
 </script>
 
 <svg
