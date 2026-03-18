@@ -15,6 +15,7 @@ export { default as MailingListSignup } from './components/molecules/MailingList
 export { default as Pagination } from './components/molecules/Pagination.svelte'
 export { default as Testimonial } from './components/molecules/Testimonial.svelte'
 export { default as TestimonialHeader } from './components/molecules/TestimonialHeader.svelte'
+export { default as UnderConstruction } from './components/molecules/UnderConstruction.svelte'
 
 export { default as ScientificTestimonial } from './components/molecules/ScientificTestimonial.svelte'
 export { default as FooterLocations } from './components/molecules/FooterLocations.svelte'
