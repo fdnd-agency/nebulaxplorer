@@ -25,21 +25,15 @@
 
 <section class="section-paragraph-picture">
 	<div class="content-container">
-		<h2 class="section_title">Over Nebula Xplorer</h2>
+		<h2 class="section_title">About Nebula Xplorer</h2>
 		<p class="paragraph">
-			NEBULA – Xplorer staat voor “Netherlands Educational Satellite for
-			Exploration of Binary-Linked Astrophysics – X-ray Observer”.
-			Ongeveer vierhonderd studenten helpen SRON, veertien Nederlandse
-			onderwijsinstellingen en vele industriële partners om deze
-			ruimtemissie te ontwikkelen van begin tot eind, onder leiding van
-			wetenschappers en ingenieurs. De missie heeft twee doelen. Het
-			wetenschappelijke doel is beter begrijpen hoe een zwart gat
-			materiaal afsnoept van een ster die er omheen draait. Het educatieve
-			doel is dat studenten van Nederlandse onderwijsinstellingen van
-			binnenuit meemaken hoe je een ruimtemissie van begin tot eind
-			opbouwt. SRON heeft de leiding over NEBULA – Xplorer, waarmee het
-			bijdraagt aan een nieuwe generatie wetenschappers, ontwerpers en
-			technici voor het Nederlandse ruimteonderzoek.
+			NEBULA-X is an X-ray spectral timing satellite that will fill a key
+			gap in international observing capability in the early 2030s as well
+			as investigate the variability of compact objects such as black
+			holes on long time scales with higher cadence than has been possible
+			on previous missions. It will observe X-ray emission from these
+			sources at high energy and timing resolution to reveal how these
+			objects and their nearby extreme environments behave.
 		</p>
 		<enhanced:img
 			src={nebulaSatelliteEnhanced}
