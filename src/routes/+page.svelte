@@ -6,6 +6,7 @@
 		MailingListSignup,
 		nebulaSatelliteEnhanced,
 		blackholeHeroEnhanced as heroImg,
+		sronAcademyLogoOnWhite,
 		sronAcademyLogoOnSpaceBlue as logo,
 	} from '$lib'
 
@@ -25,7 +26,7 @@
 
 <section class="section-paragraph-picture">
 	<div class="content-container">
-		<h2 class="section_title">About Nebula Xplorer</h2>
+		<h2 class="heading">About Nebula Xplorer</h2>
 		<p class="paragraph">
 			NEBULA-X is an X-ray spectral timing satellite that will fill a key
 			gap in international observing capability in the early 2030s as well
@@ -42,15 +43,30 @@
 	</div>
 </section>
 
+<section class="section-paragraph-picture alt">
+	<div class="content-container">
+		<h2 class="heading">About SRON Academy</h2>
+		<p class="paragraph">
+			SRON offers a very rich environment for inquisitive people. Because
+			it takes many disciplines to do groundbreaking research and to
+			develop the instrumentation or software needed to do so. We like to
+			transfer knowledge and expertise to PhD students, students and other
+			talented people inside and outside SRON. We do this actively, gladly
+			and with passion.
+		</p>
+		<img src={sronAcademyLogoOnWhite} alt="The Nebula Xplorer Satellite" />
+	</div>
+</section>
+
 <PillarsComponent />
 
 <MailingListSignup />
 
 <style>
-	.section-paragraph-picture div {
+	section div {
 		display: grid;
-		gap: 2rem;
-		padding-block: 3rem;
+		gap: 3rem;
+		padding-block: 3.5rem 4rem;
 
 		@media (min-width: 1000px) {
 			grid-template-columns: 2fr 1fr;
@@ -61,9 +77,37 @@
 		}
 
 		img {
+			width: auto;
 			max-width: 100%;
 			height: 100%;
-			object-fit: cover;
+			max-height: 100%;
+		}
+	}
+
+	section.alt {
+		background-color: white;
+		color: black;
+		border-bottom: var(--cleanroom-100) 0.5rem solid;
+
+		h2 {
+			color: var(--ultra-140);
+			font-weight: 500;
+		}
+
+		@media (min-width: 1000px) {
+			div {
+				grid-template-columns: 1fr 2fr;
+			}
+
+			img {
+				grid-row: 2 / 3;
+				grid-column: 1 / 2;
+			}
+
+			p {
+				grid-row: 2 / 3;
+				grid-column: 2 / 3;
+			}
 		}
 	}
 </style>
