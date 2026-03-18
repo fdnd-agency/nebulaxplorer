@@ -6,6 +6,7 @@
 		LinkedIn as LinkedinIcon,
 		Bsky as BskyIcon,
 		Footnote,
+		MailIcon,
 	} from '$lib'
 
 	import { resolve } from '$app/paths'
@@ -38,21 +39,14 @@
 		class="footerImg SronLogo" />
 	<ul class="socials">
 		<li>
+			<a href={resolve('/#mailing-list-signup')}>
+				<MailIcon title="Sign up for the newsletter" />
+			</a>
+		</li>
+		<li>
 			<a href={resolve('/')}>
 				<LinkedinIcon />
 				<span class="visually-hidden">Linkedin profile</span>
-			</a>
-		</li>
-		<li>
-			<a href={resolve('/')}>
-				<InstagramIcon />
-				<span class="visually-hidden">Instagram profile</span>
-			</a>
-		</li>
-		<li>
-			<a href={resolve('/')}>
-				<BskyIcon />
-				<span class="visually-hidden">Bluesky profile</span>
 			</a>
 		</li>
 	</ul>
@@ -171,6 +165,11 @@
 		justify-content: space-between;
 		flex-direction: row;
 		max-width: 120px;
+
+		a :global(svg) {
+			height: 2em;
+			color: white;
+		}
 
 		@media (min-width: 700px) {
 			justify-self: end;
