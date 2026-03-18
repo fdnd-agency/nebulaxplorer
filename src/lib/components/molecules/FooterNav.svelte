@@ -40,6 +40,7 @@
 	<ul class="socials">
 		<li>
 			<a href={resolve('/#mailing-list-signup')}>
+				<span>Subscribe to our newsletter!</span>
 				<MailIcon title="Sign up for the newsletter" />
 			</a>
 		</li>
@@ -162,19 +163,30 @@
 		list-style: none;
 		grid-area: socials;
 		display: flex;
-		justify-content: space-between;
+		justify-content: end;
 		flex-direction: row;
-		max-width: 120px;
+		gap: 1em;
+
+		a {
+			display: flex;
+			gap: 1em;
+			align-items: center;
+		}
+
+		a span {
+			width: max-content;
+			font-family: var(--heading);
+		}
 
 		a :global(svg) {
+			flex-shrink: 0;
 			height: 2em;
 			color: white;
 		}
 
-		@media (min-width: 700px) {
+		/* @media (min-width: 700px) {
 			justify-self: end;
-			width: 120px;
 			padding-top: 1rem;
-		}
+		} */
 	}
 </style>
