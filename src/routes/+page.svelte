@@ -54,7 +54,9 @@
 			talented people inside and outside SRON. We do this actively, gladly
 			and with passion.
 		</p>
-		<img src={sronAcademyLogoOnWhite} alt="The Nebula Xplorer Satellite" />
+		<img
+			src={sronAcademyLogoOnWhite}
+			alt="The logo of Space Research Organisation Netherlands Academy" />
 	</div>
 </section>
 
