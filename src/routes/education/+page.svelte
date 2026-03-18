@@ -1,6 +1,9 @@
 <script>
-	import { Hero, Breadcrumb } from '$lib'
+	import { Hero, Breadcrumb, UnderConstruction } from '$lib'
 </script>
 
-<Hero />
+<Hero pageTitle="Education" />
+
 <Breadcrumb />
+
+<UnderConstruction />

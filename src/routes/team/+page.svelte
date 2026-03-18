@@ -1,9 +1,5 @@
 <script module>
-	import {
-		Hero,
-		sronAcademyLogoOnSpaceBlue as logo,
-		blackholeHeroEnhanced as heroImg,
-	} from '$lib'
+	import { Hero, Breadcrumb, UnderConstruction } from '$lib'
 </script>
 
 <svelte:head>
@@ -15,3 +11,7 @@
 
 <!-- HERO BLOCK -->
 <Hero titleColor="var(--white)" pageTitle="Team" />
+
+<Breadcrumb />
+
+<UnderConstruction />

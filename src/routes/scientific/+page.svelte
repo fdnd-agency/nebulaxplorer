@@ -1,9 +1,5 @@
-<script module>
-	import {
-		Hero,
-		sronAcademyLogoOnSpaceBlue as logo,
-		blackholeHeroEnhanced as heroImg,
-	} from '$lib'
+<script>
+	import { Hero, Breadcrumb, UnderConstruction } from '$lib'
 </script>
 
 <svelte:head>
@@ -12,5 +8,9 @@
 		name="description"
 		content="The scientific page features advanced news and resources to inspire students and scientists alike on the latest discoveries and progress made on the Nebula Xplorer mission." />
 </svelte:head>
-<!-- HERO BLOCK -->
+
 <Hero titleColor="var(--white)" pageTitle="Scientific" />
+
+<Breadcrumb />
+
+<UnderConstruction />
