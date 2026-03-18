@@ -46,8 +46,8 @@
 	font-display: swap;
 }
 
-html {
-	/* scroll-behavior: smooth; */
+html.smoothscroll {
+	scroll-behavior: smooth;
 }
 
 body {
