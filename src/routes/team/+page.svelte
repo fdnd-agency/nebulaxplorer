@@ -1,4 +1,4 @@
-<script module>
+<script>
 	import { Hero, Breadcrumb, UnderConstruction } from '$lib'
 </script>
 
