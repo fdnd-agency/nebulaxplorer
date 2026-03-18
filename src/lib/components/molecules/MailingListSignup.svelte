@@ -23,7 +23,7 @@
 <style>
 	section {
 		margin-bottom: 3rem;
-		scroll-margin-top: 150px;
+		scroll-margin-top: 33vh;
 	}
 
 	div {
