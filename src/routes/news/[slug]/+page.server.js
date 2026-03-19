@@ -5,7 +5,5 @@ export async function load({ url, params }) {
 		`${DIRECTUS_NEWS}/?fields=type,title,date,image&filter[id][_eq]=${params.slug}`
 	).then((response) => response.json())
 
-	console.log(newsItem)
-
 	return { newsItem: newsItem.data ?? [] }
 }
