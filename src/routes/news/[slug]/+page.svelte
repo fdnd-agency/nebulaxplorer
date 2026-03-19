@@ -26,7 +26,7 @@
 					{data.newsItem[0].date}
 				</time>
 				<p>{data.newsItem[0].type}</p>
-				<h1>{data.newsItem[0].title}</h1>
+				<h1 class="title">{data.newsItem[0].title}</h1>
 				<img
 					src={data.newsItem[0].image
 						? `https://fdnd-agency.directus.app/assets/${data.newsItem[0].image}`
