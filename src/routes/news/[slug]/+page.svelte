@@ -2,7 +2,6 @@
 	import { Breadcrumb, Hero } from '$lib'
 
 	let { data } = $props()
-	console.log(data)
 </script>
 
 <svelte:head>
