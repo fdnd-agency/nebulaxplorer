@@ -6,6 +6,7 @@
 		LinkedIn as LinkedinIcon,
 		Bsky as BskyIcon,
 		Footnote,
+		MailIcon,
 	} from '$lib'
 
 	import { resolve } from '$app/paths'
@@ -38,21 +39,15 @@
 		class="footerImg SronLogo" />
 	<ul class="socials">
 		<li>
-			<a href={resolve('/')}>
+			<a href={resolve('/#mailing-list-signup')}>
+				<span>Subscribe to our mailing list!</span>
+				<MailIcon />
+			</a>
+		</li>
+		<li>
+			<a href="https://www.linkedin.com/company/nebula-xplorer/">
 				<LinkedinIcon />
 				<span class="visually-hidden">Linkedin profile</span>
-			</a>
-		</li>
-		<li>
-			<a href={resolve('/')}>
-				<InstagramIcon />
-				<span class="visually-hidden">Instagram profile</span>
-			</a>
-		</li>
-		<li>
-			<a href={resolve('/')}>
-				<BskyIcon />
-				<span class="visually-hidden">Bluesky profile</span>
 			</a>
 		</li>
 	</ul>
@@ -168,14 +163,32 @@
 		list-style: none;
 		grid-area: socials;
 		display: flex;
-		justify-content: space-between;
+		justify-content: start;
 		flex-direction: row;
-		max-width: 120px;
+		gap: 1em;
+		flex-wrap: wrap;
+
+		a {
+			display: flex;
+			gap: 1em;
+			align-items: center;
+		}
+
+		a span {
+			width: max-content;
+			font-family: var(--heading);
+		}
+
+		a :global(svg) {
+			flex-shrink: 0;
+			height: 2em;
+			color: white;
+		}
 
 		@media (min-width: 700px) {
-			justify-self: end;
-			width: 120px;
-			padding-top: 1rem;
+			justify-content: end;
+			padding-inline-start: 1rem;
+			padding-block-start: 1rem;
 		}
 	}
 </style>
