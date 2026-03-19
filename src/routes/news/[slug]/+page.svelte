@@ -1,5 +1,5 @@
 <script>
-	import { Breadcrumb, Hero } from '$lib'
+	import { Breadcrumb, Hero, placeholder2 } from '$lib'
 
 	let { data } = $props()
 </script>
@@ -12,6 +12,7 @@
 <Hero pageTitle="" />
 
 <Breadcrumb />
+
 <article>
 	<section>
 		<div class="content-container">
@@ -21,7 +22,9 @@
 			</time>
 			<p>{data.newsItem[0].type}</p>
 			<img
-				src={`https://fdnd-agency.directus.app/assets/${data.newsItem[0].image}`}
+				src={data.newsItem[0].image
+					? `https://fdnd-agency.directus.app/assets/${data.newsItem[0].image}`
+					: placeholder2}
 				alt="" />
 		</div>
 	</section>
