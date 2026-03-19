@@ -79,7 +79,6 @@
 		picture,
 		img {
 			align-self: center;
-			justify-self: center;
 		}
 
 		@media (min-width: 800px) {
