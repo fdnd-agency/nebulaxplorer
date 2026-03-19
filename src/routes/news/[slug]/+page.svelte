@@ -67,8 +67,8 @@
 
 	section {
 		padding-inline: clamp(1rem, 5vw, 3.5rem);
-		padding-block-start: calc(1rem + 2vw);
-		padding-block-end: calc(3rem + 2vw);
+		padding-block-start: calc(1rem + 1vw);
+		padding-block-end: calc(2rem + 2vw);
 	}
 
 	section:first-of-type {
