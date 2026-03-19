@@ -75,7 +75,7 @@
 			gap: 1rem;
 			align-items: start;
 
-			@media (width > 800px) {
+			@media (width > 900px) {
 				column-gap: 3rem;
 				grid-template-columns: 1fr 1fr;
 				grid-template-rows: min-content min-content 1fr;
@@ -86,7 +86,7 @@
 			}
 		}
 
-		h2 {
+		h1 {
 			font-size: clamp(1.5rem, 0.82rem + 3.6vw, 4rem);
 			line-height: 1.25;
 		}
@@ -95,7 +95,6 @@
 			max-width: min(100%, 40rem);
 			max-height: 40rem;
 			align-self: center;
-			justify-self: center;
 		}
 
 		time {
@@ -129,6 +128,7 @@
 		grid-area: img;
 	}
 
+	h1,
 	h2 {
 		grid-area: title;
 	}
