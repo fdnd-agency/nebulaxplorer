@@ -1,6 +1,7 @@
 <script module>
 	import {
 		Hero,
+		PartnersCarousel,
 		sronAcademyLogoOnSpaceBlue as logo,
 		blackholeHeroEnhanced as heroImg,
 	} from '$lib'
@@ -15,3 +16,17 @@
 
 <!-- HERO BLOCK -->
 <Hero titleColor="var(--white)" pageTitle="Partners" />
+
+<h2 class="section_title content-container">Work with us!</h2>
+
+<PartnersCarousel />
+
+<style>
+	h2 {
+		margin-block: 1rem;
+	}
+
+	.content-container {
+		padding: 0;
+	}
+</style>

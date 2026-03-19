@@ -18,7 +18,9 @@
 									? 'https://fdnd-agency.directus.app/assets/' +
 										newscard.image
 									: placeholderImage}
-								alt={newscard.title} />
+								alt={newscard.title}
+								height="264"
+								width="264" />
 						</div>
 						<div class="news-info">
 							<span class="news-label"></span>
@@ -38,55 +40,42 @@
 </section>
 
 <style>
-	.grid-wrapper {
-		display: inherit;
+	.news-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		gap: 2rem;
+		padding-bottom: 2rem;
+		padding-left: 0;
+		list-style: none;
+	}
 
+	@media (min-width: 1000px) {
 		.news-grid {
-			display: grid;
-			grid-template-columns: repeat(1, 1fr);
-			gap: 2rem;
-			padding-bottom: 6rem;
-			padding-left: 0;
-			list-style: none;
+			padding-inline: 4rem;
 		}
+	}
 
-		@media (min-width: 700px) {
-			.news-grid {
-				display: grid;
-				grid-template-columns: repeat(2, 1fr);
-				grid-template-rows: repeat(3, 1fr);
-				gap: 2rem;
-				padding-bottom: 6rem;
-				list-style: none;
-			}
-		}
+	.news-card {
+		background-color: var(--white);
+		box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+		transition:
+			transform 0.3s ease,
+			box-shadow 0.3s ease;
+		padding-bottom: 3rem;
 
-		@media (min-width: 1000px) {
-			.news-grid {
-				display: grid;
-				grid-template-columns: repeat(4, 1fr);
-				grid-template-rows: repeat(3, 1fr);
-				gap: 2rem;
-				row-gap: 4rem;
-				padding-bottom: 6rem;
-				padding-left: 4rem;
-				padding-right: 4rem;
-				list-style: none;
-			}
-		}
-
-		.news-card {
-			background-color: var(--white);
-			border-radius: 0.2rem;
-			box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
-			transition:
-				transform 0.3s ease,
-				box-shadow 0.3s ease;
-			padding-bottom: 3rem;
-		}
-		.news-card:hover {
+		&:hover,
+		&:focus-within {
 			transform: translateY(-0.5rem);
 			box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+
+			h3 {
+				text-decoration: underline 1px;
+			}
+		}
+
+		&:focus-within {
+			outline: var(--default-focus);
+			outline-offset: 12px;
 		}
 	}
 
@@ -100,6 +89,7 @@
 			line-height: 1.75rem;
 			color: var(--ultra-140);
 		}
+
 		p {
 			font-family: var(--heading);
 			font-weight: 900;
@@ -118,7 +108,6 @@
 	}
 
 	.news-image {
-		border-top: 0.3rem solid var(--space-140);
 		width: 100%;
 		height: 16.5rem;
 		overflow: hidden;
