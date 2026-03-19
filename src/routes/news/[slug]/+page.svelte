@@ -31,7 +31,8 @@
 					src={data.newsItem[0].image
 						? `https://fdnd-agency.directus.app/assets/${data.newsItem[0].image}`
 						: placeholder2}
-					alt="" />
+					alt=""
+					width="500" />
 			</div>
 		</section>
 		<section>
