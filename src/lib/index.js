@@ -27,13 +27,14 @@ export { default as Footnote } from './components/atoms/FooterFootnote.svelte'
 // ASSETS
 // Icons
 export { default as Quote } from './components/icons/Quote.svelte'
+export { default as MailIcon } from './components/icons/MailIcon.svelte'
 
 // Logo Components
-export { default as Arrow } from './assets/logos/Arrow.svelte'
-export { default as Bsky } from './assets/logos/Bsky.svelte'
-export { default as Instagram } from './assets/logos/Instagram.svelte'
-export { default as LinkedIn } from './assets/logos/Linkedin.svelte'
-export { default as PageArrow } from './assets/logos/PageArrow.svelte'
+export { default as Arrow } from './components/icons/Arrow.svelte'
+export { default as Bsky } from './components/icons/Bsky.svelte'
+export { default as Instagram } from './components/icons/Instagram.svelte'
+export { default as LinkedIn } from './components/icons/Linkedin.svelte'
+export { default as PageArrow } from './components/atoms/PageArrow.svelte'
 
 // Logo SVGs
 export { default as favIcon } from './assets/logos/favicon.svg'
