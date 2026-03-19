@@ -15,7 +15,7 @@
 
 <Breadcrumb />
 
-<section class="paragraph-block">
+<section class="paragraph-block content-container">
 	<div class="text-title">
 		<h2 class="subtitle">
 			Our latest <span class="orange">developments</span>
@@ -31,30 +31,17 @@
 <Pagination pagination={data.pagination} />
 
 <style>
+	.content-container {
+		padding: 0;
+	}
+
 	.paragraph-block {
-		display: grid;
-		grid-template-columns: subgrid;
-		gap: inherit;
-		row-gap: unset;
-
-		> * {
-			grid-column: 1 / -1;
-			padding-left: 0;
-
-			@media (min-width: 36.25rem) {
-				padding-right: 1.5rem;
-			}
-			@media (min-width: 56.25rem) {
-				padding-left: 2.5rem;
-			}
-		}
-
 		.text-title * + * {
 			margin-top: 0.5rem;
 		}
 
 		.heading {
-			padding-bottom: 3rem;
+			padding-bottom: calc(1rem + 1vw);
 		}
 
 		.subtitle,
