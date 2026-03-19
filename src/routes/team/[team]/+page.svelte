@@ -20,7 +20,9 @@
 <Hero
 	titleColor="var(--white)"
 	pageTitle="Team"
-	background={{ file: nebulaTeamBeginning, alt: 'test' }} />
+	background={{ file: nebulaTeamBeginning, alt: 'test' }}
+	fullScreen
+	logoOverlay />
 
 <Breadcrumb />
 

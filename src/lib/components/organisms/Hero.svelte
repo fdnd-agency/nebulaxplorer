@@ -9,6 +9,8 @@
 		paragraph,
 		pageTitle = 'None set',
 		titleColor,
+		fullScreen = false,
+		logoOverlay = false,
 	} = $props()
 
 	// Validation to prevent empty alt text
@@ -17,7 +19,7 @@
 	}
 </script>
 
-<section class="hero">
+<section class="hero {fullScreen ? 'fullscreen' : ''}">
 	<div class="content-container">
 		{#if paragraph}
 			<p class="subheading">{paragraph}</p>
@@ -30,12 +32,17 @@
 				sizes="100vw"
 				fetchpriority="high" />
 		{/if}
-		{#if sronIcon}
-			<img src={sronIcon} alt="Logo of SRON Academy" class="hero-logo" />
-		{/if}
-		<h1 class="title" style={titleColor && `color: ${titleColor}`}>
-			{pageTitle}
-		</h1>
+		<div class={logoOverlay ? 'logo-overlay' : ''}>
+			{#if sronIcon}
+				<img
+					src={sronIcon}
+					alt="Logo of SRON Academy"
+					class="hero-logo" />
+			{/if}
+			<h1 class="title" style={titleColor && `color: ${titleColor}`}>
+				{pageTitle}
+			</h1>
+		</div>
 	</div>
 </section>
 
@@ -48,6 +55,10 @@
 		padding-top: 5.25rem;
 		@media (min-width: 56.25rem) {
 			padding: 3.5rem 4rem 2.25rem 0.5rem;
+
+			&.fullscreen {
+				padding-block: 14rem;
+			}
 		}
 
 		/* every adjecent elem should have margin-top; except for the picture as that is the background image. */
@@ -80,6 +91,14 @@
 			width: clamp(12.5rem, 7.15rem + 28.5vw, 25rem);
 			max-width: 36.375rem;
 			display: block;
+		}
+
+		.logo-overlay {
+			--space-mid-opacity: hsla(238, 35%, 15%, 0.75);
+
+			background-color: var(--space-mid-opacity);
+			width: min-content;
+			padding: 2em;
 		}
 
 		@media (min-width: 56.25rem) {
