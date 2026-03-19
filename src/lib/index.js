@@ -15,6 +15,7 @@ export { default as MailingListSignup } from './components/molecules/MailingList
 export { default as Pagination } from './components/molecules/Pagination.svelte'
 export { default as Testimonial } from './components/molecules/Testimonial.svelte'
 export { default as TestimonialHeader } from './components/molecules/TestimonialHeader.svelte'
+export { default as UnderConstruction } from './components/molecules/UnderConstruction.svelte'
 
 export { default as ScientificTestimonial } from './components/molecules/ScientificTestimonial.svelte'
 export { default as FooterLocations } from './components/molecules/FooterLocations.svelte'
@@ -27,13 +28,14 @@ export { default as Footnote } from './components/atoms/FooterFootnote.svelte'
 // ASSETS
 // Icons
 export { default as Quote } from './components/icons/Quote.svelte'
+export { default as MailIcon } from './components/icons/MailIcon.svelte'
 
 // Logo Components
-export { default as Arrow } from './assets/logos/Arrow.svelte'
-export { default as Bsky } from './assets/logos/Bsky.svelte'
-export { default as Instagram } from './assets/logos/Instagram.svelte'
-export { default as LinkedIn } from './assets/logos/Linkedin.svelte'
-export { default as PageArrow } from './assets/logos/PageArrow.svelte'
+export { default as Arrow } from './components/icons/Arrow.svelte'
+export { default as Bsky } from './components/icons/Bsky.svelte'
+export { default as Instagram } from './components/icons/Instagram.svelte'
+export { default as LinkedIn } from './components/icons/Linkedin.svelte'
+export { default as PageArrow } from './components/atoms/PageArrow.svelte'
 
 // Logo SVGs
 export { default as favIcon } from './assets/logos/favicon.svg'
@@ -76,6 +78,7 @@ export { default as blackhole2 } from './assets/images/blackhole2.jpg'
 export { default as blackhole2Webp } from './assets/images/blackhole2.webp'
 export { default as blackholeHero } from './assets/images/blackhole-hero.png'
 export { default as gravWaves } from './assets/images/grav-waves.jpg'
+export { default as impact } from './assets/images/sron_impact.png'
 export { default as mertenImage } from './assets/images/merten.jpg'
 export { default as missionImage } from './assets/images/mission.jpg'
 export { default as nebulaSatellite } from './assets/images/nebula-satellite.png'
@@ -86,8 +89,10 @@ export { default as placeholder2 } from './assets/images/placeholder2.jpg'
 export { default as rapidStep2 } from './assets/images/Rapid-step-2.jpg'
 export { default as rocketLaunchStep5 } from './assets/images/rocket-launch-step-5.jpg'
 export { default as rushilImage } from './assets/images/rushil.jpg'
+export { default as satelliteOnFloor } from './assets/images/satellite-on-floor.webp'
 export { default as sronGroningen } from './assets/images/sron-groningen.webp'
 export { default as sronLeiden } from './assets/images/sron-leiden.webp'
+export { default as sronOpenDay } from './assets/images/sron_openday.jpg'
 export { default as sronReviewStep1 } from './assets/images/sron-review-step-1.jpg'
 export { default as werkenbijSRON } from './assets/images/WerkenbijSRON.jpg'
 

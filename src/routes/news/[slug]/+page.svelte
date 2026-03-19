@@ -6,9 +6,7 @@
 
 <svelte:head>
 	<title>News</title>
-	<meta
-		name="description"
-		content="The news page features news and resources to inspire the general public and inform the media on the latest discoveries and progress made on the Nebula Xplorer mission." />
+	<meta name="description" content="News" />
 </svelte:head>
 
 <Hero pageTitle="" />

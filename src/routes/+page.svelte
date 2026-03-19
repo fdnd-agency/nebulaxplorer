@@ -6,6 +6,7 @@
 		MailingListSignup,
 		nebulaSatelliteEnhanced,
 		blackholeHeroEnhanced as heroImg,
+		sronAcademyLogoOnWhite,
 		sronAcademyLogoOnSpaceBlue as logo,
 	} from '$lib'
 
@@ -25,7 +26,11 @@
 
 <section class="section-paragraph-picture">
 	<div class="content-container">
-		<h2 class="section_title">About Nebula Xplorer</h2>
+		<h2 class="heading">About Nebula Xplorer</h2>
+		<enhanced:img
+			src={nebulaSatelliteEnhanced}
+			alt="The Nebula Xplorer Satellite"
+			sizes="(min-width:500px) 900px, (min-width:300px) 450px" />
 		<p class="paragraph">
 			NEBULA-X is an X-ray spectral timing satellite that will fill a key
 			gap in international observing capability in the early 2030s as well
@@ -35,10 +40,23 @@
 			sources at high energy and timing resolution to reveal how these
 			objects and their nearby extreme environments behave.
 		</p>
-		<enhanced:img
-			src={nebulaSatelliteEnhanced}
-			alt="The Nebula Xplorer Satellite"
-			sizes="(min-width:500px) 900px, (min-width:300px) 450px" />
+	</div>
+</section>
+
+<section class="section-paragraph-picture alt">
+	<div class="content-container">
+		<h2 class="heading">About SRON Academy</h2>
+		<img
+			src={sronAcademyLogoOnWhite}
+			alt="The logo of Space Research Organisation Netherlands Academy" />
+		<p class="paragraph">
+			SRON offers a very rich environment for inquisitive people. Because
+			it takes many disciplines to do groundbreaking research and to
+			develop the instrumentation or software needed to do so. We like to
+			transfer knowledge and expertise to PhD students, students and other
+			talented people inside and outside SRON. We do this actively, gladly
+			and with passion.
+		</p>
 	</div>
 </section>
 
@@ -47,23 +65,68 @@
 <MailingListSignup />
 
 <style>
-	.section-paragraph-picture div {
+	section div {
 		display: grid;
+		grid-template-columns: 1fr;
 		gap: 2rem;
-		padding-block: 3rem;
-
-		@media (min-width: 1000px) {
-			grid-template-columns: 2fr 1fr;
-		}
+		padding-block: calc(2rem + 2vw);
+		justify-content: center;
 
 		h2 {
 			grid-column: 1 / -1;
 		}
 
+		picture,
 		img {
-			max-width: 100%;
+			align-self: center;
+		}
+
+		@media (min-width: 800px) {
+			grid-template-columns: repeat(3, 1fr);
+			gap: 3rem;
+
+			p {
+				grid-row: 2 / 3;
+				grid-column: 1 / 3;
+			}
+
+			picture,
+			img {
+				grid-row: 2 / 3;
+				grid-column: 3 / -1;
+				justify-self: unset;
+			}
+		}
+
+		img {
+			width: auto;
+			max-width: min(400px, 100%);
 			height: 100%;
-			object-fit: cover;
+			max-height: 100%;
+		}
+	}
+
+	section.alt {
+		background-color: white;
+		color: black;
+		border-bottom: var(--cleanroom-100) 0.5rem solid;
+
+		h2 {
+			color: var(--ultra-140);
+			font-weight: 500;
+		}
+
+		@media (min-width: 800px) {
+			p {
+				grid-row: 2 / 3;
+				grid-column: 2 / -1;
+			}
+
+			picture,
+			img {
+				grid-row: 2 / 3;
+				grid-column: 1 / 2;
+			}
 		}
 	}
 </style>
