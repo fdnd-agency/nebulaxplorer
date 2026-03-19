@@ -21,5 +21,5 @@
 	<p>{data.newsItem[0].type}</p>
 	<p>{data.newsItem[0].date}</p>
 	<img
-		src={`https://fdnd-agency.directus.com/assets/${data.newsItem[0].image}`} />
+		src={`https://fdnd-agency.directus.app/assets/${data.newsItem[0].image}`} />
 </section>
