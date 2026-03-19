@@ -29,7 +29,7 @@
 					<!-- hrefs now use resolve(). Otherwise the site may break according to https://sveltejs.github.io/eslint-plugin-svelte/rules/no-navigation-without-resolve/ -->
 				</li>
 			{/each}
-			<li><a href={resolve('/')}>privacy</a></li>
+			<li><a href={resolve('/privacy')}>privacy</a></li>
 		</ul>
 	</nav>
 

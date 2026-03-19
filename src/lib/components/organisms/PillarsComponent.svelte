@@ -1,9 +1,15 @@
 <script>
-	import { placeholder1, gravWaves as gravwaves, placeholder2 } from '$lib'
+	import {
+		placeholder1,
+		gravWaves,
+		placeholder2,
+		impact,
+		sronOpenDay,
+	} from '$lib'
 
 	const dummydata = [
 		{
-			link: '#',
+			link: '/technology',
 			image: {
 				src: placeholder1,
 				alt: '',
@@ -11,16 +17,16 @@
 			title: 'technology',
 		},
 		{
-			link: '#',
+			link: '/science',
 			image: {
-				src: gravwaves,
+				src: gravWaves,
 				alt: '',
 			},
 			title: 'science',
 		},
 
 		{
-			link: '#',
+			link: '/instrumentation',
 			image: {
 				src: placeholder2,
 				alt: '',
@@ -28,20 +34,20 @@
 			title: 'instrumentation',
 		},
 		{
-			link: '#',
+			link: '/education',
 			image: {
-				src: placeholder1,
+				src: sronOpenDay,
 				alt: '',
 			},
-			title: 'placeholder',
+			title: 'education',
 		},
 		{
-			link: '#',
+			link: '/environment',
 			image: {
-				src: placeholder1,
+				src: impact,
 				alt: '',
 			},
-			title: 'lorem ipsum',
+			title: 'environment',
 		},
 	]
 </script>
@@ -64,6 +70,7 @@
 <style>
 	section {
 		padding-inline: clamp(1rem, 5vw, 3.5rem);
+		padding-block: calc(1rem + 2vw);
 	}
 
 	ul {
