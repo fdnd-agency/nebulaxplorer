@@ -1,5 +1,6 @@
 <script>
 	import { Breadcrumb, Hero, placeholder2 } from '$lib'
+	import { resolve } from '$app/paths'
 
 	let { data } = $props()
 </script>
@@ -50,7 +51,13 @@
 		</section>
 	</article>
 {:else}
-	<h1>News article not found. Go back to overview?</h1>{/if}
+	<section class="error">
+		<div class="content-container">
+			<h1 class="section_title">News article not found.</h1>
+			<a href={resolve('/news')} class="heading">Go back to overview?</a>
+		</div>
+	</section>
+{/if}
 
 <style>
 	article {
@@ -120,6 +127,27 @@
 		p {
 			margin-block: 1em;
 			max-width: 70ch;
+		}
+
+		&.error {
+			background-color: unset;
+			color: unset;
+
+			h1 {
+				margin-block: 1em;
+			}
+
+			div {
+				padding: 0;
+			}
+
+			a {
+				color: var(--cleanroom-100);
+
+				&:hover {
+					text-decoration: underline 1px;
+				}
+			}
 		}
 	}
 
