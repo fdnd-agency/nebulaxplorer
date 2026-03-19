@@ -156,6 +156,6 @@
 
 <style>
 	section {
-		margin-block-end: 3rem;
+		margin-block-end: 1rem;
 	}
 </style>
