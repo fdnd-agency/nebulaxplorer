@@ -46,7 +46,7 @@
 	font-display: swap;
 }
 
-html {
+html.smoothscroll {
 	scroll-behavior: smooth;
 }
 
@@ -252,4 +252,6 @@ a:focus-visible {
 	clip: rect(0, 0, 0, 0);
 	white-space: nowrap;
 	border: 0;
+	top: 0;
+	left: 0;
 }

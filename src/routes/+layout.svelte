@@ -1,23 +1,42 @@
 <script>
 	import { page } from '$app/stores'
-	import { onNavigate } from '$app/navigation'
+	import { onNavigate, afterNavigate, beforeNavigate } from '$app/navigation'
+	import { onMount } from 'svelte'
 	import { Footer, favIcon as favicon, PageArrow } from '$lib'
 	import '$lib/assets/styles/general.css'
 	import '$lib/assets/styles/layout.css'
 
 	let expanded = $state(false)
+	let root
+
+	// The onMount, beforeNavigate, and afterNavigate are all to prevent scroll-behavior: smooth to mess with the navigation.
+	// Source for reference: https://www.reddit.com/r/sveltejs/comments/vbq54w/sveltekit_disable_smooth_scroll_when_navigating/
+
+	onMount(() => {
+		root = document.querySelector('html')
+
+		root?.classList.add('smoothscroll')
+	})
+
+	beforeNavigate(() => {
+		root?.classList.remove('smoothscroll')
+	})
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return
 
 		return new Promise((resolve) => {
-			document.startViewTransition(async () => {
+			const transition = document.startViewTransition(async () => {
 				expanded = false
 
 				resolve()
 				await navigation.complete
 			})
 		})
+	})
+
+	afterNavigate(() => {
+		root?.classList.add('smoothscroll')
 	})
 
 	// Are we on a slug page?

@@ -1,4 +1,4 @@
-<section>
+<section id="mailing-list-signup">
 	<div>
 		<h2 class="section_title">Subscribe to our mailing list</h2>
 		<p class="paragraph">
@@ -23,6 +23,7 @@
 <style>
 	section {
 		margin-bottom: 5rem;
+		scroll-margin-top: 33vh;
 	}
 
 	div {
