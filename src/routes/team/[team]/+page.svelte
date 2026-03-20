@@ -81,7 +81,8 @@
 	}
 
 	img {
-		height: 500px;
+		max-height: 500px;
+		max-width: 100%;
 	}
 
 	ul {
