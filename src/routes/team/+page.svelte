@@ -1,8 +1,7 @@
 <script>
 /* eslint-disable svelte/require-each-key */
-	import {
-		Hero,
-	} from '$lib'
+	
+	import { Hero, Breadcrumb} from '$lib'
 	import TeamsComponent from '$lib/components/organisms/TeamsComponent.svelte'
 	// import TeamsYearComponent from '$lib/components/organisms/TeamsYearComponent.svelte'
 
@@ -52,7 +51,6 @@ const sortedResults = resultArray.sort((a, b) => b[0] - a[0]);
 
 
 
-	import { Hero, Breadcrumb, UnderConstruction } from '$lib'
 </script>
 
 <svelte:head>
