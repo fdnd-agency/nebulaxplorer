@@ -33,18 +33,23 @@
 
 ]
 
-const groupedByYear = dummydata.reduce((acc, current) => {
-  const year = new Date(current.time_start).getFullYear();
-  if (!acc[year]) {
-    acc[year] = [];
-  }
-  acc[year].push(current);
-  return acc;
-}, {});
+function groupByYear(data){
+	const groupedByYear = data.reduce((acc, current) => {
+		const year = new Date(current.time_start).getFullYear();
+		if (!acc[year]) {
+			acc[year] = [];
+		}
+		acc[year].push(current);
+		return acc;
+	}, {});
 
-const resultArray = Object.entries(groupedByYear);
 
-	
+	return Object.entries(groupedByYear);
+}
+
+const resultArray = groupByYear(dummydata);
+
+
 </script>
 
 <svelte:head>

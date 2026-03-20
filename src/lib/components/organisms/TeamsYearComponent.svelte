@@ -1,7 +1,7 @@
-<script>
-
+<!-- <script>
+    // // TODO: actually implement this component
 	import TeamsComponent from '$lib/components/organisms/TeamsComponent.svelte'
-    let { teams } = $props();
+    let { year } = $props();
     // const startDate = new Date(teams.time_start);
     // const endDate = new Date(teams.time_end);
 
@@ -9,11 +9,9 @@
     console.log("tem" + teams.start_date);
 </script>
 
-<ul>
-    {#each teams as team(team.id)}
-        <li>
-            <p>team {team.id}</p>
-	    	<TeamsComponent teams={team}/>
-        </li>
-	{/each}
-</ul>
+
+    <article>
+			{#each year as teams(year.id)}
+				<TeamsComponent teams={teams}/>
+			{/each}
+		</article> -->
