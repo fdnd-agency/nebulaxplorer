@@ -64,25 +64,34 @@ const sortedResults = resultArray.sort((a, b) => b[0] - a[0]);
 <Hero titleColor="var(--white)" pageTitle="Team" />
 <Breadcrumb />
 <h2>who are we?</h2>
-<section><!-- TODO this article should become its own component (organism?) -->
+<section class="content-container"><!-- TODO this article should become its own component (organism?) -->
 	{#each sortedResults as year}
-		<h3>{year[0]}</h3>
-
 		<!-- <TeamsYearComponent year={year[1]} -->
-		 
 		<article> <!-- TODO this article should become its own component (molecule?) -->
-			{#each year[1] as teams}
-				<TeamsComponent teams={teams}/>
-			{/each}
+			<h3>{year[0]}</h3>
+			<ul>
+				{#each year[1] as teams}
+					<TeamsComponent teams={teams}/>
+				{/each}
+			</ul>
 		</article>
 
 	{/each}
 </section>
 
 <style>
-	article{
-		display: flex;
-		width: 100%;
-		gap: 2rem;
-	}
+
+h3{
+	margin: 1em;
+}
+
+ul{
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+	gap: 2em;
+	list-style: none;
+	text-align: center;
+}
+
 </style>
