@@ -20,11 +20,11 @@ We generally follow the [FDND code conventions](https://docs.fdnd.nl/conventies.
 - The order of your CSS selectors should follow the order of the associated HTML
 - Structure your code from generic to specific
 - Take advantage of the cascade and inheritance, and use utility classes to prevent code repetition (DRY)
-- Nest media queries where appropiate
+- Nest media queries where appropriate
 - Give your CSS some breathing room
 - Use nested CSS where it helps legibility
 - Do not nest selectors more than three levels deep to avoid writing CSS that is too specific or too strongly coupled to the HTML
-- Use CSS variables where appropiate. CSS variables are generally defined in general.css
+- Use CSS variables where appropriate. CSS variables are generally defined in general.css
 - Adhere to the naming conventions for animations & variable names. (e.g. `anim-fade-up`, `anim-move-right` & `--primary-color`, `--size-XL`)
 
 ### Comments
