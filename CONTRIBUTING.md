@@ -4,7 +4,7 @@
 
 We generally follow the [FDND code conventions](https://docs.fdnd.nl/conventies.html).
 
-### HTML conventies
+### HTML conventions
 
 - Use structured and semantic HTML
 - Avoid deep nesting of elements
@@ -13,7 +13,7 @@ We generally follow the [FDND code conventions](https://docs.fdnd.nl/conventies.
 - Use double quotes for attributes
 - Give your HTML some breathing room
 
-### CSS conventies
+### CSS conventions
 
 - CSS classes and custom variables should be in English and use kebab-case
 - Use 1 tab for indentation.
