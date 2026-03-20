@@ -3,11 +3,11 @@
 </script>
 
 <svelte:head>
-	<title>News</title>
-	<meta name="description" content="News" />
+	<title>Education</title>
+	<meta name="description" content="Education" />
 </svelte:head>
 
-<Hero pageTitle="News" />
+<Hero pageTitle="Education" />
 
 <Breadcrumb />
 

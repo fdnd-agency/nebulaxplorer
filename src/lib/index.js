@@ -5,19 +5,21 @@ export { default as Footer } from './components/organisms/Footer.svelte'
 export { default as Newscards } from './components/organisms/Newscards.svelte'
 export { default as NewsComponent } from './components/organisms/NewsComponent.svelte'
 export { default as PillarsComponent } from './components/organisms/PillarsComponent.svelte'
+export { default as PartnersCarousel } from './components/organisms/PartnersCarousel.svelte'
 
 // Molecules
 export { default as Breadcrumb } from './components/molecules/Breadcrumb.svelte'
 export { default as AssignmentCards } from './components/molecules/AssignmentCards.svelte'
+export { default as CarouselTrack } from './components/molecules/CarouselTrack.svelte'
 export { default as MailingListSignup } from './components/molecules/MailingListSignup.svelte'
 export { default as Pagination } from './components/molecules/Pagination.svelte'
 export { default as Testimonial } from './components/molecules/Testimonial.svelte'
 export { default as TestimonialHeader } from './components/molecules/TestimonialHeader.svelte'
+export { default as UnderConstruction } from './components/molecules/UnderConstruction.svelte'
 
 export { default as ScientificTestimonial } from './components/molecules/ScientificTestimonial.svelte'
 export { default as FooterLocations } from './components/molecules/FooterLocations.svelte'
 export { default as FooterNav } from './components/molecules/FooterNav.svelte'
-
 
 // Atoms
 export { default as Mission } from './components/atoms/Mission.svelte'
@@ -26,13 +28,14 @@ export { default as Footnote } from './components/atoms/FooterFootnote.svelte'
 // ASSETS
 // Icons
 export { default as Quote } from './components/icons/Quote.svelte'
+export { default as MailIcon } from './components/icons/MailIcon.svelte'
 
 // Logo Components
-export { default as Arrow } from './assets/logos/Arrow.svelte'
-export { default as Bsky } from './assets/logos/Bsky.svelte'
-export { default as Instagram } from './assets/logos/Instagram.svelte'
-export { default as LinkedIn } from './assets/logos/Linkedin.svelte'
-export { default as PageArrow } from './assets/logos/PageArrow.svelte'
+export { default as Arrow } from './components/icons/Arrow.svelte'
+export { default as Bsky } from './components/icons/Bsky.svelte'
+export { default as Instagram } from './components/icons/Instagram.svelte'
+export { default as LinkedIn } from './components/icons/Linkedin.svelte'
+export { default as PageArrow } from './components/atoms/PageArrow.svelte'
 
 // Logo SVGs
 export { default as favIcon } from './assets/logos/favicon.svg'
@@ -49,6 +52,25 @@ export { default as sronLogoSmallWhite } from './assets/logos/SRON_Small_White.s
 export { default as nebulaLogoWhite } from './assets/logos/nebula_white.svg'
 export { default as nebulaLogoBlack } from './assets/logos/nebula_black.svg'
 
+// Company logos
+export { default as logoAstos } from './assets/images/sponsors/astos-logo.jpg'
+export { default as logoErasmusUniversiteitRotterdam } from './assets/images/sponsors/erasmus-universiteit-rotterdam-logo.png'
+export { default as logoEsatan } from './assets/images/sponsors/esatan-logo.png'
+export { default as logoHogeschoolUtrecht } from './assets/images/sponsors/hogeschool-utrecht-logo.png'
+export { default as logoHogeschoolVanAmsterdam } from './assets/images/sponsors/hogeschool-van-amsterdam-logo.png'
+export { default as logoInhollandUniversity } from './assets/images/sponsors/inholland-university-logo.png'
+export { default as logoLis } from './assets/images/sponsors/lis-logo.jpeg'
+export { default as logoMboRijnland } from './assets/images/sponsors/mbo-rijnland-logo.png'
+export { default as logoOverdehaagse } from './assets/images/sponsors/overdehaagse-logo.png'
+export { default as logoRocMondriaan } from './assets/images/sponsors/roc-mondriaan-logo.png'
+export { default as logoRocNova } from './assets/images/sponsors/roc-nova-logo.png'
+export { default as logoRugr } from './assets/images/sponsors/rugr-logo.gif'
+export { default as logoSaxion } from './assets/images/sponsors/saxion-logo.jpg'
+export { default as logoTechniekCollegeRotterdam } from './assets/images/sponsors/techniek-college-rotterdam-logo.png'
+export { default as logoTuDelft } from './assets/images/sponsors/tu-delft-logo.png'
+export { default as logoUl } from './assets/images/sponsors/ul-logo.jpg'
+export { default as logoUva } from './assets/images/sponsors/uva-logo.webp'
+
 // Images
 export { default as aeroDefenseTestingStep4 } from './assets/images/aerospace-defense-testing-step-4.jpg'
 export { default as blackhole } from './assets/images/blackhole.jpg'
@@ -56,6 +78,7 @@ export { default as blackhole2 } from './assets/images/blackhole2.jpg'
 export { default as blackhole2Webp } from './assets/images/blackhole2.webp'
 export { default as blackholeHero } from './assets/images/blackhole-hero.png'
 export { default as gravWaves } from './assets/images/grav-waves.jpg'
+export { default as impact } from './assets/images/sron_impact.png'
 export { default as mertenImage } from './assets/images/merten.jpg'
 export { default as missionImage } from './assets/images/mission.jpg'
 export { default as nebulaSatellite } from './assets/images/nebula-satellite.png'
@@ -66,8 +89,10 @@ export { default as placeholder2 } from './assets/images/placeholder2.jpg'
 export { default as rapidStep2 } from './assets/images/Rapid-step-2.jpg'
 export { default as rocketLaunchStep5 } from './assets/images/rocket-launch-step-5.jpg'
 export { default as rushilImage } from './assets/images/rushil.jpg'
+export { default as satelliteOnFloor } from './assets/images/satellite-on-floor.webp'
 export { default as sronGroningen } from './assets/images/sron-groningen.webp'
 export { default as sronLeiden } from './assets/images/sron-leiden.webp'
+export { default as sronOpenDay } from './assets/images/sron_openday.jpg'
 export { default as sronReviewStep1 } from './assets/images/sron-review-step-1.jpg'
 export { default as werkenbijSRON } from './assets/images/WerkenbijSRON.jpg'
 

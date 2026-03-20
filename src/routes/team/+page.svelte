@@ -1,4 +1,4 @@
-<script module>
+<script>
 /* eslint-disable svelte/require-each-key */
 	import {
 		Hero,
@@ -51,6 +51,8 @@ const resultArray = groupByYear(dummydata);
 const sortedResults = resultArray.sort((a, b) => b[0] - a[0]);
 
 
+
+	import { Hero, Breadcrumb, UnderConstruction } from '$lib'
 </script>
 
 <svelte:head>
@@ -62,7 +64,7 @@ const sortedResults = resultArray.sort((a, b) => b[0] - a[0]);
 
 <!-- HERO BLOCK -->
 <Hero titleColor="var(--white)" pageTitle="Team" />
-
+<Breadcrumb />
 <h2>who are we?</h2>
 <section><!-- TODO this article should become its own component (organism?) -->
 	{#each sortedResults as year}

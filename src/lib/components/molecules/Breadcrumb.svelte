@@ -35,6 +35,10 @@
 		display: inline-flex;
 		gap: 0.75rem;
 		align-items: center;
+		width: 100%;
+		max-width: var(--content-width);
+		margin-inline: auto;
+		padding: 0;
 
 		/* color schemes */
 
@@ -79,10 +83,6 @@
 		a:hover {
 			text-decoration: underline;
 			text-underline-offset: 0.125rem;
-		}
-
-		@media (min-width: 56.25rem) {
-			padding-left: 4rem;
 		}
 	}
 </style>
