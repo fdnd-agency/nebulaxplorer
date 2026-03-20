@@ -48,6 +48,7 @@ function groupByYear(data){
 }
 
 const resultArray = groupByYear(dummydata);
+const sortedResults = resultArray.sort((a, b) => b[0] - a[0]);
 
 
 </script>
@@ -64,7 +65,7 @@ const resultArray = groupByYear(dummydata);
 
 <h2>who are we?</h2>
 <section><!-- TODO this article should become its own component (organism?) -->
-	{#each resultArray as year}
+	{#each sortedResults as year}
 		<h3>{year[0]}</h3>
 
 		<!-- <TeamsYearComponent year={year[1]} -->
