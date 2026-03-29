@@ -48,6 +48,7 @@ We generally follow the [FDND code conventions](https://docs.fdnd.nl/conventies.
 ### DoR
 
 - The story is correctly formatted (as a user… I want to... because)
+- The story has a clear title that briefly summarizes the user story
 - The story has a clear description
 - The story has clear requirements
 - Dependencies have been identified
