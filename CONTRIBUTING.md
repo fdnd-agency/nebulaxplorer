@@ -60,6 +60,7 @@ We generally follow the [FDND code conventions](https://docs.fdnd.nl/conventies.
 - Requirements have been met
 - The story has been tested
 - The story has been merged into the dev branch
+- The code has been formatted according to our formatting configuration
 - The code has been reviewed
 - The code complies with RAPPE (Responsive, Accessible, Performance, Progressive Enhancement)
 
