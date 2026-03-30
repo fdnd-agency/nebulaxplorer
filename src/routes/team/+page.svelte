@@ -63,8 +63,10 @@ const sortedResults = resultArray.sort((a, b) => b[0] - a[0]);
 <!-- HERO BLOCK -->
 <Hero titleColor="var(--white)" pageTitle="Team" />
 <Breadcrumb />
+<section class="content-container"><!-- TODO this article should become its own component 
+	(organism?) -->
+	
 <h2>who are we?</h2>
-<section class="content-container"><!-- TODO this article should become its own component (organism?) -->
 	{#each sortedResults as year}
 		<!-- <TeamsYearComponent year={year[1]} -->
 		<article> <!-- TODO this article should become its own component (molecule?) -->
@@ -81,17 +83,35 @@ const sortedResults = resultArray.sort((a, b) => b[0] - a[0]);
 
 <style>
 
+.content-container{
+	display: flex;
+	flex-direction: column;
+	max-width: 1000px;
+	justify-content: center;
+}
+
+
+
 h3{
-	margin: 1em;
+    font-size: 1.5rem;
+	padding-block: 1em;
+}
+
+article{
+	display: flex;
+	flex-direction: column;
+
 }
 
 ul{
-	display: flex;
-	justify-content: space-around;
-	flex-direction: column;
-	gap: 2em;
 	list-style: none;
-	text-align: center;
+	display: flex;
+	flex-direction: column;
+	
+	@media (min-width: 450px) {
+		gap: 5vw;
+		flex-direction: row;
+	}
 }
 
 </style>

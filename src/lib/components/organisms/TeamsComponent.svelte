@@ -8,22 +8,29 @@
 </script>
 
 <li>
-    <img src={`https://fdnd-agency.directus.app/assets/${teams.group_photo}`} alt="" height="300">
+    <img src={`https://fdnd-agency.directus.app/assets/${teams.group_photo}`} alt="">
     <h3>{month[startDate.getMonth()]} - {month[endDate.getMonth()]}</h3>
 </li>
 
 <style>
 
-    li{
-        display: flex;
-        aspect-ratio: 1/1;
-        flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    h3{
+        height: 2lh; /* give this h3 a height of 2 Line Heights :)*/
     }
 
+     li{
+        align-self: center;
+        max-width: 300px;
+        text-align: center;
+        width: 100%;
+
+        @media screen and (min-width: 500px){
+            max-width: 450px;
+        }
+         
+    }
+    
     img{
         max-width: 100%;
-        max-height: 100%;
     }
 </style>
