@@ -2,8 +2,7 @@
 /* eslint-disable svelte/require-each-key */
 	
 	import { Hero, Breadcrumb} from '$lib'
-	import TeamsComponent from '$lib/components/organisms/TeamsComponent.svelte'
-	// import TeamsYearComponent from '$lib/components/organisms/TeamsYearComponent.svelte'
+	import TeamsYearComponent from '$lib/components/organisms/TeamsYearComponent.svelte'
 
 	const dummydata = [	
 		{
@@ -63,21 +62,12 @@ const sortedResults = resultArray.sort((a, b) => b[0] - a[0]);
 <!-- HERO BLOCK -->
 <Hero titleColor="var(--white)" pageTitle="Team" />
 <Breadcrumb />
-<section class="content-container"><!-- TODO this article should become its own component 
-	(organism?) -->
-	
+<section class="content-container">
 <h2>who are we?</h2>
 	{#each sortedResults as year}
-		<!-- <TeamsYearComponent year={year[1]} -->
-		<article> <!-- TODO this article should become its own component (molecule?) -->
-			<h3>{year[0]}</h3>
-			<ul>
-				{#each year[1] as teams}
-					<TeamsComponent teams={teams}/>
-				{/each}
-			</ul>
-		</article>
-
+	
+		<TeamsYearComponent year={year} />
+		
 	{/each}
 </section>
 
@@ -88,30 +78,6 @@ const sortedResults = resultArray.sort((a, b) => b[0] - a[0]);
 	flex-direction: column;
 	max-width: 1000px;
 	justify-content: center;
-}
-
-
-
-h3{
-    font-size: 1.5rem;
-	padding-block: 1em;
-}
-
-article{
-	display: flex;
-	flex-direction: column;
-
-}
-
-ul{
-	list-style: none;
-	display: flex;
-	flex-direction: column;
-	
-	@media (min-width: 450px) {
-		gap: 5vw;
-		flex-direction: row;
-	}
 }
 
 </style>
