@@ -5,5 +5,5 @@ export async function load({ url, params }) {
 		`${DIRECTUS_VACANCIES}/${params.slug}`
 	).then((response) => response.json())
 
-	return { assignment: vacanciesResponse.data ?? [] }
+	return { assignment: vacanciesResponse.data }
 }

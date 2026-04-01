@@ -7,7 +7,7 @@
 
 <Breadcrumb />
 
-{#if data.assignment.length > 0}
+{#if data.assignment}
 	<h2>{data.assignment.title}</h2>
 	<p>{data.assignment.location}</p>
 	<p>{data.assignment.organisation}</p>
