@@ -14,6 +14,7 @@
 			<ul>
 				<li>{data.assignment.location}</li>
 				<li>{data.assignment.organisation}</li>
+				<li>{data.assignment.study_program[0]}</li>
 			</ul>
 		</div>
 	</section>
@@ -40,9 +41,18 @@
 
 	ul {
 		display: flex;
-		list-style: none;
-		gap: 1em;
+		flex-wrap: wrap;
+		flex-direction: column;
+		gap: 0.5em;
+		padding-inline-start: 1rem;
 		margin-block: 1rem;
+
+		@media (min-width: 400px) {
+			list-style: none;
+			flex-direction: row;
+			gap: 2em;
+			padding-inline-start: 0;
+		}
 	}
 
 	li {
