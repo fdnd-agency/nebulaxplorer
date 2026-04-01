@@ -26,13 +26,15 @@
 		</div>
 	</section>
 {:else}
-	<p>Assignment not found.</p>
-	<a href="/assignments">Go back to overview?</a>
+	<section class="content-container error">
+		<h2 class="section_title">Assignment not found.</h2>
+		<a href="/assignments">Go back to overview?</a>
+	</section>
 {/if}
 
 <style>
 	.content-container {
-		padding: 0;
+		padding-inline: 0;
 	}
 
 	section {
@@ -74,5 +76,19 @@
 
 	p {
 		margin-block: 0.5em;
+	}
+
+	a {
+		color: var(--cleanroom-100);
+		display: block;
+		padding-block: 1em;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	.error {
+		margin-block: 2em;
 	}
 </style>
