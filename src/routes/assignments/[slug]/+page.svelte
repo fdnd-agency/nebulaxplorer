@@ -1,7 +1,6 @@
 <script>
 	import { Breadcrumb, Hero } from '$lib'
 	let { data } = $props()
-	console.log(data)
 </script>
 
 <Hero pageTitle="Assignment" />
