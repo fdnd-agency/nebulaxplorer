@@ -14,7 +14,7 @@
 							? 'https://fdnd-agency.directus.app/assets/' +
 								newscard.image
 							: placeholderImage}
-						alt={newscard.title}
+						alt=""
 						height="264"
 						width="264" />
 					<div class="news-info">
