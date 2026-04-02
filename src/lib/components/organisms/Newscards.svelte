@@ -12,16 +12,14 @@
 					<a
 						href={'/news/' + (newscard.slug || newscard.id)}
 						class="news-card-link">
-						<div class="news-image">
-							<img
-								src={newscard.image
-									? 'https://fdnd-agency.directus.app/assets/' +
-										newscard.image
-									: placeholderImage}
-								alt={newscard.title}
-								height="264"
-								width="264" />
-						</div>
+						<img
+							src={newscard.image
+								? 'https://fdnd-agency.directus.app/assets/' +
+									newscard.image
+								: placeholderImage}
+							alt={newscard.title}
+							height="264"
+							width="264" />
 						<div class="news-info">
 							<span class="news-label"></span>
 							<h3>{newscard.title || 'Untitled'}</h3>
@@ -104,17 +102,10 @@
 		color: var(--space-140);
 	}
 
-	.news-image {
+	img {
 		width: 100%;
 		height: 16.5rem;
-		overflow: hidden;
-		margin-top: auto;
-
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			object-position: center;
-		}
+		object-fit: cover;
+		object-position: center;
 	}
 </style>
