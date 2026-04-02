@@ -21,14 +21,13 @@
 							height="264"
 							width="264" />
 						<div class="news-info">
-						<time datetime={newscard.date}>{newscard.date}</time>
+							<time datetime={newscard.date}>
+								{newscard.date}</time>
 							<h3>{newscard.title || 'Untitled'}</h3>
 							{#if newscard.type || newscard.category}
 								<p>{newscard.type || newscard.category}</p>
 							{/if}
-							
 						</div>
-						
 					</a>
 				</li>
 			{/each}
@@ -80,9 +79,8 @@
 
 		h3 {
 			font-family: var(--heading);
-			font-weight: 400;
 			font-size: 1.3rem;
-			line-height: 1.75rem;
+			line-height: 1.35;
 			color: var(--ultra-140);
 		}
 
@@ -97,8 +95,7 @@
 
 	time {
 		font-family: var(--subtext);
-		font-weight: 400;
-		line-height: 1.4rem;
+		line-height: 1.4;
 		color: var(--ultra-60);
 		font-size: 0.9rem;
 	}
@@ -107,6 +104,5 @@
 		width: 100%;
 		height: 16.5rem;
 		object-fit: cover;
-		object-position: center;
 	}
 </style>
