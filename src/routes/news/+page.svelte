@@ -15,43 +15,29 @@
 
 <Breadcrumb />
 
-<section class="paragraph-block">
-	<div class="text-title">
+<hgroup>
 		<h2 class="subtitle">
 			Our latest <span class="orange">developments</span>
 		</h2>
 		<p class="heading">
 			Currently <span class="orange">{data.pagination.totalItems}</span> available
 		</p>
-	</div>
-</section>
+</hgroup>
 
 <Newscards news={data.news} />
 
 <Pagination pagination={data.pagination} />
 
 <style>
-	.paragraph-block {
-		display: grid;
-		grid-template-columns: subgrid;
-		gap: inherit;
-		row-gap: unset;
+	hgroup {
+    width: 100%;
+    max-width: var(--content-width);
+    margin-inline: auto;
+    padding-inline: 0;
 
-		> * {
-			grid-column: 1 / -1;
-			padding-left: 0;
-
-			@media (min-width: 36.25rem) {
-				padding-right: 1.5rem;
-			}
-			@media (min-width: 56.25rem) {
-				padding-left: 2.5rem;
-			}
-		}
-
-		.text-title * + * {
-			margin-top: 0.5rem;
-		}
+    h2 {
+      margin-block: .25em;
+    }
 
 		.heading {
 			padding-bottom: 3rem;
