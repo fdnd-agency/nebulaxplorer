@@ -9,26 +9,23 @@
 		<ul class="news-grid">
 			{#each news as newscard}
 				<li class="news-card">
-					<a
-						href={'/news/' + (newscard.slug || newscard.id)}
-						class="news-card-link">
-						<img
-							src={newscard.image
-								? 'https://fdnd-agency.directus.app/assets/' +
-									newscard.image
-								: placeholderImage}
-							alt={newscard.title}
-							height="264"
-							width="264" />
-						<div class="news-info">
-							<time datetime={newscard.date}>
-								{newscard.date}</time>
+					<img
+						src={newscard.image
+							? 'https://fdnd-agency.directus.app/assets/' +
+								newscard.image
+							: placeholderImage}
+						alt={newscard.title}
+						height="264"
+						width="264" />
+					<div class="news-info">
+						<time datetime={newscard.date}> {newscard.date}</time>
+						<a href={'/news/' + (newscard.slug || newscard.id)}>
 							<h3>{newscard.title || 'Untitled'}</h3>
-							{#if newscard.type || newscard.category}
-								<p>{newscard.type || newscard.category}</p>
-							{/if}
-						</div>
-					</a>
+						</a>
+						{#if newscard.type || newscard.category}
+							<p>{newscard.type || newscard.category}</p>
+						{/if}
+					</div>
 				</li>
 			{/each}
 		</ul>
@@ -51,6 +48,7 @@
 	}
 
 	.news-card {
+		position: relative;
 		background-color: var(--white);
 		box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
 		transition:
@@ -91,6 +89,15 @@
 			color: var(--cleanroom-100);
 			padding: 0.5rem 0;
 		}
+	}
+
+	a::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
 	}
 
 	time {
