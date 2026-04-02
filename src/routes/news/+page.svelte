@@ -16,12 +16,12 @@
 <Breadcrumb />
 
 <hgroup>
-		<h2 class="subtitle">
-			Our latest <span class="orange">developments</span>
-		</h2>
-		<p class="heading">
-			Currently <span class="orange">{data.pagination.totalItems}</span> available
-		</p>
+	<h2 class="subtitle">
+		Our latest <span class="orange">developments</span>
+	</h2>
+	<p class="heading">
+		Currently <span class="orange">{data.pagination.totalItems}</span> available
+	</p>
 </hgroup>
 
 <Newscards news={data.news} />
@@ -30,14 +30,14 @@
 
 <style>
 	hgroup {
-    width: 100%;
-    max-width: var(--content-width);
-    margin-inline: auto;
-    padding-inline: 0;
+		width: 100%;
+		max-width: var(--content-width);
+		margin-inline: auto;
+		padding-inline: 0;
 
-    h2 {
-      margin-block: .25em;
-    }
+		h2 {
+			margin-block: 0.25em;
+		}
 
 		.heading {
 			padding-bottom: 3rem;
