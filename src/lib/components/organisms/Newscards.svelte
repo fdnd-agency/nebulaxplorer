@@ -4,7 +4,7 @@
 	let { news } = $props()
 </script>
 
-<section class="grid-wrapper">
+<section>
 	{#if news && news.length > 0}
 		<ul class="news-grid">
 			{#each news as newscard}
@@ -42,17 +42,14 @@
 <style>
 	.news-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
 		gap: 2rem;
-		padding-bottom: 2rem;
-		padding-left: 0;
+		padding-block-end: 2rem;
+		padding-inline: 0;
+		margin-inline: auto;
+		width: 100%;
+		max-width: var(--content-width);
 		list-style: none;
-	}
-
-	@media (min-width: 1000px) {
-		.news-grid {
-			padding-inline: 4rem;
-		}
 	}
 
 	.news-card {
