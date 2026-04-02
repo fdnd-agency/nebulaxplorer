@@ -21,13 +21,14 @@
 							height="264"
 							width="264" />
 						<div class="news-info">
-							<span class="news-label"></span>
+						<time datetime={newscard.date}>{newscard.date}</time>
 							<h3>{newscard.title || 'Untitled'}</h3>
-							<span class="news-label"></span>
 							{#if newscard.type || newscard.category}
 								<p>{newscard.type || newscard.category}</p>
 							{/if}
+							
 						</div>
+						
 					</a>
 				</li>
 			{/each}
@@ -56,7 +57,7 @@
 		transition:
 			transform 0.3s ease,
 			box-shadow 0.3s ease;
-		padding-bottom: 3rem;
+		padding-bottom: 1.5rem;
 
 		&:hover,
 		&:focus-within {
@@ -75,7 +76,7 @@
 	}
 
 	.news-info {
-		padding: 0.75rem 0.75rem 0rem 0.75rem;
+		padding: 0.75rem;
 
 		h3 {
 			font-family: var(--heading);
@@ -90,16 +91,16 @@
 			font-weight: 900;
 			font-size: 1.2rem;
 			color: var(--cleanroom-100);
-			padding: 0.5rem 0 0.5rem 0;
+			padding: 0.5rem 0;
 		}
 	}
 
-	.news-label {
+	time {
 		font-family: var(--subtext);
-		font-weight: 900;
-		font-size: 1rem;
+		font-weight: 400;
 		line-height: 1.4rem;
-		color: var(--space-140);
+		color: var(--ultra-60);
+		font-size: 0.9rem;
 	}
 
 	img {
