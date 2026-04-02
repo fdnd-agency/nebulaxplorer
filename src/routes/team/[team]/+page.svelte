@@ -2,10 +2,41 @@
 	import {
 		Breadcrumb,
 		Hero,
+		ReadMoreButton,
 		nebulaTeamBeginning,
 		portraitPlaceholder,
 		teamPhoto,
 	} from '$lib'
+
+	import { mount, onMount } from 'svelte'
+
+	onMount(() => {
+		if (data.members[0].testimonial.length > 36) {
+			const testimonialPreview =
+				data.members[0].testimonial.split(' ').slice(0, 24).join(' ') +
+				'... '
+			const blockquoteContainer = document.querySelector(
+				'.blockquote-container'
+			)
+			const blockquote = document.querySelector('blockquote')
+
+			blockquote.innerText = testimonialPreview
+
+			// https://svelte.dev/docs/svelte/svelte#mount
+			mount(ReadMoreButton, { target: blockquoteContainer })
+
+			const button = document.querySelector('blockquote + button')
+			button.addEventListener('click', () => {
+				if (button.innerText == 'Read more') {
+					blockquote.innerText = data.members[0].testimonial
+					button.innerText = 'Read less'
+				} else {
+					blockquote.innerText = testimonialPreview
+					button.innerText = 'Read more'
+				}
+			})
+		}
+	})
 
 	let { data } = $props()
 </script>
@@ -45,23 +76,11 @@
 					width="250" />
 				<p class="link orange">{member.name}</p>
 
-				{#if member.testimonial && member.testimonial.split(' ').length > 36}
-					<details name="testimonial" class="paragraph">
-						<summary>
-							{member.testimonial
-								.split(' ')
-								.slice(0, 24)
-								.join(' ')}
-						</summary>
-						{member.testimonial.split(' ').slice(24).join(' ')}
-					</details>
-				{:else if member.testimonial}
+				<div class="blockquote-container">
 					<blockquote class="paragraph">
 						{member.testimonial}
 					</blockquote>
-				{:else}
-					<p class="paragraph">No testimonial provided.</p>
-				{/if}
+				</div>
 			</li>
 		{/each}
 	</ul>
@@ -102,7 +121,7 @@
 			font-weight: 700;
 		}
 
-		blockquote,
+		div,
 		details {
 			padding-block: 0 2rem;
 			padding-inline: 1rem;
@@ -136,6 +155,9 @@
 			height: auto;
 			aspect-ratio: 1 / 1;
 			object-fit: cover;
+		}
+
+		button {
 		}
 	}
 
