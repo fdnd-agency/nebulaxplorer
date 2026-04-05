@@ -11,6 +11,7 @@ export { default as Breadcrumb } from './components/molecules/Breadcrumb.svelte'
 export { default as AssignmentCards } from './components/molecules/AssignmentCards.svelte'
 export { default as MailingListSignup } from './components/molecules/MailingListSignup.svelte'
 export { default as Pagination } from './components/molecules/Pagination.svelte'
+export { default as TeamMemberCard } from './components/molecules/TeamMemberCard.svelte'
 export { default as Testimonial } from './components/molecules/Testimonial.svelte'
 export { default as TestimonialHeader } from './components/molecules/TestimonialHeader.svelte'
 

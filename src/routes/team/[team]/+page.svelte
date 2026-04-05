@@ -3,40 +3,11 @@
 		Breadcrumb,
 		Hero,
 		ReadMoreButton,
+		TeamMemberCard,
 		nebulaTeamBeginning,
 		portraitPlaceholder,
 		teamPhoto,
 	} from '$lib'
-
-	import { mount, onMount } from 'svelte'
-
-	onMount(() => {
-		if (data.members[0].testimonial.length > 36) {
-			const testimonialPreview =
-				data.members[0].testimonial.split(' ').slice(0, 24).join(' ') +
-				'... '
-			const blockquoteContainer = document.querySelector(
-				'.blockquote-container'
-			)
-			const blockquote = document.querySelector('blockquote')
-
-			blockquote.innerText = testimonialPreview
-
-			// https://svelte.dev/docs/svelte/svelte#mount
-			mount(ReadMoreButton, { target: blockquoteContainer })
-
-			const button = document.querySelector('blockquote + button')
-			button.addEventListener('click', () => {
-				if (button.innerText == 'Read more') {
-					blockquote.innerText = data.members[0].testimonial
-					button.innerText = 'Read less'
-				} else {
-					blockquote.innerText = testimonialPreview
-					button.innerText = 'Read more'
-				}
-			})
-		}
-	})
 
 	let { data } = $props()
 </script>
@@ -66,22 +37,7 @@
 	<h3 class="heading">Reflections on the work</h3>
 	<ul>
 		{#each data.members as member}
-			<li>
-				<img
-					src={member.image
-						? `https://fdnd-agency.directus.app/assets/${member.image}`
-						: portraitPlaceholder}
-					alt=""
-					height="250"
-					width="250" />
-				<p class="link orange">{member.name}</p>
-
-				<div class="blockquote-container">
-					<blockquote class="paragraph">
-						{member.testimonial}
-					</blockquote>
-				</div>
-			</li>
+			<TeamMemberCard member={member}/>
 		{/each}
 	</ul>
 </div>
@@ -109,60 +65,6 @@
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		gap: 1rem;
 		margin-block: 1rem 4rem;
-	}
-
-	li {
-		display: grid;
-		grid-template-rows: min-content min-content 1fr;
-		background-color: var(--ultra-100);
-
-		p {
-			padding: 1rem;
-			font-weight: 700;
-		}
-
-		div,
-		details {
-			padding-block: 0 2rem;
-			padding-inline: 1rem;
-		}
-
-		details,
-		summary {
-			line-height: 1.5;
-		}
-
-		details::after {
-			content: 'read more';
-			color: var(--cleanroom-100);
-		}
-
-		details[open]::after {
-			content: 'read less';
-			color: var(--cleanroom-100);
-		}
-
-		details summary::after {
-			content: '...';
-		}
-
-		details[open] summary::after {
-			content: '';
-		}
-
-		img {
-			width: 100%;
-			height: auto;
-			aspect-ratio: 1 / 1;
-			object-fit: cover;
-		}
-
-		button {
-		}
-	}
-
-	.paragraph {
-		font-size: 1rem;
 	}
 
 	.orange {
