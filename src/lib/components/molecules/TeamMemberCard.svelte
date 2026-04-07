@@ -27,7 +27,7 @@
 	<p class="link orange">{member.name}</p>
 
 	<div class="blockquote-container">
-		{#if JSEnabled && member.testimonial.split(' ').length > 36}
+		{#if JSEnabled && member.testimonial && member.testimonial.split(' ').length > 36}
 			<blockquote class="paragraph" aria-describedby="testimonial">
 				{#if isExpanded && member.testimonial}
 					{member.testimonial}
