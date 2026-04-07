@@ -41,9 +41,4 @@
 			text-decoration: underline;
 		}
 	}
-
-	/* .heading {
-		font-size: 2rem;
-		padding: 0.25em;
-	} */
 </style>
