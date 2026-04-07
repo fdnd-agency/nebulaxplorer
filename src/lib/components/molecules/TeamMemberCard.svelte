@@ -4,33 +4,15 @@
 
 	let { member } = $props()
 
+	let JSEnabled = $state(false)
+	let isExpanded = $state(false)
+
+	function toggleText() {
+		isExpanded = !isExpanded
+	}
+
 	onMount(() => {
-		if (member.testimonial.length > 36) {
-			const testimonialPreview =
-				member.testimonial.split(' ').slice(0, 24).join(' ') + '... '
-			const blockquoteContainer = document.querySelector(
-				'.blockquote-container'
-			)
-			const blockquote = document.querySelector('blockquote')
-
-			blockquote.innerText = testimonialPreview
-
-			// https://svelte.dev/docs/svelte/svelte#mount
-			if (blockquoteContainer) {
-				mount(ReadMoreButton, { target: blockquoteContainer })
-			}
-
-			const button = document.querySelector('blockquote + button')
-			button.addEventListener('click', () => {
-				if (button.innerText == 'Read more') {
-					blockquote.innerText = member.testimonial
-					button.innerText = 'Read less'
-				} else {
-					blockquote.innerText = testimonialPreview
-					button.innerText = 'Read more'
-				}
-			})
-		}
+		JSEnabled = true
 	})
 </script>
 
@@ -45,9 +27,30 @@
 	<p class="link orange">{member.name}</p>
 
 	<div class="blockquote-container">
-		<blockquote class="paragraph">
-			{member.testimonial}
-		</blockquote>
+		{#if JSEnabled && member.testimonial.split(' ').length > 36}
+			<blockquote class="paragraph" aria-describedby="testimonial">
+				{#if isExpanded && member.testimonial}
+					{member.testimonial}
+				{:else if member.testimonial}
+					{member.testimonial.split(' ').slice(0, 24).join(' ') +
+						'... '}
+				{:else}
+					"No testimonial provided."
+				{/if}
+			</blockquote>
+			<button
+				onclick={toggleText}
+				aria-expanded={isExpanded}
+				aria-controls="testimonial">
+				{isExpanded ? 'Read less' : 'Read more'}
+			</button>
+		{:else}
+			<blockquote class="paragraph">
+				{member.testimonial
+					? member.testimonial
+					: 'No testimonial provided.'}
+			</blockquote>
+		{/if}
 	</div>
 </li>
 
@@ -72,6 +75,22 @@
 			height: auto;
 			aspect-ratio: 1 / 1;
 			object-fit: cover;
+		}
+	}
+
+	blockquote {
+		display: inline;
+	}
+
+	button {
+		appearance: none;
+		display: inline;
+		background-color: transparent;
+		cursor: pointer;
+		color: var(--cleanroom-100);
+
+		&:hover {
+			text-decoration: underline;
 		}
 	}
 

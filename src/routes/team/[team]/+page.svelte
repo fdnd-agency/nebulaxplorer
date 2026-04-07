@@ -2,7 +2,6 @@
 	import {
 		Breadcrumb,
 		Hero,
-		ReadMoreButton,
 		TeamMemberCard,
 		nebulaTeamBeginning,
 		portraitPlaceholder,
@@ -37,7 +36,7 @@
 	<h3 class="heading">Reflections on the work</h3>
 	<ul>
 		{#each data.members as member}
-			<TeamMemberCard member={member}/>
+			<TeamMemberCard {member} />
 		{/each}
 	</ul>
 </div>
