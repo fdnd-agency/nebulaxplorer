@@ -1,5 +1,5 @@
 <script>
-	import { ReadMoreButton, portraitPlaceholder, teamPhoto } from '$lib'
+	import { portraitPlaceholder, teamPhoto } from '$lib'
 	import { mount, onMount } from 'svelte'
 
 	let { member } = $props()
