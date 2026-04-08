@@ -22,8 +22,9 @@
 	titleColor="var(--white)"
 	pageTitle="Team"
 	background={{ file: nebulaTeamBeginning, alt: 'test' }}
+	logoOverlay
 	fullScreen
-	logoOverlay />
+	alt />
 
 <Breadcrumb />
 

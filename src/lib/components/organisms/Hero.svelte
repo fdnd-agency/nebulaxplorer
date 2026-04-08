@@ -11,6 +11,7 @@
 		titleColor,
 		fullScreen = false,
 		logoOverlay = false,
+		alt = false,
 	} = $props()
 
 	// Validation to prevent empty alt text
@@ -19,29 +20,31 @@
 	}
 </script>
 
-<section class="hero {fullScreen ? 'fullscreen' : ''}">
+<section class="hero {fullScreen ? 'fullscreen' : ''} {alt ? 'alt' : ''}">
+	{#if paragraph}
+		<p class="subheading">{paragraph}</p>
+	{/if}
+	{#if background.file}
+		<enhanced:img
+			src={background.file}
+			alt={background.alt}
+			class="hero-bg"
+			sizes="100vw"
+			fetchpriority="high" />
+	{/if}
 	<div class="content-container">
-		{#if paragraph}
-			<p class="subheading">{paragraph}</p>
-		{/if}
-		{#if background.file}
-			<enhanced:img
-				src={background.file}
-				alt={background.alt}
-				class="hero-bg"
-				sizes="100vw"
-				fetchpriority="high" />
-		{/if}
-		<div class={logoOverlay ? 'logo-overlay' : ''}>
-			{#if sronIcon}
-				<img
-					src={sronIcon}
-					alt="Logo of SRON Academy"
-					class="hero-logo" />
-			{/if}
-			<h1 class="title" style={titleColor && `color: ${titleColor}`}>
-				{pageTitle}
-			</h1>
+		<div class="logo-container {logoOverlay ? 'logo-overlay' : ''}">
+			<div class="content-container-alt">
+				{#if sronIcon}
+					<img
+						src={sronIcon}
+						alt="Logo of SRON Academy"
+						class="hero-logo" />
+				{/if}
+				<h1 class="title" style={titleColor && `color: ${titleColor}`}>
+					{pageTitle}
+				</h1>
+			</div>
 		</div>
 	</div>
 </section>
@@ -53,11 +56,21 @@
 		position: relative;
 		padding: 1.5rem;
 		padding-top: 5.25rem;
+
+		&.alt {
+			padding-inline: 0;
+			padding-block: 10rem 0;
+		}
+
 		@media (min-width: 56.25rem) {
 			padding: 3.5rem 4rem 2.25rem 0.5rem;
 
 			&.fullscreen {
 				padding-block: 14rem;
+			}
+
+			&.alt {
+				padding-block: 36rem 0;
 			}
 		}
 
@@ -87,10 +100,47 @@
 			}
 		}
 
+		h1 {
+			padding: 0.5em;
+		}
+
 		.hero-logo {
 			width: clamp(12.5rem, 7.15rem + 28.5vw, 25rem);
 			max-width: 36.375rem;
 			display: block;
+		}
+
+		&.alt .hero-logo {
+			font-size: clamp(2.5rem, 5vw + 1rem, 4.375rem);
+			line-height: clamp(2.5rem, 5vw + 1rem, 4.625rem);
+			height: 2.5lh;
+			width: auto;
+			padding-block: 0.5em;
+			margin-inline-start: -0.5em;
+		}
+
+		&.alt .content-container {
+			max-width: unset;
+		}
+
+		&.alt .logo-container {
+			width: 100%;
+			padding-block: 0;
+			margin-inline: 0;
+
+			@media (min-width: 56.25rem) {
+				padding-left: 4rem;
+			}
+		}
+
+		&.alt .content-container-alt {
+			width: 100%;
+			max-width: var(--content-width);
+			margin-inline: auto;
+			margin-block: 0;
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
 		}
 
 		.logo-overlay {
@@ -101,10 +151,12 @@
 			padding: 2em;
 		}
 
-		@media (min-width: 56.25rem) {
-			h1 {
-				padding-left: 3.5rem;
-			}
+		&.alt .logo-overlay {
+			background: linear-gradient(
+				transparent 0%,
+				var(--space-mid-opacity) 40%,
+				var(--space-100)
+			);
 		}
 	}
 </style>
