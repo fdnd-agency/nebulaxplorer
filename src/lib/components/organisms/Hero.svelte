@@ -11,7 +11,7 @@
 		titleColor,
 		fullScreen = false,
 		logoOverlay = false,
-		bottomGradientLayout = false,
+		bottomLayout = false,
 	} = $props()
 
 	// Validation to prevent empty alt text
@@ -21,8 +21,8 @@
 </script>
 
 <section
-	class="hero {fullScreen ? 'fullscreen' : ''} {bottomGradientLayout
-		? 'bottom-gradient-layout'
+	class="hero {fullScreen ? 'fullscreen' : ''} {bottomLayout
+		? 'bottom-layout'
 		: ''}">
 	{#if paragraph}
 		<p class="subheading">{paragraph}</p>
@@ -112,7 +112,7 @@
 			padding: 2em;
 		}
 
-		&.bottom-gradient-layout {
+		&.bottom-layout {
 			padding-inline: 0;
 			padding-block: 10rem 0;
 

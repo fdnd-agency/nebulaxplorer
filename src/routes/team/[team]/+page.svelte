@@ -24,7 +24,7 @@
 	background={{ file: nebulaTeamBeginning, alt: 'test' }}
 	logoOverlay
 	fullScreen
-	bottomGradientLayout />
+	bottomLayout />
 
 <Breadcrumb />
 
