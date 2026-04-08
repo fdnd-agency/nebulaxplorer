@@ -1,4 +1,5 @@
 <script>
+    import { resolve } from '$app/paths';
     let { teams } = $props();
     const startDate = new Date(teams.time_start);
     const endDate = new Date(teams.time_end);
@@ -9,16 +10,15 @@
 
 <li>
     <img src={`https://fdnd-agency.directus.app/assets/${teams.group_photo}`} alt="">
-    <h3>{month[startDate.getMonth()]} - {month[endDate.getMonth()]}</h3>
+    <a href={resolve("/team/" + teams.id)}><h3>{month[startDate.getMonth()]} - {month[endDate.getMonth()]}</h3></a>
 </li>
 
 <style>
 
-    h3{
-        height: 2lh; /* give this h3 a height of 2 Line Heights :)*/
-    }
+    
 
      li{
+        position: relative;
         align-self: center;
         max-width: 300px;
         text-align: center;
@@ -29,6 +29,30 @@
         }
          
     }
+
+    li :hover, li :focus-within{
+        text-decoration: underline;
+    }
+
+    li :focus-within {
+        
+        outline: 0.125rem dashed var(--cleanroom-140);
+    }
+
+    a::after {
+		content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    h3{
+        height: 2lh; /* give this h3 a height of 2 Line Heights :)*/
+    }
+
+
     
     img{
         max-width: 100%;
