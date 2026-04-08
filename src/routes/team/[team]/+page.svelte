@@ -23,7 +23,6 @@
 	pageTitle="Team"
 	background={{ file: nebulaTeamBeginning, alt: 'test' }}
 	logoOverlay
-	fullScreen
 	bottomLayout />
 
 <Breadcrumb />
