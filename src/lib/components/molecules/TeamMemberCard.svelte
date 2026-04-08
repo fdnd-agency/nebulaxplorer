@@ -1,6 +1,6 @@
 <script>
 	import { portraitPlaceholder, teamPhoto } from '$lib'
-	import { mount, onMount } from 'svelte'
+	import { onMount } from 'svelte'
 
 	let { member } = $props()
 
