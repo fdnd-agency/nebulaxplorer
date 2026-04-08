@@ -12,9 +12,18 @@
 		<div class="content-container">
 			<h2 class="section_title">{data.assignment.title}</h2>
 			<ul>
-				<li>{data.assignment.location}</li>
-				<li>{data.assignment.organisation}</li>
-				<li>{data.assignment.study_program[0]}</li>
+				<li>
+					<span class="white">Location: </span>{data.assignment
+						.location}
+				</li>
+				<li>
+					<span class="white">organisation: </span>{data.assignment
+						.organisation}
+				</li>
+				<li>
+					<span class="white">Your study: </span>{data.assignment
+						.study_program[0]}
+				</li>
 			</ul>
 		</div>
 	</section>
@@ -61,6 +70,11 @@
 		text-transform: uppercase;
 		font-family: var(--subtext);
 		color: var(--cleanroom-100);
+		line-height: 1.4;
+	}
+
+	li::marker {
+		color: var(--white);
 	}
 
 	.section-details {
@@ -86,6 +100,11 @@
 		&:hover {
 			text-decoration: underline;
 		}
+	}
+
+	.white {
+		color: var(--white);
+		margin-right: 1ch;
 	}
 
 	.error {
