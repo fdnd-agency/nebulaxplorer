@@ -127,29 +127,30 @@
 		li {
 			display: contents;
 
-			&:is(:nth-child(5n + 5), :last-child) {
-				color: var(--cleanroom-30);
-			}
-
-			&:hover {
+			&:hover,
+			&:focus-within {
 				color: var(--cleanroom-60);
 			}
 
 			@supports selector(a:has(b)) {
 				/* Nice inspo https://tobiasahlin.com/blog/previous-sibling-css-has/ */
 				&:hover + li,
-				&:has(+ li:hover) {
+				&:focus-within + li,
+				&:has(+ li:hover),
+				&:has(+ li:focus-within) {
 					color: var(--cleanroom-60);
 				}
 			}
 		}
+
 		a {
 			display: inline;
 			width: fit-content;
 
 			transition: color 0.3s ease;
 
-			&:hover {
+			&:hover,
+			&:focus {
 				color: var(--cleanroom-100);
 			}
 
