@@ -2,40 +2,38 @@
 	const { assignments } = $props()
 </script>
 
-<div class="content-container">
-	<header class="assignments-header">
-		<h2 class="subtitle">
-			Find a <span class="orange">suitable</span> assignment
-		</h2>
-		<p class="heading">
-			Within the NEBULA Xplorer project there are
-			<span>{assignments.length}</span> assignments available.
-		</p>
-	</header>
+<section>
+	<div class="content-container">
+		<header class="assignments-header">
+			<h2 class="subtitle">
+				Find a <span class="orange">suitable</span> assignment
+			</h2>
+			<p class="heading">
+				Within the NEBULA Xplorer project there are
+				<span>{assignments.length}</span> assignments available.
+			</p>
+		</header>
 
-	<ul class="assignments-container">
-		{#each assignments as assignment}
-			<li class="assignment-card">
-				<a href={`/assignments/${assignment.id}`}>
-					<section class="assignment-content">
-						<h2 class="assignment-title">{assignment.title}</h2>
-						<div>
-							<p>{assignment.study_program}</p>
-							<p>{assignment.location}</p>
-						</div>
-					</section>
-					<p class="apply-button supporting">Apply</p>
-				</a>
-			</li>
-		{/each}
-	</ul>
-</div>
+		<ul class="assignments-container">
+			{#each assignments as assignment}
+				<li class="assignment-card">
+					<a href={`/assignments/${assignment.id}`}>
+						<section class="assignment-content">
+							<h2 class="assignment-title">{assignment.title}</h2>
+							<div>
+								<p>{assignment.study_program}</p>
+								<p>{assignment.location}</p>
+							</div>
+						</section>
+						<p class="apply-button supporting">Apply</p>
+					</a>
+				</li>
+			{/each}
+		</ul>
+	</div>
+</section>
 
 <style>
-	.content-container {
-		padding: 0;
-	}
-
 	.assignments-header {
 		margin-bottom: 2.5rem;
 
