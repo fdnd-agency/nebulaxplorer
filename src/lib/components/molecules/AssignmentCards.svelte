@@ -4,7 +4,9 @@
 
 <div class="content-container">
 	<header class="assignments-header">
-		<h2 class="subtitle">Find a suitable Assignment</h2>
+		<h2 class="subtitle">
+			Find a <span class="orange">suitable</span> assignment
+		</h2>
 		<p class="heading">
 			Within the NEBULA Xplorer project there are
 			<span>{assignments.length}</span> assignments available.
@@ -110,5 +112,9 @@
 			background: var(--cleanroom-100);
 			text-transform: uppercase;
 		}
+	}
+
+	.orange {
+		color: var(--cleanroom-100);
 	}
 </style>
