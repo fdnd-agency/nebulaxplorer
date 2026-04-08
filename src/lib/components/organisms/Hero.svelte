@@ -11,7 +11,7 @@
 		titleColor,
 		fullScreen = false,
 		logoOverlay = false,
-		alt = false,
+		bottomGradientLayout = false,
 	} = $props()
 
 	// Validation to prevent empty alt text
@@ -20,7 +20,10 @@
 	}
 </script>
 
-<section class="hero {fullScreen ? 'fullscreen' : ''} {alt ? 'alt' : ''}">
+<section
+	class="hero {fullScreen ? 'fullscreen' : ''} {bottomGradientLayout
+		? 'bottom-gradient-layout'
+		: ''}">
 	{#if paragraph}
 		<p class="subheading">{paragraph}</p>
 	{/if}
@@ -57,20 +60,11 @@
 		padding: 1.5rem;
 		padding-top: 5.25rem;
 
-		&.alt {
-			padding-inline: 0;
-			padding-block: 10rem 0;
-		}
-
 		@media (min-width: 56.25rem) {
 			padding: 3.5rem 4rem 2.25rem 0.5rem;
 
 			&.fullscreen {
 				padding-block: 14rem;
-			}
-
-			&.alt {
-				padding-block: 36rem 0;
 			}
 		}
 
@@ -110,39 +104,6 @@
 			display: block;
 		}
 
-		&.alt .hero-logo {
-			font-size: clamp(2.5rem, 5vw + 1rem, 4.375rem);
-			line-height: clamp(2.5rem, 5vw + 1rem, 4.625rem);
-			height: 2.5lh;
-			width: auto;
-			padding-block: 0.5em;
-			margin-inline-start: -0.5em;
-		}
-
-		&.alt .content-container {
-			max-width: unset;
-		}
-
-		&.alt .logo-container {
-			width: 100%;
-			padding-block: 0;
-			margin-inline: 0;
-
-			@media (min-width: 56.25rem) {
-				padding-left: 4rem;
-			}
-		}
-
-		&.alt .content-container-alt {
-			width: 100%;
-			max-width: var(--content-width);
-			margin-inline: auto;
-			margin-block: 0;
-			display: flex;
-			align-items: center;
-			flex-wrap: wrap;
-		}
-
 		.logo-overlay {
 			--space-mid-opacity: hsla(238, 35%, 15%, 0.75);
 
@@ -151,12 +112,54 @@
 			padding: 2em;
 		}
 
-		&.alt .logo-overlay {
-			background: linear-gradient(
-				transparent 0%,
-				var(--space-mid-opacity) 40%,
-				var(--space-100)
-			);
+		&.bottom-gradient-layout {
+			padding-inline: 0;
+			padding-block: 10rem 0;
+
+			@media (min-width: 56.25rem) {
+				padding-block: 36rem 0;
+			}
+
+			.content-container-alt {
+				width: 100%;
+				max-width: var(--content-width);
+				margin-inline: auto;
+				margin-block: 0;
+				display: flex;
+				align-items: center;
+				flex-wrap: wrap;
+			}
+
+			.logo-container {
+				width: 100%;
+				padding-block: 0;
+				margin-inline: 0;
+
+				@media (min-width: 56.25rem) {
+					padding-left: 4rem;
+				}
+			}
+
+			.logo-overlay {
+				background: linear-gradient(
+					transparent 0%,
+					var(--space-mid-opacity) 40%,
+					var(--space-100)
+				);
+			}
+
+			.content-container {
+				max-width: unset;
+			}
+
+			.hero-logo {
+				font-size: clamp(2.5rem, 5vw + 1rem, 4.375rem);
+				line-height: clamp(2.5rem, 5vw + 1rem, 4.625rem);
+				height: 2.5lh;
+				width: auto;
+				padding-block: 0.5em;
+				margin-inline-start: -0.5em;
+			}
 		}
 	}
 </style>
