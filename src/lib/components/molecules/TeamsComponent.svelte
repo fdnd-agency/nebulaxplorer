@@ -38,8 +38,21 @@
 		text-align: center;
 		width: 100%;
 
+		&:hover{
+			background-color: #283756;
+		}
+
 		@media screen and (min-width: 500px) {
 			max-width: 450px;
+		}
+
+		/* dit blokje code is vijwel helemaal gekopieëerd vanuit Iris' newscard component*/
+		@media (prefers-reduced-motion: no-preference) { /* ALS reduced motion NIET aanstaat; */
+			transition: 0.3s ease;	/* (op geleidelijke wijze) */
+
+			&:hover { /* EN ALS er gehoverd wordt */
+				transform: translateY(-0.5rem); /* verplaats iets naar boven */
+			}
 		}
 	}
 

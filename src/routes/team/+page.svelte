@@ -78,6 +78,7 @@ const sortedResults = resultArray.sort((a, b) => b[0] - a[0]);
 	flex-direction: column;
 	max-width: 1000px;
 	justify-content: center;
+	padding-bottom: 1rem;
 }
 
 </style>
