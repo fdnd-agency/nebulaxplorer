@@ -19,7 +19,7 @@
 				<li class="assignment-card">
 					<a href={`/assignments/${assignment.id}`}>
 						<section class="assignment-content">
-							<h2 class="assignment-title">{assignment.title}</h2>
+							<h3 class="assignment-title">{assignment.title}</h3>
 							<div>
 								<p>{assignment.study_program}</p>
 								<p>{assignment.location}</p>
