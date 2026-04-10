@@ -9,7 +9,7 @@
 				Find a <span class="orange">suitable</span> assignment
 			</h2>
 			<p class="heading">
-				Within the NEBULA Xplorer project there are
+				Within the NEBULA-Xplorer project there are
 				<span>{assignments.length}</span> assignments available.
 			</p>
 		</header>
