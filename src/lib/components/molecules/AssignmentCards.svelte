@@ -14,7 +14,7 @@
 	<ul class="assignments-container">
 		{#each assignments as assignment}
 			<li class="assignment-card">
-				<a href="#">
+				<a href={`/assignments/${assignment.id}`}>
 					<section class="assignment-content">
 						<h2 class="assignment-title">{assignment.title}</h2>
 						<div>
