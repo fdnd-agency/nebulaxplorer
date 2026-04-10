@@ -132,6 +132,7 @@
 		width: 100%;
 		height: 100%;
 		background-color: #292e6b;
+		hyphens: auto;
 
 		display: flex;
 		align-items: center;
@@ -140,9 +141,9 @@
 		@media (min-width: 600px) {
 			padding-block-start: 1em;
 			padding-block-end: 1em;
+			padding-inline: 0.5em;
 			font-size: unset;
-			text-wrap: nowrap;
-			height: auto;
+			height: 3lh;
 		}
 	}
 
