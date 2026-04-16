@@ -8,6 +8,8 @@
 		blackholeHeroEnhanced as heroImg,
 		sronAcademyLogoOnWhite,
 		sronAcademyLogoOnSpaceBlue as logo,
+		xrayBinaryEnhanced,
+		nebulaLogoBlack,
 	} from '$lib'
 
 	let { data } = $props()
@@ -20,7 +22,10 @@
 		content="NEBULA-Xplorer will investigate how jets form and how X-ray binaries evolve. It will observe these objects for long periods of time to see how their emission varies on time scales from milliseconds to weeks." />
 </svelte:head>
 
-<Hero titleColor="var(--white)" pageTitle="" />
+<Hero
+	titleColor="var(--white)"
+	background={{ file: xrayBinaryEnhanced, alt: 'test' }}
+	pageTitle="" />
 
 <News newsCards={data.newsItems} />
 

@@ -11,6 +11,7 @@
 		rocketLaunchStep5Enhanced as step5Image,
 		sronAcademyLogoOnSpaceBlue as logo,
 		blackholeHeroEnhanced as heroImg,
+		tarantulaMergerEnhanced,
 	} from '$lib'
 </script>
 
@@ -22,7 +23,10 @@
 </svelte:head>
 
 <!-- HERO BLOCK -->
-<Hero titleColor="var(--white)" pageTitle="Mission" />
+<Hero
+	titleColor="var(--white)"
+	background={{ file: tarantulaMergerEnhanced, alt: 'test' }}
+	pageTitle="Mission" />
 
 <Breadcrumb />
 

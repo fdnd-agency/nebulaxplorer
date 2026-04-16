@@ -6,6 +6,7 @@
 		Pagination,
 		blackholeHeroEnhanced as heroImg,
 		sronAcademyLogoOnSpaceBlue as logo,
+		nasaGarciaEnhanced,
 	} from '$lib'
 
 	const { data } = $props()
@@ -22,7 +23,10 @@
 <!-- Always provide alt and file path WITHIN background -->
 <!-- titleColor controls the title color based on the provided css var provided -->
 
-<Hero titleColor="var(--white)" pageTitle="Assignments" />
+<Hero
+	titleColor="var(--white)"
+	background={{ file: nasaGarciaEnhanced, alt: 'test' }}
+	pageTitle="Assignments" />
 
 <Breadcrumb />
 
