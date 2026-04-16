@@ -82,7 +82,7 @@
 		align-items: center;
 		list-style: none;
 
-		@media (min-width: 600px) {
+		@media (min-width: 45rem) {
 			flex-direction: row;
 			align-items: unset;
 		}
@@ -99,7 +99,7 @@
 		width: 100%;
 		overflow: hidden;
 
-		@media (min-width: 600px) {
+		@media (min-width: 45rem) {
 			display: flex;
 			align-items: center;
 
@@ -120,7 +120,7 @@
 		position: relative;
 		z-index: -1;
 
-		@media (min-width: 600px) {
+		@media (min-width: 45rem) {
 			max-height: unset;
 			max-width: unset;
 		}
@@ -138,7 +138,7 @@
 		align-items: center;
 		justify-content: center;
 
-		@media (min-width: 600px) {
+		@media (min-width: 45rem) {
 			padding-block-start: 1em;
 			padding-block-end: 1em;
 			padding-inline: 0.5em;
@@ -151,7 +151,7 @@
 	.pillar:focus-within {
 		text-decoration: underline;
 
-		@media (min-width: 600px) and (prefers-reduced-motion: no-preference) {
+		@media (min-width: 45rem) and (prefers-reduced-motion: no-preference) {
 			img {
 				transform: scale(1.15);
 			}
