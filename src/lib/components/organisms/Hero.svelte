@@ -95,7 +95,8 @@
 		}
 
 		h1 {
-			padding: 0.5em;
+			padding-inline: 0.75em;
+			padding-block-start: 0.25em;
 		}
 
 		.hero-logo {
@@ -117,7 +118,11 @@
 			padding-block: 10rem 0;
 
 			@media (min-width: 56.25rem) {
-				padding-block: 36rem 0;
+				padding-block: 50vh 0;
+			}
+
+			h1 {
+				padding-block: 0.5em;
 			}
 
 			.content-container-alt {
