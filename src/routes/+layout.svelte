@@ -94,14 +94,6 @@
 		<ul>
 			<!-- Include this button separately as this is our close button -->
 			<li>
-				<!-- Leave this as # -->
-				<!-- <a
-					href="#"
-					class="menu-button"
-					onclick={() => (expanded = false)}>
-					menu
-					<span class="lines"></span>
-				</a> -->
 				<button popovertarget="menu" popovertargetaction="hide">
 					Menu
 					<span class="lines"></span>
@@ -136,86 +128,4 @@
 <Footer {navItems} />
 
 <style>
-	/* default reduced-motion friendly transition */
-	:root::view-transition-old(root) {
-		animation: unset;
-	}
-
-	:root::view-transition-new(root) {
-		animation: unset;
-	}
-
-	@media (prefers-reduced-motion: no-preference) {
-		:root::view-transition-old(root) {
-			animation:
-				0.3s ease-in both zoom-out,
-				0.7s ease-out both slide-to-top;
-		}
-
-		:root::view-transition-new(root) {
-			animation:
-				0.7s ease-out both slide-to-center,
-				0.3s ease-out 0.5s both zoom-in;
-		}
-	}
-	@keyframes zoom-in {
-		from {
-			scale: 0.85;
-		}
-		to {
-			scale: 1;
-		}
-	}
-
-	@keyframes zoom-out {
-		from {
-			scale: 1;
-		}
-		to {
-			scale: 0.85;
-		}
-	}
-
-	@keyframes slide-to-top {
-		from {
-			translate: 0 0;
-		}
-		to {
-			translate: 0 100%;
-		}
-	}
-
-	@keyframes slide-to-center {
-		from {
-			translate: 0 -100%;
-		}
-		to {
-			translate: 0 0%;
-		}
-	}
-
-	@keyframes fade-out {
-		to {
-			opacity: 0;
-		}
-	}
-
-	@keyframes fade-in {
-		from {
-			opacity: 0;
-		}
-		to {
-			opacity: 1;
-		}
-	}
-
-	/* These only need to happen on desktop */
-	@media (min-width: 56.25rem) {
-		.main-navigation {
-			view-transition-name: header;
-		}
-		.exact-active :global(svg) {
-			view-transition-name: active-page;
-		}
-	}
 </style>
