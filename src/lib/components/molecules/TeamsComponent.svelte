@@ -5,18 +5,18 @@
 	const endDate = new Date(teams.time_end)
 
 	const month = [
-		'januari',
-		'februari',
-		'maart',
-		'april',
-		'mei',
-		'juni',
-		'juli',
-		'augustus',
-		'september',
-		'october',
-		'november',
-		'december',
+		'January',
+		'February',
+		'March',
+		'April',
+		'May',
+		'June',
+		'July',
+		'August',
+		'September',
+		'October',
+		'November',
+		'December',
 	]
 </script>
 
