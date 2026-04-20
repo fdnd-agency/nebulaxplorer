@@ -74,7 +74,7 @@
 		transition: 0.3s ease-out allow-discrete;
 	}
 
-	@supports selector([popover]) {
+	@supports selector([popover]:popover-open) {
 		translate: 100% 0;
 		max-width: 22.5rem;
 	}
