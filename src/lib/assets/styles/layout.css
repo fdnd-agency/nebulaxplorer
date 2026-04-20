@@ -84,19 +84,32 @@
 		max-width: 100%;
 	}
 
+	/* POPOVER */
 	&:popover-open {
 		translate: 0 0;
+	}
 
-		&::backdrop {
-			opacity: 1;
-		}
-
-		@starting-style {
+	@starting-style {
+		&:popover-open {
 			translate: 100% 0;
+		}
+	}
 
-			&::backdrop {
-				opacity: 0;
-			}
+	/* POPOVER BACKDROP */
+	&::backdrop {
+		background-color: transparent;
+		transition: 0.3s allow-discrete;
+	}
+
+	&:popover-open::backdrop {
+		background: var(--space-low-opacity);
+		opacity: 1;
+	}
+
+	@starting-style {
+		&:popover-open::backdrop {
+			background: var(--space-low-opacity);
+			background-color: transparent;
 		}
 	}
 }
