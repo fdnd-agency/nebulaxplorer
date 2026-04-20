@@ -65,6 +65,7 @@
 	}
 }
 
+/* The nav element in the header */
 .main-navigation nav {
 	justify-self: end;
 	translate: 0 0;
@@ -107,7 +108,10 @@
 	/* POPOVER BACKDROP */
 	&::backdrop {
 		background-color: transparent;
-		transition: 0.3s allow-discrete;
+
+		@media (prefers-reduced-motion: no-preference) {
+			transition: 0.3s allow-discrete; /* allow-discrete keyword is not supported in firefox */
+		}
 	}
 
 	&:popover-open::backdrop {
@@ -123,6 +127,7 @@
 	}
 }
 
+/* LIST OF NAV ITEMS */
 .main-navigation ul {
 	display: flex;
 	flex-direction: column;
@@ -144,6 +149,7 @@
 	}
 }
 
+/* INDIVIDUAL NAV ITEMS */
 .main-navigation li {
 	display: flex;
 	flex-direction: row-reverse;
@@ -224,11 +230,15 @@
 	}
 }
 
-.main-navigation button[popovertargetaction='hide'] {
+/* By default: don't display the button. */
+.main-navigation nav button[popovertargetaction='hide'] {
 	display: none;
+}
 
+/* When the popover selector is supported: display the button, but only when the nav is open. */
+.main-navigation nav:popover-open button[popovertargetaction='hide'] {
 	@supports selector([popover]:popover-open) {
-		display: block;
+		display: flex;
 		position: fixed;
 		top: 0;
 		right: 0;
