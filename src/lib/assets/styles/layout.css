@@ -33,7 +33,7 @@
 	padding: 0.5rem;
 	color: inherit;
 	background: var(--ultra-170);
-	display: flex;
+	display: none;
 	align-items: center;
 	flex-direction: column;
 	justify-content: space-between;
@@ -43,6 +43,10 @@
 
 	@media (min-width: 56.25rem) {
 		display: none;
+	}
+
+	@supports selector([popover]:popover-open) {
+		display: flex;
 	}
 
 	.lines {
@@ -219,9 +223,14 @@
 }
 
 .main-navigation button[popovertargetaction='hide'] {
-	position: fixed;
-	top: 0;
-	right: 0;
+	display: none;
+
+	@supports selector([popover]:popover-open) {
+		display: block;
+		position: fixed;
+		top: 0;
+		right: 0;
+	}
 }
 
 .main-navigation button[popovertargetaction='hide'] .lines {
