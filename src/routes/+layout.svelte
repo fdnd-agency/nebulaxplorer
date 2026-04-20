@@ -26,7 +26,7 @@
 		if (!document.startViewTransition) return
 
 		const popover = document.getElementById('menu')
-		popover.hidePopover()
+		popover?.hidePopover()
 
 		return new Promise((resolve) => {
 			const transition = document.startViewTransition(async () => {
