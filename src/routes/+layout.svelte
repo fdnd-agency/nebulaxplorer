@@ -70,7 +70,7 @@
 
 <header class="main-navigation">
 	<button popovertarget="menu">
-		Menu
+		<span class="visually-hidden">Open</span>Menu
 		<span class="lines"></span>
 		<span class="lines"></span>
 		<span class="lines"></span>
@@ -81,7 +81,7 @@
 			<!-- Include this button separately as this is our close button -->
 			<li>
 				<button popovertarget="menu" popovertargetaction="hide">
-					Menu
+					<span class="visually-hidden">Close</span>Menu
 					<span class="lines"></span>
 				</button>
 			</li>
