@@ -104,6 +104,7 @@
 				</a> -->
 				<button popovertarget="menu" popovertargetaction="hide">
 					Menu
+					<span class="lines"></span>
 				</button>
 			</li>
 			<!-- Loop over each object -->

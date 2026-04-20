@@ -1,5 +1,33 @@
+/* The container of the nav: the header */
+.main-navigation {
+	font-family: SpaceGrotesk;
+	text-transform: capitalize;
+	display: flex;
+	background: transparent;
+	justify-content: flex-end;
+	color: var(--white);
+	z-index: 10;
+	position: relative;
+
+	@media (min-width: 56.25rem) {
+		padding: 1rem;
+		background: var(--space-100);
+		justify-content: initial;
+		position: sticky;
+		top: 0;
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		@supports (animation-timeline: view()) {
+			animation: anim-timeline--header-opacity 1ms ease both;
+			animation-timeline: scroll(root);
+			animation-range: 2rem 8rem;
+		}
+	}
+}
+
 /* The button that opens the nav */
-button[popovertarget] {
+.main-navigation button[popovertarget] {
 	height: 3.75rem;
 	aspect-ratio: 1;
 	padding: 0.5rem;
@@ -33,34 +61,6 @@ button[popovertarget] {
 	}
 }
 
-/* The container of the nav: the header */
-.main-navigation {
-	font-family: SpaceGrotesk;
-	text-transform: capitalize;
-	display: flex;
-	background: transparent;
-	justify-content: flex-end;
-	color: var(--white);
-	z-index: 10;
-	position: relative;
-
-	@media (min-width: 56.25rem) {
-		padding: 1rem;
-		background: var(--space-100);
-		justify-content: initial;
-		position: sticky;
-		top: 0;
-	}
-
-	@media (prefers-reduced-motion: no-preference) {
-		@supports (animation-timeline: view()) {
-			animation: anim-timeline--header-opacity 1ms ease both;
-			animation-timeline: scroll(root);
-			animation-range: 2rem 8rem;
-		}
-	}
-}
-
 .main-navigation nav {
 	justify-self: end;
 	translate: 100% 0;
@@ -79,6 +79,9 @@ button[popovertarget] {
 		transform: translateX(0%);
 		position: initial;
 		width: initial;
+		display: block;
+		translate: 0;
+		max-width: 100%;
 	}
 
 	&:popover-open {
@@ -182,19 +185,41 @@ button[popovertarget] {
 	display: inline-block;
 	font-size: 1.25rem;
 	transition: font-weight 0.3s ease-in-out;
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		transition: transform 0.3s ease-in-out;
+		transform: scaleX(0);
+		transform-origin: right;
+		background: var(--space-140);
+		z-index: -1;
+	}
 }
 
-.main-navigation li a::before {
-	content: '';
-	position: absolute;
-	inset: 0;
-	width: 100%;
-	height: 100%;
-	transition: transform 0.3s ease-in-out;
-	transform: scaleX(0);
-	transform-origin: right;
-	background: var(--space-140);
-	z-index: -1;
+.main-navigation button[popovertargetaction='hide'] {
+	position: fixed;
+	top: 0;
+	right: 0;
+}
+
+.main-navigation button[popovertargetaction='hide'] .lines {
+	--thickness: 2px;
+	--gradient: #fff0 90deg, var(--white) 0;
+	background: conic-gradient(
+			from 90deg at var(--thickness) var(--thickness),
+			var(--gradient)
+		)
+		calc(100% + var(--thickness) / 2) calc(100% + var(--thickness) / 2) /
+		calc(50% + var(--thickness)) calc(50% + var(--thickness));
+	transform-origin: unset;
+	height: unset;
+	width: 1.875rem;
+	aspect-ratio: 1;
+	rotate: 45deg;
 }
 
 @media (prefers-reduced-motion: no-preference) {
