@@ -63,15 +63,20 @@
 
 .main-navigation nav {
 	justify-self: end;
-	translate: 100% 0;
+	translate: 0 0;
 	height: 100%;
-	max-width: 22.5rem;
 	width: 100%;
+	max-width: 100%;
 	background: var(--ultra-170);
 	color: inherit;
 
 	@media (prefers-reduced-motion: no-preference) {
 		transition: 0.3s ease-out allow-discrete;
+	}
+
+	@supports selector([popover]) {
+		translate: 100% 0;
+		max-width: 22.5rem;
 	}
 
 	@media (min-width: 56.25rem) {
@@ -111,11 +116,6 @@
 			background: var(--space-low-opacity);
 			background-color: transparent;
 		}
-	}
-
-	@supports not selector([popover]) {
-		translate: 0 0;
-		max-width: 100%;
 	}
 }
 
