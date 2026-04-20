@@ -25,6 +25,9 @@
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return
 
+		const popover = document.getElementById('menu')
+		popover.hidePopover()
+
 		return new Promise((resolve) => {
 			const transition = document.startViewTransition(async () => {
 				expanded = false
@@ -69,7 +72,7 @@
 </svelte:head>
 
 <header class="main-navigation">
-	<a
+	<!-- <a
 		href="#menu"
 		class="menu-button"
 		aria-expanded={expanded || 'false'}
@@ -79,19 +82,29 @@
 		<span class="lines"></span>
 		<span class="lines"></span>
 		<span class="lines"></span>
-	</a>
-	<nav id="menu">
+	</a> -->
+	<button popovertarget="menu">
+		Menu
+		<span class="lines"></span>
+		<span class="lines"></span>
+		<span class="lines"></span>
+	</button>
+
+	<nav popover id="menu">
 		<ul>
 			<!-- Include this button separately as this is our close button -->
 			<li>
 				<!-- Leave this as # -->
-				<a
+				<!-- <a
 					href="#"
 					class="menu-button"
 					onclick={() => (expanded = false)}>
 					menu
 					<span class="lines"></span>
-				</a>
+				</a> -->
+				<button popovertarget="menu" popovertargetaction="hide">
+					Menu
+				</button>
 			</li>
 			<!-- Loop over each object -->
 			{#each navItems as { path, label }}

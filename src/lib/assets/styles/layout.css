@@ -1,4 +1,226 @@
-/* MARK: HEADER */
+/* The button that opens the nav */
+button[popovertarget] {
+	height: 3.75rem;
+	aspect-ratio: 1;
+	padding: 0.5rem;
+	color: inherit;
+	background: var(--ultra-170);
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-between;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+
+	@media (min-width: 56.25rem) {
+		display: none;
+	}
+
+	.lines {
+		height: 0.125rem;
+		width: 85%;
+		background: currentColor;
+		display: block;
+	}
+
+	.lines:first-child {
+		margin-top: 0.25rem;
+	}
+
+	.lines + .lines {
+		margin-top: 0.375rem;
+	}
+}
+
+/* The container of the nav: the header */
+.main-navigation {
+	font-family: SpaceGrotesk;
+	text-transform: capitalize;
+	display: flex;
+	background: transparent;
+	justify-content: flex-end;
+	color: var(--white);
+	z-index: 10;
+	position: relative;
+
+	@media (min-width: 56.25rem) {
+		padding: 1rem;
+		background: var(--space-100);
+		justify-content: initial;
+		position: sticky;
+		top: 0;
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		@supports (animation-timeline: view()) {
+			animation: anim-timeline--header-opacity 1ms ease both;
+			animation-timeline: scroll(root);
+			animation-range: 2rem 8rem;
+		}
+	}
+}
+
+.main-navigation nav {
+	justify-self: end;
+	translate: 100% 0;
+	height: 100%;
+	max-width: 22.5rem;
+	width: 100%;
+	background: var(--ultra-170);
+	color: inherit;
+
+	@media (prefers-reduced-motion: no-preference) {
+		transition: 0.3s ease-out allow-discrete;
+	}
+
+	@media (min-width: 56.25rem) {
+		background: inherit;
+		transform: translateX(0%);
+		position: initial;
+		width: initial;
+	}
+
+	&:popover-open {
+		translate: 0 0;
+
+		&::backdrop {
+			opacity: 1;
+		}
+
+		@starting-style {
+			translate: 100% 0;
+
+			&::backdrop {
+				opacity: 0;
+			}
+		}
+	}
+}
+
+.main-navigation ul {
+	display: flex;
+	flex-direction: column;
+	gap: 2.5rem;
+	width: fit-content;
+	width: 100%;
+	padding: 1rem 2rem;
+	padding-top: calc(1rem + 0.375rem + 0.375rem + 0.25rem + 1rem + 1rem);
+	list-style: none;
+
+	@media (min-width: 56.25rem) {
+		flex-direction: row;
+		align-items: flex-end;
+		padding-top: 1rem;
+		gap: 1.5rem;
+		width: initial;
+	}
+}
+
+.main-navigation li {
+	display: flex;
+	flex-direction: row-reverse;
+	width: fit-content;
+	align-items: center;
+
+	&.close {
+		display: flex;
+		position: fixed;
+		top: 0;
+		right: 0;
+		align-self: flex-end;
+	}
+
+	&.parent-active,
+	&.exact-active {
+		font-weight: 800;
+	}
+
+	svg {
+		transform: rotate(180deg);
+		animation: anim-arrow--opacity 3s linear infinite;
+	}
+
+	svg path {
+		fill: var(--white);
+	}
+
+	@media (min-width: 56.25rem) {
+		display: flex;
+		flex-direction: column;
+
+		&:hover a {
+			color: var(--cleanroom-60);
+
+			@media (prefers-reduced-motion: no-preference) {
+				&::before {
+					transform: scaleX(1);
+					transform-origin: left;
+				}
+			}
+		}
+
+		svg {
+			transform: rotateZ(90deg);
+		}
+
+		svg,
+		svg path {
+			fill: var(--cleanroom-100);
+		}
+
+		&.close {
+			display: none;
+		}
+	}
+}
+
+.main-navigation li a {
+	font-weight: inherit;
+	padding: 1rem;
+	position: relative;
+	display: inline-block;
+	font-size: 1.25rem;
+	transition: font-weight 0.3s ease-in-out;
+}
+
+.main-navigation li a::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	transition: transform 0.3s ease-in-out;
+	transform: scaleX(0);
+	transform-origin: right;
+	background: var(--space-140);
+	z-index: -1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	@keyframes anim-arrow--opacity {
+		30% {
+			opacity: 1;
+		}
+		45% {
+			opacity: 0.6;
+		}
+		55% {
+			opacity: 0.6;
+		}
+		70% {
+			opacity: 1;
+		}
+	}
+
+	@keyframes anim-timeline--header-opacity {
+		to {
+			background-color: var(--space-100);
+		}
+	}
+}
+
+/* MARK: HEADER 
 .main-navigation {
 	font-family: SpaceGrotesk;
 	text-transform: capitalize;
@@ -10,7 +232,7 @@
 	position: relative;
 
 	@media (prefers-reduced-motion: no-preference) {
-		@supports (animation-timeline: view()) {
+		@supports (animation-timeline: view()) {	
 			animation: anim-timeline--header-opacity 1ms ease both;
 			animation-timeline: scroll(root);
 			animation-range: 2rem 8rem;
@@ -225,28 +447,7 @@
 		rotate: 45deg;
 	}
 
-	@media (prefers-reduced-motion: no-preference) {
-		@keyframes anim-arrow--opacity {
-			30% {
-				opacity: 1;
-			}
-			45% {
-				opacity: 0.6;
-			}
-			55% {
-				opacity: 0.6;
-			}
-			70% {
-				opacity: 1;
-			}
-		}
-
-		@keyframes anim-timeline--header-opacity {
-			to {
-				background-color: var(--space-100);
-			}
-		}
-	}
+	
 }
 
 /* Lines acting weird */
