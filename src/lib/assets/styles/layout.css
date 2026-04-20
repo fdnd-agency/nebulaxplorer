@@ -112,6 +112,11 @@
 			background-color: transparent;
 		}
 	}
+
+	@supports not selector([popover]) {
+		translate: 0 0;
+		max-width: 100%;
+	}
 }
 
 .main-navigation ul {
