@@ -6,7 +6,6 @@
 	import '$lib/assets/styles/general.css'
 	import '$lib/assets/styles/layout.css'
 
-	let expanded = $state(false)
 	let root
 
 	// The onMount, beforeNavigate, and afterNavigate are all to prevent scroll-behavior: smooth to mess with the navigation.
@@ -30,8 +29,6 @@
 
 		return new Promise((resolve) => {
 			const transition = document.startViewTransition(async () => {
-				expanded = false
-
 				resolve()
 				await navigation.complete
 			})
