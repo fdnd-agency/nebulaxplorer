@@ -26,19 +26,19 @@
 
 <section class="section-paragraph-picture">
 	<div class="content-container">
-		<h2 class="heading">About Nebula Xplorer</h2>
+		<h2 class="heading">About NEBULA-Xplorer</h2>
 		<enhanced:img
 			src={nebulaSatelliteEnhanced}
 			alt="The Nebula Xplorer Satellite"
 			sizes="(min-width:500px) 900px, (min-width:300px) 450px" />
 		<p class="paragraph">
-			NEBULA-X is an X-ray spectral timing satellite that will fill a key
-			gap in international observing capability in the early 2030s as well
-			as investigate the variability of compact objects such as black
-			holes on long time scales with higher cadence than has been possible
-			on previous missions. It will observe X-ray emission from these
-			sources at high energy and timing resolution to reveal how these
-			objects and their nearby extreme environments behave.
+			NEBULA-X is an X-ray spectral timing mission that will fill a key
+			gap in international observing capability in the early 2030s by
+			investigating the variability of compact objects such as black holes
+			on long time scales with higher cadence than has been possible on
+			previous missions. It will observe X-ray emission from these sources
+			at high energy and timing resolution to reveal how these objects and
+			their nearby extreme environments behave.
 		</p>
 	</div>
 </section>
