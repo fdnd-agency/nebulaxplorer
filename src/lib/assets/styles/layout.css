@@ -94,7 +94,7 @@
 		max-width: 100%;
 	}
 
-	/* POPOVER */
+	/* Popover */
 	&:popover-open {
 		translate: 0 0;
 	}
@@ -105,7 +105,7 @@
 		}
 	}
 
-	/* POPOVER BACKDROP */
+	/* Popover backdrop */
 	&::backdrop {
 		background-color: transparent;
 
@@ -116,18 +116,16 @@
 
 	&:popover-open::backdrop {
 		background: var(--space-low-opacity);
-		opacity: 1;
 	}
 
 	@starting-style {
 		&:popover-open::backdrop {
-			background: var(--space-low-opacity);
 			background-color: transparent;
 		}
 	}
 }
 
-/* LIST OF NAV ITEMS */
+/* List of nav items */
 .main-navigation ul {
 	display: flex;
 	flex-direction: column;
@@ -149,7 +147,7 @@
 	}
 }
 
-/* INDIVIDUAL NAV ITEMS */
+/* Individual nav items */
 .main-navigation li {
 	display: flex;
 	flex-direction: row-reverse;

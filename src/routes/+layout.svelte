@@ -72,17 +72,6 @@
 </svelte:head>
 
 <header class="main-navigation">
-	<!-- <a
-		href="#menu"
-		class="menu-button"
-		aria-expanded={expanded || 'false'}
-		aria-controls="nav-items"
-		onclick={() => (expanded = true)}>
-		menu
-		<span class="lines"></span>
-		<span class="lines"></span>
-		<span class="lines"></span>
-	</a> -->
 	<button popovertarget="menu">
 		Menu
 		<span class="lines"></span>
