@@ -154,14 +154,6 @@
 	width: fit-content;
 	align-items: center;
 
-	&.close {
-		display: flex;
-		position: fixed;
-		top: 0;
-		right: 0;
-		align-self: flex-end;
-	}
-
 	&.parent-active,
 	&.exact-active {
 		font-weight: 800;
@@ -198,10 +190,6 @@
 		svg,
 		svg path {
 			fill: var(--cleanroom-100);
-		}
-
-		&.close {
-			display: none;
 		}
 	}
 }
