@@ -1,20 +1,20 @@
 /* The container of the nav: the header */
 .main-navigation {
+	display: flex;
+	justify-content: flex-end;
+	position: relative;
+	z-index: 10;
+	background: transparent;
 	font-family: SpaceGrotesk;
 	text-transform: capitalize;
-	display: flex;
-	background: transparent;
-	justify-content: flex-end;
 	color: var(--white);
-	z-index: 10;
-	position: relative;
 
 	@media (min-width: 56.25rem) {
-		padding: 1rem;
-		background: var(--space-100);
-		justify-content: initial;
 		position: sticky;
 		top: 0;
+		justify-content: initial;
+		padding: 1rem;
+		background: var(--space-100);
 	}
 
 	@media (prefers-reduced-motion: no-preference) {
@@ -28,32 +28,32 @@
 
 /* The button that opens the nav */
 .main-navigation button[popovertarget] {
+	display: none;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
 	height: 3.75rem;
 	aspect-ratio: 1;
 	padding: 0.5rem;
-	color: inherit;
-	background: var(--ultra-170);
-	display: none;
-	align-items: center;
-	flex-direction: column;
-	justify-content: space-between;
 	position: fixed;
 	z-index: 1;
 	top: 0;
-
-	@media (min-width: 56.25rem) {
-		display: none;
-	}
+	color: inherit;
+	background: var(--ultra-170);
 
 	@supports selector([popover]:popover-open) {
 		display: flex;
 	}
 
+	@media (min-width: 56.25rem) {
+		display: none;
+	}
+
 	.lines {
+		display: block;
 		height: 0.125rem;
 		width: 85%;
 		background: currentColor;
-		display: block;
 	}
 
 	.lines:first-child {
@@ -84,11 +84,11 @@
 	}
 
 	@media (min-width: 56.25rem) {
+		display: block;
 		background: inherit;
 		transform: translateX(0%);
 		position: initial;
 		width: initial;
-		display: block;
 		translate: 0;
 		max-width: 100%;
 	}
@@ -127,7 +127,6 @@
 	display: flex;
 	flex-direction: column;
 	gap: 2.5rem;
-	width: fit-content;
 	width: 100%;
 	padding: 1rem 2rem;
 	list-style: none;
@@ -204,10 +203,10 @@
 }
 
 .main-navigation li a {
-	font-weight: inherit;
-	padding: 1rem;
-	position: relative;
 	display: inline-block;
+	position: relative;
+	padding: 1rem;
+	font-weight: inherit;
 	font-size: 1.25rem;
 	transition: font-weight 0.3s ease-in-out;
 
