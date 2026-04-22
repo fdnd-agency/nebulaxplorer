@@ -410,7 +410,16 @@
 		color: var(--white);
 	}
 
-
+	/* orange line */
+	.goal-box::before {
+		content: '';
+		position: absolute;
+		top: -1px;
+		left: -1px;
+		width: 40px;
+		height: 2px;
+		background: var(--cleanroom-100);
+	}
 
 	.goal-title {
 		font-size: 0.9rem;
