@@ -425,7 +425,22 @@
 		line-height: 1.6;
 	}
 
+	@media (min-width: 36.25rem) {
+		.goals-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
 
+		.goal-box {
+			padding: 2rem;
+		}
+	}
+
+	@media (min-width: 56.25rem) {
+		.goals-grid {
+			grid-column: 1 / -1;
+			gap: 2rem;
+		}
+	}
 
 	/* STEPS BLOCK */
 
