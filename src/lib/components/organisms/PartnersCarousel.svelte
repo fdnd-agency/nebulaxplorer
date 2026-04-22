@@ -150,7 +150,7 @@
 	<h3 class="subheading content-container">Educational Partners</h3>
 	<CarouselTrack items={sponsorsEducational} />
 
-	<h3 class="subheading content-container">Industrial Partners</h3>
+	<h3 class="subheading content-container">Sponsors</h3>
 	<CarouselTrack items={sponsorsIndustrial} reverse />
 </section>
 
