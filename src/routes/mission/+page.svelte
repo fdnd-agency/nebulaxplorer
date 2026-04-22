@@ -2,6 +2,7 @@
 	import {
 		Hero,
 		Breadcrumb,
+		Timeline,
 		ScientificTestimonial,
 		blackholeEnhanced as blackholeImage,
 		sronReviewStep1Enhanced as step1Image,
@@ -146,6 +147,7 @@
 </section>
 
 <!-- STEPS BLOCK -->
+<Timeline />
 
 <section class="steps-block">
 	<h3 class="subtitle text-content--title">
