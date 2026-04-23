@@ -353,7 +353,7 @@
 	.main-navigation {
 		view-transition-name: header;
 	}
-	.exact-active :global(svg) {
+	.exact-active svg {
 		view-transition-name: active-page;
 	}
 }
