@@ -1,47 +1,66 @@
+<script>
+	// import { onMount } from 'svelte'
+
+	// onMount(() => {
+	// 	let detailsElements = document.querySelectorAll('details')
+	// 	detailsElements.forEach((element) => {
+	// 		element.addEventListener('toggle', transition)
+	// 	})
+	// })
+
+	// async function transition() {
+	// 	if (document.startViewTransition) {
+	// 		const transition = document.startViewTransition(() => {
+	//
+	// 		})
+	// 	} else {
+	//
+	// 	}
+	// }
+</script>
+
+<h3 class="section_title">Mission Timeline</h3>
 <section>
 	<details name="timeline" open>
-		<summary>Stap 1</summary>
-		<article>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
-			blanditiis error officiis? Dignissimos vitae vero, magnam
-			perferendis rerum eum hic ex sequi nihil inventore nulla eius dolore
-			minus voluptate iusto?
+		<summary class="caption">Reviews and Design Confirmation</summary>
+		<article class="paragraph">
+			Before production and launch, the project passes formal ECSS review
+			stages. The System Requirements Review (SRR) defines and validates
+			system needs. The Preliminary Design Review (PDR) evaluates the
+			current design. Finally, the Critical Design Review (CDR) confirms
+			readiness for manufacturing and verifies that a ll requirements are
+			met.
 		</article>
 	</details>
 	<details name="timeline">
-		<summary>Stap 2</summary>
-		<article>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor,
-			quidem cum aut beatae quaerat esse! Doloremque, nam magnam?
-			Repudiandae, velit. Vero minima, odit veritatis delectus officiis
-			error magni aperiam saepe.
+		<summary class="caption">Testing and Qualification (V&V)</summary>
+		<article class="paragraph">
+			Verification and Validation ensures that all systems perform
+			correctly. The Engineering Model (EM) is used for functional
+			testing, while the Proto Flight Model (PFM) undergoes strict
+			qualification tests. Activities include COTS component testing, FPGA
+			prototyping, and alignment of the Optical Bench Assembly to
+			withstand launch conditions.
 		</article>
 	</details>
 	<details name="timeline">
-		<summary>Stap 3</summary>
-		<article>
-			Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro
-			numquam nulla nobis quasi cupiditate delectus quisquam vitae,
-			accusamus tempore odio tenetur rerum aspernatur eos labore quae odit
-			illo maiores sapiente.
+		<summary class="caption">Assembly, Integration, and Test (AIT)</summary>
+		<article class="paragraph">
+			In the AIT phase, all subsystems are combined into a complete
+			satellite. This includes propulsion and navigation systems such as
+			star trackers. Interface control ensures compatibility between
+			components. The integration of the 15-inch MkII Motorized Lightband
+			connects the satellite securely to the launch vehicle.
 		</article>
 	</details>
 	<details name="timeline">
-		<summary>Stap 4</summary>
-		<article>
-			Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste
-			soluta eius dolorum error reprehenderit, aspernatur in temporibus ad
-			praesentium hic vitae molestias perferendis itaque sed placeat
-			provident fugit expedita alias.
-		</article>
-	</details>
-	<details name="timeline">
-		<summary>Stap 5</summary>
-		<article>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
-			delectus voluptatum dolor laboriosam maxime sit repellat quidem
-			ipsam perferendis reiciendis qui fugit, illum cumque dolores, sint,
-			a error deserunt dolorem!
+		<summary class="caption">Launch Campaign (Pre-launch Phase)</summary>
+		<article class="paragraph">
+			At the launch site, final preparations are completed. The propulsion
+			system is fueled with propylene and nitrous oxide. The satellite is
+			mounted on a SpaceX Falcon 9 as a rideshare payload. The Flight
+			Readiness Review (FRR) confirms launch readiness before liftoff and
+			the start of LEOP.
 		</article>
 	</details>
 </section>
