@@ -1,4 +1,10 @@
 <script>
+	import {
+		placeholder1,
+		placeholder2,
+		rocketLaunchStep5,
+		sronReviewStep1,
+	} from '$lib'
 	// import { onMount } from 'svelte'
 
 	// onMount(() => {
@@ -125,16 +131,32 @@
 		grid-row: 1 / span 1;
 	}
 
+	details:nth-of-type(1)::details-content {
+		background-image: url('$lib/assets/images/placeholder1.jpg');
+	}
+
 	details:nth-of-type(2) summary {
 		grid-row: 2 / span 1;
+	}
+
+	details:nth-of-type(2)::details-content {
+		background-image: url('$lib/assets/images/placeholder2.jpg');
 	}
 
 	details:nth-of-type(3) summary {
 		grid-row: 3 / span 1;
 	}
 
+	details:nth-of-type(3)::details-content {
+		background-image: url('$lib/assets/images/sron-review-step-1.jpg');
+	}
+
 	details:nth-of-type(4) summary {
 		grid-row: 4 / span 1;
+	}
+
+	details:nth-of-type(4)::details-content {
+		background-image: url('$lib/assets/images/rocket-launch-step-5.jpg');
 	}
 
 	details:nth-of-type(5) summary {
