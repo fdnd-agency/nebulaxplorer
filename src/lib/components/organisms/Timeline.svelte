@@ -73,28 +73,40 @@
 
 <style>
 	section {
-		display: grid;
-		grid-template-columns: 1fr 2fr;
-		grid-template-rows: repeat(4, 1fr);
-		max-width: var(--content-width);
-		margin-inline: auto;
-		border: 1px solid white;
-		padding: 1rem 2rem;
-		column-gap: 1rem;
+		@media (width > 56.25rem) {
+			display: grid;
+			grid-template-columns: 1fr 2fr;
+			grid-template-rows: repeat(4, 1fr);
+			max-width: var(--content-width);
+			margin-inline: auto;
+			border: 1px solid white;
+			padding: 1rem 2rem;
+			column-gap: 1rem;
+		}
 	}
 
 	details {
-		display: grid;
-		grid-template-columns: subgrid;
-		grid-template-rows: subgrid;
-		grid-column: 1 / -1;
-		grid-row: 1 / -1;
+		@media (width > 56.25rem) {
+			display: grid;
+			grid-template-columns: subgrid;
+			grid-template-rows: subgrid;
+			grid-column: 1 / -1;
+			grid-row: 1 / -1;
+		}
 	}
 
 	details::details-content {
-		grid-column: 2;
-		grid-row: 1 / -1;
+		height: 20rem;
 		padding: 1rem;
+
+		background-repeat: no-repeat;
+		background-size: cover;
+
+		@media (width > 56.25rem) {
+			grid-column: 2;
+			grid-row: 1 / -1;
+			height: auto;
+		}
 	}
 
 	details:not([open])::details-content {
