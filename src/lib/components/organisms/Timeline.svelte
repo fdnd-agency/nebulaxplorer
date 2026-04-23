@@ -49,9 +49,13 @@
 <style>
 	section {
 		display: grid;
-		grid-template-columns: auto 1fr;
-		grid-template-rows: repeat(5, 1fr);
+		grid-template-columns: 1fr 2fr;
+		grid-template-rows: repeat(4, 1fr);
 		max-width: var(--content-width);
+		margin-inline: auto;
+		border: 1px solid white;
+		padding: 1rem 2rem;
+		column-gap: 1rem;
 	}
 
 	details {
@@ -78,10 +82,24 @@
 		padding: 1rem;
 		cursor: pointer;
 		z-index: 1;
+		position: relative;
+		padding-inline-start: 2em;
+
+		text-transform: uppercase;
+
+		&::before {
+			content: '✨';
+			position: absolute;
+			align-self: center;
+		}
 	}
 
 	details[open] summary {
 		font-weight: bold;
+
+		&::before {
+			content: '🚀';
+		}
 	}
 
 	details:nth-of-type(1) summary {
@@ -102,5 +120,12 @@
 
 	details:nth-of-type(5) summary {
 		grid-row: 5 / span 1;
+	}
+
+	h3 {
+		max-width: var(--content-width);
+		width: 100%;
+		margin-inline: auto;
+		padding: 0;
 	}
 </style>
