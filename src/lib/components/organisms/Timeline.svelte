@@ -102,10 +102,19 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 
+		--space-mid-opacity: hsla(238, 35%, 15%, 0.75);
+		--gradient: linear-gradient(
+			transparent 0%,
+			transparent 30%,
+			var(--space-mid-opacity) 100%
+		);
+
 		@media (width > 56.25rem) {
 			grid-column: 2;
 			grid-row: 1 / -1;
 			height: auto;
+			display: flex;
+			align-items: flex-end;
 		}
 	}
 
@@ -144,7 +153,8 @@
 	}
 
 	details:nth-of-type(1)::details-content {
-		background-image: url('$lib/assets/images/placeholder1.jpg');
+		background-image:
+			var(--gradient), url('$lib/assets/images/placeholder1.jpg');
 	}
 
 	details:nth-of-type(2) summary {
@@ -152,7 +162,8 @@
 	}
 
 	details:nth-of-type(2)::details-content {
-		background-image: url('$lib/assets/images/placeholder2.jpg');
+		background-image:
+			var(--gradient), url('$lib/assets/images/placeholder2.jpg');
 	}
 
 	details:nth-of-type(3) summary {
@@ -160,7 +171,8 @@
 	}
 
 	details:nth-of-type(3)::details-content {
-		background-image: url('$lib/assets/images/sron-review-step-1.jpg');
+		background-image:
+			var(--gradient), url('$lib/assets/images/sron-review-step-1.jpg');
 	}
 
 	details:nth-of-type(4) summary {
@@ -168,7 +180,8 @@
 	}
 
 	details:nth-of-type(4)::details-content {
-		background-image: url('$lib/assets/images/rocket-launch-step-5.jpg');
+		background-image:
+			var(--gradient), url('$lib/assets/images/rocket-launch-step-5.jpg');
 	}
 
 	details:nth-of-type(5) summary {
