@@ -132,7 +132,10 @@
 		padding-inline-start: 2em;
 
 		text-transform: uppercase;
-
+		transition: 0.2s;
+		&:hover {
+			background-color: var(--space-60);
+		}
 		&::before {
 			content: '✨';
 			position: absolute;
