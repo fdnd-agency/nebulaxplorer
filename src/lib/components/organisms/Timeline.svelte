@@ -72,15 +72,23 @@
 </section>
 
 <style>
+	h3 {
+		max-width: var(--content-width);
+		width: 100%;
+		margin-inline: auto;
+		padding: 0;
+	}
+
 	section {
+		border: 1px solid white;
+		padding: 1rem 2rem;
+		margin-inline: auto;
+		max-width: var(--content-width);
+
 		@media (width > 56.25rem) {
 			display: grid;
 			grid-template-columns: 1fr 2fr;
 			grid-template-rows: repeat(4, 1fr);
-			max-width: var(--content-width);
-			margin-inline: auto;
-			border: 1px solid white;
-			padding: 1rem 2rem;
 			column-gap: 1rem;
 		}
 	}
@@ -96,6 +104,9 @@
 	}
 
 	details::details-content {
+		display: flex;
+		align-items: flex-end;
+
 		height: 20rem;
 		padding: 1rem;
 
@@ -113,8 +124,6 @@
 			grid-column: 2;
 			grid-row: 1 / -1;
 			height: auto;
-			display: flex;
-			align-items: flex-end;
 		}
 	}
 
@@ -133,9 +142,11 @@
 
 		text-transform: uppercase;
 		transition: 0.2s;
+
 		&:hover {
 			background-color: var(--space-60);
 		}
+
 		&::before {
 			content: '✨';
 			position: absolute;
@@ -189,12 +200,5 @@
 
 	details:nth-of-type(5) summary {
 		grid-row: 5 / span 1;
-	}
-
-	h3 {
-		max-width: var(--content-width);
-		width: 100%;
-		margin-inline: auto;
-		padding: 0;
 	}
 </style>
