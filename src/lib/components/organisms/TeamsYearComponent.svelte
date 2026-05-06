@@ -17,7 +17,7 @@
 <style>
 	h3 {
 		font-size: 1.5rem;
-		padding-block: 1em;
+		margin: 1rem;
 	}
 
 	article {
@@ -26,13 +26,18 @@
 	}
 
 	ul {
-		list-style: none;
-		display: flex;
-		flex-direction: column;
+		 list-style: none;
 
-		@media (min-width: 450px) {
-			gap: 5vw;
-			flex-direction: row;
+		display: grid;
+		grid-template-columns: 1fr;
+		
+		align-items: center;
+		
+		gap: 1em;
+
+		@media (min-width: 450px){
+		grid-template-columns: 1fr 1fr;
+
 		}
 	}
 </style>

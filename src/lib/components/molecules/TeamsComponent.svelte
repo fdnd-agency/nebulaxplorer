@@ -23,20 +23,33 @@
 <li>
 	<img
 		src={`https://fdnd-agency.directus.app/assets/${teams.group_photo}`}
-		alt="" />
+		alt="" 
+		width="300"
+		/>
+
 	<a href={resolve('/team/' + teams.id)}
-		><h3>
+		>
 			{month[startDate.getMonth()]} - {month[endDate.getMonth()]}
-		</h3></a>
+		</a>
 </li>
 
 <style>
 	li {
-		position: relative;
-		align-self: center;
-		max-width: 300px;
+		position: relative; /* this doesnt do anything by itself, but it makes the a::after pseudocontent take the correct position */
+		/* align-self: center; */
+		/* max-width: 300px; */
 		text-align: center;
-		width: 100%;
+		
+		background-color: var(--space-160);
+		
+		height: 100%;
+
+		display: grid;
+		grid-template-areas: 
+		"img" 
+		"link";
+
+		grid-template-rows: auto 2lh;
 
 		&:hover{
 			background-color: #283756;
@@ -57,7 +70,16 @@
 	}
 
 	li:focus-within {
-		outline: 0.125rem dashed var(--cleanroom-140);
+		outline: var(--default-focus);
+	}
+
+	a {
+		align-self: center;
+		grid-area: link;
+	}
+
+	a:focus {
+		outline: unset;
 	}
 
 	a:hover {
@@ -67,17 +89,19 @@
 	a::after {
 		content: '';
 		position: absolute;
-		top: 0;
-		left: 0;
-		bottom: 0;
-		right: 0;
-	}
+		inset: 0; /*shorthand for left, top, right, and bottom properties */
+		}
 
-	h3 {
-		padding-block: 0.5lh;
-	}
+	
 
 	img {
+		align-self: center;
+		grid-area: img;
+		height: 100%;
+		object-fit: contain;
+		width: auto;
 		max-width: 100%;
+		margin-bottom: 0.5em;
+		/* max-height: 70vw; */
 	}
 </style>

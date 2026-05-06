@@ -7,6 +7,8 @@ export { default as NewsComponent } from './components/organisms/NewsComponent.s
 export { default as PillarsComponent } from './components/organisms/PillarsComponent.svelte'
 export { default as PartnersCarousel } from './components/organisms/PartnersCarousel.svelte'
 
+export { default as TeamsYearComponent } from '$lib/components/organisms/TeamsYearComponent.svelte'
+
 // Molecules
 export { default as Breadcrumb } from './components/molecules/Breadcrumb.svelte'
 export { default as AssignmentCards } from './components/molecules/AssignmentCards.svelte'

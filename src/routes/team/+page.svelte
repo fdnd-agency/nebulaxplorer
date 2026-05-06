@@ -1,8 +1,7 @@
 <script>
 /* eslint-disable svelte/require-each-key */
 	
-	import { Hero, Breadcrumb} from '$lib'
-	import TeamsYearComponent from '$lib/components/organisms/TeamsYearComponent.svelte'
+	import { Hero, Breadcrumb, TeamsYearComponent} from '$lib'
 
 	const dummydata = [	
 		{
@@ -20,14 +19,14 @@
 			"id":3,
 			"time_end":"2025-06-30T12:00:00",
 			"time_start":"2025-02-02T12:00:00",
-			"group_photo":"74be76b4-ff0d-4eec-a237-be283887ff99"
+			"group_photo":"24c28826-6456-46f6-8892-d94bf2d827f2"
 		},
 		{
 			"id":4,
 			"time_end":"2025-12-30T12:00:00",
 			"time_start":"2025-08-02T12:00:00",
 			"group_photo":"74be76b4-ff0d-4eec-a237-be283887ff99"
-		},
+		}
 
 ]
 
@@ -63,7 +62,7 @@ const sortedResults = resultArray.sort((a, b) => b[0] - a[0]);
 <Hero titleColor="var(--white)" pageTitle="Team" />
 <Breadcrumb />
 <section class="content-container">
-<h2>who are we?</h2>
+<h2 class="section-title">who are we?</h2>
 	{#each sortedResults as year}
 	
 		<TeamsYearComponent year={year} />
