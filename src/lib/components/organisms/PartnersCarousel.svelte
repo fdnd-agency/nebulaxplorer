@@ -1,23 +1,33 @@
 <script>
 	import {
 		CarouselTrack,
+		logoAirborne,
+		logoAirbus,
+		logoCelestiaSts,
+		logoCosine,
+		logoDawnAerospace,
+		logoErasmusUniversiteitRotterdam,
+		logoFsoInstruments,
 		logoHogeschoolUtrecht,
 		logoHogeschoolVanAmsterdam,
 		logoInhollandUniversity,
+		logoIsispace,
 		logoLis,
-		logoErasmusUniversiteitRotterdam,
 		logoMboRijnland,
+		logoNlr,
 		logoOverdehaagse,
+		logoRevolv,
 		logoRocMondriaan,
 		logoRocNova,
 		logoRugr,
 		logoSaxion,
+		logoSpherical,
+		logoStarion,
 		logoTechniekCollegeRotterdam,
 		logoTuDelft,
 		logoUl,
 		logoUva,
-		logoAstos,
-		logoEsatan,
+		logoWestEnd,
 	} from '$lib'
 
 	const sponsorsEducational = [
@@ -132,15 +142,85 @@
 		{
 			link: '#',
 			image: {
-				src: logoAstos,
-				alt: 'Astos',
+				src: logoAirborne,
+				alt: 'Airborne',
 			},
 		},
 		{
 			link: '#',
 			image: {
-				src: logoEsatan,
-				alt: 'Esatan',
+				src: logoAirbus,
+				alt: 'Airbus',
+			},
+		},
+		{
+			link: '#',
+			image: {
+				src: logoCelestiaSts,
+				alt: 'Celestia STS',
+			},
+		},
+		{
+			link: '#',
+			image: {
+				src: logoCosine,
+				alt: 'Cosine',
+			},
+		},
+		{
+			link: '#',
+			image: {
+				src: logoDawnAerospace,
+				alt: 'Dawn Aerospace',
+			},
+		},
+		{
+			link: '#',
+			image: {
+				src: logoFsoInstruments,
+				alt: 'FSO Instruments',
+			},
+		},
+		{
+			link: '#',
+			image: {
+				src: logoIsispace,
+				alt: 'ISIspace',
+			},
+		},
+		{
+			link: '#',
+			image: {
+				src: logoNlr,
+				alt: 'NLR',
+			},
+		},
+		{
+			link: '#',
+			image: {
+				src: logoRevolv,
+				alt: 'Revolv',
+			},
+		},
+		{
+			link: '#',
+			image: {
+				src: logoSpherical,
+				alt: 'Spherical',
+			},
+		},
+		{
+			link: '#',
+			image: {
+				src: logoStarion,
+				alt: 'Starion',
+			},
+		},
+		{
+			link: '#',
+			image: {
+				src: logoWestEnd,
+				alt: 'West End',
 			},
 		},
 	]
@@ -150,7 +230,7 @@
 	<h3 class="subheading content-container">Educational Partners</h3>
 	<CarouselTrack items={sponsorsEducational} />
 
-	<h3 class="subheading content-container">Sponsors</h3>
+	<h3 class="subheading content-container">Industrial Partners</h3>
 	<CarouselTrack items={sponsorsIndustrial} reverse />
 </section>
 
