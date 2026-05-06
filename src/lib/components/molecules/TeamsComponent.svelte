@@ -50,7 +50,7 @@
 		"img" 
 		"link";
 
-		grid-template-rows: auto 2lh;
+		grid-template-rows: auto 2.5lh;
 
 		&:hover{
 			background-color: #283756;
@@ -102,7 +102,6 @@
 		object-fit: contain;
 		width: auto;
 		max-width: 100%;
-		margin-bottom: 0.5em;
 		/* max-height: 70vw; */
 	}
 </style>
