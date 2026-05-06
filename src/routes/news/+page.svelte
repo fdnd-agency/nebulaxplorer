@@ -49,9 +49,4 @@
 			font-weight: 400;
 		}
 	}
-
-	/* util classes */
-	.orange {
-		color: var(--cleanroom-140);
-	}
 </style>

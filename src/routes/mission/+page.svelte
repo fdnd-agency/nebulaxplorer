@@ -614,11 +614,6 @@
 		}
 	}
 
-	/* util classes */
-	.orange {
-		color: var(--cleanroom-100);
-	}
-
 	:global(enhanced\:img) {
 		width: auto;
 	}
