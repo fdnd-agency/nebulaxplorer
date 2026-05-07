@@ -81,7 +81,7 @@
 
 	section {
 		border: 1px solid white;
-		padding: 1rem 2rem;
+		padding: 1rem;
 		margin-inline: auto;
 		max-width: var(--content-width);
 
@@ -181,6 +181,7 @@
 
 	details[open] summary {
 		font-weight: bold;
+		pointer-events: none;
 
 		&::before {
 			content: '🚀';
