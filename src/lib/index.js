@@ -1,34 +1,34 @@
 // COMPONENTS
 // Organisms
-export { default as Hero } from './components/organisms/Hero.svelte'
 export { default as Footer } from './components/organisms/Footer.svelte'
-export { default as Newscards } from './components/organisms/Newscards.svelte'
+export { default as Hero } from './components/organisms/Hero.svelte'
 export { default as NewsComponent } from './components/organisms/NewsComponent.svelte'
-export { default as PillarsComponent } from './components/organisms/PillarsComponent.svelte'
+export { default as Newscards } from './components/organisms/Newscards.svelte'
 export { default as PartnersCarousel } from './components/organisms/PartnersCarousel.svelte'
+export { default as PillarsComponent } from './components/organisms/PillarsComponent.svelte'
 
 // Molecules
-export { default as Breadcrumb } from './components/molecules/Breadcrumb.svelte'
 export { default as AssignmentCards } from './components/molecules/AssignmentCards.svelte'
+export { default as Breadcrumb } from './components/molecules/Breadcrumb.svelte'
 export { default as CarouselTrack } from './components/molecules/CarouselTrack.svelte'
+export { default as FooterLocations } from './components/molecules/FooterLocations.svelte'
+export { default as FooterNav } from './components/molecules/FooterNav.svelte'
 export { default as MailingListSignup } from './components/molecules/MailingListSignup.svelte'
 export { default as Pagination } from './components/molecules/Pagination.svelte'
+export { default as ScientificTestimonial } from './components/molecules/ScientificTestimonial.svelte'
+export { default as Sponsors } from './components/molecules/Sponsors.svelte'
 export { default as Testimonial } from './components/molecules/Testimonial.svelte'
 export { default as TestimonialHeader } from './components/molecules/TestimonialHeader.svelte'
 export { default as UnderConstruction } from './components/molecules/UnderConstruction.svelte'
-export { default as ScientificTestimonial } from './components/molecules/ScientificTestimonial.svelte'
-export { default as FooterLocations } from './components/molecules/FooterLocations.svelte'
-export { default as FooterNav } from './components/molecules/FooterNav.svelte'
-export { default as Sponsors } from './components/molecules/Sponsors.svelte'
 
 // Atoms
-export { default as Mission } from './components/atoms/Mission.svelte'
 export { default as Footnote } from './components/atoms/FooterFootnote.svelte'
+export { default as Mission } from './components/atoms/Mission.svelte'
 
 // ASSETS
 // Icons
-export { default as Quote } from './components/icons/Quote.svelte'
 export { default as MailIcon } from './components/icons/MailIcon.svelte'
+export { default as Quote } from './components/icons/Quote.svelte'
 
 // Logo Components
 export { default as Arrow } from './components/icons/Arrow.svelte'
@@ -39,6 +39,8 @@ export { default as PageArrow } from './components/atoms/PageArrow.svelte'
 
 // Logo SVGs
 export { default as favIcon } from './assets/logos/favicon.svg'
+export { default as nebulaLogoBlack } from './assets/logos/nebula_black.svg'
+export { default as nebulaLogoWhite } from './assets/logos/nebula_white.svg'
 export { default as sronAcademyLogoOnOrange } from './assets/logos/SRON_Academy_OnOrange.svg'
 export { default as sronAcademyLogoOnSpaceBlue } from './assets/logos/SRON_Academy_OnSpaceBlue.svg'
 export { default as sronAcademyLogoOnWhite } from './assets/logos/SRON_Academy_OnWhite.svg'
@@ -49,8 +51,6 @@ export { default as sronLogoFullWhite } from './assets/logos/SRON_Full_White.svg
 export { default as sronLogoSmallBlack } from './assets/logos/SRON_Small_Black.svg'
 export { default as sronLogoSmallBlue } from './assets/logos/SRON_Small_Blue.svg'
 export { default as sronLogoSmallWhite } from './assets/logos/SRON_Small_White.svg'
-export { default as nebulaLogoWhite } from './assets/logos/nebula_white.svg'
-export { default as nebulaLogoBlack } from './assets/logos/nebula_black.svg'
 
 // Company logos
 export { default as logoAirborne } from './assets/images/sponsors/airborne-logo.png'
@@ -98,6 +98,7 @@ export { default as nebulaXplorer } from './assets/images/nebula-xplorer.jpg'
 export { default as nwoIcon } from './assets/images/NWO.webp'
 export { default as placeholder1 } from './assets/images/placeholder1.jpg'
 export { default as placeholder2 } from './assets/images/placeholder2.jpg'
+
 export { default as rapidStep2 } from './assets/images/Rapid-step-2.jpg'
 export { default as rocketLaunchStep5 } from './assets/images/rocket-launch-step-5.jpg'
 export { default as rushilImage } from './assets/images/rushil.jpg'
