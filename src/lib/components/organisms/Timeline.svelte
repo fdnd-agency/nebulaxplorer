@@ -5,81 +5,73 @@
 		rocketLaunchStep5,
 		sronReviewStep1,
 	} from '$lib'
-	// import { onMount } from 'svelte'
-
-	// onMount(() => {
-	// 	let detailsElements = document.querySelectorAll('details')
-	// 	detailsElements.forEach((element) => {
-	// 		element.addEventListener('toggle', transition)
-	// 	})
-	// })
-
-	// async function transition() {
-	// 	if (document.startViewTransition) {
-	// 		const transition = document.startViewTransition(() => {
-	//
-	// 		})
-	// 	} else {
-	//
-	// 	}
-	// }
 </script>
 
-<h3 class="section_title">Mission Timeline</h3>
 <section>
-	<details name="timeline" open>
-		<summary class="caption">Reviews and Design Confirmation</summary>
-		<article class="paragraph">
-			Before production and launch, the project passes formal ECSS review
-			stages. The System Requirements Review (SRR) defines and validates
-			system needs. The Preliminary Design Review (PDR) evaluates the
-			current design. Finally, the Critical Design Review (CDR) confirms
-			readiness for manufacturing and verifies that a ll requirements are
-			met.
-		</article>
-	</details>
-	<details name="timeline">
-		<summary class="caption">Testing and Qualification (V&V)</summary>
-		<article class="paragraph">
-			Verification and Validation ensures that all systems perform
-			correctly. The Engineering Model (EM) is used for functional
-			testing, while the Proto Flight Model (PFM) undergoes strict
-			qualification tests. Activities include COTS component testing, FPGA
-			prototyping, and alignment of the Optical Bench Assembly to
-			withstand launch conditions.
-		</article>
-	</details>
-	<details name="timeline">
-		<summary class="caption">Assembly, Integration, and Test (AIT)</summary>
-		<article class="paragraph">
-			In the AIT phase, all subsystems are combined into a complete
-			satellite. This includes propulsion and navigation systems such as
-			star trackers. Interface control ensures compatibility between
-			components. The integration of the 15-inch MkII Motorized Lightband
-			connects the satellite securely to the launch vehicle.
-		</article>
-	</details>
-	<details name="timeline">
-		<summary class="caption">Launch Campaign (Pre-launch Phase)</summary>
-		<article class="paragraph">
-			At the launch site, final preparations are completed. The propulsion
-			system is fueled with propylene and nitrous oxide. The satellite is
-			mounted on a SpaceX Falcon 9 as a rideshare payload. The Flight
-			Readiness Review (FRR) confirms launch readiness before liftoff and
-			the start of LEOP.
-		</article>
-	</details>
+	<h3 class="section_title">Mission Timeline</h3>
+	<article>
+		<details name="timeline" open>
+			<summary class="caption">Reviews and Design Confirmation</summary>
+			<p class="paragraph">
+				Before production and launch, the project passes formal ECSS
+				review stages. The System Requirements Review (SRR) defines and
+				validates system needs. The Preliminary Design Review (PDR)
+				evaluates the current design. Finally, the Critical Design
+				Review (CDR) confirms readiness for manufacturing and verifies
+				that a ll requirements are met.
+			</p>
+		</details>
+		<details name="timeline">
+			<summary class="caption">Testing and Qualification (V&V)</summary>
+			<p class="paragraph">
+				Verification and Validation ensures that all systems perform
+				correctly. The Engineering Model (EM) is used for functional
+				testing, while the Proto Flight Model (PFM) undergoes strict
+				qualification tests. Activities include COTS component testing,
+				FPGA prototyping, and alignment of the Optical Bench Assembly to
+				withstand launch conditions.
+			</p>
+		</details>
+		<details name="timeline">
+			<summary class="caption"
+				>Assembly, Integration, and Test (AIT)</summary>
+			<p class="paragraph">
+				In the AIT phase, all subsystems are combined into a complete
+				satellite. This includes propulsion and navigation systems such
+				as star trackers. Interface control ensures compatibility
+				between components. The integration of the 15-inch MkII
+				Motorized Lightband connects the satellite securely to the
+				launch vehicle.
+			</p>
+		</details>
+		<details name="timeline">
+			<summary class="caption"
+				>Launch Campaign (Pre-launch Phase)</summary>
+			<p class="paragraph">
+				At the launch site, final preparations are completed. The
+				propulsion system is fueled with propylene and nitrous oxide.
+				The satellite is mounted on a SpaceX Falcon 9 as a rideshare
+				payload. The Flight Readiness Review (FRR) confirms launch
+				readiness before liftoff and the start of LEOP.
+			</p>
+		</details>
+	</article>
 </section>
 
 <style>
+	section {
+		margin-block: calc(2rem + 2vw);
+	}
+
 	h3 {
 		max-width: var(--content-width);
 		width: 100%;
 		margin-inline: auto;
 		padding: 0;
+		margin-block-end: .5em;
 	}
 
-	section {
+	article {
 		border: 1px solid white;
 		padding: 1rem;
 		margin-inline: auto;
@@ -173,7 +165,7 @@
 		}
 	}
 
-	article {
+	p {
 		max-height: 100%;
 		overflow-y: auto;
 		scrollbar-color: var(--space-60) var(--space-100);
