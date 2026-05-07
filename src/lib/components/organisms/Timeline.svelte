@@ -33,8 +33,9 @@
 			</p>
 		</details>
 		<details name="timeline">
-			<summary class="caption"
-				>Assembly, Integration, and Test (AIT)</summary>
+			<summary class="caption">
+				Assembly, Integration, and Test (AIT)
+			</summary>
 			<p class="paragraph">
 				In the AIT phase, all subsystems are combined into a complete
 				satellite. This includes propulsion and navigation systems such
@@ -45,8 +46,9 @@
 			</p>
 		</details>
 		<details name="timeline">
-			<summary class="caption"
-				>Launch Campaign (Pre-launch Phase)</summary>
+			<summary class="caption">
+				Launch Campaign (Pre-launch Phase)
+			</summary>
 			<p class="paragraph">
 				At the launch site, final preparations are completed. The
 				propulsion system is fueled with propylene and nitrous oxide.
@@ -55,7 +57,11 @@
 				readiness before liftoff and the start of LEOP.
 			</p>
 		</details>
+		<div class="rocket">🚀</div>
+		<div class="background"></div>		
 	</article>
+
+	
 </section>
 
 <style>
@@ -68,7 +74,7 @@
 		width: 100%;
 		margin-inline: auto;
 		padding: 0;
-		margin-block-end: .5em;
+		margin-block-end: 0.5em;
 	}
 
 	article {
@@ -76,6 +82,7 @@
 		padding: 1rem;
 		margin-inline: auto;
 		max-width: var(--content-width);
+		position: relative;
 
 		@media (width > 56.25rem) {
 			display: grid;
@@ -159,9 +166,12 @@
 		}
 
 		&::before {
-			content: '✨';
+			content: '◯' / '';
 			position: absolute;
 			align-self: center;
+			transform: scale(1);
+			transition: 1s;
+			transform-origin: center;
 		}
 	}
 
@@ -176,7 +186,8 @@
 		pointer-events: none;
 
 		&::before {
-			content: '🚀';
+			content: '◯' / '';
+			transform: scale(0.1);
 		}
 	}
 
@@ -218,5 +229,35 @@
 
 	details:nth-of-type(5) summary {
 		grid-row: 5 / span 1;
+	}
+
+	article:has(details:nth-of-type(2)[open]) .rocket{
+		top: 35%;
+	}
+
+	article:has(details:nth-of-type(3)[open]) .rocket {
+		top: 59%;
+	}
+
+	article:has(details:nth-of-type(4)[open]) .rocket {
+		top: 82.5%;
+	}
+
+	.rocket {
+		position: absolute;
+		top: 12%;
+		left: 1rem;
+		font-size: 2rem;
+		transition: 1s;
+		z-index: 1;
+	}
+
+	.background {
+		position: absolute;
+		top: 15%;
+		left: 2rem;
+		bottom: 15%;
+		background: white;
+		width: 2px;
 	}
 </style>
