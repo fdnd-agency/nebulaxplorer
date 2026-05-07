@@ -121,7 +121,7 @@
 		--space-mid-opacity: hsla(238, 35%, 15%, 0.75);
 		--gradient: linear-gradient(
 			transparent 0%,
-			transparent 30%,
+			var(--space-mid-opacity) 30%,
 			var(--space-mid-opacity) 100%
 		);
 
@@ -171,6 +171,12 @@
 			position: absolute;
 			align-self: center;
 		}
+	}
+
+	article {
+		max-height: 100%;
+		overflow-y: auto;
+		scrollbar-color: var(--space-60) var(--space-100);
 	}
 
 	details[open] summary {
