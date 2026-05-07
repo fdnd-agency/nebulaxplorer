@@ -53,7 +53,7 @@
 		max-height: 10rem;
 		width: auto;
 		max-width: 100%;
-        transition: .3s;
+		transition: 0.3s;
 	}
 
 	a:hover img {
