@@ -1,5 +1,6 @@
 <script>
 	import { page } from '$app/stores'
+	import { resolve } from '$app/paths'
 	import { onNavigate, afterNavigate, beforeNavigate } from '$app/navigation'
 	import { onMount } from 'svelte'
 	import { Footer, favIcon as favicon, PageArrow } from '$lib'
@@ -26,7 +27,7 @@
 		if (!document.startViewTransition) return
 
 		return new Promise((resolve) => {
-			const transition = document.startViewTransition(async () => {
+			document.startViewTransition(async () => {
 				expanded = false
 
 				resolve()
@@ -94,7 +95,7 @@
 				</a>
 			</li>
 			<!-- Loop over each object -->
-			{#each navItems as { path, label }}
+			{#each navItems as { path, label } (path)}
 				<li
 					class={isExactActive(path)
 						? 'exact-active'
@@ -105,7 +106,7 @@
 						<PageArrow />
 					{/if}
 					<a
-						href={path}
+						href={resolve(path)}
 						aria-current={isExactActive(path) ? 'page' : undefined}>
 						{label}
 					</a>

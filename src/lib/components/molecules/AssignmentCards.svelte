@@ -1,4 +1,6 @@
 <script>
+	import { resolve } from '$app/paths'
+
 	const { assignments } = $props()
 </script>
 
@@ -15,10 +17,10 @@
 		</header>
 
 		<ul class="assignments-container">
-			{#each assignments as assignment}
+			{#each assignments as assignment (assignment.id)}
 				<li class="assignment-card">
 					<section class="assignment-content">
-						<a href={`/assignments/${assignment.id}`}>
+						<a href={resolve(`/assignments/${assignment.id}`)}>
 							<h3 class="assignment-title">{assignment.title}</h3>
 						</a>
 						<div>

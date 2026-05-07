@@ -9,8 +9,6 @@
 		nebulaXplorerEnhanced as step3Image,
 		aeroDefenseTestingStep4Enhanced as step4Image,
 		rocketLaunchStep5Enhanced as step5Image,
-		sronAcademyLogoOnSpaceBlue as logo,
-		blackholeHeroEnhanced as heroImg,
 	} from '$lib'
 </script>
 
