@@ -41,7 +41,7 @@
 
 	ul {
 		display: flex;
-		flex-direction: horizontal;
+		flex-direction: row;
 		gap: 1rem;
 		flex-wrap: wrap;
 		list-style: none;
