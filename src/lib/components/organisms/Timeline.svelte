@@ -113,6 +113,11 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 
+		opacity: 0;
+		transition:
+			opacity 0.4s,
+			content-visibility 0.4s allow-discrete;
+
 		--space-mid-opacity: hsla(238, 35%, 15%, 0.75);
 		--gradient: linear-gradient(
 			transparent 0%,
@@ -124,11 +129,25 @@
 			grid-column: 2;
 			grid-row: 1 / -1;
 			height: auto;
+
+			--gradient: linear-gradient(
+				transparent 0%,
+				transparent 30%,
+				var(--space-mid-opacity) 100%
+			);
 		}
+	}
+
+	details[open]::details-content {
+		opacity: 1;
 	}
 
 	details:not([open])::details-content {
 		display: none;
+
+		@media (width > 56.25rem) {
+			display: inherit;
+		}
 	}
 
 	summary {
