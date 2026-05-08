@@ -1,12 +1,3 @@
-<script>
-	import {
-		placeholder1,
-		placeholder2,
-		rocketLaunchStep5,
-		sronReviewStep1,
-	} from '$lib'
-</script>
-
 <section>
 	<h3 class="section_title">Mission Timeline</h3>
 	<article>
@@ -18,7 +9,7 @@
 				validates system needs. The Preliminary Design Review (PDR)
 				evaluates the current design. Finally, the Critical Design
 				Review (CDR) confirms readiness for manufacturing and verifies
-				that a ll requirements are met.
+				that all requirements are met.
 			</p>
 		</details>
 		<details name="timeline">
