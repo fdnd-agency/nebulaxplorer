@@ -37,8 +37,6 @@
 <style>
 	li {
 		position: relative; /* this doesnt do anything by itself, but it makes the a::after pseudocontent take the correct position */
-		/* align-self: center; */
-		/* max-width: 300px; */
 		text-align: center;
 		
 		background-color: var(--space-160);
@@ -102,6 +100,5 @@
 		object-fit: contain;
 		width: auto;
 		max-width: 100%;
-		/* max-height: 70vw; */
 	}
 </style>
