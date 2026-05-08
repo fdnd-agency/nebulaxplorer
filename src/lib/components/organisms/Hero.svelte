@@ -12,6 +12,7 @@
 		fullScreen = false,
 		logoOverlay = false,
 		bottomLayout = false,
+		focalPoint = 'center',
 	} = $props()
 
 	// Validation to prevent empty alt text
@@ -23,7 +24,8 @@
 <section
 	class="hero {fullScreen ? 'fullscreen' : ''} {bottomLayout
 		? 'bottom-layout'
-		: ''}">
+		: ''}"
+	style="--focal-point: {focalPoint}">
 	{#if paragraph}
 		<p class="subheading">{paragraph}</p>
 	{/if}
@@ -89,7 +91,7 @@
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
-				object-position: center;
+				object-position: var(--focal-point);
 				z-index: -1;
 			}
 		}
