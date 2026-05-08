@@ -24,7 +24,7 @@
 	background={{ file: nebulaTeamBeginning, alt: 'test' }}
 	logoOverlay
 	bottomLayout
-	focalPoint="100% 25%" />
+	focalPoint="100% 30%" />
 
 <Breadcrumb />
 
