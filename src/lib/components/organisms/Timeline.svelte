@@ -58,10 +58,8 @@
 			</p>
 		</details>
 		<div class="rocket">🚀</div>
-		<div class="background"></div>		
+		<div class="background"></div>
 	</article>
-
-	
 </section>
 
 <style>
@@ -231,7 +229,7 @@
 		grid-row: 5 / span 1;
 	}
 
-	article:has(details:nth-of-type(2)[open]) .rocket{
+	article:has(details:nth-of-type(2)[open]) .rocket {
 		top: 35%;
 	}
 
@@ -244,20 +242,27 @@
 	}
 
 	.rocket {
-		position: absolute;
-		top: 12%;
-		left: 1rem;
-		font-size: 2rem;
-		transition: 1s;
-		z-index: 1;
+		display: none;
 	}
 
-	.background {
-		position: absolute;
-		top: 15%;
-		left: 2rem;
-		bottom: 15%;
-		background: white;
-		width: 2px;
+	@media (width > 56.25rem) {
+		.rocket {
+			display: block;
+			position: absolute;
+			top: 12%;
+			left: 1rem;
+			font-size: 2rem;
+			transition: 1s;
+			z-index: 1;
+		}
+
+		.background {
+			position: absolute;
+			top: 15%;
+			left: 2rem;
+			bottom: 15%;
+			background: white;
+			width: 2px;
+		}
 	}
 </style>
