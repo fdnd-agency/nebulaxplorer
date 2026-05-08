@@ -54,6 +54,8 @@
 </section>
 
 <style>
+	/* Source used: https://css-tricks.com/pure-css-tabs-with-details-grid-and-subgrid/ */
+
 	section {
 		margin-block: calc(2rem + 2vw);
 		container-type: inline-size;
@@ -67,6 +69,7 @@
 		margin-block-end: 0.5em;
 	}
 
+	/* Timeline grid container */
 	article {
 		border: 1px solid white;
 		padding: 1rem;
@@ -177,15 +180,16 @@
 
 	details[open] summary {
 		font-weight: bold;
-		pointer-events: none;
+		pointer-events: none; /* ensures there is always one details open */
 
 		&::before {
-			content: '◯' / '';
 			content: '';
 			background-image: radial-gradient(white 50%, transparent 50%);
 			transform: scale(0.1);
 		}
 	}
+
+	/* Set background images for each details element */
 
 	details:nth-of-type(1) summary {
 		grid-row: 1 / span 1;
@@ -223,21 +227,7 @@
 			var(--gradient), url('$lib/assets/images/rocket-launch-step-5.jpg');
 	}
 
-	details:nth-of-type(5) summary {
-		grid-row: 5 / span 1;
-	}
-
-	article:has(details:nth-of-type(2)[open]) .rocket {
-		top: 35%;
-	}
-
-	article:has(details:nth-of-type(3)[open]) .rocket {
-		top: 59%;
-	}
-
-	article:has(details:nth-of-type(4)[open]) .rocket {
-		top: 82.5%;
-	}
+	/* Decorative rocket timeline */
 
 	.rocket {
 		display: none;
@@ -263,5 +253,17 @@
 			width: 2px;
 			z-index: 1;
 		}
+	}
+
+	article:has(details:nth-of-type(2)[open]) .rocket {
+		top: 35%;
+	}
+
+	article:has(details:nth-of-type(3)[open]) .rocket {
+		top: 59%;
+	}
+
+	article:has(details:nth-of-type(4)[open]) .rocket {
+		top: 82.5%;
 	}
 </style>
