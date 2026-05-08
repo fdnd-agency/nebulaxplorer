@@ -57,8 +57,8 @@
 				readiness before liftoff and the start of LEOP.
 			</p>
 		</details>
-		<div class="rocket">🚀</div>
-		<div class="background"></div>
+		<div class="rocket" aria-hidden="true">🚀</div>
+		<div class="background" aria-hidden="true"></div>
 	</article>
 </section>
 
@@ -164,12 +164,16 @@
 		}
 
 		&::before {
-			content: '◯' / '';
+			content: '';
+			background-image: radial-gradient(white 50%, transparent 50%);
 			position: absolute;
 			align-self: center;
 			transform: scale(1);
 			transition: 1s;
 			transform-origin: center;
+			height: 2rem;
+			width: 2rem;
+			z-index: 2;
 		}
 	}
 
@@ -185,6 +189,8 @@
 
 		&::before {
 			content: '◯' / '';
+			content: '';
+			background-image: radial-gradient(white 50%, transparent 50%);
 			transform: scale(0.1);
 		}
 	}
@@ -253,7 +259,7 @@
 			left: 1rem;
 			font-size: 2rem;
 			transition: 1s;
-			z-index: 1;
+			z-index: 2;
 		}
 
 		.background {
@@ -263,6 +269,7 @@
 			bottom: 15%;
 			background: white;
 			width: 2px;
+			z-index: 1;
 		}
 	}
 </style>
