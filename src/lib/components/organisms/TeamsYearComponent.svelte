@@ -1,6 +1,6 @@
 <script>
 	/* eslint-disable svelte/require-each-key */
-	import {TeamsComponent} from '$lib'
+	import { TeamsComponent } from '$lib'
 
 	let { year } = $props()
 </script>
@@ -26,18 +26,17 @@
 	}
 
 	ul {
-		 list-style: none;
+		list-style: none;
 
 		display: grid;
 		grid-template-columns: 1fr;
-		
+
 		align-items: center;
-		
+
 		gap: 1.5em;
 
-		@media (min-width: 450px){
-		grid-template-columns: 1fr 1fr;
-
+		@media (min-width: 450px) {
+			grid-template-columns: 1fr 1fr;
 		}
 	}
 </style>

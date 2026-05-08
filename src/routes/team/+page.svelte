@@ -1,54 +1,50 @@
 <script>
-/* eslint-disable svelte/require-each-key */
-	
-	import { Hero, Breadcrumb, TeamsYearComponent} from '$lib'
+	/* eslint-disable svelte/require-each-key */
 
-	const dummydata = [	
+	import { Hero, Breadcrumb, TeamsYearComponent } from '$lib'
+
+	const dummydata = [
 		{
-			"id":1,
-			"time_end":"2026-06-30T12:00:00",
-			"time_start":"2026-02-02T12:00:00",
-			"group_photo":"74be76b4-ff0d-4eec-a237-be283887ff99"
+			id: 1,
+			time_end: '2026-06-30T12:00:00',
+			time_start: '2026-02-02T12:00:00',
+			group_photo: '74be76b4-ff0d-4eec-a237-be283887ff99',
 		},
 		{
-			"id":2,
-			"time_end":"2026-12-30T12:00:00",
-			"time_start":"2026-08-02T12:00:00",
-			"group_photo":"74be76b4-ff0d-4eec-a237-be283887ff99"
-		},{
-			"id":3,
-			"time_end":"2025-06-30T12:00:00",
-			"time_start":"2025-02-02T12:00:00",
-			"group_photo":"24c28826-6456-46f6-8892-d94bf2d827f2"
+			id: 2,
+			time_end: '2026-12-30T12:00:00',
+			time_start: '2026-08-02T12:00:00',
+			group_photo: '74be76b4-ff0d-4eec-a237-be283887ff99',
 		},
 		{
-			"id":4,
-			"time_end":"2025-12-30T12:00:00",
-			"time_start":"2025-08-02T12:00:00",
-			"group_photo":"74be76b4-ff0d-4eec-a237-be283887ff99"
-		}
+			id: 3,
+			time_end: '2025-06-30T12:00:00',
+			time_start: '2025-02-02T12:00:00',
+			group_photo: '24c28826-6456-46f6-8892-d94bf2d827f2',
+		},
+		{
+			id: 4,
+			time_end: '2025-12-30T12:00:00',
+			time_start: '2025-08-02T12:00:00',
+			group_photo: '74be76b4-ff0d-4eec-a237-be283887ff99',
+		},
+	]
 
-]
+	function groupByYear(data) {
+		const groupedByYear = data.reduce((acc, current) => {
+			const year = new Date(current.time_start).getFullYear()
+			if (!acc[year]) {
+				acc[year] = []
+			}
+			acc[year].push(current)
+			return acc
+		}, {})
 
-function groupByYear(data){
-	const groupedByYear = data.reduce((acc, current) => {
-		const year = new Date(current.time_start).getFullYear();
-		if (!acc[year]) {
-			acc[year] = [];
-		}
-		acc[year].push(current);
-		return acc;
-	}, {});
+		return Object.entries(groupedByYear)
+	}
 
-
-	return Object.entries(groupedByYear);
-}
-
-const resultArray = groupByYear(dummydata);
-const sortedResults = resultArray.sort((a, b) => b[0] - a[0]);
-
-
-
+	const resultArray = groupByYear(dummydata)
+	const sortedResults = resultArray.sort((a, b) => b[0] - a[0])
 </script>
 
 <svelte:head>
@@ -62,22 +58,18 @@ const sortedResults = resultArray.sort((a, b) => b[0] - a[0]);
 <Hero titleColor="var(--white)" pageTitle="Team" />
 <Breadcrumb />
 <section class="content-container">
-<h2 class="section-title">who are we?</h2>
+	<h2 class="section-title">who are we?</h2>
 	{#each sortedResults as year}
-	
-		<TeamsYearComponent year={year} />
-		
+		<TeamsYearComponent {year} />
 	{/each}
 </section>
 
 <style>
-
-.content-container{
-	display: flex;
-	flex-direction: column;
-	max-width: 1000px;
-	justify-content: center;
-	padding-bottom: 2em;
-}
-
+	.content-container {
+		display: flex;
+		flex-direction: column;
+		max-width: 1000px;
+		justify-content: center;
+		padding-bottom: 2em;
+	}
 </style>

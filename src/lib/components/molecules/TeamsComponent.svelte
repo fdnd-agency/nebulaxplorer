@@ -23,34 +23,32 @@
 <li>
 	<img
 		src={`https://fdnd-agency.directus.app/assets/${teams.group_photo}`}
-		alt="" 
+		alt=""
 		width="300"
-		loading="lazy"
-		/>
+		loading="lazy" />
 
-	<a href={resolve('/team/' + teams.id)}
-		>
-			{month[startDate.getMonth()]} - {month[endDate.getMonth()]}
-		</a>
+	<a href={resolve('/team/' + teams.id)}>
+		{month[startDate.getMonth()]} - {month[endDate.getMonth()]}
+	</a>
 </li>
 
 <style>
 	li {
 		position: relative; /* this doesnt do anything by itself, but it makes the a::after pseudocontent take the correct position */
 		text-align: center;
-		
+
 		background-color: var(--space-160);
-		
+
 		height: 100%;
 
 		display: grid;
-		grid-template-areas: 
-		"img" 
-		"link";
+		grid-template-areas:
+			'img'
+			'link';
 
 		grid-template-rows: auto 2.5lh;
 
-		&:hover{
+		&:hover {
 			background-color: #283756;
 		}
 
@@ -59,10 +57,12 @@
 		}
 
 		/* dit blokje code is vijwel helemaal gekopieëerd vanuit Iris' newscard component*/
-		@media (prefers-reduced-motion: no-preference) { /* ALS reduced motion NIET aanstaat; */
-			transition: 0.3s ease;	/* (op geleidelijke wijze) */
+		@media (prefers-reduced-motion: no-preference) {
+			/* ALS reduced motion NIET aanstaat; */
+			transition: 0.3s ease; /* (op geleidelijke wijze) */
 
-			&:hover { /* EN ALS er gehoverd wordt */
+			&:hover {
+				/* EN ALS er gehoverd wordt */
 				transform: translateY(-0.5rem); /* verplaats iets naar boven */
 			}
 		}
@@ -89,9 +89,7 @@
 		content: '';
 		position: absolute;
 		inset: 0; /*shorthand for left, top, right, and bottom properties */
-		}
-
-	
+	}
 
 	img {
 		align-self: center;
