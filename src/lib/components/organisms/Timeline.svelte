@@ -56,6 +56,7 @@
 <style>
 	section {
 		margin-block: calc(2rem + 2vw);
+		container-type: inline-size;
 	}
 
 	h3 {
@@ -73,7 +74,7 @@
 		max-width: var(--content-width);
 		position: relative;
 
-		@media (width > 56.25rem) {
+		@container (width > 50rem) {
 			display: grid;
 			grid-template-columns: 1fr 2fr;
 			grid-template-rows: repeat(4, 1fr);
@@ -82,7 +83,7 @@
 	}
 
 	details {
-		@media (width > 56.25rem) {
+		@container (width > 50rem) {
 			display: grid;
 			grid-template-columns: subgrid;
 			grid-template-rows: subgrid;
@@ -113,7 +114,7 @@
 			var(--space-mid-opacity) 100%
 		);
 
-		@media (width > 56.25rem) {
+		@container (width > 50rem) {
 			grid-column: 2;
 			grid-row: 1 / -1;
 			height: auto;
@@ -133,7 +134,7 @@
 	details:not([open])::details-content {
 		display: none;
 
-		@media (width > 56.25rem) {
+		@container (width > 50rem) {
 			display: inherit;
 		}
 	}
@@ -242,7 +243,7 @@
 		display: none;
 	}
 
-	@media (width > 56.25rem) {
+	@container (width > 50rem) {
 		.rocket {
 			display: block;
 			position: absolute;
