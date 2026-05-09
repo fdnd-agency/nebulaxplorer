@@ -82,6 +82,10 @@
 			color: var(--ultra-140);
 		}
 
+		a {
+			outline: none;
+		}
+
 		p {
 			font-family: var(--heading);
 			font-weight: 900;
