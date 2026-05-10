@@ -20,7 +20,7 @@ export { default as UnderConstruction } from './components/molecules/UnderConstr
 export { default as ScientificTestimonial } from './components/molecules/ScientificTestimonial.svelte'
 export { default as FooterLocations } from './components/molecules/FooterLocations.svelte'
 export { default as FooterNav } from './components/molecules/FooterNav.svelte'
-
+export { default as ScrollRocket} from './components/molecules/ScrollRocket.svelte'
 // Atoms
 export { default as Mission } from './components/atoms/Mission.svelte'
 export { default as Footnote } from './components/atoms/FooterFootnote.svelte'

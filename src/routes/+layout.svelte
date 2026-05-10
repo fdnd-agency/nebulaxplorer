@@ -5,6 +5,7 @@
 	import { Footer, favIcon as favicon, PageArrow } from '$lib'
 	import '$lib/assets/styles/general.css'
 	import '$lib/assets/styles/layout.css'
+	import ScrollRocket from '$lib/components/molecules/ScrollRocket.svelte'
 
 	let expanded = $state(false)
 	let root
@@ -119,6 +120,9 @@
 	{@render children?.()}
 </main>
 <!-- For some reason, passing navItems directly did not pass the prop correctly -->
+
+<ScrollRocket />
+
 <Footer {navItems} />
 
 <style>
