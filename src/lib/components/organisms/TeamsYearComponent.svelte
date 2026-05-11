@@ -17,7 +17,7 @@
 <style>
 	h3 {
 		font-size: 1.5rem;
-		margin: 1rem;
+		margin-block: 1rem;
 	}
 
 	article {
