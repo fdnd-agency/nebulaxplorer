@@ -9,9 +9,8 @@
 
 	onMount(() => {
 		gsap.registerPlugin(ScrollTrigger);
-
 		gsap.to(rocketEl, {
-			y: () => window.innerHeight - 100,
+			y: () => window.innerHeight - 20,
 			ease: 'none',
 			scrollTrigger: {
 				trigger: document.body,
@@ -27,22 +26,24 @@
 	<div class="vertical-line"></div>
 
 	<div class="rocket-wrapper" bind:this={rocketEl}>
-		<img src={rocket} alt="Rocket" class="rocket" />
-
-		<div class="flame"></div>
+		<img src={rocket} alt="" class="rocket" />
 	</div>
 </div>
 
 <style>
-
 .scroll-track {
 	position: fixed;
-	right: 0;
+	right: 16px;
 	top: 0;
 	height: 100vh;
-	width: 36px;
+	width: 40px;
 	pointer-events: none;
-	z-index: 9999;
+	z-index: 1;
+
+	@media (min-width: 768px) {
+		width: 60px;
+		right: 0;
+	}
 }
 
 .vertical-line {
@@ -68,44 +69,9 @@
 .rocket {
 	width: 26px;
 	display: block;
-}
 
-/* flame */
-.flame {
-	width: 6px;
-	height: 18px;
-	background: orange;
-	border-radius: 50%;
-	filter: blur(3px);
-	margin-top: -4px;
-	opacity: 0.8;
-	animation: flicker 0.12s infinite alternate;
-}
-
-@keyframes flicker {
-	from {
-		transform: scaleY(1);
-		opacity: 0.6;
-	}
-
-	to {
-		transform: scaleY(1.4);
-		opacity: 1;
-	}
-}
-
-@media (min-width: 768px) {
-	.scroll-track {
-		width: 50px;
-	}
-
-	.rocket {
+	@media (min-width: 768px) {
 		width: 40px;
-	}
-
-	.flame {
-		width: 10px;
-		height: 28px;
 	}
 }
 </style>
