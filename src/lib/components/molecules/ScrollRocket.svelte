@@ -34,17 +34,6 @@
 </div>
 
 <style>
-:global(html, body) {
-	margin: 0;
-	padding: 0;
-	overflow-x: hidden;
-	scrollbar-width: none;
-	-ms-overflow-style: none;
-}
-
-:global(body::-webkit-scrollbar) {
-	display: none;
-}
 
 .scroll-track {
 	position: fixed;
@@ -74,7 +63,6 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	will-change: transform;
 }
 
 .rocket {
