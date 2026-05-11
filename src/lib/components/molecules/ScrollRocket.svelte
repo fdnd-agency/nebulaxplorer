@@ -8,7 +8,6 @@
 	let rocketEl;
 
 	onMount(() => {
-		console.log('GSAP loaded');
 		gsap.registerPlugin(ScrollTrigger);
 
 		gsap.to(rocketEl, {
@@ -29,10 +28,23 @@
 
 	<div class="rocket-wrapper" bind:this={rocketEl}>
 		<img src={rocket} alt="Rocket" class="rocket" />
+
+		<div class="flame"></div>
 	</div>
 </div>
 
 <style>
+:global(html, body) {
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+:global(body::-webkit-scrollbar) {
+	display: none;
+}
 
 .scroll-track {
 	position: fixed;
@@ -44,7 +56,6 @@
 	z-index: 9999;
 }
 
-/* vertical guide line */
 .vertical-line {
 	position: absolute;
 	left: 50%;
@@ -55,27 +66,46 @@
 	transform: translateX(-50%);
 }
 
-/* rocket container */
 .rocket-wrapper {
 	position: absolute;
 	left: 50%;
 	top: 0;
 	transform: translateX(-50%);
-	will-change: transform;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	will-change: transform;
 }
 
-/* rocket image */
 .rocket {
 	width: 26px;
 	display: block;
 }
 
-/* =========================
-   DESKTOP
-========================= */
+/* flame */
+.flame {
+	width: 6px;
+	height: 18px;
+	background: orange;
+	border-radius: 50%;
+	filter: blur(3px);
+	margin-top: -4px;
+	opacity: 0.8;
+	animation: flicker 0.12s infinite alternate;
+}
+
+@keyframes flicker {
+	from {
+		transform: scaleY(1);
+		opacity: 0.6;
+	}
+
+	to {
+		transform: scaleY(1.4);
+		opacity: 1;
+	}
+}
+
 @media (min-width: 768px) {
 	.scroll-track {
 		width: 50px;
@@ -83,6 +113,11 @@
 
 	.rocket {
 		width: 40px;
+	}
+
+	.flame {
+		width: 10px;
+		height: 28px;
 	}
 }
 </style>
