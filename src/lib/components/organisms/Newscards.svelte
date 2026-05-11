@@ -4,33 +4,28 @@
 	let { news } = $props()
 </script>
 
-<section class="grid-wrapper content-container">
+<section>
 	{#if news && news.length > 0}
 		<ul class="news-grid">
 			{#each news as newscard}
 				<li class="news-card">
-					<a
-						href={'/news/' + (newscard.slug || newscard.id)}
-						class="news-card-link">
-						<div class="news-image">
-							<img
-								src={newscard.image
-									? 'https://fdnd-agency.directus.app/assets/' +
-										newscard.image
-									: placeholderImage}
-								alt={newscard.title}
-								height="264"
-								width="264" />
-						</div>
-						<div class="news-info">
-							<span class="news-label"></span>
+					<img
+						src={newscard.image
+							? 'https://fdnd-agency.directus.app/assets/' +
+								newscard.image
+							: placeholderImage}
+						alt=""
+						height="264"
+						width="264" />
+					<div class="news-info">
+						<time datetime={newscard.date}> {newscard.date}</time>
+						<a href={'/news/' + (newscard.slug || newscard.id)}>
 							<h3>{newscard.title || 'Untitled'}</h3>
-							<span class="news-label"></span>
-							{#if newscard.type || newscard.category}
-								<p>{newscard.type || newscard.category}</p>
-							{/if}
-						</div>
-					</a>
+						</a>
+						{#if newscard.type || newscard.category}
+							<p>{newscard.type || newscard.category}</p>
+						{/if}
+					</div>
 				</li>
 			{/each}
 		</ul>
@@ -40,26 +35,26 @@
 </section>
 
 <style>
-	.content-container {
-		padding: 0;
-	}
-
 	.news-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
 		gap: 2rem;
-		padding-bottom: 2rem;
-		padding-left: 0;
+		padding-block-end: 2rem;
+		padding-inline: 0;
+		margin-inline: auto;
+		width: 100%;
+		max-width: var(--content-width);
 		list-style: none;
 	}
 
 	.news-card {
+		position: relative;
 		background-color: var(--white);
 		box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
 		transition:
 			transform 0.3s ease,
 			box-shadow 0.3s ease;
-		padding-bottom: 3rem;
+		padding-bottom: 1.5rem;
 
 		&:hover,
 		&:focus-within {
@@ -78,14 +73,17 @@
 	}
 
 	.news-info {
-		padding: 0.75rem 0.75rem 0rem 0.75rem;
+		padding: 0.75rem;
 
 		h3 {
 			font-family: var(--heading);
-			font-weight: 400;
 			font-size: 1.3rem;
-			line-height: 1.75rem;
+			line-height: 1.35;
 			color: var(--ultra-140);
+		}
+
+		a {
+			outline: none;
 		}
 
 		p {
@@ -93,29 +91,29 @@
 			font-weight: 900;
 			font-size: 1.2rem;
 			color: var(--cleanroom-100);
-			padding: 0.5rem 0 0.5rem 0;
+			padding: 0.5rem 0;
 		}
 	}
 
-	.news-label {
-		font-family: var(--subtext);
-		font-weight: 900;
-		font-size: 1rem;
-		line-height: 1.4rem;
-		color: var(--space-140);
+	a::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
 	}
 
-	.news-image {
+	time {
+		font-family: var(--subtext);
+		line-height: 1.4;
+		color: var(--ultra-60);
+		font-size: 0.9rem;
+	}
+
+	img {
 		width: 100%;
 		height: 16.5rem;
-		overflow: hidden;
-		margin-top: auto;
-
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			object-position: center;
-		}
+		object-fit: cover;
 	}
 </style>
