@@ -12,34 +12,35 @@
 </script>
 
 <nav class={`breadcrumb-path ${contrast}`}>
-	<a href={resolve('/')} class="crumb subheading">home</a>
-	{#each pathSegments as segment, index (index)}
-		<span class="arrow">
-			<Arrow />
-		</span>
-		{#if index + 1 < pathSegments.length}
-			<a
-				href={resolve('/' + pathSegments.slice(0, index + 1).join('/'))}
-				class="crumb subheading">
-				{sanitizeString(segment)}
-			</a>
-		{:else}
-			<span class="caption">
-				{sanitizeString(segment)}
+	<div class="content-container">
+		<a href={resolve('/')} class="crumb subheading">home</a>
+		{#each pathSegments as segment, index (index)}
+			<span class="arrow">
+				<Arrow />
 			</span>
-		{/if}
-	{/each}
+			{#if index + 1 < pathSegments.length}
+				<a
+					href={resolve(
+						'/' + pathSegments.slice(0, index + 1).join('/')
+					)}
+					class="crumb subheading">
+					{sanitizeString(segment)}
+				</a>
+			{:else}
+				<span class="caption">
+					{sanitizeString(segment)}
+				</span>
+			{/if}
+		{/each}
+	</div>
 </nav>
 
 <style>
-	nav.breadcrumb-path {
-		display: inline-flex;
+	nav.breadcrumb-path div {
+		display: flex;
 		gap: 0.75rem;
 		align-items: center;
 		width: 100%;
-		max-width: var(--content-width);
-		margin-inline: auto;
-		padding: 0;
 
 		/* color schemes */
 
