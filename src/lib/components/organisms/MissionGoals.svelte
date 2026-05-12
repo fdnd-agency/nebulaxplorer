@@ -1,5 +1,5 @@
 <script>
-	export let colorScheme = 'light'
+	let { colorScheme = 'light' } = $props()
 </script>
 
 <section class="goals-block" class:dark={colorScheme === 'dark'}>
