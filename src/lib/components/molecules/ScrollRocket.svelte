@@ -1,31 +1,12 @@
 <script>
-	import { onMount } from 'svelte';
 	import rocket from '$lib/assets/logos/Scroll-rocket.svg';
-
-	import gsap from 'gsap';
-	import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-	let rocketEl;
-
-	onMount(() => {
-		gsap.registerPlugin(ScrollTrigger);
-		gsap.to(rocketEl, {
-			y: () => window.innerHeight - 20,
-			ease: 'none',
-			scrollTrigger: {
-				trigger: document.body,
-				start: 'top top',
-				end: 'bottom bottom',
-				scrub: true
-			}
-		});
-	});
+	import { ScrollRocket } from '$lib'
 </script>
 
 <div class="scroll-track">
 	<div class="vertical-line"></div>
 
-	<div class="rocket-wrapper" bind:this={rocketEl}>
+	<div class="rocket-wrapper">
 		<img src={rocket} alt="" class="rocket" />
 	</div>
 </div>
@@ -46,6 +27,7 @@
 	}
 }
 
+/* lijn in het midden */
 .vertical-line {
 	position: absolute;
 	left: 50%;
@@ -56,14 +38,27 @@
 	transform: translateX(-50%);
 }
 
+/* 🚀 ROCKET ANIMATION (scroll-driven) */
 .rocket-wrapper {
 	position: absolute;
 	left: 50%;
 	top: 0;
 	transform: translateX(-50%);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+
+	animation: rocketMove linear both;
+	animation-timeline: scroll(root);
+	animation-range: 0% 100%;
+}
+
+/* beweging van top → bottom van viewport */
+@keyframes rocketMove {
+	from {
+		transform: translateX(-50%) translateY(0);
+	}
+
+	to {
+		transform: translateX(-50%) translateY(calc(100vh - 20px));
+	}
 }
 
 .rocket {
