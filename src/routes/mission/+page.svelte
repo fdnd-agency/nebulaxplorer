@@ -146,7 +146,7 @@
 	</div>
 </section>
 
-<MissionGoals/>
+<MissionGoals />
 
 <!-- STEPS BLOCK -->
 
