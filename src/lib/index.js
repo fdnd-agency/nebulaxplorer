@@ -6,6 +6,8 @@ export { default as NewsComponent } from './components/organisms/NewsComponent.s
 export { default as Newscards } from './components/organisms/Newscards.svelte'
 export { default as PartnersCarousel } from './components/organisms/PartnersCarousel.svelte'
 export { default as PillarsComponent } from './components/organisms/PillarsComponent.svelte'
+export { default as TeamsYearComponent } from '$lib/components/organisms/TeamsYearComponent.svelte'
+export { default as Timeline } from './components/organisms/Timeline.svelte'
 
 // Molecules
 export { default as AssignmentCards } from './components/molecules/AssignmentCards.svelte'
@@ -17,9 +19,11 @@ export { default as MailingListSignup } from './components/molecules/MailingList
 export { default as Pagination } from './components/molecules/Pagination.svelte'
 export { default as ScientificTestimonial } from './components/molecules/ScientificTestimonial.svelte'
 export { default as Sponsors } from './components/molecules/Sponsors.svelte'
+export { default as TeamMemberCard } from './components/molecules/TeamMemberCard.svelte'
 export { default as Testimonial } from './components/molecules/Testimonial.svelte'
 export { default as TestimonialHeader } from './components/molecules/TestimonialHeader.svelte'
 export { default as UnderConstruction } from './components/molecules/UnderConstruction.svelte'
+export { default as TeamsComponent } from '$lib/components/molecules/TeamsComponent.svelte'
 
 // Atoms
 export { default as Footnote } from './components/atoms/FooterFootnote.svelte'
@@ -98,7 +102,7 @@ export { default as nebulaXplorer } from './assets/images/nebula-xplorer.jpg'
 export { default as nwoIcon } from './assets/images/NWO.webp'
 export { default as placeholder1 } from './assets/images/placeholder1.jpg'
 export { default as placeholder2 } from './assets/images/placeholder2.jpg'
-
+export { default as portraitPlaceholder } from './assets/images/portrait-placeholder.webp'
 export { default as rapidStep2 } from './assets/images/Rapid-step-2.jpg'
 export { default as rocketLaunchStep5 } from './assets/images/rocket-launch-step-5.jpg'
 export { default as rushilImage } from './assets/images/rushil.jpg'
@@ -107,6 +111,7 @@ export { default as sronGroningen } from './assets/images/sron-groningen.webp'
 export { default as sronLeiden } from './assets/images/sron-leiden.webp'
 export { default as sronOpenDay } from './assets/images/sron_openday.jpg'
 export { default as sronReviewStep1 } from './assets/images/sron-review-step-1.jpg'
+export { default as teamPhoto } from './assets/images/team-2026.webp'
 export { default as werkenbijSRON } from './assets/images/WerkenbijSRON.jpg'
 
 // Enhanced Images
@@ -115,6 +120,7 @@ export { default as blackholeEnhanced } from './assets/images/blackhole.jpg?enha
 export { default as blackholeHeroEnhanced } from './assets/images/blackhole-hero.png?enhanced&w=1920;1440;1024;768'
 export { default as gravWavesEnhanced } from './assets/images/grav-waves.jpg?enhanced&w=1920;1440;1024;768'
 export { default as nebulaSatelliteEnhanced } from './assets/images/nebula-satellite.png?enhanced'
+export { default as nebulaTeamBeginning } from './assets/images/nebula beginning.jpg?enhanced&w=1920;1440;1024;768'
 export { default as nebulaXplorerEnhanced } from './assets/images/nebula-xplorer.jpg?enhanced&w=1024;768;512'
 export { default as rapidStep2Enhanced } from './assets/images/Rapid-step-2.jpg?enhanced&w=1024;768;512'
 export { default as rocketLaunchStep5Enhanced } from './assets/images/rocket-launch-step-5.jpg?enhanced&w=1024;768;512'
