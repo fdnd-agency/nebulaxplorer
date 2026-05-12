@@ -50,35 +50,25 @@
 	li {
 		position: relative;
 		height: 10rem;
-		padding: 1em;
+		max-height: 10rem;
+		padding: 0.5em;
 		overflow: hidden;
-		display: flex;
-		align-items: center;
-		justify-content: center;
 		background-color: var(--space-140);
-
-		&:focus-within {
-			outline: var(--default-focus);
-		}
 	}
 
 	img {
 		height: auto;
-		max-height: 10rem;
+		max-height: 100%;
 		width: auto;
 		max-width: 100%;
 		transition: 0.3s;
 	}
 
-	a::after {
-		content: '';
-		position: absolute;
-		inset: 0;
-	}
-
-	a:focus,
-	a:focus-visible {
-		outline: none;
+	a {
+		display: flex;
+		height: 100%;
+		align-items: center;
+		justify-content: center;
 	}
 
 	a:hover img {
