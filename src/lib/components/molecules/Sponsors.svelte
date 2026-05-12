@@ -40,12 +40,26 @@
 	}
 
 	ul {
-		display: flex;
-		flex-direction: row;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 		gap: 1rem;
-		flex-wrap: wrap;
-		list-style: none;
 		margin-block: 2rem;
+		list-style: none;
+	}
+
+	li {
+		position: relative;
+		height: 10rem;
+		padding: 1em;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: var(--space-140);
+
+		&:focus-within {
+			outline: var(--default-focus);
+		}
 	}
 
 	img {
@@ -56,7 +70,18 @@
 		transition: 0.3s;
 	}
 
+	a::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+	}
+
+	a:focus,
+	a:focus-visible {
+		outline: none;
+	}
+
 	a:hover img {
-		transform: scale(1.05);
+		transform: scale(1.1);
 	}
 </style>
