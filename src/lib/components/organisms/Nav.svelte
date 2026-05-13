@@ -193,11 +193,7 @@
 		list-style: none;
 
 		@supports selector([popover]:popover-open) {
-			/*  Appears to be based on open menu button (.main-navigation button[popovertarget]): 
-			padding-block + .lines margin-top + .lines margin-top + .lines:first-child + some extra spacing? */
-			padding-top: calc(
-				1rem + 0.375rem + 0.375rem + 0.25rem + 1rem + 1rem
-			);
+			padding-top: 4rem;
 		}
 
 		@media (min-width: 56.25rem) {
