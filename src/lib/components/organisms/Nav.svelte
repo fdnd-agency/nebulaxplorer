@@ -20,8 +20,6 @@
 	<button popovertarget="menu">
 		<span class="visually-hidden">Open</span>Menu
 		<span class="lines"></span>
-		<span class="lines"></span>
-		<span class="lines"></span>
 	</button>
 
 	<nav popover id="menu">
@@ -108,18 +106,49 @@
 		}
 
 		.lines {
+			--thickness: 0.125rem;
+			--margin-top: 0.375rem;
+			--gap: 0.5rem;
+
 			display: block;
-			height: 0.125rem;
+			aspect-ratio: 1;
 			width: 85%;
-			background: currentColor;
-		}
 
-		.lines:first-child {
-			margin-top: 0.25rem;
-		}
-
-		.lines + .lines {
-			margin-top: 0.375rem;
+			background: linear-gradient(
+				transparent,
+				transparent var(--margin-top),
+				currentColor var(--margin-top),
+				currentColor calc(var(--margin-top) + var(--thickness)),
+				transparent calc(var(--margin-top) + var(--thickness)),
+				transparent
+					calc(var(--margin-top) + var(--thickness) + var(--gap)),
+				currentColor
+					calc(var(--margin-top) + var(--thickness) + var(--gap)),
+				currentColor
+					calc(var(--margin-top) + 2 * var(--thickness) + var(--gap)),
+				transparent
+					calc(var(--margin-top) + 2 * var(--thickness) + var(--gap)),
+				transparent
+					calc(
+						var(--margin-top) + 2 * var(--thickness) + 2 *
+							var(--gap)
+					),
+				currentColor
+					calc(
+						var(--margin-top) + 2 * var(--thickness) + 2 *
+							var(--gap)
+					),
+				currentColor
+					calc(
+						var(--margin-top) + 3 * var(--thickness) + 2 *
+							var(--gap)
+					),
+				transparent
+					calc(
+						var(--margin-top) + 3 * var(--thickness) + 2 *
+							var(--gap)
+					)
+			);
 		}
 	}
 
