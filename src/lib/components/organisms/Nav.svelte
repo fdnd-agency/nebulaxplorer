@@ -62,7 +62,6 @@
 		z-index: 10;
 		background: transparent;
 		font-family: var(--font-heading);
-		text-transform: capitalize;
 		color: var(--white);
 
 		@media (min-width: 56.25rem) {
@@ -287,6 +286,10 @@
 		padding: 1rem;
 		font-weight: inherit;
 		font-size: 1.25rem;
+
+		&::first-letter {
+			text-transform: uppercase;
+		}
 
 		&::before {
 			content: '';
