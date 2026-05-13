@@ -9,6 +9,10 @@
 		paragraph,
 		pageTitle = 'None set',
 		titleColor,
+		fullScreen = false,
+		logoOverlay = false,
+		bottomLayout = false,
+		focalPoint = 'center',
 	} = $props()
 
 	// Validation to prevent empty alt text
@@ -17,25 +21,36 @@
 	}
 </script>
 
-<section class="hero">
+<section
+	class="hero {fullScreen ? 'fullscreen' : ''} {bottomLayout
+		? 'bottom-layout'
+		: ''}"
+	style="--focal-point: {focalPoint}">
+	{#if paragraph}
+		<p class="subheading">{paragraph}</p>
+	{/if}
+	{#if background.file}
+		<enhanced:img
+			src={background.file}
+			alt={background.alt}
+			class="hero-bg"
+			sizes="100vw"
+			fetchpriority="high" />
+	{/if}
 	<div class="content-container">
-		{#if paragraph}
-			<p class="subheading">{paragraph}</p>
-		{/if}
-		{#if background.file}
-			<enhanced:img
-				src={background.file}
-				alt={background.alt}
-				class="hero-bg"
-				sizes="100vw"
-				fetchpriority="high" />
-		{/if}
-		{#if sronIcon}
-			<img src={sronIcon} alt="Logo of SRON Academy" class="hero-logo" />
-		{/if}
-		<h1 class="title" style={titleColor && `color: ${titleColor}`}>
-			{pageTitle}
-		</h1>
+		<div class="logo-container {logoOverlay ? 'logo-overlay' : ''}">
+			<div class="content-container-alt">
+				{#if sronIcon}
+					<img
+						src={sronIcon}
+						alt="Logo of SRON Academy"
+						class="hero-logo" />
+				{/if}
+				<h1 class="title" style={titleColor && `color: ${titleColor}`}>
+					{pageTitle}
+				</h1>
+			</div>
+		</div>
 	</div>
 </section>
 
@@ -46,8 +61,13 @@
 		position: relative;
 		padding: 1.5rem;
 		padding-top: 5.25rem;
+
 		@media (min-width: 56.25rem) {
 			padding: 3.5rem 4rem 2.25rem 0.5rem;
+
+			&.fullscreen {
+				padding-block: 14rem;
+			}
 		}
 
 		/* every adjecent elem should have margin-top; except for the picture as that is the background image. */
@@ -71,9 +91,14 @@
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
-				object-position: center;
+				object-position: var(--focal-point);
 				z-index: -1;
 			}
+		}
+
+		h1 {
+			padding-inline: 0.75em;
+			padding-block-start: 0.25em;
 		}
 
 		.hero-logo {
@@ -82,9 +107,65 @@
 			display: block;
 		}
 
-		@media (min-width: 56.25rem) {
+		.logo-overlay {
+			--space-mid-opacity: hsla(238, 35%, 15%, 0.75);
+
+			background-color: var(--space-mid-opacity);
+			width: min-content;
+			padding: 2em;
+		}
+
+		&.bottom-layout {
+			padding-inline: 0;
+			padding-block: 10rem 0;
+
+			@media (min-width: 56.25rem) {
+				padding-block: 50vh 0;
+			}
+
 			h1 {
-				padding-left: 3.5rem;
+				padding-block: 0.5em;
+			}
+
+			.content-container-alt {
+				width: 100%;
+				max-width: var(--content-width);
+				margin-inline: auto;
+				margin-block: 0;
+				display: flex;
+				align-items: center;
+				flex-wrap: wrap;
+			}
+
+			.logo-container {
+				width: 100%;
+				padding-block: 0;
+				margin-inline: 0;
+
+				@media (min-width: 56.25rem) {
+					padding-left: 4rem;
+				}
+			}
+
+			.logo-overlay {
+				background: linear-gradient(
+					transparent 0%,
+					var(--space-mid-opacity) 40%,
+					var(--space-100)
+				);
+			}
+
+			.content-container {
+				max-width: unset;
+			}
+
+			.hero-logo {
+				font-size: clamp(2.5rem, 5vw + 1rem, 4.375rem);
+				line-height: clamp(2.5rem, 5vw + 1rem, 4.625rem);
+				height: 2.5lh;
+				width: auto;
+				padding-block: 0.5em;
+				margin-inline-start: -0.5em;
 			}
 		}
 	}
