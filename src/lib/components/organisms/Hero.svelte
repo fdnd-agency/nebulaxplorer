@@ -1,6 +1,10 @@
 <script>
 	import { nebulaLogoWhite, blackholeHeroEnhanced } from '$lib'
 	const {
+		attribution = {
+			text: '',
+			link: '',
+		},
 		background = {
 			alt: 'A quasi-black hole',
 			file: blackholeHeroEnhanced,
@@ -30,12 +34,21 @@
 		<p class="subheading">{paragraph}</p>
 	{/if}
 	{#if background.file}
-		<enhanced:img
-			src={background.file}
-			alt={background.alt}
-			class="hero-bg"
-			sizes="100vw"
-			fetchpriority="high" />
+		<figure>
+			<enhanced:img
+				src={background.file}
+				alt={background.alt}
+				class="hero-bg"
+				sizes="100vw"
+				fetchpriority="high" />
+			{#if attribution.link != ''}
+				<figcaption>
+					<a href={attribution.link}>
+						{attribution.text ? attribution.text : attribution.link}
+					</a>
+				</figcaption>
+			{/if}
+		</figure>
 	{/if}
 	<div class="content-container">
 		<div class="logo-container {logoOverlay ? 'logo-overlay' : ''}">
@@ -93,6 +106,18 @@
 				object-fit: cover;
 				object-position: var(--focal-point);
 				z-index: -1;
+			}
+		}
+
+		figcaption {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			background: rgba(0, 0, 0, 0.493);
+			padding: 0.5em;
+
+			a:hover {
+				text-decoration: underline;
 			}
 		}
 

@@ -20,7 +20,17 @@
 		content="NEBULA-Xplorer will investigate how jets form and how X-ray binaries evolve. It will observe these objects for long periods of time to see how their emission varies on time scales from milliseconds to weeks." />
 </svelte:head>
 
-<Hero titleColor="var(--white)" pageTitle="" />
+<Hero
+	titleColor="var(--white)"
+	pageTitle=""
+	background={{
+		file: heroImg,
+		alt: 'test',
+	}}
+	attribution={{
+		text: 'NASA',
+		link: 'https://apod.nasa.gov/apod/ap260403.html',
+	}} />
 
 <News newsCards={data.newsItems} />
 
