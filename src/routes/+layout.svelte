@@ -63,3 +63,65 @@
 </main>
 
 <Footer {navItems} />
+
+<style>
+	/* VIEW TRANSITIONS */
+	/* default reduced-motion friendly transition */
+	:root::view-transition-old(root) {
+		animation: unset;
+	}
+
+	:root::view-transition-new(root) {
+		animation: unset;
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		:root::view-transition-old(root) {
+			animation:
+				0.3s ease-in both zoom-out,
+				0.7s ease-out both slide-to-top;
+		}
+
+		:root::view-transition-new(root) {
+			animation:
+				0.7s ease-out both slide-to-center,
+				0.3s ease-out 0.5s both zoom-in;
+		}
+
+		@keyframes zoom-in {
+			from {
+				scale: 0.85;
+			}
+			to {
+				scale: 1;
+			}
+		}
+
+		@keyframes zoom-out {
+			from {
+				scale: 1;
+			}
+			to {
+				scale: 0.85;
+			}
+		}
+
+		@keyframes slide-to-top {
+			from {
+				translate: 0 0;
+			}
+			to {
+				translate: 0 100%;
+			}
+		}
+
+		@keyframes slide-to-center {
+			from {
+				translate: 0 -100%;
+			}
+			to {
+				translate: 0 0%;
+			}
+		}
+	}
+</style>
