@@ -327,21 +327,6 @@
 				background-color: var(--space-100);
 			}
 		}
-
-		@keyframes fade-out {
-			to {
-				opacity: 0;
-			}
-		}
-
-		@keyframes fade-in {
-			from {
-				opacity: 0;
-			}
-			to {
-				opacity: 1;
-			}
-		}
 	}
 
 	/* These only need to happen on desktop */
