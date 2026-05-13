@@ -63,7 +63,7 @@
 		position: relative;
 		z-index: 10;
 		background: transparent;
-		font-family: SpaceGrotesk;
+		font-family: var(--font-heading);
 		text-transform: capitalize;
 		color: var(--white);
 
