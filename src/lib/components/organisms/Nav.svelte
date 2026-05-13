@@ -16,7 +16,7 @@
 	let { navItems } = $props()
 </script>
 
-<header class="main-navigation">
+<header>
 	<button popovertarget="menu">
 		<span class="visually-hidden">Open</span>Menu
 		<span class="lines"></span>
@@ -57,7 +57,7 @@
 
 <style>
 	/* The container of the nav: the header */
-	.main-navigation {
+	header {
 		display: flex;
 		justify-content: flex-end;
 		position: relative;
@@ -85,7 +85,7 @@
 	}
 
 	/* The button that opens the nav */
-	.main-navigation button[popovertarget] {
+	button[popovertarget] {
 		display: none;
 		flex-direction: column;
 		justify-content: space-between;
@@ -124,7 +124,7 @@
 	}
 
 	/* The nav element in the header */
-	.main-navigation nav {
+	nav {
 		justify-self: end;
 		translate: 0 0;
 		height: 100%;
@@ -184,7 +184,7 @@
 	}
 
 	/* List of nav items */
-	.main-navigation ul {
+	ul {
 		display: flex;
 		flex-direction: column;
 		gap: 2.5rem;
@@ -206,7 +206,7 @@
 	}
 
 	/* Individual nav items */
-	.main-navigation li {
+	li {
 		display: flex;
 		flex-direction: row-reverse;
 		width: fit-content;
@@ -252,7 +252,7 @@
 		}
 	}
 
-	.main-navigation li a {
+	li a {
 		display: inline-block;
 		position: relative;
 		padding: 1rem;
@@ -275,12 +275,12 @@
 	}
 
 	/* By default: don't display the button. */
-	.main-navigation nav button[popovertargetaction='hide'] {
+	nav button[popovertargetaction='hide'] {
 		display: none;
 	}
 
 	/* When the popover selector is supported: display the button, but only when the nav is open. */
-	.main-navigation nav:popover-open button[popovertargetaction='hide'] {
+	nav:popover-open button[popovertargetaction='hide'] {
 		@supports selector([popover]:popover-open) {
 			display: flex;
 			position: fixed;
@@ -289,7 +289,7 @@
 		}
 	}
 
-	.main-navigation button[popovertargetaction='hide'] .lines {
+	button[popovertargetaction='hide'] .lines {
 		--thickness: 2px;
 		--gradient: #fff0 90deg, var(--white) 0;
 		background: conic-gradient(
@@ -407,7 +407,7 @@
 
 	/* These only need to happen on desktop */
 	@media (min-width: 56.25rem) {
-		.main-navigation {
+		header {
 			view-transition-name: header;
 		}
 		.exact-active :global(svg) {
