@@ -128,7 +128,7 @@
 
 	.pillar a {
 		font-size: clamp(1em, 5vw, 1.2em);
-		font-family: var(--heading);
+		font-family: var(--font-heading);
 		width: 100%;
 		height: 100%;
 		background-color: #292e6b;
