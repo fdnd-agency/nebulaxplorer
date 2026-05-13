@@ -8,7 +8,7 @@
     function handleScroll() {
         isScrolling = true;
         
-        // Reset de timer: als je stopt met scrollen, verdwijnt de glow na 400ms
+        // Restart the timer: If the user stopt with scrolling, then the glow will disappear after 400ms 
         clearTimeout(timer);
         timer = setTimeout(() => {
             isScrolling = false;
@@ -19,8 +19,8 @@
 <svelte:window on:scroll={handleScroll} />
 
 <div class="scroll-track">
-    <div class="vertical-line"></div>
-    <div class="vertical-fill"></div>
+    <div class="scroll-track-line"></div>
+    <div class="scroll-track-fill"></div>
     <div class="rocket-wrapper" class:is-scrolling={isScrolling}>
         <img src={rocket} alt="" class="rocket" />
     </div>
@@ -43,8 +43,8 @@
 		}
 	}
 
-	/* basislijn */
-	.vertical-line {
+	/* basic line */
+	.scroll-track-line {
 		position: absolute;
 		left: 50%;
 		top: 0;
@@ -54,8 +54,8 @@
 		transform: translateX(-50%);
 	}
 
-	/* gekleurde lijn */
-	.vertical-fill {
+	/* colored line */
+	.scroll-track-fill {
 		position: absolute;
 		left: 50%;
 		top: 0;
@@ -99,7 +99,7 @@
     transition: opacity 0.2s ease;
 }
 
-/* Alleen tonen als de 'is-scrolling' class aanwezig is */
+/* Appears only if the 'is-scrolling' class is present */
 .rocket-wrapper.is-scrolling::after {
     opacity: 2;
 }
