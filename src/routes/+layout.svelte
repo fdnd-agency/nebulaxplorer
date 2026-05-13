@@ -2,9 +2,8 @@
 	import { page } from '$app/stores'
 	import { onNavigate, afterNavigate, beforeNavigate } from '$app/navigation'
 	import { onMount } from 'svelte'
-	import { Footer, favIcon as favicon, PageArrow } from '$lib'
+	import { Footer, favIcon as favicon, Nav, PageArrow } from '$lib'
 	import '$lib/assets/styles/general.css'
-	import '$lib/assets/styles/layout.css'
 
 	let root
 
@@ -41,15 +40,6 @@
 
 	// Are we on a slug page?
 	// ex; on a detail page of the news page
-	const isParentActive = (path) => {
-		return $page.url.pathname.startsWith(`${path}/`)
-	}
-
-	// Are we on this exact page?
-	const isExactActive = (path) => {
-		return $page.url.pathname === path
-	}
-
 	// Path is the path to the page and label is the text that will be displayed in the <a> tag
 	const navItems = [
 		{ path: '/', label: 'home' },
@@ -68,47 +58,10 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<header class="main-navigation">
-	<button popovertarget="menu">
-		<span class="visually-hidden">Open</span>Menu
-		<span class="lines"></span>
-		<span class="lines"></span>
-		<span class="lines"></span>
-	</button>
-
-	<nav popover id="menu">
-		<ul>
-			<!-- Include this button separately as this is our close button -->
-			<li>
-				<button popovertarget="menu" popovertargetaction="hide">
-					<span class="visually-hidden">Close</span>Menu
-					<span class="lines"></span>
-				</button>
-			</li>
-			<!-- Loop over each object -->
-			{#each navItems as { path, label }}
-				<li
-					class={isExactActive(path)
-						? 'exact-active'
-						: isParentActive(path)
-							? 'parent-active'
-							: ''}>
-					{#if isExactActive(path) || isParentActive(path)}
-						<PageArrow />
-					{/if}
-					<a
-						href={path}
-						aria-current={isExactActive(path) ? 'page' : undefined}>
-						{label}
-					</a>
-				</li>
-			{/each}
-		</ul>
-	</nav>
-</header>
+<Nav {navItems} />
 
 <main>
 	{@render children?.()}
 </main>
-<!-- For some reason, passing navItems directly did not pass the prop correctly -->
+
 <Footer {navItems} />

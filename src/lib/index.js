@@ -2,6 +2,7 @@
 // Organisms
 export { default as Hero } from './components/organisms/Hero.svelte'
 export { default as Footer } from './components/organisms/Footer.svelte'
+export { default as Nav } from './components/organisms/Nav.svelte'
 export { default as Newscards } from './components/organisms/Newscards.svelte'
 export { default as NewsComponent } from './components/organisms/NewsComponent.svelte'
 export { default as PillarsComponent } from './components/organisms/PillarsComponent.svelte'
