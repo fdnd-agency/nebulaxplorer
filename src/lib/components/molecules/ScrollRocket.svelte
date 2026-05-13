@@ -1,14 +1,29 @@
 <script>
 	import rocket from '$lib/assets/logos/Scroll-rocket.svg'
 	import { ScrollRocket } from '$lib'
+
+	let isScrolling = false;
+    let timer;
+
+    function handleScroll() {
+        isScrolling = true;
+        
+        // Reset de timer: als je stopt met scrollen, verdwijnt de glow na 400ms
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            isScrolling = false;
+        }, 400);
+    }
 </script>
 
+<svelte:window on:scroll={handleScroll} />
+
 <div class="scroll-track">
-	<div class="vertical-line"></div>
-	<div class="vertical-fill"></div>
-	<div class="rocket-wrapper">
-		<img src={rocket} alt="" class="rocket" />
-	</div>
+    <div class="vertical-line"></div>
+    <div class="vertical-fill"></div>
+    <div class="rocket-wrapper" class:is-scrolling={isScrolling}>
+        <img src={rocket} alt="" class="rocket" />
+    </div>
 </div>
 
 <style>
@@ -59,13 +74,35 @@
 		position: absolute;
 		left: 50%;
 		top: 0;
-
 		transform: translateX(-50%);
-
 		animation: rocketMove linear both;
 		animation-timeline: scroll(root);
 		animation-range: 0% 100%;
 	}
+
+	.rocket-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(25%);
+    width: 30px;
+    height: 110px;
+    background: radial-gradient(
+        circle, 
+        rgba(221, 91, 74, 0.9) 0%, 
+        rgba(157, 93, 84, 0) 70%
+    );
+    filter: blur(8px);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+/* Alleen tonen als de 'is-scrolling' class aanwezig is */
+.rocket-wrapper.is-scrolling::after {
+    opacity: 2;
+}
 
 	/* rocket movement */
 	@keyframes rocketMove {
@@ -74,7 +111,7 @@
 		}
 
 		to {
-			transform: translateX(-50%) translateY(calc(100vh - 100%));
+			transform: translateX(-50%) translateY(calc(100vh - 20px));
 		}
 	}
 
