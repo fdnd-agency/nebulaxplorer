@@ -8,11 +8,11 @@
     function handleScroll() {
         isScrolling = true;
         
-        // Restart the timer: If the user stopt with scrolling, then the glow will disappear after 400ms 
+        // Restart the timer: If the user stopt with scrolling, then the glow will disappear after 200ms 
         clearTimeout(timer);
         timer = setTimeout(() => {
             isScrolling = false;
-        }, 400);
+        }, 200);
     }
 </script>
 
