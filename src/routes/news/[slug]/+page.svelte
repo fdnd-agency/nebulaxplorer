@@ -106,7 +106,7 @@
 		}
 
 		time {
-			font-family: var(--subtext);
+			font-family: var(--font-subtext);
 		}
 
 		p {
