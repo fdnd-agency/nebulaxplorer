@@ -107,7 +107,7 @@
 	}
 
 	blockquote {
-		font-family: var(--paragraph);
+		font-family: var(--font-paragraph);
 		color: var(--space-100);
 		margin-bottom: 1em;
 

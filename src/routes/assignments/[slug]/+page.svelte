@@ -68,7 +68,7 @@
 
 	li {
 		text-transform: uppercase;
-		font-family: var(--subtext);
+		font-family: var(--font-subtext);
 		color: var(--cleanroom-100);
 		line-height: 1.4;
 	}

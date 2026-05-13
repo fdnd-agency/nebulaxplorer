@@ -42,7 +42,7 @@
 	}
 
 	p {
-		font-family: var(--paragraph);
+		font-family: var(--font-paragraph);
 	}
 
 	form {

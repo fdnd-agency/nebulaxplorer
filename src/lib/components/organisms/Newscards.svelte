@@ -76,7 +76,7 @@
 		padding: 0.75rem;
 
 		h3 {
-			font-family: var(--heading);
+			font-family: var(--font-heading);
 			font-size: 1.3rem;
 			line-height: 1.35;
 			color: var(--ultra-140);
@@ -87,7 +87,7 @@
 		}
 
 		p {
-			font-family: var(--heading);
+			font-family: var(--font-heading);
 			font-weight: 900;
 			font-size: 1.2rem;
 			color: var(--cleanroom-100);
@@ -105,7 +105,7 @@
 	}
 
 	time {
-		font-family: var(--subtext);
+		font-family: var(--font-subtext);
 		line-height: 1.4;
 		color: var(--ultra-60);
 		font-size: 0.9rem;

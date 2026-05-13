@@ -96,9 +96,9 @@ body {
 	--white-low-opacity: hsla(0, 0%, 100%, 0.5);
 
 	/* Font families */
-	--heading: spaceGrotesk;
-	--paragraph: Roboto;
-	--subtext: spaceMonoBold;
+	--font-heading: spaceGrotesk;
+	--font-paragraph: Roboto;
+	--font-subtext: spaceMonoBold;
 
 	/* Focus outline */
 	--default-focus: 0.125rem dashed var(--cleanroom-140);
@@ -109,7 +109,7 @@ body {
 	/* Styling */
 	background: var(--space-100);
 	color: var(--white);
-	font-family: var(--paragraph);
+	font-family: var(--font-paragraph);
 }
 
 a,
@@ -222,7 +222,7 @@ h6 {
 	line-height: 1.5rem;
 	letter-spacing: -0.02em;
 	font-weight: 600;
-	font-family: var(--subtext);
+	font-family: var(--font-subtext);
 }
 
 .link {
