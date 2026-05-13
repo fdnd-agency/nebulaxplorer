@@ -2,7 +2,7 @@
 	import { page } from '$app/stores'
 	import { onNavigate, afterNavigate, beforeNavigate } from '$app/navigation'
 	import { onMount } from 'svelte'
-	import { Footer, favIcon as favicon, Nav, PageArrow } from '$lib'
+	import { Footer, favIcon, Nav, PageArrow } from '$lib'
 	import '$lib/assets/styles/general.css'
 
 	let root
@@ -12,7 +12,6 @@
 
 	onMount(() => {
 		root = document.querySelector('html')
-
 		root?.classList.add('smoothscroll')
 	})
 
@@ -45,7 +44,6 @@
 		{ path: '/', label: 'home' },
 		{ path: '/mission', label: 'mission' },
 		{ path: '/scientific', label: 'scientific' },
-		// { path: "/news", label: "news" },
 		{ path: '/team', label: 'team' },
 		{ path: '/assignments', label: 'assignments' },
 		{ path: '/partners', label: 'partners' },
@@ -55,7 +53,7 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
+	<link rel="icon" href={favIcon} />
 </svelte:head>
 
 <Nav {navItems} />
