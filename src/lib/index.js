@@ -118,6 +118,10 @@ export { default as sronGroningenEnhanced } from './assets/images/sron-groningen
 export { default as sronLeidenEnhanced } from './assets/images/sron-leiden.webp?enhanced'
 export { default as sronReviewStep1Enhanced } from './assets/images/sron-review-step-1.jpg?enhanced&w=1024;768;512'
 
+export { default as tarantulaMergerEnhanced } from './assets/images/bh_merger_tarantula.jpg?enhanced&w=1024;768;512'
+export { default as nasaGarciaEnhanced } from './assets/images/bliac_nasagarcia_4580.jpg?enhanced&w=1024;768;512'
+export { default as xrayBinaryEnhanced } from './assets/images/xray-binary.webp?enhanced&w=1024;768;512'
+
 // UTILITIES
 // Utils
 export { getPaginationItems } from './utils/paginate.js'

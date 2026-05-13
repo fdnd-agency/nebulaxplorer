@@ -8,6 +8,8 @@
 		blackholeHeroEnhanced as heroImg,
 		sronAcademyLogoOnWhite,
 		sronAcademyLogoOnSpaceBlue as logo,
+		xrayBinaryEnhanced,
+		nebulaLogoBlack,
 	} from '$lib'
 
 	let { data } = $props()
@@ -23,10 +25,7 @@
 <Hero
 	titleColor="var(--white)"
 	pageTitle=""
-	background={{
-		file: heroImg,
-		alt: 'test',
-	}}
+	background={{ file: xrayBinaryEnhanced, alt: 'test' }}
 	attribution={{
 		text: 'NASA',
 		link: 'https://apod.nasa.gov/apod/ap260403.html',
