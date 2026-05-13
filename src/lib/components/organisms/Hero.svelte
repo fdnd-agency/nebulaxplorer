@@ -1,5 +1,6 @@
 <script>
 	import { nebulaLogoWhite, blackholeHeroEnhanced } from '$lib'
+	import NebulaLogo from '../icons/NebulaLogo.svelte'
 	const {
 		attribution = {
 			text: '',
@@ -10,6 +11,7 @@
 			file: blackholeHeroEnhanced,
 		},
 		sronIcon = nebulaLogoWhite,
+		logoColor = '#fff',
 		paragraph,
 		pageTitle = 'None set',
 		titleColor,
@@ -54,10 +56,11 @@
 		<div class="logo-container {logoOverlay ? 'logo-overlay' : ''}">
 			<div class="content-container-alt">
 				{#if sronIcon}
-					<img
+					<!-- <img
 						src={sronIcon}
 						alt="Logo of SRON Academy"
-						class="hero-logo" />
+						class="hero-logo" /> -->
+					<NebulaLogo color={logoColor} />
 				{/if}
 				<h1 class="title" style={titleColor && `color: ${titleColor}`}>
 					{pageTitle}

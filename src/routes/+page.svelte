@@ -24,6 +24,7 @@
 
 <Hero
 	titleColor="var(--white)"
+	logoColor="#111122"
 	pageTitle=""
 	background={{ file: xrayBinaryEnhanced, alt: 'test' }}
 	attribution={{
