@@ -7,6 +7,7 @@ export { default as Newscards } from './components/organisms/Newscards.svelte'
 export { default as PartnersCarousel } from './components/organisms/PartnersCarousel.svelte'
 export { default as PillarsComponent } from './components/organisms/PillarsComponent.svelte'
 export { default as TeamsYearComponent } from '$lib/components/organisms/TeamsYearComponent.svelte'
+export { default as MissionGoals } from './components/organisms/MissionGoals.svelte'
 export { default as Timeline } from './components/organisms/Timeline.svelte'
 
 // Molecules
