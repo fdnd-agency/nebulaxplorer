@@ -21,25 +21,27 @@
 	<h2 class="section_title">Work with us!</h2>
 
 	<p class="paragraph">
-		Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem,
-		molestiae. Modi exercitationem quia dolores molestiae sed error et nisi
-		quod saepe rerum. Soluta harum architecto perspiciatis. Dolorum eius
-		ipsa rerum.
-	</p>
-	<p class="paragraph">
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-		reiciendis corrupti quasi similique! Similique, eum id blanditiis enim
-		atque praesentium! Doloremque delectus nemo porro eum mollitia sed
-		beatae asperiores officia.
+		Multiple organisations already support NEBULA-Xplorer’s mission through
+		equipment, software licences, facilities, or personnel. Take a glimpse
+		at the companies below to better understand how partners can contribute
+		to the project and help turn ambitious student-led space exploration
+		into reality.
 	</p>
 </section>
 
 <PartnersCarousel />
 
 <section class="content-container">
-	<h2 class="section_title">Partner with NEBULA!</h2>
+	<h2 class="section_title orange">Partner with NEBULA!</h2>
 	<p class="paragraph">
-		Contact us at <a href="mailto:nebula@sron.nl">nebula@sron.nl</a>
+		We are always open to new collaborations with companies, institutions,
+		and individuals who believe in empowering the next generation of
+		engineers. If your organisation is interested in supporting
+		NEBULA-Xplorer, we would be glad to explore how we can create meaningful
+		value together.
+	</p>
+	<p class="subheading">
+		Contact us at <a href="mailto:nebula@sron.nl">nebula@sron.nl</a>!
 	</p>
 </section>
 
@@ -58,6 +60,7 @@
 
 	.paragraph {
 		max-width: 70ch;
+		margin-block: 1rem;
 	}
 
 	.content-container {

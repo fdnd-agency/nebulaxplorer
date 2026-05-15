@@ -231,6 +231,10 @@ h6 {
 	line-height: clamp(1.625rem, 1.5vw + 1rem, 2rem);
 }
 
+.orange {
+	color: var(--cleanroom-100);
+}
+
 .content-container {
 	width: 100%;
 	max-width: var(--content-width);
