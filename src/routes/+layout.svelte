@@ -26,13 +26,9 @@
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return
 
-		return new Promise((resolve) => {
-			const transition = document.startViewTransition(async () => {
-				expanded = false
-
-				resolve()
-				await navigation.complete
-			})
+		return document.startViewTransition(async () => {
+			expanded = false
+			await navigation.complete()
 		})
 	})
 

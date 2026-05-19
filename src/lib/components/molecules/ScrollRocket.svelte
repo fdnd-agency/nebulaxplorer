@@ -1,6 +1,5 @@
 <script>
 	import rocket from '$lib/assets/logos/Scroll-rocket.svg'
-	import { ScrollRocket } from '$lib'
 
 	let isScrolling = false
 	let timer
@@ -8,7 +7,6 @@
 	function handleScroll() {
 		isScrolling = true
 
-		// Restart the timer: If the user stopt with scrolling, then the glow will disappear after 200ms
 		clearTimeout(timer)
 		timer = setTimeout(() => {
 			isScrolling = false
@@ -21,7 +19,8 @@
 <div class="scroll-track">
 	<div class="scroll-track-line"></div>
 	<div class="scroll-track-fill"></div>
-	<div class="rocket-wrapper" class:is-scrolling={isScrolling}>
+
+	<div class="rocket-wrapper {isScrolling ? 'is-scrolling' : ''}">
 		<img src={rocket} alt="" class="rocket" />
 	</div>
 </div>
@@ -36,7 +35,11 @@
 		pointer-events: none;
 		z-index: 1;
 
-		@media (min-width: 768px) {
+		view-transition-name: scroll-track;
+	}
+
+	@media (min-width: 768px) {
+		.scroll-track {
 			width: 60px;
 			right: 0;
 			z-index: 100;
@@ -78,8 +81,11 @@
 		animation: rocketMove linear both;
 		animation-timeline: scroll(root);
 		animation-range: 0% 100%;
+
+		view-transition-name: rocket;
 	}
 
+	/* glow */
 	.rocket-wrapper::after {
 		content: '';
 		position: absolute;
@@ -99,9 +105,9 @@
 		transition: opacity 0.2s ease;
 	}
 
-	/* Appears only if the 'is-scrolling' class is present */
+	/* glow active while scrolling */
 	.rocket-wrapper.is-scrolling::after {
-		opacity: 2;
+		opacity: 1;
 	}
 
 	/* rocket movement */
@@ -109,7 +115,6 @@
 		from {
 			transform: translateX(-50%) translateY(0);
 		}
-
 		to {
 			transform: translateX(-50%) translateY(calc(100vh - 20px));
 		}
@@ -127,8 +132,10 @@
 	.rocket {
 		width: 26px;
 		display: block;
+	}
 
-		@media (min-width: 768px) {
+	@media (min-width: 768px) {
+		.rocket {
 			width: 40px;
 		}
 	}
@@ -136,15 +143,6 @@
 	/* Prefers Reduced Motion */
 	@media (prefers-reduced-motion: reduce) {
 		.scroll-track {
-			display: none;
-		}
-
-		.rocket-wrapper {
-			animation: none;
-			top: 0;
-		}
-
-		.rocket-wrapper::after {
 			display: none;
 		}
 	}
