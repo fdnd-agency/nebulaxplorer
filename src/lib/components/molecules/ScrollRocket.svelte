@@ -135,9 +135,8 @@
 
 	/* Prefers Reduced Motion */
 	@media (prefers-reduced-motion: reduce) {
-		.scroll-track-fill {
-			animation: none;
-			transform: translateX(-50%) scaleY(1);
+		.scroll-track {
+			display: none;
 		}
 
 		.rocket-wrapper {
