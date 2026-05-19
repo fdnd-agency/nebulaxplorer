@@ -19,18 +19,19 @@
 		root?.classList.remove('smoothscroll')
 	})
 
-	onNavigate((navigation) => {
-	if (!document.startViewTransition) return;
+onNavigate((navigation) => {
+		if (!document.startViewTransition) return
 
-	return document.startViewTransition(async () => {
-		expanded = false;
+		const popover = document.getElementById('menu')
+		popover?.hidePopover()
 
-		const popover = document.getElementById('menu');
-		popover?.hidePopover?.();
-
-		await navigation.complete();
-	});
-});
+		return new Promise((resolve) => {
+			document.startViewTransition(async () => {
+				resolve()
+				await navigation.complete
+			})
+		})
+	})
 	
 	afterNavigate(() => {
 		root?.classList.add('smoothscroll')
