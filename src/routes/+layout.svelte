@@ -2,7 +2,7 @@
 	import { onNavigate, afterNavigate, beforeNavigate } from '$app/navigation'
 	import { onMount } from 'svelte'
 	import { Footer, favIcon, Nav } from '$lib'
-	import ScrollRocket from '$lib/components/molecules/ScrollRocket.svelte'
+	import { ScrollRocket } from '$lib'
 	import '$lib/assets/styles/general.css'
 
 	let root
