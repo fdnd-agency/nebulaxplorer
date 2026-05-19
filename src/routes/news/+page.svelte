@@ -15,8 +15,8 @@
 
 <Breadcrumb />
 
-<section class="paragraph-block content-container">
-	<div class="text-title">
+<hgroup>
+	<div class="content-container">
 		<h2 class="subtitle">
 			Our latest <span class="orange">developments</span>
 		</h2>
@@ -24,20 +24,16 @@
 			Currently <span class="orange">{data.pagination.totalItems}</span> available
 		</p>
 	</div>
-</section>
+</hgroup>
 
 <Newscards news={data.news} />
 
 <Pagination pagination={data.pagination} />
 
 <style>
-	.content-container {
-		padding: 0;
-	}
-
-	.paragraph-block {
-		.text-title * + * {
-			margin-top: 0.5rem;
+	hgroup {
+		h2 {
+			margin-block: 0.25em;
 		}
 
 		.heading {
@@ -48,10 +44,5 @@
 		.heading {
 			font-weight: 400;
 		}
-	}
-
-	/* util classes */
-	.orange {
-		color: var(--cleanroom-140);
 	}
 </style>

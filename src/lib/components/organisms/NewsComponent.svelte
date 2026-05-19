@@ -1,4 +1,5 @@
 <script>
+	import { resolve } from '$app/paths'
 	import { nebulaSatellite as defaultImage } from '$lib'
 
 	let { newsCards } = $props()
@@ -8,7 +9,7 @@
 	<div class="content-container">
 		<h2 class="section_title news_section_title">Mission Updates</h2>
 		<ul class="news-grid">
-			{#each newsCards as newscard}
+			{#each newsCards as newscard (newscard.id)}
 				<li class="news-card">
 					<img
 						src={newscard.image
@@ -18,13 +19,14 @@
 						height="240"
 						width="240" />
 					<h3>
-						<a href={`/news/${newscard.id}`}>{newscard.title}</a>
+						<a href={resolve(`/news/${newscard.id}`)}
+							>{newscard.title}</a>
 					</h3>
 					<p>{newscard.type}</p>
 				</li>
 			{/each}
 		</ul>
-		<a href="/news" class="paragraph link-readmore">Read More</a>
+		<a href={resolve('/news')} class="paragraph link-readmore">Read More</a>
 	</div>
 </section>
 
@@ -94,7 +96,7 @@
 	}
 
 	h3 {
-		font-family: var(--heading);
+		font-family: var(--font-heading);
 		font-weight: 400;
 		font-size: 1.3rem;
 		line-height: 1.75rem;
@@ -117,7 +119,7 @@
 	}
 
 	p {
-		font-family: var(--heading);
+		font-family: var(--font-heading);
 		font-weight: 900;
 		font-size: 1.2rem;
 		color: var(--cleanroom-100);
@@ -133,7 +135,7 @@
 		margin-inline: auto;
 		width: max-content;
 
-		font-family: var(--paragraph);
+		font-family: var(--font-paragraph);
 		font-weight: 500;
 		text-align: center;
 		text-transform: uppercase;

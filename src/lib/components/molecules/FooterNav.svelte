@@ -2,9 +2,7 @@
 	import {
 		sronAcademyLogoOnSpaceBlue as SRON_Academy_OnSpaceBlue,
 		sronLogoFullWhite as SRON_full_white,
-		Instagram as InstagramIcon,
 		LinkedIn as LinkedinIcon,
-		Bsky as BskyIcon,
 		Footnote,
 		MailIcon,
 	} from '$lib'
@@ -177,7 +175,7 @@
 
 		a span {
 			width: max-content;
-			font-family: var(--heading);
+			font-family: var(--font-heading);
 		}
 
 		a :global(svg) {
