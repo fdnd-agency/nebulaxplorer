@@ -1,13 +1,9 @@
 <script>
-	import { page } from '$app/stores'
 	import { onNavigate, afterNavigate, beforeNavigate } from '$app/navigation'
 	import { onMount } from 'svelte'
-	import { Footer, favIcon as favicon, PageArrow } from '$lib'
+	import { Footer, favIcon, Nav } from '$lib'
 	import '$lib/assets/styles/general.css'
-	import '$lib/assets/styles/layout.css'
-	import ScrollRocket from '$lib/components/molecules/ScrollRocket.svelte'
 
-	let expanded = $state(false)
 	let root
 
 	// The onMount, beforeNavigate, and afterNavigate are all to prevent scroll-behavior: smooth to mess with the navigation.
@@ -15,7 +11,6 @@
 
 	onMount(() => {
 		root = document.querySelector('html')
-
 		root?.classList.add('smoothscroll')
 	})
 
@@ -26,9 +21,14 @@
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return
 
-		return document.startViewTransition(async () => {
-			expanded = false
-			await navigation.complete()
+		const popover = document.getElementById('menu')
+		popover?.hidePopover()
+
+		return new Promise((resolve) => {
+			document.startViewTransition(async () => {
+				resolve()
+				await navigation.complete
+			})
 		})
 	})
 
@@ -38,21 +38,11 @@
 
 	// Are we on a slug page?
 	// ex; on a detail page of the news page
-	const isParentActive = (path) => {
-		return $page.url.pathname.startsWith(`${path}/`)
-	}
-
-	// Are we on this exact page?
-	const isExactActive = (path) => {
-		return $page.url.pathname === path
-	}
-
 	// Path is the path to the page and label is the text that will be displayed in the <a> tag
 	const navItems = [
 		{ path: '/', label: 'home' },
 		{ path: '/mission', label: 'mission' },
 		{ path: '/scientific', label: 'scientific' },
-		// { path: "/news", label: "news" },
 		{ path: '/team', label: 'team' },
 		{ path: '/assignments', label: 'assignments' },
 		{ path: '/partners', label: 'partners' },
@@ -62,66 +52,19 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
+	<link rel="icon" href={favIcon} />
 </svelte:head>
 
-<header class="main-navigation">
-	<a
-		href="#menu"
-		class="menu-button"
-		aria-expanded={expanded || 'false'}
-		aria-controls="nav-items"
-		onclick={() => (expanded = true)}>
-		menu
-		<span class="lines"></span>
-		<span class="lines"></span>
-		<span class="lines"></span>
-	</a>
-	<nav id="menu">
-		<ul>
-			<!-- Include this button separately as this is our close button -->
-			<li>
-				<!-- Leave this as # -->
-				<a
-					href="#"
-					class="menu-button"
-					onclick={() => (expanded = false)}>
-					menu
-					<span class="lines"></span>
-				</a>
-			</li>
-			<!-- Loop over each object -->
-			{#each navItems as { path, label }}
-				<li
-					class={isExactActive(path)
-						? 'exact-active'
-						: isParentActive(path)
-							? 'parent-active'
-							: ''}>
-					{#if isExactActive(path) || isParentActive(path)}
-						<PageArrow />
-					{/if}
-					<a
-						href={path}
-						aria-current={isExactActive(path) ? 'page' : undefined}>
-						{label}
-					</a>
-				</li>
-			{/each}
-		</ul>
-	</nav>
-</header>
+<Nav {navItems} />
 
 <main>
 	{@render children?.()}
 </main>
-<!-- For some reason, passing navItems directly did not pass the prop correctly -->
-
-<ScrollRocket />
 
 <Footer {navItems} />
 
 <style>
+	/* VIEW TRANSITIONS */
 	/* default reduced-motion friendly transition */
 	:root::view-transition-old(root) {
 		animation: unset;
@@ -143,65 +86,41 @@
 				0.7s ease-out both slide-to-center,
 				0.3s ease-out 0.5s both zoom-in;
 		}
-	}
-	@keyframes zoom-in {
-		from {
-			scale: 0.85;
-		}
-		to {
-			scale: 1;
-		}
-	}
 
-	@keyframes zoom-out {
-		from {
-			scale: 1;
+		@keyframes zoom-in {
+			from {
+				scale: 0.85;
+			}
+			to {
+				scale: 1;
+			}
 		}
-		to {
-			scale: 0.85;
-		}
-	}
 
-	@keyframes slide-to-top {
-		from {
-			translate: 0 0;
+		@keyframes zoom-out {
+			from {
+				scale: 1;
+			}
+			to {
+				scale: 0.85;
+			}
 		}
-		to {
-			translate: 0 100%;
-		}
-	}
 
-	@keyframes slide-to-center {
-		from {
-			translate: 0 -100%;
+		@keyframes slide-to-top {
+			from {
+				translate: 0 0;
+			}
+			to {
+				translate: 0 100%;
+			}
 		}
-		to {
-			translate: 0 0%;
-		}
-	}
 
-	@keyframes fade-out {
-		to {
-			opacity: 0;
-		}
-	}
-
-	@keyframes fade-in {
-		from {
-			opacity: 0;
-		}
-		to {
-			opacity: 1;
-		}
-	}
-
-	/* These only need to happen on desktop */
-	@media (min-width: 56.25rem) {
-		.main-navigation {
-			view-transition-name: header;
-		}
-		.exact-active :global(svg) {
-			view-transition-name: active-page;
+		@keyframes slide-to-center {
+			from {
+				translate: 0 -100%;
+			}
+			to {
+				translate: 0 0%;
+			}
 		}
 	}
 </style>

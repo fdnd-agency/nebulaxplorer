@@ -4,10 +4,9 @@
 		NewsComponent as News,
 		PillarsComponent,
 		MailingListSignup,
+		Sponsors,
 		nebulaSatelliteEnhanced,
-		blackholeHeroEnhanced as heroImg,
 		sronAcademyLogoOnWhite,
-		sronAcademyLogoOnSpaceBlue as logo,
 	} from '$lib'
 
 	let { data } = $props()
@@ -41,6 +40,8 @@
 			their nearby extreme environments behave.
 		</p>
 	</div>
+
+	<Sponsors />
 </section>
 
 <section class="section-paragraph-picture alt">
