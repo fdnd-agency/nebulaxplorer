@@ -1,6 +1,6 @@
 import { DIRECTUS_VACANCIES } from '$env/static/private'
 
-export async function load({ url, params }) {
+export async function load({ params }) {
 	const vacanciesResponse = await fetch(
 		`${DIRECTUS_VACANCIES}/${params.slug}`
 	).then((response) => response.json())

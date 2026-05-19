@@ -1,4 +1,5 @@
 <script>
+	import { resolve } from '$app/paths'
 	import { nebulaSatellite as defaultImage } from '$lib'
 
 	let { newsCards } = $props()
@@ -8,7 +9,7 @@
 	<div class="content-container">
 		<h2 class="section_title news_section_title">Mission Updates</h2>
 		<ul class="news-grid">
-			{#each newsCards as newscard}
+			{#each newsCards as newscard (newscard.id)}
 				<li class="news-card">
 					<img
 						src={newscard.image
@@ -18,13 +19,14 @@
 						height="240"
 						width="240" />
 					<h3>
-						<a href={`/news/${newscard.id}`}>{newscard.title}</a>
+						<a href={resolve(`/news/${newscard.id}`)}
+							>{newscard.title}</a>
 					</h3>
 					<p>{newscard.type}</p>
 				</li>
 			{/each}
 		</ul>
-		<a href="/news" class="paragraph link-readmore">Read More</a>
+		<a href={resolve('/news')} class="paragraph link-readmore">Read More</a>
 	</div>
 </section>
 

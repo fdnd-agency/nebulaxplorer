@@ -6,9 +6,7 @@
 		MailingListSignup,
 		Sponsors,
 		nebulaSatelliteEnhanced,
-		blackholeHeroEnhanced as heroImg,
 		sronAcademyLogoOnWhite,
-		sronAcademyLogoOnSpaceBlue as logo,
 	} from '$lib'
 
 	let { data } = $props()

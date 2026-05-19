@@ -1,11 +1,9 @@
 <script>
-	import { mertenImage, rushilImage } from '$lib'
-
 	let { testimonials } = $props()
 </script>
 
 <article class="testimonial-container">
-	{#each testimonials as testimonial}
+	{#each testimonials as testimonial (testimonial.name)}
 		<div class="testimonial-card">
 			<img
 				src={`https://fdnd-agency.directus.app/assets/${testimonial.image}`}

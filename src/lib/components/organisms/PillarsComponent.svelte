@@ -1,4 +1,5 @@
 <script>
+	import { resolve } from '$app/paths'
 	import {
 		placeholder1,
 		gravWaves,
@@ -57,10 +58,10 @@
 		<h2 class="section_title">Pillars</h2>
 		<!-- TODO: make the things inside this #each loop into a seperate component partial -->
 		<ul>
-			{#each dummydata as data}
+			{#each dummydata as data (data.link)}
 				<li class="pillar">
 					<img src={data.image.src} alt={data.image.alt} />
-					<a href={data.link}> {data.title}</a>
+					<a href={resolve(data.link)}> {data.title}</a>
 				</li>
 			{/each}
 		</ul>

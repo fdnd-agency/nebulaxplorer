@@ -1,10 +1,5 @@
 <script module>
-	import {
-		Hero,
-		PartnersCarousel,
-		sronAcademyLogoOnSpaceBlue as logo,
-		blackholeHeroEnhanced as heroImg,
-	} from '$lib'
+	import { Hero, PartnersCarousel } from '$lib'
 </script>
 
 <svelte:head>

@@ -7,7 +7,7 @@
         The default value for reverse is false. -->
 
 <ul class="{items.length < 4 ? 'static' : ''} {reverse ? 'reverse' : ''}">
-	{#each items as item}
+	{#each items as item (item.image.src)}
 		<li>
 			<img src={item.image.src} alt={item.image.alt} />
 		</li>

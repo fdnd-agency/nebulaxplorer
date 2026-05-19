@@ -1,8 +1,7 @@
 <script>
-	import { page } from '$app/stores'
 	import { onNavigate, afterNavigate, beforeNavigate } from '$app/navigation'
 	import { onMount } from 'svelte'
-	import { Footer, favIcon, Nav, PageArrow } from '$lib'
+	import { Footer, favIcon, Nav } from '$lib'
 	import '$lib/assets/styles/general.css'
 
 	let root
@@ -26,7 +25,7 @@
 		popover?.hidePopover()
 
 		return new Promise((resolve) => {
-			const transition = document.startViewTransition(async () => {
+			document.startViewTransition(async () => {
 				resolve()
 				await navigation.complete
 			})

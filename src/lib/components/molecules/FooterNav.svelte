@@ -2,9 +2,7 @@
 	import {
 		sronAcademyLogoOnSpaceBlue as SRON_Academy_OnSpaceBlue,
 		sronLogoFullWhite as SRON_full_white,
-		Instagram as InstagramIcon,
 		LinkedIn as LinkedinIcon,
-		Bsky as BskyIcon,
 		Footnote,
 		MailIcon,
 	} from '$lib'

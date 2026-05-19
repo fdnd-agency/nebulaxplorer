@@ -1,4 +1,5 @@
 <script>
+	import { resolve } from '$app/paths'
 	import { Breadcrumb, Hero } from '$lib'
 	let { data } = $props()
 </script>
@@ -37,7 +38,7 @@
 {:else}
 	<section class="content-container error">
 		<h2 class="section_title">Assignment not found.</h2>
-		<a href="/assignments">Go back to overview?</a>
+		<a href={resolve('/assignments')}>Go back to overview?</a>
 	</section>
 {/if}
 

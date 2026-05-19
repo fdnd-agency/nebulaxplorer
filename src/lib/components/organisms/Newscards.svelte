@@ -1,4 +1,5 @@
 <script>
+	import { resolve } from '$app/paths'
 	import { placeholder2 as placeholderImage } from '$lib'
 
 	let { news } = $props()
@@ -7,7 +8,7 @@
 <section>
 	{#if news && news.length > 0}
 		<ul class="news-grid">
-			{#each news as newscard}
+			{#each news as newscard (newscard.id)}
 				<li class="news-card">
 					<img
 						src={newscard.image
@@ -19,7 +20,10 @@
 						width="264" />
 					<div class="news-info">
 						<time datetime={newscard.date}> {newscard.date}</time>
-						<a href={'/news/' + (newscard.slug || newscard.id)}>
+						<a
+							href={resolve(
+								'/news/' + (newscard.slug || newscard.id)
+							)}>
 							<h3>{newscard.title || 'Untitled'}</h3>
 						</a>
 						{#if newscard.type || newscard.category}

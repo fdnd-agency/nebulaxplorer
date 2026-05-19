@@ -4,7 +4,6 @@
 		Hero,
 		TeamMemberCard,
 		nebulaTeamBeginning,
-		portraitPlaceholder,
 		teamPhoto,
 	} from '$lib'
 
@@ -36,7 +35,7 @@
 
 	<h3 class="heading">Reflections on the work</h3>
 	<ul>
-		{#each data.members as member}
+		{#each data.members as member (member.id)}
 			<TeamMemberCard {member} />
 		{/each}
 	</ul>
