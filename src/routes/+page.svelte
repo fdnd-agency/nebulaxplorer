@@ -4,6 +4,7 @@
 		NewsComponent as News,
 		PillarsComponent,
 		MailingListSignup,
+		Sponsors,
 		nebulaSatelliteEnhanced,
 		sronAcademyLogoOnWhite,
 	} from '$lib'
@@ -39,6 +40,8 @@
 			their nearby extreme environments behave.
 		</p>
 	</div>
+
+	<Sponsors />
 </section>
 
 <section class="section-paragraph-picture alt">

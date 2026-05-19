@@ -175,7 +175,7 @@
 
 		a span {
 			width: max-content;
-			font-family: var(--heading);
+			font-family: var(--font-heading);
 		}
 
 		a :global(svg) {

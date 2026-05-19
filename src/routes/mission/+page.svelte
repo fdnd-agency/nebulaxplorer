@@ -6,6 +6,7 @@
 		ScientificTestimonial,
 		blackholeEnhanced as blackholeImage,
 	} from '$lib'
+	import MissionGoals from '$lib/components/organisms/MissionGoals.svelte'
 </script>
 
 <svelte:head>
@@ -138,6 +139,8 @@
 		<enhanced:img src={blackholeImage} alt="Black Hole" />
 	</div>
 </section>
+
+<MissionGoals />
 
 <!-- STEPS BLOCK -->
 <Timeline />

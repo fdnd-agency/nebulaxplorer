@@ -119,8 +119,4 @@
 		background: var(--cleanroom-100);
 		text-transform: uppercase;
 	}
-
-	.orange {
-		color: var(--cleanroom-140);
-	}
 </style>

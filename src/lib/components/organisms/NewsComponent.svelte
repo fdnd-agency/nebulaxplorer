@@ -96,7 +96,7 @@
 	}
 
 	h3 {
-		font-family: var(--heading);
+		font-family: var(--font-heading);
 		font-weight: 400;
 		font-size: 1.3rem;
 		line-height: 1.75rem;
@@ -119,7 +119,7 @@
 	}
 
 	p {
-		font-family: var(--heading);
+		font-family: var(--font-heading);
 		font-weight: 900;
 		font-size: 1.2rem;
 		color: var(--cleanroom-100);
@@ -135,7 +135,7 @@
 		margin-inline: auto;
 		width: max-content;
 
-		font-family: var(--paragraph);
+		font-family: var(--font-paragraph);
 		font-weight: 500;
 		text-align: center;
 		text-transform: uppercase;
