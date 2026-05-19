@@ -1,4 +1,5 @@
 <script>
+	import { resolve } from '$app/paths'
 	import { page } from '$app/stores'
 	import { PageArrow } from '$lib'
 
@@ -32,7 +33,7 @@
 				</button>
 			</li>
 			<!-- Loop over each object -->
-			{#each navItems as { path, label }}
+			{#each navItems as { path, label } (path)}
 				<li
 					class={isExactActive(path)
 						? 'exact-active'
@@ -43,7 +44,7 @@
 						<PageArrow />
 					{/if}
 					<a
-						href={path}
+						href={resolve(path)}
 						aria-current={isExactActive(path) ? 'page' : undefined}>
 						{label}
 					</a>
