@@ -26,7 +26,7 @@ export { default as Testimonial } from './components/molecules/Testimonial.svelt
 export { default as TestimonialHeader } from './components/molecules/TestimonialHeader.svelte'
 export { default as UnderConstruction } from './components/molecules/UnderConstruction.svelte'
 export { default as TeamsComponent } from '$lib/components/molecules/TeamsComponent.svelte'
-
+export { default as ScrollRocket } from '$lib/components/molecules/ScrollRocket.svelte'
 // Atoms
 export { default as Footnote } from './components/atoms/FooterFootnote.svelte'
 export { default as Mission } from './components/atoms/Mission.svelte'
