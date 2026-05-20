@@ -5,6 +5,7 @@
 We generally follow the [FDND code conventions](https://docs.fdnd.nl/conventies.html).
 
 ## HTML
+
 - Use structured and semantic HTML
 - Avoid deep nesting of elements
 - Make use of built-in HTML features wherever possible (e.g. the powerful form validation of form elements)
@@ -14,7 +15,9 @@ We generally follow the [FDND code conventions](https://docs.fdnd.nl/conventies.
 - Use kebab-case for naming IDs
 
 ## CSS
+
 #### General
+
 - Avoid using ID selectors
 - Prioritize using element selectors. Only use class selectors when you need the specificity, when it improves readability, or when element selectors get too complex. Remember components are scoped by default.
 - The order of your CSS selectors should follow the order of the associated HTML
@@ -23,8 +26,10 @@ We generally follow the [FDND code conventions](https://docs.fdnd.nl/conventies.
 - Prefer using container queries over media queries
 - Use CSS variables where appropriate. CSS variables are generally defined in general.css
 - Try to avoid using :global.
+- Make smart use of pseudo-private custom properties for more compact and modular code. (https://lea.verou.me/blog/2021/10/custom-properties-with-defaults/)
 
 #### Formatting
+
 - Use 1 tab for indentation
 - When using multiple selectors in a rule declaration, give each selector its own line.
 - Put a space before the opening brace { in rule declarations.
@@ -33,16 +38,20 @@ We generally follow the [FDND code conventions](https://docs.fdnd.nl/conventies.
 - Put blank lines between rule declarations.
 
 #### Naming
+
 - CSS classes and custom variables should use kebab-case
 - When naming classes, start with the element name or a descriptive (semantic) name (e.g. form, timeline, newscard, animation)
 - Then add an optional descriptor (e.g. form-container, timeline-content, newscard-title, animation-fade-up)
+- When using a variable in a specific context, add an underscore to the start. The underscore tells us that its only being used in this context instead of a global variable. e.g. --\_thickness
 
 #### Nesting
+
 - Use nested CSS where it helps legibility
 - Prefer to nest media/container queries where appropriate
 - Do not nest selectors more than three levels deep to avoid writing CSS that is too specific or too strongly coupled to the HTML
 
 ## JavaScript
+
 - Use camelCase for variable and function names
 - Use 1 tab for indentation
 - Use single quotes for strings
@@ -52,9 +61,10 @@ We generally follow the [FDND code conventions](https://docs.fdnd.nl/conventies.
 - Always use `const` unless you need to reassign the variable. Use `let` when reassignment is necessary. Avoid using `var`.
 - Use `const` for objects and arrays, even if their contents change. The reference remains the same but properties or elements can be modified.
 
-
 ## Naming conventions
+
 Aside from the language-specific naming conventions mentioned above, we have four general rules:
+
 - Names should be semantic
 - Names shouldn't be abbreviated
 - Use English for all names
