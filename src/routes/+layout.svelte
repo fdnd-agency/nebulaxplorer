@@ -19,7 +19,7 @@
 		root?.classList.remove('smoothscroll')
 	})
 
-onNavigate((navigation) => {
+	onNavigate((navigation) => {
 		if (!document.startViewTransition) return
 
 		const popover = document.getElementById('menu')
@@ -32,7 +32,7 @@ onNavigate((navigation) => {
 			})
 		})
 	})
-	
+
 	afterNavigate(() => {
 		root?.classList.add('smoothscroll')
 	})
