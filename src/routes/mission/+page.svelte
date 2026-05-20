@@ -28,7 +28,11 @@
 <Hero
 	titleColor="var(--white)"
 	background={{ file: tarantulaMergerEnhanced, alt: 'test' }}
-	pageTitle="Mission" />
+	pageTitle="Mission"
+	attribution={{
+		text: 'NASA',
+		link: 'https://apod.nasa.gov/apod/ap260403.html',
+	}} />
 
 <Breadcrumb />
 

@@ -4,6 +4,7 @@
 		PartnersCarousel,
 		sronAcademyLogoOnSpaceBlue as logo,
 		blackholeHeroEnhanced as heroImg,
+		lrgbEnhanced,
 	} from '$lib'
 </script>
 
@@ -15,7 +16,14 @@
 </svelte:head>
 
 <!-- HERO BLOCK -->
-<Hero titleColor="var(--white)" pageTitle="Partners" />
+<Hero
+	titleColor="var(--white)"
+	pageTitle="Partners"
+	background={{ file: lrgbEnhanced, alt: 'test' }}
+	attribution={{
+		text: 'NASA',
+		link: 'https://apod.nasa.gov/apod/ap250417.html',
+	}} />
 
 <section class="content-container">
 	<h2 class="section_title">Work with us!</h2>

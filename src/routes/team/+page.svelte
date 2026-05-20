@@ -1,7 +1,12 @@
 <script>
 	/* eslint-disable svelte/require-each-key */
 
-	import { Hero, Breadcrumb, TeamsYearComponent } from '$lib'
+	import {
+		Hero,
+		Breadcrumb,
+		TeamsYearComponent,
+		nebulaTeamBeginning,
+	} from '$lib'
 
 	const dummydata = [
 		{
@@ -55,8 +60,16 @@
 </svelte:head>
 
 <!-- HERO BLOCK -->
-<Hero titleColor="var(--white)" pageTitle="Team" />
+<Hero
+	titleColor="var(--white)"
+	pageTitle="Team"
+	background={{ file: nebulaTeamBeginning, alt: 'test' }}
+	logoOverlay
+	bottomLayout
+	focalPoint="100% 30%" />
+
 <Breadcrumb />
+
 <section class="content-container">
 	<h2 class="section_title">who are we?</h2>
 	{#each sortedResults as year}

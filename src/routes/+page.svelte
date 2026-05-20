@@ -26,11 +26,7 @@
 	titleColor="var(--white)"
 	logoColor="#111122"
 	pageTitle=""
-	background={{ file: xrayBinaryEnhanced, alt: 'test' }}
-	attribution={{
-		text: 'NASA',
-		link: 'https://apod.nasa.gov/apod/ap260403.html',
-	}} />
+	background={{ file: xrayBinaryEnhanced, alt: 'test' }} />
 
 <News newsCards={data.newsItems} />
 
