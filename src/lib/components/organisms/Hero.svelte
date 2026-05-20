@@ -129,7 +129,7 @@
 			padding-block-start: 0.25em;
 		}
 
-		.hero-logo {
+		:global(svg) {
 			width: clamp(12.5rem, 7.15rem + 28.5vw, 25rem);
 			max-width: 36.375rem;
 			display: block;
@@ -187,7 +187,7 @@
 				max-width: unset;
 			}
 
-			.hero-logo {
+			:global(svg) {
 				font-size: clamp(2.5rem, 5vw + 1rem, 4.375rem);
 				line-height: clamp(2.5rem, 5vw + 1rem, 4.625rem);
 				height: 2.5lh;
