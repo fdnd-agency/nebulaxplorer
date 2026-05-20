@@ -40,7 +40,7 @@
 
 		/* if animation timeline is supported, show the rocket */
 		@supports (animation-timeline: scroll(root)) {
-		display: block;		
+			display: block;
 		}
 	}
 
@@ -145,8 +145,6 @@
 			width: 40px;
 		}
 	}
-
-
 
 	/* Prefers Reduced Motion */
 	@media (prefers-reduced-motion: reduce) {
