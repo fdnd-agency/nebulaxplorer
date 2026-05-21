@@ -17,7 +17,7 @@
 <Hero
 	titleColor="var(--white)"
 	pageTitle="Partners"
-	background={{ file: lrgbEnhanced, alt: 'test' }}
+	background={{ file: lrgbEnhanced, alt: 'Virgo Cluster Galaxies' }}
 	attribution={{
 		text: 'NASA',
 		link: 'https://apod.nasa.gov/apod/ap250417.html',

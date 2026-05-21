@@ -17,7 +17,7 @@
 
 <Hero
 	titleColor="var(--white)"
-	background={{ file: nasaGarciaEnhanced, alt: 'test' }}
+	background={{ file: nasaGarciaEnhanced, alt: 'IXPE Explores a Black Hole Jet' }}
 	pageTitle="Assignments" />
 
 <Breadcrumb />

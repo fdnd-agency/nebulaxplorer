@@ -12,7 +12,7 @@
 <Hero
 	titleColor="var(--white)"
 	pageTitle="Scientific"
-	background={{ file: simonnetEnhanced, alt: 'test' }}
+	background={{ file: simonnetEnhanced, alt: 'Rotating Black Holes Collide' }}
 	attribution={{
 		text: 'NASA',
 		link: 'https://apod.nasa.gov/apod/ap250924.html',

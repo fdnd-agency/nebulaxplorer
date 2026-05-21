@@ -20,7 +20,7 @@
 <!-- HERO BLOCK -->
 <Hero
 	titleColor="var(--white)"
-	background={{ file: tarantulaMergerEnhanced, alt: 'test' }}
+	background={{ file: tarantulaMergerEnhanced, alt: 'Visualization of a Black Hole Merger in the Tarantula Nebula' }}
 	pageTitle="Mission"
 	attribution={{
 		text: 'NASA',

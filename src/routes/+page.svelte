@@ -24,7 +24,7 @@
 	titleColor="var(--white)"
 	logoColor="#111122"
 	pageTitle=""
-	background={{ file: xrayBinaryEnhanced, alt: 'test' }} />
+	background={{ file: xrayBinaryEnhanced, alt: 'A colorful x-ray binary system' }} />
 
 <News newsCards={data.newsItems} />
 
