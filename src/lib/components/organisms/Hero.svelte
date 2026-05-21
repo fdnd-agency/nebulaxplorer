@@ -14,11 +14,11 @@
 		logoColor = '#fff',
 		paragraph,
 		pageTitle = 'None set',
-		titleColor,
-		fullScreen = false,
-		logoOverlay = false,
-		bottomLayout = false,
-		focalPoint = 'center',
+		titleColor, 
+		fullScreen = false, // This property makes the banner photo take up nearly the whole screen.
+		logoOverlay = false, // This property gives the banner logo a blue background for better contrast
+		bottomLayout = false, // This property sets an alternative layout where both the logo and title are at the bottom
+		focalPoint = 'center', // This property sets the focal point of the banner image
 	} = $props()
 
 	// Validation to prevent empty alt text
