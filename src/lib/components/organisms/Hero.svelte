@@ -60,9 +60,7 @@
 		<div class="logo-container {logoOverlay ? 'logo-overlay' : ''}">
 			<div class="content-container-alt">
 				{#if sronIcon}
-					<NebulaLogo
-						color={logoColor}
-						title='Nebula Xplorer Logo' />
+					<NebulaLogo color={logoColor} title="Nebula Xplorer Logo" />
 				{/if}
 				<h1 class="title" style={titleColor && `color: ${titleColor}`}>
 					{pageTitle}
