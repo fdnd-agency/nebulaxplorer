@@ -5,8 +5,9 @@
 		PillarsComponent,
 		MailingListSignup,
 		Sponsors,
-		nebulaSatelliteEnhanced,
 		sronAcademyLogoOnWhite,
+		nebulaSatelliteEnhanced,
+		xrayBinaryEnhanced
 	} from '$lib'
 
 	let { data } = $props()
