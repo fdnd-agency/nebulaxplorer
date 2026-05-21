@@ -1,4 +1,5 @@
 <script>
+	import { resolve } from '$app/paths'
 	import { nebulaLogoWhite, blackholeHeroEnhanced } from '$lib'
 	import NebulaLogo from '../icons/NebulaLogo.svelte'
 	const {
@@ -14,7 +15,7 @@
 		logoColor = '#fff',
 		paragraph,
 		pageTitle = 'None set',
-		titleColor, 
+		titleColor,
 		fullScreen = false, // This property makes the banner photo take up nearly the whole screen.
 		logoOverlay = false, // This property gives the banner logo a blue background for better contrast
 		bottomLayout = false, // This property sets an alternative layout where both the logo and title are at the bottom
@@ -45,8 +46,11 @@
 				fetchpriority="high" />
 			{#if attribution.link != ''}
 				<figcaption>
-					<a href={attribution.link}>
-						<span class="visually-hidden">Image attribution:</span>{attribution.text ? attribution.text : attribution.link}
+					<a href={resolve(attribution.link)}>
+						<span class="visually-hidden">Image attribution:</span
+						>{attribution.text
+							? attribution.text
+							: attribution.link}
 					</a>
 				</figcaption>
 			{/if}
@@ -56,7 +60,9 @@
 		<div class="logo-container {logoOverlay ? 'logo-overlay' : ''}">
 			<div class="content-container-alt">
 				{#if sronIcon}
-					<NebulaLogo color={logoColor} />
+					<NebulaLogo
+						color={logoColor}
+						title='Nebula Xplorer Logo' />
 				{/if}
 				<h1 class="title" style={titleColor && `color: ${titleColor}`}>
 					{pageTitle}

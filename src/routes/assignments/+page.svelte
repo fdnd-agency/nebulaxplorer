@@ -1,5 +1,11 @@
 <script>
-	import { Hero, Breadcrumb, AssignmentCards, Pagination, nasaGarciaEnhanced } from '$lib'
+	import {
+		Hero,
+		Breadcrumb,
+		AssignmentCards,
+		Pagination,
+		nasaGarciaEnhanced,
+	} from '$lib'
 
 	const { data } = $props()
 	const { vacancies, pagination } = $derived(data)
@@ -17,7 +23,10 @@
 
 <Hero
 	titleColor="var(--white)"
-	background={{ file: nasaGarciaEnhanced, alt: 'IXPE Explores a Black Hole Jet' }}
+	background={{
+		file: nasaGarciaEnhanced,
+		alt: 'IXPE Explores a Black Hole Jet',
+	}}
 	pageTitle="Assignments" />
 
 <Breadcrumb />

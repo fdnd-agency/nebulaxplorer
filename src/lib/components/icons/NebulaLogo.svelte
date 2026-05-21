@@ -1,5 +1,5 @@
 <script>
-	let { color = '#ffffff' } = $props()
+	let { color = '#ffffff', title = '' } = $props()
 </script>
 
 <svg
@@ -8,6 +8,7 @@
 	viewBox="0 0 99.694003 58.435003"
 	version="1.1"
 	id="svg1"
+	{title}
 	inkscape:export-filename="..\..\Downloads\Nebula_white_transparent.jpg"
 	inkscape:export-xdpi="600"
 	inkscape:export-ydpi="600"

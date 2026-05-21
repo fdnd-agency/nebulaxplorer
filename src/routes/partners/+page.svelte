@@ -1,9 +1,5 @@
 <script module>
-	import {
-		Hero,
-		PartnersCarousel,
-		lrgbEnhanced,
-	} from '$lib'
+	import { Hero, PartnersCarousel, lrgbEnhanced } from '$lib'
 </script>
 
 <svelte:head>

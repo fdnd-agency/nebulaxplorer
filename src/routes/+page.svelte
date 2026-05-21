@@ -7,7 +7,7 @@
 		Sponsors,
 		sronAcademyLogoOnWhite,
 		nebulaSatelliteEnhanced,
-		xrayBinaryEnhanced
+		xrayBinaryEnhanced,
 	} from '$lib'
 
 	let { data } = $props()
@@ -24,7 +24,10 @@
 	titleColor="var(--white)"
 	logoColor="#111122"
 	pageTitle=""
-	background={{ file: xrayBinaryEnhanced, alt: 'A colorful x-ray binary system' }} />
+	background={{
+		file: xrayBinaryEnhanced,
+		alt: 'A colorful x-ray binary system',
+	}} />
 
 <News newsCards={data.newsItems} />
 
