@@ -46,7 +46,7 @@
 			{#if attribution.link != ''}
 				<figcaption>
 					<a href={attribution.link}>
-						{attribution.text ? attribution.text : attribution.link}
+						<span class="visually-hidden">Image attribution:</span>{attribution.text ? attribution.text : attribution.link}
 					</a>
 				</figcaption>
 			{/if}
@@ -56,10 +56,6 @@
 		<div class="logo-container {logoOverlay ? 'logo-overlay' : ''}">
 			<div class="content-container-alt">
 				{#if sronIcon}
-					<!-- <img
-						src={sronIcon}
-						alt="Logo of SRON Academy"
-						class="hero-logo" /> -->
 					<NebulaLogo color={logoColor} />
 				{/if}
 				<h1 class="title" style={titleColor && `color: ${titleColor}`}>
