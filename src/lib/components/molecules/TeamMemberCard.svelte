@@ -1,5 +1,5 @@
 <script>
-	import { portraitPlaceholder, teamPhoto } from '$lib'
+	import { portraitPlaceholder } from '$lib'
 	import { onMount } from 'svelte'
 
 	let { member } = $props()

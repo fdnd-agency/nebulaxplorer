@@ -1,5 +1,6 @@
 <script>
 	import { page } from '$app/stores'
+	import { resolve } from '$app/paths'
 	import { Arrow, sanitizeString } from '$lib'
 
 	// Split the path into segments and filter out empty strings
@@ -12,14 +13,16 @@
 
 <nav class={`breadcrumb-path ${contrast}`}>
 	<div class="content-container">
-		<a href="/" class="crumb subheading">home</a>
-		{#each pathSegments as segment, index}
+		<a href={resolve('/')} class="crumb subheading">home</a>
+		{#each pathSegments as segment, index (index)}
 			<span class="arrow">
 				<Arrow />
 			</span>
 			{#if index + 1 < pathSegments.length}
 				<a
-					href={'/' + pathSegments.slice(0, index + 1).join('/')}
+					href={resolve(
+						'/' + pathSegments.slice(0, index + 1).join('/')
+					)}
 					class="crumb subheading">
 					{sanitizeString(segment)}
 				</a>

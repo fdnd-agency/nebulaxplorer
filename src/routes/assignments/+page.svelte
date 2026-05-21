@@ -1,13 +1,5 @@
 <script>
-	import {
-		Hero,
-		Breadcrumb,
-		AssignmentCards,
-		Pagination,
-		blackholeHeroEnhanced as heroImg,
-		sronAcademyLogoOnSpaceBlue as logo,
-		nasaGarciaEnhanced,
-	} from '$lib'
+	import { Hero, Breadcrumb, AssignmentCards, Pagination } from '$lib'
 
 	const { data } = $props()
 	const { vacancies, pagination } = $derived(data)
