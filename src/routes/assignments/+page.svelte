@@ -15,7 +15,7 @@
 <!-- Always provide alt and file path WITHIN background -->
 <!-- titleColor controls the title color based on the provided css var provided -->
 
-<Hero titleColor="var(--white)" pageTitle="Assignments" />
+<Hero titleColor="var(--text-color-light)" pageTitle="Assignments" />
 
 <Breadcrumb />
 
