@@ -122,7 +122,7 @@
 		font-family: var(--font-heading);
 		font-weight: 900;
 		font-size: 1.2rem;
-		color: var(--accent-color);
+		color: var(--accent-color-dark);
 		padding-block: 1rem;
 		padding-inline: clamp(0.75rem, 0.25rem + 1.1vw, 1rem);
 	}
@@ -139,7 +139,7 @@
 		font-weight: 500;
 		text-align: center;
 		text-transform: uppercase;
-		color: var(--accent-color);
+		color: var(--accent-color-dark);
 
 		&:hover {
 			text-decoration: underline 1px;

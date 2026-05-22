@@ -72,7 +72,7 @@
 			src={blackholeImage}
 			alt="Black Hole" />
 		<section class="text-content">
-			<h3 class="orange heading">Multi-messenger physics</h3>
+			<h3 class="orange-on-white heading">Multi-messenger physics</h3>
 			<p>
 				NEBULA-Xplorer frames the multi-wavelength campaigns required to
 				understand jet and accretion physics at the forefront of its
