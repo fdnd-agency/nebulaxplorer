@@ -106,9 +106,9 @@
 		}
 
 		.lines {
-			--thickness: 0.125rem;
-			--margin-top: 0.375rem;
-			--gap: 0.5rem;
+			--_thickness: 0.125rem;
+			--_margin-top: 0.375rem;
+			--_gap: 0.5rem;
 
 			display: block;
 			aspect-ratio: 1;
@@ -116,37 +116,41 @@
 
 			background: linear-gradient(
 				transparent,
-				transparent var(--margin-top),
-				currentColor var(--margin-top),
-				currentColor calc(var(--margin-top) + var(--thickness)),
-				transparent calc(var(--margin-top) + var(--thickness)),
+				transparent var(--_margin-top),
+				currentColor var(--_margin-top),
+				currentColor calc(var(--_margin-top) + var(--_thickness)),
+				transparent calc(var(--_margin-top) + var(--_thickness)),
 				transparent
-					calc(var(--margin-top) + var(--thickness) + var(--gap)),
+					calc(var(--_margin-top) + var(--_thickness) + var(--_gap)),
 				currentColor
-					calc(var(--margin-top) + var(--thickness) + var(--gap)),
-				currentColor
-					calc(var(--margin-top) + 2 * var(--thickness) + var(--gap)),
-				transparent
-					calc(var(--margin-top) + 2 * var(--thickness) + var(--gap)),
-				transparent
-					calc(
-						var(--margin-top) + 2 * var(--thickness) + 2 *
-							var(--gap)
-					),
+					calc(var(--_margin-top) + var(--_thickness) + var(--_gap)),
 				currentColor
 					calc(
-						var(--margin-top) + 2 * var(--thickness) + 2 *
-							var(--gap)
-					),
-				currentColor
-					calc(
-						var(--margin-top) + 3 * var(--thickness) + 2 *
-							var(--gap)
+						var(--_margin-top) + 2 * var(--_thickness) + var(--_gap)
 					),
 				transparent
 					calc(
-						var(--margin-top) + 3 * var(--thickness) + 2 *
-							var(--gap)
+						var(--_margin-top) + 2 * var(--_thickness) + var(--_gap)
+					),
+				transparent
+					calc(
+						var(--_margin-top) + 2 * var(--_thickness) + 2 *
+							var(--_gap)
+					),
+				currentColor
+					calc(
+						var(--_margin-top) + 2 * var(--_thickness) + 2 *
+							var(--_gap)
+					),
+				currentColor
+					calc(
+						var(--_margin-top) + 3 * var(--_thickness) + 2 *
+							var(--_gap)
+					),
+				transparent
+					calc(
+						var(--_margin-top) + 3 * var(--_thickness) + 2 *
+							var(--_gap)
 					)
 			);
 		}
@@ -322,15 +326,15 @@
 	}
 
 	button[popovertargetaction='hide'] .lines {
-		--thickness: 2px;
-		--gradient: #fff0 90deg, var(--white) 0;
+		--_thickness: 2px;
+		--_gradient: #fff0 90deg, var(--white) 0;
 		background: conic-gradient(
-				from 90deg at var(--thickness) var(--thickness),
-				var(--gradient)
+				from 90deg at var(--_thickness) var(--_thickness),
+				var(--_gradient)
 			)
-			calc(100% + var(--thickness) / 2)
-			calc(100% + var(--thickness) / 2) / calc(50% + var(--thickness))
-			calc(50% + var(--thickness));
+			calc(100% + var(--_thickness) / 2)
+			calc(100% + var(--_thickness) / 2) / calc(50% + var(--_thickness))
+			calc(50% + var(--_thickness));
 		transform-origin: unset;
 		height: unset;
 		width: 1.875rem;

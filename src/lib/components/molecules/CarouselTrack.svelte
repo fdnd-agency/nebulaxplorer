@@ -49,9 +49,9 @@
 			/* Shamelessly yoinked from https://frontendmasters.com/blog/infinite-marquee-animation-using-modern-css/ */
 
 			ul {
-				--size: 250px; /* size of the images */
-				--duration: 60s; /* animation duration */
-				--number: 4; /* number of visible images */
+				--_size: 250px; /* size of the images */
+				--_duration: 60s; /* animation duration */
+				--_number: 4; /* number of visible images */
 
 				display: flex;
 				position: relative;
@@ -115,27 +115,27 @@
 
 			li {
 				/* The duration is based on the amount of items.  */
-				--duration: calc(sibling-count() * 6s);
-				--number: min(sibling-count(), 4);
+				--_duration: calc(sibling-count() * 6s);
+				--_number: min(sibling-count(), 4);
 
 				display: flex;
 				align-items: center;
-				width: var(--size);
+				width: var(--_size);
 				offset: shape(
-					from calc(var(--size) / -2) 50%,
+					from calc(var(--_size) / -2) 50%,
 					hline by
 						calc(
 							10rem + sibling-count() *
-								max(100% / var(--number, 4), var(--size))
+								max(100% / var(--_number, 4), var(--_size))
 						)
 				);
 
 				animation-name: scroll;
-				animation-duration: var(--duration, 60s);
+				animation-duration: var(--_duration, 60s);
 				animation-timing-function: linear;
 				animation-iteration-count: infinite;
 				animation-delay: calc(
-					-1 * sibling-index() * var(--duration, 60s) /
+					-1 * sibling-index() * var(--_duration, 60s) /
 						sibling-count()
 				);
 			}

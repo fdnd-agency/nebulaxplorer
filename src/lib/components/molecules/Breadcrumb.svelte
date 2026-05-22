@@ -45,32 +45,32 @@
 		/* color schemes */
 
 		/* defaults */
-		--arrow-color: var(--accent-color);
-		--text-color: var(--text-color-light);
+		--_arrow-color: var(--accent-color);
+		--_text-color: var(--text-color-light);
 
 		/* explicit */
 		&.white-on-space {
-			--arrow-color: var(--accent-color);
-			--text-color: var(--text-color-light);
+			--_arrow-color: var(--accent-color);
+			--_text-color: var(--text-color-light);
 		}
 
 		&.space-on-gray {
-			--arrow-color: var(--secondary-color);
-			--text-color: var(--text-color-dark);
+			--_arrow-color: var(--secondary-color);
+			--_text-color: var(--text-color-dark);
 		}
 
 		&.white-on-cleanroom {
-			--arrow-color: var(--background-color-dark);
-			--text-color: var(--text-color-light);
+			--_arrow-color: var(--background-color-dark);
+			--_text-color: var(--text-color-light);
 		}
 
 		/* Text colors */
-		color: var(--text-color);
+		color: var(--_text-color);
 
 		.arrow {
 			display: contents;
 			/* Arrow colors */
-			color: var(--arrow-color);
+			color: var(--_arrow-color);
 		}
 
 		/* Truncate when too long, helps with REALLY large titles */
