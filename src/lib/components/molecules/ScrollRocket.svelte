@@ -34,8 +34,14 @@
 		width: 40px;
 		pointer-events: none;
 		z-index: 1;
+		display: none;
 
 		view-transition-name: scroll-track;
+
+		/* if animation timeline is supported, show the rocket */
+		@supports (animation-timeline: scroll(root)) {
+			display: block;
+		}
 	}
 
 	@media (min-width: 768px) {
