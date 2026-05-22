@@ -35,6 +35,7 @@ export { default as Mission } from './components/atoms/Mission.svelte'
 // Icons
 export { default as MailIcon } from './components/icons/MailIcon.svelte'
 export { default as Quote } from './components/icons/Quote.svelte'
+export { default as NebulaLogo } from './components/icons/NebulaLogo.svelte'
 
 // Logo Components
 export { default as Arrow } from './components/icons/Arrow.svelte'

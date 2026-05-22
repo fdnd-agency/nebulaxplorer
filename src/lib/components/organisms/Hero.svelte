@@ -1,6 +1,6 @@
 <script>
-	import { nebulaLogoWhite, blackholeHeroEnhanced } from '$lib'
-	import NebulaLogo from '../icons/NebulaLogo.svelte'
+	import { NebulaLogo, nebulaLogoWhite, blackholeHeroEnhanced } from '$lib'
+
 	const {
 		attribution = {
 			text: '',
