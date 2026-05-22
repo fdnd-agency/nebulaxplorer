@@ -1,5 +1,4 @@
 <script>
-	import { resolve } from '$app/paths'
 	import { nebulaLogoWhite, blackholeHeroEnhanced } from '$lib'
 	import NebulaLogo from '../icons/NebulaLogo.svelte'
 	const {
@@ -46,11 +45,9 @@
 				fetchpriority="high" />
 			{#if attribution.link != ''}
 				<figcaption>
-					<a href={resolve(attribution.link)}>
-						<span class="visually-hidden">Image attribution:</span
-						>{attribution.text
-							? attribution.text
-							: attribution.link}
+					<a href={attribution.link} rel="external">
+						<span class="visually-hidden">Image attribution:</span>
+						{attribution.text ? attribution.text : attribution.link}
 					</a>
 				</figcaption>
 			{/if}
