@@ -67,7 +67,7 @@
 		&:hover .apply-button,
 		&:focus-within .apply-button {
 			background: var(--secondary-color);
-			color: var(--cleanroom-60);
+			color: var(--accent-color-light);
 		}
 	}
 

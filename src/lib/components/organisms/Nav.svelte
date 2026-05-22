@@ -260,7 +260,7 @@
 			flex-direction: column;
 
 			&:hover a {
-				color: var(--cleanroom-60);
+				color: var(--accent-color-light);
 
 				@media (prefers-reduced-motion: no-preference) {
 					&::before {

@@ -127,7 +127,7 @@
 
 			&:hover,
 			&:focus-within {
-				color: var(--cleanroom-60);
+				color: var(--accent-color-light);
 			}
 
 			@supports selector(a:has(b)) {
@@ -136,7 +136,7 @@
 				&:focus-within + li,
 				&:has(+ li:hover),
 				&:has(+ li:focus-within) {
-					color: var(--cleanroom-60);
+					color: var(--accent-color-light);
 				}
 			}
 		}

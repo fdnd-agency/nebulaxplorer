@@ -101,6 +101,7 @@ body {
 	--secondary-color: var(--ultra-100);
 	--nav-primary-color: var(--ultra-170);
 	--accent-color: var(--cleanroom-100);
+	--accent-color-light: var(--cleanroom-60);
 	--accent-color-dark: var(--cleanroom-140);
 	--text-color-dark: var(--space-100);
 	--text-color-light: var(--white);
@@ -136,7 +137,7 @@ textarea {
 }
 
 *::selection {
-	background: var(--cleanroom-60);
+	background: var(--accent-color-light);
 	color: var(--background-color-dark);
 }
 
