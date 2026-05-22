@@ -29,7 +29,7 @@
 
 <div class="content-container">
 	<img src={teamPhoto} alt="" />
-	<h2 class="section_title">
+	<h2 class="section-title">
 		Who we worked with in <span class="orange">{data.members[0].time}</span>
 	</h2>
 

@@ -185,7 +185,7 @@ h6 {
 	letter-spacing: -0.02em;
 }
 
-.section_title {
+.section-title {
 	font-family: var(--font-heading);
 	font-size: clamp(2rem, 3.5vw + 1rem, 2.875rem);
 	line-height: clamp(2.5rem, 3.5vw + 1rem, 3.125rem);

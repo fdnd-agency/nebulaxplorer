@@ -1,6 +1,6 @@
 <section id="mailing-list-signup">
 	<div>
-		<h2 class="section_title">Subscribe to our mailing list</h2>
+		<h2 class="section-title">Subscribe to our mailing list</h2>
 		<p class="paragraph">
 			to receive news and updates about our research and activities.
 		</p>

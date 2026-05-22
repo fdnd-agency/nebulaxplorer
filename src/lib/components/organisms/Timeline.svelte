@@ -1,5 +1,5 @@
 <section>
-	<h3 class="section_title">Mission Timeline</h3>
+	<h3 class="section-title">Mission Timeline</h3>
 	<article>
 		<details name="timeline" open>
 			<summary class="caption">Reviews and Design Confirmation</summary>

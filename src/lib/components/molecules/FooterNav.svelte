@@ -16,7 +16,7 @@
 	<img
 		src={SRON_Academy_OnSpaceBlue}
 		alt="SRON Academy logo"
-		class="footerImg SronAcademyLogo" />
+		class="footer-image logo-sron-academy" />
 	<div class="line"></div>
 	<!-- this is a seperate element because what is supposed to be above and below this line changes with viewport width. If we can give a css grid line a border I would prefer that I think. But I'm, not sure if that's even posible. This works fine though. -->
 	<nav>
@@ -34,7 +34,7 @@
 	<img
 		src={SRON_full_white}
 		alt="SRON full white logo"
-		class="footerImg SronLogo" />
+		class="footer-image logo-sron" />
 	<ul class="socials">
 		<li>
 			<a href={resolve('/#mailing-list-signup')}>
@@ -76,11 +76,11 @@
 		}
 	}
 
-	.SronAcademyLogo {
+	.logo-sron-academy {
 		grid-area: academy;
 	}
 
-	.SronLogo {
+	.logo-sron {
 		grid-area: sron;
 		margin-block-start: 1rem;
 
@@ -95,7 +95,7 @@
 		border-top: 0.1875rem solid var(--white);
 	}
 
-	.footerImg {
+	.footer-image {
 		width: 20rem;
 		max-width: 95%;
 

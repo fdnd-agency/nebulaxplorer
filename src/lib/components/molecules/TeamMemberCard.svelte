@@ -97,8 +97,4 @@
 	.paragraph {
 		font-size: 1rem;
 	}
-
-	.orange {
-		color: var(--accent-color);
-	}
 </style>

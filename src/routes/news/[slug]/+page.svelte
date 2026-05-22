@@ -54,7 +54,7 @@
 {:else}
 	<section class="error">
 		<div class="content-container">
-			<h1 class="section_title">News article not found.</h1>
+			<h1 class="section-title">News article not found.</h1>
 			<a href={resolve('/news')} class="heading">Go back to overview?</a>
 		</div>
 	</section>

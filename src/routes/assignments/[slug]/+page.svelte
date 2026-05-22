@@ -11,7 +11,7 @@
 {#if data.assignment}
 	<section class="section-overview">
 		<div class="content-container">
-			<h2 class="section_title">{data.assignment.title}</h2>
+			<h2 class="section-title">{data.assignment.title}</h2>
 			<ul>
 				<li>
 					<span class="white">Location: </span>{data.assignment
@@ -37,7 +37,7 @@
 	</section>
 {:else}
 	<section class="content-container error">
-		<h2 class="section_title">Assignment not found.</h2>
+		<h2 class="section-title">Assignment not found.</h2>
 		<a href={resolve('/assignments')}>Go back to overview?</a>
 	</section>
 {/if}

@@ -13,7 +13,7 @@
 <Hero titleColor="var(--text-color-light)" pageTitle="Partners" />
 
 <section class="content-container">
-	<h2 class="section_title">Work with us!</h2>
+	<h2 class="section-title">Work with us!</h2>
 
 	<p class="paragraph">
 		Multiple organisations already support NEBULA-Xplorer’s mission through
@@ -27,7 +27,7 @@
 <PartnersCarousel />
 
 <section class="content-container">
-	<h2 class="section_title orange">Partner with NEBULA!</h2>
+	<h2 class="section-title orange">Partner with NEBULA!</h2>
 	<p class="paragraph">
 		We are always open to new collaborations with companies, institutions,
 		and individuals who believe in empowering the next generation of

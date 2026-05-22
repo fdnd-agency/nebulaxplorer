@@ -36,7 +36,7 @@
 </nav>
 
 <style>
-	nav.breadcrumb-path div {
+	.breadcrumb-path div {
 		display: flex;
 		gap: 0.75rem;
 		align-items: center;
