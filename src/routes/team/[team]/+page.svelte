@@ -18,7 +18,7 @@
 </svelte:head>
 
 <Hero
-	titleColor="var(--white)"
+	titleColor="var(--text-color-light)"
 	pageTitle="Team"
 	background={{ file: nebulaTeamBeginning, alt: 'test' }}
 	logoOverlay
@@ -64,9 +64,5 @@
 		grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
 		gap: 1rem;
 		margin-block: 1rem 4rem;
-	}
-
-	.orange {
-		color: var(--cleanroom-100);
 	}
 </style>

@@ -63,14 +63,14 @@
 		z-index: 10;
 		background: transparent;
 		font-family: var(--font-heading);
-		color: var(--white);
+		color: var(--text-color-light);
 
 		@media (min-width: 56.25rem) {
 			position: sticky;
 			top: 0;
 			justify-content: initial;
 			padding: 1rem;
-			background: var(--space-100);
+			background: var(--background-color-dark);
 		}
 
 		@media (prefers-reduced-motion: no-preference) {
@@ -95,7 +95,7 @@
 		z-index: 1;
 		top: 0;
 		color: inherit;
-		background: var(--ultra-170);
+		background: var(--nav-primary-color);
 
 		@supports selector([popover]:popover-open) {
 			display: flex;
@@ -159,7 +159,7 @@
 		height: 100%;
 		width: 100%;
 		max-width: 100%;
-		background: var(--ultra-170);
+		background: var(--nav-primary-color);
 		color: inherit;
 
 		@media (prefers-reduced-motion: no-preference) {
@@ -252,7 +252,7 @@
 		}
 
 		:global(svg path) {
-			fill: var(--white);
+			fill: var(--text-color-light);
 		}
 
 		@media (min-width: 56.25rem) {
@@ -276,7 +276,7 @@
 
 			:global(svg),
 			:global(svg path) {
-				fill: var(--cleanroom-100);
+				fill: var(--accent-color);
 			}
 		}
 	}
@@ -357,7 +357,7 @@
 
 		@keyframes anim-timeline--header-opacity {
 			to {
-				background-color: var(--space-100);
+				background-color: var(--background-color-dark);
 			}
 		}
 	}

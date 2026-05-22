@@ -96,12 +96,13 @@ body {
 	--white-low-opacity: hsla(0, 0%, 100%, 0.5);
 
 	/* Semantic colors */
-	--primary-color-dark: var(--space-100);
-	--primary-color-light: var(--white);
+	--background-color-dark: var(--space-100);
+	--background-color-light: var(--white);
 	--secondary-color: var(--ultra-100);
-	--tertiary-color: var(--ultra-170);
+	--nav-primary-color: var(--ultra-170);
 	--accent-color: var(--cleanroom-100);
-	--text-color-dark: var(--black);
+	--accent-color-dark: var(--cleanroom-140);
+	--text-color-dark: var(--space-100);
 	--text-color-light: var(--white);
 
 	/* Font families */
@@ -116,8 +117,8 @@ body {
 	--content-width: 1400px;
 
 	/* Styling */
-	background: var(--space-100);
-	color: var(--white);
+	background: var(--background-color-dark);
+	color: var(--text-color-light);
 	font-family: var(--font-paragraph);
 }
 
@@ -136,7 +137,7 @@ textarea {
 
 *::selection {
 	background: var(--cleanroom-60);
-	color: var(--space-100);
+	color: var(--background-color-dark);
 }
 
 main {
@@ -241,7 +242,11 @@ h6 {
 }
 
 .orange {
-	color: var(--cleanroom-100);
+	color: var(--accent-color);
+}
+
+.orange-on-white {
+	color: var(--accent-color-dark);
 }
 
 .content-container {

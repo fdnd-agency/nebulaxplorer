@@ -29,7 +29,7 @@
 	}
 
 	li {
-		background-color: white;
+		background-color: var(--background-color-light);
 		border-radius: 8px;
 		padding: 1rem;
 		display: flex;
@@ -59,7 +59,7 @@
 				overflow: hidden;
 				height: 10rem;
 				margin-inline: clamp(-1rem, -5vw, -3.5rem);
-				background-color: white;
+				background-color: var(--background-color-light);
 
 				max-width: unset;
 

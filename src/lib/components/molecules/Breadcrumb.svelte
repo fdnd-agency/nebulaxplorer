@@ -45,23 +45,23 @@
 		/* color schemes */
 
 		/* defaults */
-		--arrow-color: var(--cleanroom-100);
-		--text-color: var(--white);
+		--arrow-color: var(--accent-color);
+		--text-color: var(--text-color-light);
 
 		/* explicit */
 		&.white-on-space {
-			--arrow-color: var(--cleanroom-100);
-			--text-color: var(--white);
+			--arrow-color: var(--accent-color);
+			--text-color: var(--text-color-light);
 		}
 
 		&.space-on-gray {
-			--arrow-color: var(--ultra-100);
-			--text-color: var(--space-100);
+			--arrow-color: var(--secondary-color);
+			--text-color: var(--text-color-dark);
 		}
 
 		&.white-on-cleanroom {
-			--arrow-color: var(--space-100);
-			--text-color: var(--white);
+			--arrow-color: var(--background-color-dark);
+			--text-color: var(--text-color-light);
 		}
 
 		/* Text colors */

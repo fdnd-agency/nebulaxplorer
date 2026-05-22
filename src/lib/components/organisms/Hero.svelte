@@ -57,7 +57,7 @@
 <style>
 	.hero {
 		--menu-button-size: 3.75rem;
-		border-bottom: 0.375rem solid var(--cleanroom-100);
+		border-bottom: 0.375rem solid var(--accent-color);
 		position: relative;
 		padding: 1.5rem;
 		padding-top: 5.25rem;
@@ -151,7 +151,7 @@
 				background: linear-gradient(
 					transparent 0%,
 					var(--space-mid-opacity) 40%,
-					var(--space-100)
+					var(--background-color-dark)
 				);
 			}
 

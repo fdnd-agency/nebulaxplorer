@@ -33,7 +33,7 @@
 	}
 
 	.testimonial-card {
-		background: var(--space-100);
+		background: var(--background-color-dark);
 		backdrop-filter: blur(0.625rem);
 		border-radius: 0.5rem;
 		padding: 1.5rem;
@@ -53,7 +53,7 @@
 		border-radius: 0.5rem;
 		object-fit: cover;
 		flex-shrink: 0;
-		border: 1px solid var(--cleanroom-100);
+		border: 1px solid var(--accent-color);
 	}
 
 	.testimonial-content {
@@ -68,7 +68,7 @@
     } */
 
 	.testimonial-card h2 {
-		color: var(--white);
+		color: var(--text-color-light);
 		font-weight: 600;
 		font-size: 1rem;
 		margin: 0 0 0.25rem 0;
@@ -87,7 +87,7 @@
 		line-height: 1.5;
 		margin: 0;
 		padding-top: 1rem;
-		border-top: 0.0625rem solid var(--cleanroom-100);
+		border-top: 0.0625rem solid var(--accent-color);
 		flex: 1;
 	}
 

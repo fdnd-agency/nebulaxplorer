@@ -54,7 +54,7 @@
 
 <style>
 	.contents {
-		background: var(--space-100);
+		background: var(--background-color-dark);
 		padding: 2.25rem 1.5rem;
 		display: grid;
 		align-items: center;
@@ -149,11 +149,11 @@
 
 			&:hover,
 			&:focus {
-				color: var(--cleanroom-100);
+				color: var(--accent-color);
 			}
 
 			&:active {
-				color: var(--cleanroom-140);
+				color: var(--accent-color-dark);
 			}
 		}
 	}
@@ -181,7 +181,7 @@
 		a :global(svg) {
 			flex-shrink: 0;
 			height: 2em;
-			color: white;
+			color: var(--text-color-light);
 		}
 
 		@media (min-width: 700px) {

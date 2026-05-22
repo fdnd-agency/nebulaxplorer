@@ -66,7 +66,7 @@
 
 		&:hover .apply-button,
 		&:focus-within .apply-button {
-			background: var(--ultra-100);
+			background: var(--secondary-color);
 			color: var(--cleanroom-60);
 		}
 	}
@@ -106,7 +106,7 @@
 
 	.assignment-title {
 		font-size: 1.5rem;
-		color: var(--cleanroom-140);
+		color: var(--accent-color-dark);
 		margin-bottom: 1rem;
 	}
 
@@ -115,8 +115,8 @@
 		text-align: center;
 		padding: 1rem;
 		width: 100%;
-		color: var(--space-100);
-		background: var(--cleanroom-100);
+		color: var(--text-color-dark);
+		background: var(--accent-color);
 		text-transform: uppercase;
 	}
 </style>

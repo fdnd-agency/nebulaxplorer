@@ -58,7 +58,7 @@
 	li {
 		display: grid;
 		grid-template-rows: min-content min-content 1fr;
-		background-color: var(--ultra-100);
+		background-color: var(--secondary-color);
 
 		p {
 			padding: 1rem;
@@ -87,7 +87,7 @@
 		display: inline;
 		background-color: transparent;
 		cursor: pointer;
-		color: var(--cleanroom-100);
+		color: var(--accent-color);
 
 		&:hover {
 			text-decoration: underline;
@@ -99,6 +99,6 @@
 	}
 
 	.orange {
-		color: var(--cleanroom-100);
+		color: var(--accent-color);
 	}
 </style>

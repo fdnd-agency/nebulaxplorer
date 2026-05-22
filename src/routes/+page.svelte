@@ -19,7 +19,7 @@
 		content="NEBULA-Xplorer will investigate how jets form and how X-ray binaries evolve. It will observe these objects for long periods of time to see how their emission varies on time scales from milliseconds to weeks." />
 </svelte:head>
 
-<Hero titleColor="var(--white)" pageTitle="" />
+<Hero titleColor="var(--text-color-light)" pageTitle="" />
 
 <News newsCards={data.newsItems} />
 
@@ -108,9 +108,9 @@
 	}
 
 	section.alt {
-		background-color: white;
-		color: black;
-		border-bottom: var(--cleanroom-100) 0.5rem solid;
+		background-color: var(--background-color-light);
+		color: var(--text-color-dark);
+		border-bottom: var(--accent-color) 0.5rem solid;
 
 		h2 {
 			color: var(--ultra-140);

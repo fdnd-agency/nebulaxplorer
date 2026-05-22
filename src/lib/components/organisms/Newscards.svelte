@@ -53,7 +53,7 @@
 
 	.news-card {
 		position: relative;
-		background-color: var(--white);
+		background-color: var(--background-color-light);
 		box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
 		transition:
 			transform 0.3s ease,
@@ -94,7 +94,7 @@
 			font-family: var(--font-heading);
 			font-weight: 900;
 			font-size: 1.2rem;
-			color: var(--cleanroom-100);
+			color: var(--accent-color);
 			padding: 0.5rem 0;
 		}
 	}

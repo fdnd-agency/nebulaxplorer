@@ -164,7 +164,7 @@
 	}
 
 	.pillar:focus-within {
-		outline: 0.125rem dashed var(--cleanroom-140);
+		outline: 0.125rem dashed var(--accent-color-dark);
 	}
 
 	a::after {

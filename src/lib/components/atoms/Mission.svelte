@@ -53,8 +53,8 @@
 
 <style>
 	.mission-brief-container {
-		background-color: var(--space-100);
-		color: var(--white);
+		background-color: var(--background-color-dark);
+		color: var(--text-color-light);
 		padding: 3.125rem;
 	}
 
@@ -92,7 +92,7 @@
 
 	.main-title {
 		font-weight: bold;
-		color: var(--cleanroom-100);
+		color: var(--accent-color);
 		margin-bottom: 3.125rem;
 	}
 
@@ -102,7 +102,7 @@
 
 	.section-title {
 		font-weight: bold;
-		color: var(--cleanroom-100);
+		color: var(--accent-color);
 		margin-top: 1.25rem;
 		margin-bottom: 1.25rem;
 		font-size: 2rem;

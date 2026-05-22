@@ -10,7 +10,7 @@
 </svelte:head>
 
 <!-- HERO BLOCK -->
-<Hero titleColor="var(--white)" pageTitle="Partners" />
+<Hero titleColor="var(--text-color-light)" pageTitle="Partners" />
 
 <section class="content-container">
 	<h2 class="section_title">Work with us!</h2>
@@ -50,7 +50,7 @@
 	}
 
 	a {
-		color: var(--cleanroom-100);
+		color: var(--accent-color);
 	}
 
 	.paragraph {

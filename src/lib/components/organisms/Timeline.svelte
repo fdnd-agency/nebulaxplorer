@@ -71,7 +71,7 @@
 
 	/* Timeline grid container */
 	article {
-		border: 1px solid white;
+		border: 1px solid var(--background-color-light);
 		padding: 1rem;
 		margin-inline: auto;
 		max-width: var(--content-width);
@@ -175,7 +175,7 @@
 	p {
 		max-height: 100%;
 		overflow-y: auto;
-		scrollbar-color: var(--space-60) var(--space-100);
+		scrollbar-color: var(--space-60) var(--background-color-dark);
 	}
 
 	details[open] summary {
@@ -249,7 +249,7 @@
 			top: 15%;
 			left: 2rem;
 			bottom: 15%;
-			background: white;
+			background: var(--background-color-light);
 			width: 2px;
 			z-index: 1;
 		}
