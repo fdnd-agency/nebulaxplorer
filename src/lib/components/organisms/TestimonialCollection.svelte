@@ -23,11 +23,32 @@
 	]
 </script>
 
-<ul>
-	{#each data as testimonial (testimonial.text)}
-		<MissionTestimonial {testimonial} />
-	{/each}
-</ul>
+<section>
+	<h2 class="heading">What our experts say</h2>
+	<ul>
+		{#each data as testimonial (testimonial.text)}
+			<MissionTestimonial {testimonial} />
+		{/each}
+	</ul>
+</section>
 
 <style>
+	section {
+		margin-block: calc(2rem + 2vw);
+	}
+
+	h2 {
+		max-width: var(--content-width);
+		margin-inline: auto;
+		margin-block-end: 1em;
+	}
+
+	ul {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+		gap: 2rem;
+		list-style: none;
+		max-width: var(--content-width);
+		margin-inline: auto;
+	}
 </style>
