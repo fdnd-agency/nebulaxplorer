@@ -30,7 +30,7 @@
 		padding: 2rem 2rem 3rem 2.5rem;
 		background-color: var(--secondary-color, hsl(235, 45%, 29%));
 		border-radius: 0.5rem;
-		
+
 		&::before {
 			content: '🙶' / '';
 			font-size: 2rem;
@@ -47,7 +47,7 @@
 		background-color: var(--background-color-light, white);
 		color: var(--text-color-dark, black);
 		border-radius: 0.5rem;
-	
+
 		@container (width > 20rem) {
 			flex-direction: row;
 			align-items: center;
@@ -86,5 +86,4 @@
 			padding-inline-start: 7rem;
 		}
 	}
-	
 </style>
