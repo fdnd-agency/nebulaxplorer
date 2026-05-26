@@ -3,7 +3,7 @@
 		Hero,
 		Breadcrumb,
 		Timeline,
-		ScientificTestimonial,
+		TestimonialCollection,
 		blackholeEnhanced as blackholeImage,
 	} from '$lib'
 	import MissionGoals from '$lib/components/organisms/MissionGoals.svelte'
@@ -145,7 +145,7 @@
 <!-- STEPS BLOCK -->
 <Timeline />
 
-<ScientificTestimonial />
+<TestimonialCollection />
 
 <style>
 	.paragraph-block div {
