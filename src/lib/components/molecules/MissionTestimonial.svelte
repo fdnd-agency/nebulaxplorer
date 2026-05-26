@@ -4,10 +4,10 @@
 
 <li>
 	<blockquote>{testimonial.text}</blockquote>
-	<div class="testimonial-person">
+	<div>
 		<img src={testimonial.image} alt="" width="200" />
 		<div>
-			<p class="testimonial-name">{testimonial.name}</p>
+			<p>{testimonial.name}</p>
 			<p>{testimonial.title}</p>
 		</div>
 	</div>
@@ -37,7 +37,7 @@
 		}
 	}
 
-	.testimonial-person {
+	blockquote + div {
 		display: flex;
 		flex-direction: column;
 		position: relative;
@@ -52,23 +52,6 @@
 			flex-direction: row;
 			align-items: center;
 		}
-	}
-
-	p {
-		padding: 0.25rem;
-		font-family: spaceMonoRegular, monospace;
-		letter-spacing: -0.2px;
-		text-align: center;
-
-		@container (width > 20rem) {
-			text-align: unset;
-			padding-inline-start: 7rem;
-		}
-	}
-
-	.testimonial-name {
-		font-weight: bold;
-		letter-spacing: 0.4px;
 	}
 
 	img {
@@ -86,4 +69,22 @@
 			bottom: -0.5rem;
 		}
 	}
+
+	p {
+		padding: 0.25rem;
+		font-family: spaceMonoRegular, monospace;
+		letter-spacing: -0.2px;
+		text-align: center;
+
+		&:first-of-type {
+			font-weight: bold;
+			letter-spacing: 0.4px;
+		}
+
+		@container (width > 20rem) {
+			text-align: unset;
+			padding-inline-start: 7rem;
+		}
+	}
+	
 </style>
