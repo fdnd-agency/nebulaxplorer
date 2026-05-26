@@ -34,7 +34,7 @@
 
 <style>
 	section {
-		margin-block: calc(2rem + 2vw);
+		margin-block-end: calc(2rem + 2vw);
 	}
 
 	h2 {
@@ -47,8 +47,8 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
 		gap: 2rem;
-		list-style: none;
 		max-width: var(--content-width);
 		margin-inline: auto;
+		list-style: none;
 	}
 </style>

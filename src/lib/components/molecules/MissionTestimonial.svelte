@@ -17,49 +17,47 @@
 	li {
 		display: flex;
 		flex-direction: column;
-		grid-template-rows: 1fr 3rem;
 		container-type: inline-size;
+
+		&:nth-of-type(even) blockquote {
+			background-color: var(--accent-color-dark, hsl(14, 83%, 52%));
+		}
 	}
 
 	blockquote {
-		background-color: var(--secondary-color, hsl(235, 45%, 29%));
-		padding: 2rem;
-		padding-inline-start: 3rem;
-		padding-block-end: 3rem;
-		border-radius: 0.5rem;
-		font-size: 1rem;
 		display: flex;
-
+		gap: 0.5rem;
+		padding: 2rem 2rem 3rem 2.5rem;
+		background-color: var(--secondary-color, hsl(235, 45%, 29%));
+		border-radius: 0.5rem;
+		
 		&::before {
 			content: '🙶' / '';
 			font-size: 2rem;
-			position: relative;
-			transform: translateX(-50%);
 		}
 	}
 
 	.testimonial-person {
-		background-color: var(--background-color-light, white);
-		color: var(--text-color-dark, black);
-		border: var(--background-color-dark, black);
-		padding: 1rem;
-		border-radius: 0.5rem;
-		margin-inline: 2rem;
-		margin-block-start: -1rem;
 		display: flex;
 		flex-direction: column;
 		position: relative;
-		align-items: center;
-
+		padding: 1rem;
+		margin-inline: 2rem;
+		margin-block-start: -1rem;
+		background-color: var(--background-color-light, white);
+		color: var(--text-color-dark, black);
+		border-radius: 0.5rem;
+	
 		@container (width > 20rem) {
 			flex-direction: row;
+			align-items: center;
 		}
 	}
 
 	p {
+		padding: 0.25rem;
 		font-family: spaceMonoRegular, monospace;
 		letter-spacing: -0.2px;
-		padding: 0.25rem;
 		text-align: center;
 
 		@container (width > 20rem) {
@@ -82,8 +80,8 @@
 
 		@container (width > 20rem) {
 			position: absolute;
-			left: -1rem;
 			height: calc(100% + 1rem);
+			left: -1rem;
 			top: -0.5rem;
 			bottom: -0.5rem;
 		}
