@@ -2,11 +2,11 @@
 	import {
 		Hero,
 		Breadcrumb,
+		MissionGoals,
 		Timeline,
 		TestimonialCollection,
 		blackholeEnhanced as blackholeImage,
 	} from '$lib'
-	import MissionGoals from '$lib/components/organisms/MissionGoals.svelte'
 </script>
 
 <svelte:head>
@@ -142,7 +142,6 @@
 
 <MissionGoals />
 
-<!-- STEPS BLOCK -->
 <Timeline />
 
 <TestimonialCollection />
@@ -235,10 +234,6 @@
 	}
 
 	/* util classes */
-	.orange {
-		color: var(--cleanroom-100);
-	}
-
 	:global(enhanced\:img) {
 		width: auto;
 	}
