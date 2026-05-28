@@ -73,6 +73,7 @@
 		grid-column: 1;
 		grid-row: var(--_index) / span 1;
 		display: grid;
+		align-items: center;
 		padding: 1rem;
 		cursor: pointer;
 		z-index: 1;

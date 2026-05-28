@@ -73,12 +73,14 @@
 
 	/* Timeline grid container */
 	article {
+		--_step-height: calc((100% - 2rem) / var(--_length));
+
 		border: 1px solid white;
 		padding: 1rem;
 		margin-inline: auto;
 		max-width: var(--content-width);
 		position: relative;
-
+		
 		@container (width > 50rem) {
 			display: grid;
 			grid-template-columns: 1fr 2fr;
@@ -96,7 +98,7 @@
 		.rocket {
 			display: block;
 			position: absolute;
-			top: 12%;
+			top: calc(0.5 * var(--_step-height));
 			left: 1rem;
 			font-size: 2rem;
 			transition: 1s;
@@ -105,24 +107,28 @@
 
 		.background {
 			position: absolute;
-			top: 15%;
+			top: calc(0.5 * var(--_step-height) + 1rem);
 			left: 2rem;
-			bottom: 15%;
+			bottom: calc(0.5 * var(--_step-height) + 1rem);
 			background: white;
 			width: 2px;
 			z-index: 1;
 		}
 	}
 
-	article:has(details:nth-of-type(2)[open]) .rocket {
-		top: 35%;
+	article:global(:has(details:nth-of-type(2)[open]) .rocket) {
+		top: calc(1.5 * var(--_step-height));
 	}
 
-	article:has(details:nth-of-type(3)[open]) .rocket {
-		top: 59%;
+	article:global(:has(details:nth-of-type(3)[open]) .rocket) {
+		top: calc(2.5 * var(--_step-height));
 	}
 
-	article:has(details:nth-of-type(4)[open]) .rocket {
-		top: 82.5%;
+	article:global(:has(details:nth-of-type(4)[open]) .rocket) {
+		top: calc(3.5 * var(--_step-height));
+	}
+
+	article:global(:has(details:nth-of-type(5)[open]) .rocket) {
+		top: calc(4.5 * var(--_step-height));
 	}
 </style>
