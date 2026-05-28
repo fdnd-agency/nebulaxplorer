@@ -48,7 +48,7 @@
 <section>
 	<h3 class="section_title">Mission Timeline</h3>
 	<article style="--_length: {data.length}">
-		{#each data as step, index (data.id)}
+		{#each data as step, index (step.id)}
 			<TimelineStep {step} {index} />
 		{/each}
 		<div class="rocket" aria-hidden="true">🚀</div>
