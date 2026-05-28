@@ -36,12 +36,6 @@
 				'At the launch site, final preparations are completed. The propulsion system is fueled with propylene and nitrous oxide. The satellite is mounted on a SpaceX Falcon 9 as a rideshare payload. The Flight Readiness Review (FRR) confirms launch readiness before liftoff and the start of LEOP.',
 			image: rocketLaunchStep5,
 		},
-		{
-			id: 5,
-			title: 'The secret fifth step',
-			content: 'Lorem.',
-			image: placeholder1,
-		},
 	]
 </script>
 
