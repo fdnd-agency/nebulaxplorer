@@ -66,7 +66,7 @@
 			}
 		}
 
-		/* every adjecent elem should have margin-top; except for the picture as that is the background image. */
+		/* every adjacent element should have margin-top; except for the picture as that is the background image. */
 		> *:not(picture) + *:not(picture) {
 			margin-block-start: 1rem;
 		}
