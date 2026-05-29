@@ -56,23 +56,19 @@
 
 <style>
 	.hero {
-		--_menu-button-size: 3.75rem;
-		border-bottom: 0.375rem solid var(--accent-color);
 		position: relative;
-		padding: 1.5rem;
-		padding-top: 5.25rem;
+		padding-block: 3.5rem 2.25rem;
+		border-block-end: 0.375rem solid var(--accent-color);
 
 		@media (min-width: 56.25rem) {
-			padding: 3.5rem 4rem 2.25rem 0.5rem;
-
 			&.fullscreen {
-				padding-block: 14rem;
+				padding-block-start: 30vh;
 			}
 		}
 
 		/* every adjecent elem should have margin-top; except for the picture as that is the background image. */
 		> *:not(picture) + *:not(picture) {
-			margin-top: 1rem;
+			margin-block-start: 1rem;
 		}
 
 		/* if a p is present the logo will correctly get margin-top */
@@ -97,76 +93,76 @@
 		}
 
 		h1 {
-			padding-inline: 0.75em;
 			padding-block-start: 0.25em;
 		}
+	}
 
-		.hero-logo {
-			width: clamp(12.5rem, 7.15rem + 28.5vw, 25rem);
-			max-width: 36.375rem;
-			display: block;
+	.hero-logo {
+		display: block;
+		width: clamp(12.5rem, 7.15rem + 28.5vw, 25rem);
+		max-width: 36.375rem;
+	}
+
+	.logo-overlay {
+		--_space-mid-opacity: hsla(238, 35%, 15%, 0.75);
+
+		padding: 2em;
+		width: min-content;
+		background-color: var(--_space-mid-opacity);
+	}
+
+	/* Alternate layout */
+	.bottom-layout {
+		padding-inline: 0;
+		padding-block: 10rem 0;
+
+		@media (min-width: 56.25rem) {
+			padding-block: 50vh 0;
+		}
+
+		h1 {
+			padding-block: 0.5em;
+		}
+
+		.content-container-alt {
+			width: 100%;
+			max-width: var(--content-width);
+			margin-inline: auto;
+			margin-block: 0;
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			column-gap: calc(1em + 2vw);
+		}
+
+		.logo-container {
+			width: 100%;
+			padding-block: 0;
+			margin-inline: 0;
+
+			@media (min-width: 56.25rem) {
+				padding-block-start: 4rem;
+			}
 		}
 
 		.logo-overlay {
-			--_space-mid-opacity: hsla(238, 35%, 15%, 0.75);
-
-			background-color: var(--_space-mid-opacity);
-			width: min-content;
-			padding: 2em;
+			background: linear-gradient(
+				transparent 0%,
+				var(--_space-mid-opacity) 40%,
+				var(--background-color-dark)
+			);
 		}
 
-		&.bottom-layout {
-			padding-inline: 0;
-			padding-block: 10rem 0;
+		.content-container {
+			max-width: unset;
+		}
 
-			@media (min-width: 56.25rem) {
-				padding-block: 50vh 0;
-			}
-
-			h1 {
-				padding-block: 0.5em;
-			}
-
-			.content-container-alt {
-				width: 100%;
-				max-width: var(--content-width);
-				margin-inline: auto;
-				margin-block: 0;
-				display: flex;
-				align-items: center;
-				flex-wrap: wrap;
-			}
-
-			.logo-container {
-				width: 100%;
-				padding-block: 0;
-				margin-inline: 0;
-
-				@media (min-width: 56.25rem) {
-					padding-left: 4rem;
-				}
-			}
-
-			.logo-overlay {
-				background: linear-gradient(
-					transparent 0%,
-					var(--_space-mid-opacity) 40%,
-					var(--background-color-dark)
-				);
-			}
-
-			.content-container {
-				max-width: unset;
-			}
-
-			.hero-logo {
-				font-size: clamp(2.5rem, 5vw + 1rem, 4.375rem);
-				line-height: clamp(2.5rem, 5vw + 1rem, 4.625rem);
-				height: 2.5lh;
-				width: auto;
-				padding-block: 0.5em;
-				margin-inline-start: -0.5em;
-			}
+		.hero-logo {
+			font-size: clamp(2.5rem, 5vw + 1rem, 4.375rem);
+			line-height: clamp(2.5rem, 5vw + 1rem, 4.625rem);
+			height: 2.5lh;
+			width: auto;
+			padding-block: 0.5em;
 		}
 	}
 </style>
