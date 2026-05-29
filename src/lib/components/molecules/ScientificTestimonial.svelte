@@ -58,7 +58,7 @@
 	}
 
 	.blockquote-container {
-		background-color: var(--cleanroom-100);
+		background-color: var(--accent-color);
 		border-radius: 60px 0;
 		max-width: 30rem;
 		margin-inline-end: 1rem;
@@ -108,7 +108,7 @@
 
 	blockquote {
 		font-family: var(--font-paragraph);
-		color: var(--space-100);
+		color: var(--text-color-dark);
 		margin-bottom: 1em;
 
 		&::before {

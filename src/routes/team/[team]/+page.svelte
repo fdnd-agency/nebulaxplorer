@@ -18,7 +18,7 @@
 </svelte:head>
 
 <Hero
-	titleColor="var(--white)"
+	titleColor="var(--text-color-light)"
 	pageTitle="Team"
 	background={{
 		file: nebulaTeamBeginning,
@@ -32,7 +32,7 @@
 
 <div class="content-container">
 	<img src={teamPhoto} alt="" />
-	<h2 class="section_title">
+	<h2 class="section-title">
 		Who we worked with in <span class="orange">{data.members[0].time}</span>
 	</h2>
 
@@ -67,9 +67,5 @@
 		grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
 		gap: 1rem;
 		margin-block: 1rem 4rem;
-	}
-
-	.orange {
-		color: var(--cleanroom-100);
 	}
 </style>

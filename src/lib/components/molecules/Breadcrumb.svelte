@@ -36,7 +36,7 @@
 </nav>
 
 <style>
-	nav.breadcrumb-path div {
+	.breadcrumb-path div {
 		display: flex;
 		gap: 0.75rem;
 		align-items: center;
@@ -45,32 +45,32 @@
 		/* color schemes */
 
 		/* defaults */
-		--arrow-color: var(--cleanroom-100);
-		--text-color: var(--white);
+		--_arrow-color: var(--accent-color);
+		--_text-color: var(--text-color-light);
 
 		/* explicit */
 		&.white-on-space {
-			--arrow-color: var(--cleanroom-100);
-			--text-color: var(--white);
+			--_arrow-color: var(--accent-color);
+			--_text-color: var(--text-color-light);
 		}
 
 		&.space-on-gray {
-			--arrow-color: var(--ultra-100);
-			--text-color: var(--space-100);
+			--_arrow-color: var(--secondary-color);
+			--_text-color: var(--text-color-dark);
 		}
 
 		&.white-on-cleanroom {
-			--arrow-color: var(--space-100);
-			--text-color: var(--white);
+			--_arrow-color: var(--background-color-dark);
+			--_text-color: var(--text-color-light);
 		}
 
 		/* Text colors */
-		color: var(--text-color);
+		color: var(--_text-color);
 
 		.arrow {
 			display: contents;
 			/* Arrow colors */
-			color: var(--arrow-color);
+			color: var(--_arrow-color);
 		}
 
 		/* Truncate when too long, helps with REALLY large titles */

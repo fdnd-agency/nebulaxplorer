@@ -44,12 +44,12 @@
 			flex-direction: row;
 		}
 
-		border-top: 0.375rem solid var(--cleanroom-100);
-		background: var(--space-100);
+		border-top: 0.375rem solid var(--accent-color);
+		background: var(--background-color-dark);
 		padding: 0;
 		position: relative;
 
-		background: var(--ultra-100);
+		background: var(--secondary-color);
 		gap: 1.5rem;
 		padding-left: 1.5rem;
 
@@ -99,7 +99,7 @@
 			position: absolute;
 			height: 100%;
 			width: 0.125rem;
-			background: var(--cleanroom-100);
+			background: var(--accent-color);
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
@@ -139,7 +139,7 @@
 			position: relative;
 
 			&.divider {
-				background: var(--cleanroom-100);
+				background: var(--accent-color);
 				width: 0.125rem;
 				/* Make it as big as the text */
 				height: 1em;

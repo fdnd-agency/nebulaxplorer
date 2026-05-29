@@ -31,7 +31,7 @@
 	class="hero {fullScreen ? 'fullscreen' : ''} {bottomLayout
 		? 'bottom-layout'
 		: ''}"
-	style="--focal-point: {focalPoint}">
+	style="--_focal-point: {focalPoint}">
 	{#if paragraph}
 		<p class="subheading">{paragraph}</p>
 	{/if}
@@ -69,8 +69,8 @@
 
 <style>
 	.hero {
-		--menu-button-size: 3.75rem;
-		border-bottom: 0.375rem solid var(--cleanroom-100);
+		--_menu-button-size: 3.75rem;
+		border-bottom: 0.375rem solid var(--accent-color);
 		position: relative;
 		padding: 1.5rem;
 		padding-top: 5.25rem;
@@ -104,7 +104,7 @@
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
-				object-position: var(--focal-point);
+				object-position: var(--_focal-point);
 				z-index: -1;
 			}
 		}
@@ -133,9 +133,9 @@
 		}
 
 		.logo-overlay {
-			--space-mid-opacity: hsla(238, 35%, 15%, 0.75);
+			--_space-mid-opacity: hsla(238, 35%, 15%, 0.75);
 
-			background-color: var(--space-mid-opacity);
+			background-color: var(--_space-mid-opacity);
 			width: min-content;
 			padding: 2em;
 		}
@@ -175,8 +175,8 @@
 			.logo-overlay {
 				background: linear-gradient(
 					transparent 0%,
-					var(--space-mid-opacity) 40%,
-					var(--space-100)
+					var(--_space-mid-opacity) 40%,
+					var(--background-color-dark)
 				);
 			}
 

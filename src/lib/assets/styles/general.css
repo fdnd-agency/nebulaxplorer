@@ -95,6 +95,17 @@ body {
 	--white: hsl(0, 0%, 100%);
 	--white-low-opacity: hsla(0, 0%, 100%, 0.5);
 
+	/* Semantic colors */
+	--background-color-dark: var(--space-100);
+	--background-color-light: var(--white);
+	--secondary-color: var(--ultra-100);
+	--nav-primary-color: var(--ultra-170);
+	--accent-color: var(--cleanroom-100);
+	--accent-color-light: var(--cleanroom-60);
+	--accent-color-dark: var(--cleanroom-140);
+	--text-color-dark: var(--space-100);
+	--text-color-light: var(--white);
+
 	/* Font families */
 	--font-heading: spaceGrotesk;
 	--font-paragraph: Roboto;
@@ -107,8 +118,8 @@ body {
 	--content-width: 1400px;
 
 	/* Styling */
-	background: var(--space-100);
-	color: var(--white);
+	background: var(--background-color-dark);
+	color: var(--text-color-light);
 	font-family: var(--font-paragraph);
 }
 
@@ -126,8 +137,8 @@ textarea {
 }
 
 *::selection {
-	background: var(--cleanroom-60);
-	color: var(--space-100);
+	background: var(--accent-color-light);
+	color: var(--background-color-dark);
 }
 
 main {
@@ -175,7 +186,7 @@ h6 {
 	letter-spacing: -0.02em;
 }
 
-.section_title {
+.section-title {
 	font-family: var(--font-heading);
 	font-size: clamp(2rem, 3.5vw + 1rem, 2.875rem);
 	line-height: clamp(2.5rem, 3.5vw + 1rem, 3.125rem);
@@ -232,7 +243,11 @@ h6 {
 }
 
 .orange {
-	color: var(--cleanroom-100);
+	color: var(--accent-color);
+}
+
+.orange-on-white {
+	color: var(--accent-color-dark);
 }
 
 .content-container {

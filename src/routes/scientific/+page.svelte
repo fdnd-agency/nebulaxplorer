@@ -10,7 +10,7 @@
 </svelte:head>
 
 <Hero
-	titleColor="var(--white)"
+	titleColor="var(--text-color-light)"
 	pageTitle="Scientific"
 	background={{ file: simonnetEnhanced, alt: 'Rotating Black Holes Collide' }}
 	attribution={{

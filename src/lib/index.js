@@ -42,7 +42,7 @@ export { default as Arrow } from './components/icons/Arrow.svelte'
 export { default as Bsky } from './components/icons/Bsky.svelte'
 export { default as Instagram } from './components/icons/Instagram.svelte'
 export { default as LinkedIn } from './components/icons/Linkedin.svelte'
-export { default as PageArrow } from './components/atoms/PageArrow.svelte'
+export { default as PageArrow } from './components/icons/PageArrow.svelte'
 
 // Logo SVGs
 export { default as favIcon } from './assets/logos/favicon.svg'

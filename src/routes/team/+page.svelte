@@ -61,7 +61,7 @@
 
 <!-- HERO BLOCK -->
 <Hero
-	titleColor="var(--white)"
+	titleColor="var(--text-color-light)"
 	pageTitle="Team"
 	background={{
 		file: nebulaTeamBeginning,
@@ -74,7 +74,7 @@
 <Breadcrumb />
 
 <section class="content-container">
-	<h2 class="section_title">who are we?</h2>
+	<h2 class="section-title">who are we?</h2>
 	{#each sortedResults as year}
 		<TeamsYearComponent {year} />
 	{/each}

@@ -22,7 +22,7 @@
 <!-- titleColor controls the title color based on the provided css var provided -->
 
 <Hero
-	titleColor="var(--white)"
+	titleColor="var(--text-color-light)"
 	background={{
 		file: nasaGarciaEnhanced,
 		alt: 'IXPE Explores a Black Hole Jet',

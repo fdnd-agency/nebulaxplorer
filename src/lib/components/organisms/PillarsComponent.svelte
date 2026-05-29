@@ -55,7 +55,7 @@
 
 <section>
 	<div class="content-container">
-		<h2 class="section_title">Pillars</h2>
+		<h2 class="section-title">Pillars</h2>
 		<!-- TODO: make the things inside this #each loop into a seperate component partial -->
 		<ul>
 			{#each dummydata as data (data.link)}
@@ -164,7 +164,7 @@
 	}
 
 	.pillar:focus-within {
-		outline: 0.125rem dashed var(--cleanroom-140);
+		outline: 0.125rem dashed var(--accent-color-dark);
 	}
 
 	a::after {

@@ -16,7 +16,7 @@
 	<img
 		src={SRON_Academy_OnSpaceBlue}
 		alt="SRON Academy logo"
-		class="footerImg SronAcademyLogo" />
+		class="footer-image logo-sron-academy" />
 	<div class="line"></div>
 	<!-- this is a seperate element because what is supposed to be above and below this line changes with viewport width. If we can give a css grid line a border I would prefer that I think. But I'm, not sure if that's even posible. This works fine though. -->
 	<nav>
@@ -34,7 +34,7 @@
 	<img
 		src={SRON_full_white}
 		alt="SRON full white logo"
-		class="footerImg SronLogo" />
+		class="footer-image logo-sron" />
 	<ul class="socials">
 		<li>
 			<a href={resolve('/#mailing-list-signup')}>
@@ -54,7 +54,7 @@
 
 <style>
 	.contents {
-		background: var(--space-100);
+		background: var(--background-color-dark);
 		padding: 2.25rem 1.5rem;
 		display: grid;
 		align-items: center;
@@ -76,11 +76,11 @@
 		}
 	}
 
-	.SronAcademyLogo {
+	.logo-sron-academy {
 		grid-area: academy;
 	}
 
-	.SronLogo {
+	.logo-sron {
 		grid-area: sron;
 		margin-block-start: 1rem;
 
@@ -95,7 +95,7 @@
 		border-top: 0.1875rem solid var(--white);
 	}
 
-	.footerImg {
+	.footer-image {
 		width: 20rem;
 		max-width: 95%;
 
@@ -127,7 +127,7 @@
 
 			&:hover,
 			&:focus-within {
-				color: var(--cleanroom-60);
+				color: var(--accent-color-light);
 			}
 
 			@supports selector(a:has(b)) {
@@ -136,7 +136,7 @@
 				&:focus-within + li,
 				&:has(+ li:hover),
 				&:has(+ li:focus-within) {
-					color: var(--cleanroom-60);
+					color: var(--accent-color-light);
 				}
 			}
 		}
@@ -149,11 +149,11 @@
 
 			&:hover,
 			&:focus {
-				color: var(--cleanroom-100);
+				color: var(--accent-color);
 			}
 
 			&:active {
-				color: var(--cleanroom-140);
+				color: var(--accent-color-dark);
 			}
 		}
 	}
@@ -181,7 +181,7 @@
 		a :global(svg) {
 			flex-shrink: 0;
 			height: 2em;
-			color: white;
+			color: var(--text-color-light);
 		}
 
 		@media (min-width: 700px) {
