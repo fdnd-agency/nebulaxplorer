@@ -7,10 +7,10 @@
 
 <section>
 	<div class="content-container">
-		<h2 class="section_title news_section_title">Mission Updates</h2>
-		<ul class="news-grid">
+		<h2 class="section-title">Mission Updates</h2>
+		<ul class="newscard-container">
 			{#each newsCards as newscard (newscard.id)}
-				<li class="news-card">
+				<li class="newscard">
 					<img
 						src={newscard.image
 							? `https://fdnd-agency.directus.app/assets/${newscard.image}`
@@ -32,20 +32,20 @@
 
 <style>
 	section {
-		background-color: var(--white);
+		background-color: var(--background-color-light);
 		margin-block: -1.5rem;
 		padding-block: 2.5rem;
 		padding-inline: clamp(1rem, 6vw, 3.5rem);
-		border-bottom: var(--cleanroom-100) 0.5rem solid;
+		border-bottom: var(--accent-color) 0.5rem solid;
 	}
 
-	.news_section_title {
+	h2 {
 		color: var(--ultra-140);
-		background-color: var(--white);
+		background-color: var(--background-color-light);
 		padding-block: 0.5em 1em;
 	}
 
-	.news-grid {
+	.newscard-container {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 		grid-template-rows: fit-content;
@@ -53,9 +53,9 @@
 		list-style: none;
 	}
 
-	.news-card {
+	.newscard {
 		position: relative;
-		background-color: var(--white);
+		background-color: var(--background-color-light);
 		box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
 		transition:
 			transform 0.3s ease,
@@ -122,7 +122,7 @@
 		font-family: var(--font-heading);
 		font-weight: 900;
 		font-size: 1.2rem;
-		color: var(--cleanroom-100);
+		color: var(--accent-color-dark);
 		padding-block: 1rem;
 		padding-inline: clamp(0.75rem, 0.25rem + 1.1vw, 1rem);
 	}
@@ -139,7 +139,7 @@
 		font-weight: 500;
 		text-align: center;
 		text-transform: uppercase;
-		color: var(--cleanroom-100);
+		color: var(--accent-color-dark);
 
 		&:hover {
 			text-decoration: underline 1px;

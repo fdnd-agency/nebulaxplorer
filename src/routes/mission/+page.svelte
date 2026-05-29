@@ -17,7 +17,7 @@
 </svelte:head>
 
 <!-- HERO BLOCK -->
-<Hero titleColor="var(--white)" pageTitle="Mission" />
+<Hero titleColor="var(--text-color-light)" pageTitle="Mission" />
 
 <Breadcrumb />
 
@@ -72,7 +72,7 @@
 			src={blackholeImage}
 			alt="Black Hole" />
 		<section class="text-content">
-			<h3 class="orange heading">Multi-messenger physics</h3>
+			<h3 class="orange-on-white heading">Multi-messenger physics</h3>
 			<p>
 				NEBULA-Xplorer frames the multi-wavelength campaigns required to
 				understand jet and accretion physics at the forefront of its
@@ -200,8 +200,8 @@
 	}
 
 	.paragraph-block-alt {
-		background-color: var(--white);
-		color: var(--space-100);
+		background-color: var(--background-color-light);
+		color: var(--text-color-dark);
 
 		div {
 			padding-bottom: 2rem;
@@ -235,10 +235,6 @@
 	}
 
 	/* util classes */
-	.orange {
-		color: var(--cleanroom-100);
-	}
-
 	:global(enhanced\:img) {
 		width: auto;
 	}

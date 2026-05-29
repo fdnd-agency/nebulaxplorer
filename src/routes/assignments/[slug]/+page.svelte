@@ -11,7 +11,7 @@
 {#if data.assignment}
 	<section class="section-overview">
 		<div class="content-container">
-			<h2 class="section_title">{data.assignment.title}</h2>
+			<h2 class="section-title">{data.assignment.title}</h2>
 			<ul>
 				<li>
 					<span class="white">Location: </span>{data.assignment
@@ -37,7 +37,7 @@
 	</section>
 {:else}
 	<section class="content-container error">
-		<h2 class="section_title">Assignment not found.</h2>
+		<h2 class="section-title">Assignment not found.</h2>
 		<a href={resolve('/assignments')}>Go back to overview?</a>
 	</section>
 {/if}
@@ -70,22 +70,22 @@
 	li {
 		text-transform: uppercase;
 		font-family: var(--font-subtext);
-		color: var(--cleanroom-100);
+		color: var(--accent-color);
 		line-height: 1.4;
 	}
 
 	li::marker {
-		color: var(--white);
+		color: var(--text-color-light);
 	}
 
 	.section-details {
-		background-color: var(--white);
-		color: black;
+		background-color: var(--background-color-light);
+		color: var(--text-color-dark);
 		padding-block: calc(1em + 1vw);
 	}
 
 	h3 {
-		color: var(--ultra-100);
+		color: var(--secondary-color);
 		padding-block: 0.5em;
 	}
 
@@ -94,7 +94,7 @@
 	}
 
 	a {
-		color: var(--cleanroom-100);
+		color: var(--accent-color);
 		display: block;
 		padding-block: 1em;
 
@@ -104,7 +104,7 @@
 	}
 
 	.white {
-		color: var(--white);
+		color: var(--text-color-light);
 		margin-right: 1ch;
 	}
 

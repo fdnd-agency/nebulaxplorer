@@ -1,6 +1,6 @@
 <section id="mailing-list-signup">
 	<div>
-		<h2 class="section_title">Subscribe to our mailing list</h2>
+		<h2 class="section-title">Subscribe to our mailing list</h2>
 		<p class="paragraph">
 			to receive news and updates about our research and activities.
 		</p>
@@ -29,7 +29,7 @@
 	div {
 		max-width: 1000px;
 		margin-inline: auto;
-		border: 1px solid var(--cleanroom-100);
+		border: 1px solid var(--accent-color);
 		border-radius: 50px 0;
 		padding-block: 2rem;
 		padding-inline: clamp(1rem, 0.25rem + 4vw, 5rem);
@@ -37,7 +37,7 @@
 	}
 
 	h2 {
-		color: var(--cleanroom-100);
+		color: var(--accent-color);
 		margin-block: 0.25em;
 	}
 
@@ -62,7 +62,7 @@
 
 	label {
 		width: 100%;
-		border: 1px solid white;
+		border: 1px solid var(--background-color-light);
 
 		&:focus-within {
 			outline: var(--default-focus);
@@ -77,7 +77,7 @@
 		background-color: transparent;
 		background: linear-gradient(
 			to right,
-			var(--space-100) 80%,
+			var(--background-color-dark) 80%,
 			var(--space-160)
 		);
 
@@ -89,9 +89,9 @@
 	button {
 		appearance: none;
 		height: 100%;
-		background-color: white;
-		border: 1px solid white;
-		color: black;
+		background-color: var(--background-color-light);
+		border: 1px solid var(--background-color-light);
+		color: var(--text-color-dark);
 		padding-inline: 1em;
 		transition:
 			background-color 0.2s,
@@ -105,8 +105,8 @@
 		&:hover,
 		&:focus-visible {
 			background-color: transparent;
-			color: white;
-			border-left: 1px solid white;
+			color: var(--text-color-light);
+			border-left: 1px solid var(--text-color-light);
 		}
 	}
 </style>

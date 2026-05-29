@@ -55,10 +55,10 @@
 </svelte:head>
 
 <!-- HERO BLOCK -->
-<Hero titleColor="var(--white)" pageTitle="Team" />
+<Hero titleColor="var(--text-color-light)" pageTitle="Team" />
 <Breadcrumb />
 <section class="content-container">
-	<h2 class="section_title">who are we?</h2>
+	<h2 class="section-title">who are we?</h2>
 	{#each sortedResults as year}
 		<TeamsYearComponent {year} />
 	{/each}

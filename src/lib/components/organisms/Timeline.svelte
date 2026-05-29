@@ -1,5 +1,5 @@
 <section>
-	<h3 class="section_title">Mission Timeline</h3>
+	<h3 class="section-title">Mission Timeline</h3>
 	<article>
 		<details name="timeline" open>
 			<summary class="caption">Reviews and Design Confirmation</summary>
@@ -71,7 +71,7 @@
 
 	/* Timeline grid container */
 	article {
-		border: 1px solid white;
+		border: 1px solid var(--background-color-light);
 		padding: 1rem;
 		margin-inline: auto;
 		max-width: var(--content-width);
@@ -110,11 +110,11 @@
 			opacity 0.4s,
 			content-visibility 0.4s allow-discrete;
 
-		--space-mid-opacity: hsla(238, 35%, 15%, 0.75);
-		--gradient: linear-gradient(
+		--_space-mid-opacity: hsla(238, 35%, 15%, 0.75);
+		--_gradient: linear-gradient(
 			transparent 0%,
-			var(--space-mid-opacity) 30%,
-			var(--space-mid-opacity) 100%
+			var(--_space-mid-opacity) 30%,
+			var(--_space-mid-opacity) 100%
 		);
 
 		@container (width > 50rem) {
@@ -122,10 +122,10 @@
 			grid-row: 1 / -1;
 			height: auto;
 
-			--gradient: linear-gradient(
+			--_gradient: linear-gradient(
 				transparent 0%,
 				transparent 30%,
-				var(--space-mid-opacity) 100%
+				var(--_space-mid-opacity) 100%
 			);
 		}
 	}
@@ -175,7 +175,7 @@
 	p {
 		max-height: 100%;
 		overflow-y: auto;
-		scrollbar-color: var(--space-60) var(--space-100);
+		scrollbar-color: var(--space-60) var(--background-color-dark);
 	}
 
 	details[open] summary {
@@ -197,7 +197,7 @@
 
 	details:nth-of-type(1)::details-content {
 		background-image:
-			var(--gradient), url('$lib/assets/images/placeholder1.jpg');
+			var(--_gradient), url('$lib/assets/images/placeholder1.jpg');
 	}
 
 	details:nth-of-type(2) summary {
@@ -206,7 +206,7 @@
 
 	details:nth-of-type(2)::details-content {
 		background-image:
-			var(--gradient), url('$lib/assets/images/placeholder2.jpg');
+			var(--_gradient), url('$lib/assets/images/placeholder2.jpg');
 	}
 
 	details:nth-of-type(3) summary {
@@ -215,7 +215,7 @@
 
 	details:nth-of-type(3)::details-content {
 		background-image:
-			var(--gradient), url('$lib/assets/images/sron-review-step-1.jpg');
+			var(--_gradient), url('$lib/assets/images/sron-review-step-1.jpg');
 	}
 
 	details:nth-of-type(4) summary {
@@ -224,7 +224,7 @@
 
 	details:nth-of-type(4)::details-content {
 		background-image:
-			var(--gradient), url('$lib/assets/images/rocket-launch-step-5.jpg');
+			var(--_gradient), url('$lib/assets/images/rocket-launch-step-5.jpg');
 	}
 
 	/* Decorative rocket timeline */
@@ -249,7 +249,7 @@
 			top: 15%;
 			left: 2rem;
 			bottom: 15%;
-			background: white;
+			background: var(--background-color-light);
 			width: 2px;
 			z-index: 1;
 		}
