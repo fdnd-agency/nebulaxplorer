@@ -69,7 +69,6 @@
 	article {
 		--_step-height: calc((100% - 2rem) / var(--_length));
 
-		border: 1px solid white;
 		padding: 1rem;
 		margin-inline: auto;
 		max-width: var(--content-width);
