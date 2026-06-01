@@ -27,6 +27,10 @@
 		file: nasaGarciaEnhanced,
 		alt: 'IXPE Explores a Black Hole Jet',
 	}}
+	attribution={{
+		text: 'NASA',
+		link: 'https://apod.nasa.gov/apod/ap250509.html',
+	}}
 	pageTitle="Assignments" />
 
 <Breadcrumb />
