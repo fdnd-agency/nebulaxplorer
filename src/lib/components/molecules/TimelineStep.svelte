@@ -83,8 +83,10 @@
 		text-transform: uppercase;
 		transition: 0.2s;
 
-		&:hover {
+		&:hover,
+		&:focus {
 			background-color: var(--space-60);
+			outline: none;
 		}
 
 		&::before {
