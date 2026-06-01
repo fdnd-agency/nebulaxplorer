@@ -20,7 +20,10 @@
 <Hero
 	titleColor="var(--text-color-light)"
 	pageTitle="Team"
-	background={{ file: nebulaTeamBeginning, alt: 'test' }}
+	background={{
+		file: nebulaTeamBeginning,
+		alt: 'The team that started off the Nebula-Xplorer project.',
+	}}
 	logoOverlay
 	bottomLayout
 	focalPoint="100% 30%" />

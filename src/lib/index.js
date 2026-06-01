@@ -35,6 +35,7 @@ export { default as Mission } from './components/atoms/Mission.svelte'
 // Icons
 export { default as MailIcon } from './components/icons/MailIcon.svelte'
 export { default as Quote } from './components/icons/Quote.svelte'
+export { default as NebulaLogo } from './components/icons/NebulaLogo.svelte'
 
 // Logo Components
 export { default as Arrow } from './components/icons/Arrow.svelte'
@@ -118,17 +119,23 @@ export { default as werkenbijSRON } from './assets/images/WerkenbijSRON.jpg'
 
 // Enhanced Images
 export { default as aeroDefenseTestingStep4Enhanced } from './assets/images/aerospace-defense-testing-step-4.jpg?enhanced&w=1024;768;512'
-export { default as blackholeEnhanced } from './assets/images/blackhole.jpg?enhanced'
+export { default as blackholeEnhanced } from './assets/images/blackhole.jpg?enhanced&w=1920;1440;1024;768;512'
 export { default as blackholeHeroEnhanced } from './assets/images/blackhole-hero.png?enhanced&w=1920;1440;1024;768'
 export { default as gravWavesEnhanced } from './assets/images/grav-waves.jpg?enhanced&w=1920;1440;1024;768'
-export { default as nebulaSatelliteEnhanced } from './assets/images/nebula-satellite.png?enhanced'
-export { default as nebulaTeamBeginning } from './assets/images/nebula beginning.jpg?enhanced&w=1920;1440;1024;768'
+export { default as lrgbEnhanced } from './assets/images/lrgb.jpg?enhanced&w=1920;1440;1024;768'
+export { default as nebulaSatelliteEnhanced } from './assets/images/nebula-satellite.png?enhanced&w=1920;1440;1024;768;512'
+export { default as nebulaTeamBeginning } from './assets/images/nebula beginning.jpg?enhanced&w=1920;1440;1024;768;512'
 export { default as nebulaXplorerEnhanced } from './assets/images/nebula-xplorer.jpg?enhanced&w=1024;768;512'
 export { default as rapidStep2Enhanced } from './assets/images/Rapid-step-2.jpg?enhanced&w=1024;768;512'
 export { default as rocketLaunchStep5Enhanced } from './assets/images/rocket-launch-step-5.jpg?enhanced&w=1024;768;512'
-export { default as sronGroningenEnhanced } from './assets/images/sron-groningen.webp?enhanced'
-export { default as sronLeidenEnhanced } from './assets/images/sron-leiden.webp?enhanced'
+export { default as simonnetEnhanced } from './assets/images/simonnet.jpg?enhanced&w=1920;1440;1024;768'
+export { default as sronGroningenEnhanced } from './assets/images/sron-groningen.webp?enhanced&w=1920;1440;1024;768;512'
+export { default as sronLeidenEnhanced } from './assets/images/sron-leiden.webp?enhanced&w=1920;1440;1024;768;512'
 export { default as sronReviewStep1Enhanced } from './assets/images/sron-review-step-1.jpg?enhanced&w=1024;768;512'
+
+export { default as tarantulaMergerEnhanced } from './assets/images/bh_merger_tarantula.jpg?enhanced&w=1024;768;512'
+export { default as nasaGarciaEnhanced } from './assets/images/bliac_nasagarcia_4580.jpg?enhanced&w=1024;768;512'
+export { default as xrayBinaryEnhanced } from './assets/images/xray-binary.webp?enhanced&w=1024;768;512'
 
 // UTILITIES
 // Utils

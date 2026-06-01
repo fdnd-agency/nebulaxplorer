@@ -5,6 +5,7 @@
 		Timeline,
 		ScientificTestimonial,
 		blackholeEnhanced as blackholeImage,
+		tarantulaMergerEnhanced,
 	} from '$lib'
 	import MissionGoals from '$lib/components/organisms/MissionGoals.svelte'
 </script>
@@ -17,7 +18,17 @@
 </svelte:head>
 
 <!-- HERO BLOCK -->
-<Hero titleColor="var(--text-color-light)" pageTitle="Mission" />
+<Hero
+	titleColor="var(--text-color-light)"
+	background={{
+		file: tarantulaMergerEnhanced,
+		alt: 'Visualization of a Black Hole Merger in the Tarantula Nebula',
+	}}
+	pageTitle="Mission"
+	attribution={{
+		text: 'NASA',
+		link: 'https://apod.nasa.gov/apod/ap260403.html',
+	}} />
 
 <Breadcrumb />
 
