@@ -151,12 +151,13 @@
 	</div>
 </section>
 
-<MissionGoals />
+<section class="mission-combined">
+	<MissionGoals />
 
-<!-- Fourth PARAGRAPH + IMG BLOCK -->
-<section class="paragraph-block paragraph-block-alt">
-<div class="content-container">
-		<section class="text-content">
+	<!-- Fourth PARAGRAPH + IMG BLOCK -->
+	<section class="paragraph-block paragraph-block-alt">
+		<div class="content-container">
+			<section class="text-content">
 				<h3 class="orange-on-white heading">
 					<span>01</span>
 					<span>X-ray Binary Mysteries</span>
@@ -166,11 +167,11 @@
 					Many of the brightest objects in the Universe are X-ray
 					binaries — combinations of an extremely compact object, such
 					as a black hole or neutron star, and a companion star. Over
-					time, the compact object strips matter from its companion, releasing
-					enormous energy in a focused beam called a jet. Scientists do not yet
-					fully understand this process, and the behaviour of matter right at
-					the edge of the black hole remains one of the great mysteries of
-					modern astrophysics.
+					time, the compact object strips matter from its companion,
+					releasing enormous energy in a focused beam called a jet.
+					Scientists do not yet fully understand this process, and the
+					behaviour of matter right at the edge of the black hole
+					remains one of the great mysteries of modern astrophysics.
 				</p>
 
 				<h3 class="orange-on-white heading">
@@ -181,10 +182,11 @@
 				<p>
 					NEBULA – Xplorer will investigate how jets form and how
 					X-ray binaries evolve by observing these objects over
-					extended periods — tracking how their emissions vary across timescales
-					ranging from milliseconds to weeks. These long observation
-					windows make it possible to combine X-ray data with measurements
-					from other telescopes across different wavelengths.
+					extended periods — tracking how their emissions vary across
+					timescales ranging from milliseconds to weeks. These long
+					observation windows make it possible to combine X-ray data
+					with measurements from other telescopes across different
+					wavelengths.
 				</p>
 
 				<h3 class="orange-on-white heading">
@@ -194,14 +196,16 @@
 
 				<p>
 					Every six months, a new cohort of students from different
-					disciplines —  including astrophysics, spacecraft engineering,
-					optics, electronics, software, and communications — joins the
-					project. Each group builds on the work of the last, with
-					continuity ensured by SRON scientists and industry partners.
+					disciplines — including astrophysics, spacecraft
+					engineering, optics, electronics, software, and
+					communications — joins the project. Each group builds on the
+					work of the last, with continuity ensured by SRON scientists
+					and industry partners.
 				</p>
-		</section>
-		<enhanced:img src={blackholeImage} alt="Black Hole" />
-	</div>
+			</section>
+			<enhanced:img src={blackholeImage} alt="Black Hole" />
+		</div>
+	</section>
 </section>
 
 <Timeline />
@@ -295,6 +299,30 @@
 		}
 	}
 
+	.mission-combined {
+		background-color: var(--background-color-light);
+		color: var(--text-color-dark);
+	}
+
+	.paragraph-block-alt h3.orange-on-white.heading {
+		font-size: 1.5rem;
+		font-weight: 500;
+		display: flex;
+		gap: 1rem;
+	}
+
+	.paragraph-block-alt .text-content {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	@media (min-width: 36.25rem) {
+		.paragraph-block-alt h3.orange-on-white.heading {
+			gap: 2rem;
+		}
+	}
+
 	/* util classes */
 	:global(enhanced\:img) {
 		width: auto;
@@ -305,6 +333,4 @@
 		font-weight: 600;
 		line-height: 1.5;
 	}
-
-	
 </style>
