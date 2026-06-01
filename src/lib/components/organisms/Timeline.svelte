@@ -17,17 +17,17 @@
 		},
 		{
 			id: 2,
-			title: 'Testing and Qualification (V&V)',
-			content:
-				'Verification and Validation ensures that all systems perform correctly. The Engineering Model (EM) is used for functional testing, while the Proto Flight Model (PFM) undergoes strict qualification tests. Activities include COTS component testing, FPGA prototyping, and alignment of the Optical Bench Assembly to withstand launch conditions.',
-			image: placeholder2,
-		},
-		{
-			id: 3,
 			title: 'Assembly, Integration, and Test (AIT)',
 			content:
 				'In the AIT phase, all subsystems are combined into a complete satellite. This includes propulsion and navigation systems such as star trackers. Interface control ensures compatibility between components. The integration of the 15-inch MkII Motorized Lightband connects the satellite securely to the launch vehicle.',
 			image: sronReviewStep1,
+		},
+		{
+			id: 3,
+			title: 'Testing and Qualification (V&V)',
+			content:
+				'Verification and Validation ensures that all systems perform correctly. The Engineering Model (EM) is used for functional testing, while the Proto Flight Model (PFM) undergoes strict qualification tests. Activities include COTS component testing, FPGA prototyping, and alignment of the Optical Bench Assembly to withstand launch conditions.',
+			image: placeholder2,
 		},
 		{
 			id: 4,
