@@ -299,29 +299,29 @@
 		}
 	}
 
-	.mission-combined {
-		background-color: var(--background-color-light);
-		color: var(--text-color-dark);
-	}
+.mission-combined {
+	background-color: var(--background-color-light);
+	color: var(--text-color-dark);
+}
 
-	.paragraph-block-alt h3.orange-on-white.heading {
+.paragraph-block-alt {
+	h3.orange-on-white.heading {
 		font-size: 1.5rem;
 		font-weight: 500;
 		display: flex;
 		gap: 1rem;
-	}
 
-	.paragraph-block-alt .text-content {
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-	}
-
-	@media (min-width: 36.25rem) {
-		.paragraph-block-alt h3.orange-on-white.heading {
+		@media (min-width: 36.25rem) {
 			gap: 2rem;
 		}
 	}
+
+	.text-content {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+}
 
 	/* util classes */
 	:global(enhanced\:img) {
