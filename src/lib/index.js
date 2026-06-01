@@ -8,6 +8,7 @@ export { default as NewsComponent } from './components/organisms/NewsComponent.s
 export { default as PartnersCarousel } from './components/organisms/PartnersCarousel.svelte'
 export { default as PillarsComponent } from './components/organisms/PillarsComponent.svelte'
 export { default as TeamsYearComponent } from '$lib/components/organisms/TeamsYearComponent.svelte'
+export { default as TestimonialCollection } from '$lib/components/organisms/TestimonialCollection.svelte'
 export { default as MissionGoals } from './components/organisms/MissionGoals.svelte'
 export { default as Timeline } from './components/organisms/Timeline.svelte'
 
@@ -18,6 +19,7 @@ export { default as CarouselTrack } from './components/molecules/CarouselTrack.s
 export { default as FooterLocations } from './components/molecules/FooterLocations.svelte'
 export { default as FooterNav } from './components/molecules/FooterNav.svelte'
 export { default as MailingListSignup } from './components/molecules/MailingListSignup.svelte'
+export { default as MissionTestimonial } from './components/molecules/MissionTestimonial.svelte'
 export { default as Pagination } from './components/molecules/Pagination.svelte'
 export { default as ScientificTestimonial } from './components/molecules/ScientificTestimonial.svelte'
 export { default as Sponsors } from './components/molecules/Sponsors.svelte'

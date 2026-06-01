@@ -2,12 +2,12 @@
 	import {
 		Hero,
 		Breadcrumb,
+		MissionGoals,
 		Timeline,
-		ScientificTestimonial,
+		TestimonialCollection,
 		blackholeEnhanced as blackholeImage,
 		tarantulaMergerEnhanced,
 	} from '$lib'
-	import MissionGoals from '$lib/components/organisms/MissionGoals.svelte'
 </script>
 
 <svelte:head>
@@ -153,10 +153,9 @@
 
 <MissionGoals />
 
-<!-- STEPS BLOCK -->
 <Timeline />
 
-<ScientificTestimonial />
+<TestimonialCollection />
 
 <style>
 	.paragraph-block div {
