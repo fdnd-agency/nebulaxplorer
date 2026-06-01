@@ -105,8 +105,26 @@
 			}
 		}
 
+		figcaption {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			background: rgba(0, 0, 0, 0.493);
+			padding: 0.5em;
+
+			a:hover {
+				text-decoration: underline;
+			}
+		}
+
 		h1 {
 			padding-block-start: 0.25em;
+		}
+
+		:global(svg) {
+			display: block;
+			width: clamp(12.5rem, 7.15rem + 28.5vw, 25rem);
+			max-width: 36.375rem;
 		}
 	}
 
@@ -120,12 +138,6 @@
 		a:hover {
 			text-decoration: underline;
 		}
-	}
-
-	:global(svg) {
-		display: block;
-		width: clamp(12.5rem, 7.15rem + 28.5vw, 25rem);
-		max-width: 36.375rem;
 	}
 
 	.logo-overlay {

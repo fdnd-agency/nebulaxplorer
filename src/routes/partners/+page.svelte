@@ -1,5 +1,5 @@
 <script module>
-	import { Hero, PartnersCarousel } from '$lib'
+	import { Hero, PartnersCarousel, lrgbEnhanced } from '$lib'
 </script>
 
 <svelte:head>
@@ -10,7 +10,14 @@
 </svelte:head>
 
 <!-- HERO BLOCK -->
-<Hero titleColor="var(--text-color-light)" pageTitle="Partners" />
+<Hero
+	titleColor="var(--text-color-light)"
+	pageTitle="Partners"
+	background={{ file: lrgbEnhanced, alt: 'Virgo Cluster Galaxies' }}
+	attribution={{
+		text: 'NASA',
+		link: 'https://apod.nasa.gov/apod/ap250417.html',
+	}} />
 
 <section class="content-container">
 	<h2 class="section-title">Work with us!</h2>

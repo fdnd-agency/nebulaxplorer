@@ -1,5 +1,11 @@
 <script>
-	import { Hero, Breadcrumb, AssignmentCards, Pagination } from '$lib'
+	import {
+		Hero,
+		Breadcrumb,
+		AssignmentCards,
+		Pagination,
+		nasaGarciaEnhanced,
+	} from '$lib'
 
 	const { data } = $props()
 	const { vacancies, pagination } = $derived(data)
@@ -15,7 +21,13 @@
 <!-- Always provide alt and file path WITHIN background -->
 <!-- titleColor controls the title color based on the provided css var provided -->
 
-<Hero titleColor="var(--text-color-light)" pageTitle="Assignments" />
+<Hero
+	titleColor="var(--text-color-light)"
+	background={{
+		file: nasaGarciaEnhanced,
+		alt: 'IXPE Explores a Black Hole Jet',
+	}}
+	pageTitle="Assignments" />
 
 <Breadcrumb />
 

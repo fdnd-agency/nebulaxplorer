@@ -2,11 +2,12 @@
 	import {
 		Hero,
 		Breadcrumb,
+		MissionGoals,
 		Timeline,
-		ScientificTestimonial,
+		TestimonialCollection,
 		blackholeEnhanced as blackholeImage,
+		tarantulaMergerEnhanced,
 	} from '$lib'
-	import MissionGoals from '$lib/components/organisms/MissionGoals.svelte'
 </script>
 
 <svelte:head>
@@ -17,7 +18,17 @@
 </svelte:head>
 
 <!-- HERO BLOCK -->
-<Hero titleColor="var(--text-color-light)" pageTitle="Mission" />
+<Hero
+	titleColor="var(--text-color-light)"
+	background={{
+		file: tarantulaMergerEnhanced,
+		alt: 'Visualization of a Black Hole Merger in the Tarantula Nebula',
+	}}
+	pageTitle="Mission"
+	attribution={{
+		text: 'NASA',
+		link: 'https://apod.nasa.gov/apod/ap260403.html',
+	}} />
 
 <Breadcrumb />
 
@@ -142,10 +153,9 @@
 
 <MissionGoals />
 
-<!-- STEPS BLOCK -->
 <Timeline />
 
-<ScientificTestimonial />
+<TestimonialCollection />
 
 <style>
 	.paragraph-block div {
