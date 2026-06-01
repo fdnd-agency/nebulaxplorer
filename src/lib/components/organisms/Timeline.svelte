@@ -40,7 +40,7 @@
 </script>
 
 <section>
-	<h3 class="section_title">Mission Timeline</h3>
+	<h3 class="section-title">Mission Timeline</h3>
 	<article style="--_length: {data.length}">
 		{#each data as step, index (step.id)}
 			<TimelineStep {step} {index} />

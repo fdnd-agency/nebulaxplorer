@@ -104,7 +104,7 @@
 	p {
 		max-height: 100%;
 		overflow-y: auto;
-		scrollbar-color: var(--space-60) var(--space-100);
+		scrollbar-color: var(--space-60) var(--background-color-dark);
 	}
 
 	details[open] summary {
