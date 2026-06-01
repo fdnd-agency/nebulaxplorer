@@ -58,21 +58,21 @@
 	}
 
 	h3 {
-		max-width: var(--content-width);
 		width: 100%;
+		max-width: var(--content-width);
 		margin-inline: auto;
-		padding: 0;
 		margin-block-end: 0.5em;
+		padding: 0;
 	}
 
 	/* Timeline grid container */
 	article {
 		--_step-height: calc((100% - 2rem) / var(--_length));
 
-		padding: 1rem;
-		margin-inline: auto;
-		max-width: var(--content-width);
 		position: relative;
+		margin-inline: auto;
+		padding: 1rem;
+		max-width: var(--content-width);
 
 		@container (width > 50rem) {
 			display: grid;
