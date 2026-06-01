@@ -8,6 +8,7 @@ export { default as NewsComponent } from './components/organisms/NewsComponent.s
 export { default as PartnersCarousel } from './components/organisms/PartnersCarousel.svelte'
 export { default as PillarsComponent } from './components/organisms/PillarsComponent.svelte'
 export { default as TeamsYearComponent } from '$lib/components/organisms/TeamsYearComponent.svelte'
+export { default as TestimonialCollection } from '$lib/components/organisms/TestimonialCollection.svelte'
 export { default as MissionGoals } from './components/organisms/MissionGoals.svelte'
 export { default as Timeline } from './components/organisms/Timeline.svelte'
 
@@ -18,6 +19,7 @@ export { default as CarouselTrack } from './components/molecules/CarouselTrack.s
 export { default as FooterLocations } from './components/molecules/FooterLocations.svelte'
 export { default as FooterNav } from './components/molecules/FooterNav.svelte'
 export { default as MailingListSignup } from './components/molecules/MailingListSignup.svelte'
+export { default as MissionTestimonial } from './components/molecules/MissionTestimonial.svelte'
 export { default as Pagination } from './components/molecules/Pagination.svelte'
 export { default as ScientificTestimonial } from './components/molecules/ScientificTestimonial.svelte'
 export { default as Sponsors } from './components/molecules/Sponsors.svelte'
@@ -36,13 +38,14 @@ export { default as Mission } from './components/atoms/Mission.svelte'
 // Icons
 export { default as MailIcon } from './components/icons/MailIcon.svelte'
 export { default as Quote } from './components/icons/Quote.svelte'
+export { default as NebulaLogo } from './components/icons/NebulaLogo.svelte'
 
 // Logo Components
 export { default as Arrow } from './components/icons/Arrow.svelte'
 export { default as Bsky } from './components/icons/Bsky.svelte'
 export { default as Instagram } from './components/icons/Instagram.svelte'
 export { default as LinkedIn } from './components/icons/Linkedin.svelte'
-export { default as PageArrow } from './components/atoms/PageArrow.svelte'
+export { default as PageArrow } from './components/icons/PageArrow.svelte'
 
 // Logo SVGs
 export { default as favIcon } from './assets/logos/favicon.svg'
@@ -119,17 +122,23 @@ export { default as werkenbijSRON } from './assets/images/WerkenbijSRON.jpg'
 
 // Enhanced Images
 export { default as aeroDefenseTestingStep4Enhanced } from './assets/images/aerospace-defense-testing-step-4.jpg?enhanced&w=1024;768;512'
-export { default as blackholeEnhanced } from './assets/images/blackhole.jpg?enhanced'
+export { default as blackholeEnhanced } from './assets/images/blackhole.jpg?enhanced&w=1920;1440;1024;768;512'
 export { default as blackholeHeroEnhanced } from './assets/images/blackhole-hero.png?enhanced&w=1920;1440;1024;768'
 export { default as gravWavesEnhanced } from './assets/images/grav-waves.jpg?enhanced&w=1920;1440;1024;768'
-export { default as nebulaSatelliteEnhanced } from './assets/images/nebula-satellite.png?enhanced'
-export { default as nebulaTeamBeginning } from './assets/images/nebula beginning.jpg?enhanced&w=1920;1440;1024;768'
+export { default as lrgbEnhanced } from './assets/images/lrgb.jpg?enhanced&w=1920;1440;1024;768'
+export { default as nebulaSatelliteEnhanced } from './assets/images/nebula-satellite.png?enhanced&w=1920;1440;1024;768;512'
+export { default as nebulaTeamBeginning } from './assets/images/nebula beginning.jpg?enhanced&w=1920;1440;1024;768;512'
 export { default as nebulaXplorerEnhanced } from './assets/images/nebula-xplorer.jpg?enhanced&w=1024;768;512'
 export { default as rapidStep2Enhanced } from './assets/images/Rapid-step-2.jpg?enhanced&w=1024;768;512'
 export { default as rocketLaunchStep5Enhanced } from './assets/images/rocket-launch-step-5.jpg?enhanced&w=1024;768;512'
-export { default as sronGroningenEnhanced } from './assets/images/sron-groningen.webp?enhanced'
-export { default as sronLeidenEnhanced } from './assets/images/sron-leiden.webp?enhanced'
+export { default as simonnetEnhanced } from './assets/images/simonnet.jpg?enhanced&w=1920;1440;1024;768'
+export { default as sronGroningenEnhanced } from './assets/images/sron-groningen.webp?enhanced&w=1920;1440;1024;768;512'
+export { default as sronLeidenEnhanced } from './assets/images/sron-leiden.webp?enhanced&w=1920;1440;1024;768;512'
 export { default as sronReviewStep1Enhanced } from './assets/images/sron-review-step-1.jpg?enhanced&w=1024;768;512'
+
+export { default as tarantulaMergerEnhanced } from './assets/images/bh_merger_tarantula.jpg?enhanced&w=1024;768;512'
+export { default as nasaGarciaEnhanced } from './assets/images/bliac_nasagarcia_4580.jpg?enhanced&w=1024;768;512'
+export { default as xrayBinaryEnhanced } from './assets/images/xray-binary.webp?enhanced&w=1024;768;512'
 
 // UTILITIES
 // Utils

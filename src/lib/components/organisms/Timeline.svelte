@@ -111,7 +111,7 @@
 			top: calc(0.5 * var(--_step-height) + 1rem);
 			left: 2rem;
 			bottom: calc(0.5 * var(--_step-height) + 1rem);
-			background: white;
+			background: var(--background-color-light, white);
 			width: 2px;
 			z-index: 1;
 		}

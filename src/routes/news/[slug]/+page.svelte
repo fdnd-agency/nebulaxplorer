@@ -54,7 +54,7 @@
 {:else}
 	<section class="error">
 		<div class="content-container">
-			<h1 class="section_title">News article not found.</h1>
+			<h1 class="section-title">News article not found.</h1>
 			<a href={resolve('/news')} class="heading">Go back to overview?</a>
 		</div>
 	</section>
@@ -111,17 +111,17 @@
 
 		p {
 			text-transform: uppercase;
-			color: var(--cleanroom-100);
+			color: var(--accent-color);
 		}
 	}
 
 	section:nth-of-type(n + 2) {
-		color: black;
-		background-color: white;
+		color: var(--text-color-dark);
+		background-color: var(--background-color-light);
 
 		h2 {
 			font-weight: 500;
-			color: var(--cleanroom-100);
+			color: var(--accent-color);
 			max-width: 35ch;
 		}
 
@@ -143,7 +143,7 @@
 			}
 
 			a {
-				color: var(--cleanroom-100);
+				color: var(--accent-color);
 
 				&:hover {
 					text-decoration: underline 1px;

@@ -2,8 +2,8 @@
 
 <style>
 	p {
-		background: var(--cleanroom-100);
-		color: var(--space-100);
+		background: var(--accent-color);
+		color: var(--text-color-dark);
 		text-align: center;
 		display: block;
 		padding: 0 2.25rem;

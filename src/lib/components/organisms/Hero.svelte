@@ -1,18 +1,24 @@
 <script>
-	import { nebulaLogoWhite, blackholeHeroEnhanced } from '$lib'
+	import { NebulaLogo, nebulaLogoWhite, blackholeHeroEnhanced } from '$lib'
+
 	const {
+		attribution = {
+			text: '',
+			link: '',
+		},
 		background = {
 			alt: 'A quasi-black hole',
 			file: blackholeHeroEnhanced,
 		},
 		sronIcon = nebulaLogoWhite,
+		logoColor = '#fff',
 		paragraph,
 		pageTitle = 'None set',
 		titleColor,
-		fullScreen = false,
-		logoOverlay = false,
-		bottomLayout = false,
-		focalPoint = 'center',
+		fullScreen = false, // This property makes the banner photo take up nearly the whole screen.
+		logoOverlay = false, // This property gives the banner logo a blue background for better contrast
+		bottomLayout = false, // This property sets an alternative layout where both the logo and title are at the bottom
+		focalPoint = 'center', // This property sets the focal point of the banner image
 	} = $props()
 
 	// Validation to prevent empty alt text
@@ -25,26 +31,33 @@
 	class="hero {fullScreen ? 'fullscreen' : ''} {bottomLayout
 		? 'bottom-layout'
 		: ''}"
-	style="--focal-point: {focalPoint}">
+	style="--_focal-point: {focalPoint}">
 	{#if paragraph}
 		<p class="subheading">{paragraph}</p>
 	{/if}
 	{#if background.file}
-		<enhanced:img
-			src={background.file}
-			alt={background.alt}
-			class="hero-bg"
-			sizes="100vw"
-			fetchpriority="high" />
+		<figure>
+			<enhanced:img
+				src={background.file}
+				alt={background.alt}
+				class="hero-bg"
+				sizes="100vw"
+				fetchpriority="high" />
+			{#if attribution.link != ''}
+				<figcaption>
+					<a href={attribution.link} rel="external">
+						<span class="visually-hidden">Image attribution:</span>
+						{attribution.text ? attribution.text : attribution.link}
+					</a>
+				</figcaption>
+			{/if}
+		</figure>
 	{/if}
 	<div class="content-container">
 		<div class="logo-container {logoOverlay ? 'logo-overlay' : ''}">
 			<div class="content-container-alt">
 				{#if sronIcon}
-					<img
-						src={sronIcon}
-						alt="Logo of SRON Academy"
-						class="hero-logo" />
+					<NebulaLogo color={logoColor} title="Nebula Xplorer Logo" />
 				{/if}
 				<h1 class="title" style={titleColor && `color: ${titleColor}`}>
 					{pageTitle}
@@ -56,23 +69,19 @@
 
 <style>
 	.hero {
-		--menu-button-size: 3.75rem;
-		border-bottom: 0.375rem solid var(--cleanroom-100);
 		position: relative;
-		padding: 1.5rem;
-		padding-top: 5.25rem;
+		padding-block: 3.5rem 2.25rem;
+		border-block-end: 0.375rem solid var(--accent-color);
 
 		@media (min-width: 56.25rem) {
-			padding: 3.5rem 4rem 2.25rem 0.5rem;
-
 			&.fullscreen {
-				padding-block: 14rem;
+				padding-block-start: 30vh;
 			}
 		}
 
-		/* every adjecent elem should have margin-top; except for the picture as that is the background image. */
+		/* every adjacent element should have margin-top; except for the picture as that is the background image. */
 		> *:not(picture) + *:not(picture) {
-			margin-top: 1rem;
+			margin-block-start: 1rem;
 		}
 
 		/* if a p is present the logo will correctly get margin-top */
@@ -91,82 +100,106 @@
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
-				object-position: var(--focal-point);
+				object-position: var(--_focal-point);
 				z-index: -1;
 			}
 		}
 
+		figcaption {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			background: rgba(0, 0, 0, 0.493);
+			padding: 0.5em;
+
+			a:hover {
+				text-decoration: underline;
+			}
+		}
+
 		h1 {
-			padding-inline: 0.75em;
 			padding-block-start: 0.25em;
 		}
 
-		.hero-logo {
+		:global(svg) {
+			display: block;
 			width: clamp(12.5rem, 7.15rem + 28.5vw, 25rem);
 			max-width: 36.375rem;
-			display: block;
+		}
+	}
+
+	figcaption {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		background: rgba(0, 0, 0, 0.493);
+		padding: 0.5em;
+
+		a:hover {
+			text-decoration: underline;
+		}
+	}
+
+	.logo-overlay {
+		--_space-mid-opacity: hsla(238, 35%, 15%, 0.75);
+
+		padding: 2em;
+		width: min-content;
+		background-color: var(--_space-mid-opacity);
+	}
+
+	/* Alternate layout */
+	.bottom-layout {
+		padding-inline: 0;
+		padding-block: 10rem 0;
+
+		@media (min-width: 56.25rem) {
+			padding-block: 50vh 0;
+		}
+
+		h1 {
+			padding-block: 0.5em;
+		}
+
+		.content-container-alt {
+			width: 100%;
+			max-width: var(--content-width);
+			margin-inline: auto;
+			margin-block: 0;
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			column-gap: calc(1em + 2vw);
+		}
+
+		.logo-container {
+			width: 100%;
+			padding-block: 0;
+			margin-inline: 0;
+
+			@media (min-width: 56.25rem) {
+				padding-block-start: 4rem;
+			}
 		}
 
 		.logo-overlay {
-			--space-mid-opacity: hsla(238, 35%, 15%, 0.75);
-
-			background-color: var(--space-mid-opacity);
-			width: min-content;
-			padding: 2em;
+			background: linear-gradient(
+				transparent 0%,
+				var(--_space-mid-opacity) 40%,
+				var(--background-color-dark)
+			);
 		}
 
-		&.bottom-layout {
-			padding-inline: 0;
-			padding-block: 10rem 0;
+		.content-container {
+			max-width: unset;
+		}
 
-			@media (min-width: 56.25rem) {
-				padding-block: 50vh 0;
-			}
-
-			h1 {
-				padding-block: 0.5em;
-			}
-
-			.content-container-alt {
-				width: 100%;
-				max-width: var(--content-width);
-				margin-inline: auto;
-				margin-block: 0;
-				display: flex;
-				align-items: center;
-				flex-wrap: wrap;
-			}
-
-			.logo-container {
-				width: 100%;
-				padding-block: 0;
-				margin-inline: 0;
-
-				@media (min-width: 56.25rem) {
-					padding-left: 4rem;
-				}
-			}
-
-			.logo-overlay {
-				background: linear-gradient(
-					transparent 0%,
-					var(--space-mid-opacity) 40%,
-					var(--space-100)
-				);
-			}
-
-			.content-container {
-				max-width: unset;
-			}
-
-			.hero-logo {
-				font-size: clamp(2.5rem, 5vw + 1rem, 4.375rem);
-				line-height: clamp(2.5rem, 5vw + 1rem, 4.625rem);
-				height: 2.5lh;
-				width: auto;
-				padding-block: 0.5em;
-				margin-inline-start: -0.5em;
-			}
+		:global(svg) {
+			font-size: clamp(2.5rem, 5vw + 1rem, 4.375rem);
+			line-height: clamp(2.5rem, 5vw + 1rem, 4.625rem);
+			height: 2.5lh;
+			width: auto;
+			padding-block: 0.5em;
 		}
 	}
 </style>

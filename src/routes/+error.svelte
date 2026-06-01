@@ -35,7 +35,7 @@
 	}
 
 	a {
-		color: var(--cleanroom-100);
+		color: var(--accent-color);
 
 		&:hover {
 			text-decoration: underline;

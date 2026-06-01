@@ -13,7 +13,7 @@
 		</p>
 		<ul>
 			<li>
-				<a href="https://www.astos.de/">
+				<a href="https://www.astos.de/" rel="external">
 					<img
 						src={logoAstos}
 						alt="Astos Solutions"
@@ -22,7 +22,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="https://www.esatan-tms.com/">
+				<a href="https://www.esatan-tms.com/" rel="external">
 					<img
 						src={logoEsatan}
 						alt="Esatan-TMS"

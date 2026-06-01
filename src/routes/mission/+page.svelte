@@ -2,11 +2,12 @@
 	import {
 		Hero,
 		Breadcrumb,
+		MissionGoals,
 		Timeline,
-		ScientificTestimonial,
+		TestimonialCollection,
 		blackholeEnhanced as blackholeImage,
+		tarantulaMergerEnhanced,
 	} from '$lib'
-	import MissionGoals from '$lib/components/organisms/MissionGoals.svelte'
 </script>
 
 <svelte:head>
@@ -17,7 +18,17 @@
 </svelte:head>
 
 <!-- HERO BLOCK -->
-<Hero titleColor="var(--white)" pageTitle="Mission" />
+<Hero
+	titleColor="var(--text-color-light)"
+	background={{
+		file: tarantulaMergerEnhanced,
+		alt: 'Visualization of a Black Hole Merger in the Tarantula Nebula',
+	}}
+	pageTitle="Mission"
+	attribution={{
+		text: 'NASA',
+		link: 'https://apod.nasa.gov/apod/ap260403.html',
+	}} />
 
 <Breadcrumb />
 
@@ -72,7 +83,7 @@
 			src={blackholeImage}
 			alt="Black Hole" />
 		<section class="text-content">
-			<h3 class="orange heading">Multi-messenger physics</h3>
+			<h3 class="orange-on-white heading">Multi-messenger physics</h3>
 			<p>
 				NEBULA-Xplorer frames the multi-wavelength campaigns required to
 				understand jet and accretion physics at the forefront of its
@@ -142,10 +153,9 @@
 
 <MissionGoals />
 
-<!-- STEPS BLOCK -->
 <Timeline />
 
-<ScientificTestimonial />
+<TestimonialCollection />
 
 <style>
 	.paragraph-block div {
@@ -200,8 +210,8 @@
 	}
 
 	.paragraph-block-alt {
-		background-color: var(--white);
-		color: var(--space-100);
+		background-color: var(--background-color-light);
+		color: var(--text-color-dark);
 
 		div {
 			padding-bottom: 2rem;
@@ -235,10 +245,6 @@
 	}
 
 	/* util classes */
-	.orange {
-		color: var(--cleanroom-100);
-	}
-
 	:global(enhanced\:img) {
 		width: auto;
 	}

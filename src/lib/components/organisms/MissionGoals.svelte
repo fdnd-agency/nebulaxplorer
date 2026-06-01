@@ -29,8 +29,8 @@
 
 <style>
 	.goals-block {
-		background-color: var(--white);
-		color: var(--space-100);
+		background-color: var(--background-color-light);
+		color: var(--text-color-dark);
 		padding: 2rem;
 	}
 
@@ -43,18 +43,18 @@
 	.goal-box {
 		position: relative;
 		padding: 1.5rem;
-		background: var(--space-100);
-		color: var(--white);
+		background: var(--background-color-dark);
+		color: var(--text-color-light);
 	}
 
 	.goals-block.dark {
-		background-color: var(--space-100);
-		color: var(--white);
+		background-color: var(--background-color-dark);
+		color: var(--text-color-light);
 	}
 
 	.goals-block.dark .goal-box {
-		color: var(--space-100);
-		border: 1px solid var(--cleanroom-100);
+		color: var(--background-color-dark);
+		border: 1px solid var(--accent-color);
 	}
 
 	.goals-block.dark .goal-box::before {
@@ -69,20 +69,20 @@
 		left: -1px;
 		width: 40px;
 		height: 2px;
-		background: var(--cleanroom-100);
+		background: var(--accent-color);
 	}
 
 	.goal-box h3 {
 		font-size: 0.9rem;
 		font-weight: 500;
 		letter-spacing: 0.2em;
-		color: var(--cleanroom-100);
+		color: var(--accent-color);
 		margin-bottom: 0.75rem;
 		text-transform: uppercase;
 	}
 
 	.goal-box p {
-		color: var(--white);
+		color: var(--text-color-light);
 		line-height: 1.6;
 	}
 

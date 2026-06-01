@@ -42,7 +42,7 @@
 		border-left: 1px solid var(--light-grey);
 
 		h3 {
-			color: var(--cleanroom-100);
+			color: var(--accent-color);
 			font-weight: 500;
 			margin-bottom: 1rem;
 			font-size: medium;
@@ -68,7 +68,7 @@
 			border-left: 1px solid var(--light-grey);
 
 			h3 {
-				color: var(--cleanroom-100);
+				color: var(--accent-color);
 				font-weight: 500;
 				margin-bottom: 1rem;
 				font-size: medium;
