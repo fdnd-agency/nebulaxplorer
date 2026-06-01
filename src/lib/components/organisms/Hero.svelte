@@ -1,18 +1,24 @@
 <script>
-	import { nebulaLogoWhite, blackholeHeroEnhanced } from '$lib'
+	import { NebulaLogo, nebulaLogoWhite, blackholeHeroEnhanced } from '$lib'
+
 	const {
+		attribution = {
+			text: '',
+			link: '',
+		},
 		background = {
 			alt: 'A quasi-black hole',
 			file: blackholeHeroEnhanced,
 		},
 		sronIcon = nebulaLogoWhite,
+		logoColor = '#fff',
 		paragraph,
 		pageTitle = 'None set',
 		titleColor,
-		fullScreen = false,
-		logoOverlay = false,
-		bottomLayout = false,
-		focalPoint = 'center',
+		fullScreen = false, // This property makes the banner photo take up nearly the whole screen.
+		logoOverlay = false, // This property gives the banner logo a blue background for better contrast
+		bottomLayout = false, // This property sets an alternative layout where both the logo and title are at the bottom
+		focalPoint = 'center', // This property sets the focal point of the banner image
 	} = $props()
 
 	// Validation to prevent empty alt text
@@ -30,21 +36,28 @@
 		<p class="subheading">{paragraph}</p>
 	{/if}
 	{#if background.file}
-		<enhanced:img
-			src={background.file}
-			alt={background.alt}
-			class="hero-bg"
-			sizes="100vw"
-			fetchpriority="high" />
+		<figure>
+			<enhanced:img
+				src={background.file}
+				alt={background.alt}
+				class="hero-bg"
+				sizes="100vw"
+				fetchpriority="high" />
+			{#if attribution.link != ''}
+				<figcaption>
+					<a href={attribution.link} rel="external">
+						<span class="visually-hidden">Image attribution:</span>
+						{attribution.text ? attribution.text : attribution.link}
+					</a>
+				</figcaption>
+			{/if}
+		</figure>
 	{/if}
 	<div class="content-container">
 		<div class="logo-container {logoOverlay ? 'logo-overlay' : ''}">
 			<div class="content-container-alt">
 				{#if sronIcon}
-					<img
-						src={sronIcon}
-						alt="Logo of SRON Academy"
-						class="hero-logo" />
+					<NebulaLogo color={logoColor} title="Nebula Xplorer Logo" />
 				{/if}
 				<h1 class="title" style={titleColor && `color: ${titleColor}`}>
 					{pageTitle}
@@ -97,7 +110,19 @@
 		}
 	}
 
-	.hero-logo {
+	figcaption {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		background: rgba(0, 0, 0, 0.493);
+		padding: 0.5em;
+
+		a:hover {
+			text-decoration: underline;
+		}
+	}
+
+	:global(svg) {
 		display: block;
 		width: clamp(12.5rem, 7.15rem + 28.5vw, 25rem);
 		max-width: 36.375rem;
@@ -157,7 +182,7 @@
 			max-width: unset;
 		}
 
-		.hero-logo {
+		:global(svg) {
 			font-size: clamp(2.5rem, 5vw + 1rem, 4.375rem);
 			line-height: clamp(2.5rem, 5vw + 1rem, 4.625rem);
 			height: 2.5lh;
