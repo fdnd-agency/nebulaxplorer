@@ -1,17 +1,17 @@
 <script>
-	import { mertenImage, MissionTestimonial } from '$lib'
+	import { mertenImage, rushilImage, MissionTestimonial } from '$lib'
 
 	const data = [
 		{
-			text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure vel eaque, distinctio deserunt minus perspiciatis vero cum quasi voluptate ad fuga nesciunt eligendi sunt unde repellendus molestias non sequi officiis!',
-			name: 'Martin Grim',
-			title: 'Section Head Electronics Engineering',
-			image: mertenImage,
+			text: 'The project all corporate projects wish they could be. The place where agile is actually agile. Heed my words dear reader, this project will serve as valuable experience of the things that can be done right. This was as great experience!',
+			name: 'Rushil Varsnney',
+			title: 'Aero Space Engineering, TU Delft',
+			image: rushilImage,
 		},
 		{
-			text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure vel eaque, distinctio deserunt minus perspiciati.',
-			name: 'Martin Grim',
-			title: 'Section Head Electronics Engineering',
+			text: "Doing my JIP was a great experience. It really helped that although the JIP and NEBULA-Xplorer team all came from different backgrounds, they all brought the same energy. One meeting I was learning how one previous assumption in power usage can completely change the current concept, and other times I was the one walking everyone through our approach on the system architecture. And knowing that you're working on a real telescope that will actually be launched, is really motivating. I now have the opportunity to start my thesis here as well!",
+			name: 'Merten Tijsma',
+			title: 'Aero Space Engineering, TU Delft',
 			image: mertenImage,
 		},
 		{
