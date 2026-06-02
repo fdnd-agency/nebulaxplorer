@@ -4,7 +4,6 @@
 		placeholder1,
 		gravWaves,
 		placeholder2,
-		impact,
 		sronOpenDay,
 	} from '$lib'
 
@@ -41,14 +40,6 @@
 				alt: '',
 			},
 			title: 'education',
-		},
-		{
-			link: '/environment',
-			image: {
-				src: impact,
-				alt: '',
-			},
-			title: 'environment',
 		},
 	]
 </script>
