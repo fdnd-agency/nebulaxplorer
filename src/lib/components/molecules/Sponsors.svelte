@@ -57,7 +57,8 @@
 		padding: 0.5em;
 
 		/* Replaces a focus/hover styles */
-		&:focus-within {
+		/* Source: https://larsmagnus.co/blog/focus-visible-within-the-missing-pseudo-class */
+		&:has(:focus-visible) {
 			outline: var(--default-focus);
 		}
 
