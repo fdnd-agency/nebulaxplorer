@@ -69,8 +69,7 @@
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
-		padding-block-start: 1em;
-		padding-block-end: 1.5em;
+		padding-block: 1em 1.5em;
 		align-items: center;
 		list-style: none;
 
@@ -85,20 +84,15 @@
 		margin: 5px;
 
 		display: grid;
-
-		align-items: center;
 		grid-template-columns: clamp(1em, 30vw, 6.5em) 1fr;
+		align-items: center;
+		
 		width: 100%;
 		overflow: hidden;
 
 		@media (min-width: 45rem) {
 			display: flex;
 			align-items: center;
-
-			flex-grow: 1;
-			flex-shrink: 1;
-			flex-basis: 0;
-
 			flex-direction: column;
 		}
 	}
@@ -131,8 +125,7 @@
 		justify-content: center;
 
 		@media (min-width: 45rem) {
-			padding-block-start: 1em;
-			padding-block-end: 1em;
+			padding-block: 1em;
 			padding-inline: 0.5em;
 			font-size: unset;
 			height: 3lh;
@@ -154,17 +147,14 @@
 		}
 	}
 
-	.pillar:focus-within {
-		outline: 0.125rem dashed var(--accent-color-dark);
+	.pillar:has(:focus-visible) {
+		outline: var(--default-focus);
 	}
 
 	a::after {
 		content: '';
 		position: absolute;
-		left: 0;
-		right: 0;
-		top: 0;
-		bottom: 0;
+		inset: 0;
 		z-index: 1;
 	}
 </style>
