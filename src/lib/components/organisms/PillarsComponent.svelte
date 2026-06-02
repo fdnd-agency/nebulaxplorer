@@ -1,11 +1,6 @@
 <script>
 	import { resolve } from '$app/paths'
-	import {
-		placeholder1,
-		gravWaves,
-		placeholder2,
-		sronOpenDay,
-	} from '$lib'
+	import { placeholder1, gravWaves, placeholder2, sronOpenDay } from '$lib'
 
 	const dummydata = [
 		{
@@ -86,7 +81,7 @@
 		display: grid;
 		grid-template-columns: clamp(1em, 30vw, 6.5em) 1fr;
 		align-items: center;
-		
+
 		width: 100%;
 		overflow: hidden;
 
