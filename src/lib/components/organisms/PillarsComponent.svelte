@@ -19,7 +19,6 @@
 			},
 			title: 'science',
 		},
-
 		{
 			link: '/instrumentation',
 			image: {
