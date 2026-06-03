@@ -28,7 +28,8 @@ Our designs are based on the [Design Challenge](https://github.com/fdnd-agency/n
 - The **Team Page** features teams from over the years. Select any team to view more information about them and what they have to say about their experiences.
 - The **Assignment Page** fetches all open assignments. Select any to view more details about that assignment.
 - The **Partners Page** features a progressively enhanced carousel that shows off the project's sponsors.
-<img width="240" height="240" alt="partners_carousel" src="https://github.com/user-attachments/assets/3edc6b55-5b50-4f11-bd4e-29d2199e1478" />
+<img width="426" height="240" alt="partners_carousel (1)" src="https://github.com/user-attachments/assets/7cffe95c-39ed-41e9-a316-ffc1381ab1d4" />
+
 
 - The **News Page** features all the latest news on the project, with nifty pagination.
 
