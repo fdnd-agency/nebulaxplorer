@@ -39,7 +39,7 @@ Our designs are based on the [Design Challenge](https://github.com/fdnd-agency/n
 
 _Datamodel from Mermaid_
 
-Our website includes a total of 7 main pages: Home, Mission, Scientific, News, Team, Careers and Partners. Four of these will eventually have their own detail pages, for example for articles, staff or partnership profiles, or job openings.
+Our website includes a total of 7 main pages: Home, Mission, Scientific, News, Team, Assignments, and Partners. Four of these will eventually have their own detail pages, for example for articles, staff or partnership profiles, or job openings.
 
 ## Installation
 
