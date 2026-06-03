@@ -2,7 +2,7 @@
 
 The NEBULA Xplorer website was given to us as a project from SRON, the Space Research Organisation of the Netherlands. Its primary purpose is being a deep source of information on everything to do with the NEBULA Xplorer, a sattelite designed to research X-ray binary black holes and their relationships with companion stars over long periods of time. The project as a whole is a combined effort of over 400 students from within the Netherlands.
 
-**Live link:**
+**Live link:** [https://nebulaxplorer.dev.fdnd.nl/](https://nebulaxplorer.dev.fdnd.nl/)
 
 ## Design
 
@@ -35,23 +35,25 @@ This project has been developed in SvelteKit, content is retrieved from Directus
 
 Follow the steps below to use this repository for yourself!
 
-**1. Clone the repository:**
+1. Clone the repository
 
 `git clone https://github.com/fdnd-agency/nebulaxplorer.git`
 
-**2. Open the repository**
+`cd nebulaxplorer`
 
-in GitHub Desktop, then navigate to _'Open the repository in your external editor'_
+2. Install dependencies
 
-**3. In the terminal**
-
-Type the command:
 `npm install`
 
-Then:
+3. Copy the example .env file
+
+`cp .env.example .env`
+
+4. Run the app:
+
 `npm run dev`
 
-All done!
+Then open the localhost in your browser. All done!
 
 ## Licenses
 
