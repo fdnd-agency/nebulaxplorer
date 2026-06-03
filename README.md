@@ -23,9 +23,13 @@ Our designs are based on the [Design Challenge](https://github.com/fdnd-agency/n
 
 - The **Home Page** features recent news articles, an introduction to the project, links to the four "pillars" of the project, and a mailing list sign-up.
 - The **Mission Page** features deeper information on the project, the mission goals, an interactive mission timeline, and testimonials from mission experts.
+<img width="426" height="240" alt="mission_timeline" src="https://github.com/user-attachments/assets/b727c257-4054-4c23-9442-3bab8bcf76c4" />
+
 - The **Team Page** features teams from over the years. Select any team to view more information about them and what they have to say about their experiences.
 - The **Assignment Page** fetches all open assignments. Select any to view more details about that assignment.
 - The **Partners Page** features a progressively enhanced carousel that shows off the project's sponsors.
+<img width="240" height="240" alt="partners_carousel" src="https://github.com/user-attachments/assets/3edc6b55-5b50-4f11-bd4e-29d2199e1478" />
+
 - The **News Page** features all the latest news on the project, with nifty pagination.
 
 ## Datamodel
