@@ -109,7 +109,7 @@
 	blockquote {
 		font-family: var(--font-paragraph);
 		color: var(--text-color-dark);
-		margin-bottom: 1em;
+		margin-block-end: 1em;
 
 		&::before {
 			content: open-quote;

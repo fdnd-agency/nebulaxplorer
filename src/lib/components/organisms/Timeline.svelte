@@ -154,7 +154,6 @@
 		padding-inline-start: 2em;
 		padding-inline-end: 1rem;
 
-
 		text-transform: uppercase;
 		transition: 0.2s;
 
