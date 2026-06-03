@@ -25,10 +25,12 @@
 
 <style>
 	header {
-		padding: 3rem 2rem;
+		padding-block: 3rem;
+		padding-inline: 2rem;
 	}
+
 	h1 {
-		margin-bottom: 3rem;
+		margin-block-end: 3rem;
 	}
 
 	.impact-stats-container {
@@ -38,13 +40,13 @@
 
 	.impact-stats {
 		padding: 1.5rem 2rem;
-		border-right: 1px solid var(--light-grey);
-		border-left: 1px solid var(--light-grey);
+		border-inline-start: 1px solid var(--light-grey);
+		border-inline-end: 1px solid var(--light-grey);
 
 		h3 {
 			color: var(--accent-color);
 			font-weight: 500;
-			margin-bottom: 1rem;
+			margin-block-end: 1rem;
 			font-size: medium;
 		}
 
@@ -59,13 +61,14 @@
 			display: grid;
 			grid-template-columns: repeat(4, 1fr);
 			gap: 0;
-			margin: 0 auto;
+			margin-block: 0;
+			margin-inline: auto;
 		}
 
 		.impact-stats {
 			text-align: left;
 			padding: 1.5rem 2rem;
-			border-left: 1px solid var(--light-grey);
+			border-inline-start: 1px solid var(--light-grey);
 
 			h3 {
 				color: var(--accent-color);

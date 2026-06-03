@@ -72,7 +72,8 @@
 	/* Timeline grid container */
 	article {
 		border: 1px solid var(--background-color-light);
-		padding: 1rem;
+		padding-block: 1rem;
+		padding-inline: 1rem;
 		margin-inline: auto;
 		max-width: var(--content-width);
 		position: relative;
@@ -100,7 +101,8 @@
 		align-items: flex-end;
 
 		height: 20rem;
-		padding: 1rem;
+		padding-block: 1rem;
+		padding-inline: 1rem;
 
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -145,11 +147,13 @@
 	summary {
 		grid-column: 1;
 		display: grid;
-		padding: 1rem;
 		cursor: pointer;
 		z-index: 1;
 		position: relative;
+		padding-block: 1rem;
 		padding-inline-start: 2em;
+		padding-inline-end: 1rem;
+
 
 		text-transform: uppercase;
 		transition: 0.2s;

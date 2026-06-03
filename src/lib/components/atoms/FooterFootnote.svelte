@@ -6,6 +6,7 @@
 		color: var(--text-color-dark);
 		text-align: center;
 		display: block;
-		padding: 0 2.25rem;
+		padding-block: 0;
+		padding-inline: 2.25rem;
 	}
 </style>

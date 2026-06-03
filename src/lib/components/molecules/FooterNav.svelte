@@ -55,7 +55,8 @@
 <style>
 	.contents {
 		background: var(--background-color-dark);
-		padding: 2.25rem 1.5rem;
+		padding-block: 2.25rem;
+		padding-inline: 1.5rem;
 		display: grid;
 		align-items: center;
 		gap: 1rem;
@@ -108,7 +109,7 @@
 		grid-area: nav;
 
 		ul {
-			padding-top: 0.75rem;
+			padding-block-start: 0.75rem;
 			width: inherit;
 			background: unset;
 			display: flex;
