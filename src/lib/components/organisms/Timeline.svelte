@@ -237,8 +237,8 @@
 		.rocket {
 			display: block;
 			position: absolute;
-			top: 12%;
-			left: 1rem;
+			inset-block-start: 12%;
+			inset-inline-start: 1rem;
 			font-size: 2rem;
 			transition: 1s;
 			z-index: 2;
@@ -246,9 +246,9 @@
 
 		.background {
 			position: absolute;
-			top: 15%;
-			left: 2rem;
-			bottom: 15%;
+			inset-block-start: 15%;
+			inset-block-end: 15%;
+			inset-inline-start: 2rem;
 			background: var(--background-color-light);
 			width: 2px;
 			z-index: 1;

@@ -65,8 +65,8 @@
 	.goal-box::before {
 		content: '';
 		position: absolute;
-		top: -1px;
-		left: -1px;
+		inset-block-start: -1px;
+		inset-inline-start: -1px;
 		width: 40px;
 		height: 2px;
 		background: var(--accent-color);

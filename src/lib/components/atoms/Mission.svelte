@@ -70,10 +70,9 @@
 
 	.sticky-image-wrapper {
 		position: relative;
-		top: auto;
+		inset-block-start: auto;
 		order: -1;
 		margin-bottom: 1.25rem;
-
 		display: flex;
 		justify-content: center;
 		align-items: center;

@@ -28,8 +28,8 @@
 <style>
 	.scroll-track {
 		position: fixed;
-		right: 0;
-		top: 0;
+		inset-inline-end: 0;
+		inset-block-start: 0;
 		height: 100vh;
 		width: 40px;
 		pointer-events: none;
@@ -47,7 +47,7 @@
 	@media (min-width: 768px) {
 		.scroll-track {
 			width: 60px;
-			right: 0;
+			inset-inline-end: 0;
 			z-index: 100;
 		}
 	}
@@ -55,9 +55,9 @@
 	/* basic line */
 	.scroll-track-line {
 		position: absolute;
-		left: 50%;
-		top: 0;
-		bottom: 0;
+		inset-inline-start: 50%;
+		inset-block-start: 0;
+		inset-block-end: 0;
 		width: 1px;
 		background: rgba(255, 255, 255, 0.15);
 		transform: translateX(-50%);
@@ -66,8 +66,8 @@
 	/* colored line */
 	.scroll-track-fill {
 		position: absolute;
-		left: 50%;
-		top: 0;
+		inset-inline-start: 50%;
+		inset-block-start: 0;
 		width: 2px;
 		height: 100%;
 		transform: translateX(-50%) scaleY(0);
@@ -81,8 +81,8 @@
 	/* rocket */
 	.rocket-wrapper {
 		position: absolute;
-		left: 50%;
-		top: 0;
+		inset-inline-start: 50%;
+		inset-block-start: 0;
 		transform: translateX(-50%);
 		animation: rocketMove linear both;
 		animation-timeline: scroll(root);
@@ -95,8 +95,8 @@
 	.rocket-wrapper::after {
 		content: '';
 		position: absolute;
-		bottom: 0;
-		left: 50%;
+		inset-block-end: 0;
+		inset-inline-start: 50%;
 		transform: translateX(-50%) translateY(25%);
 		width: 30px;
 		height: 110px;

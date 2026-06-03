@@ -67,8 +67,8 @@
 			h2 {
 				background: inherit;
 				position: absolute;
-				top: -0.0625rem;
-				left: 0;
+				inset-block-start: -0.0625rem;
+				inset-inline-start: 0;
 				transform: translateX(-100%) rotate(-90deg);
 				transform-origin: right top;
 				padding: 1rem 2rem;
@@ -100,8 +100,8 @@
 			height: 100%;
 			width: 0.125rem;
 			background: var(--accent-color);
-			top: 50%;
-			left: 50%;
+			inset-block-start: 50%;
+			inset-inline-start: 50%;
 			transform: translate(-50%, -50%);
 			display: none;
 		}

@@ -37,10 +37,10 @@
 
 <style>
 	.assignments-header {
-		margin-bottom: 2.5rem;
+		margin-block-end: 2.5rem;
 
 		h2 {
-			margin-bottom: 0.5rem;
+			margin-block-end: 0.5rem;
 		}
 	}
 
@@ -48,7 +48,7 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
 		gap: 1.25rem;
-		margin-bottom: 4rem;
+		margin-block-end: 4rem;
 	}
 
 	.assignment-card {
@@ -72,7 +72,8 @@
 	}
 
 	.assignment-content {
-		padding: 1rem;
+		padding-block: 1rem;
+		padding-inline: 1rem;
 		display: inherit;
 		flex-direction: inherit;
 		justify-content: inherit;
@@ -84,7 +85,7 @@
 			display: inherit;
 			flex-direction: inherit;
 			gap: 0.25rem;
-			padding-block-end: 0.5rem;
+			padding-bottom: 0.5rem;
 			text-transform: capitalize;
 		}
 
@@ -96,10 +97,7 @@
 
 		a::after {
 			content: '';
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
+			inset: 0;
 			position: absolute;
 		}
 	}
@@ -107,7 +105,7 @@
 	.assignment-title {
 		font-size: 1.5rem;
 		color: var(--accent-color-dark);
-		margin-bottom: 1rem;
+		margin-block-end: 1rem;
 	}
 
 	.apply-button {
