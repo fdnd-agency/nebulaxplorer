@@ -166,11 +166,11 @@
 	</div>
 </section>
 
-<section class="mission-combined">
-	<h2 class="sr-only">Mission Goals</h2>
-	<MissionGoals />
+<!-- FOURTH PARAGRAPH + IMG BLOCK -->
 
-	<!-- Fourth PARAGRAPH + IMG BLOCK -->
+<section class="mission-combined">
+	<h2 class="visually-hidden">Mission Goals</h2>
+	<MissionGoals />
 
 	<section class="paragraph-block paragraph-block-alt">
 		<div class="content-container">
@@ -341,18 +341,6 @@
 				gap: 2rem;
 			}
 		}
-	}
-
-	.sr-only {
-		position: absolute;
-		width: 1px;
-		height: 1px;
-		padding: 0;
-		margin: -1px;
-		overflow: hidden;
-		clip: rect(0, 0, 0, 0);
-		white-space: nowrap;
-		border: 0;
 	}
 
 	.mission-list {
