@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte'
 	import * as THREE from 'three'
 	import { loadSatellite } from '$lib/three/Satellite.js'
+	import { rotateSatellite } from '$lib/three/Satellite.js'
 
 	let canvas
 
@@ -45,6 +46,7 @@
 		// Render loop
 		function animate() {
 			requestAnimationFrame(animate)
+			rotateSatellite()
 			renderer.render(scene, camera)
 		}
 

@@ -15,3 +15,9 @@ export function loadSatellite(scene) {
 		scene.add(satellite)
 	})
 }
+
+export function rotateSatellite() {
+	if (satellite) {
+		satellite.rotation.y += 0.003
+	}
+}
