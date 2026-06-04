@@ -18,6 +18,6 @@ export function loadSatellite(scene) {
 
 export function rotateSatellite() {
 	if (satellite) {
-		satellite.rotation.y += 0.003
+		satellite.rotation.y += 0.002
 	}
 }
