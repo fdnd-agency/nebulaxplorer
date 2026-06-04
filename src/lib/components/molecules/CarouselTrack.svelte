@@ -58,9 +58,7 @@
 				flex-direction: row;
 				overflow: hidden;
 				height: 10rem;
-				margin-inline: clamp(-1rem, -5vw, -3.5rem);
 				background-color: var(--background-color-light);
-
 				max-width: unset;
 
 				&.reverse li {

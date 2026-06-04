@@ -19,32 +19,35 @@
 		link: 'https://apod.nasa.gov/apod/ap250417.html',
 	}} />
 
-<section class="content-container">
-	<h2 class="section-title">Work with us!</h2>
-
-	<p class="paragraph">
-		Multiple organisations already support NEBULA-Xplorer’s mission through
-		equipment, software licences, facilities, or personnel. Take a glimpse
-		at the companies below to better understand how partners can contribute
-		to the project and help turn ambitious student-led space exploration
-		into reality.
-	</p>
+<section>
+	<div class="content-container">
+		<h2 class="section-title">Work with us!</h2>
+		<p class="paragraph">
+			Multiple organisations already support NEBULA-Xplorer’s mission through
+			equipment, software licences, facilities, or personnel. Take a glimpse
+			at the companies below to better understand how partners can contribute
+			to the project and help turn ambitious student-led space exploration
+			into reality.
+		</p>
+	</div>
 </section>
 
 <PartnersCarousel />
 
-<section class="content-container">
-	<h2 class="section-title orange">Partner with NEBULA!</h2>
-	<p class="paragraph">
-		We are always open to new collaborations with companies, institutions,
-		and individuals who believe in empowering the next generation of
-		engineers. If your organisation is interested in supporting
-		NEBULA-Xplorer, we would be glad to explore how we can create meaningful
-		value together.
-	</p>
-	<p class="subheading">
-		Contact us at <a href="mailto:nebula@sron.nl">nebula@sron.nl</a>!
-	</p>
+<section>
+	<div class="content-container">
+		<h2 class="section-title orange">Partner with NEBULA!</h2>
+		<p class="paragraph">
+			We are always open to new collaborations with companies, institutions,
+			and individuals who believe in empowering the next generation of
+			engineers. If your organisation is interested in supporting
+			NEBULA-Xplorer, we would be glad to explore how we can create meaningful
+			value together.
+		</p>
+		<p class="subheading">
+			Contact us at <a href="mailto:nebula@sron.nl">nebula@sron.nl</a>!
+		</p>
+	</div>
 </section>
 
 <style>
@@ -63,9 +66,5 @@
 	.paragraph {
 		max-width: 70ch;
 		margin-block: 1rem;
-	}
-
-	.content-container {
-		padding: 0;
 	}
 </style>

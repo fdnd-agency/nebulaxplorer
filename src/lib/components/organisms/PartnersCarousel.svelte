@@ -227,15 +227,23 @@
 </script>
 
 <section>
-	<h3 class="subheading content-container">Educational Partners</h3>
+	<h3 class="subheading">Educational Partners</h3>
 	<CarouselTrack items={sponsorsEducational} />
 
-	<h3 class="subheading content-container">Industrial Partners</h3>
+	<h3 class="subheading">Industrial Partners</h3>
 	<CarouselTrack items={sponsorsIndustrial} reverse />
 </section>
 
 <style>
 	section {
-		margin-block-end: 1rem;
+		margin-block-end: var(--spacing-section);
+		overflow: hidden;
+	}
+
+	h3 {
+		width: 100%;
+		max-width: var(--content-width);
+		margin-inline: auto;
+		margin-block: 0;
 	}
 </style>
