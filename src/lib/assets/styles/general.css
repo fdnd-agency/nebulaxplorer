@@ -111,6 +111,19 @@ body {
 	--font-paragraph: Roboto;
 	--font-subtext: spaceMonoBold;
 
+	/* Spacing */
+	--spacing-small: 0.5rem;
+	--spacing-medium: 1rem;
+	--spacing-large: 2rem;
+	--spacing-xlarge: 4rem;
+
+	--spacing-medium-variable: calc(1rem + 1.5vw);
+	--spacing-large-variable: calc(2rem + 1.5vw);
+
+	/* Semantic spacing */
+	--spacing-section: var(--spacing-large);
+	--spacing-section-last: var(--spacing-xlarge);
+
 	/* Focus outline */
 	--default-focus: 0.125rem dashed var(--cleanroom-140);
 
