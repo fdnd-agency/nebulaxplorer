@@ -72,6 +72,7 @@
 		position: relative;
 		padding-block: 3.5rem 2.25rem;
 		border-block-end: 0.375rem solid var(--accent-color);
+		max-width: 100%;
 
 		@media (min-width: 56.25rem) {
 			&.fullscreen {
@@ -119,6 +120,7 @@
 
 		h1 {
 			padding-block-start: 0.25em;
+			/* padding-inline: clamp(1rem, 5vw, 3.5rem); */
 		}
 
 		:global(svg) {

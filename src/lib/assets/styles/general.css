@@ -122,7 +122,8 @@ body {
 
 	/* Semantic spacing */
 	--spacing-section: var(--spacing-large);
-	--spacing-section-last: var(--spacing-xlarge);
+	--spacing-section-last: calc(3rem + 3vw);
+	--spacing-section-inline: clamp(1rem, 5vw, 3.5rem);
 
 	/* Focus outline */
 	--default-focus: 0.125rem dashed var(--cleanroom-140);
@@ -157,7 +158,23 @@ textarea {
 main {
 	> * {
 		width: 100%;
-		padding-inline: clamp(1rem, 5vw, 3.5rem);
+		padding-inline: var(--spacing-section-inline);
+	}
+	
+	> section {
+		padding-block: var(--spacing-large-variable);
+	}
+
+	> .background-dark + .background-light {
+		padding-block: var(--spacing-large-variable);
+	}
+
+	> .background-dark + .background-dark {
+		padding-block-start: 0;
+	}
+
+	> section:last-of-type {
+		padding-block-end: var(--spacing-section-last);
 	}
 }
 

@@ -48,7 +48,6 @@
 			their nearby extreme environments behave.
 		</p>
 	</div>
-
 	<Sponsors />
 </section>
 
@@ -78,7 +77,6 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 2rem;
-		padding-block: calc(2rem + 2vw);
 		justify-content: center;
 
 		h2 {

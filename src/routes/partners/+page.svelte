@@ -19,7 +19,7 @@
 		link: 'https://apod.nasa.gov/apod/ap250417.html',
 	}} />
 
-<section>
+<section class="background-dark">
 	<div class="content-container">
 		<h2 class="section-title">Work with us!</h2>
 		<p class="paragraph">
@@ -34,7 +34,7 @@
 
 <PartnersCarousel />
 
-<section>
+<section class="background-dark">
 	<div class="content-container">
 		<h2 class="section-title orange">Partner with NEBULA!</h2>
 		<p class="paragraph">
@@ -51,12 +51,8 @@
 </section>
 
 <style>
-	section {
-		margin-block-end: calc(2rem + 1vw);
-	}
-
 	h2 {
-		margin-block: 1rem;
+		margin-block-end: 1rem;
 	}
 
 	a {

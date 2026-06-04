@@ -39,7 +39,7 @@
 	]
 </script>
 
-<section>
+<section class="background-dark">
 	<h3 class="section-title">Mission Timeline</h3>
 	<article style="--_length: {data.length}">
 		{#each data as step, index (step.id)}
@@ -53,7 +53,6 @@
 <style>
 	/* Source used: https://css-tricks.com/pure-css-tabs-with-details-grid-and-subgrid/ */
 	section {
-		margin-block: calc(2rem + 2vw);
 		container-type: inline-size;
 	}
 

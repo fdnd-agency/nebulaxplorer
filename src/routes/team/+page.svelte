@@ -86,6 +86,5 @@
 		flex-direction: column;
 		max-width: 1000px;
 		justify-content: center;
-		padding-bottom: 2em;
 	}
 </style>

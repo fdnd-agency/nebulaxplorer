@@ -23,7 +23,7 @@
 	]
 </script>
 
-<section>
+<section class="background-dark">
 	<h2 class="heading">What our experts say</h2>
 	<ul>
 		{#each data as testimonial (testimonial.text)}
@@ -33,10 +33,6 @@
 </section>
 
 <style>
-	section {
-		margin-block-end: calc(2rem + 2vw);
-	}
-
 	h2 {
 		max-width: var(--content-width);
 		margin-inline: auto;

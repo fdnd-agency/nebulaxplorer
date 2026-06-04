@@ -22,7 +22,6 @@
 
 <style>
 	section {
-		margin-bottom: 5rem;
 		scroll-margin-top: 33vh;
 	}
 

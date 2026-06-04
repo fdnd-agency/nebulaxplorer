@@ -226,7 +226,7 @@
 	]
 </script>
 
-<section>
+<section class="background-dark">
 	<h3 class="subheading">Educational Partners</h3>
 	<CarouselTrack items={sponsorsEducational} />
 
@@ -236,7 +236,6 @@
 
 <style>
 	section {
-		margin-block-end: var(--spacing-section);
 		overflow: hidden;
 	}
 

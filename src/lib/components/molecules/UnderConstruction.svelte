@@ -20,11 +20,10 @@
 		gap: 2rem;
 		align-items: center;
 		justify-content: center;
-		margin-block-end: 5rem;
 	}
 
 	img {
-		width: 500px;
+		width: 32rem;
 		max-width: 100%;
 		height: auto;
 	}

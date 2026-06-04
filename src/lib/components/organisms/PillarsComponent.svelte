@@ -56,14 +56,13 @@
 <style>
 	section {
 		padding-inline: clamp(1rem, 5vw, 3.5rem);
-		padding-block: calc(1rem + 2vw);
 	}
 
 	ul {
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
-		padding-block: 1em 1.5em;
+		padding-block-start: 1em;
 		align-items: center;
 		list-style: none;
 

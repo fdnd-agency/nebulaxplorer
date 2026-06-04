@@ -33,7 +33,6 @@
 <style>
 	section {
 		background-color: var(--background-color-light);
-		margin-block: -1.5rem;
 		padding-block: 2.5rem;
 		padding-inline: clamp(1rem, 6vw, 3.5rem);
 		border-bottom: var(--accent-color) 0.5rem solid;

@@ -185,11 +185,6 @@
 			}
 		}
 
-		.text-content,
-		picture {
-			margin-top: 3rem;
-		}
-
 		picture {
 			grid-column: 8 / -1;
 			grid-row: 1 / 2;
@@ -214,7 +209,6 @@
 		color: var(--text-color-dark);
 
 		div {
-			padding-bottom: 2rem;
 			font-weight: 500;
 
 			> *:not(enhanced\:img, img, picture) {
