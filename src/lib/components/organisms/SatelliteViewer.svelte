@@ -4,6 +4,7 @@
 	import { loadSatellite } from '$lib/three/Satellite.js'
 
 	let container
+	let canvas
 
 	onMount(() => {
 		// Scene
@@ -26,11 +27,13 @@
 		)
 		camera.position.z = 5
 
-		// Renderer
-		const renderer = new THREE.WebGLRenderer({ antialias: true })
+		const renderer = new THREE.WebGLRenderer({
+			canvas,
+			antialias: true,
+		})
+
 		renderer.setSize(container.clientWidth, container.clientHeight)
 		renderer.setClearColor(0x0b0f1a, 1)
-		container.appendChild(renderer.domElement)
 
 		// 🛰️ Load satellite
 		loadSatellite(scene)
@@ -55,4 +58,6 @@
 	})
 </script>
 
-<div bind:this={container} style="width: 100%; height: 400px;"></div>
+<div bind:this={container} class="scene">
+	<canvas bind:this={canvas}></canvas>
+</div>
