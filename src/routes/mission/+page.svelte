@@ -7,7 +7,7 @@
 		TestimonialCollection,
 		blackholeEnhanced as blackholeImage,
 		tarantulaMergerEnhanced,
-		SatelliteViewer
+		SatelliteViewer,
 	} from '$lib'
 </script>
 

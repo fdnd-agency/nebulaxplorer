@@ -10,7 +10,7 @@ export function loadSatellite(scene) {
 
 		satellite = glb.scene
 
-		satellite.scale.set(0.20, 0.20, 0.20)
+		satellite.scale.set(0.2, 0.2, 0.2)
 
 		scene.add(satellite)
 	})
