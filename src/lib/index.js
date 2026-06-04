@@ -11,6 +11,7 @@ export { default as TeamsYearComponent } from '$lib/components/organisms/TeamsYe
 export { default as TestimonialCollection } from '$lib/components/organisms/TestimonialCollection.svelte'
 export { default as MissionGoals } from './components/organisms/MissionGoals.svelte'
 export { default as Timeline } from './components/organisms/Timeline.svelte'
+export { default as SatelliteViewer } from './components/organisms/SatelliteViewer.svelte'
 
 // Molecules
 export { default as AssignmentCards } from './components/molecules/AssignmentCards.svelte'

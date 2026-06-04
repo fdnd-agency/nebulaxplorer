@@ -7,6 +7,7 @@
 		TestimonialCollection,
 		blackholeEnhanced as blackholeImage,
 		tarantulaMergerEnhanced,
+		SatelliteViewer
 	} from '$lib'
 </script>
 
@@ -152,6 +153,8 @@
 </section>
 
 <MissionGoals />
+
+<SatelliteViewer />
 
 <Timeline />
 
