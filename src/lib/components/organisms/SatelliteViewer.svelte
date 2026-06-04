@@ -1,28 +1,20 @@
 <script>
-	import { onMount } from 'svelte'
-	import * as THREE from 'three'
+import * as THREE from 'three'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 
-	let container
+let satellite = null
 
-	onMount(() => {
-		// Scene
-		const scene = new THREE.Scene()
+export function loadSatellite(scene) {
+	const loader = new GLTFLoader()
 
-		// Render loop (empty scene for now)
-		function animate() {
-			requestAnimationFrame(animate)
-		}
+	loader.load('/NebulaXplorer.glb', (glb) => {
+		satellite = glb.scene
 
-		animate()
+		// basic setup (NO animation yet)
+		satellite.position.set(0, 0, 0)
+		satellite.scale.set(0.1, 0.1, 0.1)
+
+		scene.add(satellite)
 	})
+}
 </script>
-
-<div bind:this={container} class="scene"></div>
-
-<style>
-	.scene {
-		width: 100%;
-		height: 500px;
-		background: black;
-	}
-</style>
