@@ -13,21 +13,21 @@
 
 <nav class={`breadcrumb-path ${contrast}`}>
 	<div class="content-container">
-		<a href={resolve('/')} class="crumb subheading">home</a>
+		<a href={resolve('/')} class="crumb paragraph">home</a>
 		{#each pathSegments as segment, index (index)}
 			<span class="arrow">
-				<Arrow />
+				<Arrow height="0.8rem" />
 			</span>
 			{#if index + 1 < pathSegments.length}
 				<a
 					href={resolve(
 						'/' + pathSegments.slice(0, index + 1).join('/')
 					)}
-					class="crumb subheading">
+					class="crumb paragraph">
 					{sanitizeString(segment)}
 				</a>
 			{:else}
-				<span class="caption">
+				<span class="paragraph">
 					{sanitizeString(segment)}
 				</span>
 			{/if}
@@ -36,9 +36,13 @@
 </nav>
 
 <style>
+	.breadcrumb-path {
+		padding-block: var(--spacing-medium);
+	}
+
 	.breadcrumb-path div {
 		display: flex;
-		gap: 0.75rem;
+		gap: var(--spacing-medium);
 		align-items: center;
 		width: 100%;
 
