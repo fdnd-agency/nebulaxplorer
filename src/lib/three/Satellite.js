@@ -6,7 +6,6 @@ export function loadSatellite(scene) {
 	const loader = new GLTFLoader()
 
 	loader.load('/NebulaXplorer.glb', (glb) => {
-
 		satellite = glb.scene
 
 		satellite.scale.set(0.3, 0.3, 0.3)
