@@ -22,8 +22,8 @@
 
 <style>
 	section {
-		margin-bottom: 5rem;
-		scroll-margin-top: 33vh;
+		margin-block-end: 5rem;
+		scroll-margin-block-start: 33vh;
 	}
 
 	div {
@@ -106,7 +106,7 @@
 		&:focus-visible {
 			background-color: transparent;
 			color: var(--text-color-light);
-			border-left: 1px solid var(--text-color-light);
+			border-inline-start: 1px solid var(--text-color-light);
 		}
 	}
 </style>

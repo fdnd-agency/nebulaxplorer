@@ -244,7 +244,7 @@
 		grid-template-columns: repeat(12, 1fr);
 		gap: inherit;
 		row-gap: unset;
-		margin-bottom: 1rem;
+		margin-block-end: 1rem;
 		align-items: center;
 
 		> *:not(enhanced\:img, img, picture) {
@@ -253,7 +253,7 @@
 
 			@media (min-width: 36.25rem) {
 				grid-column: 1 / 8;
-				padding-right: 1.5rem;
+				padding-inline-end: 1.5rem;
 			}
 		}
 
@@ -261,14 +261,14 @@
 			grid-row: 1 / 2;
 
 			* + p {
-				margin-top: 0.5rem;
+				margin-block-start: 0.5rem;
 				line-height: 1.7;
 			}
 		}
 
 		.text-content,
 		picture {
-			margin-top: 3rem;
+			margin-block-start: 3rem;
 		}
 
 		picture {
@@ -295,13 +295,13 @@
 		color: var(--text-color-dark);
 
 		div {
-			padding-bottom: 2rem;
+			padding-block-end: 2rem;
 			font-weight: 500;
 
 			> *:not(enhanced\:img, img, picture) {
 				@media (min-width: 36.25rem) {
 					grid-column: 6 / -1;
-					padding-left: 1.5rem;
+					padding-inline-start: 1.5rem;
 					justify-self: flex-end;
 				}
 			}

@@ -88,7 +88,7 @@
 		width: 100%;
 		height: 15rem;
 		overflow: hidden;
-		margin-top: auto;
+		margin-block-start: auto;
 
 		aspect-ratio: 1 / 1;
 		object-fit: cover;
