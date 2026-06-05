@@ -130,7 +130,7 @@
 			width: 35%;
 			padding-inline-start: 3.125rem;
 			order: initial;
-			margin-bottom: 0;
+			margin-block-end: 0;
 			justify-content: flex-start;
 			align-items: flex-start;
 		}

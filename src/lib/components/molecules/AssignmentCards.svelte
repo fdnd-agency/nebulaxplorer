@@ -85,7 +85,7 @@
 			display: inherit;
 			flex-direction: inherit;
 			gap: 0.25rem;
-			padding-bottom: 0.5rem;
+			padding-block-end: 0.5rem;
 			text-transform: capitalize;
 		}
 

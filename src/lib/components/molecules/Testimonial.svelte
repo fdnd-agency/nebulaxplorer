@@ -65,7 +65,7 @@
 	}
 
 	/* .testimonial-info {
-        margin-bottom: 1rem;
+        margin-block-end: 1rem;
     } */
 
 	.testimonial-card h2 {

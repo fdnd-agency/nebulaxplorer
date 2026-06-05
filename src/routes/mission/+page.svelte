@@ -187,7 +187,7 @@
 
 		.text-content,
 		picture {
-			margin-top: 3rem;
+			margin-block-start: 3rem;
 		}
 
 		picture {
@@ -220,7 +220,7 @@
 			> *:not(enhanced\:img, img, picture) {
 				@media (min-width: 36.25rem) {
 					grid-column: 6 / -1;
-					padding-left: 1.5rem;
+					padding-inline-start: 1.5rem;
 					justify-self: flex-end;
 				}
 			}

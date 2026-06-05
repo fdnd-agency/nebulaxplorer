@@ -73,7 +73,7 @@
 			h3 {
 				color: var(--accent-color);
 				font-weight: 500;
-				margin-bottom: 1rem;
+				margin-block-end: 1rem;
 				font-size: medium;
 			}
 
