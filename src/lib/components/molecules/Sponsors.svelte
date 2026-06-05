@@ -1,5 +1,6 @@
 <script>
 	import { logoAstos, logoEsatan } from '$lib'
+	import Arrow from '../icons/Arrow.svelte'
 </script>
 
 <section>
@@ -13,21 +14,21 @@
 		</p>
 		<ul>
 			<li>
-				<a href="https://www.astos.de/" rel="external">
-					<img
-						src={logoAstos}
-						alt="Astos Solutions"
-						height="100"
-						width="150" />
+				<img src={logoAstos} alt="" height="100" width="150" />
+				<a
+					href="https://www.astos.de/"
+					class="paragraph"
+					rel="external">
+					Astos Solutions <Arrow />
 				</a>
 			</li>
 			<li>
-				<a href="https://www.esatan-tms.com/" rel="external">
-					<img
-						src={logoEsatan}
-						alt="Esatan-TMS"
-						height="100"
-						width="150" />
+				<img src={logoEsatan} alt="" height="100" width="150" />
+				<a
+					href="https://www.esatan-tms.com/"
+					class="paragraph"
+					rel="external">
+					Esatan-TMS <Arrow />
 				</a>
 			</li>
 		</ul>
@@ -49,11 +50,31 @@
 
 	li {
 		position: relative;
-		height: 10rem;
-		max-height: 10rem;
+		display: grid;
+		grid-template-rows: 8rem min-content;
+		align-items: center;
+		justify-items: center;
 		padding: 0.5em;
-		overflow: hidden;
-		background-color: var(--space-140);
+
+		/* Replaces a focus/hover styles */
+		/* Source: https://larsmagnus.co/blog/focus-visible-within-the-missing-pseudo-class */
+		&:has(:focus-visible) {
+			outline: var(--default-focus);
+		}
+
+		&:hover a {
+			text-decoration: underline 1px;
+		}
+
+		/* Makes the little arrow move on hover */
+		:global(svg) {
+			transition: 0.2s;
+		}
+
+		&:hover :global(svg) {
+			transition: 0.2s;
+			transform: translateX(50%);
+		}
 	}
 
 	img {
@@ -61,17 +82,28 @@
 		max-height: 100%;
 		width: auto;
 		max-width: 100%;
-		transition: 0.3s;
+		padding: 0.5em;
 	}
 
 	a {
 		display: flex;
-		height: 100%;
+		justify-content: space-between;
 		align-items: center;
-		justify-content: center;
+		padding: 0.5em;
+		height: 100%;
+		width: 100%;
+		border-block-start: 1px solid var(--background-color-light);
+
+		&:focus {
+			outline: none;
+			text-decoration: underline 1px;
+		}
 	}
 
-	a:hover img {
-		transform: scale(1.1);
+	/* Makes the whole thing clickable */
+	a::after {
+		position: absolute;
+		content: '';
+		inset: 0;
 	}
 </style>
