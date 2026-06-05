@@ -10,7 +10,7 @@ export function loadSatellite(scene) {
 
 		satellite = glb.scene
 
-		satellite.scale.set(0.2, 0.2, 0.2)
+		satellite.scale.set(0.3, 0.3, 0.3)
 
 		scene.add(satellite)
 	})
@@ -18,6 +18,6 @@ export function loadSatellite(scene) {
 
 export function rotateSatellite() {
 	if (satellite) {
-		satellite.rotation.y += 0.002
+		satellite.rotation.y += 0.003
 	}
 }

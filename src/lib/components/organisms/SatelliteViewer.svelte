@@ -10,9 +10,8 @@
 		// Scene
 		const scene = new THREE.Scene()
 
-		// Light
-		const light = new THREE.AmbientLight(0xffffff, 1)
-		scene.add(light)
+		// Lights
+		scene.add(new THREE.AmbientLight(0xffffff, 1))
 
 		const directionalLight = new THREE.DirectionalLight(0xffffff, 1)
 		directionalLight.position.set(5, 5, 5)
@@ -22,58 +21,92 @@
 		fillLight.position.set(-5, 2, -5)
 		scene.add(fillLight)
 
-		// Camera (UI component → use canvas size)
-		const width = canvas.clientWidth
-		const height = canvas.clientHeight
-
+		// Camera
 		const camera = new THREE.PerspectiveCamera(
 			45,
-			width / height,
+			canvas.clientWidth / canvas.clientHeight,
 			0.1,
 			1000
 		)
-		camera.position.z = 5
 
-		// Renderer (use canvas directly)
+		camera.position.z = 6
+
+		// Renderer
 		const renderer = new THREE.WebGLRenderer({
 			canvas,
 			antialias: true,
+			alpha: true,
 		})
 
 		renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-		renderer.setSize(width, height)
-		renderer.setClearColor(0x0b0f1a, 1)
+		renderer.setSize(canvas.clientWidth, canvas.clientHeight)
 
-		// Load model
+		// Model
 		loadSatellite(scene)
 
-		// Render loop
+		// Resize handler
+		function handleResize() {
+			const width = canvas.clientWidth
+			const height = canvas.clientHeight
+
+			camera.aspect = width / height
+			camera.updateProjectionMatrix()
+
+			renderer.setSize(width, height)
+		}
+
+		window.addEventListener('resize', handleResize)
+
+		// Animation loop
+		let frameId
+
 		function animate() {
-			requestAnimationFrame(animate)
+			frameId = requestAnimationFrame(animate)
+
 			rotateSatellite()
 			renderer.render(scene, camera)
 		}
 
 		animate()
 
-		// Resize (UI component safe)
-		window.addEventListener('resize', () => {
-			const width = canvas.clientWidth
-			const height = canvas.clientHeight
-
-			camera.aspect = width / height
-			camera.updateProjectionMatrix()
-			renderer.setSize(width, height)
-		})
+		// Cleanup
+		return () => {
+			cancelAnimationFrame(frameId)
+			window.removeEventListener('resize', handleResize)
+			renderer.dispose()
+		}
 	})
 </script>
 
-<canvas bind:this={canvas}></canvas>
+<section class="satellite-container">
+	<canvas
+		bind:this={canvas}
+		aria-label="3D model of the NEBULA-Xplorer satellite"
+	></canvas>
+</section>
 
 <style>
-	canvas {
+	.satellite-container {
 		width: 100%;
-		height: 400px;
+		max-width: 500px;
+		margin: 0 auto;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		aspect-ratio: 16 / 10;
+	}
+
+	@media (min-width: 800px) {
+		.satellite-container {
+			aspect-ratio: 1 / 1;
+		}
+	}
+
+	canvas {
 		display: block;
+		width: 100%;
+		height: 100%;
 	}
 </style>
