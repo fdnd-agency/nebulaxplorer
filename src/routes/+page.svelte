@@ -7,7 +7,7 @@
 		Sponsors,
 		sronAcademyLogoOnWhite,
 		xrayBinaryEnhanced,
-		SatelliteViewer
+		SatelliteViewer,
 	} from '$lib'
 
 	let { data } = $props()
@@ -35,7 +35,7 @@
 	<div class="content-container">
 		<h2 class="heading">About NEBULA-Xplorer</h2>
 		<SatelliteViewer />
-		
+
 		<p class="paragraph">
 			NEBULA-X is an X-ray spectral timing mission that will fill a key
 			gap in international observing capability in the early 2030s by

@@ -81,8 +81,7 @@
 <section class="satellite-container">
 	<canvas
 		bind:this={canvas}
-		aria-label="3D model of the NEBULA-Xplorer satellite"
-	></canvas>
+		aria-label="3D model of the NEBULA-Xplorer satellite"></canvas>
 </section>
 
 <style>
