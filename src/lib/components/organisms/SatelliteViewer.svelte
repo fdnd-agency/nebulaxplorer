@@ -1,16 +1,17 @@
 <script>
 	import { onMount } from 'svelte'
 	import * as THREE from 'three'
-	import { loadSatellite } from '$lib/three/Satellite.js'
-	import { rotateSatellite } from '$lib/three/Satellite.js'
+	import { loadSatellite, rotateSatellite } from '$lib/three/Satellite.js'
 
+	import nebulaSatellite from '$lib/assets/images/nebula-satellite.png'
+
+	let container
 	let canvas
+	let isLoaded = false
 
 	onMount(() => {
-		// Scene
 		const scene = new THREE.Scene()
 
-		// Lights
 		scene.add(new THREE.AmbientLight(0xffffff, 1))
 
 		const directionalLight = new THREE.DirectionalLight(0xffffff, 1)
@@ -21,17 +22,9 @@
 		fillLight.position.set(-5, 2, -5)
 		scene.add(fillLight)
 
-		// Camera
-		const camera = new THREE.PerspectiveCamera(
-			45,
-			canvas.clientWidth / canvas.clientHeight,
-			0.1,
-			1000
-		)
+		const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 1000)
+		camera.position.z = 3.5
 
-		camera.position.z = 6
-
-		// Renderer
 		const renderer = new THREE.WebGLRenderer({
 			canvas,
 			antialias: true,
@@ -39,73 +32,86 @@
 		})
 
 		renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-		renderer.setSize(canvas.clientWidth, canvas.clientHeight)
 
-		// Model
 		loadSatellite(scene)
 
-		// Resize handler
-		function handleResize() {
-			const width = canvas.clientWidth
-			const height = canvas.clientHeight
+		// mark as loaded (for fallback switch)
+		isLoaded = true
 
-			camera.aspect = width / height
-			camera.updateProjectionMatrix()
+		const resizeObserver = new ResizeObserver((entries) => {
+			for (let entry of entries) {
+				const { width, height } = entry.contentRect
 
-			renderer.setSize(width, height)
-		}
+				camera.aspect = width / height
+				camera.updateProjectionMatrix()
 
-		window.addEventListener('resize', handleResize)
+				renderer.setSize(width, height, false)
+			}
+		})
 
-		// Animation loop
+		resizeObserver.observe(container)
+
 		let frameId
 
 		function animate() {
 			frameId = requestAnimationFrame(animate)
-
 			rotateSatellite()
 			renderer.render(scene, camera)
 		}
 
 		animate()
 
-		// Cleanup
 		return () => {
 			cancelAnimationFrame(frameId)
-			window.removeEventListener('resize', handleResize)
+			resizeObserver.disconnect()
 			renderer.dispose()
 		}
 	})
 </script>
 
-<section class="satellite-container">
-	<canvas
-		bind:this={canvas}
-		aria-label="3D model of the NEBULA-Xplorer satellite"></canvas>
+<section class="satellite-container" bind:this={container}>
+	<img
+		src={nebulaSatellite}
+		alt="NEBULA-Xplorer satellite illustration"
+		class="satellite-fallback"
+		class:hidden={isLoaded} />
+
+	<canvas bind:this={canvas} class:hidden={!isLoaded}></canvas>
+
+	<p class="visually-hidden">
+		3D model of the NEBULA-Xplorer satellite showing a rotating space
+		object.
+	</p>
 </section>
 
 <style>
 	.satellite-container {
-		width: 100%;
-		max-width: 500px;
-		margin: 0 auto;
-
-		display: flex;
-		justify-content: center;
-		align-items: center;
-
+		position: relative;
+		width: min(1100px, 90vw);
+		width: 90%;
+		margin: 0 auto; /* Centers it on mobile */
 		aspect-ratio: 16 / 10;
+		overflow: hidden;
 	}
 
 	@media (min-width: 800px) {
 		.satellite-container {
-			aspect-ratio: 1 / 1;
+			aspect-ratio: 4 / 3;
+			margin: 0;
 		}
 	}
 
-	canvas {
-		display: block;
+	canvas,
+	.satellite-fallback {
+		position: absolute;
+		inset: 0;
 		width: 100%;
 		height: 100%;
+		object-fit: contain;
+		object-position: top;
+	}
+
+	.hidden {
+		display: none;
 	}
 </style>

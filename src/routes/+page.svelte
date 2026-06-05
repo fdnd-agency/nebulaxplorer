@@ -94,13 +94,11 @@
 			grid-template-columns: repeat(3, 1fr);
 			gap: 3rem;
 
-			/* Text content on the LEFT side (Columns 1 and 2) */
 			p {
 				grid-row: 2 / 3;
 				grid-column: 1 / 3;
 			}
 
-			/* Satellite successfully moved back to the RIGHT side (Column 3) */
 			picture,
 			img,
 			:global(.satellite-container) {
