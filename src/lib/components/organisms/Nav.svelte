@@ -226,13 +226,13 @@
 		list-style: none;
 
 		@supports selector([popover]:popover-open) {
-			padding-top: 4rem;
+			padding-block-start: 4rem;
 		}
 
 		@media (min-width: 56.25rem) {
 			flex-direction: row;
 			align-items: flex-end;
-			padding-top: 1rem;
+			padding-block-start: 1rem;
 			gap: 1.5rem;
 			width: initial;
 		}

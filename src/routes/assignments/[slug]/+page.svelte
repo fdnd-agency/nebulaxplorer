@@ -105,7 +105,7 @@
 
 	.white {
 		color: var(--text-color-light);
-		margin-right: 1ch;
+		margin-inline-end: 1ch;
 	}
 
 	.error {

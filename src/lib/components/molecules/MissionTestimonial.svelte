@@ -27,7 +27,8 @@
 	blockquote {
 		display: flex;
 		gap: 0.5rem;
-		padding: 2rem 2rem 3rem 2.5rem;
+		padding-block: 2rem 3rem;
+		padding-inline: 2.5rem 2rem;
 		background-color: var(--secondary-color, hsl(235, 45%, 29%));
 		border-radius: 0.5rem;
 		line-height: 1.3;
@@ -43,7 +44,8 @@
 		flex-direction: column;
 		align-items: center;
 		position: relative;
-		padding: 1rem;
+		padding-block: 1rem;
+		padding-inline: 1rem;
 		margin-inline: 2rem;
 		margin-block-start: -1rem;
 		background-color: var(--background-color-light, white);
@@ -72,7 +74,8 @@
 	}
 
 	p {
-		padding: 0.25rem;
+		padding-block: 0.25rem;
+		padding-inline: 0.25rem;
 		font-family: spaceMonoRegular, monospace;
 		letter-spacing: -0.2px;
 		text-align: center;

@@ -111,7 +111,8 @@
 	.apply-button {
 		display: inline-block;
 		text-align: center;
-		padding: 1rem;
+		padding-block: 1rem;
+		padding-inline: 1rem;
 		width: 100%;
 		color: var(--text-color-dark);
 		background: var(--accent-color);

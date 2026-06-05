@@ -51,7 +51,7 @@
 
 		background: var(--secondary-color);
 		gap: 1.5rem;
-		padding-left: 1.5rem;
+		padding-inline-start: 1.5rem;
 
 		> li {
 			container-type: inline-size;
@@ -91,7 +91,7 @@
 		max-width: 100%;
 		margin-block: 1rem;
 		position: relative;
-		margin-right: 2.25rem;
+		margin-inline-end: 2.25rem;
 		justify-content: space-between;
 
 		&::after {
