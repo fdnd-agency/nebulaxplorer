@@ -12,21 +12,25 @@
 
 <svelte:head>
 	<title>Mission</title>
+
 	<meta
 		name="description"
 		content="NEBULA-Xplorer will investigate how jets form and how X-ray binaries evolve. It will observe these objects for long periods of time to see how their emission varies on time scales from milliseconds to weeks." />
 </svelte:head>
 
 <!-- HERO BLOCK -->
+
 <Hero
 	titleColor="var(--text-color-light)"
 	background={{
 		file: tarantulaMergerEnhanced,
+
 		alt: 'Visualization of a Black Hole Merger in the Tarantula Nebula',
 	}}
 	pageTitle="Mission"
 	attribution={{
 		text: 'NASA',
+
 		link: 'https://apod.nasa.gov/apod/ap260403.html',
 	}} />
 
@@ -39,6 +43,7 @@
 		<h2 class="subtitle">
 			What are we <span class="orange">up</span> to?
 		</h2>
+
 		<p class="heading">What our current project entails</p>
 	</div>
 </hgroup>
@@ -47,6 +52,7 @@
 	<div class="content-container">
 		<section class="text-content">
 			<h3 class="orange heading">Dense matter and compact objects</h3>
+
 			<p>
 				NEBULA-Xplorer will investigate compact objects such as neutron
 				stars and black hole X-ray binaries within our Milky Way. By
@@ -59,6 +65,7 @@
 				systems, where light is most affected by the gravity of compact
 				objects and the magnetic environment of neutron stars.
 			</p>
+
 			<p>
 				By observing black holes in this energy range, we can also
 				measure the spin of black holes by observing the relativistic
@@ -70,6 +77,7 @@
 				estimated to make up to 85% of star systems in our universe.
 			</p>
 		</section>
+
 		<enhanced:img src={blackholeImage} alt="Black Hole" />
 	</div>
 </section>
@@ -82,8 +90,10 @@
 			class="paragraph-img-left"
 			src={blackholeImage}
 			alt="Black Hole" />
+
 		<section class="text-content">
 			<h3 class="orange-on-white heading">Multi-messenger physics</h3>
+
 			<p>
 				NEBULA-Xplorer frames the multi-wavelength campaigns required to
 				understand jet and accretion physics at the forefront of its
@@ -93,6 +103,7 @@
 				ability to maintain as close to continuous observations of
 				targets as possible.
 			</p>
+
 			<p>
 				During longer observations, NEBULA-Xplorer will transmit timing
 				information key to understanding when ballistic jet ejections
@@ -114,6 +125,7 @@
 	<div class="content-container">
 		<section class="text-content">
 			<h3 class="orange heading">Time-domain Astrophysics</h3>
+
 			<p>
 				As a non-imaging X-ray timing observatory, NEBULA-Xplorer’s core
 				science focuses on interpreting the variability of emission from
@@ -126,6 +138,7 @@
 				disk and companion star in these systems obscuring the central
 				accretion engine.
 			</p>
+
 			<p>
 				Frequently, changes in variability are affected by multiple
 				phenomena in the system that evolve on different time scales,
@@ -136,6 +149,7 @@
 				will allow us to understand the short-term variability of
 				emission and how that changes on timescales of days to weeks.
 			</p>
+
 			<p>
 				NEBULA-Xplorer’s moderate energy resolution and high timing
 				resolution will also allow us to perform spectral-timing
@@ -147,11 +161,78 @@
 				of light travel time within the system.
 			</p>
 		</section>
+
 		<enhanced:img src={blackholeImage} alt="Black Hole" />
 	</div>
 </section>
 
-<MissionGoals />
+<!-- FOURTH PARAGRAPH + IMG BLOCK -->
+
+<section class="mission-combined">
+	<h2 class="visually-hidden">Mission Goals</h2>
+	<MissionGoals />
+
+	<section class="paragraph-block paragraph-block-alt">
+		<div class="content-container">
+			<ol class="text-content mission-list">
+				<li>
+					<h3 class="orange-on-white heading">
+						<span>01</span>
+
+						<span>X-ray Binary Mysteries</span>
+					</h3>
+
+					<p>
+						Many of the brightest objects in the Universe are X-ray
+						binaries — combinations of an extremely compact object,
+						such as a black hole or neutron star, and a companion
+						star. Over time, the compact object strips matter from
+						its companion, releasing enormous energy in a focused
+						beam called a jet. Scientists do not yet fully
+						understand this process, and the behaviour of matter
+						right at the edge of the black hole remains one of the
+						great mysteries of modern astrophysics.
+					</p>
+				</li>
+				<li>
+					<h3 class="orange-on-white heading">
+						<span>02</span>
+
+						<span>Long-Duration Observations</span>
+					</h3>
+
+					<p>
+						NEBULA – Xplorer will investigate how jets form and how
+						X-ray binaries evolve by observing these objects over
+						extended periods — tracking how their emissions vary
+						across timescales ranging from milliseconds to weeks.
+						These long observation windows make it possible to
+						combine X-ray data with measurements from other
+						telescopes across different wavelengths.
+					</p>
+				</li>
+				<li>
+					<h3 class="orange-on-white heading">
+						<span>03</span>
+
+						<span>Training the Next Generation</span>
+					</h3>
+
+					<p>
+						Every six months, a new cohort of students from
+						different disciplines — including astrophysics,
+						spacecraft engineering, optics, electronics, software,
+						and communications — joins the project. Each group
+						builds on the work of the last, with continuity ensured
+						by SRON scientists and industry partners.
+					</p>
+				</li>
+			</ol>
+
+			<enhanced:img src={blackholeImage} alt="Black Hole" />
+		</div>
+	</section>
+</section>
 
 <Timeline />
 
@@ -242,6 +323,37 @@
 				}
 			}
 		}
+	}
+
+	.mission-combined {
+		background-color: var(--background-color-light);
+		color: var(--text-color-dark);
+	}
+
+	.mission-combined {
+		h3 {
+			font-size: 1.5rem;
+			font-weight: 500;
+			display: flex;
+			gap: 1rem;
+
+			@media (min-width: 36.25rem) {
+				gap: 2rem;
+			}
+		}
+	}
+
+	.mission-list {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		display: grid;
+		gap: 2rem;
+	}
+
+	.mission-list li {
+		display: grid;
+		gap: 0.75rem;
 	}
 
 	/* util classes */
