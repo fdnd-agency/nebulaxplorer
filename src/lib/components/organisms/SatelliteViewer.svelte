@@ -8,6 +8,7 @@
 	let container
 	let canvas
 	let isLoaded = false
+	let shouldReduceMotion = false
 
 	onMount(() => {
 		const scene = new THREE.Scene()
@@ -33,6 +34,15 @@
 
 		renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
+		const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+
+		const update = (e) => {
+			shouldReduceMotion = e.matches
+		}
+
+		shouldReduceMotion = mediaQuery.matches
+		mediaQuery.addEventListener('change', update)
+
 		loadSatellite(scene)
 
 		// mark as loaded (for fallback switch)
@@ -55,13 +65,16 @@
 
 		function animate() {
 			frameId = requestAnimationFrame(animate)
-			rotateSatellite()
+			if (!shouldReduceMotion) {
+				rotateSatellite()
+			}
 			renderer.render(scene, camera)
 		}
 
 		animate()
 
 		return () => {
+			mediaQuery.removeEventListener('change', update)
 			cancelAnimationFrame(frameId)
 			resizeObserver.disconnect()
 			renderer.dispose()
@@ -70,7 +83,7 @@
 </script>
 
 <section class="satellite-container" bind:this={container}>
-	<img
+	<enhanced:img
 		src={nebulaSatellite}
 		alt="NEBULA-Xplorer satellite illustration"
 		class="satellite-fallback"
@@ -94,7 +107,7 @@
 		overflow: hidden;
 	}
 
-	@media (min-width: 800px) {
+	@media (min-width: 50rem) {
 		.satellite-container {
 			aspect-ratio: 4 / 3;
 			margin: 0;

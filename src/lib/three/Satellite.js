@@ -6,7 +6,6 @@ export function loadSatellite(scene) {
 	const loader = new GLTFLoader()
 
 	loader.load('/NebulaXplorer.glb', (glb) => {
-		console.log('MODEL LOADED')
 
 		satellite = glb.scene
 

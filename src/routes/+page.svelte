@@ -90,9 +90,8 @@
 			align-self: center;
 		}
 
-		@media (min-width: 800px) {
+		@media (min-width: 50rem) {
 			grid-template-columns: repeat(3, 1fr);
-			gap: 3rem;
 
 			p {
 				grid-row: 2 / 3;
@@ -126,7 +125,7 @@
 			font-weight: 500;
 		}
 
-		@media (min-width: 800px) {
+		@media (min-width: 50rem) {
 			p {
 				grid-row: 2 / 3;
 				grid-column: 2 / -1;
