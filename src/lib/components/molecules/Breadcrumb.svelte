@@ -38,6 +38,7 @@
 <style>
 	.breadcrumb-path {
 		padding-block-start: var(--spacing-medium);
+		padding-block-end: var(--spacing-large);
 	}
 
 	.breadcrumb-path div {

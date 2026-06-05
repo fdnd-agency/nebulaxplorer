@@ -39,14 +39,14 @@
 		<h2 class="subtitle">
 			What are we <span class="orange">up</span> to?
 		</h2>
-		<p class="heading">What our current project entails</p>
+		<p class="caption">What our current project entails</p>
 	</div>
 </hgroup>
 
 <section class="paragraph-block">
 	<div class="content-container">
 		<section class="text-content">
-			<h3 class="orange heading">Dense matter and compact objects</h3>
+			<h3 class="orange caption">Dense matter and compact objects</h3>
 			<p>
 				NEBULA-Xplorer will investigate compact objects such as neutron
 				stars and black hole X-ray binaries within our Milky Way. By
@@ -83,7 +83,7 @@
 			src={blackholeImage}
 			alt="Black Hole" />
 		<section class="text-content">
-			<h3 class="orange-on-white heading">Multi-messenger physics</h3>
+			<h3 class="orange-on-white caption">Multi-messenger physics</h3>
 			<p>
 				NEBULA-Xplorer frames the multi-wavelength campaigns required to
 				understand jet and accretion physics at the forefront of its
@@ -113,7 +113,7 @@
 <section class="paragraph-block">
 	<div class="content-container">
 		<section class="text-content">
-			<h3 class="orange heading">Time-domain Astrophysics</h3>
+			<h3 class="orange caption">Time-domain Astrophysics</h3>
 			<p>
 				As a non-imaging X-ray timing observatory, NEBULA-Xplorer’s core
 				science focuses on interpreting the variability of emission from
@@ -243,9 +243,15 @@
 		width: auto;
 	}
 
+	h2 {
+		font-size: 2.5rem;
+		font-weight: 400;
+		letter-spacing: -1px;
+	}
+
 	h2,
 	h3 {
-		font-weight: 600;
+		font-weight: 400;
 		line-height: 1.5;
 	}
 </style>
