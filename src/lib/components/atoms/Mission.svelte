@@ -126,7 +126,7 @@
 
 		.sticky-image-wrapper {
 			position: sticky;
-			top: 50%;
+			inset-block-start: 50%;
 			width: 35%;
 			padding-inline-start: 3.125rem;
 			order: initial;
