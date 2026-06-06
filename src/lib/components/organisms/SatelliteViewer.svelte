@@ -15,7 +15,7 @@
 		//  1. Scene setup
 		// ==============================
 		const scene = new THREE.Scene()
-		
+
 		// Ambient light = basic global lighting (makes everything visible)
 		scene.add(new THREE.AmbientLight(0xffffff, 1))
 
@@ -34,7 +34,7 @@
 		// ==============================
 		// Perspective camera = realistic 3D perspective
 		const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 1000)
-		
+
 		// Move camera back so the model is visible
 		camera.position.z = 3.5
 
@@ -43,8 +43,8 @@
 		// ==============================
 		const renderer = new THREE.WebGLRenderer({
 			canvas,
-			antialias: true,// smooth edges
-			alpha: true,// transparent background
+			antialias: true, // smooth edges
+			alpha: true, // transparent background
 		})
 
 		// Improves sharpness on high-DPI screens
@@ -64,7 +64,7 @@
 
 		shouldReduceMotion = mediaQuery.matches
 		mediaQuery.addEventListener('change', update)
-		
+
 		// ==============================
 		// 5. Load 3D model
 		// ==============================
