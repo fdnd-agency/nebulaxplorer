@@ -6,8 +6,8 @@
 		MailingListSignup,
 		Sponsors,
 		sronAcademyLogoOnWhite,
-		nebulaSatelliteEnhanced,
 		xrayBinaryEnhanced,
+		SatelliteViewer,
 	} from '$lib'
 
 	let { data } = $props()
@@ -34,10 +34,8 @@
 <section class="section-paragraph-picture">
 	<div class="content-container">
 		<h2 class="heading">About NEBULA-Xplorer</h2>
-		<enhanced:img
-			src={nebulaSatelliteEnhanced}
-			alt="The Nebula Xplorer Satellite"
-			sizes="(min-width:500px) 900px, (min-width:300px) 450px" />
+		<SatelliteViewer />
+
 		<p class="paragraph">
 			NEBULA-X is an X-ray spectral timing mission that will fill a key
 			gap in international observing capability in the early 2030s by
@@ -80,19 +78,20 @@
 		gap: 2rem;
 		padding-block: calc(2rem + 2vw);
 		justify-content: center;
+		align-items: center;
 
 		h2 {
 			grid-column: 1 / -1;
 		}
 
 		picture,
-		img {
+		img,
+		:global(.satellite-container) {
 			align-self: center;
 		}
 
-		@media (min-width: 800px) {
+		@media (min-width: 50rem) {
 			grid-template-columns: repeat(3, 1fr);
-			gap: 3rem;
 
 			p {
 				grid-row: 2 / 3;
@@ -100,7 +99,8 @@
 			}
 
 			picture,
-			img {
+			img,
+			:global(.satellite-container) {
 				grid-row: 2 / 3;
 				grid-column: 3 / -1;
 				justify-self: unset;
@@ -125,7 +125,7 @@
 			font-weight: 500;
 		}
 
-		@media (min-width: 800px) {
+		@media (min-width: 50rem) {
 			p {
 				grid-row: 2 / 3;
 				grid-column: 2 / -1;
