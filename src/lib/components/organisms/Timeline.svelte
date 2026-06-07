@@ -3,9 +3,9 @@
 	let { steps } = $props()
 </script>
 
-{#if steps}
-	<section>
-		<h3 class="section-title">Mission Timeline</h3>
+<section>
+	<h3 class="section-title">Mission Timeline</h3>
+	{#if steps.length > 0}
 		<article style="--_length: {steps.length}">
 			{#each steps as step, index (step.id)}
 				<TimelineStep {step} {index} />
@@ -13,8 +13,10 @@
 			<div class="rocket" aria-hidden="true">🚀</div>
 			<div class="background" aria-hidden="true"></div>
 		</article>
-	</section>
-{/if}
+	{:else}
+		<p>Error fetching Mission Timeline</p>
+	{/if}
+</section>
 
 <style>
 	/* Source used: https://css-tricks.com/pure-css-tabs-with-details-grid-and-subgrid/ */
