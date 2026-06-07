@@ -1,11 +1,13 @@
 <script>
+	import { placeholder1 } from '$lib'
 	let { step, index } = $props()
 </script>
 
 <details
 	name="timeline"
-	style="--_index: {index +
-		1}; --_background-image: url(https://fdnd-agency.directus.app/assets/{step.image}?format=webp&height=512)"
+	style="--_index: {index + 1}; {step.image
+		? `--_background-image: url(https://fdnd-agency.directus.app/assets/${step.image}?format=webp&height=512)`
+		: `--_background-image: url(${placeholder1});`}"
 	open>
 	<summary class="caption">{step.title}</summary>
 	<p class="paragraph">{step.content}</p>

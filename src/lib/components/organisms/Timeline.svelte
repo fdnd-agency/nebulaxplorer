@@ -1,5 +1,5 @@
 <script>
-	import { TimelineStep, placeholder1 } from '$lib'
+	import { TimelineStep } from '$lib'
 	let { steps } = $props()
 </script>
 
