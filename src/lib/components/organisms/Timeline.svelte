@@ -1,42 +1,5 @@
 <script>
-	import {
-		TimelineStep,
-		placeholder1,
-		placeholder2,
-		sronReviewStep1,
-		rocketLaunchStep5,
-	} from '$lib'
-
-	const data = [
-		{
-			id: 1,
-			title: 'Reviews and Design Confirmation',
-			content:
-				'Before production and launch, the project passes formal ECSS review stages. The System Requirements Review (SRR) defines and validates system needs. The Preliminary Design Review (PDR) evaluates the current design. Finally, the Critical Design Review (CDR) confirms readiness for manufacturing and verifies that all requirements are met.',
-			image: placeholder1,
-		},
-		{
-			id: 2,
-			title: 'Assembly, Integration, and Test (AIT)',
-			content:
-				'In the AIT phase, all subsystems are combined into a complete satellite. This includes propulsion and navigation systems such as star trackers. Interface control ensures compatibility between components. The integration of the 15-inch MkII Motorized Lightband connects the satellite securely to the launch vehicle.',
-			image: sronReviewStep1,
-		},
-		{
-			id: 3,
-			title: 'Testing and Qualification (V&V)',
-			content:
-				'Verification and Validation ensures that all systems perform correctly. The Engineering Model (EM) is used for functional testing, while the Proto Flight Model (PFM) undergoes strict qualification tests. Activities include COTS component testing, FPGA prototyping, and alignment of the Optical Bench Assembly to withstand launch conditions.',
-			image: placeholder2,
-		},
-		{
-			id: 4,
-			title: 'Launch Campaign (Pre-launch Phase)',
-			content:
-				'At the launch site, final preparations are completed. The propulsion system is fueled with propylene and nitrous oxide. The satellite is mounted on a SpaceX Falcon 9 as a rideshare payload. The Flight Readiness Review (FRR) confirms launch readiness before liftoff and the start of LEOP.',
-			image: rocketLaunchStep5,
-		},
-	]
+	import { TimelineStep, placeholder1 } from '$lib'
 </script>
 
 <section>
