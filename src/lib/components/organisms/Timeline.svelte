@@ -1,17 +1,20 @@
 <script>
 	import { TimelineStep, placeholder1 } from '$lib'
+	let { steps } = $props()
 </script>
 
-<section>
-	<h3 class="section-title">Mission Timeline</h3>
-	<article style="--_length: {data.length}">
-		{#each data as step, index (step.id)}
-			<TimelineStep {step} {index} />
-		{/each}
-		<div class="rocket" aria-hidden="true">🚀</div>
-		<div class="background" aria-hidden="true"></div>
-	</article>
-</section>
+{#if steps}
+	<section>
+		<h3 class="section-title">Mission Timeline</h3>
+		<article style="--_length: {steps.length}">
+			{#each steps as step, index (step.id)}
+				<TimelineStep {step} {index} />
+			{/each}
+			<div class="rocket" aria-hidden="true">🚀</div>
+			<div class="background" aria-hidden="true"></div>
+		</article>
+	</section>
+{/if}
 
 <style>
 	/* Source used: https://css-tricks.com/pure-css-tabs-with-details-grid-and-subgrid/ */
