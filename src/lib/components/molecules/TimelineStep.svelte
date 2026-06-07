@@ -4,7 +4,8 @@
 
 <details
 	name="timeline"
-	style="--_index: {index + 1}; --_background-image: url({step.image})"
+	style="--_index: {index +
+		1}; --_background-image: url(https://fdnd-agency.directus.app/assets/{step.image}?format=webp&height=512)"
 	open>
 	<summary class="caption">{step.title}</summary>
 	<p class="paragraph">{step.content}</p>
