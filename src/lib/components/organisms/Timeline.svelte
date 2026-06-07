@@ -243,21 +243,21 @@
 			z-index: 2;
 
 			/* Fallback when anchor positioning is not supported */
-			top: calc(0.5 * var(--_step-height));
-			left: 1rem;
+			inset-block-start: calc(0.5 * var(--_step-height));
+			inset-inline-start: 1rem;
 
 			@supports (position-anchor: --details-open) {
 				position-anchor: --details-open;
-				top: calc(anchor(center) - 1rem);
-				left: anchor(left);
+				inset-block-start: calc(anchor(center) - 1rem);
+				inset-inline-start: anchor(left);
 			}
 		}
 
 		.background {
 			position: absolute;
-			top: calc(0.5 * var(--_step-height) + 1rem);
-			left: 2rem;
-			bottom: calc(0.5 * var(--_step-height) + 1rem);
+			inset-block-start: calc(0.5 * var(--_step-height) + 1rem);
+			inset-inline-start: 2rem;
+			inset-block-end: calc(0.5 * var(--_step-height) + 1rem);
 			background: var(--background-color-light, white);
 			width: 2px;
 			z-index: 1;
@@ -267,19 +267,19 @@
 	/* Fallback when anchor positioning is not supported (baseline 2026) */
 	@supports not (anchor-name: --details-open) {
 		article:global(:has(details:nth-of-type(2)[open]) .rocket) {
-			top: calc(1.5 * var(--_step-height));
+			inset-block-start: calc(1.5 * var(--_step-height));
 		}
 
 		article:global(:has(details:nth-of-type(3)[open]) .rocket) {
-			top: calc(2.5 * var(--_step-height));
+			inset-block-start: calc(2.5 * var(--_step-height));
 		}
 
 		article:global(:has(details:nth-of-type(4)[open]) .rocket) {
-			top: calc(3.5 * var(--_step-height));
+			inset-block-start: calc(3.5 * var(--_step-height));
 		}
 
 		article:global(:has(details:nth-of-type(5)[open]) .rocket) {
-			top: calc(4.5 * var(--_step-height));
+			inset-block-start: calc(4.5 * var(--_step-height));
 		}
 	}
 

@@ -67,9 +67,9 @@
 		@container (width > 20rem) {
 			position: absolute;
 			height: calc(100% + 2rem);
-			left: -1rem;
-			top: -1rem;
-			bottom: -1rem;
+			inset-inline-start: -1rem;
+			inset-block-start: -1rem;
+			inset-block-end: -1rem;
 		}
 	}
 

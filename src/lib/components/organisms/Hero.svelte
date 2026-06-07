@@ -95,8 +95,7 @@
 
 			enhanced\:img {
 				position: absolute;
-				top: 0;
-				left: 0;
+				inset: 0;
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
@@ -107,8 +106,8 @@
 
 		figcaption {
 			position: absolute;
-			bottom: 0;
-			right: 0;
+			inset-block-end: 0;
+			inset-inline-end: 0;
 			background: rgba(0, 0, 0, 0.493);
 			padding: 0.5em;
 
@@ -130,8 +129,8 @@
 
 	figcaption {
 		position: absolute;
-		bottom: 0;
-		right: 0;
+		inset-block-end: 0;
+		inset-inline-end: 0;
 		background: rgba(0, 0, 0, 0.493);
 		padding: 0.5em;
 

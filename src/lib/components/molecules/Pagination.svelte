@@ -160,8 +160,8 @@
 
 				.pagination-separator {
 					position: absolute;
-					top: 0;
-					left: 50%;
+					inset-block-start: 0;
+					inset-inline-start: 50%;
 					transform: translateX(-50%);
 					display: block;
 					width: 100%;

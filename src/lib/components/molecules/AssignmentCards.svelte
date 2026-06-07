@@ -85,7 +85,7 @@
 			display: inherit;
 			flex-direction: inherit;
 			gap: 0.25rem;
-			padding-block-end: 0.5rem;
+			padding-bottom: 0.5rem;
 			text-transform: capitalize;
 		}
 
@@ -97,10 +97,7 @@
 
 		a::after {
 			content: '';
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
+			inset: 0;
 			position: absolute;
 		}
 	}
