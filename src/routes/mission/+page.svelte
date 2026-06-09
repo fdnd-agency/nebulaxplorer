@@ -8,6 +8,8 @@
 		blackholeEnhanced as blackholeImage,
 		tarantulaMergerEnhanced,
 	} from '$lib'
+
+	let { data } = $props()
 </script>
 
 <svelte:head>
@@ -234,7 +236,7 @@
 	</section>
 </section>
 
-<Timeline />
+<Timeline steps={data.timelineSteps} />
 
 <TestimonialCollection />
 
