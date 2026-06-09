@@ -9,7 +9,16 @@
 		? `--_background-image: url(https://fdnd-agency.directus.app/assets/${step.image}?format=webp&height=512)`
 		: `--_background-image: url(${placeholder1});`}"
 	open>
-	<summary class="caption">{step.title}</summary>
+	<summary
+		class="caption"
+		on:click={(event) => {
+			// Checks if the details being clicked is open. In that case, prevent it from closing. Also works for keyboard.
+			if (event.target.matches('details[open] summary')) {
+				event.preventDefault()
+			}
+		}}>
+		{step.title}
+	</summary>
 	<p class="paragraph">{step.content}</p>
 </details>
 
