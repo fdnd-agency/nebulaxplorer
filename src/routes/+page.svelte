@@ -1,4 +1,7 @@
 <script>
+	import { onMount } from 'svelte'
+	import { setupScrollReveal } from '$lib/utils/scrollReveal'
+
 	import {
 		Hero,
 		NewsComponent as News,
@@ -11,6 +14,10 @@
 	} from '$lib'
 
 	let { data } = $props()
+
+	onMount(() => {
+		setupScrollReveal()
+	})
 </script>
 
 <svelte:head>
@@ -20,7 +27,7 @@
 		content="NEBULA-Xplorer will investigate how jets form and how X-ray binaries evolve. It will observe these objects for long periods of time to see how their emission varies on time scales from milliseconds to weeks." />
 </svelte:head>
 
-<Hero
+<Hero class="reveal-hero"
 	titleColor="var(--text-color-light)"
 	logoColor="#111122"
 	pageTitle=""
@@ -31,7 +38,7 @@
 
 <News newsCards={data.newsItems} />
 
-<section class="section-paragraph-picture">
+<section class="section-paragraph-picture reveal">
 	<div class="content-container">
 		<h2 class="heading">About NEBULA-Xplorer</h2>
 		<SatelliteViewer />
@@ -50,10 +57,10 @@
 	<Sponsors />
 </section>
 
-<section class="section-paragraph-picture alt">
+<section class="section-paragraph-picture alt reveal">
 	<div class="content-container">
 		<h2 class="heading">About SRON Academy</h2>
-		<img
+		<img class="reveal-image"
 			src={sronAcademyLogoOnWhite}
 			alt="The logo of Space Research Organisation Netherlands Academy" />
 		<p class="paragraph">
