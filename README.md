@@ -71,8 +71,6 @@ Elements animate when they enter the viewport while scrolling.
 
 _Datamodel from Mermaid_
 
-Our website includes a total of 7 main pages: Home, Mission, Scientific, News, Team, Assignments, and Partners. Four of these will eventually have their own detail pages, for example for articles, staff or partnership profiles, or job openings.
-
 ## Installation
 
 This project has been developed in SvelteKit, content is retrieved from Directus CMS, and version control takes place here on GitHub.
