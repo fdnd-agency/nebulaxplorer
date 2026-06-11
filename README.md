@@ -19,6 +19,20 @@ Our designs are based on the [Design Challenge](https://github.com/fdnd-agency/n
 <img width="400" alt="Screenshot 2025-10-30 185222" src="https://github.com/user-attachments/assets/acf66853-d388-4b9d-bd3a-655906c3d274" />
 <img width="400" alt="Screenshot 2025-10-30 183241" src="https://github.com/user-attachments/assets/deb1d575-eb93-4c95-9f4b-300bbafb59f8" />
 
+## Pages
+
+The website contains 7 main pages:
+
+- Home
+- Mission
+- Scientific
+- News
+- Team
+- Assignments
+- Partners
+
+Some pages also have detail pages (like news articles, team members, partners, or assignments).
+
 ## Features
 
 - The **Home Page** features recent news articles, an introduction to the project, links to the four "pillars" of the project, and a mailing list sign-up.
