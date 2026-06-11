@@ -47,6 +47,24 @@ Some pages also have detail pages (like news articles, team members, partners, o
 
 - The **News Page** features all the latest news on the project, with nifty pagination.
 
+## Interactive features
+
+- **Scroll rocket animation**
+
+A rocket moves along the page while scrolling.
+It shows progress and makes long pages easier to follow.
+
+- **3D Satellite**
+
+A 3D satellite is shown on the website as a visual element.
+It helps explain the space mission in a more visual way.
+
+- **Scroll-triggered animations**
+
+We used scroll-triggered animations (GSAP ScrollTrigger) to make the website feel more dynamic.
+
+Elements animate when they enter the viewport while scrolling.
+
 ## Datamodel
 
 ![Datamodel](./src/lib/assets/images/diagram-2025-11-02-190342.png)
