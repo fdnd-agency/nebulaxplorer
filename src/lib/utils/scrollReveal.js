@@ -3,6 +3,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+// For Sections
 export function setupScrollReveal(root = document) {
 	gsap.utils.toArray('.reveal', root).forEach((element) => {
 		gsap.from(element, {
@@ -17,25 +18,7 @@ export function setupScrollReveal(root = document) {
 	});
 
 
-// // 2. STAGGER animation (inside sections)
-// 	gsap.utils.toArray('.reveal-stagger').forEach((container) => {
-// 		const items = container.children;
-
-// 		gsap.from(items, {
-// 			y: 30,
-// 			opacity: 0,
-// 			duration: 0.7,
-// 			stagger: 0.12,
-// 			ease: 'power2.out',
-// 			scrollTrigger: {
-// 				trigger: container,
-// 				start: 'top 80%'
-// 			}
-// 		});
-// 	});
-// }
-
-	// 2. Images
+	// For Images
 	gsap.utils.toArray('.reveal-image', root).forEach((img) => {
 		gsap.from(img, {
 			scale: 1.1,
