@@ -31,7 +31,7 @@
 		</ul>
 	</nav>
 
-	<img 
+	<img
 		src={SRON_full_white}
 		alt="SRON full white logo"
 		class="footer-image logo-sron reveal-image" />

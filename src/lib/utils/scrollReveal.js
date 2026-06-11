@@ -1,7 +1,7 @@
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger)
 
 // For Sections
 export function setupScrollReveal(root = document) {
@@ -12,11 +12,10 @@ export function setupScrollReveal(root = document) {
 			duration: 0.8,
 			scrollTrigger: {
 				trigger: element,
-				start: 'top 85%'
-			}
-		});
-	});
-
+				start: 'top 85%',
+			},
+		})
+	})
 
 	// For Images
 	gsap.utils.toArray('.reveal-image', root).forEach((img) => {
@@ -27,8 +26,8 @@ export function setupScrollReveal(root = document) {
 			ease: 'power2.out',
 			scrollTrigger: {
 				trigger: img,
-				start: 'top 85%'
-			}
-		});
-	});
+				start: 'top 85%',
+			},
+		})
+	})
 }
