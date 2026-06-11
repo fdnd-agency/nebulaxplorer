@@ -35,17 +35,33 @@ Some pages also have detail pages (like news articles, team members, partners, o
 
 ## Features
 
-- The **Home Page** features recent news articles, an introduction to the project, links to the four "pillars" of the project, and a mailing list sign-up.
-- The **Mission Page** features deeper information on the project, the mission goals, an interactive mission timeline, and testimonials from mission experts.
+- **Home Page**
+
+Features recent news articles, an introduction to the project, links to the four "pillars" of the project, and a mailing list sign-up.
+
+- **Mission Page**
+
+Features deeper information on the project, the mission goals, an interactive mission timeline, and testimonials from mission experts.
+
 <img width="426" height="240" alt="mission_timeline" src="https://github.com/user-attachments/assets/b727c257-4054-4c23-9442-3bab8bcf76c4" />
 
-- The **Team Page** features teams from over the years. Select any team to view more information about them and what they have to say about their experiences.
-- The **Assignment Page** fetches all open assignments. Select any to view more details about that assignment.
-- The **Partners Page** features a progressively enhanced carousel that shows off the project's sponsors.
+- **Team Page**
+
+Features teams from over the years. Select any team to view more information about them and what they have to say about their experiences.
+
+- **Assignment Page** 
+
+Fetches all open assignments. Select any to view more details about that assignment.
+
+- **Partners Page**
+
+Features a progressively enhanced carousel that shows off the project's sponsors.
+
 <img width="426" height="240" alt="partners_carousel (1)" src="https://github.com/user-attachments/assets/7cffe95c-39ed-41e9-a316-ffc1381ab1d4" />
 
+- **News Page** 
 
-- The **News Page** features all the latest news on the project, with nifty pagination.
+Features all the latest news on the project, with nifty pagination.
 
 ## Interactive features
 
