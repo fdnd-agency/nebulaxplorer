@@ -49,7 +49,7 @@ Features deeper information on the project, the mission goals, an interactive mi
 
 Features teams from over the years. Select any team to view more information about them and what they have to say about their experiences.
 
-- **Assignment Page** 
+- **Assignment Page**
 
 Fetches all open assignments. Select any to view more details about that assignment.
 
@@ -59,7 +59,7 @@ Features a progressively enhanced carousel that shows off the project's sponsors
 
 <img width="426" height="240" alt="partners_carousel (1)" src="https://github.com/user-attachments/assets/7cffe95c-39ed-41e9-a316-ffc1381ab1d4" />
 
-- **News Page** 
+- **News Page**
 
 Features all the latest news on the project, with nifty pagination.
 
