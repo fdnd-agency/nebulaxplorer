@@ -4,7 +4,7 @@
 	const { assignments } = $props()
 </script>
 
-<section>
+<section class="reveal">
 	<div class="content-container">
 		<header class="assignments-header">
 			<h2 class="subtitle">
@@ -16,7 +16,7 @@
 			</p>
 		</header>
 
-		<ul class="assignments-container">
+		<ul class="assignments-container reveal">
 			{#each assignments as assignment (assignment.id)}
 				<li class="assignment-card">
 					<section class="assignment-content">

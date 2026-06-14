@@ -8,6 +8,13 @@
 	} from '$lib'
 
 	let { data } = $props()
+
+	import { onMount } from 'svelte'
+	import { setupScrollReveal } from '$lib/utils/scrollReveal'
+
+	onMount(() => {
+		setupScrollReveal()
+})
 </script>
 
 <svelte:head>
@@ -30,7 +37,7 @@
 
 <Breadcrumb />
 
-<div class="content-container">
+<div class="content-container reveal">
 	<img src={teamPhoto} alt="" />
 	<h2 class="section-title">
 		Who we worked with in <span class="orange">{data.members[0].time}</span>

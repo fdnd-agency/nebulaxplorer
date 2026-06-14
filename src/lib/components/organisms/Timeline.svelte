@@ -3,7 +3,7 @@
 	let { steps } = $props()
 </script>
 
-<section>
+<section class="reveal">
 	<h3 class="section-title">Mission Timeline</h3>
 	{#if steps.length > 0}
 		<article style="--_length: {steps.length}">

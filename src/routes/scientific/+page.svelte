@@ -1,5 +1,12 @@
 <script>
 	import { Hero, Breadcrumb, UnderConstruction, simonnetEnhanced } from '$lib'
+
+	import { onMount } from 'svelte'
+	import { setupScrollReveal } from '$lib/utils/scrollReveal'
+
+	onMount(() => {
+		setupScrollReveal()
+	})
 </script>
 
 <svelte:head>

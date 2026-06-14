@@ -3,7 +3,7 @@
 </script>
 
 <li>
-	<blockquote class="paragraph">{testimonial.text}</blockquote>
+	<blockquote class="paragraph reveal">{testimonial.text}</blockquote>
 	<div>
 		<img src={testimonial.image} alt="" width="200" />
 		<div>

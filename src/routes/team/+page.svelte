@@ -50,6 +50,13 @@
 
 	const resultArray = groupByYear(dummydata)
 	const sortedResults = resultArray.sort((a, b) => b[0] - a[0])
+
+	import { onMount } from 'svelte'
+	import { setupScrollReveal } from '$lib/utils/scrollReveal'
+
+	onMount(() => {
+		setupScrollReveal()
+	})
 </script>
 
 <svelte:head>
@@ -73,7 +80,7 @@
 
 <Breadcrumb />
 
-<section class="content-container">
+<section class="content-container reveal">
 	<h2 class="section-title">who are we?</h2>
 	{#each sortedResults as year}
 		<TeamsYearComponent {year} />

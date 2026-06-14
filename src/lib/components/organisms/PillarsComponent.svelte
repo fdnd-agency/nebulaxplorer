@@ -38,8 +38,8 @@
 	]
 </script>
 
-<section>
-	<div class="content-container reveal">
+<section class="reveal">
+	<div class="content-container">
 		<h2 class="section-title">Pillars</h2>
 		<!-- TODO: make the things inside this #each loop into a seperate component partial -->
 		<ul>

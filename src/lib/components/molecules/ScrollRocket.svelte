@@ -16,7 +16,7 @@
 
 <svelte:window on:scroll={handleScroll} />
 
-<div class="scroll-track">
+<div class="scroll-track reveal">
 	<div class="scroll-track-line"></div>
 	<div class="scroll-track-fill"></div>
 

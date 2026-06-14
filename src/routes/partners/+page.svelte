@@ -2,6 +2,15 @@
 	import { Hero, PartnersCarousel, lrgbEnhanced } from '$lib'
 </script>
 
+<script>
+	import { onMount } from 'svelte'
+	import { setupScrollReveal } from '$lib/utils/scrollReveal'
+
+	onMount(() => {
+		setupScrollReveal()
+	})
+</script>
+
 <svelte:head>
 	<title>Partners</title>
 	<meta
@@ -19,7 +28,7 @@
 		link: 'https://apod.nasa.gov/apod/ap250417.html',
 	}} />
 
-<section class="content-container">
+<section class="content-container reveal">
 	<h2 class="section-title">Work with us!</h2>
 
 	<p class="paragraph">
@@ -33,7 +42,7 @@
 
 <PartnersCarousel />
 
-<section class="content-container">
+<section class="content-container reveal">
 	<h2 class="section-title orange">Partner with NEBULA!</h2>
 	<p class="paragraph">
 		We are always open to new collaborations with companies, institutions,

@@ -3,7 +3,7 @@
 	import Arrow from '../icons/Arrow.svelte'
 </script>
 
-<section>
+<section class="reveal">
 	<div class="content-container">
 		<h3 class="subheading">Our Sponsors</h3>
 		<p class="paragraph">
@@ -23,7 +23,7 @@
 				</a>
 			</li>
 			<li>
-				<img src={logoEsatan} alt="" height="100" width="150" />
+				<img class="reveal-image" src={logoEsatan} alt="" height="100" width="150" />
 				<a
 					href="https://www.esatan-tms.com/"
 					class="paragraph"

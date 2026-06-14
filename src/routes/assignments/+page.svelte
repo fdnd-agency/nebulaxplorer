@@ -9,6 +9,13 @@
 
 	const { data } = $props()
 	const { vacancies, pagination } = $derived(data)
+
+	import { onMount } from 'svelte'
+	import { setupScrollReveal } from '$lib/utils/scrollReveal'
+
+	onMount(() => {
+		setupScrollReveal()
+})
 </script>
 
 <svelte:head>
