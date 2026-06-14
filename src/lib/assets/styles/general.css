@@ -276,9 +276,9 @@ a:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal,
-  .reveal-image {
-    opacity: 1;
-    transform: none;
-  }
+	.reveal,
+	.reveal-image {
+		opacity: 1;
+		transform: none;
+	}
 }
