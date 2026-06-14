@@ -16,7 +16,7 @@
 
 	onMount(() => {
 		setupScrollReveal()
-})
+	})
 </script>
 
 <svelte:head>
@@ -87,7 +87,10 @@
 			</p>
 		</section>
 
-		<enhanced:img class="reveal-image" src={blackholeImage} alt="Black Hole" />
+		<enhanced:img
+			class="reveal-image"
+			src={blackholeImage}
+			alt="Black Hole" />
 	</div>
 </section>
 
@@ -95,7 +98,7 @@
 
 <section class="paragraph-block paragraph-block-alt reveal">
 	<div class="content-container">
-		<enhanced:img 
+		<enhanced:img
 			class="paragraph-img-left reveal-image"
 			src={blackholeImage}
 			alt="Black Hole" />
@@ -171,7 +174,10 @@
 			</p>
 		</section>
 
-		<enhanced:img class="reveal-image" src={blackholeImage} alt="Black Hole" />
+		<enhanced:img
+			class="reveal-image"
+			src={blackholeImage}
+			alt="Black Hole" />
 	</div>
 </section>
 
@@ -238,7 +244,10 @@
 				</li>
 			</ol>
 
-			<enhanced:img class="reveal-image" src={blackholeImage} alt="Black Hole" />
+			<enhanced:img
+				class="reveal-image"
+				src={blackholeImage}
+				alt="Black Hole" />
 		</div>
 	</section>
 </section>

@@ -14,7 +14,7 @@
 
 	onMount(() => {
 		setupScrollReveal()
-})
+	})
 </script>
 
 <svelte:head>

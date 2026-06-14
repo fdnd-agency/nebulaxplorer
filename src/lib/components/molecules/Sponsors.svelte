@@ -23,7 +23,12 @@
 				</a>
 			</li>
 			<li>
-				<img class="reveal-image" src={logoEsatan} alt="" height="100" width="150" />
+				<img
+					class="reveal-image"
+					src={logoEsatan}
+					alt=""
+					height="100"
+					width="150" />
 				<a
 					href="https://www.esatan-tms.com/"
 					class="paragraph"

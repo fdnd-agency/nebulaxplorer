@@ -1,4 +1,3 @@
-
 <svelte:head>
 	<title>Scientific</title>
 	<meta
