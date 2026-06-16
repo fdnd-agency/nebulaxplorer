@@ -39,29 +39,37 @@ Some pages also have detail pages (like news articles, team members, partners, o
 
 Features recent news articles, an introduction to the project, links to the four "pillars" of the project, and a mailing list sign-up.
 
+<img width="1817" height="685" alt="image" src="https://github.com/user-attachments/assets/5419022d-85b5-4ce0-9c61-663c48bb2407" />
+
 - **Mission Page**
 
 Features deeper information on the project, the mission goals, an interactive mission timeline, and testimonials from mission experts.
 
-<img width="426" height="240" alt="mission_timeline" src="https://github.com/user-attachments/assets/b727c257-4054-4c23-9442-3bab8bcf76c4" />
+<img width="1837" height="680" alt="image" src="https://github.com/user-attachments/assets/0c1fcd5f-86bc-4d80-ba68-48f7c5cbf91c" />
 
 - **Team Page**
 
 Features teams from over the years. Select any team to view more information about them and what they have to say about their experiences.
 
+<img width="1172" height="715" alt="Screenshot 2026-06-16 164139" src="https://github.com/user-attachments/assets/609f3275-dd44-4a58-9bc8-d8923e054671" />
+
 - **Assignment Page**
 
 Fetches all open assignments. Select any to view more details about that assignment.
+
+<img width="1777" height="718" alt="image" src="https://github.com/user-attachments/assets/9f12b431-2531-42b7-8386-fc0643b61bfb" />
 
 - **Partners Page**
 
 Features a progressively enhanced carousel that shows off the project's sponsors.
 
-<img width="426" height="240" alt="partners_carousel (1)" src="https://github.com/user-attachments/assets/7cffe95c-39ed-41e9-a316-ffc1381ab1d4" />
+<img width="1842" height="647" alt="image" src="https://github.com/user-attachments/assets/2347dc0e-7ca4-4008-87c1-be7d2ef97aa6" />
 
 - **News Page**
 
 Features all the latest news on the project, with nifty pagination.
+
+<img width="1810" height="702" alt="Screenshot 2026-06-16 164447" src="https://github.com/user-attachments/assets/88b65f28-75c4-466f-86ec-7f84820477cb" />
 
 ## Interactive features
 
@@ -74,6 +82,8 @@ It shows progress and makes long pages easier to follow.
 
 A 3D satellite is shown on the website as a visual element.
 It helps explain the space mission in a more visual way.
+
+<img width="563" height="592" alt="Screenshot 2026-06-16 163955" src="https://github.com/user-attachments/assets/6498a7c0-1c0f-44ab-b515-76259cca9560" />
 
 - **Scroll-triggered animations**
 
