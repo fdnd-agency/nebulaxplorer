@@ -30,31 +30,26 @@
 
 <Breadcrumb />
 
-<div class="content-container">
-	<img src={teamPhoto} alt="" />
-	<h2 class="section-title">
-		Who we worked with in <span class="orange">{data.members[0].time}</span>
-	</h2>
-
-	<h3 class="heading">Reflections on the work</h3>
-	<ul>
-		{#each data.members as member (member.id)}
-			<TeamMemberCard {member} />
-		{/each}
-	</ul>
-</div>
+<section>
+	<div class="content-container">
+		<img src={teamPhoto} alt="" />
+		<h2 class="section-title">
+			Who we worked with in <span class="orange"
+				>{data.members[0].time}</span>
+		</h2>
+		<h3 class="heading">Reflections on the work</h3>
+		<ul>
+			{#each data.members as member (member.id)}
+				<TeamMemberCard {member} />
+			{/each}
+		</ul>
+	</div>
+</section>
 
 <style>
-	.content-container {
-		padding: 0;
-	}
-
-	h2 {
-		margin-block: 2rem;
-	}
-
+	h2,
 	h3 {
-		margin-block: 3rem 1.5rem;
+		margin-block: var(--spacing-large);
 	}
 
 	img {
