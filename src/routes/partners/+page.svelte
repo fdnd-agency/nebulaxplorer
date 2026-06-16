@@ -1,5 +1,10 @@
 <script module>
-	import { Hero, PartnersCarousel, lrgbEnhanced, setupScrollReveal } from '$lib'
+	import {
+		Hero,
+		PartnersCarousel,
+		lrgbEnhanced,
+		setupScrollReveal,
+	} from '$lib'
 </script>
 
 <script>
