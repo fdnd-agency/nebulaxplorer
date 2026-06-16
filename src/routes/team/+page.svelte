@@ -6,6 +6,7 @@
 		Breadcrumb,
 		TeamsYearComponent,
 		nebulaTeamBeginning,
+		setupScrollReveal,
 	} from '$lib'
 
 	const dummydata = [
@@ -52,7 +53,6 @@
 	const sortedResults = resultArray.sort((a, b) => b[0] - a[0])
 
 	import { onMount } from 'svelte'
-	import { setupScrollReveal } from '$lib/utils/scrollReveal'
 
 	onMount(() => {
 		setupScrollReveal()

@@ -7,12 +7,12 @@
 		TestimonialCollection,
 		blackholeEnhanced as blackholeImage,
 		tarantulaMergerEnhanced,
+		setupScrollReveal,
 	} from '$lib'
 
 	let { data } = $props()
 
 	import { onMount } from 'svelte'
-	import { setupScrollReveal } from '$lib/utils/scrollReveal'
 
 	onMount(() => {
 		setupScrollReveal()

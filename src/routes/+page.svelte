@@ -1,6 +1,5 @@
 <script>
 	import { onMount } from 'svelte'
-	import { setupScrollReveal } from '$lib/utils/scrollReveal'
 
 	import {
 		Hero,
@@ -11,6 +10,7 @@
 		sronAcademyLogoOnWhite,
 		xrayBinaryEnhanced,
 		SatelliteViewer,
+		setupScrollReveal,
 	} from '$lib'
 
 	let { data } = $props()

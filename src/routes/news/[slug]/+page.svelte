@@ -1,11 +1,10 @@
 <script>
-	import { Breadcrumb, Hero, placeholder2 } from '$lib'
+	import { Breadcrumb, Hero, placeholder2, setupScrollReveal } from '$lib'
 	import { resolve } from '$app/paths'
 
 	let { data } = $props()
 
 	import { onMount } from 'svelte'
-	import { setupScrollReveal } from '$lib/utils/scrollReveal'
 
 	onMount(() => {
 		setupScrollReveal()

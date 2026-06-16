@@ -1,10 +1,9 @@
 <script module>
-	import { Hero, PartnersCarousel, lrgbEnhanced } from '$lib'
+	import { Hero, PartnersCarousel, lrgbEnhanced, setupScrollReveal } from '$lib'
 </script>
 
 <script>
 	import { onMount } from 'svelte'
-	import { setupScrollReveal } from '$lib/utils/scrollReveal'
 
 	onMount(() => {
 		setupScrollReveal()

@@ -10,7 +10,7 @@ export function setupScrollReveal(root = document) {
 		gsap.from(element, {
 			y: 40,
 			opacity: 0,
-			duration: 0.8,
+			duration: 0.5,
 			scrollTrigger: {
 				trigger: element,
 				start: 'top 85%',
@@ -23,7 +23,7 @@ export function setupScrollReveal(root = document) {
 		gsap.from(img, {
 			scale: 1.1,
 			opacity: 0,
-			duration: 1,
+			duration: 0.5,
 			ease: 'power2.out',
 			scrollTrigger: {
 				trigger: img,

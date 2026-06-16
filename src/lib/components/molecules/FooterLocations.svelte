@@ -9,7 +9,7 @@
 	<li>
 		<h2>Leiden</h2>
 		<enhanced:img
-			class="reveal-image"
+			// class="reveal-image"
 			src={leidenImg}
 			alt="The SRON building in Leiden" />
 		<ul class="contact paragraph">
@@ -25,7 +25,7 @@
 	<li>
 		<h2>Groningen</h2>
 		<enhanced:img
-			class="reveal-image"
+			// class="reveal-image"
 			src={groningenImg}
 			alt="The SRON building in Groningen" />
 		<ul class="contact paragraph">
