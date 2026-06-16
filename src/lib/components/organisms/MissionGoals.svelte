@@ -2,7 +2,11 @@
 	let { colorScheme = 'light' } = $props()
 </script>
 
-<section class="goals-block" class:dark={colorScheme === 'dark'}>
+<section
+	class="goals-block {colorScheme == 'light'
+		? 'background-light'
+		: 'background-dark'}"
+	class:dark={colorScheme === 'dark'}>
 	<h2 class="visually-hidden">Mission Goals</h2>
 	<div class="content-container">
 		<div class="goals-grid">

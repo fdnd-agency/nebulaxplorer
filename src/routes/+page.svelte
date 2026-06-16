@@ -31,7 +31,7 @@
 
 <News newsCards={data.newsItems} />
 
-<section class="section-paragraph-picture">
+<section class="section-paragraph-picture background-dark">
 	<div class="content-container">
 		<h2 class="heading">About NEBULA-Xplorer</h2>
 		<enhanced:img
@@ -51,7 +51,7 @@
 	<Sponsors />
 </section>
 
-<section class="section-paragraph-picture alt">
+<section class="section-paragraph-picture alt background-light">
 	<div class="content-container">
 		<h2 class="heading">About SRON Academy</h2>
 		<img

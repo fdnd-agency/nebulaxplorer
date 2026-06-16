@@ -5,7 +5,7 @@
 	let { newsCards } = $props()
 </script>
 
-<section>
+<section class="background-light">
 	<div class="content-container">
 		<h2 class="section-title">Mission Updates</h2>
 		<ul class="newscard-container">
@@ -32,8 +32,8 @@
 
 <style>
 	section {
+		padding-block-start: var(--spacing-medium-variable);
 		background-color: var(--background-color-light);
-		padding-block: 2.5rem;
 		padding-inline: clamp(1rem, 6vw, 3.5rem);
 		border-bottom: var(--accent-color) 0.5rem solid;
 	}
@@ -130,7 +130,7 @@
 		display: block;
 		padding-block: 1rem;
 		padding-inline: 1rem;
-		margin-block: 2rem 0;
+		margin-block: 1em 0;
 		margin-inline: auto;
 		width: max-content;
 

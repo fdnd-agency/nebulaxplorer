@@ -1,4 +1,4 @@
-<section id="mailing-list-signup">
+<section class="background-dark" id="mailing-list-signup">
 	<div>
 		<h2 class="section-title">Subscribe to our mailing list</h2>
 		<p class="paragraph">

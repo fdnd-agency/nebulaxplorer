@@ -34,7 +34,7 @@
 
 <!-- FIRST PARAGRAPH + IMG BLOCK -->
 
-<hgroup class="text-title">
+<hgroup class="text-title background-dark">
 	<div class="content-container">
 		<h2 class="subtitle">
 			What are we <span class="orange">up</span> to?
@@ -43,7 +43,7 @@
 	</div>
 </hgroup>
 
-<section class="paragraph-block">
+<section class="paragraph-block background-dark">
 	<div class="content-container">
 		<section class="text-content">
 			<h3 class="orange caption">Dense matter and compact objects</h3>
@@ -76,7 +76,7 @@
 
 <!-- SECOND IMG + PARAGRAPH BLOCK -->
 
-<section class="paragraph-block paragraph-block-alt">
+<section class="paragraph-block paragraph-block-alt background-light">
 	<div class="content-container">
 		<enhanced:img
 			class="paragraph-img-left"
@@ -110,7 +110,7 @@
 
 <!-- THIRD PARAGRAPH + IMG BLOCK -->
 
-<section class="paragraph-block">
+<section class="paragraph-block background-dark">
 	<div class="content-container">
 		<section class="text-content">
 			<h3 class="orange caption">Time-domain Astrophysics</h3>

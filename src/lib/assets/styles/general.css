@@ -159,18 +159,13 @@ main {
 	> * {
 		width: 100%;
 		padding-inline: var(--spacing-section-inline);
-	}
-
-	> section {
-		padding-block: var(--spacing-large-variable);
-	}
-
-	> .background-dark + .background-light {
-		padding-block: var(--spacing-large-variable);
-	}
-
-	> .background-dark + .background-dark {
 		padding-block-start: 0;
+		padding-block-end: var(--spacing-large-variable);
+	}
+
+	> .background-dark + .background-light,
+	> .background-light + .background-dark {
+		padding-block-start: var(--spacing-large-variable);
 	}
 
 	> section:last-of-type {
