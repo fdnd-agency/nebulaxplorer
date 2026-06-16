@@ -65,14 +65,14 @@
 	.content,
 	.sticky-image-wrapper {
 		width: 100%;
-		padding-left: 0;
+		padding-inline-start: 0;
 	}
 
 	.sticky-image-wrapper {
 		position: relative;
-		top: auto;
+		inset-block-start: auto;
 		order: -1;
-		margin-bottom: 1.25rem;
+		margin-block-end: 1.25rem;
 
 		display: flex;
 		justify-content: center;
@@ -93,18 +93,18 @@
 	.main-title {
 		font-weight: bold;
 		color: var(--accent-color);
-		margin-bottom: 3.125rem;
+		margin-block-end: 3.125rem;
 	}
 
 	section {
-		margin-bottom: 6.25rem;
+		margin-block-end: 6.25rem;
 	}
 
 	.section-title {
 		font-weight: bold;
 		color: var(--accent-color);
-		margin-top: 1.25rem;
-		margin-bottom: 1.25rem;
+		margin-block-start: 1.25rem;
+		margin-block-end: 1.25rem;
 		font-size: 2rem;
 	}
 
@@ -126,11 +126,11 @@
 
 		.sticky-image-wrapper {
 			position: sticky;
-			top: 50%;
+			inset-block-start: 50%;
 			width: 35%;
-			padding-left: 3.125rem;
+			padding-inline-start: 3.125rem;
 			order: initial;
-			margin-bottom: 0;
+			margin-block-end: 0;
 			justify-content: flex-start;
 			align-items: flex-start;
 		}

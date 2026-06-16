@@ -67,7 +67,7 @@
 
 		@media (min-width: 56.25rem) {
 			position: sticky;
-			top: 0;
+			inset-block-start: 0;
 			justify-content: initial;
 			padding: 1rem;
 			background: var(--background-color-dark);
@@ -93,7 +93,7 @@
 		padding: 0.5rem;
 		position: fixed;
 		z-index: 1;
-		top: 0;
+		inset-block-start: 0;
 		color: inherit;
 		background: var(--nav-primary-color);
 
@@ -226,13 +226,13 @@
 		list-style: none;
 
 		@supports selector([popover]:popover-open) {
-			padding-top: 4rem;
+			padding-block-start: 4rem;
 		}
 
 		@media (min-width: 56.25rem) {
 			flex-direction: row;
 			align-items: flex-end;
-			padding-top: 1rem;
+			padding-block-start: 1rem;
 			gap: 1.5rem;
 			width: initial;
 		}
@@ -320,8 +320,8 @@
 		@supports selector([popover]:popover-open) {
 			display: flex;
 			position: fixed;
-			top: 0;
-			right: 0;
+			inset-block-start: 0;
+			inset-inline-end: 0;
 		}
 	}
 

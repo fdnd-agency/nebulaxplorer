@@ -105,7 +105,7 @@
 		&:focus-visible {
 			background-color: transparent;
 			color: var(--text-color-light);
-			border-left: 1px solid var(--text-color-light);
+			border-inline-start: 1px solid var(--text-color-light);
 		}
 	}
 </style>

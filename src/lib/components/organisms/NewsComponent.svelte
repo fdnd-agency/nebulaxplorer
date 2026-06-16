@@ -87,7 +87,7 @@
 		width: 100%;
 		height: 15rem;
 		overflow: hidden;
-		margin-top: auto;
+		margin-block-start: auto;
 
 		aspect-ratio: 1 / 1;
 		object-fit: cover;
@@ -110,10 +110,7 @@
 		a::after {
 			content: '';
 			position: absolute;
-			left: 0;
-			right: 0;
-			top: 0;
-			bottom: 0;
+			inset: 0;
 		}
 	}
 

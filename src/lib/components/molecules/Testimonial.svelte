@@ -27,7 +27,8 @@
 		grid-auto-rows: 1fr;
 		gap: 1.5rem;
 		max-width: 87.5rem;
-		margin: 0 auto;
+		margin-block: 0;
+		margin-inline: auto;
 		padding: var(--spacing-large);
 		min-height: 100vh;
 	}
@@ -64,14 +65,15 @@
 	}
 
 	/* .testimonial-info {
-        margin-bottom: 1rem;
+        margin-block-end: 1rem;
     } */
 
 	.testimonial-card h2 {
 		color: var(--text-color-light);
 		font-weight: 600;
 		font-size: 1rem;
-		margin: 0 0 0.25rem 0;
+		margin-block: 0 0.25rem;
+		margin-inline: 0;
 	}
 
 	.testimonial-card span {
@@ -86,8 +88,8 @@
 		font-size: 0.875rem;
 		line-height: 1.5;
 		margin: 0;
-		padding-top: 1rem;
-		border-top: 0.0625rem solid var(--accent-color);
+		padding-block-start: 1rem;
+		border-block-start: 0.0625rem solid var(--accent-color);
 		flex: 1;
 	}
 

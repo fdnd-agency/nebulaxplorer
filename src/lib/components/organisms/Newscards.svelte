@@ -58,7 +58,7 @@
 		transition:
 			transform 0.3s ease,
 			box-shadow 0.3s ease;
-		padding-bottom: 1.5rem;
+		padding-block-end: 1.5rem;
 
 		&:hover,
 		&:focus-within {
@@ -95,17 +95,15 @@
 			font-weight: 900;
 			font-size: 1.2rem;
 			color: var(--accent-color);
-			padding: 0.5rem 0;
+			padding-block: 0.5rem;
+			padding-inline: 0;
 		}
 	}
 
 	a::after {
 		content: '';
 		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
+		inset: 0;
 	}
 
 	time {

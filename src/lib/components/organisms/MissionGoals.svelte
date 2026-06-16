@@ -69,8 +69,8 @@
 	.goal-box::before {
 		content: '';
 		position: absolute;
-		top: -1px;
-		left: -1px;
+		inset-block-start: -1px;
+		inset-inline-start: -1px;
 		width: 40px;
 		height: 2px;
 		background: var(--accent-color);
@@ -81,7 +81,7 @@
 		font-weight: 500;
 		letter-spacing: 0.2em;
 		color: var(--accent-color);
-		margin-bottom: 0.75rem;
+		margin-block-end: 0.75rem;
 		text-transform: uppercase;
 	}
 

@@ -37,7 +37,7 @@
 		}
 
 		.heading {
-			padding-bottom: calc(1rem + 1vw);
+			padding-block-end: calc(1rem + 1vw);
 		}
 
 		.subtitle,
