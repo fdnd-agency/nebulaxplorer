@@ -28,7 +28,7 @@
 		gap: 1.5rem;
 		max-width: 87.5rem;
 		margin: 0 auto;
-		padding: 2rem;
+		padding: var(--spacing-large);
 		min-height: 100vh;
 	}
 

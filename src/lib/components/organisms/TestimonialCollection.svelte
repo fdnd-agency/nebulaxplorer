@@ -42,7 +42,7 @@
 	ul {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
-		gap: 2rem;
+		gap: var(--spacing-large);
 		max-width: var(--content-width);
 		margin-inline: auto;
 		list-style: none;

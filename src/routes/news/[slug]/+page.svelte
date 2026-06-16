@@ -20,7 +20,7 @@
 
 {#if data.newsItem[0]}
 	<article>
-		<section>
+		<section class="background-dark">
 			<div class="content-container">
 				<time datetime={data.newsItem[0].date}>
 					{data.newsItem[0].date}
@@ -35,7 +35,7 @@
 					width="500" />
 			</div>
 		</section>
-		<section>
+		<section class="background-light">
 			<div class="content-container">
 				<h2 class="heading">{data.newsItem[0].title}</h2>
 				<p class="paragraph">
@@ -63,12 +63,6 @@
 <style>
 	article {
 		padding-inline: 0;
-	}
-
-	section {
-		padding-inline: clamp(1rem, 5vw, 3.5rem);
-		padding-block-start: calc(1rem + 1vw);
-		padding-block-end: calc(2rem + 2vw);
 	}
 
 	section:first-of-type {

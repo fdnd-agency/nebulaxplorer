@@ -42,8 +42,8 @@
 	.news-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
-		gap: 2rem;
-		padding-block-end: 2rem;
+		gap: var(--spacing-large);
+		padding-block-end: var(--spacing-large);
 		padding-inline: 0;
 		margin-inline: auto;
 		width: 100%;

@@ -44,7 +44,7 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 		gap: 1rem;
-		margin-block: 2rem;
+		margin-block: var(--spacing-large);
 		list-style: none;
 	}
 

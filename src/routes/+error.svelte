@@ -22,10 +22,9 @@
 		margin-inline: auto;
 		display: flex;
 		flex-direction: column;
-		gap: 2rem;
+		gap: var(--spacing-large);
 		align-items: center;
 		justify-content: center;
-		margin-block: 5rem;
 	}
 
 	img {

@@ -44,7 +44,7 @@
 		align-items: center;
 		position: relative;
 		padding: 1rem;
-		margin-inline: 2rem;
+		margin-inline: var(--spacing-large);
 		margin-block-start: -1rem;
 		background-color: var(--background-color-light, white);
 		color: var(--text-color-dark, black);

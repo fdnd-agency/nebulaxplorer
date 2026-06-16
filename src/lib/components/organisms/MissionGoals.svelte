@@ -35,7 +35,7 @@
 	.goals-block {
 		background-color: var(--background-color-light);
 		color: var(--text-color-dark);
-		padding: 2rem;
+		padding: var(--spacing-large);
 	}
 
 	.goals-grid {
@@ -96,13 +96,13 @@
 		}
 
 		.goal-box {
-			padding: 2rem;
+			padding: var(--spacing-large);
 		}
 	}
 
 	@media (min-width: 56.25rem) {
 		.goals-grid {
-			gap: 2rem;
+			gap: var(--spacing-large);
 		}
 	}
 </style>

@@ -163,9 +163,12 @@ main {
 		padding-block-end: var(--spacing-large-variable);
 	}
 
-	> .background-dark + .background-light,
-	> .background-light + .background-dark {
+	.background-dark:first-of-type,
+	.background-light:first-of-type,
+	.background-dark + .background-light,
+	.background-light + .background-dark {
 		padding-block-start: var(--spacing-large-variable);
+		padding-block-end: var(--spacing-large-variable);
 	}
 
 	> section:last-of-type {

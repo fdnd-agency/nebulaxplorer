@@ -76,7 +76,7 @@
 	section div {
 		display: grid;
 		grid-template-columns: 1fr;
-		gap: 2rem;
+		gap: var(--spacing-large);
 		justify-content: center;
 
 		h2 {
