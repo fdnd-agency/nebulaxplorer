@@ -226,7 +226,7 @@
 	]
 </script>
 
-<section class="reveal">
+<section>
 	<h3 class="subheading content-container">Educational Partners</h3>
 	<CarouselTrack items={sponsorsEducational} />
 

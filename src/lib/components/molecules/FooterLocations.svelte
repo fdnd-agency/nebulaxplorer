@@ -8,10 +8,7 @@
 <ul class="locations">
 	<li>
 		<h2>Leiden</h2>
-		<enhanced:img
-			class="reveal-image"
-			src={leidenImg}
-			alt="The SRON building in Leiden" />
+		<enhanced:img src={leidenImg} alt="The SRON building in Leiden" />
 		<ul class="contact paragraph">
 			<li>Niels Bohrweg 4</li>
 			<li class="divider"></li>
@@ -24,10 +21,7 @@
 	</li>
 	<li>
 		<h2>Groningen</h2>
-		<enhanced:img
-			class="reveal-image"
-			src={groningenImg}
-			alt="The SRON building in Groningen" />
+		<enhanced:img src={groningenImg} alt="The SRON building in Groningen" />
 		<ul class="contact paragraph">
 			<li>Landleven 12</li>
 			<li class="divider"></li>
@@ -78,7 +72,6 @@
 				transform: translateX(-100%) rotate(-90deg);
 				transform-origin: right top;
 				padding: 1rem 2rem;
-				z-index: 2;
 			}
 
 			enhanced\:img {

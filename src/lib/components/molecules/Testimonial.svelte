@@ -2,7 +2,7 @@
 	let { testimonials } = $props()
 </script>
 
-<article class="testimonial-container reveal">
+<article class="testimonial-container">
 	{#each testimonials as testimonial (testimonial.name)}
 		<div class="testimonial-card">
 			<img

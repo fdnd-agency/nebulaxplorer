@@ -1,6 +1,4 @@
 <script>
-	import { onMount } from 'svelte'
-
 	import {
 		Hero,
 		NewsComponent as News,
@@ -10,14 +8,9 @@
 		sronAcademyLogoOnWhite,
 		xrayBinaryEnhanced,
 		SatelliteViewer,
-		setupScrollReveal,
 	} from '$lib'
 
 	let { data } = $props()
-
-	onMount(() => {
-		setupScrollReveal()
-	})
 </script>
 
 <svelte:head>
@@ -28,7 +21,6 @@
 </svelte:head>
 
 <Hero
-	class="reveal-hero"
 	titleColor="var(--text-color-light)"
 	logoColor="#111122"
 	pageTitle=""
@@ -39,7 +31,7 @@
 
 <News newsCards={data.newsItems} />
 
-<section class="section-paragraph-picture reveal">
+<section class="section-paragraph-picture">
 	<div class="content-container">
 		<h2 class="heading">About NEBULA-Xplorer</h2>
 		<SatelliteViewer />
@@ -58,11 +50,10 @@
 	<Sponsors />
 </section>
 
-<section class="section-paragraph-picture alt reveal">
+<section class="section-paragraph-picture alt">
 	<div class="content-container">
 		<h2 class="heading">About SRON Academy</h2>
 		<img
-			class="reveal-image"
 			src={sronAcademyLogoOnWhite}
 			alt="The logo of Space Research Organisation Netherlands Academy" />
 		<p class="paragraph">

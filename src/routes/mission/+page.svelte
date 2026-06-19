@@ -7,16 +7,9 @@
 		TestimonialCollection,
 		blackholeEnhanced as blackholeImage,
 		tarantulaMergerEnhanced,
-		setupScrollReveal,
 	} from '$lib'
 
 	let { data } = $props()
-
-	import { onMount } from 'svelte'
-
-	onMount(() => {
-		setupScrollReveal()
-	})
 </script>
 
 <svelte:head>
@@ -57,7 +50,7 @@
 	</div>
 </hgroup>
 
-<section class="paragraph-block reveal">
+<section class="paragraph-block">
 	<div class="content-container">
 		<section class="text-content">
 			<h3 class="orange heading">Dense matter and compact objects</h3>
@@ -87,23 +80,20 @@
 			</p>
 		</section>
 
-		<enhanced:img
-			class="reveal-image"
-			src={blackholeImage}
-			alt="Black Hole" />
+		<enhanced:img src={blackholeImage} alt="Black Hole" />
 	</div>
 </section>
 
 <!-- SECOND IMG + PARAGRAPH BLOCK -->
 
-<section class="paragraph-block paragraph-block-alt reveal">
+<section class="paragraph-block paragraph-block-alt">
 	<div class="content-container">
 		<enhanced:img
-			class="paragraph-img-left reveal-image"
+			class="paragraph-img-left"
 			src={blackholeImage}
 			alt="Black Hole" />
 
-		<section class="text-content reveal">
+		<section class="text-content">
 			<h3 class="orange-on-white heading">Multi-messenger physics</h3>
 
 			<p>
@@ -133,7 +123,7 @@
 
 <!-- THIRD PARAGRAPH + IMG BLOCK -->
 
-<section class="paragraph-block reveal">
+<section class="paragraph-block">
 	<div class="content-container">
 		<section class="text-content">
 			<h3 class="orange heading">Time-domain Astrophysics</h3>
@@ -174,20 +164,17 @@
 			</p>
 		</section>
 
-		<enhanced:img
-			class="reveal-image"
-			src={blackholeImage}
-			alt="Black Hole" />
+		<enhanced:img src={blackholeImage} alt="Black Hole" />
 	</div>
 </section>
 
 <!-- FOURTH PARAGRAPH + IMG BLOCK -->
 
-<section class="mission-combined reveal">
+<section class="mission-combined">
 	<h2 class="visually-hidden">Mission Goals</h2>
 	<MissionGoals />
 
-	<section class="paragraph-block paragraph-block-alt reveal">
+	<section class="paragraph-block paragraph-block-alt">
 		<div class="content-container">
 			<ol class="text-content mission-list">
 				<li>
@@ -244,10 +231,7 @@
 				</li>
 			</ol>
 
-			<enhanced:img
-				class="reveal-image"
-				src={blackholeImage}
-				alt="Black Hole" />
+			<enhanced:img src={blackholeImage} alt="Black Hole" />
 		</div>
 	</section>
 </section>

@@ -24,7 +24,7 @@
 </script>
 
 <section>
-	<h2 class="heading reveal">What our experts say</h2>
+	<h2 class="heading">What our experts say</h2>
 	<ul>
 		{#each data as testimonial (testimonial.text)}
 			<MissionTestimonial {testimonial} />

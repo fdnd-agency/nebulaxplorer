@@ -12,7 +12,7 @@
 	const { navItems } = $props()
 </script>
 
-<div class="contents reveal">
+<div class="contents">
 	<img
 		src={SRON_Academy_OnSpaceBlue}
 		alt="SRON Academy logo"
@@ -34,7 +34,7 @@
 	<img
 		src={SRON_full_white}
 		alt="SRON full white logo"
-		class="footer-image logo-sron reveal-image" />
+		class="footer-image logo-sron" />
 	<ul class="socials">
 		<li>
 			<a href={resolve('/#mailing-list-signup')}>

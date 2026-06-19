@@ -5,14 +5,13 @@
 	let { newsCards } = $props()
 </script>
 
-<section class="reveal">
+<section>
 	<div class="content-container">
 		<h2 class="section-title">Mission Updates</h2>
 		<ul class="newscard-container">
 			{#each newsCards as newscard (newscard.id)}
 				<li class="newscard">
 					<img
-						class="reveal-image"
 						src={newscard.image
 							? `https://fdnd-agency.directus.app/assets/${newscard.image}`
 							: defaultImage}

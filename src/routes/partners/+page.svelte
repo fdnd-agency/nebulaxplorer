@@ -1,18 +1,5 @@
 <script module>
-	import {
-		Hero,
-		PartnersCarousel,
-		lrgbEnhanced,
-		setupScrollReveal,
-	} from '$lib'
-</script>
-
-<script>
-	import { onMount } from 'svelte'
-
-	onMount(() => {
-		setupScrollReveal()
-	})
+	import { Hero, PartnersCarousel, lrgbEnhanced } from '$lib'
 </script>
 
 <svelte:head>
@@ -32,7 +19,7 @@
 		link: 'https://apod.nasa.gov/apod/ap250417.html',
 	}} />
 
-<section class="content-container reveal">
+<section class="content-container">
 	<h2 class="section-title">Work with us!</h2>
 
 	<p class="paragraph">
@@ -46,7 +33,7 @@
 
 <PartnersCarousel />
 
-<section class="content-container reveal">
+<section class="content-container">
 	<h2 class="section-title orange">Partner with NEBULA!</h2>
 	<p class="paragraph">
 		We are always open to new collaborations with companies, institutions,

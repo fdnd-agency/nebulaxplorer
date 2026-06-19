@@ -5,17 +5,10 @@
 		AssignmentCards,
 		Pagination,
 		nasaGarciaEnhanced,
-		setupScrollReveal,
 	} from '$lib'
 
 	const { data } = $props()
 	const { vacancies, pagination } = $derived(data)
-
-	import { onMount } from 'svelte'
-
-	onMount(() => {
-		setupScrollReveal()
-	})
 </script>
 
 <svelte:head>

@@ -18,7 +18,6 @@
 
 <li>
 	<img
-		class="reveal-image"
 		src={member.image
 			? `https://fdnd-agency.directus.app/assets/${member.image}`
 			: portraitPlaceholder}
