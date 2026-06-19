@@ -22,6 +22,7 @@
 
 <li>
 	<img
+		class="reveal-image"
 		src={`https://fdnd-agency.directus.app/assets/${teams.group_photo}`}
 		alt=""
 		width="300"

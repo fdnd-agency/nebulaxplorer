@@ -1,5 +1,17 @@
 <script>
-	import { Hero, Breadcrumb, UnderConstruction, simonnetEnhanced } from '$lib'
+	import {
+		Hero,
+		Breadcrumb,
+		UnderConstruction,
+		simonnetEnhanced,
+		setupScrollReveal,
+	} from '$lib'
+
+	import { onMount } from 'svelte'
+
+	onMount(() => {
+		setupScrollReveal()
+	})
 </script>
 
 <svelte:head>

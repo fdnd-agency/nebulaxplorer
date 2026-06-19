@@ -1,8 +1,14 @@
 <script>
-	import { Breadcrumb, Hero, placeholder2 } from '$lib'
+	import { Breadcrumb, Hero, placeholder2, setupScrollReveal } from '$lib'
 	import { resolve } from '$app/paths'
 
 	let { data } = $props()
+
+	import { onMount } from 'svelte'
+
+	onMount(() => {
+		setupScrollReveal()
+	})
 </script>
 
 <svelte:head>
@@ -19,7 +25,7 @@
 <Breadcrumb />
 
 {#if data.newsItem[0]}
-	<article>
+	<article class="reveal">
 		<section>
 			<div class="content-container">
 				<time datetime={data.newsItem[0].date}>
@@ -35,7 +41,7 @@
 					width="500" />
 			</div>
 		</section>
-		<section>
+		<section class="reveal">
 			<div class="content-container">
 				<h2 class="heading">{data.newsItem[0].title}</h2>
 				<p class="paragraph">

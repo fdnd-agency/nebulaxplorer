@@ -145,3 +145,4 @@ export { default as xrayBinaryEnhanced } from './assets/images/xray-binary.webp?
 // Utils
 export { getPaginationItems } from './utils/paginate.js'
 export { sanitizeString } from './utils/sanitize.js'
+export { setupScrollReveal } from './utils/scrollReveal.js'

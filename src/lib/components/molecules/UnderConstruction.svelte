@@ -2,7 +2,7 @@
 	import { satelliteOnFloor } from '$lib'
 </script>
 
-<section>
+<section class="reveal">
 	<img
 		src={satelliteOnFloor}
 		alt="NOAA-N Prime after falling over during construction." />
