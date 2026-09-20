@@ -49,7 +49,7 @@ export { default as Bsky } from './components/icons/Bsky.svelte'
 export { default as Instagram } from './components/icons/Instagram.svelte'
 export { default as LinkedIn } from './components/icons/Linkedin.svelte'
 // Logo SVGs
-export { default as favIcon } from './assets/logos/favicon.svg'
+export { default as favIcon } from './assets/logos/favicon.png'
 export { default as nebulaLogoBlack } from './assets/logos/nebula_black.svg'
 export { default as nebulaLogoWhite } from './assets/logos/nebula_white.svg'
 export { default as sronAcademyLogoOnOrange } from './assets/logos/SRON_Academy_OnOrange.svg'
