@@ -1,7 +1,7 @@
 <script>
 	import { resolve } from '$app/paths'
 	import { page } from '$app/stores'
-	import { PageArrow } from '$lib'
+	import PageArrow from '$lib/components/icons/PageArrow.svelte'
 
 	// Are we on a slug page?
 	// ex; on a detail page of the news page
