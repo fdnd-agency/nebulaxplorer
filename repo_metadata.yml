@@ -2,6 +2,6 @@ title: 'Nebula Xplorer'
 client: 'Space Research Organisation Netherlands'
 status: 'active'
 years: [2]
-main_link: 'https://nebulaxplorer.agency.fdnd.nl/'
+main_link: ''
 dev_link: 'https://nebulaxplorer.dev.fdnd.nl/'
 tech_stack: ['SvelteKit', 'Directus']
