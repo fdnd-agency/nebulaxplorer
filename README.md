@@ -123,6 +123,18 @@ Follow the steps below to use this repository for yourself!
 
 Then open the localhost in your browser. All done!
 
+## Netlify deployment
+
+The site uses the Netlify adapter and server-side Directus requests. Configure these environment variables in Netlify under **Project configuration > Environment variables**, for every deploy context you use:
+
+- `DIRECTUS_NEWS`
+- `DIRECTUS_SCIENTIFIC`
+- `DIRECTUS_VACANCIES`
+- `DIRECTUS_TEAMS`
+- `DIRECTUS_TESTIMONIALS`
+
+Use the values from `.env.example`. After adding or changing variables, trigger a new deploy so the Netlify function receives the updated configuration.
+
 ## Licenses
 
 This project is licensed under the terms of the MIT license.

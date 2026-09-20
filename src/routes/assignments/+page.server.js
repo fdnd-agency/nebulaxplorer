@@ -1,16 +1,19 @@
-import { DIRECTUS_VACANCIES } from '$env/static/private'
+import { env } from '$env/dynamic/private'
 import { getPaginationItems } from '$lib/utils/paginate.js'
+import { fetchDirectus } from '$lib/server/directus.js'
 
 export async function load({ url }) {
 	const currentPage = Number(url.searchParams.get('page')) || 1
 	const limit = 9
 	const offset = (currentPage - 1) * limit
 
-	const response = await fetch(
-		`${DIRECTUS_VACANCIES}?limit=${limit}&offset=${offset}&meta=total_count`
+	const json = await fetchDirectus(
+		fetch,
+		env.DIRECTUS_VACANCIES
+			? `${env.DIRECTUS_VACANCIES}?limit=${limit}&offset=${offset}&meta=total_count`
+			: '',
+		{ data: [], meta: { total_count: 0 } }
 	)
-
-	const json = await response.json()
 
 	const totalPages = Math.ceil(json.meta.total_count / limit)
 
