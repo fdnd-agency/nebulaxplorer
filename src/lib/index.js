@@ -1,3 +1,5 @@
+export { default as PageArrow } from './components/icons/PageArrow.svelte'
+
 // COMPONENTS
 // Organisms
 export { default as Footer } from './components/organisms/Footer.svelte'
@@ -46,8 +48,6 @@ export { default as Arrow } from './components/icons/Arrow.svelte'
 export { default as Bsky } from './components/icons/Bsky.svelte'
 export { default as Instagram } from './components/icons/Instagram.svelte'
 export { default as LinkedIn } from './components/icons/Linkedin.svelte'
-export { default as PageArrow } from './components/icons/PageArrow.svelte'
-
 // Logo SVGs
 export { default as favIcon } from './assets/logos/favicon.svg'
 export { default as nebulaLogoBlack } from './assets/logos/nebula_black.svg'
