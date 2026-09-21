@@ -135,6 +135,45 @@ The site uses the Netlify adapter and server-side Directus requests. Configure t
 
 Use the values from `.env.example`. After adding or changing variables, trigger a new deploy so the Netlify function receives the updated configuration.
 
+### Bundle SSR dependencies into the server build
+
+Packages listed under `dependencies` in `package.json` are treated as
+external by the SvelteKit server build. They are not bundled. They are
+imported from `node_modules` when the server starts. Locally this always
+works, but in a serverless deployment such as a Netlify Function the
+package can fail to resolve.
+
+`gsap` and `three` are runtime dependencies, so bundle them into
+the server build explicitly in `vite.config.js`:
+
+```js
+export default defineConfig({
+	plugins: [enhancedImages(), sveltekit()],
+	ssr: {
+		noExternal: ['gsap', 'three'],
+	},
+})
+```
+
+**Rule of thumb:** when adding a package under `dependencies` that is
+imported by server-rendered code (a component, `+page.server.js`,
+`$lib`, and so on), add it to `ssr.noExternal` as well.
+
+**How to recognise this problem**
+
+- The Netlify build succeeds and `npm run build && npm run preview`
+  works locally.
+- Every route on the deployed site returns a 500, including pages
+  without CMS data.
+- The function logs (Logs & metrics → Functions → sveltekit-render)
+  show no usable stack trace.
+
+**After changing the config**
+
+1. Run `npm run build && npm run preview` to check that it still renders.
+2. Deploy with **Clear cache and deploy site**, so Netlify does not
+   reuse a cached `node_modules`.
+
 ## Licenses
 
 This project is licensed under the terms of the MIT license.
