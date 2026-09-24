@@ -132,10 +132,6 @@ h6 { font-size:                var(--step-0); }
 /* Use the font weight third, only on the h6 */
 h6 { font-weight:              500; }
 
-/* Use colour as a secondary indicator */
-h5 { color:                    color-mix(in oklch, currentColor 80%, transparent); }
-h6 { color:                    color-mix(in oklch, currentColor 75%, transparent); }
-
 /* paragraph =========================================================================================== */
 p{
     font-family:               var(--font-body);
