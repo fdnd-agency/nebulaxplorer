@@ -1,0 +1,163 @@
+:root {
+    /* Colors DON'T USE IN STYLING ! */
+    /* Brand */
+    --palette-brand-700:       #181932;
+    --palette-brand-600:       #2c2d42;
+    --palette-brand-500:       #292f6b;
+    --palette-brand-300:       #44aabd;
+
+    /* Accent */
+    --palette-accent-500:      #d53f15;
+	--palette-accent-300:      #eb5d34;
+    
+    /* Neutraal */
+    --palette-neutral-900:     #000000;
+    --palette-neutral-800:     #343a40;
+    --palette-neutral-600:     #6c757d;
+    --palette-neutral-500:     #adb5bd;
+    --palette-neutral-300:     #dee2e6;
+    --palette-neutral-100:     #f8f9fa;
+    --palette-neutral-0:       #ffffff;
+
+    /* Colors USE !! ===================================================================================*/
+    /* Brand */
+	--color-brand-darkest:     var(--palette-brand-700);
+	--color-brand-darker:      var(--palette-brand-600);
+	--color-brand-dark:        var(--palette-brand-500);
+	--color-brand-light:       var(--palette-brand-300);
+
+    /* Accent */
+    --color-accent-dark:       var(--palette-accent-500);
+	--color-accent-light:      var(--palette-accent-300);
+
+	/* Neutraal */
+	--color-neutral-darkest:   var(--palette-neutral-900);
+	--color-neutral-darker:    var(--palette-neutral-800);
+	--color-neutral-dark:      var(--palette-neutral-600);
+	--color-neutral-mid:       var(--palette-neutral-500);
+	--color-neutral-light:     var(--palette-neutral-300);
+	--color-neutral-lightest:  var(--palette-neutral-100);
+	--color-neutral-surface:   var(--palette-neutral-0);
+
+    --background:              var(--palette-brand-700);
+
+    /*typografie===================================================================================*/
+    --font-heading:            "Space Grotesk", "Roboto", "Verdana", "Source Sans", "Helvetica Neue", Helvetica, "Arial Black", Arial, sans-serif; 
+    --font-body:               "Space Mono", "Roboto", "Verdana", "Source Sans", "Helvetica Neue", Helvetica, "Arial Black", Arial, sans-serif;
+    --font-detail:             "Roboto", "Source Sans", "Verdana", "Helvetica Neue", Helvetica, "Arial Black", Arial, sans-serif;
+
+    --ratio:                   1.5;
+	--step-0:                  1.2rem;
+	--step-1:                  calc(var(--step-0) * var(--ratio));
+	--step-2:                  calc(var(--step-1) * var(--ratio));
+	--step-3:                  calc(var(--step-2) * var(--ratio));
+	--step-min-1:              calc(var(--step-0) / var(--ratio));
+	--step-min-2:              calc(var(--step-min-1) / var(--ratio));
+	--step-min-3:              calc(var(--step-min-2) / var(--ratio));
+
+    --line-height-normal:      1.5;
+    --line-height-relaxed:     1.8;
+
+    --ratio-text:              1.2;
+    --font-size-body-md:       var(--step-0);
+    --font-size-body-lg:       calc(var(--font-size-body-md) * var(--ratio-text));
+    --font-size-body-xl:       calc(var(--font-size-body-lg) * var(--ratio-text));
+    --font-size-body-2xl:      calc(var(--font-size-body-xl) * var(--ratio-text));
+    --font-size-body-3xl:      calc(var(--font-size-body-2xl) * var(--ratio-text));
+
+    /* Padding / Spacing =======================================================================*/
+    --spacing-xs:              0.25rem;    
+    --spacing-sm:              0.5rem;     
+    --spacing-md:              1rem;       
+    --spacing-lg:              1.5rem;  
+    --spacing-xl:              3rem;      
+    --spacing-2xl:             4rem;    
+}
+
+html{
+    @media (prefers-reduced-motion: no-preference) {
+        scroll-behavior: smooth;
+    }
+}
+
+body{
+    background:                var(--background);
+    font-family:               var(--font-body);
+	font-size:                 var(--step-0);
+	line-height:               var(--line-height-normal);
+    color:                     var(--color-neutral-surface);
+}
+
+* {
+    margin:                    0;
+    padding:                   0;
+    min-width:                 0;
+    box-sizing:                border-box;
+}
+
+/* headings=========================================================================================== */
+h1, h2, h3, h4, h5, h6{
+    font-family:               var(--font-heading);
+}
+
+h1 { font-size:                var(--step-3); }
+h2 { font-size:                var(--step-2); }
+h3 { font-size:                var(--step-1); }
+h4 { font-size:                calc(var(--step-0) * sqrt(var(--ratio))); }
+h5, 
+h6 { font-size:                var(--step-0); }
+
+.prose > * {
+	margin:                    0;
+}
+
+/* Set the default prose spacing above all elements */
+.prose {
+	--flow-space:              var(--step-0);
+}
+.prose > * + * {
+	margin-block-start:        var(--flow-space);
+}
+
+/* Set the spacing above the headings */
+.prose > :is(h1, h2) {         --flow-space: var(--step-3); }
+.prose > :is(h3, h4) {         --flow-space: var(--step-2); }
+.prose > :is(h5, h6) {         --flow-space: var(--step-1); }
+
+/* Set the spacing below the headings */
+.prose > :is(h2, h3, h4) + * { --flow-space: var(--step-min-1); }
+.prose > h5 + * {              --flow-space: var(--step-min-2); }
+.prose > h6 + * {              --flow-space: var(--step-min-3); }
+
+/* Use the font weight third, only on the h6 */
+h6 { font-weight:              500; }
+
+/* Use colour as a secondary indicator */
+h5 { color:                    color-mix(in oklch, currentColor 80%, transparent); }
+h6 { color:                    color-mix(in oklch, currentColor 75%, transparent); }
+
+/* paragraph =========================================================================================== */
+p{
+    font-family:               var(--font-body);
+    font-size:                 var(--font-size-body-md);
+    max-width:                 70ch;
+    line-height:               var(--line-height-relaxed);
+}
+
+.prose :is(ul, ol) {
+	padding-inline-start:      1.5em;
+}
+
+nav ul {
+    list-style:                none;
+}
+
+a {
+    color:                     inherit;
+}
+
+:focus-visible {
+	outline: 3px solid var(--color-accent-light);
+    outline-style: dotted;
+	outline-offset: 0.1em;
+}
