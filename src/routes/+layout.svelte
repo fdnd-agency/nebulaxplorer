@@ -5,6 +5,7 @@
    	import '@fontsource/space-mono/700.css';
    	import '@fontsource/roboto/400.css';
    	import '@fontsource/roboto/700.css';
+	import Navigation from '$lib/components/Navigation.svelte';
 
 	import favicon from '$lib/assets/favicon.svg';
 	import '$lib/styles/stylesheet.css';
@@ -15,5 +16,7 @@
 <svelte:head>
 	<link rel="icon" href={favicon} />
 </svelte:head>
+
+<Navigation />
 
 {@render children()}
