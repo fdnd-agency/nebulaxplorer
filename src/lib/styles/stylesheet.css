@@ -1,79 +1,81 @@
 :root {
-    /* Colors DON'T USE IN STYLING ! */
-    /* Brand */
-    --palette-brand-900: hsl(238, 45%, 15%);
-	--palette-brand-800: hsl(238, 45%, 20%);
-	--palette-brand-700: hsl(238, 45%, 25%);
-	--palette-brand-600: hsl(238, 45%, 29%);
-	--palette-brand-500: hsl(238, 45%, 45%);
-	--palette-brand-400: hsl(238, 45%, 60%);
-	--palette-brand-300: hsl(238, 45%, 75%);
+	/*Brand*/
+    --brand-h: 238;
+	--brand-s: 35%;
+	--brand-darkest-l: 15%;
+	--brand-darker-l: 20%;
+	--brand-dark-l: 25%;
+	--brand-mid-l: 29%;
+	--brand-light-l: 45%;
+	--brand-lighter-l: 60%;
+	--brand-lightest-l: 75%;
 
-    /* Secondary */
-	--palette-secondary-900: hsl(189, 48%, 10%);
-	--palette-secondary-800: hsl(189, 48%, 20%);
-	--palette-secondary-700: hsl(189, 48%, 40%);
-	--palette-secondary-600: hsl(189, 48%, 50%);
-	--palette-secondary-500: hsl(189, 48%, 70%);
-	--palette-secondary-400: hsl(189, 48%, 80%);
-	--palette-secondary-300: hsl(189, 48%, 90%);
+	--color-brand-darkest: hsl(var(--brand-h), var(--brand-s), var(--brand-darkest-l));
+	--color-brand-darker: hsl(var(--brand-h), var(--brand-s), var(--brand-darker-l));
+	--color-brand-dark: hsl(var(--brand-h), var(--brand-s), var(--brand-dark-l));
+	--color-brand-mid: hsl(var(--brand-h), var(--brand-s), var(--brand-mid-l));
+	--color-brand-light: hsl(var(--brand-h), var(--brand-s), var(--brand-light-l));
+	--color-brand-lighter: hsl(var(--brand-h), var(--brand-s), var(--brand-lighter-l));
+	--color-brand-lightest: hsl(var(--brand-h), var(--brand-s), var(--brand-lightest-l));
 
-    /* Accent */
-    --palette-accent-900: hsl(13, 82%, 16%);
-	--palette-accent-800: hsl(13, 82%, 36%);
-	--palette-accent-700: hsl(13, 82%, 46%);
-	--palette-accent-600: hsl(13, 82%, 56%);
-	--palette-accent-500: hsl(13, 82%, 65%);
-	--palette-accent-400: hsl(13, 82%, 75%);
-	--palette-accent-300: hsl(13, 82%, 90%);
-    
-    /* Neutraal */
-    --palette-neutral-900: hsl(208, 7%, 5%);
-	--palette-neutral-800: hsl(208, 7%, 20%);
-	--palette-neutral-700: hsl(208, 7%, 30%);
-	--palette-neutral-600: hsl(208, 7%, 46%);
-	--palette-neutral-500: hsl(208, 7%, 60%);
-	--palette-neutral-400: hsl(208, 7%, 80%);
-	--palette-neutral-300: hsl(208, 7%, 90%);
+	/*Secondary*/
+	--secondary-h: 235;
+	--secondary-s: 45%;
+	--secondary-darkest-l: 10%;
+	--secondary-darker-l: 20%;
+	--secondary-dark-l: 40%;
+	--secondary-mid-l: 50%;
+	--secondary-light-l: 70%;
+	--secondary-lighter-l: 80%;
+	--secondary-lightest-l: 90%;
 
-    /* Colors USE !! ===================================================================================*/
-    /* Brand */
-	--color-brand-darkest: var(--palette-brand-900);
-	--color-brand-darker: var(--palette-brand-800);
-	--color-brand-dark: var(--palette-brand-700);
-	--color-brand-mid: var(--palette-brand-600);
-	--color-brand-light: var(--palette-brand-500);
-	--color-brand-lighter: var(--palette-brand-400);
-	--color-brand-lightest: var(--palette-brand-300);
+	--color-secondary-darkest: hsl(var(--secondary-h), var(--secondary-s), var(--secondary-darkest-l));
+	--color-secondary-darker: hsl(var(--secondary-h), var(--secondary-s), var(--secondary-darker-l));
+	--color-secondary-dark: hsl(var(--secondary-h), var(--secondary-s), var(--secondary-dark-l));
+	--color-secondary-mid: hsl(var(--secondary-h), var(--secondary-s), var(--secondary-mid-l));
+	--color-secondary-light: hsl(var(--secondary-h), var(--secondary-s), var(--secondary-light-l));
+	--color-secondary-lighter: hsl(var(--secondary-h), var(--secondary-s), var(--secondary-lighter-l));
+	--color-secondary-lightest: hsl(var(--secondary-h), var(--secondary-s), var(--secondary-lightest-l));
 
-	/* Secondary */
-	--color-secondary-darkest: var(--palette-secondary-900);
-	--color-secondary-darker: var(--palette-secondary-800);
-	--color-secondary-dark: var(--palette-secondary-700);
-	--color-secondary-mid: var(--palette-secondary-600);
-	--color-secondary-light: var(--palette-secondary-500);
-	--color-secondary-lighter: var(--palette-secondary-400);
-	--color-secondary-lightest: var(--palette-secondary-300);
+	/*Accent*/
+	--accent-h: 13;
+	--accent-s: 82%;
+	--accent-darkest-l: 16%;
+	--accent-darker-l: 36%;
+	--accent-dark-l: 46%;
+	--accent-mid-l: 56%;
+	--accent-light-l: 65%;
+	--accent-lighter-l: 75%;
+	--accent-lightest-l: 90%;
 
-	/* Accent */
-	--color-accent-darkest: var(--palette-accent-900);
-	--color-accent-darker: var(--palette-accent-800);
-	--color-accent-dark: var(--palette-accent-700);
-	--color-accent-mid: var(--palette-accent-600);
-	--color-accent-light: var(--palette-accent-500);
-	--color-accent-lighter: var(--palette-accent-400);
-	--color-accent-lightest: var(--palette-accent-300);
+	--color-accent-darkest: hsl(var(--accent-h), var(--accent-s), var(--accent-darkest-l));
+	--color-accent-darker: hsl(var(--accent-h), var(--accent-s), var(--accent-darker-l));
+	--color-accent-dark: hsl(var(--accent-h), var(--accent-s), var(--accent-dark-l));
+	--color-accent-mid: hsl(var(--accent-h), var(--accent-s), var(--accent-mid-l));
+	--color-accent-light: hsl(var(--accent-h), var(--accent-s), var(--accent-light-l));
+	--color-accent-lighter: hsl(var(--accent-h), var(--accent-s), var(--accent-lighter-l));
+	--color-accent-lightest: hsl(var(--accent-h), var(--accent-s), var(--accent-lightest-l));
 
-	/* Neutraal */
-	--color-neutral-darkest: var(--palette-neutral-900);
-	--color-neutral-darker: var(--palette-neutral-800);
-	--color-neutral-dark: var(--palette-neutral-700);
-	--color-neutral-mid: var(--palette-neutral-600);
-	--color-neutral-light: var(--palette-neutral-500);
-	--color-neutral-lighter: var(--palette-neutral-400);
-	--color-neutral-lightest: var(--palette-neutral-300);
+	/*neutrak*/
+	--neutral-h: 208;
+	--neutral-s: 7%;
+	--neutral-darkest-l: 5%;
+	--neutral-darker-l: 20%;
+	--neutral-dark-l: 30%;
+	--neutral-mid-l: 46%;
+	--neutral-light-l: 60%;
+	--neutral-lighter-l: 80%;
+	--neutral-lightest-l: 90%;
 
-	--background: var(--palette-brand-900);
+	--color-neutral-darkest: hsl(var(--neutral-h), var(--neutral-s), var(--neutral-darkest-l));
+	--color-neutral-darker: hsl(var(--neutral-h), var(--neutral-s), var(--neutral-darker-l));
+	--color-neutral-dark: hsl(var(--neutral-h), var(--neutral-s), var(--neutral-dark-l));
+	--color-neutral-mid: hsl(var(--neutral-h), var(--neutral-s), var(--neutral-mid-l));
+	--color-neutral-light: hsl(var(--neutral-h), var(--neutral-s), var(--neutral-light-l));
+	--color-neutral-lighter: hsl(var(--neutral-h), var(--neutral-s), var(--neutral-lighter-l));
+	--color-neutral-lightest: hsl(var(--neutral-h), var(--neutral-s), var(--neutral-lightest-l));
+
+	--background: var(--color-brand-darkest);
 
     /*typografie===================================================================================*/
     --font-heading:            "Space Grotesk", "Roboto", "Verdana", "Source Sans", "Helvetica Neue", Helvetica, "Arial Black", Arial, sans-serif; 
