@@ -19,7 +19,7 @@
 	--color-brand-lightest: hsl(var(--brand-h), var(--brand-s), var(--brand-lightest-l));
 
 	/*Secondary*/
-	--secondary-h: 235;
+	--secondary-h: 189;
 	--secondary-s: 45%;
 	--secondary-darkest-l: 10%;
 	--secondary-darker-l: 20%;
