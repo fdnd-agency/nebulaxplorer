@@ -1,13 +1,13 @@
 :root {
     /* Colors DON'T USE IN STYLING ! */
     /* Brand */
-    --palette-brand-900: hsl(235, 45%, 15%);
-	--palette-brand-800: hsl(235, 45%, 20%);
-	--palette-brand-700: hsl(235, 45%, 25%);
-	--palette-brand-600: hsl(235, 45%, 29%);
-	--palette-brand-500: hsl(235, 45%, 45%);
-	--palette-brand-400: hsl(235, 45%, 60%);
-	--palette-brand-300: hsl(235, 45%, 75%);
+    --palette-brand-900: hsl(238, 45%, 15%);
+	--palette-brand-800: hsl(238, 45%, 20%);
+	--palette-brand-700: hsl(238, 45%, 25%);
+	--palette-brand-600: hsl(238, 45%, 29%);
+	--palette-brand-500: hsl(238, 45%, 45%);
+	--palette-brand-400: hsl(238, 45%, 60%);
+	--palette-brand-300: hsl(238, 45%, 75%);
 
     /* Secondary */
 	--palette-secondary-900: hsl(189, 48%, 10%);
@@ -19,9 +19,9 @@
 	--palette-secondary-300: hsl(189, 48%, 90%);
 
     /* Accent */
-    --palette-accent-900: hsl(13, 82%, 15%);
-	--palette-accent-800: hsl(13, 82%, 30%);
-	--palette-accent-700: hsl(13, 82%, 40%);
+    --palette-accent-900: hsl(13, 82%, 16%);
+	--palette-accent-800: hsl(13, 82%, 36%);
+	--palette-accent-700: hsl(13, 82%, 46%);
 	--palette-accent-600: hsl(13, 82%, 56%);
 	--palette-accent-500: hsl(13, 82%, 65%);
 	--palette-accent-400: hsl(13, 82%, 75%);
