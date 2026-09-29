@@ -1,45 +1,79 @@
 :root {
     /* Colors DON'T USE IN STYLING ! */
     /* Brand */
-    --palette-brand-700:       #181932;
-    --palette-brand-600:       #2c2d42;
-    --palette-brand-500:       #292f6b;
-    --palette-brand-300:       #44aabd;
+    --palette-brand-900: hsl(235, 45%, 15%);
+	--palette-brand-800: hsl(235, 45%, 20%);
+	--palette-brand-700: hsl(235, 45%, 25%);
+	--palette-brand-600: hsl(235, 45%, 29%);
+	--palette-brand-500: hsl(235, 45%, 45%);
+	--palette-brand-400: hsl(235, 45%, 60%);
+	--palette-brand-300: hsl(235, 45%, 75%);
+
+    /* Secondary */
+	--palette-secondary-900: hsl(189, 48%, 10%);
+	--palette-secondary-800: hsl(189, 48%, 20%);
+	--palette-secondary-700: hsl(189, 48%, 40%);
+	--palette-secondary-600: hsl(189, 48%, 50%);
+	--palette-secondary-500: hsl(189, 48%, 70%);
+	--palette-secondary-400: hsl(189, 48%, 80%);
+	--palette-secondary-300: hsl(189, 48%, 90%);
 
     /* Accent */
-    --palette-accent-500:      #d53f15;
-	--palette-accent-300:      #eb5d34;
+    --palette-accent-900: hsl(13, 82%, 15%);
+	--palette-accent-800: hsl(13, 82%, 30%);
+	--palette-accent-700: hsl(13, 82%, 40%);
+	--palette-accent-600: hsl(13, 82%, 56%);
+	--palette-accent-500: hsl(13, 82%, 65%);
+	--palette-accent-400: hsl(13, 82%, 75%);
+	--palette-accent-300: hsl(13, 82%, 90%);
     
     /* Neutraal */
-    --palette-neutral-900:     #000000;
-    --palette-neutral-800:     #343a40;
-    --palette-neutral-600:     #6c757d;
-    --palette-neutral-500:     #adb5bd;
-    --palette-neutral-300:     #dee2e6;
-    --palette-neutral-100:     #f8f9fa;
-    --palette-neutral-0:       #ffffff;
+    --palette-neutral-900: hsl(208, 7%, 5%);
+	--palette-neutral-800: hsl(208, 7%, 20%);
+	--palette-neutral-700: hsl(208, 7%, 30%);
+	--palette-neutral-600: hsl(208, 7%, 46%);
+	--palette-neutral-500: hsl(208, 7%, 60%);
+	--palette-neutral-400: hsl(208, 7%, 80%);
+	--palette-neutral-300: hsl(208, 7%, 90%);
 
     /* Colors USE !! ===================================================================================*/
     /* Brand */
-	--color-brand-darkest:     var(--palette-brand-700);
-	--color-brand-darker:      var(--palette-brand-600);
-	--color-brand-dark:        var(--palette-brand-500);
-	--color-brand-light:       var(--palette-brand-300);
+	--color-brand-darkest: var(--palette-brand-900);
+	--color-brand-darker: var(--palette-brand-800);
+	--color-brand-dark: var(--palette-brand-700);
+	--color-brand-mid: var(--palette-brand-600);
+	--color-brand-light: var(--palette-brand-500);
+	--color-brand-lighter: var(--palette-brand-400);
+	--color-brand-lightest: var(--palette-brand-300);
 
-    /* Accent */
-    --color-accent-dark:       var(--palette-accent-500);
-	--color-accent-light:      var(--palette-accent-300);
+	/* Secondary */
+	--color-secondary-darkest: var(--palette-secondary-900);
+	--color-secondary-darker: var(--palette-secondary-800);
+	--color-secondary-dark: var(--palette-secondary-700);
+	--color-secondary-mid: var(--palette-secondary-600);
+	--color-secondary-light: var(--palette-secondary-500);
+	--color-secondary-lighter: var(--palette-secondary-400);
+	--color-secondary-lightest: var(--palette-secondary-300);
+
+	/* Accent */
+	--color-accent-darkest: var(--palette-accent-900);
+	--color-accent-darker: var(--palette-accent-800);
+	--color-accent-dark: var(--palette-accent-700);
+	--color-accent-mid: var(--palette-accent-600);
+	--color-accent-light: var(--palette-accent-500);
+	--color-accent-lighter: var(--palette-accent-400);
+	--color-accent-lightest: var(--palette-accent-300);
 
 	/* Neutraal */
-	--color-neutral-darkest:   var(--palette-neutral-900);
-	--color-neutral-darker:    var(--palette-neutral-800);
-	--color-neutral-dark:      var(--palette-neutral-600);
-	--color-neutral-mid:       var(--palette-neutral-500);
-	--color-neutral-light:     var(--palette-neutral-300);
-	--color-neutral-lightest:  var(--palette-neutral-100);
-	--color-neutral-surface:   var(--palette-neutral-0);
+	--color-neutral-darkest: var(--palette-neutral-900);
+	--color-neutral-darker: var(--palette-neutral-800);
+	--color-neutral-dark: var(--palette-neutral-700);
+	--color-neutral-mid: var(--palette-neutral-600);
+	--color-neutral-light: var(--palette-neutral-500);
+	--color-neutral-lighter: var(--palette-neutral-400);
+	--color-neutral-lightest: var(--palette-neutral-300);
 
-    --background:              var(--palette-brand-700);
+	--background: var(--palette-brand-900);
 
     /*typografie===================================================================================*/
     --font-heading:            "Space Grotesk", "Roboto", "Verdana", "Source Sans", "Helvetica Neue", Helvetica, "Arial Black", Arial, sans-serif; 
