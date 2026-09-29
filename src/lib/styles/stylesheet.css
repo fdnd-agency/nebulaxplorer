@@ -1,7 +1,11 @@
 :root {
     /* Colors DON'T USE IN STYLING ! */
     /* Brand */
-    --palette-brand-900: hsl(238, 45%, 15%);
+    --h-brand-900: 238;
+	--s-brand-900: 45%;
+	--l-brand-900: 15%;
+	--palette-brand-900: hsl(var(--h-brand-900), var(--s-brand-900), var(--l-brand-900));
+
 	--palette-brand-800: hsl(238, 45%, 20%);
 	--palette-brand-700: hsl(238, 45%, 25%);
 	--palette-brand-600: hsl(238, 45%, 29%);
@@ -21,7 +25,12 @@
     /* Accent */
     --palette-accent-900: hsl(13, 82%, 16%);
 	--palette-accent-800: hsl(13, 82%, 36%);
-	--palette-accent-700: hsl(13, 82%, 46%);
+
+	--h-accent-700: 13;
+	--s-accent-700: 82%;
+	--l-accent-700: 46%;
+	--palette-accent-700: hsl(var(--h-accent-700), var(--s-accent-700), var(--l-accent-700));
+
 	--palette-accent-600: hsl(13, 82%, 56%);
 	--palette-accent-500: hsl(13, 82%, 65%);
 	--palette-accent-400: hsl(13, 82%, 75%);
