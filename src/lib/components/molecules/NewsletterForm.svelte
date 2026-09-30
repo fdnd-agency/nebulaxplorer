@@ -1,4 +1,4 @@
-<form>
+<form method="POST" action="?/subscribe">
   <label for="email">
     <span class="visually-hidden">Email</span>
     <input
