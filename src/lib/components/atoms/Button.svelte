@@ -20,23 +20,28 @@
     }
     .primary{
         font-family: var(--font-detail);
-        background-color: hsl(var(--brand-h), var(--brand-s), var(--brand-darkest-l));
-        color: hsl(var(--accent-h), var(--accent-s), var(--accent-dark-l));
-        font-weight: 500;
+        background-color: var(--color-brand-darkest);
+        color: var(--color-accent-dark);
+        font-weight: 700;
         text-transform: uppercase;
         border-color: var(--color-brand-darkest);
 
         &:hover {
-            background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-dark-l));
-            color: hsl(var(--brand-h), var(--brand-s), var(--brand-darkest-l));
+            background-color: var(--color-accent-dark);
+            color: var(--color-brand-darkest);
         }
         &:focus-visible {
-            outline: 0.4rem solid hsl(var(--accent-h), var(--accent-s), var(--accent-darker-l));
+            outline: 0.4rem solid var(--color-accent-darker);
             outline-offset: 0;
         }
         &:active {
-            background-color: hsl(var(--brand-h), var(--brand-s), var(--brand-darkest-l));
-            color: hsl(var(--accent-h), var(--accent-s), var(--accent-dark-l));
+            background-color: var(--color-brand-darkest);
+            color: var(--color-accent-dark);
+        }
+        &:disabled{
+            background-color: var(--color-neutral-dark);
+            color: var(--color-accent-darkest);
+            border-color: var(--color-neutral-dark);
         }
     }
     .secondary{
@@ -46,7 +51,7 @@
         font-family: var(--font-body);
         background-color: hsl(var(--accent-h), var(--accent-s), var(--l-bg));
         color: hsl(var(--brand-h), var(--brand-s), var(--l-text));
-        font-weight: 300;
+        font-weight: 700;
         border-color: var(--color-accent-darkest);
 
         &:hover {
