@@ -31,7 +31,7 @@
 	}
 
 	button[aria-expanded='true'] :is(.top, .bottom) {
-		y: 45;
+		y: 45px
 	}
 	button[aria-expanded='true'] .top {
 		rotate: 45deg;
