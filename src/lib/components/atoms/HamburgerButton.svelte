@@ -8,9 +8,9 @@
 
 <button class=".hamburger-button" aria-label={expanded ? 'Sluit menu' : 'Open menu'} aria-expanded={expanded} onclick={toggleMenu}>
     <svg fill="var(--color-brand-darkest)" class="hamburger" viewBox="0 0 100 100" width="100" title="hamburger icoon" aria-hidden="true">
-        <rect class="line top" width="80" height="7" x="10" y="25" rx="5"></rect>
-        <rect class="line middle" width="80" height="7" x="10" y="45" rx="5"></rect>
-        <rect class="line bottom" width="80" height="7" x="10" y="65" rx="5"></rect>
+        <rect class="line top" width="80" height="5" x="10" y="25" rx="5"></rect>
+        <rect class="line middle" width="80" height="5" x="10" y="45" rx="5"></rect>
+        <rect class="line bottom" width="80" height="5" x="10" y="65" rx="5"></rect>
     </svg>
 </button> 
 
@@ -29,7 +29,7 @@
 	}
 
 	button[aria-expanded='true'] :is(.top, .bottom) {
-		y: 45px
+		y: 45px;
 	}
 	button[aria-expanded='true'] .top {
 		rotate: 45deg;
