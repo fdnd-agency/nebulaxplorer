@@ -1,0 +1,378 @@
+<script>
+	import { resolve } from '$app/paths'
+	import { page } from '$app/stores'
+	import { PageArrow } from '$lib'
+
+	// Are we on a slug page?
+	// ex; on a detail page of the news page
+	const isParentActive = (path) => {
+		return $page.url.pathname.startsWith(`${path}/`)
+	}
+
+	// Are we on this exact page?
+	const isExactActive = (path) => {
+		return $page.url.pathname === path
+	}
+
+	let { navItems } = $props()
+</script>
+
+<header>
+	<button popovertarget="menu">
+		<span class="visually-hidden">Open</span>Menu
+		<span class="lines"></span>
+	</button>
+
+	<nav popover id="menu">
+		<ul>
+			<!-- Include this button separately as this is our close button -->
+			<li>
+				<button popovertarget="menu" popovertargetaction="hide">
+					<span class="visually-hidden">Close</span>Menu
+					<span class="lines"></span>
+				</button>
+			</li>
+			<!-- Loop over each object -->
+			{#each navItems as { path, label } (path)}
+				<li
+					class={isExactActive(path)
+						? 'exact-active'
+						: isParentActive(path)
+							? 'parent-active'
+							: ''}>
+					{#if isExactActive(path) || isParentActive(path)}
+						<PageArrow />
+					{/if}
+					<a
+						href={resolve(path)}
+						aria-current={isExactActive(path) ? 'page' : undefined}>
+						{label}
+					</a>
+				</li>
+			{/each}
+		</ul>
+	</nav>
+</header>
+
+<style>
+	/* The container of the nav: the header */
+	header {
+		display: flex;
+		justify-content: flex-end;
+		position: relative;
+		z-index: 10;
+		background: transparent;
+		font-family: var(--font-heading);
+		color: var(--text-color-light);
+
+		@media (min-width: 56.25rem) {
+			position: sticky;
+			inset-block-start: 0;
+			justify-content: initial;
+			padding: 1rem;
+			background: var(--background-color-dark);
+		}
+
+		@media (prefers-reduced-motion: no-preference) {
+			@supports (animation-timeline: view()) {
+				animation: anim-timeline--header-opacity 1ms ease both;
+				animation-timeline: scroll(root);
+				animation-range: 2rem 8rem;
+			}
+		}
+	}
+
+	/* The button that opens the nav */
+	button[popovertarget] {
+		display: none;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		height: 3.75rem;
+		aspect-ratio: 1;
+		padding: 0.5rem;
+		position: fixed;
+		z-index: 1;
+		inset-block-start: 0;
+		color: inherit;
+		background: var(--nav-primary-color);
+
+		@supports selector([popover]:popover-open) {
+			display: flex;
+		}
+
+		@media (min-width: 56.25rem) {
+			display: none;
+		}
+
+		.lines {
+			--_thickness: 0.125rem;
+			--_margin-top: 0.375rem;
+			--_gap: 0.5rem;
+
+			display: block;
+			aspect-ratio: 1;
+			width: 85%;
+
+			background: linear-gradient(
+				transparent,
+				transparent var(--_margin-top),
+				currentColor var(--_margin-top),
+				currentColor calc(var(--_margin-top) + var(--_thickness)),
+				transparent calc(var(--_margin-top) + var(--_thickness)),
+				transparent
+					calc(var(--_margin-top) + var(--_thickness) + var(--_gap)),
+				currentColor
+					calc(var(--_margin-top) + var(--_thickness) + var(--_gap)),
+				currentColor
+					calc(
+						var(--_margin-top) + 2 * var(--_thickness) + var(--_gap)
+					),
+				transparent
+					calc(
+						var(--_margin-top) + 2 * var(--_thickness) + var(--_gap)
+					),
+				transparent
+					calc(
+						var(--_margin-top) + 2 * var(--_thickness) + 2 *
+							var(--_gap)
+					),
+				currentColor
+					calc(
+						var(--_margin-top) + 2 * var(--_thickness) + 2 *
+							var(--_gap)
+					),
+				currentColor
+					calc(
+						var(--_margin-top) + 3 * var(--_thickness) + 2 *
+							var(--_gap)
+					),
+				transparent
+					calc(
+						var(--_margin-top) + 3 * var(--_thickness) + 2 *
+							var(--_gap)
+					)
+			);
+		}
+	}
+
+	/* The nav element in the header */
+	nav {
+		justify-self: end;
+		translate: 0 0;
+		height: 100%;
+		width: 100%;
+		max-width: 100%;
+		background: var(--nav-primary-color);
+		color: inherit;
+
+		@media (prefers-reduced-motion: no-preference) {
+			transition: 0.3s ease-out allow-discrete;
+		}
+
+		@supports selector([popover]:popover-open) {
+			translate: 100% 0;
+			max-width: 22.5rem;
+		}
+
+		@media (min-width: 56.25rem) {
+			display: block;
+			background: inherit;
+			transform: translateX(0%);
+			position: initial;
+			width: initial;
+			translate: 0;
+			max-width: 100%;
+		}
+
+		/* Popover */
+		&:popover-open {
+			translate: 0 0;
+		}
+
+		@starting-style {
+			&:popover-open {
+				translate: 100% 0;
+			}
+		}
+
+		/* Popover backdrop */
+		&::backdrop {
+			background-color: transparent;
+
+			@media (prefers-reduced-motion: no-preference) {
+				transition: 0.3s allow-discrete; /* allow-discrete keyword is not supported in firefox */
+			}
+		}
+
+		&:popover-open::backdrop {
+			background: var(--space-low-opacity);
+		}
+
+		@starting-style {
+			&:popover-open::backdrop {
+				background-color: transparent;
+			}
+		}
+	}
+
+	/* List of nav items */
+	ul {
+		display: flex;
+		flex-direction: column;
+		gap: 2.5rem;
+		width: 100%;
+		padding: 1rem 2rem;
+		list-style: none;
+
+		@supports selector([popover]:popover-open) {
+			padding-block-start: 4rem;
+		}
+
+		@media (min-width: 56.25rem) {
+			flex-direction: row;
+			align-items: flex-end;
+			padding-block-start: 1rem;
+			gap: 1.5rem;
+			width: initial;
+		}
+	}
+
+	/* Individual nav items */
+	li {
+		display: flex;
+		flex-direction: row-reverse;
+		width: fit-content;
+		align-items: center;
+
+		&.parent-active,
+		&.exact-active {
+			font-weight: 800;
+		}
+
+		:global(svg) {
+			transform: rotate(180deg);
+			animation: anim-arrow--opacity 3s linear infinite;
+		}
+
+		:global(svg path) {
+			fill: var(--text-color-light);
+		}
+
+		@media (min-width: 56.25rem) {
+			display: flex;
+			flex-direction: column;
+
+			&:hover a {
+				color: var(--accent-color-light);
+
+				@media (prefers-reduced-motion: no-preference) {
+					&::before {
+						transform: scaleX(1);
+						transform-origin: left;
+					}
+				}
+			}
+
+			:global(svg) {
+				transform: rotateZ(90deg);
+			}
+
+			:global(svg),
+			:global(svg path) {
+				fill: var(--accent-color);
+			}
+		}
+	}
+
+	li > a {
+		display: inline-block;
+		position: relative;
+		padding: 1rem;
+		font-weight: inherit;
+		font-size: 1.25rem;
+
+		&::first-letter {
+			text-transform: uppercase;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			transition: transform 0.3s ease-in-out;
+			transform: scaleX(0);
+			transform-origin: right;
+			background: var(--space-140);
+			z-index: -1;
+		}
+	}
+
+	/* By default: don't display the button. */
+	button[popovertargetaction='hide'] {
+		display: none;
+	}
+
+	/* When the popover selector is supported: display the button, but only when the nav is open. */
+	nav:popover-open button[popovertargetaction='hide'] {
+		@supports selector([popover]:popover-open) {
+			display: flex;
+			position: fixed;
+			inset-block-start: 0;
+			inset-inline-end: 0;
+		}
+	}
+
+	button[popovertargetaction='hide'] .lines {
+		--_thickness: 2px;
+		--_gradient: #fff0 90deg, var(--white) 0;
+		background: conic-gradient(
+				from 90deg at var(--_thickness) var(--_thickness),
+				var(--_gradient)
+			)
+			calc(100% + var(--_thickness) / 2)
+			calc(100% + var(--_thickness) / 2) / calc(50% + var(--_thickness))
+			calc(50% + var(--_thickness));
+		transform-origin: unset;
+		height: unset;
+		width: 1.875rem;
+		aspect-ratio: 1;
+		rotate: 45deg;
+	}
+
+	/* ANIMATIONS */
+	@media (prefers-reduced-motion: no-preference) {
+		@keyframes anim-arrow--opacity {
+			30% {
+				opacity: 1;
+			}
+			45% {
+				opacity: 0.6;
+			}
+			55% {
+				opacity: 0.6;
+			}
+			70% {
+				opacity: 1;
+			}
+		}
+
+		@keyframes anim-timeline--header-opacity {
+			to {
+				background-color: var(--background-color-dark);
+			}
+		}
+	}
+
+	/* These only need to happen on desktop */
+	@media (min-width: 56.25rem) {
+		header {
+			view-transition-name: header;
+		}
+		.exact-active :global(svg) {
+			view-transition-name: active-page;
+		}
+	}
+</style>
