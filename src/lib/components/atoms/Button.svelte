@@ -19,27 +19,24 @@
         }
     }
     .primary{
-        --l-bg: var(--brand-darkest-l);
-        --l-text: var(--accent-dark-l);
-
         font-family: var(--font-detail);
-        background-color: hsl(var(--brand-h), var(--brand-s), var(--l-bg));
-        color: hsl(var(--accent-h), var(--accent-s), var(--l-text));
+        background-color: hsl(var(--brand-h), var(--brand-s), var(--brand-darkest-l));
+        color: hsl(var(--accent-h), var(--accent-s), var(--accent-dark-l));
         font-weight: 500;
         text-transform: uppercase;
         border-color: var(--color-brand-darkest);
 
         &:hover {
-         
+            background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-dark-l));
+            color: hsl(var(--brand-h), var(--brand-s), var(--brand-darkest-l));
         }
         &:focus-visible {
-       
+            outline: 0.4rem solid hsl(var(--accent-h), var(--accent-s), var(--accent-darker-l));
+            outline-offset: 0;
         }
         &:active {
-        
-        }
-        &:disabled {
-          
+            background-color: hsl(var(--brand-h), var(--brand-s), var(--brand-darkest-l));
+            color: hsl(var(--accent-h), var(--accent-s), var(--accent-dark-l));
         }
     }
     .secondary{
@@ -53,16 +50,17 @@
         border-color: var(--color-accent-darkest);
 
         &:hover {
-           
+           --l-bg: var(--accent-light-l);
         }
         &:focus-visible {
-        
+            outline: 0.4rem solid hsl(var(--accent-h), var(--accent-s), var(--accent-darker-l));
+            outline-offset: 0;
         }
         &:active {
-          
+            --l-bg: var(--accent-dark-l);
         }
         &:disabled {
-        
+            --l-bg: var(--accent-darker-l);
         }
     }
 </style>
