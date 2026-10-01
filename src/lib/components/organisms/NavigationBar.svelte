@@ -20,7 +20,7 @@
     <nav>
         <HamburgerButton />
 
-        <a href="https://www.sron.nl">
+        <a href="https://www.sron.nl" class="image-link">
             <img src="{ logo }" alt="SRON logo" >
         </a>
         
@@ -57,6 +57,17 @@
 
                 a {
                     text-decoration: none;
+                    @media (prefers-reduced-motion: no-preference){
+                        transition: all 0.5s ease-in-out;
+                    }
+                    
+                    &:hover{
+                        display: inline-block;
+                        color: var(--color-accent-dark);
+                        @media (prefers-reduced-motion: no-preference){
+                            transform: translateY(0.25rem);
+                        }
+                    }
 
                     &.active {
                         color: var(--color-accent-dark);
@@ -71,7 +82,7 @@
             nav {
                 justify-content: flex-start;
 
-                img {
+                .image-link {
                     display: none;
                 }
 

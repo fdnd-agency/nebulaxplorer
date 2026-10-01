@@ -25,5 +25,8 @@
         font-size: inherit;
         display: flex;
         align-items: center;
+        &:hover{
+            color: var(--color-accent-dark);
+        }
     }
 </style>
