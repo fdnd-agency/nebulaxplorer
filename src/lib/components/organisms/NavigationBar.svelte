@@ -17,6 +17,7 @@
 </script>
 
 <header>
+    <a class="skip-to-content-link" href="#main">Skip to content</a>
     <nav>
         <HamburgerButton />
 
@@ -34,6 +35,23 @@
 </header>
 
 <style>
+    .skip-to-content-link {
+        position: absolute;
+        left: 0;
+        top: var(--spacing-sm);
+        transform: translateX(-100%);
+        background-color: var(--color-brand-darkest);
+        transition: transform 0.3s ease-in-out;
+        color: var(--color-accent-dark);
+        box-shadow: solid var(--color-brand-darkest);
+        padding: var(--spacing-lg);
+
+        &:focus {
+            transform: translateX(0%);
+            filter: drop-shadow(0 0 0.75rem var(--color-brand-darkest));
+        }
+    }
+
     header {
         nav {
             display: flex;
@@ -54,6 +72,7 @@
                 gap: var(--spacing-xl);
                 color: var(--color-neutral-lighter);
                 font-family: var(--font-heading);
+                margin-left: var(--spacing-2xl);
 
                 a {
                     text-decoration: none;

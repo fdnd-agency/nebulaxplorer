@@ -20,4 +20,7 @@
 
 <Nav />
 
-{@render children()}
+<main id="main">
+	{@render children()}
+</main>
+
