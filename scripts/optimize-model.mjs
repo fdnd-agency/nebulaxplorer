@@ -1,0 +1,11 @@
+import {NodeIO} from '@gltf-transform/core';
+import {ALL_EXTENSIONS} from '@gltf-transform/extensions';
+import {dedup, prune, meshopt, simplify} from '@gltf-transform/functions';
+import {MeshoptEncoder,MeshoptDecoder,MeshoptSimplifier} from 'meshoptimizer';
+const [input,output,ratio='0.4',error='0.0005']=process.argv.slice(2);
+if(!input||!output||!(Number(ratio)>0&&Number(ratio)<=1)||!(Number(error)>0&&Number(error)<=1))throw new Error('Usage: optimize-model.mjs input.glb output.glb [ratio] [error]');
+await Promise.all([MeshoptEncoder.ready,MeshoptDecoder.ready,MeshoptSimplifier.ready]);
+const io=new NodeIO().registerExtensions(ALL_EXTENSIONS).registerDependencies({'meshopt.encoder':MeshoptEncoder,'meshopt.decoder':MeshoptDecoder});
+const doc=await io.read(input);
+await doc.transform(dedup(),simplify({simplifier:MeshoptSimplifier,ratio:Number(ratio),error:Number(error),lockBorder:true}),prune({keepLeaves:true}),meshopt({encoder:MeshoptEncoder,level:'medium'}));
+await io.write(output,doc);

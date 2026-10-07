@@ -1,7 +1,0 @@
-title: "Nebula Xplorer"
-client: "Space Research Organisation Netherlands"
-status: "active"
-years: [2]
-main_link: "https://nebulaxplorer-main.netlify.app"
-dev_link: "https://nebulaxplorer.dev.fdnd.nl/"
-tech_stack: ["SvelteKit", "Directus"]
