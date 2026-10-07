@@ -59,3 +59,59 @@
     <p class="quote">What happens up there, starts down here.</p>
 
 </footer>
+
+<style>
+
+    footer {
+        container-type: inline-size;
+    }
+    .footer-info {
+        margin: 1rem;
+        font-family: var(--font-detail);
+        color: var(--color-neutral-lightest);
+
+
+    hr {
+        color: var(--color-accent-mid);
+        margin: 2rem 1rem;
+
+    
+    }
+
+    .logosron {
+        
+    }
+    a {
+        text-decoration: none;
+    }
+    address {
+        display: none;
+
+    }
+
+    .socials {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    .social-icons {
+        display: flex;
+        gap: 0.75rem;
+        align-items: center;
+        list-style: none;
+    }
+    .quote {
+        text-align: center;
+        background-color: var(--color-accent-mid);
+
+        	
+        color: var(--palette-brand-700);
+        font-size: 1rem;
+        max-width: none;
+    }
+
+    .white-logo-sron {
+        margin-top: 2rem;
+
+    }
+</style>
