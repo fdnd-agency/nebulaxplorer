@@ -21,3 +21,33 @@
     </div>
 </div>
 
+<style> 
+    .wrapper {
+        display: flex;
+
+    .location {
+        position: relative;
+        display: grid;
+        font-size: 1rem;
+        align-content: start;
+        font-family: var(--font-detail);
+        img {
+            display: block;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .label {
+        display: none;
+        
+    }  
+    address {
+        margin: 0.75rem 1rem 0.75rem 1rem;
+        font-style: normal;
+
+
+    .label:hover + address {
+
+    }
+</style>
