@@ -83,6 +83,9 @@
     }
     a {
         text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
     }
     address {
         display: none;
