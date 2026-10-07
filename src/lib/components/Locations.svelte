@@ -81,6 +81,10 @@
             text-align: center;
             justify-content: center;
         }
+        @media (prefers-reduced-motion: no-preference) { 
+            transition: 0.6s ease-in-out;
+        }
+    }
 
     .label:hover + address {
 
