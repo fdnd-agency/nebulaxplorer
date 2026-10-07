@@ -8,9 +8,10 @@
 
 	import favicon from '$lib/assets/favicon.svg';
 	import '$lib/styles/stylesheet.css';
-  	import Footer from '$lib/components/Footer.svelte';
 
+  	import Footer from '$lib/components/organisms/Footer.svelte';
 	import Nav from '$lib/components/organisms/NavigationBar.svelte'
+  	import Locations from '$lib/components/organisms/Locations.svelte';
 
 	let { children } = $props();
 </script>
@@ -25,4 +26,5 @@
 	{@render children()}
 </main>
 
+<Locations />
 <Footer />
