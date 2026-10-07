@@ -8,6 +8,7 @@
 
 	import favicon from '$lib/assets/favicon.svg';
 	import '$lib/styles/stylesheet.css';
+  	import Locations from '$lib/components/Locations.svelte';
 
 	let { children } = $props();
 </script>
@@ -17,3 +18,5 @@
 </svelte:head>
 
 {@render children()}
+
+<Locations />
