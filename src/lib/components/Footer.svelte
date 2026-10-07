@@ -1,0 +1,142 @@
+<footer>
+
+    <hr> 
+
+    <div class="footer-info">
+    
+        <a href="/"><img class="logosron" src="src/lib/assets/logos/SRON_Academy_OnSpaceBlue-1024x422.png" alt="logo of sron academy" width="230" height="100"></a>
+        
+        <nav>
+            <ul>
+                <li><a href="/">Mission</a></li>
+                <li><a href="/">Science</a></li>
+                <li><a href="/">Technology</a></li>
+                <li><a href="/">Vacatures</a></li>
+                <li><a href="/">Teams</a></li>
+            </ul>
+        </nav>
+
+        <nav>
+            <ul>
+                <li><a href="/">Assignments</a></li>
+                <li><a href="/">Partners</a></li>
+                <li><a href="/">Nieuws</a></li>
+                <li><a href="/">Over ons</a></li>
+                <li><a href="/">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div>
+            <address>
+                Niels Bohrweg 4<br />
+                2333 CA Leiden<br />
+                The Netherlands<br />
+                31 (0)88 777 56 00<br />
+            </address>
+        </div>
+
+        <div>
+            <address>
+                Landleven 12<br />
+                9747 AD Groningen<br />
+                The Netherlands<br />
+                31 (0)50 363 40 74<br />
+            </address>
+        </div>
+
+        <div class="socials">
+            <img class="white-logo-sron" src="src/lib/assets/logos/SRON_Full_White.webp" alt="full white logo of sron" width="200" height="45">
+            <a href="https://www.nwo-i.nl/en/privacy-policy/">Privacy Policy</a> 
+            
+             <ul class="social-icons">
+                <li><a href="https://web-cdn.bsky.app/profile/did:plc:xskzoixc54ebxryzak45u7ra"><img src="src/lib/assets/images/Social_Icon_BlueSky.png" alt="logo of bluesky" width="25" height="25"></a></li>
+                <li><a href="https://www.instagram.com/sron_space/"><img src="src/lib/assets/images/Social_Icon_Instagram.png" alt="logo of instagram" width="25" height="25"></a></li>
+                <li><a href="https://www.linkedin.com/company/sron"><img src="src/lib/assets/images/Social_Icon_LinkedIn.png" alt="logo of linkedin" width="25" height="25"></a></li>
+            </ul>  
+        </div>      
+    </div>
+
+    <p class="quote">What happens up there, starts down here.</p>
+
+</footer>
+
+<style>
+
+    footer {
+        container-type: inline-size;
+    }
+    .footer-info {
+        margin: 1rem;
+        font-family: var(--font-detail);
+        color: var(--color-neutral-lightest);
+
+        @container (width > 850px) {
+            display: flex;
+            justify-content: center;
+            column-gap: 5rem;
+            margin: var(--spacing-xl);
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+    }
+
+    hr {
+        color: var(--color-accent-mid);
+        margin: 2rem 1rem;
+
+    
+        @container (width > 1150px) {
+            display: none;
+        }
+    }
+
+    .logosron {
+        @container (width > 150px) {
+            margin-bottom: 1rem;
+        }
+        
+    }
+    a {
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    address {
+        display: none;
+
+        @container (width > 1150px) {
+            display: flex;
+            font-style: normal;
+        }
+    }
+
+    .socials {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    .social-icons {
+        display: flex;
+        gap: 0.75rem;
+        align-items: center;
+        list-style: none;
+    }
+    .quote {
+        text-align: center;
+        background-color: var(--color-accent-mid);
+
+        	
+        color: var(--palette-brand-700);
+        font-size: 1rem;
+        max-width: none;
+    }
+
+    .white-logo-sron {
+        margin-top: 2rem;
+
+        @container (width > 850px) {
+            margin-top: 0rem;
+        }
+    }
+</style>

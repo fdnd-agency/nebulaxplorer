@@ -8,6 +8,7 @@
 
 	import favicon from '$lib/assets/favicon.svg';
 	import '$lib/styles/stylesheet.css';
+  	import Footer from '$lib/components/Footer.svelte';
 
 	import Nav from '$lib/components/organisms/NavigationBar.svelte'
 
@@ -24,3 +25,4 @@
 	{@render children()}
 </main>
 
+<Footer />
