@@ -70,15 +70,30 @@
         font-family: var(--font-detail);
         color: var(--color-neutral-lightest);
 
+        @container (width > 850px) {
+            display: flex;
+            justify-content: center;
+            column-gap: 5rem;
+            margin: var(--spacing-xl);
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+    }
 
     hr {
         color: var(--color-accent-mid);
         margin: 2rem 1rem;
 
     
+        @container (width > 1150px) {
+            display: none;
+        }
     }
 
     .logosron {
+        @container (width > 150px) {
+            margin-bottom: 1rem;
+        }
         
     }
     a {
@@ -90,6 +105,10 @@
     address {
         display: none;
 
+        @container (width > 1150px) {
+            display: flex;
+            font-style: normal;
+        }
     }
 
     .socials {
@@ -116,5 +135,8 @@
     .white-logo-sron {
         margin-top: 2rem;
 
+        @container (width > 850px) {
+            margin-top: 0rem;
+        }
     }
 </style>
