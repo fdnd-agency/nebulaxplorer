@@ -24,6 +24,13 @@
 <style> 
     .wrapper {
         display: flex;
+        container-type: inline-size;
+        
+         @container (width > 650px) {
+            display: flex;
+            overflow: hidden;
+         }
+    }
 
     .location {
         position: relative;
@@ -41,13 +48,52 @@
     .label {
         display: none;
         
+        @container (width > 1150px) {
+            display: flex;
+            text-transform: uppercase;
+            position: absolute;
+            top:0;
+            left: 0;
+            padding: var(--spacing-md);
+            background-color: var(--palette-brand-700);
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            font-family: var(--font-detail);
+            min-height: 11rem;
+            justify-content: center;
+        } 
     }  
     address {
         margin: 0.75rem 1rem 0.75rem 1rem;
         font-style: normal;
 
+        @container (width > 1150px) {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 1rem;
+            opacity: 0;
+            pointer-events: none;
+            margin: 0;
+            min-height: 11rem;
+            text-align: center;
+            justify-content: center;
+        }
 
     .label:hover + address {
 
+        @container (width > 950px) {
+            opacity: 1;
+            font-style: normal;
+            left: 4rem;
+            padding: var(--spacing-md);
+            background-color: var(--palette-brand-700);
+            border-left: 2px solid var(--palette-accent-500);
+            min-height: 11rem;
+            text-align: center;
+            justify-content: center;
+        }
     }
 </style>
