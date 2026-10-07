@@ -76,12 +76,12 @@
 
                 a {
                     text-decoration: none;
+                    display: inline-block;
                     @media (prefers-reduced-motion: no-preference){
                         transition: all 0.5s ease-in-out;
                     }
                     
                     &:hover{
-                        display: inline-block;
                         color: var(--color-accent-dark);
                         @media (prefers-reduced-motion: no-preference){
                             transform: translateY(0.25rem);
