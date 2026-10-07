@@ -1,3 +1,11 @@
+<footer>
+
+    <hr> 
+
+    <div class="footer-info">
+    
+        <a href="/"><img class="logosron" src="src/lib/assets/logos/SRON_Academy_OnSpaceBlue-1024x422.png" alt="logo of sron academy" width="230" height="100"></a>
+        
         <nav>
             <ul>
                 <li><a href="/">Mission</a></li>
@@ -48,3 +56,6 @@
         </div>      
     </div>
 
+    <p class="quote">What happens up there, starts down here.</p>
+
+</footer>
