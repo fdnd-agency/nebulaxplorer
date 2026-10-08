@@ -1,33 +1,23 @@
 # NEBULA Xplorer - Project by SRON
+
 ## Description
-The NEBULA Xplorer website was given to us as a project from SRON, the Space Research Organisation of the Netherlands. Its primary purpose is being a deep source of information on everything to do with the NEBULA Xplorer, a sattelite designed to research X-ray binary black holes and their relationships with companion stars over long periods of time. The project as a whole is a combined effort of over 400 students from within the Netherlands.
+The NEBULA Xplorer website was assigned to us as a project by SRON, the Netherlands Institute for Space Research. Its primary purpose is to serve as a comprehensive source of information about the NEBULA Xplorer, a satellite designed to study X-ray binary black holes and their interactions with companion stars over extended periods of time.
+
+The project is a collaborative effort involving more than 400 students from across the Netherlands.
 
 **Our goals for this project are to build a multi-page website that:**
-- helps scientists visualize and interpret complex astronomical data from this mission
-- assists engineers with explanations about the technologies of the instrument and satellite
-- gives educational and industrial partners the opportunity to showcase themselves
-- keeps students connected with each other
+
+- helps scientists visualize and interpret complex astronomical data collected during the mission
+- provides engineers with clear explanations of the instrument and satellite technologies
+- gives educational and industrial partners the opportunity to showcase their work and involvement
+- keeps students connected and informed throughout the project
   
 Live link: https://nebulaxplorer.dev.fdnd.nl/
 
 ---
 
 ## Table of contents
-- Description
-
-- Design System
-
-- Design
-
-- Pages
-
-- Installation
-
-- Projectteam
-
-- Sources
-
-- Licenses
+- 
 
 ---
 
@@ -35,8 +25,9 @@ Live link: https://nebulaxplorer.dev.fdnd.nl/
 <img width="1193" height="869" alt="image" src="https://github.com/user-attachments/assets/b6226360-4ffd-4141-bf63-15272ff8a284" />
 
 ### Typography
-Voor de headings gebruiken we **Space Grotesk** en voor bodytext **Space Mono**
-We gebruiken de **Perfect Fifth** scale voor de headings, deze wordt automatisch toegepast:
+For headings, we use **Space Grotesk**, while **Space Mono** is used for body text.
+
+We use the **Perfect Fifth** type scale for our headings, which is applied automatically:
 
 ``` css
 /* Typography */ 
@@ -59,41 +50,52 @@ h6 { font-size:                var(--step-0); }
 ```
 
 ### Colors
-We hebben de kleuren van SRON gebruikt voor consistentie en merkbekendheid. We hebben deze kleuren vervolgens omgezet naar **hsl()** en meerdere tinten toegevoegd voor meer consistentie en een rustigere vormgeving. 
+We use SRON's brand colors to maintain consistency and brand recognition. We converted these colors to **HSL** and added multiple shades to create more consistency and a calmer visual design.
 
 ## Design choices
 [Figma design](https://www.figma.com/design/M53PWSrlpDMBdyIPRFLTOL/NebulaXPlorer?node-id=72-165&p=f&t=NNfoaI02EaTsWmGi-0)
 
 ### Main page hero
-De hero / banner was op de SRON website best groot, we hebben ervoor gekozen om deze minder hoog te maken zodat de gebruiker minder hoeft te scrollen. Daarnaast ook een donkere overlay over de afbeelding gezet zodat de tekst wel leesbaar blijft.
+The hero/banner on the SRON website was quite large, so we decided to reduce its height to minimize the amount of scrolling required.
+We also added a dark overlay to the image to ensure that the text remains clearly readable.
 <img width="1000" alt="image" src="https://github.com/user-attachments/assets/5b4fb6cb-b2d5-4814-91bd-726c9cd891df" />
 
 ### Sub page hero
-Deze hero is voor de subpagina's, met een titel en een introtekst over de desbetreffende pagina.
+This hero is used across the subpages and contains the page title and a short introduction describing the content of the respective page.
 <img width="1000" alt="image" src="https://github.com/user-attachments/assets/62bb07e9-1ae2-41b4-964c-c0318cb0515c" />
 
 
 ### Featured halves
-Meerdere variaties gemaakt zodat er niet alleen maar lappe teksten zijn. De gebruiker heeft nu een rustigere website en kan sneller informatie zien
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/9d5f0322-abce-4e3b-ad7c-0b5ad3c4c40d" />
+We created multiple variations of the featured halves component to avoid presenting users with large blocks of text.
+This gives the website a calmer visual structure and allows users to find and scan information more quickly.<img width="500" alt="image" src="https://github.com/user-attachments/assets/9d5f0322-abce-4e3b-ad7c-0b5ad3c4c40d" />
+
+---
 
 ## Pages
+
 ### Home
-- Welcome
-- What is NEBULA-Xplorer
-- Newsitems
+- Welcome section
+- What is NEBULA Xplorer?
+- News items
 - Sponsors
+
 ### Science
-- Explanations about scientific goals
+- Explanations of the scientific goals
 - Scientific articles
+
 ### Technology
-- Explanation about the technology
+- Explanations of the technologies used in the mission
+
 ### Teams
-- Every 6 months a team with details
+- Teams from each six-month period, including details about each team
+
 ### Assignments
-- Assignments wit detaisls
+- Assignments and their details
+
 ### Partners
-- Every partner that collaborated
+- Overview of all partners who collaborated on the project
+
+---
 
 ## Installation
 Clone the repository - https://github.com/fdnd-agency/nebulaxplorer.git
@@ -101,17 +103,23 @@ Open the repository: in GitHub Desktop, then navigate to `Open the repository in
 In the terminal, install npm packages by typing `npm install`.
 Run the localhost by typing `npm run dev`
 
+---
+
 ## Projectteam
 - Roxy // Product owner & Frontend developer
 - Isaac // UI/UX lead & Frontend developer
 - Lynn // Scrum master & Frontend developer
 - Chassidy // Software developer
 
+---
+
 ## Sources
 - [SvelteKit tutorial](https://learn.svelte.dev/tutorial/introducing-sveltekit)
 - [SRON website](https://www.sron.nl/)
 - [CONTRIBUTING.md](https://github.com/fdnd-agency/nebulaxplorer/blob/dev/CONTRIBUTTING.md)
 - [FDND code conventies](https://docs.fdnd.nl/conventies.html#code-conventies)
+
+---
 
 ## Licenses
 This project is licensed under the terms of the [MIT license](https://github.com/fdnd-agency/toolgankelijk/blob/main/LICENSE).
