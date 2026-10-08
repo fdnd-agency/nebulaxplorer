@@ -23,6 +23,8 @@ Live link: https://nebulaxplorer.dev.fdnd.nl/
 
 - Installation
 
+- Projectteam
+
 - Sources
 
 - Licenses
@@ -98,6 +100,12 @@ Clone the repository - https://github.com/fdnd-agency/nebulaxplorer.git
 Open the repository: in GitHub Desktop, then navigate to `Open the repository in your external editor`
 In the terminal, install npm packages by typing `npm install`.
 Run the localhost by typing `npm run dev`
+
+## Projectteam
+- Roxy // Product owner & Frontend developer
+- Isaac // UI/UX lead & Frontend developer
+- Lynn // Scrum master & Frontend developer
+- Chassidy // Software developer
 
 ## Sources
 - [SvelteKit tutorial](https://learn.svelte.dev/tutorial/introducing-sveltekit)
