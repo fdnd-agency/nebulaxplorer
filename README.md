@@ -19,9 +19,7 @@ Live link: https://nebulaxplorer.dev.fdnd.nl/
 
 - Design
 
-- Kenmerken
-
-- Datamodel
+- Pages
 
 - Installation
 
@@ -77,8 +75,23 @@ Deze hero is voor de subpagina's, met een titel en een introtekst over de desbet
 Meerdere variaties gemaakt zodat er niet alleen maar lappe teksten zijn. De gebruiker heeft nu een rustigere website en kan sneller informatie zien
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/9d5f0322-abce-4e3b-ad7c-0b5ad3c4c40d" />
 
-
-
+## Pages
+### Home
+- Welcome
+- What is NEBULA-Xplorer
+- Newsitems
+- Sponsors
+### Science
+- Explanations about scientific goals
+- Scientific articles
+### Technology
+- Explanation about the technology
+### Teams
+- Every 6 months a team with details
+### Assignments
+- Assignments wit detaisls
+### Partners
+- Every partner that collaborated
 
 ## Installation
 Clone the repository - https://github.com/fdnd-agency/nebulaxplorer.git
