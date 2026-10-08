@@ -58,13 +58,27 @@ h5,
 h6 { font-size:                var(--step-0); }
 ```
 
+### Colors
+We hebben de kleuren van SRON gebruikt voor consistentie en merkbekendheid. We hebben deze kleuren vervolgens omgezet naar **hsl()** en meerdere tinten toegevoegd voor meer consistentie en een rustigere vormgeving. 
 
-## Design
+## Design choices
 [Figma design](https://www.figma.com/design/M53PWSrlpDMBdyIPRFLTOL/NebulaXPlorer?node-id=72-165&p=f&t=NNfoaI02EaTsWmGi-0)
 
-## Kenmerken
+### Main page hero
+De hero / banner was op de SRON website best groot, we hebben ervoor gekozen om deze minder hoog te maken zodat de gebruiker minder hoeft te scrollen. Daarnaast ook een donkere overlay over de afbeelding gezet zodat de tekst wel leesbaar blijft.
+<img width="1000" alt="image" src="https://github.com/user-attachments/assets/5b4fb6cb-b2d5-4814-91bd-726c9cd891df" />
 
-## Datamodel
+### Sub page hero
+Deze hero is voor de subpagina's, met een titel en een introtekst over de desbetreffende pagina.
+<img width="1000" alt="image" src="https://github.com/user-attachments/assets/62bb07e9-1ae2-41b4-964c-c0318cb0515c" />
+
+
+### Featured halves
+Meerdere variaties gemaakt zodat er niet alleen maar lappe teksten zijn. De gebruiker heeft nu een rustigere website en kan sneller informatie zien
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/9d5f0322-abce-4e3b-ad7c-0b5ad3c4c40d" />
+
+
+
 
 ## Installation
 Clone the repository - https://github.com/fdnd-agency/nebulaxplorer.git
