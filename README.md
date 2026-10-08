@@ -98,18 +98,18 @@ This gives the website a calmer visual structure and allows users to find and sc
 ---
 
 ## Installation
-Clone the repository - https://github.com/fdnd-agency/nebulaxplorer.git
-Open the repository: in GitHub Desktop, then navigate to `Open the repository in your external editor`
-In the terminal, install npm packages by typing `npm install`.
-Run the localhost by typing `npm run dev`
+1. Clone the repository - https://github.com/fdnd-agency/nebulaxplorer.git
+2. Open the repository: in GitHub Desktop, then navigate to `Open the repository in your external editor`
+3. In the terminal, install npm packages by typing `npm install`.
+4. Run the localhost by typing `npm run dev`
 
 ---
 
 ## Projectteam
-- Roxy // Product owner & Frontend developer
-- Isaac // UI/UX lead & Frontend developer
-- Lynn // Scrum master & Frontend developer
-- Chassidy // Software developer
+- [Roxy](https://github.com/roxyfokker) // Product owner & Frontend developer
+- [Isaac](https://github.com/isaaceswa) // UI/UX lead & Frontend developer
+- [Lynn](https://github.com/lynnvdbo) // Scrum master & Frontend developer
+- [Chassidy](https://github.com/raketkroket) // Software developer
 
 ---
 
