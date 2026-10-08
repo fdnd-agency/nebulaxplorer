@@ -118,6 +118,7 @@ This gives the website a calmer visual structure and allows users to find and sc
 - [SRON website](https://www.sron.nl/)
 - [CONTRIBUTING.md](https://github.com/fdnd-agency/nebulaxplorer/blob/dev/CONTRIBUTTING.md)
 - [FDND code conventies](https://docs.fdnd.nl/conventies.html#code-conventies)
+- [Type scale](https://typescale.com)
 
 ---
 
