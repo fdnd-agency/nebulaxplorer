@@ -1,42 +1,46 @@
-# sv
+# NEBULA Xplorer - Project by SRON
+Live link: https://nebulaxplorer.dev.fdnd.nl/
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+---
 
-## Creating a project
+## Table of contents
+- Description
 
-If you're seeing this, you've probably already done this step. Congrats!
+- Design Rationale
 
-```sh
-# create a new project
-npx sv create my-app
-```
+- Kenmerken
 
-To recreate this project with the same configuration:
+- Datamodel
 
-```sh
-# recreate this project
-npx sv@0.17.1 create --template minimal --no-types --install npm .
-```
+- Installation
 
-## Developing
+- Sources
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+- Licenses
 
-```sh
-npm run dev
+---
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+## Description
+The NEBULA Xplorer website was given to us as a project from SRON, the Space Research Organisation of the Netherlands. Its primary purpose is being a deep source of information on everything to do with the NEBULA Xplorer, a sattelite designed to research X-ray binary black holes and their relationships with companion stars over long periods of time. The project as a whole is a combined effort of over 400 students from within the Netherlands.
 
-## Building
+## Design Rationale
+[Figma design](https://www.figma.com/design/M53PWSrlpDMBdyIPRFLTOL/NebulaXPlorer?node-id=72-165&p=f&t=NNfoaI02EaTsWmGi-0)
 
-To create a production version of your app:
+## Kenmerken
 
-```sh
-npm run build
-```
+## Datamodel
 
-You can preview the production build with `npm run preview`.
+## Installation
+Clone the repository - https://github.com/fdnd-agency/nebulaxplorer.git
+Open the repository: in GitHub Desktop, then navigate to `Open the repository in your external editor`
+In the terminal, install npm packages by typing `npm install`.
+Run the localhost by typing `npm run dev`
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## Sources
+- [SvelteKit tutorial](https://learn.svelte.dev/tutorial/introducing-sveltekit)
+- [SRON website](https://www.sron.nl/)
+- [CONTRIBUTING.md](https://github.com/fdnd-agency/nebulaxplorer/blob/dev/CONTRIBUTTING.md)
+- [FDND code conventies](https://docs.fdnd.nl/conventies.html#code-conventies)
+
+## Licenses
+This project is licensed under the terms of the [MIT license](https://github.com/fdnd-agency/toolgankelijk/blob/main/LICENSE).
