@@ -47,6 +47,7 @@
 
     .label {
         display: none;
+        color: var(--color-neutral-lightest);
         
         @container (width > 1150px) {
             display: flex;
@@ -55,7 +56,7 @@
             top:0;
             left: 0;
             padding: var(--spacing-md);
-            background-color: var(--palette-brand-700);
+            background-color: var(--color-brand-darkest);
             writing-mode: vertical-rl;
             transform: rotate(180deg);
             font-family: var(--font-detail);
@@ -66,6 +67,7 @@
     address {
         margin: 0.75rem 1rem 0.75rem 1rem;
         font-style: normal;
+        color: var(--color-neutral-lightest);
 
         @container (width > 1150px) {
             display: flex;
@@ -93,8 +95,8 @@
             font-style: normal;
             left: 4rem;
             padding: var(--spacing-md);
-            background-color: var(--palette-brand-700);
-            border-left: 2px solid var(--palette-accent-500);
+            background-color: var(--color-brand-darkest);
+            border-left: 2px solid var(--color-accent-mid);
             min-height: 11rem;
             text-align: center;
             justify-content: center;
