@@ -79,9 +79,9 @@ A featurey is ready to move to **Todo** on the project board when the issue cont
 
 #### Definition of done 
 
-A user story is done when:
+A feature is done when:
 
-- [ ] **Functionality:** all features are complete
+- [ ] **Functionality:** All acceptance criteria have been completed
 - [ ] **Tested:**: RAPPE
 - [ ] **Documentation:** if necessary, the documentation for this issue has been updated
 - [ ] **Reviewed:** the pull request has been reviewed 
