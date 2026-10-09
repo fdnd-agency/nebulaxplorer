@@ -66,7 +66,7 @@ Source: https://conventionalbranch.org/#branch-naming-prefixes
 
 #### Definition of ready
 
-A featurey is ready to move to **Todo** on the project board when the issue contains:
+A feature is ready to move to **Todo** on the project board when the issue contains:
 
 - [ ] **Title**
 - [ ] **Description**: written as a user story ("As a [user], I want [goal], so that [reason]")
