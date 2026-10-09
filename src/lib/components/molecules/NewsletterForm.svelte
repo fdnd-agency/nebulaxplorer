@@ -1,3 +1,7 @@
+<script>
+  import { enhance } from "$app/forms";
+</script>
+
 <form method="POST" action="?/subscribe" use:enhance>
   <label for="email">
     <span class="visually-hidden">Email</span>
