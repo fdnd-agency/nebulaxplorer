@@ -64,6 +64,28 @@ Source: https://conventionalbranch.org/#branch-naming-prefixes
 - As a contributor, you can look in the To Do column and pick up a task by assigning yourself.
 - We poker together to decide the estimate of the issue.
 
+#### Definition of ready
+
+A feature is ready to move to **Todo** on the project board when the issue contains:
+
+- [ ] **Title**
+- [ ] **Description**: written as a user story ("As a [user], I want [goal], so that [reason]")
+- [ ] **Design**: design has been added to the issue 
+- [ ] **MoSCoW**
+- [ ] **Estimate**: set on the project board
+- [ ] **Type label**: Epic, Feature, Task, User story
+- [ ] **Acceptance criteria**
+- [ ] **Assignee**
+
+#### Definition of done 
+
+A feature is done when:
+
+- [ ] **Functionality:** All acceptance criteria have been completed
+- [ ] **Tested:**: RAPPE
+- [ ] **Documentation:** if necessary, the documentation for this issue has been updated
+- [ ] **Reviewed:** the pull request has been reviewed 
+
 ### Language
 
 We write all issues, reviews, commits, and branches in English, as well as the code, CSS, and JavaScript names, etc.
