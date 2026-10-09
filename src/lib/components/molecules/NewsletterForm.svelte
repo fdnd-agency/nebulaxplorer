@@ -1,8 +1,15 @@
 <script>
   import { enhance } from "$app/forms";
+
+  let sent = $state(false);
 </script>
 
-<form method="POST" action="?/subscribe" use:enhance>
+<form
+  method="POST"
+  action="?/subscribe"
+  use:enhance
+  onsubmit={() => (sent = true)}
+>
   <label for="email">
     <span class="visually-hidden">Email</span>
     <input
@@ -14,5 +21,6 @@
       required
     />
   </label>
-  <button type="submit">Subscribe</button>
+  <button type="submit">{sent ? "Succesfully subscribed!" : "Subscribe"}</button
+  >
 </form>
