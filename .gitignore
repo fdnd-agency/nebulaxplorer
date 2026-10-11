@@ -13,7 +13,7 @@ dist-ssr
 *.local
 
 # Local asset exceeds GitHub's 100 MB file limit.
-src/scripts/Nebula_Assembly_V2_Stowed.glb
+src/assets/models/source/Nebula_Assembly_V2_Stowed.glb
 
 # Editor directories and files
 .vscode/*
