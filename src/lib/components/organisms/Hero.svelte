@@ -9,7 +9,7 @@
 <style>
   .hero {
     background-image: url("src/lib/assets/images/hero-background-01.jpg");
-    max-height: 50vh;
+    height: 50vh;
 
     position: relative;
 
