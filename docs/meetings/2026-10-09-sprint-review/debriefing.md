@@ -43,8 +43,6 @@ De hover met foto's van de locaties vond je mooi.
 
 ## 3D-satelliet
 
-
-
 - Je was enthousiast over het eerste resultaat. De satelliet wordt een soort menu: je klikt op een onderdeel en kan doorklikken naar een detailpagina. hier word meer verteld over het onderdeel maar kunnen bijvoorbeeld ook de mensen die er aan hebben gewerkt worden getoont en speciefiek sponsors of partners die hier bij horen.
 
 - Je feedback op het model:
@@ -66,6 +64,8 @@ Of een formulier in stappen of in één keer beter werkt, testen we later met ge
 
 - Jij: Levert meer content en een nieuwe footerzin, meer content over de onderdelen van de sataliet en je gaat kijken of de stepfiles lichter gemaakt kunnen worden
 - Wij: je feedback verwerken in de designs. een styling kiezen die we consitent door de website doorvoeren. we gaan de website herstruktureren om het 3d model te verwerken met bijbehoordende detail paginas. en we gaat de ideen uitwerken in de daatwerkelijke code van de website.
+
+Laat gerust weten als ik iets gemist heb of anders heb opgeschreven.
 
 ## Feedback op deze debriefing
 
