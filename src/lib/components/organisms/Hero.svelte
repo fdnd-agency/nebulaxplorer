@@ -3,11 +3,21 @@
 
 <section class="hero">
   <h1>Mission</h1>
-  <span>to the starts by the genius of youth</span>
+  <span>To the starts by the genius of youth</span>
 </section>
 
 <style>
   .hero {
     background-image: url("src/lib/assets/images/hero-background-01.jpg");
+    max-height: 50vh;
+
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgb(0 0 0 / 50%);
+    }
   }
 </style>
