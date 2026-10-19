@@ -24,5 +24,6 @@
     span {
       position: relative;
       color: var(--color-neutral-lightest);
+    }
   }
 </style>
