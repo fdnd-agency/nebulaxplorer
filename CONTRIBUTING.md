@@ -134,3 +134,7 @@ src/
 - **Templates and pages:** in SvelteKit these are your `+layout.svelte` and `+page.svelte` in `routes/`. So you do not create separate folders for them.
 
 Source: https://atomicdesign.bradfrost.com/chapter-2/
+
+### Team canvas
+
+![](image-1.png)
