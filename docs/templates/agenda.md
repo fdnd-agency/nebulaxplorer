@@ -7,7 +7,7 @@ Beste [naam opdrachtgever],
 **Datum:** [dag datum maand jaar]
 **Tijd:** [00:00]
 **Locatie:** [online via Teams (uitnodiging is verstuurd) / fysieke locatie]
-**Aanwezig:** [namen en rollen], [projectteam]
+**Aanwezig:** [namen en rollen]
 
 ## Doel
 Het opgeleverde werk van deze sprint laten zien en jouw feedback ophalen op [het werk / de designs / beide].

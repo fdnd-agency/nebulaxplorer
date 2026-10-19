@@ -1,8 +1,8 @@
-# Debriefing [sprint review / overleg] [onderwerp]
+# Debriefing [sprint review] 
 
 - **Datum:** [YYYY-MM-DD]
 - **Aanwezig:** [namen]
-- **Agenda:** [agenda.md](agenda.md)
+- **Agenda:** [link naar agenda]
 
 [Eén à twee zinnen: bedankt, algemene indruk.]
 
