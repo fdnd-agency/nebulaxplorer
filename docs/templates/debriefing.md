@@ -20,9 +20,6 @@
 ### Feedback
 - ...
 
-### Planning
-- ...
-
 ## Beslissingen
 
 | Onderwerp | Beslissing | Verwerkt in |
@@ -32,10 +29,10 @@
 ## Actiepunten
 
 ### [Opdrachtgever]
-- [ ] [Actie] (issue #[nr])
+- [ ] [Actie]
 
 ### Team
-- [ ] [Actie] (issue #[nr])
+- [ ] [Actie]
 
 ## Open vragen
 
