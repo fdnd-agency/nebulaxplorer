@@ -11,6 +11,7 @@
 <style>
   .hero {
     background-image: url("src/lib/assets/images/hero-background-01.jpg");
+    background-position: 25% 75%;
     height: 50vh;
     position: relative;
     display: flex;
