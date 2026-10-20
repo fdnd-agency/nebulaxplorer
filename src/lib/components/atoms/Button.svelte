@@ -1,15 +1,37 @@
+<!--
+    Props: 
+    - href      string - with href it renders an <a>, without it a <button>
+    - text      (required) the link text
+    - variant   "primary" "secondary"
+    - onclick   function - for the <button>"
+    - type      "button" "submit" "reset"
+    - disables  bolean default false
+    - classes   string - extra classes
+-->
+
 <script>
-    let { variant = 'primary', text, disabled = false } = $props();
+    let { href, text, variant = 'primary', onclick, type="button", disabled = false , classes } = $props();
 </script>
-    
-<button class={ variant } disabled={disabled}>{ text }</button>
+
+  {#if href && !disabled}
+    <a href="{ href }" class={[ "button", variant, size, classes ]}>{ text }</a>
+{:else}
+    <button class={[ "button", variant, size, classes ]} { onclick } { type } { disabled } >{ text }</button>
+{/if}
+
 
 <style>
-    button{
+    .button{
+        font-family: var(--font-detail);
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
         padding: 0.7rem;
         letter-spacing: 0.05rem;
-        font-size: var(--font-size-body-md);
+        text-transform: uppercase;
         border: 0.15rem solid;
+        font-size: var(--font-size-body-sm);
+      
         &:hover{
             cursor: pointer;
         }
@@ -19,11 +41,9 @@
         }
     }
     .primary{
-        font-family: var(--font-detail);
         background-color: var(--color-brand-darkest);
         color: var(--color-accent-dark);
         font-weight: 700;
-        text-transform: uppercase;
         border-color: var(--color-brand-darkest);
 
         &:hover {
@@ -31,7 +51,7 @@
             color: var(--color-brand-darkest);
         }
         &:focus-visible {
-            outline: 0.4rem solid var(--color-accent-darker);
+            outline: 0.4rem solid var(--color-brand-light);
             outline-offset: 0;
         }
         &:active {
@@ -42,13 +62,13 @@
             background-color: var(--color-neutral-dark);
             color: var(--color-accent-darkest);
             border-color: var(--color-neutral-dark);
+            cursor: not-allowed;
         }
     }
     .secondary{
         --l-bg: var(--accent-dark-l);
         --l-text: var(--brand-darkest-l);
 
-        font-family: var(--font-body);
         background-color: hsl(var(--accent-h), var(--accent-s), var(--l-bg));
         color: hsl(var(--brand-h), var(--brand-s), var(--l-text));
         font-weight: 700;
@@ -66,6 +86,7 @@
         }
         &:disabled {
             --l-bg: var(--accent-darker-l);
+            cursor: not-allowed;
         }
     }
 </style>
