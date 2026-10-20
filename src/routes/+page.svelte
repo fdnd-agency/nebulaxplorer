@@ -1,9 +1,9 @@
-<script>
-  import NewsletterForm from "$lib/components/molecules/SearchForm.svelte";
-</script>
-
 <svelte:head>
   <title>Home - NebulaXPlorer</title>
 </svelte:head>
 
-<NewsletterForm />
+<h1>Welcome to SvelteKit</h1>
+<p>
+  Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the
+  documentation
+</p>
