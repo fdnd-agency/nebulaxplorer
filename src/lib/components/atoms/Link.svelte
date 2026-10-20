@@ -1,3 +1,15 @@
+<!--
+    Props:
+    - href    (required) where the link goes
+    - text    (required) the link text
+    - size    "sm"  "md"  "lg" "md"
+    - color    "accent" "light" "neutral"
+    - bold     default: false
+    - classes  extra classes
+
+    <Link href="/assignments" text="Bekijk alles" size="lg" color bold />
+-->
+
 <script>
     import ArrowRight from "./ArrowRight.svelte";
     let { href, classes, text, size, color, bold = false} = $props()
@@ -39,4 +51,5 @@
 
         &.bold{ font-weight: bold;}
     }
+
 </style>
