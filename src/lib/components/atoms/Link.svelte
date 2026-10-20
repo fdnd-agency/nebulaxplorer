@@ -17,7 +17,9 @@
 
 <a { href } class={[classes, size, { bold }]} style="--link-color: {color};">
     { text }
-    <ArrowRight />
+    <span class="icon-wrapper">
+        <ArrowRight />
+    </span>
 </a>
 
 <style>
@@ -28,18 +30,26 @@
         display: inline-flex;
         border-bottom: 0.1rem solid transparent;
         text-transform: uppercase;
-        gap: var(--spacing-md);
+        gap: var(--spacing-lg);
         font-family: var(--font-caption);
         align-items: center;
+        transition: all 0.5s ease-in-out;
 
-        @media (prefers-reduced-motion: no-preference) {
-            transition: all 0.5s ease-in-out;
+        .icon-wrapper {
+            display: inline-flex;
+            transform: translateX(calc(var(--spacing-md) - var(--spacing-lg)));
+
+            @media (prefers-reduced-motion: no-preference) {
+                transition: all 0.5s ease-in-out;
+            }
         }
-        
+
         &:hover{
             border-bottom-color: currentColor;
-            gap: var(--spacing-lg);
             cursor: pointer;
+        }
+        &:hover .icon-wrapper {
+            transform: translateX(0);
         }
 
         &.sm { font-size: var(--font-size-body-sm);}
