@@ -14,9 +14,9 @@
 </script>
 
   {#if href && !disabled}
-    <a href="{ href }" class={[ "button", variant, size, classes ]}>{ text }</a>
+    <a href="{ href }" class={[ "button", variant, classes ]}>{ text }</a>
 {:else}
-    <button class={[ "button", variant, size, classes ]} { onclick } { type } { disabled } >{ text }</button>
+    <button class={[ "button", variant, classes ]} { onclick } { type } { disabled } >{ text }</button>
 {/if}
 
 
@@ -51,7 +51,7 @@
             color: var(--color-brand-darkest);
         }
         &:focus-visible {
-            outline: 0.4rem solid var(--color-brand-light);
+            outline: 0.4rem solid hsl(var(--brand-h) var(--brand-s) var(--brand-dark-l) / 50%);
             outline-offset: 0;
         }
         &:active {
@@ -78,7 +78,7 @@
            --l-bg: var(--accent-light-l);
         }
         &:focus-visible {
-            outline: 0.4rem solid hsl(var(--accent-h), var(--accent-s), var(--accent-darker-l));
+            outline: 0.4rem solid hsl(var(--accent-h) var(--accent-s) var(--accent-darker-l) / 50%);
             outline-offset: 0;
         }
         &:active {

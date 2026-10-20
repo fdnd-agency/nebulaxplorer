@@ -96,6 +96,7 @@
 
     --ratio-text:              1.2;
     --font-size-body-md:       var(--step-0);
+	--font-size-body-sm:       calc(var(--font-size-body-md) / var(--ratio-text));
     --font-size-body-lg:       calc(var(--font-size-body-md) * var(--ratio-text));
     --font-size-body-xl:       calc(var(--font-size-body-lg) * var(--ratio-text));
     --font-size-body-2xl:      calc(var(--font-size-body-xl) * var(--ratio-text));
