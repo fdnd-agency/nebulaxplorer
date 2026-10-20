@@ -1,16 +1,15 @@
 <script>
     import ArrowRight from "./ArrowRight.svelte";
-    let { href, classes, text, size = "md"} = $props()
+    let { href, classes, text, size, color, bold = false} = $props()
 </script>
 
-<a { href } class={[classes, size]}>
+<a { href } class={[classes, size, color, { bold }]}>
     { text }
     <ArrowRight />
 </a>
 
 <style>
-    .een{
-        color: var(--color-accent-darker);
+    a{
         padding-bottom: 0.1em;
         text-decoration: transparent;
         display: inline-flex;
@@ -30,9 +29,14 @@
             cursor: pointer;
         }
 
-        &.sm { font-size: var(--font-size-body-sm); }
-        &.md { font-size: var(--font-size-body-md); }
-        &.lg { font-size: var(--font-size-body-lg); }
+        &.sm { font-size: var(--font-size-body-sm);}
+        &.md { font-size: var(--font-size-body-md);}
+        &.lg { font-size: var(--font-size-body-lg);}
+
+        &.accent{ color: var(--color-accent-darker);}
+        &.neutral{ color: var(--color-neutral-darkest);}
+        &.brand{ color: var(--color-brand-darkest);}
+
+        &.bold{ font-weight: bold;}
     }
-    
 </style>
