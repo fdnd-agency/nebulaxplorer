@@ -2,26 +2,27 @@
     Props:
     - href    (required) where the link goes
     - text    (required) the link text
-    - size    "sm"  "md"  "lg" "md"
-    - color    "accent" "light" "neutral"
-    - bold     default: false
-    - classes  extra classes
+    - size    "sm"  "md"  "lg" 
+    - color    string- CSS variable
+    - bold     boolean - default: false
+    - classes  string - extra classes
 
-    <Link href="/assignments" text="Bekijk alles" size="lg" color="accent" bold />
+    <Link href="/assignments" text="Bekijk alles" size="lg" color="var(--color-accent-light)" bold />
 -->
 
 <script>
     import ArrowRight from "./ArrowRight.svelte";
-    let { href, classes, text, size, color, bold = false} = $props()
+    let { href, classes, text, size, color="var(--color-neutral-darkest)", bold = false} = $props()
 </script>
 
-<a { href } class={[classes, size, color, { bold }]}>
+<a { href } class={[classes, size, { bold }]} style="--link-color: {color};">
     { text }
     <ArrowRight />
 </a>
 
 <style>
     a{
+        color: var(--link-color);
         padding-bottom: 0.1em;
         text-decoration: transparent;
         display: inline-flex;
@@ -44,10 +45,6 @@
         &.sm { font-size: var(--font-size-body-sm);}
         &.md { font-size: var(--font-size-body-md);}
         &.lg { font-size: var(--font-size-body-lg);}
-
-        &.accent{ color: var(--color-accent-darker);}
-        &.neutral{ color: var(--color-neutral-darkest);}
-        &.brand{ color: var(--color-brand-darkest);}
 
         &.bold{ font-weight: bold;}
     }
