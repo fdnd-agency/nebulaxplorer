@@ -50,7 +50,9 @@
 <style>
     .button{
         font-family: var(--font-detail);
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         text-align: center;
         text-decoration: none;
         padding: 0.7rem;
