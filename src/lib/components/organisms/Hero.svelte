@@ -19,6 +19,14 @@
     padding-left: var(--spacing-md);
 
     .hero-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-xs);
+
+      @media (min-width: 768px) {
+        gap: var(--spacing-2xl);
+      }
+
       h1,
       span {
         position: relative;
