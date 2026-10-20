@@ -13,6 +13,17 @@
     background-image: url("src/lib/assets/images/hero-background-01.jpg");
     height: 50vh;
     position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: var(--spacing-md);
+
+    .hero-wrapper {
+      h1,
+      span {
+        position: relative;
+        color: var(--color-neutral-lightest);
+      }
+    }
 
     &::before {
       content: "";
