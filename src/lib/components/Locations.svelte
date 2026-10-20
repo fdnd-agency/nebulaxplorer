@@ -1,22 +1,22 @@
 <div class="wrapper">
     <div class="location">
-        <img src="src/lib/assets/images/SRON-Leiden-e1742232793581.webp" alt="sron building in leiden">
+        <img src="src/lib/assets/images/SRON-Leiden.webp" alt="sron building in leiden">
         <p class="label">Leiden</p>
         <address>
-            Niels Bohrweg 4<br />
-            2333 CA Leiden<br />
-            The Netherlands<br />
-            31 (0)88 777 56 00<br />
+            Niels Bohrweg 4<br>
+            2333 CA Leiden<br>
+            The Netherlands<br>
+            31 (0)88 777 56 00<br>
         </address>
     </div>
     <div class="location">
         <img src="src/lib/assets/images/SRON-Groningen.webp" alt="sron building in groningen">
         <p class="label">Groningen</p>
         <address>
-            Landleven 12<br />
-            9747 AD Groningen<br />
-            The Netherlands<br />
-            31 (0)50 363 40 74<br />
+            Landleven 12<br>
+            9747 AD Groningen<br>
+            The Netherlands<br>
+            31 (0)50 363 40 74<br>
         </address>
     </div>
 </div>
@@ -26,16 +26,16 @@
         display: flex;
         container-type: inline-size;
         
-         @container (width > 650px) {
+        @container (width > 650px) {
             display: flex;
             overflow: hidden;
-         }
+        }
     }
 
     .location {
         position: relative;
         display: grid;
-        font-size: 1rem;
+        font-size: var(--font-size-body-md);
         align-content: start;
         font-family: var(--font-detail);
         img {
@@ -64,7 +64,7 @@
         } 
     }  
     address {
-        margin: 0.75rem 1rem 0.75rem 1rem;
+        margin: 0.75rem var(--spacing-md);
         font-style: normal;
 
         @container (width > 1150px) {
@@ -73,7 +73,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            font-size: 1rem;
+            font-size: var(--font-size-body-md);
             opacity: 0;
             pointer-events: none;
             margin: 0;
