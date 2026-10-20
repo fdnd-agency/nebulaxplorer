@@ -37,7 +37,6 @@
         display: grid;
         font-size: var(--font-size-body-md);
         align-content: start;
-        font-family: var(--font-detail);
         img {
             display: block;
             width: 100%;
@@ -47,6 +46,7 @@
 
     .label {
         display: none;
+        color:  var(--color-neutral-lightest);
         
         @container (width > 1150px) {
             display: flex;
@@ -55,10 +55,9 @@
             top:0;
             left: 0;
             padding: var(--spacing-md);
-            background-color: var(--palette-brand-700);
+            background-color: var(--color-brand-darkest);
             writing-mode: vertical-rl;
             transform: rotate(180deg);
-            font-family: var(--font-detail);
             min-height: 11rem;
             justify-content: center;
         } 
@@ -66,6 +65,7 @@
     address {
         margin: 0.75rem var(--spacing-md);
         font-style: normal;
+        color:  var(--color-neutral-lightest);
 
         @container (width > 1150px) {
             display: flex;
@@ -93,8 +93,8 @@
             font-style: normal;
             left: 4rem;
             padding: var(--spacing-md);
-            background-color: var(--palette-brand-700);
-            border-left: 2px solid var(--palette-accent-500);
+            background-color:  var(--color-brand-darkest);
+            border-left: 2px solid var(--color-accent-dark);
             min-height: 11rem;
             text-align: center;
             justify-content: center;
