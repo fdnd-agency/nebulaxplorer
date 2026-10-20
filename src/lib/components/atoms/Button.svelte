@@ -1,22 +1,49 @@
 <!--
     Props: 
-    - href      string - with href it renders an <a>, without it a <button>
-    - text      (required) the link text
-    - variant   "primary" "secondary"
-    - onclick   function - for the <button>"
-    - type      "button" "submit" "reset"
-    - disables  bolean default false
-    - classes   string - extra classes
+    - href           string - with href it renders an <a>, without it a <button>
+    - text           (required) button text
+    - variant        "primary" "secondary"
+    - onclick        function - for the <button>"
+    - type           "button" "submit" "reset"
+    - disables       bolean default false
+    - icon
+    -iconPosition
+    - classes        string - extra classes
+    - iconPosition  "before" "after" - default: "after"
+
+    Examples:
+
+    <Button href="/assignments" text="Bekijk opdrachten" variant="secondary" iconPosition="before">
+        {#snippet icon()}
+            <ArrowRight />
+        {/snippet}
+    </Button>
+
+    <Button text="Verstuur" type="submit" onclick={verstuur} iconPosition="after">
+        {#snippet icon()}
+            <ArrowRight />
+        {/snippet}
+    </Button>
 -->
 
 <script>
-    let { href, text, variant = 'primary', onclick, type="button", disabled = false , classes } = $props();
+    let { href, text, variant = 'primary', onclick, type="button", disabled = false ,icon, iconPosition = 'after', classes } = $props();
 </script>
 
-  {#if href && !disabled}
-    <a href="{ href }" class={[ "button", variant, classes ]}>{ text }</a>
+{#snippet content()}
+    {#if icon && iconPosition === 'before'}{@render icon()}{/if}
+    {text}
+    {#if icon && iconPosition === 'after'}{@render icon()}{/if}
+{/snippet}
+
+{#if href && !disabled}
+    <a href="{ href }" class={[ "button", variant, classes ]}>
+        {@render content()}
+    </a>
 {:else}
-    <button class={[ "button", variant, classes ]} { onclick } { type } { disabled } >{ text }</button>
+    <button class={[ "button", variant, classes ]} { onclick } { type } { disabled } >
+        {@render content()}
+    </button>
 {/if}
 
 
@@ -31,6 +58,7 @@
         text-transform: uppercase;
         border: 0.15rem solid;
         font-size: var(--font-size-body-sm);
+        gap: var(--spacing-sm);
       
         &:hover{
             cursor: pointer;
