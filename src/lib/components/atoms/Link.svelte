@@ -7,7 +7,7 @@
     - bold     default: false
     - classes  extra classes
 
-    <Link href="/assignments" text="Bekijk alles" size="lg" color bold />
+    <Link href="/assignments" text="Bekijk alles" size="lg" color="accent" bold />
 -->
 
 <script>
