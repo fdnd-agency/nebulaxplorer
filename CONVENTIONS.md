@@ -30,7 +30,6 @@ Follow `.prettierrc.json`:
 - Use single quotes.
 - Omit optional statement-ending semicolons.
 - Indent with tabs; the configured tab width is 4.
-- Use an 80-character print width.
 - Give statements room; do not place multiple instructions on one line.
 
 Check formatting with:
