@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/src/assets/favicon.svg" />
+		<link rel="stylesheet" href="/src/style.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<title>NEBULA Xplorer Satellite</title>
+	</head>
+
+	<body>
+		<header class="site-header">
+			<a class="brand" href="#overview"
+				><img src="./src/assets/logo.svg" alt="SRON" /> NEBULA
+				Xplorer</a
+			>
+		</header>
+
+		<noscript>
+			<p class="noscript-notice">
+				JavaScript is off, so the interactive 3D model is unavailable.
+				The complete NEBULA Xplorer overview and component information
+				remain available below.
+			</p>
+		</noscript>
+
+		<main>
+			<section class="viewer">
+				<button
+					type="button"
+					class="viewer-sidebar-toggle"
+					id="viewer-sidebar-toggle"
+					hidden
+				>
+					Hide panel
+				</button>
+				<aside class="viewer-sidebar" id="viewer-sidebar">
+					<section class="intro" id="overview">
+						<p class="eyebrow">NEBULA Xplorer</p>
+						<h1 id="page-title">Explore the spacecraft</h1>
+						<p id="mission">
+							Explore the NEBULA Xplorer satellite in 3D. Rotate
+							the spacecraft, zoom in, and select a component to
+							discover where it is located and what it does.
+						</p>
+						<p class="intro-secondary">
+							This student-driven mission combines innovation with
+							academic and industry expertise. Its high time
+							resolution and continuous observations reveal how
+							matter behaves, how jets form, and how these systems
+							evolve.
+						</p>
+						<p class="intro-instructions">
+							<span>Drag to explore</span>
+							<span>·</span>
+							<span>Scroll to zoom</span>
+						</p>
+					</section>
+
+					<div class="viewer-controls">
+						<nav class="view-switcher">
+							<ul class="view-switcher-list">
+								<li>
+									<a
+										href="#components-title"
+										data-view="satellite"
+										>Satellite</a
+									>
+								</li>
+								<li>
+									<a
+										href="#xray-instrument"
+										data-view="interior"
+										>Inside</a
+									>
+								</li>
+								<li class="instrument-view-item">
+									<a
+										href="#instrument-detectors"
+										data-view="instrument"
+										>Instrument</a
+									>
+									<details class="instrument-navigation">
+										<summary>Instrument components</summary>
+										<ul>
+											<li>
+												<a
+													href="#instrument-detectors"
+													data-instrument-component="detectors"
+													><span
+														class="component-number"
+														>01</span
+													><span
+														class="component-label"
+														>Detector modules</span
+													></a
+												>
+											</li>
+											<li>
+												<a
+													href="#instrument-baffles"
+													data-instrument-component="baffles"
+													><span
+														class="component-number"
+														>02</span
+													><span
+														class="component-label"
+														>Baffles</span
+													></a
+												>
+											</li>
+											<li>
+												<a
+													href="#instrument-electronics"
+													data-instrument-component="electronics"
+													><span
+														class="component-number"
+														>03</span
+													><span
+														class="component-label"
+														>Readout
+														electronics</span
+													></a
+												>
+											</li>
+											<li>
+												<a
+													href="#instrument-calibration"
+													data-instrument-component="calibration"
+													><span
+														class="component-number"
+														>04</span
+													><span
+														class="component-label"
+														>Calibration</span
+													></a
+												>
+											</li>
+											<li>
+												<a
+													href="#instrument-structure"
+													data-instrument-component="structure"
+													><span
+														class="component-number"
+														>05</span
+													><span
+														class="component-label"
+														>Optical bench and
+														frame</span
+													></a
+												>
+											</li>
+											<li>
+												<a
+													href="#instrument-mounts"
+													data-instrument-component="mounts"
+													><span
+														class="component-number"
+														>06</span
+													><span
+														class="component-label"
+														>Mounts</span
+													></a
+												>
+											</li>
+											<li>
+												<a
+													href="#instrument-support"
+													data-instrument-component="support"
+													><span
+														class="component-number"
+														>07</span
+													><span
+														class="component-label"
+														>Support panel</span
+													></a
+												>
+											</li>
+										</ul>
+										<p
+											class="instrument-status visually-hidden"
+										></p>
+									</details>
+								</li>
+								<li>
+									<a
+										href="#instrument-structure"
+										data-view="instrument-interior"
+										>Inside instrument</a
+									>
+								</li>
+								<li>
+									<a
+										href="#optical-primary"
+										data-view="mirror"
+										>Mirror</a
+									>
+								</li>
+								<li>
+									<a href="#optical-rays" data-view="rays"
+										>X-rays</a
+									>
+								</li>
+								<li>
+									<a
+										href="#cad-parts-overview"
+										data-view="parts"
+										>Parts</a
+									>
+								</li>
+							</ul>
+							<button type="button" id="rotation-toggle">
+								Pause rotation
+							</button>
+						</nav>
+						<section class="optics-panel" hidden>
+							<h3 id="optics-panel-title">Mirror and detector</h3>
+							<p>
+								X-rays enter from above, reflect twice at
+								shallow angles and focus on the detector. The
+								tube helps block stray light.
+							</p>
+							<p>
+								Schematic cutaway; dimensions and angles are
+								illustrative. Yellow lines represent the
+								radiation path, not visible light.
+							</p>
+							<button type="button" id="ray-play">
+								Play / pause X-rays
+							</button>
+							<label for="cad-part">Individual CAD part</label>
+							<select id="cad-part">
+								<option value="primary">
+									Primary concentrator structure
+								</option>
+								<option value="secondary">
+									Secondary concentrator structure
+								</option>
+								<option value="fpm">FPM</option>
+								<option value="fpcm">FPCM</option>
+							</select>
+							<div class="optical-components">
+								<a
+									href="#optical-primary"
+									data-optical-component="primary"
+								>
+									Primary mirror</a
+								><a
+									href="#optical-secondary"
+									data-optical-component="secondary"
+								>
+									Secondary mirror</a
+								><a
+									href="#optical-tube"
+									data-optical-component="tube"
+								>
+									Tube</a
+								><a
+									href="#optical-detector"
+									data-optical-component="detector"
+								>
+									Detector</a
+								><a
+									href="#optical-rays"
+									data-optical-component="rays"
+								>
+									X-rays</a
+								>
+							</div>
+							<p id="optical-selection" hidden></p>
+							<p id="cad-note">
+								CAD parts are shown individually with source
+								colors. The supplied concentrator files describe
+								the June 2026 test configuration; mandrels are
+								manufacturing tools.
+							</p>
+						</section>
+					</div>
+
+					<nav class="component-navigation">
+						<details>
+							<summary>
+								<h2 id="components-title">
+									Satellite components
+								</h2>
+							</summary>
+
+							<ul>
+								<li>
+									<a
+										href="#xray-instrument"
+										data-3d-object="xrayInstrument"
+										data-x="0.873"
+										data-y="1.670"
+										data-z="1.370"
+										><span class="component-number"
+											>01</span
+										>
+										<span class="component-label"
+											>X-Ray Instrument</span
+										></a
+									>
+								</li>
+								<li>
+									<a
+										href="#star-tracker-module"
+										data-3d-object="starTrackerModule"
+										data-x="-0.621"
+										data-y="0.218"
+										data-z="2.234"
+										><span class="component-number"
+											>02</span
+										>
+										<span class="component-label"
+											>Star Tracker Module</span
+										></a
+									>
+								</li>
+								<li>
+									<a
+										href="#dawn-4u-cubedrive"
+										data-3d-object="dawn4UCubeDrive"
+										data-x="-1.081"
+										data-y="-1.338"
+										data-z="1.571"
+										><span class="component-number"
+											>03</span
+										>
+										<span class="component-label"
+											>Dawn 4U CubeDrive</span
+										></a
+									>
+								</li>
+								<li>
+									<a
+										href="#s-band-antenna"
+										data-3d-object="sBandAntenna"
+										data-x="-0.923"
+										data-y="-2.077"
+										data-z="0.508"
+										><span class="component-number"
+											>04</span
+										>
+										<span class="component-label"
+											>S-Band Antenna</span
+										></a
+									>
+								</li>
+								<li>
+									<a
+										href="#sun-sensor"
+										data-3d-object="sunSensor"
+										data-x="-1.069"
+										data-y="-2.069"
+										data-z="-0.066"
+										><span class="component-number"
+											>05</span
+										>
+										<span class="component-label"
+											>Sun Sensor</span
+										></a
+									>
+								</li>
+								<li>
+									<a
+										href="#magnetorquers"
+										data-3d-object="magnetorquers"
+										data-x="-0.439"
+										data-y="0.165"
+										data-z="-2.281"
+										><span class="component-number"
+											>06</span
+										>
+										<span class="component-label"
+											>Magnetorquers</span
+										></a
+									>
+								</li>
+								<li>
+									<a
+										href="#solar-panel"
+										data-3d-object="solarPanel"
+										data-x="-0.800"
+										data-y="-3.088"
+										data-z="0.978"
+										><span class="component-number"
+											>07</span
+										>
+										<span class="component-label"
+											>Solar Panel</span
+										></a
+									>
+								</li>
+							</ul>
+							<p class="selection-status">
+								No component selected.
+							</p>
+						</details>
+					</nav>
+
+					<section class="instrument-details">
+						<p class="instrument-prompt">
+							Click a part or choose one from the list to discover
+							what it does.
+						</p>
+						<article id="instrument-detectors" data-instrument-info>
+							<p class="component-kicker">
+								01 / Instrument component
+							</p>
+							<h2>Detector modules</h2>
+							<p>
+								The sensors turn arriving X-rays into electrical
+								signals. The FPM and FPCM modules in this model
+								contain the sensors and their immediate
+								mechanical and thermal parts.
+							</p>
+						</article>
+						<article id="instrument-baffles" data-instrument-info>
+							<p class="component-kicker">
+								02 / Instrument component
+							</p>
+							<h2>Baffles</h2>
+							<p>
+								These tubes restrict the detectors' field of
+								view and help block unwanted radiation arriving
+								from the side. They are named Science baffle in
+								the CAD model.
+							</p>
+						</article>
+						<article
+							id="instrument-electronics"
+							data-instrument-info
+						>
+							<p class="component-kicker">
+								03 / Instrument component
+							</p>
+							<h2>Readout electronics</h2>
+							<p>
+								The preamplifiers process the sensors' small
+								electrical signals for further readout. This
+								group includes the PA210 preamplifiers, PA-230
+								connections and their housings.
+							</p>
+						</article>
+						<article
+							id="instrument-calibration"
+							data-instrument-info
+						>
+							<p class="component-kicker">
+								04 / Instrument component
+							</p>
+							<h2>Calibration</h2>
+							<p>
+								The calibration parts help check the detector's
+								response using a reference source. Here you can
+								explore the calibration tubes and associated
+								parts of the FPCM modules.
+							</p>
+						</article>
+						<article id="instrument-structure" data-instrument-info>
+							<p class="component-kicker">
+								05 / Instrument component
+							</p>
+							<h2>Optical bench and frame</h2>
+							<p>
+								The optical bench, ribs and side panels form the
+								instrument's supporting structure. In the inside
+								view the exterior panels are hidden so you can
+								inspect the parts within.
+							</p>
+						</article>
+						<article id="instrument-mounts" data-instrument-info>
+							<p class="component-kicker">
+								06 / Instrument component
+							</p>
+							<h2>Mounts</h2>
+							<p>
+								The rods, feet and fittings connect the
+								instrument to its supporting assembly. Select
+								them to see where these mechanical connections
+								sit.
+							</p>
+						</article>
+						<article id="instrument-support" data-instrument-info>
+							<p class="component-kicker">
+								07 / Instrument component
+							</p>
+							<h2>Support panel</h2>
+							<p>
+								The large sandwich panel behind the instrument
+								provides the mechanical base for its mounts.
+								Orbit around it to inspect its connections to
+								the frame.
+							</p>
+						</article>
+					</section>
+
+					<section class="component-details">
+						<p class="selection-prompt">
+							Select a satellite component to inspect its role in
+							the mission.
+						</p>
+						<article
+							id="xray-instrument"
+							data-component-info
+							tabindex="-1"
+						>
+							<p class="component-kicker">01 / Component</p>
+							<h2>X-Ray Instrument</h2>
+							<p>
+								Sending a telescope to space means engineering
+								for the impossible: it has to survive a rocket
+								launch, then operate flawlessly in a vacuum
+								where temperatures swing by hundreds of degrees.
+								NEBULA-Xplorer's X-ray instrument is suspended
+								on three precision titanium mounts that isolate
+								it from shock and temperature change, anchored
+								to a reinforced panel, and oriented to use every
+								centimeter of space inside the rocket fairing.
+							</p>
+						</article>
+						<article
+							id="star-tracker-module"
+							data-component-info
+							tabindex="-1"
+						>
+							<p class="component-kicker">02 / Component</p>
+							<h2>Star Tracker Module</h2>
+							<p>
+								To observe a faint X-ray source hundreds of
+								light-years away, NEBULA-Xplorer needs to hold
+								its aim with extraordinary precision. Star
+								trackers continuously scan the sky, recognize
+								patterns of stars, and determine the
+								spacecraft's orientation down to a few
+								arcseconds. Two units ensure constant visibility
+								of stars even during rotation.
+							</p>
+						</article>
+						<article
+							id="dawn-4u-cubedrive"
+							data-component-info
+							tabindex="-1"
+						>
+							<p class="component-kicker">03 / Component</p>
+							<h2>Dawn 4U CubeDrive</h2>
+							<p>
+								The propulsion system counters atmospheric drag,
+								performs collision avoidance, and enables
+								controlled reentry. This compact thruster unit
+								carries under two kilograms of propellant and is
+								precisely aligned to ensure stable, accurate
+								maneuvers throughout the mission.
+							</p>
+						</article>
+						<article
+							id="s-band-antenna"
+							data-component-info
+							tabindex="-1"
+						>
+							<p class="component-kicker">04 / Component</p>
+							<h2>S-Band Antenna</h2>
+							<p>
+								The S-band antenna enables communication with
+								Earth during brief contact windows. It transmits
+								gigabytes of scientific data over large
+								distances in minutes, ensuring valuable
+								observations reach ground stations.
+							</p>
+						</article>
+						<article
+							id="sun-sensor"
+							data-component-info
+							tabindex="-1"
+						>
+							<p class="component-kicker">05 / Component</p>
+							<h2>Sun Sensor</h2>
+							<p>
+								Sun sensors provide basic orientation by
+								detecting the Sun's position. They are crucial
+								during emergencies or initial deployment,
+								helping the spacecraft maintain power and avoid
+								dangerous pointing scenarios.
+							</p>
+							<p>
+								This close-up shows one of the four Bison64 sun
+								sensors. All four sensors are highlighted.
+							</p>
+						</article>
+						<article
+							id="magnetorquers"
+							data-component-info
+							tabindex="-1"
+						>
+							<p class="component-kicker">06 / Component</p>
+							<h2>Magnetorquers</h2>
+							<p>
+								These external devices generate magnetic torque
+								to control the satellite's orientation and
+								desaturate reaction wheels. By interacting with
+								Earth's magnetic field, they provide efficient
+								three-axis attitude control without the
+								complexity of thrusters.
+							</p>
+						</article>
+						<article
+							id="solar-panel"
+							data-component-info
+							tabindex="-1"
+						>
+							<p class="component-kicker">07 / Component</p>
+							<h2>Solar Panel</h2>
+							<p>
+								These panels convert sunlight into electricity
+								to power the satellite's systems and
+								instruments. Positioned to capture maximum
+								sunlight, they support continuous operation when
+								combined with onboard energy storage during
+								eclipse.
+							</p>
+						</article>
+					</section>
+
+					<footer class="viewer-meta">
+						<p>A student-driven mission</p>
+						<p>
+							<span>In collaboration with</span>
+							<img src="/sronlogo.png" alt="SRON" />
+						</p>
+					</footer>
+				</aside>
+
+				<div class="visualization" id="visualization">
+					<h2 id="model-title">Satellite model</h2>
+					<canvas id="app"
+						>A 3D model of the NEBULA Xplorer satellite. The
+						component descriptions below provide the complete
+						satellite overview.</canvas
+					>
+					<div class="earth-horizon"></div>
+					<p id="model-description" class="model-instructions">
+						<span>Drag to explore · Scroll to zoom</span
+						><span class="visually-hidden"
+							>Drag to rotate the 3D model and scroll or pinch to
+							zoom. Use the component links for a
+							keyboard-accessible alternative.</span
+						>
+					</p>
+				</div>
+			</section>
+
+			<details class="optical-overview" id="optical-overview" open>
+				<summary>How the X-ray mirror works</summary>
+				<nav class="optical-overview-navigation">
+					<a href="#optical-primary">Primary mirror</a>
+					<a href="#optical-secondary">Secondary mirror</a>
+					<a href="#optical-tube">Tube</a>
+					<a href="#optical-detector">Detector</a>
+					<a href="#optical-rays">X-ray path</a>
+				</nav>
+				<p id="optical-primary">
+					The primary mirror reflects incoming X-rays at a shallow
+					angle toward the secondary mirror.
+				</p>
+				<p id="optical-secondary">
+					The secondary mirror directs the X-rays toward the
+					detector's focal point.
+				</p>
+				<p id="optical-tube">
+					The tube helps block stray light before the X-rays reach the
+					detector.
+				</p>
+				<p id="optical-detector">
+					The detector records X-rays arriving at the focal point.
+				</p>
+				<p id="optical-rays">
+					The schematic X-ray path shows incoming radiation, two
+					reflections, and the focal point at the detector. The lines
+					do not represent visible light.
+				</p>
+			</details>
+			
+      <details class="optical-overview" id="cad-parts-overview" open>
+				<summary>Individual CAD models</summary>
+				<p>
+					The 3D viewer can show these supplied CAD models
+					individually. Their names and selection remain available
+					here without WebGL.
+				</p>
+				<ul>
+					<li>Primary concentrator structure</li>
+					<li>Secondary concentrator structure</li>
+					<li>Focal Plane Module (FPM)</li>
+					<li>Focal Plane Calibration Module (FPCM)</li>
+				</ul>
+			</details>
+		</main>
+
+		<script type="module" src="/src/main.js"></script>
+	</body>
+</html>
