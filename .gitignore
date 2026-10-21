@@ -25,3 +25,5 @@ src/assets/models/source/Nebula_Assembly_V2_Stowed.glb
 *.njsproj
 *.sln
 *.sw?
+
+.venv
