@@ -64,6 +64,77 @@ Source: https://conventionalbranch.org/#branch-naming-prefixes
 - As a contributor, you can look in the To Do column and pick up a task by assigning yourself.
 - We poker together to decide the estimate of the issue.
 
+#### Definition of ready
+
+A feature is ready to move to **Todo** on the project board when the issue contains:
+
+- [ ] **Title**
+- [ ] **Description**: written as a user story ("As a [user], I want [goal], so that [reason]")
+- [ ] **Design**: design has been added to the issue 
+- [ ] **MoSCoW**
+- [ ] **Estimate**: set on the project board
+- [ ] **Type label**: Epic, Feature, Task, User story
+- [ ] **Acceptance criteria**
+- [ ] **Assignee**
+
+#### Definition of done 
+
+A feature is done when:
+
+- [ ] **Functionality:** All acceptance criteria have been completed
+- [ ] **Tested:**: RAPPE
+- [ ] **Documentation:** if necessary, the documentation for this issue has been updated
+- [ ] **Reviewed:** the pull request has been reviewed 
+
+#### Workflow
+```mermaid
+flowchart TD
+    subgraph planning [Planning]
+        A[Create issue] --> B[Move to Backlog]:::projectboard
+        B --> C[Estimate +<br/>MoSCoW label + type +<br/>clear description + <br/> Milestone]
+        C --> D[Move to To Do]:::projectboard
+    end
+
+    subgraph work [Working on it]
+        D --> E[Assign yourself]
+        E --> F["Create branch<br/>prefix/description-issuenumber"]
+        F --> W3[Move to In Progress]:::projectboard
+        W3 --> G[Build]
+        G --> H[Commit]
+    end
+
+    subgraph testing [Testing]
+        H --> T1[Check if you follow<br/>the conventions]
+        T1 --> T2[Test according to RAPPE]
+        T2 --> T3{Passed?}
+    end
+
+    subgraph review [Review]
+        T3 -->|Yes| I[Open pull request]
+        I --> W4[Move to Ready to review]:::projectboard
+        W4 --> J{Approved?}
+        J -->|Yes| K[Merge]
+        K --> W5[Move to Done]:::projectboard
+        W5 --> L[Delete branch]
+    end
+
+    T3 -->|No| G
+    J -->|No| G
+
+    subgraph Meetings [Meetings]
+        M[Standup<br/>Mon, Wed, Fri]
+        N[Weekly client contact]
+        O[Sprint review<br/>every 3 weeks]
+        Q[Retrospective]
+        O --> Q
+    end
+
+    L --> R[Done]
+    O -.-> A
+
+    classDef projectboard fill:#e5e5e5,stroke:#999,color:#333,stroke-dasharray: 4 3
+```
+
 ### Language
 
 We write all issues, reviews, commits, and branches in English, as well as the code, CSS, and JavaScript names, etc.
@@ -112,3 +183,7 @@ src/
 - **Templates and pages:** in SvelteKit these are your `+layout.svelte` and `+page.svelte` in `routes/`. So you do not create separate folders for them.
 
 Source: https://atomicdesign.bradfrost.com/chapter-2/
+
+### Team canvas
+
+![](image-1.png)
