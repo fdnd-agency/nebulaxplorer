@@ -15,12 +15,12 @@ Last update: 22-10-2026
     0 --> 6[6. Assignments]
     0 --> 7[7. Partners and sponsors]
 
-    2 --> 2-_1[2.1 News detail page]
+    2 --> 2_1[2.1 News detail page]
     2_1@{ shape: procs}
 
     4 --> 4_1[4.1 Component detail page]
     4_1@{ shape: procs}
-    4_1 --> 4.2[4.2 Subcomponent detail page]
+    4_1 --> 4_2[4.2 Subcomponent detail page]
     4_2@{ shape: procs}
 
     6 --> 6_1[6.1 Assignment detail page]   
