@@ -1,3 +1,5 @@
+import '../src/lib/styles/stylesheet.css';
+
 /** @type { import('@storybook/sveltekit').Preview } */
 const preview = {
   parameters: {
