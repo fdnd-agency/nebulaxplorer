@@ -4,7 +4,7 @@ Beste Martin,
 
 Morgen houden we de sprint review. Hieronder de agenda.
 
-Datum: donderdag 8 oktober 2026
+Datum: 2026-10-08
 Tijd: 15:30
 Locatie: online via Teams (uitnodiging is verstuurd)
 Aanwezig: Martin, Joost en het projectteam

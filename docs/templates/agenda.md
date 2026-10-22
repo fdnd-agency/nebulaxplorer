@@ -1,4 +1,4 @@
-### Subject: Agenda sprint review [morgen / datum] ([online via Teams / locatie])
+### Subject: Agenda sprint review [datum] ([online via Teams / locatie])
 
 Beste [naam opdrachtgever],
 
