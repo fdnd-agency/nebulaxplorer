@@ -1,15 +1,17 @@
 <script>
+  import imageFallback from "$lib/assets/images/hero-background-01.jpg";
+
   let { title, text, image } = $props();
+  let backgroundImage = $derived(image || imageFallback);
 </script>
 
-<section class="hero" style="background-image: url('{image}')">
+<section class="hero" style:background-image="url('{backgroundImage}')">
   <h1>{title}</h1>
   <p>{text}</p>
 </section>
 
 <style>
   .hero {
-    background-image: url("src/lib/assets/images/hero-background-01.jpg");
     background-size: cover;
     background-position: 25% 75%;
     height: 50vh;
