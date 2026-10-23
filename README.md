@@ -1,38 +1,42 @@
-# Nebula Xplorer Satellite
+# sv
 
-As part of the FDND program, we participated in the Hackathon 2026.
-Our team consisted of Melissa, Iris, Nayome, and Viresh.
+Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
-<img width="750" height="500" alt="cover" src="https://github.com/user-attachments/assets/20c9b7d8-5c4b-47cc-bf32-4f2f1568ad0b" />
+## Creating a project
 
-[bekijk de website](https://xplorersatellite.netlify.app/)
+If you're seeing this, you've probably already done this step. Congrats!
 
-### Project Overview
+```sh
+# create a new project
+npx sv create my-app
+```
 
-Our idea was to create an interactive satellite experience that guides users step by step through the different components of a satellite. The goal is to help users understand:
+To recreate this project with the same configuration:
 
-- What each component is
-- What it does
-- Why it is important
+```sh
+# recreate this project
+npx sv@0.17.1 create --template minimal --no-types --install npm .
+```
 
-We aimed to make the experience informative, interactive, and engaging for users.
+## Developing
 
-### Technology
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-To bring this concept to life, we used:
+```sh
+npm run dev
 
-Three.js for the 3D interactive experience
-Vite for fast development and performance
-Goal
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
 
-The main goal of this project is to make complex space technology more accessible and enjoyable by combining education with interactive design.
+## Building
 
+To create a production version of your app:
 
-https://github.com/user-attachments/assets/48dab2d1-1ea3-45cf-8552-8d4928064c60
+```sh
+npm run build
+```
 
+You can preview the production build with `npm run preview`.
 
-### Process
-
-We started with research and inspiration. After several team discussions, we defined our concept and began designing the experience.
-Once the design direction was clear, we divided the project into different features. Each team member took ownership of specific parts and worked on developing them.
-For a more detailed overview of our process, you can visit our project board, issues and website 
+> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
