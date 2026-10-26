@@ -1,29 +1,43 @@
 import Button from "$lib/components/atoms/Button.svelte";
 
 export default {
-    title: "components/button",
+    title: "components/Button",
     component: Button,
     tags: ['autodocs'],
     args: {
         text: "Button",
-        variant: "primary",
+        variant: "primary-solid",
         type: "button",
-        disabled: false
+        disabled: false,
+        iconPosition: "after"
     },
     argTypes: {
-        variant: { control: "select", options: ["primary", "secondary"] },
-        type: { control: "select", options: ["button", "submit", "reset"] },
-        iconPosition: { control: "select", options: ["before", "after"] },
-        disabled: { control: "boolean" },
+        variant: { 
+            control: "select", 
+            options: ["primary-solid", "primary-outline", "secondary-solid", "secondary-outline"]
+        },
         text: { control: "text" },
         href: { control: "text" },
-        classes: { control: "text" }
+        type: { control: "select", options: ["button", "submit", "reset"] },
+        disabled: { control: "boolean" },
+        iconPosition: { control: "inline-radio", options: ["before", "after"] },
+        classes: { control: "text" },
+        onclick: { action: "clicked" }
     },
 };
 
-export const Primary = { args: { variant: "primary" } };
-export const Secondary = { args: { variant: "secondary" } };
+export const PrimarySolid = {
+    args: { variant: "primary-solid", text: "Primary Solid" }
+};
 
-export const Disabled = { args: { disabled: true } };
+export const PrimaryOutline = {
+    args: { variant: "primary-outline", text: "Primary Outline" }
+};
 
-export const AsLink = { args: { href: "/" } };
+export const SecondarySolid = {
+    args: { variant: "secondary-solid", text: "Secondary Solid" }
+};
+
+export const SecondaryOutline = {
+    args: { variant: "secondary-outline", text: "Secondary Outline" }
+};
