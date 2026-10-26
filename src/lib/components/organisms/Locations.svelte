@@ -2,8 +2,35 @@
     import leiden from '$lib/assets/images/SRON-Leiden.webp?enhanced&w=1600;800;400';  
     import groningen from '$lib/assets/images/SRON-Groningen.webp?enhanced&w=1600;800;400';  
 </script>  
+
+<ul>
+    <li class="location">
         <enhanced:img src={ leiden } alt="sron building in leiden" sizes="50vw" loading="lazy"/>
+        <h4 class="visually-hidden">Leiden</h4>
+        <address>
+            Niels Bohrweg 4<br>
+            2333 CA Leiden<br>
+            The Netherlands<br>
+            <a href="tel:+31887775600">+31 (0)88 777 56 00</a>
+        </address>
+    </li>
+    <li class="location">
         <enhanced:img src={ groningen } alt="sron building in groningen" sizes="50vw" loading="lazy"/>
+        <h4 class="visually-hidden">Groningen</h4>
+        <address>
+            Landleven 12<br>
+            9747 AD Groningen<br>
+            The Netherlands<br>
+            <a href="tel:+31503634074">+31 (0)50 363 40 74</a>
+        </address>
+    </li>
+</ul>
+
+<style> 
+    ul {
+        display: flex;
+    }
+
     .location {
         position: relative;
         display: grid;
@@ -18,6 +45,12 @@
             display: block;
         }
     }
+
+    .visually-hidden {
+        display: none;
+        color:  var(--color-neutral-lightest);
+        z-index: 1000;
+        
         @container (width > 30ch) {
             display: flex;
             text-transform: uppercase;
@@ -32,6 +65,16 @@
             justify-content: center;            
         } 
     }  
+
+    address {
+        margin: 0.75rem var(--spacing-md);
+        font-style: normal;
+        color:  var(--color-neutral-lightest);
+
+        a {
+            text-decoration: none;
+        }
+        
         @container (width > 30ch) {
             display: flex;
             justify-content: center;
@@ -46,6 +89,14 @@
             min-height: 11rem;
             pointer-events: none;
         }
+        @media (prefers-reduced-motion: no-preference) { 
+            transition: 0.6s ease-in-out;
+        }
+    }
+
+.visually-hidden:hover + address,
+.location:focus-within address {
+
         @container (width > 30ch) {
             opacity: 1;
             font-style: normal;
@@ -59,3 +110,4 @@
             z-index: 1000;
         }
     }
+</style>
