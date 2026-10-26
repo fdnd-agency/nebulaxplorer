@@ -8,7 +8,7 @@
 
 	import favicon from '$lib/assets/favicon.svg';
 	import '$lib/styles/stylesheet.css';
-  	import Locations from '$lib/components/Locations.svelte';
+  	import Locations from '$lib/components/organisms/Locations.svelte';
 
 	let { children } = $props();
 </script>
