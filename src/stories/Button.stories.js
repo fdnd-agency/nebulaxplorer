@@ -1,7 +1,7 @@
 import Button from "$lib/components/atoms/Button.svelte";
 
 export default {
-    title: "components/Button",
+    title: "components/Atoms/Button",
     component: Button,
     tags: ['autodocs'],
     args: {
