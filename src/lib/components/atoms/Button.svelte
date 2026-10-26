@@ -5,11 +5,10 @@
     - variant        "primary-solid" "secondary-solid" "primary-outline" "secondary-outline"
     - onclick        function - for the <button>"
     - type           "button" "submit" "reset"
-    - disables       bolean default false
-    - icon
-    -iconPosition
+    - disabled       boolean default false
+    - icon           "snippet" 
     - classes        string - extra classes
-    - iconPosition  "before" "after" - default: "after"
+    - iconPosition   "before" "after" - default: "after"
 
     Examples:
 
@@ -27,7 +26,7 @@
 -->
 
 <script>
-    let { href, text, variant = 'primary-solid', onclick, type="button", disabled = false ,icon, iconPosition = 'after', classes } = $props();
+    let { href, text, variant = 'primary-solid', onclick, type="button", disabled = false ,icon, iconPosition = 'after', classes, ...rest } = $props();
 </script>
 
 {#snippet content()}
@@ -37,11 +36,11 @@
 {/snippet}
 
 {#if href && !disabled}
-    <a href="{ href }" class={[ "button", variant, classes ]}>
+    <a href="{ href }" class={[ "button", variant, classes ]} { ...rest }>
         {@render content()}
     </a>
 {:else}
-    <button class={[ "button", variant, classes ]} { onclick } { type } { disabled } >
+    <button class={[ "button", variant, classes ]} { onclick } { type } { disabled } { ...rest }>
         {@render content()}
     </button>
 {/if}
@@ -59,10 +58,9 @@
         text-align: center;
         text-decoration: none;
         text-transform: uppercase;
-        letter-spacing: 0.05rem;
         font-size: var(--font-size-body-md);
         line-height: var(--line-height-relaxed);
-        font-weight: 700;
+        font-weight: 500;
       
         &:hover{
             cursor: pointer;
@@ -76,6 +74,7 @@
         background-color: var(--color-brand-darkest);
         color: var(--color-accent-mid);
         border-color: var(--color-brand-darkest);
+        letter-spacing: 0.05em;
 
         &:hover,
         &:focus-visible {
@@ -102,8 +101,10 @@
         background-color: var(--color-accent-mid);
         color: var(--color-brand-darkest);
         border-color: var(--color-accent-darkest);
+        letter-spacing: 0.05em;
 
-        &:hover {
+        &:hover,
+        &:focus-visible {
             background-color: var(--color-accent-lighter);
         }
         &:focus-visible {
@@ -124,6 +125,8 @@
         background-color: inherit;
         color: var(--color-brand-darkest);
         border-color: var(--color-brand-darkest);
+        font-weight: 700;
+        letter-spacing: 0.03em;
 
         &:hover,
         &:focus-visible {
@@ -150,16 +153,21 @@
         background-color: inherit;
         color: var(--color-accent-dark);
         border-color: var(--color-accent-mid);
+        font-weight: 700;
+        letter-spacing: 0.03em;
 
-        &:hover {
+        &:hover,
+        &:focus-visible {
             background-color: var(--color-accent-lightest);
+            color: var(--color-accent-darker);
         }
         &:focus-visible {
             outline: 0.4rem solid color-mix(in srgb, var(--color-accent-darker) 50%, transparent);
             outline-offset: 0;
         }
         &:active {
-            background-color: var(--color-accent-mid);
+            background-color: var(--color-brand-darkest);
+            color: var(--color-accent-mid);
         }
         &:disabled{
             background-color: var(--color-neutral-lighter);
