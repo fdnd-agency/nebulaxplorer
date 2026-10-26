@@ -1,6 +1,14 @@
+<script>
+  import Hero from "$lib/components/organisms/Hero.svelte";
+  import missionImage from "$lib/assets/images/hero-background-01.jpg";
+</script>
+
 <svelte:head>
-	<title>Home - NebulaXPlorer</title>
+  <title>Home - NebulaXPlorer</title>
 </svelte:head>
 
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<Hero
+  title="Mission"
+  text="To the stars by the genius of youth"
+  image={missionImage}
+/>
