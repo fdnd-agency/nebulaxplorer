@@ -91,6 +91,7 @@
 	--step-min-2:              calc(var(--step-min-1) / var(--ratio));
 	--step-min-3:              calc(var(--step-min-2) / var(--ratio));
 
+	--line-height-tight:       1;
     --line-height-normal:      1.5;
     --line-height-relaxed:     1.8;
 
