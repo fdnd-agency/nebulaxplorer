@@ -29,6 +29,7 @@
         &.active {
             color: var(--color-accent-mid);
             text-decoration: underline;
+            text-underline-offset: var(--spacing-sm);
         }
     }
 </style>
