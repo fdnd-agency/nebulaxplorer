@@ -272,6 +272,41 @@
       flex: 0 0 100%;
       scroll-snap-align: start;
       list-style: none;
+      position: relative;
+
+      label::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        cursor: pointer;
+      }
+
+      /* &:has(input:checked) {
+        outline: 2px solid red;
+      } */
+
+      input {
+        position: absolute;
+        opacity: 0;
+      }
+    }
+
+    .feature-content {
+      article {
+        display: none;
+      }
+    }
+
+    &:has(#obj-1:checked) #content-1,
+    &:has(#obj-2:checked) #content-2,
+    &:has(#obj-3:checked) #content-3,
+    &:has(#obj-4:checked) #content-4,
+    &:has(#obj-5:checked) #content-5,
+    &:has(#obj-6:checked) #content-6,
+    &:has(#obj-7:checked) #content-7,
+    &:has(#obj-8:checked) #content-8,
+    &:has(#obj-9:checked) #content-9 {
+      display: block;
     }
   }
 </style>
