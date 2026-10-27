@@ -1,6 +1,4 @@
 <footer>
-    <!-- <hr class="only-mobile">  -->
-
     <div class="footer-top">
         <a href="/"><img class="logosron" src="src/lib/assets/logos/SRON_Academy_OnSpaceBlue-1024x422.png" alt="logo of sron academy" width="230" height="100"></a>
 
@@ -20,8 +18,6 @@
         
         <a href="https://www.sron.nl/"><img class="white-logo-sron" src="src/lib/assets/logos/SRON_Full_White.webp" alt="full white logo of sron" width="200" height="45"></a>
     </div>
-
-    <!-- <hr>  -->
 
     <div class="footer-bottom">
         <nav>
@@ -57,7 +53,7 @@
             grid-template-columns: 1fr auto auto auto;
             margin: var(--spacing-xl);
             align-items: end;
-            column-gap: 2rem;
+            column-gap: var(--spacing-lg);
             margin: var(--spacing-xl);
             font-size:  var(--step-0);  
         }
@@ -113,8 +109,8 @@
             display: grid;
             grid-template-columns: 1fr auto auto;
             align-items: center;
-            column-gap: 1.5rem;
-            margin: 2rem 3rem;
+            column-gap: var(--spacing-lg);
+            margin: var(--spacing-lg) var(--spacing-xl);
             color: var(--color-neutral-lightest);
             text-transform: uppercase;
         }
@@ -122,7 +118,7 @@
 
     .social-icons {
         display: flex;
-        gap: 0.75rem;
+        gap: var(--spacing-sm);
         align-items: center;
         list-style: none;
     }
