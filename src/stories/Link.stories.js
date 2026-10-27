@@ -16,6 +16,7 @@ export default {
         color: { control: "color" },
         bold: { control: "boolean" },
         text: { control: "text" },
+        hiddenText: { control: "text" },
         href: { control: "text" },
         classes: { control: "text" },
         stretched: { control: "boolean"}
@@ -30,6 +31,10 @@ export const Bold = { args: { bold: true } };
 
 export const CustomColor = {
     args: { color: 'var(--color-accent-mid)', bold: true },
+};
+
+export const HiddenText = {
+    args: { hiddenText: ": assignments" },
 };
 
 export const Stretched = {
