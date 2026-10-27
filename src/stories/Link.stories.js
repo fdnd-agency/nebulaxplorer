@@ -38,6 +38,6 @@ export const HiddenText = {
 };
 
 export const Stretched = {
-    args: { stretched: true, "aria-label": "Bekijk alles: assignments" },
+    args: { stretched: true, hiddenText: ": assignments" },
     parameters: { docs: { story: { inline: false, iframeHeight: 120 } } }
 };
