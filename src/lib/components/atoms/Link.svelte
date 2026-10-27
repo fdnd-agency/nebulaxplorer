@@ -1,25 +1,27 @@
 <!--
     Props:
-    - href       (required) where the link goes
-    - text       (required) the link text
-    - size       "sm"  "md"  "lg" 
-    - color      string- CSS variable
-    - bold       boolean - default = false
-    - classes    string - extra classes
-    - stretched  boolean - default = false
-                 The parent needs `position: relative`.
-    - ...rest    other attributes
+    - href         (required) where the link goes
+    - text         (required) the link text
+    - hiddentext   string extra text only for screen readers
+    - size         "sm"  "md"  "lg" 
+    - color        string- CSS variable
+    - bold         boolean - default = false
+    - classes      string - extra classes
+    - stretched    boolean - default = false
+                   The parent needs `position: relative`.
+    - ...rest      other attributes
 
     <Link href="/assignments" text="Bekijk alles" size="lg" color="var(--color-accent-light)" bold />
 -->
 
 <script>
     import ArrowRight from "./ArrowRight.svelte";
-    let { href, classes, text, size, color="var(--color-neutral-darkest)", bold = false, stretched = false, ...rest} = $props()
+    let { href, classes, text, hiddenText, size, color="var(--color-neutral-darkest)", bold = false, stretched = false, ...rest} = $props()
 </script>
 
 <a { href } class={[classes, size, { bold, stretched }]} style="--link-color: { color };" { ...rest }>
     { text }
+    {#if hiddenText}<span class="visually-hidden">{hiddenText}</span>{/if}
     <span class="icon-wrapper">
         <ArrowRight />
     </span>
@@ -36,7 +38,6 @@
         gap: var(--spacing-lg);
         font-family: var(--font-caption);
         align-items: center;
-        transition: all 0.5s ease-in-out;
 
         .icon-wrapper {
             display: inline-flex;
