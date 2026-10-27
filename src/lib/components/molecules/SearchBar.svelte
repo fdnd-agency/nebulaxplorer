@@ -20,9 +20,9 @@
     button{
         background: transparent;
         border: none;
-        color: inherit;
-        stroke: inherit;
-        font-size: inherit;
+        color: var(--color-neutral-lightest);
+        font-family: var(--font-heading);
+        font-size: var(--font-size-body-md);
         display: flex;
         align-items: center;
         &:hover{

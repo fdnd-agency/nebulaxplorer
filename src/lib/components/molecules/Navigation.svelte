@@ -32,11 +32,8 @@
 
         ul {
             display: flex;
-            font-size: var(--font-size-body-md);
             gap: var(--spacing-xl);
             color: var(--color-neutral-lighter);
-            font-family: var(--font-heading);
-            margin-left: var(--spacing-2xl);
         }
     }
 </style>
