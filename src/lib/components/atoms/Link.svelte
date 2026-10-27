@@ -2,7 +2,7 @@
     Props:
     - href         (required) where the link goes
     - text         (required) the link text
-    - hiddentext   string extra text only for screen readers
+    - hiddenText   string extra text only for screen readers
     - size         "sm"  "md"  "lg" 
     - color        string- CSS variable
     - bold         boolean - default = false
