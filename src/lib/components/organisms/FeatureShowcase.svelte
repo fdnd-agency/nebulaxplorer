@@ -249,4 +249,29 @@
 </section>
 
 <style>
+  section {
+    display: grid;
+    gap: var(--spacing-lg);
+
+    .feature-list {
+      display: flex;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+    }
+
+    .group,
+    .group ul {
+      display: contents;
+    }
+
+    .group-nav {
+      display: none;
+    }
+
+    li {
+      flex: 0 0 100%;
+      scroll-snap-align: start;
+      list-style: none;
+    }
+  }
 </style>
