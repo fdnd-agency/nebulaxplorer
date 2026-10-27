@@ -22,7 +22,7 @@
         border: none;
         color: var(--color-neutral-lightest);
         font-family: var(--font-heading);
-        font-size: var(--font-size-body-md);
+        font-size: var(--font-size-body-sm);
         display: flex;
         align-items: center;
         &:hover{
