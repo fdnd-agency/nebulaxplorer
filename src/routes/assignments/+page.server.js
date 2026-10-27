@@ -4,5 +4,5 @@ export async function load({ fetch }) {
   const res = await fetch(`${API}/items/nebula_xplorer_vacancies`);
   const { data } = await res.json();
 
-  return { vacancies: data };
+  return { assignments: data };
 }

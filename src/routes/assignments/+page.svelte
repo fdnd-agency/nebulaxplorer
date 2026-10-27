@@ -1,7 +1,8 @@
 <script>
-	import AssignmentCard from "$lib/components/molecules/AssignmentCard.svelte";
+	import AssignmentGrid from "$lib/components/organisms/AssignmentGrid.svelte";
+
 	let { data } = $props()
-	let vacancies = $derived(data.vacancies)
+	let assignments = $derived(data.assignments)
 </script>
 
 <svelte:head>
@@ -10,8 +11,10 @@
 
 <h1>Assignments</h1>
 
-{#each vacancies as vacancy}
-	<AssignmentCard { vacancy }/>
-{/each}
+<h2>Find a suitable assignment</h2>
+<p>Within the NEBULA-Xplorer project there a 6 assignments available.</p>
+
+<AssignmentGrid { assignments } />
+
 
 
