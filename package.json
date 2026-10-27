@@ -7,14 +7,29 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
-		"prepare": "svelte-kit sync || echo ''"
+		"prepare": "svelte-kit sync || echo ''",
+		"storybook": "storybook dev -p 6006",
+		"build-storybook": "storybook build",
+		"chromatic": "npx chromatic --project-token=chpt_e67d29aed5ef816"
 	},
 	"devDependencies": {
+		"@chromatic-com/storybook": "latest",
+		"@storybook/addon-a11y": "^10.6.3",
+		"@storybook/addon-docs": "^10.6.3",
+		"@storybook/addon-svelte-csf": "latest",
+		"@storybook/addon-vitest": "^10.6.3",
+		"@storybook/sveltekit": "^10.6.3",
 		"@sveltejs/adapter-auto": "^7.0.1",
 		"@sveltejs/kit": "^2.63.0",
 		"@sveltejs/vite-plugin-svelte": "^7.1.2",
+		"@vitest/browser-playwright": "latest",
+		"@vitest/coverage-v8": "latest",
+		"chromatic": "^18.13.2",
+		"playwright": "latest",
+		"storybook": "^10.6.3",
 		"svelte": "^5.56.1",
-		"vite": "^8.0.16"
+		"vite": "^8.0.16",
+		"vitest": "latest"
 	},
 	"dependencies": {
 		"@fontsource/roboto": "^5.3.0",

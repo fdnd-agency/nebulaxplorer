@@ -79,8 +79,8 @@
 
     /*typografie===================================================================================*/
     --font-heading:            "Space Grotesk", "Roboto", "Verdana", "Source Sans", "Helvetica Neue", Helvetica, "Arial Black", Arial, sans-serif; 
-    --font-body:               "Space Mono", "Roboto", "Verdana", "Source Sans", "Helvetica Neue", Helvetica, "Arial Black", Arial, sans-serif;
-    --font-detail:             "Roboto", "Source Sans", "Verdana", "Helvetica Neue", Helvetica, "Arial Black", Arial, sans-serif;
+    --font-body:               "Roboto", "Source Sans", "Verdana", "Helvetica Neue", Helvetica, "Arial Black", Arial, sans-serif;
+    --font-caption:             "Space Mono", "Roboto", "Verdana", "Source Sans", "Helvetica Neue", Helvetica, "Arial Black", Arial, sans-serif;
 
     --ratio:                   1.5;
 	--step-0:                  1.2rem;
@@ -91,11 +91,14 @@
 	--step-min-2:              calc(var(--step-min-1) / var(--ratio));
 	--step-min-3:              calc(var(--step-min-2) / var(--ratio));
 
+	--line-height-tight:       1;
     --line-height-normal:      1.5;
     --line-height-relaxed:     1.8;
 
     --ratio-text:              1.2;
+	--font-size-body-sm:       calc(var(--font-size-body-md) / var(--ratio-text));
     --font-size-body-md:       var(--step-0);
+	--font-size-body-sm:       calc(var(--font-size-body-md) / var(--ratio-text));
     --font-size-body-lg:       calc(var(--font-size-body-md) * var(--ratio-text));
     --font-size-body-xl:       calc(var(--font-size-body-lg) * var(--ratio-text));
     --font-size-body-2xl:      calc(var(--font-size-body-xl) * var(--ratio-text));
@@ -192,4 +195,14 @@ a {
 	outline: 0.15em solid var(--color-accent-light);
     outline-style: dotted;
 	outline-offset: 0.15em;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+	clip: rect(0 0 0 0); 
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap; 
+	width: 1px;
 }
