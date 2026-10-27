@@ -41,14 +41,11 @@
 </footer>
 
 <style>
-    footer {
-        container-type: inline-size;
-    }
     .footer-top {
         margin: var(--spacing-lg) var(--spacing-xl);
         color: var(--color-neutral-lightest);
 
-        @container (width > 850px) {
+        @media (width > 850px) {
             display: grid;
             grid-template-columns: 1fr auto auto auto;
             margin: var(--spacing-xl);
@@ -61,7 +58,7 @@
     address {
         display: none;
 
-        @container (width > 1150px) {
+        @media (width > 1150px) {
             display: flex;
             font-style: normal;
         }
@@ -69,7 +66,7 @@
     .white-logo-sron {
         margin-top: var(--spacing-lg);
 
-        @container (width > 850px) {
+        @media (width > 850px) {
             align-self: end;
             margin-left: var(--spacing-md);
             margin-top: 0rem;
@@ -88,7 +85,7 @@
         ul {
             list-style: none;
 
-             @container (width > 850px) {
+             @media (width > 850px) {
                 display: flex;
                 gap: var(--spacing-lg);
             }
@@ -105,7 +102,7 @@
             }
         }
 
-        @container (width > 850px) {
+        @media (width > 850px) {
             display: grid;
             grid-template-columns: 1fr auto auto;
             align-items: center;
