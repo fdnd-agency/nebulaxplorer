@@ -5,7 +5,7 @@
 <a 
     { href } 
     class={["navigation-link", classes, { current }]}
-    aria-current={ current ? "page" : undefined }
+    aria-current={ active ? "page" : undefined }
     { ...rest }
 >
     { text }
