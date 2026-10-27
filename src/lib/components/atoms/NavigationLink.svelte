@@ -10,7 +10,7 @@
     a{
         display: inline-block;
         font-family: var(--font-heading);
-        font-size: var(--font-size-body-md);
+        font-size: var(--font-size-body-sm);
         color: var(--color-neutral-lightest);
         text-decoration: none;
 
