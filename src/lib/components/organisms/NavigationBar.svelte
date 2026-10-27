@@ -3,9 +3,15 @@
     import HamburgerButton from "../atoms/HamburgerButton.svelte";
     import SearchBar from "../molecules/SearchBar.svelte";
     import logo from "$lib/assets/logos/sron-logo.webp"
+
+    let scrollY = $state(0);
+    let scrolled = $derived(scrollY > 10);
 </script>
 
-<header>
+<!--https://www.youtube.com/watch?v=K3CM7j9GIxk-->
+<svelte:window bind:scrollY />
+
+<header class={{ scrolled }}>
     <HamburgerButton />
     <section>
         <Navigation />
@@ -16,14 +22,33 @@
 
 <style>
     header {
-        position: sticky;
+        position: fixed;
         top: 0;
         left: 0;
+        z-index: 999;
         display: flex; 
         align-items: center;
         gap: var(--spacing-xl);
         width: 100%;
-        background-color: var(--color-brand-darkest);          
+        background-color: transparent;
+        
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background-color: var(--color-brand-darkest);
+            transform: scaleY(0);
+            transform-origin: top;
+
+            @media (prefers-reduced-motion: no-preference) {
+                transition: transform 0.5s ease-in-out;
+            }
+        }
+
+    &.scrolled::before {
+        transform: scaleY(1);
+    }
     }
     section{
         display: flex;
