@@ -76,6 +76,7 @@
 	--color-neutral-lightest: hsl(var(--neutral-h), var(--neutral-s), var(--neutral-lightest-l));
 
 	--background: var(--color-brand-darkest);
+	color-scheme: light dark;
 
     /*typografie===================================================================================*/
     --font-heading:            "Space Grotesk", "Roboto", "Verdana", "Source Sans", "Helvetica Neue", Helvetica, "Arial Black", Arial, sans-serif; 
