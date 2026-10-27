@@ -137,7 +137,7 @@ export function createViewerController(
 			tweening ||
 			offsetMoving ||
 			explorerScene.isAnimating()
-		renderQuality.update(frameMs, moving, runtime.interacting)
+		renderQuality.update(frameMs, moving, state.satelliteReady)
 		const nextCadStateKey = [
 			state.selectedId,
 			state.previewId,
@@ -149,7 +149,12 @@ export function createViewerController(
 				root?.userData.cadInstances?.sync()
 			cadStateKey = nextCadStateKey
 		}
-		motionDetail.update(explorerScene.getRoots(), moving)
+		// Simplified meshes only while the view moves fast; the slow ambient
+		// orbit keeps full detail
+		motionDetail.update(
+			explorerScene.getRoots(),
+			runtime.interacting || tweening || offsetMoving,
+		)
 		lighting.update(camera, controls.target)
 		explorerScene.update(time)
 		renderer.render(scene, camera)

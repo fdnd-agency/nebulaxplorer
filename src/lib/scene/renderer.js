@@ -13,7 +13,7 @@ export function createRenderer() {
 			powerPreference: 'high-performance',
 		})
 
-		const maximumPixelRatio = 1.5
+		const maximumPixelRatio = 2
 		renderer.setPixelRatio(
 			Math.min(window.devicePixelRatio, maximumPixelRatio),
 		)

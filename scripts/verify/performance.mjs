@@ -171,27 +171,67 @@ instrumentInstances.sync()
 assert.equal(renderTriangles(instrument), sum(instrumentSources))
 instrumentInstances.dispose()
 let ratio = 2
-const resolutions = []
 const quality = createRenderQuality(
 	{
 		getPixelRatio: () => ratio,
 		setPixelRatio: (value) => {
 			ratio = value
-			resolutions.push(value)
 		},
 	},
 	2,
 )
-quality.update(0, true, false)
-assert.equal(ratio, 1)
-for (let i = 0; i < 150; i++) quality.update(45, true, false)
-assert.equal(ratio, 0.5)
-quality.update(0, false, false)
-assert.equal(ratio, 1.5)
-for (let i = 0; i < 10; i++) quality.update(0, false, false)
-assert.equal(resolutions.filter((value) => value === 1.5).length, 1)
-quality.update(0, true, true)
-assert(ratio <= 1.25)
+const frames = (count, frameMs, moving = true) => {
+	for (let i = 0; i < count; i++) quality.update(frameMs, moving)
+}
+// Slow frames while loading and right after it, and single hitches,
+// keep full sharpness
+frames(1, 0)
+for (let i = 0; i < 100; i++) quality.update(60, true, false)
+frames(50, 45)
+frames(200, 16.7)
+assert.equal(ratio, 2)
+for (let i = 0; i < 60; i++) frames(1, i % 10 === 0 ? 180 : 16.7)
+assert.equal(ratio, 2)
+// Something else briefly using the GPU lowers the ratio, which recovers afterwards
+frames(300, 40)
+assert(ratio < 2)
+frames(5000, 16.7)
+assert.equal(ratio, 2)
+// A 60 Hz device whose frame cost grows with the pixels settles at the sharpest
+// ratio that keeps up, and retries a sharper one less and less often
+const device = createRenderQuality(
+	{
+		getPixelRatio: () => ratio,
+		setPixelRatio: (value) => {
+			ratio = value
+		},
+	},
+	2,
+)
+const deviceFrame = () => Math.ceil((10 * ratio ** 2) / 16.7) * 16.7
+const run = (count) => {
+	const changes = []
+	for (let i = 0; i < count; i++) {
+		const before = ratio
+		device.update(deviceFrame(), true)
+		if (ratio !== before) changes.push(i)
+	}
+	return changes
+}
+device.update(0, true)
+run(1000)
+assert.equal(ratio, 1.25)
+// Ten minutes of motion: a handful of short retries, not constant switching
+const changes = run(36000)
+assert(changes.length <= 16, `${changes.length} ratio changes`)
+assert([1.25, 1.5].includes(ratio))
+// Still frames are always fully sharp
+device.update(0, false)
+assert.equal(ratio, 2)
+// Consistently missed frames go down step by step, not below 0.75
+device.update(0, true)
+for (let i = 0; i < 500; i++) device.update(60, true)
+assert.equal(ratio, 0.75)
 console.log(
 	JSON.stringify({
 		sourceTriangles: sum(sourceMeshes),
