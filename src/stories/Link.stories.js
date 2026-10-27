@@ -8,7 +8,8 @@ export default {
         href: "/",
         text: "Bekijk alles",
         size: "sm",
-        bold: true
+        bold: true,
+        stretched: false,
     },
     argTypes: {
         size: { control: "select", options: ["sm", "md", "lg"] },
@@ -16,7 +17,8 @@ export default {
         bold: { control: "boolean" },
         text: { control: "text" },
         href: { control: "text" },
-        classes: { control: "text" }
+        classes: { control: "text" },
+        stretched: { control: "boolean"}
     },
 };
 
@@ -27,6 +29,10 @@ export const Large = { args: { size: "lg" } };
 export const Bold = { args: { bold: true } };
 
 export const CustomColor = {
-    args: { color: 'var(--color-accent-light)', bold: true },
-    parameters: { backgrounds: { default: 'dark' } }
+    args: { color: 'var(--color-accent-mid)', bold: true },
+};
+
+export const Stretched = {
+    args: { stretched: true, "aria-label": "Bekijk alles: assignments" },
+    parameters: { docs: { story: { inline: false, iframeHeight: 120 } } }
 };
