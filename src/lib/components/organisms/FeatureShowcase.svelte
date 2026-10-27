@@ -250,13 +250,30 @@
 
 <style>
   section {
+    * {
+      color: var(--color-neutral-lightest);
+    }
+
     display: grid;
     gap: var(--spacing-lg);
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
 
     .feature-list {
       display: flex;
       overflow-x: scroll;
       scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+
+      @media (min-width: 768px) {
+        display: block;
+        height: 100vh;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+      }
     }
 
     .group,
@@ -264,8 +281,26 @@
       display: contents;
     }
 
+    .group {
+      @media (min-width: 768px) {
+        display: block;
+        height: 100%;
+        scroll-snap-align: start;
+      }
+    }
+
+    .group ul {
+      @media (min-width: 768px) {
+        display: block;
+      }
+    }
+
     .group-nav {
       display: none;
+
+      @media (min-width: 768px) {
+        display: flex;
+      }
     }
 
     li {
@@ -273,6 +308,11 @@
       scroll-snap-align: start;
       list-style: none;
       position: relative;
+
+      @media (min-width: 768px) {
+        flex: none;
+        scroll-snap-align: none;
+      }
 
       label::after {
         content: "";
