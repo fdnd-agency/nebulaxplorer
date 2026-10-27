@@ -38,6 +38,6 @@ export const HiddenText = {
 };
 
 export const Stretched = {
-    args: { stretched: true, hiddenText: ": assignments" },
+    args: { stretched: true, hiddenText: "screenreadertext" },
     parameters: { docs: { story: { inline: false, iframeHeight: 120 } } }
 };
