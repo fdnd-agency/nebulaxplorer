@@ -19,14 +19,12 @@
         <a href="https://www.sron.nl/"><img class="white-logo-sron" src="src/lib/assets/logos/SRON_Full_White.webp" alt="full white logo of sron" width="200" height="45"></a>
     </div>
 
-    <div class="footer-bottom">
-        <nav>
-            <ul>
-                <li><a href="/">About us</a></li>
-                <li><a href="/">Contact</a></li>
-                <li><a href="https://www.nwo-i.nl/en/privacy-policy/">Privacy Policy</a></li>
-            </ul>
-        </nav>
+    <nav class="footer-nav">
+        <ul>
+            <li><a href="/">About us</a></li>
+            <li><a href="/">Contact</a></li>
+            <li><a href="https://www.nwo-i.nl/en/privacy-policy/">Privacy Policy</a></li>
+        </ul>
 
         <p>Follow nebula</p>
 
@@ -35,7 +33,7 @@
             <li><a href="https://www.instagram.com/sron_space/"><img src="src/lib/assets/images/Social_Icon_Instagram.png" alt="logo of instagram" width="25" height="25"></a></li>
             <li><a href="https://www.linkedin.com/company/sron"><img src="src/lib/assets/images/Social_Icon_LinkedIn.png" alt="logo of linkedin" width="25" height="25"></a></li>
         </ul>  
-    </div>
+    </nav>
 
     <p class="quote">What happens up there, starts down here.</p>
 </footer>
@@ -73,7 +71,7 @@
         }
     }
 
-    .footer-bottom {
+    .footer-nav {
         margin: var(--spacing-lg) var(--spacing-xl);
         color: var(--color-neutral-lightest);
         text-transform: uppercase;
