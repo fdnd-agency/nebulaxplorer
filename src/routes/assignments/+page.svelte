@@ -9,14 +9,21 @@
 	<title>Assignments - NebulaXPlorer</title>
 </svelte:head>
 
-<h1>Assignments</h1>
 
-<h2>Find a <span>suitable</span> assignment</h2>
-<p>Within the NEBULA-Xplorer project there a <span>{ assignments.length }</span> assignments available.</p>
+<main>
+	<h1>Assignments</h1>
 
-<AssignmentGrid { assignments } />
+	<h2>Find a <span>suitable</span> assignment</h2>
+	<p>Within the NEBULA-Xplorer project there a <span>{ assignments.length }</span> assignments available.</p>
+
+	<AssignmentGrid { assignments } />
+</main>
+
 
 <style>
+	main{
+		margin: 0 var(--spacing-xl);
+	}
 	span{
 		color: var(--color-accent-mid);
 	}

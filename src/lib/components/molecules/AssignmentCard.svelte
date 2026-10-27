@@ -10,7 +10,7 @@
     <Link 
         href="/assignments/{assignment.id}" 
         text="Read more" 
-        color="var(--color-accent-mid)" 
+        color="var(--card-accent)" 
         bold 
         stretched 
         hiddenText=": about {assignment.title}"
@@ -22,14 +22,21 @@
     .card{
         --card-bg:  light-dark( var(--color-brand-darkest), var(--color-neutral-lightest));
         --card-text:  light-dark(var(--color-neutral-lightest), var(--color-brand-darkest));
+        --card-accent: light-dark(var(--color-accent-mid), var(--color-accent-darker));
+        /*
+        --card-bg: light-dark(var(--color-neutral-lightest), var(--color-brand-darkest));
+        --card-text: light-dark(var(--color-brand-darkest), var(--color-neutral-lightest));
+        --card-accent: light-dark(var(--color-accent-darker), var(--color-accent-mid));
+        */
 
         background-color: var(--card-bg);
         color: var(--card-text);
 
         border-color: var(--color-brand-darkest);
         border: solid 0.2rem;
-        border-top: solid 0.4rem var(--color-accent-mid);
+        border-top: solid 0.4rem var(--card-accent);
         padding: var(--spacing-lg);
+        overflow: hidden;
 
         &.light { color-scheme: light; }
         &.dark  { color-scheme: dark; }
@@ -41,18 +48,24 @@
 
     p:first-of-type{
         position: relative;
-        color: var(--color-accent-mid);
+        color: var(--card-accent);
         padding-top: var(--spacing-lg);
         font-size: var(--font-size-body-sm);
-        border-top: 0.2rem solid var(--color-accent-mid);
+        border-top: 0.2rem solid var(--card-accent);
+        font-weight: bold;
     }
 
     p:last-of-type{
         margin-top: var(--spacing-xs);
         font-size: var(--font-size-body-md);
     }
-    
 
+    .card {
+        grid-row: span 4;
+        display: grid;
+        grid-template-rows: subgrid;
+        gap: var(--spacing-md);
+    }
 
 
     /*tijdelijk*/
@@ -64,6 +77,5 @@
         p:last-of-type{
             font-family: var(--font-heading);
         }
-        margin: 3rem;
     }
 </style>
