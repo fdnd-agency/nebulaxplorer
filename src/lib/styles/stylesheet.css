@@ -75,7 +75,7 @@
 	--color-neutral-lighter: hsl(var(--neutral-h), var(--neutral-s), var(--neutral-lighter-l));
 	--color-neutral-lightest: hsl(var(--neutral-h), var(--neutral-s), var(--neutral-lightest-l));
 
-	--background: var(--color-brand-darkest);
+	--background: light-dark(var(--color-neutral-lightest), var(--color-brand-darkest));
 	color-scheme: light dark;
 
     /*typografie===================================================================================*/
