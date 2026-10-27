@@ -60,13 +60,14 @@
         font-size: var(--font-size-body-md);
     }
 
+
+    /*container en subgrid*/
     .card {
         grid-row: span 4;
         display: grid;
         grid-template-rows: subgrid;
-        gap: var(--spacing-md);
+        gap: var(--spacing-xs);
     }
-
 
     /*tijdelijk*/
     .card{
