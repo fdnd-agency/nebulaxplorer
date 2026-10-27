@@ -1,21 +1,24 @@
 <!--
     Props:
-    - href    (required) where the link goes
-    - text    (required) the link text
-    - size    "sm"  "md"  "lg" 
-    - color    string- CSS variable
-    - bold     boolean - default: false
-    - classes  string - extra classes
+    - href       (required) where the link goes
+    - text       (required) the link text
+    - size       "sm"  "md"  "lg" 
+    - color      string- CSS variable
+    - bold       boolean - default = false
+    - classes    string - extra classes
+    - stretched  boolean - default = false
+                 The parent needs `position: relative`.
+    - ...rest    other attributes
 
     <Link href="/assignments" text="Bekijk alles" size="lg" color="var(--color-accent-light)" bold />
 -->
 
 <script>
     import ArrowRight from "./ArrowRight.svelte";
-    let { href, classes, text, size, color="var(--color-neutral-darkest)", bold = false} = $props()
+    let { href, classes, text, size, color="var(--color-neutral-darkest)", bold = false, stretched = false, ...rest} = $props()
 </script>
 
-<a { href } class={[classes, size, { bold }]} style="--link-color: {color};">
+<a { href } class={[classes, size, { bold, stretched }]} style="--link-color: { color };" { ...rest }>
     { text }
     <span class="icon-wrapper">
         <ArrowRight />
@@ -57,6 +60,12 @@
         &.lg { font-size: var(--font-size-body-lg);}
 
         &.bold{ font-weight: bold;}
+
+        &.stretched::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+        }
     }
 
 </style>
