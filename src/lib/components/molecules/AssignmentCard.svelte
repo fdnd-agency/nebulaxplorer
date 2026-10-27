@@ -13,7 +13,7 @@
         color="var(--color-accent-mid)" 
         bold 
         stretched 
-        hiddenText=": {assignment.title}"
+        hiddenText=": about {assignment.title}"
         size="sm"
     />
 </article>
@@ -44,6 +44,7 @@
         color: var(--color-accent-mid);
         padding-top: var(--spacing-lg);
         font-size: var(--font-size-body-sm);
+        border-top: 0.2rem solid var(--color-accent-mid);
     }
 
     p:last-of-type{

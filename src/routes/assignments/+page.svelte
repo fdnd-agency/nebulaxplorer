@@ -11,10 +11,13 @@
 
 <h1>Assignments</h1>
 
-<h2>Find a suitable assignment</h2>
-<p>Within the NEBULA-Xplorer project there a 6 assignments available.</p>
+<h2>Find a <span>suitable</span> assignment</h2>
+<p>Within the NEBULA-Xplorer project there a <span>{ assignments.length }</span> assignments available.</p>
 
 <AssignmentGrid { assignments } />
 
-
-
+<style>
+	span{
+		color: var(--color-accent-mid);
+	}
+</style>
