@@ -1,7 +1,7 @@
 import Link from "$lib/components/atoms/Link.svelte";
 
 export default {
-    title: "components/link",
+    title: "components/Atoms/link",
     component: Link,
     tags: ['autodocs'],
     args: {
