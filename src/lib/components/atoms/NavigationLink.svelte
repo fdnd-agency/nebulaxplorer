@@ -2,12 +2,7 @@
     let { href, text, active = false, classes, ...rest } = $props();
 </script>
 
-<a 
-    { href } 
-    class={["navigation-link", classes, { current }]}
-    aria-current={ active ? "page" : undefined }
-    { ...rest }
->
+<a { href } class={[classes, { current }]} aria-current={ active ? "page" : undefined } { ...rest }>
     { text }
 </a>
 
