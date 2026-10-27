@@ -194,3 +194,14 @@ a {
     outline-style: dotted;
 	outline-offset: 0.15em;
 }
+
+.visually-hidden {
+  border: 0;
+  clip-path: inset(50%);
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

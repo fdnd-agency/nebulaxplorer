@@ -2,18 +2,18 @@
     <div class="footer-top">
         <a href="/"><img class="logosron" src="src/lib/assets/logos/SRON_Academy_OnSpaceBlue-1024x422.png" alt="logo of sron academy" width="230" height="100"></a>
 
-        <address>
-            Niels Bohrweg 4<br />
-            2333 CA Leiden<br />
-            The Netherlands<br />
-            31 (0)88 777 56 00<br />
+        <address class="visually-hidden">
+            Niels Bohrweg 4<br/>
+            2333 CA Leiden<br/>
+            The Netherlands<br/>
+            31 (0)88 777 56 00<br/>
         </address>
 
-        <address>
-            Landleven 12<br />
-            9747 AD Groningen<br />
-            The Netherlands<br />
-            31 (0)50 363 40 74<br />
+        <address class="visually-hidden">
+            Landleven 12<br/>
+            9747 AD Groningen<br/>
+            The Netherlands<br/>
+            31 (0)50 363 40 74<br/>
         </address>
         
         <a href="https://www.sron.nl/"><img class="white-logo-sron" src="src/lib/assets/logos/SRON_Full_White.webp" alt="full white logo of sron" width="200" height="45"></a>
@@ -54,11 +54,14 @@
         }
     }
     address {
-        display: none;
-
         @media (width > 1150px) {
             display: flex;
             font-style: normal;
+            border: 0;
+            position: static;
+            clip-path: none;
+            width: auto;
+            height: auto;
         }
     }
     .white-logo-sron {
