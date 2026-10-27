@@ -6,7 +6,7 @@
 <ul>
     <li class="location">
         <enhanced:img src={ leiden } alt="sron building in leiden" sizes="50vw" loading="lazy"/>
-        <h4 class="visually-hidden">Leiden</h4>
+        <h4 class="label visually-hidden">Leiden</h4>
         <address>
             Niels Bohrweg 4<br>
             2333 CA Leiden<br>
@@ -16,7 +16,7 @@
     </li>
     <li class="location">
         <enhanced:img src={ groningen } alt="sron building in groningen" sizes="50vw" loading="lazy"/>
-        <h4 class="visually-hidden">Groningen</h4>
+        <h4 class="label visually-hidden">Groningen</h4>
         <address>
             Landleven 12<br>
             9747 AD Groningen<br>
@@ -46,12 +46,13 @@
         }
     }
 
-    .visually-hidden {
-        display: none;
+    .label {
         color:  var(--color-neutral-lightest);
         z-index: 1000;
         
         @container (width > 30ch) {
+            width: auto;
+            clip-path: none;
             display: flex;
             text-transform: uppercase;
             position: absolute;
@@ -94,7 +95,7 @@
         }
     }
 
-.visually-hidden:hover + address,
+.label:hover + address,
 .location:focus-within address {
 
         @container (width > 30ch) {
