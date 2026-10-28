@@ -8,7 +8,7 @@
 
 	import favicon from '$lib/assets/favicon.svg';
 	import '$lib/styles/stylesheet.css';
-  	import Locations from '$lib/components/organisms/Footer.svelte';
+  	import Footer from '$lib/components/organisms/Footer.svelte';
 
 	let { children } = $props();
 </script>
@@ -19,4 +19,4 @@
 
 {@render children()}
 
-<Locations />
+<Footer />
