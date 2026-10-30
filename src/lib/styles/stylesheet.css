@@ -197,6 +197,17 @@ a {
 	outline-offset: 0.15em;
 }
 
+.visually-hidden {
+  	border: 0;
+	margin: 0;
+	width: 1px;
+  	height: 1px;
+  	overflow: hidden;
+  	position: absolute;
+  	white-space: nowrap;
+	clip-path: inset(50%);
+}
+
 .visually-hidden:not(:focus):not(:active) {
 	clip: rect(0 0 0 0); 
 	clip-path: inset(50%);
