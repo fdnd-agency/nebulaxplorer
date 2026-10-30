@@ -13,6 +13,3 @@
   text="To the stars by the genius of youth"
   image={missionImage}
 />
-
-
-<Link href="/" text="Bekijk alles" size="lg" color="var(--color-accent-light)" bold />
