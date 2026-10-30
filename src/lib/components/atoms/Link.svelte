@@ -15,7 +15,7 @@
 -->
 
 <script>
-    import ArrowRight from "./ArrowRight.svelte";
+    import ArrowRight from "$lib/assets/icons/ArrowRight.svelte"
     let { href, classes, text, hiddenText, size, color="var(--color-neutral-darkest)", bold = false, stretched = false, ...rest} = $props()
 </script>
 
