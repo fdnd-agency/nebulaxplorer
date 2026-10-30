@@ -14,7 +14,7 @@ Bedankt voor je tijd gisteren bij de sprint review, Martin. Hierbij de debriefin
 
 ## Satelliet
 
-- Je hebt een nieuwere STEP-file van de satelliet. Chasity bevestigt of die al gedeeld is.
+- Je hebt een nieuwere STEP-file van de satelliet deze moet nog worden gedeeld met chasity.
 - Als de 3D-weergave niet werkt, tonen we toch iets via een menu, zodat de pagina altijd bruikbaar blijft.
 - Je hebt een tabel gedeeld met de structuur van de satelliet. De laatste niveaus, zoals de baffle, mogen we nog weglaten en later toevoegen. We mogen ze wel noemen: klik je op de detector module, dan staat er dat de baffle daarin zit. Een aparte detailpagina is daarvoor niet nodig.
 - De rode zinnen in de tabel weet je zelf nog niet, dus die gebruiken we nog niet.
@@ -49,7 +49,7 @@ Bedankt voor je tijd gisteren bij de sprint review, Martin. Hierbij de debriefin
 
 ## Wat gaan we nu doen
 
-- Jij: levert de opties voor het assignments-formulier aan
+- Jij: levert de opties voor het assignments-formulier aan en de nieuwste STEP-file
 - Wij: verwerken je feedback in de designs. Lynn past de LinkedIn-link aan, Isaac laat het witte NEBULA-logo terugkomen in de hero, Roxy voegt de locatie toe en past het formulier aan. Chasity stuurt je een bericht over de STEP-file en vraagt meer informatie over de core values.
 
 Laat gerust weten als ik iets gemist heb of anders heb opgeschreven.
