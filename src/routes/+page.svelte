@@ -1,5 +1,5 @@
 <script>
-  import Hero from "$lib/components/organisms/Hero.svelte";
+  import { Hero } from "$lib/components";
   import missionImage from "$lib/assets/images/hero-background-01.jpg";
 </script>
 
