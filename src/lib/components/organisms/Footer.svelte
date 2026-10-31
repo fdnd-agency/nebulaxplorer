@@ -31,11 +31,11 @@
         <ul class="social-icons">
             <li><a href="https://web-cdn.bsky.app/profile/did:plc:xskzoixc54ebxryzak45u7ra"><img src="src/lib/assets/images/Social_Icon_BlueSky.png" alt="logo of bluesky" width="25" height="25"></a></li>
             <li><a href="https://www.instagram.com/sron_space/"><img src="src/lib/assets/images/Social_Icon_Instagram.png" alt="logo of instagram" width="25" height="25"></a></li>
-            <li><a href="https://www.linkedin.com/company/sron"><img src="src/lib/assets/images/Social_Icon_LinkedIn.png" alt="logo of linkedin" width="25" height="25"></a></li>
+            <li><a href="https://www.linkedin.com/company/nebula-xplorer"><img src="src/lib/assets/images/Social_Icon_LinkedIn.png" alt="logo of linkedin" width="25" height="25"></a></li>
         </ul>  
     </nav>
 
-    <p class="quote">What happens up there, starts down here.</p>
+    <p class="quote">Ad Astra, Ingenio Iuventutis.</p>
 </footer>
 
 <style>
