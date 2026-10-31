@@ -9,6 +9,7 @@
 
 	import favicon from '$lib/assets/favicon.svg';
 	import '$lib/styles/stylesheet.css';
+  	import Footer from '$lib/components/organisms/Footer.svelte';
 
 	let { children } = $props();
 </script>
@@ -18,3 +19,5 @@
 </svelte:head>
 
 {@render children()}
+
+<Footer />
