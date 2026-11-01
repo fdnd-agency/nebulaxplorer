@@ -2,7 +2,7 @@
   let { value = "" } = $props();
 </script>
 
-<form class="search-form" method="GET" action="/search">
+<form class="search-form" method="GET" action="/search" role="search">
   <label for="search">
     <span class="visually-hidden">Zoeken</span>
     <input
