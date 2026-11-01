@@ -24,6 +24,8 @@ Live link: https://nebulaxplorer.dev.fdnd.nl/
 ## Design System
 <img width="1193" height="869" alt="image" src="https://github.com/user-attachments/assets/b6226360-4ffd-4141-bf63-15272ff8a284" />
 
+---
+
 ### Typography
 For headings, we use **Space Grotesk**, while **Space Mono** is used for body text.
 
@@ -49,6 +51,8 @@ h5,
 h6 { font-size:                var(--step-0); }
 ```
 
+---
+
 ### Colors
 We use SRON's brand colors to maintain consistency and brand recognition. We converted these colors to **HSL** and added multiple shades to create more consistency and a calmer visual design.
 
@@ -60,14 +64,29 @@ The hero/banner on the SRON website was quite large, so we decided to reduce its
 We also added a dark overlay to the image to ensure that the text remains clearly readable.
 <img width="1000" alt="image" src="https://github.com/user-attachments/assets/5b4fb6cb-b2d5-4814-91bd-726c9cd891df" />
 
+---
+
 ### Sub page hero
 This hero is used across the subpages and contains the page title and a short introduction describing the content of the respective page.
 <img width="1000" alt="image" src="https://github.com/user-attachments/assets/62bb07e9-1ae2-41b4-964c-c0318cb0515c" />
 
+---
 
 ### Featured halves
 We created multiple variations of the featured halves component to avoid presenting users with large blocks of text.
 This gives the website a calmer visual structure and allows users to find and scan information more quickly.<img width="500" alt="image" src="https://github.com/user-attachments/assets/9d5f0322-abce-4e3b-ad7c-0b5ad3c4c40d" />
+
+---
+
+### Footer
+
+This is the footer. We opted to include as few navigation elements as possible here, as adding more would result in information that duplicates what is already in the main menu.
+
+<img width="1107" height="582" alt="Scherm­afbeelding 2026-10-31 om 20 22 54" src="https://github.com/user-attachments/assets/a6054456-8cc4-444d-b53e-281c933af67e" />
+
+There is also a little animation added when you hover on the location
+
+https://github.com/user-attachments/assets/0328f2e7-f15f-4f05-9db7-2a3991c7b61a
 
 ---
 
