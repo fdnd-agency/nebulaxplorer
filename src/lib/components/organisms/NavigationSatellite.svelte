@@ -60,3 +60,105 @@
 
 	</section>
 </section>
+
+<style>
+	.satellite {
+		display: flex;
+		flex-direction:row;
+		flex-direction: row-reverse;
+        
+	}
+	.nav-bar {
+		 p {
+			font-family: var(--font-caption);
+		 }
+	}
+    .navigation {
+        color: var(	--color-neutral-lightest);
+        background-color :var(--color-brand-darkest);
+        padding: 2.5rem 2.5rem;	
+		p {
+			font-size: 1rem;
+		}
+    }
+
+	summary {
+		cursor: pointer;
+		display: flex;
+		gap: var(--spacing-lg);
+		padding: var(--spacing-sm);
+		list-style: none;
+
+		&:hover {
+			background-color:#26273E;
+		}
+		span {
+            color: var(--color-accent-dark);
+        }
+	}
+
+	summary::after {
+  		content: "▶ ";
+		margin-left: auto;
+	}
+
+	details[open] summary::after {
+  		content: "▼";
+	}
+
+    details {
+		border-top: 1px solid #4a4a5a;
+		margin-top: var(--spacing-lg);
+		font-family: var(--font-caption); 
+
+		a {
+			text-decoration: none;
+		}
+		p {
+			margin: var(--spacing-md) 0;
+			padding-left: 3.5rem;
+			font-size: 1rem;
+		}
+    }
+
+	details[open] summary{
+		background-color:#26273E;
+		box-shadow: inset 2px 0 0 var(--color-accent-dark);
+	}
+
+    .spacecraft, .components {
+        color: var(--color-accent-dark);
+        text-transform: uppercase;
+    }
+
+	h2 {
+		font-size: var(--step-1);
+	}
+
+	.about {
+		display: flex;
+		flex-direction: column;
+		margin-top: var(--spacing-xl);
+		h3 {
+			font-size: 1rem;
+			text-transform: uppercase;
+			font-family: var(--font-body);
+		}
+		p {
+			margin: var(--spacing-md) 0 var(--spacing-md) 0;
+		}
+		a {
+			margin-top: var(--spacing-md);
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+				text-underline-offset: 6px;
+				text-decoration-color: var(--color-accent-dark);
+			}
+		}
+	}
+	p {
+		color: var(--color-neutral-lighter);
+	}
+	
+</style>
