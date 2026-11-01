@@ -1,3 +1,15 @@
+<section class="satellite">
+	<img src="src/lib/assets/logos/satellite-overview.webp" alt="" width="2000" height="800" > 
+	<section class="navigation">
+
+		<nav class="nav-bar">
+			<p>Satellite</p>
+		</nav>
+
+		<p class="spacecraft">Spacecraft</p>
+		<h2>NEBULA Xplorer satellite</h2>
+		<p>Explore the NEBULA Xplorer satellite in 3D. Rotate the spacecraft, zoom in, and select a component to discover where it is located and what it does.</p>
+
 		<nav>
 			<p class="components">Components</p>
 
@@ -37,3 +49,14 @@
 				<p id="solar-panel">These panels convert sunlight into electricity to power the satellite's systems and instruments. Positioned to capture maximum sunlight, they support continuous operation when combined with onboard energy storage during eclipse.</p>
 			</details> 
 		</nav>
+
+		<section class="about">
+				<h3>About the mission</h3>
+				<p>This student-driven mission combines innovation with academic and industry expertise. Its high time resolution and continuous observations reveal how matter behaves, how jets form, and how these systems evolve.</p>
+				<p>A student-driven mission in collaboration with</p>
+				<img src="src/lib/assets/logos/sron-full-white-logo.webp" alt="full white logo of sron" width="100"height="25" > 
+				<a href="https://nebulaxplorer.dev.fdnd.nl/">Main website</a>
+		</section>
+
+	</section>
+</section>
