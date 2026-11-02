@@ -10,8 +10,3 @@
 
 <h1>Assignments</h1>
 
-{#each vacancies as vacancy}
-	<AssignmentCard { vacancy }/>
-{/each}
-
-
