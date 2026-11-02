@@ -160,6 +160,32 @@
       span {
         color: var(--color-accent-mid);
       }
+
+      details {
+        &[open] summary:after {
+          transform: rotate(45deg);
+        }
+
+        summary {
+          border-bottom: 1px solid var(--color-neutral-lightest);
+          cursor: pointer;
+          position: relative;
+          list-style: none;
+          padding-bottom: var(--spacing-sm);
+
+          &::after {
+            content: "+";
+            position: absolute;
+            right: 0;
+            transform-origin: center;
+            transition: 0.3s linear;
+          }
+        }
+
+        p {
+          padding-top: var(--spacing-md);
+        }
+      }
     }
   }
 </style>
