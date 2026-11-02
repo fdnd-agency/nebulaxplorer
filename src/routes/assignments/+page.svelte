@@ -1,5 +1,4 @@
 <script>
-	import AssignmentCard from "$lib/components/molecules/AssignmentCard.svelte";
 	let { data } = $props()
 	let vacancies = $derived(data.vacancies)
 </script>
