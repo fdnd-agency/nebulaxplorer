@@ -15,7 +15,7 @@
 -->
 
 <script>
-    import { Arrow } from '$lib/assets/icons/icons.js';
+    import { Arrow } from "$lib/assets/icons/icons.js";
     let { href, classes, text, hiddenText, size, color="var(--color-neutral-darkest)", bold = false, stretched = false, ...rest} = $props()
 </script>
 
