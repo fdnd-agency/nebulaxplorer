@@ -147,4 +147,19 @@
 </section>
 
 <style>
+  section {
+    * {
+      color: var(--color-neutral-lightest);
+    }
+
+    .feature-content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-md);
+
+      span {
+        color: var(--color-accent-mid);
+      }
+    }
+  }
 </style>
