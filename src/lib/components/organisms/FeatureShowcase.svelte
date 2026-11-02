@@ -167,11 +167,11 @@
         }
 
         summary {
-          border-bottom: 1px solid var(--color-neutral-lightest);
+          border-top: 1px solid var(--color-neutral-lightest);
           cursor: pointer;
           position: relative;
           list-style: none;
-          padding-bottom: var(--spacing-sm);
+          padding-top: var(--spacing-sm);
 
           &::after {
             content: "+";
