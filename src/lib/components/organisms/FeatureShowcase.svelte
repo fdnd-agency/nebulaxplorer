@@ -152,6 +152,10 @@
       color: var(--color-neutral-lightest);
     }
 
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+
     article {
       display: flex;
       flex-direction: column;
@@ -164,6 +168,8 @@
 
         span {
           color: var(--color-accent-mid);
+          font-family: var(--font-heading);
+          font-weight: bold;
         }
 
         details {
