@@ -41,7 +41,6 @@
     />
   {/each}
 </section>
-z
 
 <style>
   section {
