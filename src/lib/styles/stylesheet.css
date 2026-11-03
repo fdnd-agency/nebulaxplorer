@@ -119,6 +119,13 @@ html{
     }
 }
 
+* {
+    margin:                    0;
+    padding:                   0;
+    min-width:                 0;
+    box-sizing:                border-box;
+}
+
 body{
     background:                var(--background);
     font-family:               var(--font-body);
@@ -127,11 +134,12 @@ body{
     color:                     var(--color-neutral-surface);
 }
 
-* {
-    margin:                    0;
-    padding:                   0;
-    min-width:                 0;
-    box-sizing:                border-box;
+main {
+	padding: 0 var(--spacing-md) ;
+
+	@media (min-width: 768px) {
+		padding: 0 var(--spacing-xl);
+	}
 }
 
 /* headings=========================================================================================== */

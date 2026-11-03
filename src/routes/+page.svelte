@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>Home - NebulaXPlorer</title>
+  <title>Home - NebulaXPlorer</title>
 </svelte:head>
 
 <Hero
@@ -12,3 +12,12 @@
   text="To the stars by the genius of youth"
   image={missionImage}
 />
+
+<main>
+  
+
+  <h2>
+    test
+  </h2>
+
+</main>
