@@ -1,5 +1,5 @@
 <script>
-  //   import ContentAccordion from "$lib/components/atoms/ContentAccordion.svelte";
+  import ContentAccordion from "$lib/components/atoms/ContentAccordion.svelte";
 
   let { index, total, title, intro, details, image, alt = "" } = $props();
 </script>
