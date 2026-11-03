@@ -1,7 +1,7 @@
 // place files you want to import through the `$lib` alias in this folder.
 
 // icons
-export * from "../assets/icons/icons.js";
+export * from "$lib/assets/icons/icons.js";
 
 // atoms
 export { default as Link } from "./atoms/Link.svelte";
