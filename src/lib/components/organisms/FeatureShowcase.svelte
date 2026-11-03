@@ -7,9 +7,7 @@
 <section>
   <article>
     <div class="feature-content-wrapper">
-      <div class="feature-count">
-        <span>01/09</span>
-      </div>
+      <span>01/09</span>
       <div class="feature-content">
         <h3>X-ray reverberation</h3>
         <p>
@@ -57,9 +55,7 @@
 
   <article>
     <div class="feature-content-wrapper">
-      <div class="feature-count">
-        <span>02/09</span>
-      </div>
+      <span>02/09</span>
       <div class="feature-content">
         <h3>Quasi-Periodic Oscillations</h3>
         <p>
@@ -109,9 +105,7 @@
 
   <article>
     <div class="feature-content-wrapper">
-      <div class="feature-count">
-        <span>03/09</span>
-      </div>
+      <span>03/09</span>
       <div class="feature-content">
         <h3>Wind Evolution over an Outburst</h3>
         <p>
