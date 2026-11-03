@@ -131,7 +131,7 @@ body{
     font-family:               var(--font-body);
 	font-size:                 var(--step-0);
 	line-height:               var(--line-height-normal);
-    color:                     var(--color-neutral-surface);
+    color:                     var(--color-neutral-lightest);
 }
 
 main {
