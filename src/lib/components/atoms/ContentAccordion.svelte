@@ -47,7 +47,10 @@
       position: absolute;
       right: 0;
       transform-origin: center;
-      transition: 0.3s linear;
+
+      @media (prefers-reduced-motion: no-preference) {
+        transition: 0.3s linear;
+      }
     }
   }
 
