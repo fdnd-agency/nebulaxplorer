@@ -17,11 +17,11 @@
     <div class="feature-content-wrapper">
       <span>{index}/{total}</span>
       <div class="feature-content">
+        <h3>{title}</h3>
         <ul class="requirements">
-          <h3>{title}</h3>
           {#each requirements as requirement, i}
             <li>
-              <p>{requirement.intro}</p>
+              <p class="requirement-intro">{requirement.intro}</p>
 
               {#if requirement.details}
                 <ContentAccordion hiddenLabel="about {title}">
@@ -74,6 +74,16 @@
         gap: var(--spacing-lg);
         align-items: baseline;
       }
+
+      .requirements {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-md);
+
+        .requirement-intro {
+          font-weight: bold;
+        }
+      }
     }
 
     span {
@@ -87,7 +97,7 @@
       height: 300px;
       width: 100%;
       object-fit: cover;
-      border-radius: 50px 0 50px 0;
+      border-radius: var(--border-radius);
 
       @container feature-item (min-width: 48rem) {
         height: 400px;
