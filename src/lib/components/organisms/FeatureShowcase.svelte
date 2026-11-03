@@ -179,17 +179,18 @@
         display: flex;
         flex-direction: column;
         gap: var(--spacing-md);
-        align-items: baseline;
 
         @media (min-width: 768px) {
           flex-direction: row;
           gap: var(--spacing-lg);
+          align-items: baseline;
         }
 
         span {
           color: var(--color-accent-mid);
           font-family: var(--font-heading);
           font-weight: bold;
+          display: contents;
         }
 
         details {
