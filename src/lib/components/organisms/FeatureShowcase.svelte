@@ -167,10 +167,22 @@
       flex-direction: column;
       gap: var(--spacing-lg);
 
+      @media (min-width: 768px) {
+        flex-direction: row;
+        gap: var(--spacing-2xl);
+        justify-content: space-between;
+      }
+
       .feature-content-wrapper {
         display: flex;
         flex-direction: column;
         gap: var(--spacing-md);
+        align-items: baseline;
+
+        @media (min-width: 768px) {
+          flex-direction: row;
+          gap: var(--spacing-lg);
+        }
 
         span {
           color: var(--color-accent-mid);
@@ -179,6 +191,8 @@
         }
 
         details {
+          padding-top: var(--spacing-md);
+
           &[open] summary:after {
             transform: rotate(45deg);
           }
