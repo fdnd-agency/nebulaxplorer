@@ -111,6 +111,9 @@
     --spacing-lg:              1.5rem;  
     --spacing-xl:              3rem;      
     --spacing-2xl:             4rem;    
+
+	 /* Styling =======================================================================*/
+	 --border-radius:          50px 0 50px 0;
 }
 
 html{
