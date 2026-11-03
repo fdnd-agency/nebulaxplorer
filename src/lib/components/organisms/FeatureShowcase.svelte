@@ -7,28 +7,19 @@
 
   const scienceObjectives = [
     {
-      title: "X-ray reverberation",
-      intro:
-        "NEBULA-Xplorer shall be able to determine the mass and spin of accreting stellar-mass black holes in Galactic X-ray binaries by measuring the amplitude and energy dependence of X-ray reverberation lags during outburst, using long, high-cadence observations.",
-      details: `Reverberation mapping using X-ray "light echoes" (photons emitted in one region of the plasma can either reach the observer directly, or first interact with other parts of the plasma, be re-processed and re-emitted at different energies, and only then reach the observer), can help us understand the geometry and properties of the accreting plasma directly surrounding the black hole. Reverberation mapping measures time delays between the direct and re-emitted photons and uses these light travel delays to reconstruct a map of the accretion flow. Because the reflected path is longer, this delay encodes distances at the light-crossing scale of the system. Mass and spin come from two different parts of the same signal. The overall size of the lag tells us the mass: bigger black holes mean bigger gravitational radii, so light takes longer to make the round trip. Spin shows up in how the lag changes with energy across the broadened iron K line, because a faster-spinning black hole lets the disk's inner edge sit closer in, shortening the path light must travel from the innermost region and reshaping the lag-energy profile. To measure this, we need long, near-continuous observations within fine time-tagging resolution, sufficient effective area, and energy resolution near the iron K line to detect the reverberation signal and resolve the lag-energy profile.`,
-      image: xrayReverberation,
-      alt: "X-ray Reverberation visualization",
-    },
-    {
-      title: "Quasi-Periodic Oscillations",
-      intro:
-        "NEBULA-Xplorer shall be able to detect quasi-periodic oscillations (QPOs) in galactic black holes and neutron star X-ray binaries during outburst and other high-accretion states, to constrain the neutron star equation of state and test the universality of QPO mechanisms (e.g., Lense-Thirring precession or spiral density waves) across compact object types.",
-      details: `Reverberation mapping using X-ray "light echoes" (photons emitted in one region of the plasma can either reach the observer directly, or first interact with other parts of the plasma, be re-processed and re-emitted at different energies, and only then reach the observer), can help us understand the geometry and properties of the accreting plasma directly surrounding the black hole. Reverberation mapping measures time delays between the direct and re-emitted photons and uses these light travel delays to reconstruct a map of the accretion flow. Because the reflected path is longer, this delay encodes distances at the light-crossing scale of the system. Mass and spin come from two different parts of the same signal. The overall size of the lag tells us the mass: bigger black holes mean bigger gravitational radii, so light takes longer to make the round trip. Spin shows up in how the lag changes with energy across the broadened iron K line, because a faster-spinning black hole lets the disk's inner edge sit closer in, shortening the path light must travel from the innermost region and reshaping the lag-energy profile. To measure this, we need long, near-continuous observations within fine time-tagging resolution, sufficient effective area, and energy resolution near the iron K line to detect the reverberation signal and resolve the lag-energy profile.`,
+      title: "Relativistic Jets",
       image: neutronStarPulsar,
-      alt: "Neutron star pulsar visualization",
-    },
-    {
-      title: "Wind Evolution over an Outburst",
-      intro:
-        "NEBULA-Xplorer shall be able to detect blue shifted absorption lines in high-sensitivity X-ray spectra with high-cadence to determine mass outflow rates in compact objects to understand linked stellar formation and accretion disk makeup.",
-      details: `Reverberation mapping using X-ray "light echoes" (photons emitted in one region of the plasma can either reach the observer directly, or first interact with other parts of the plasma, be re-processed and re-emitted at different energies, and only then reach the observer), can help us understand the geometry and properties of the accreting plasma directly surrounding the black hole. Reverberation mapping measures time delays between the direct and re-emitted photons and uses these light travel delays to reconstruct a map of the accretion flow. Because the reflected path is longer, this delay encodes distances at the light-crossing scale of the system. Mass and spin come from two different parts of the same signal. The overall size of the lag tells us the mass: bigger black holes mean bigger gravitational radii, so light takes longer to make the round trip. Spin shows up in how the lag changes with energy across the broadened iron K line, because a faster-spinning black hole lets the disk's inner edge sit closer in, shortening the path light must travel from the innermost region and reshaping the lag-energy profile. To measure this, we need long, near-continuous observations within fine time-tagging resolution, sufficient effective area, and energy resolution near the iron K line to detect the reverberation signal and resolve the lag-energy profile.`,
-      image: windEvolution,
-      alt: "Wind evolution visualization",
+      alt: "Relativistic Jets visualisation",
+      requirements: [
+        {
+          intro: `NEBULA-Xplorer shall characterise relativistic jets in accreting neutron star systems, by observing how they propagate in response to Type-I thermonuclear bursts, tracking their speed and geometry to understand jet launching mechanisms.`,
+          details: `The mechanisms governing relativistic jets launched from accretion flows around neutron stars are poorly understood. Measuring the evolution of jets during Type-I thermonuclear bursts on neutron star surfaces, in terms of speed and geometry, would enable scientists to compare these properties to the neutron star’s known rotation and magnetic field, further refining jet-powering theoretical models. This objective is intended to make NEBULA-Xplorer’s observations complementary with other multi-wavelength observatories: while NEBULA-Xplorer will provide the X-ray observation capabilities to reveal Type-I bursts, partner millimeter/radio facilities will track the jet response.`,
+        },
+        {
+          intro: `NEBULA-Xplorer shall characterise the physical mechanisms which govern the relationship between changes in the inner accretion flow and relativistic jet ejections in accreting black hole systems, using independent black hole spin measurements and time-tagging of the exact jet ejections.`,
+          details: `The mechanisms governing relativistic jets launched from accretion flows around black holes are poorly understood. The high-cadence X-ray observations performed by NEBULA-Xplorer will allow scientists to link sudden changes in the inner accretion flow, such as specific quasi-periodic oscillations, to the moment of jet launch. Novel analysis techniques, combined with NEBULA-Xplorer’s flexible, highly sensitive, and rapid response system will be able to achieve sub 10-minute precision in monitoring ejection dates. This objective is also intended to make NEBULA-Xplorer’s observations complementary with other multi-wavelength observatories.`,
+        },
+      ],
     },
   ];
 </script>
