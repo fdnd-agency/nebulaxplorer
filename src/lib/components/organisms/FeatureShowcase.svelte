@@ -49,7 +49,7 @@
     </div>
 
     <div class="feature-image-wrapper">
-      <img src={xrayReverberation} alt="" />
+      <img src={xrayReverberation} alt="X-ray Reverberation visualization" />
     </div>
   </article>
 
@@ -99,7 +99,7 @@
     </div>
 
     <div class="feature-image-wrapper">
-      <img src={neutronStarPulsar} alt="" />
+      <img src={neutronStarPulsar} alt="Neutron star pulsar visualization" />
     </div>
   </article>
 
@@ -147,7 +147,7 @@
     </div>
 
     <div class="feature-image-wrapper">
-      <img src={windEvolution} alt="" />
+      <img src={windEvolution} alt="Wind evolution visualization" />
     </div>
   </article>
 </section>
