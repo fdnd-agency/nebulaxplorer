@@ -225,6 +225,10 @@
           width: 100%;
           object-fit: cover;
           border-radius: 50px 0 50px 0;
+
+          @media (min-width: 768px) {
+            height: 400px;
+          }
         }
       }
     }
