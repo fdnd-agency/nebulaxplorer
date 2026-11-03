@@ -1,8 +1,9 @@
 <script>
   import FeatureItem from "$lib/components/molecules/FeatureItem.svelte";
-  import xrayReverberation from "$lib/assets/images/x-ray-reverberation.jpg";
-  import neutronStarPulsar from "$lib/assets/images/neutron-star-pulsar.jpg";
-  import windEvolution from "$lib/assets/images/wind-evolution.jpg";
+
+  import xrayReverberation from "$lib/assets/images/x-ray-reverberation.jpg?enhanced";
+  import neutronStarPulsar from "$lib/assets/images/neutron-star-pulsar.jpg?enhanced";
+  import windEvolution from "$lib/assets/images/wind-evolution.jpg?enhanced";
 
   const scienceObjectives = [
     {

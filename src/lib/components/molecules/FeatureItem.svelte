@@ -1,7 +1,16 @@
 <script>
   import ContentAccordion from "$lib/components/atoms/ContentAccordion.svelte";
 
-  let { index, total, title, intro, details, image, alt = "" } = $props();
+  let {
+    index,
+    total,
+    title,
+    intro,
+    details,
+    image,
+    alt = "",
+    loading = "lazy",
+  } = $props();
 </script>
 
 <div class="feature-item">
@@ -17,7 +26,12 @@
       </div>
     </div>
     <figure class="feature-image-wrapper">
-      <img src={image} {alt} />
+      <enhanced:img
+        src={image}
+        {alt}
+        sizes="(min-width: 48rem) 50vw, 100vw"
+        {loading}
+      />
     </figure>
   </article>
 </div>
