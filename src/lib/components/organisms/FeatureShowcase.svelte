@@ -6,15 +6,19 @@
 
 <section>
   <article>
-    <div class="feature-content">
-      <span>01/09</span>
-      <h3>X-ray reverberation</h3>
-      <p>
-        NEBULA-Xplorer shall be able to determine the mass and spin of accreting
-        stellar-mass black holes in Galactic X-ray binaries by measuring the
-        amplitude and energy dependence of X-ray reverberation lags during
-        outburst, using long, high-cadence observations.
-      </p>
+    <div class="feature-content-wrapper">
+      <div class="feature-count">
+        <span>01/09</span>
+      </div>
+      <div class="feature-content">
+        <h3>X-ray reverberation</h3>
+        <p>
+          NEBULA-Xplorer shall be able to determine the mass and spin of
+          accreting stellar-mass black holes in Galactic X-ray binaries by
+          measuring the amplitude and energy dependence of X-ray reverberation
+          lags during outburst, using long, high-cadence observations.
+        </p>
+      </div>
 
       <details>
         <summary>Read more</summary>
@@ -46,23 +50,27 @@
       </details>
     </div>
 
-    <div class="feature-image">
+    <div class="feature-image-wrapper">
       <img src={xrayReverberation} alt="" />
     </div>
   </article>
 
   <article>
-    <div class="feature-content">
-      <span>02/09</span>
-      <h3>Quasi-Periodic Oscillations</h3>
-      <p>
-        NEBULA-Xplorer shall be able to detect quasi-periodic oscillations
-        (QPOs) in galactic black holes and neutron star X-ray binaries during
-        outburst and other high-accretion states, to constrain the neutron star
-        equation of state and test the universality of QPO mechanisms (e.g.,
-        Lense-Thirring precession or spiral density waves) across compact object
-        types.
-      </p>
+    <div class="feature-content-wrapper">
+      <div class="feature-count">
+        <span>02/09</span>
+      </div>
+      <div class="feature-content">
+        <h3>Quasi-Periodic Oscillations</h3>
+        <p>
+          NEBULA-Xplorer shall be able to detect quasi-periodic oscillations
+          (QPOs) in galactic black holes and neutron star X-ray binaries during
+          outburst and other high-accretion states, to constrain the neutron
+          star equation of state and test the universality of QPO mechanisms
+          (e.g., Lense-Thirring precession or spiral density waves) across
+          compact object types.
+        </p>
+      </div>
 
       <details>
         <summary>Read more</summary>
@@ -94,21 +102,25 @@
       </details>
     </div>
 
-    <div class="feature-image">
+    <div class="feature-image-wrapper">
       <img src={neutronStarPulsar} alt="" />
     </div>
   </article>
 
   <article>
-    <div class="feature-content">
-      <span>03/09</span>
-      <h3>Wind Evolution over an Outburst</h3>
-      <p>
-        NEBULA-Xplorer shall be able to detect blue shifted absorption lines in
-        high-sensitivity X-ray spectra with high-cadence to determine mass
-        outflow rates in compact objects to understand linked stellar formation
-        and accretion disk makeup.
-      </p>
+    <div class="feature-content-wrapper">
+      <div class="feature-count">
+        <span>03/09</span>
+      </div>
+      <div class="feature-content">
+        <h3>Wind Evolution over an Outburst</h3>
+        <p>
+          NEBULA-Xplorer shall be able to detect blue shifted absorption lines
+          in high-sensitivity X-ray spectra with high-cadence to determine mass
+          outflow rates in compact objects to understand linked stellar
+          formation and accretion disk makeup.
+        </p>
+      </div>
 
       <details>
         <summary>Read more</summary>
@@ -140,7 +152,7 @@
       </details>
     </div>
 
-    <div class="feature-image">
+    <div class="feature-image-wrapper">
       <img src={windEvolution} alt="" />
     </div>
   </article>
@@ -161,7 +173,7 @@
       flex-direction: column;
       gap: var(--spacing-lg);
 
-      .feature-content {
+      .feature-content-wrapper {
         display: flex;
         flex-direction: column;
         gap: var(--spacing-md);
@@ -199,7 +211,7 @@
         }
       }
 
-      .feature-image {
+      .feature-image-wrapper {
         img {
           height: 300px;
           width: 100%;
