@@ -166,6 +166,8 @@
       display: flex;
       flex-direction: column;
       gap: var(--spacing-lg);
+      border-bottom: 1px solid var(--color-neutral-lightest);
+      padding-bottom: var(--spacing-xl);
 
       @media (min-width: 768px) {
         flex-direction: row;
