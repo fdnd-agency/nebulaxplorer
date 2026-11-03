@@ -41,9 +41,7 @@
     </div>
   </div>
 
-  <div class="feature-image-wrapper">
-    <img src={image} {alt} />
-  </div>
+  <img src={image} {alt} />
 </article>
 
 <style>
