@@ -5,8 +5,7 @@
     index,
     total,
     title,
-    intro,
-    details,
+    requirements = [],
     image,
     alt = "",
     loading = "lazy",
@@ -18,11 +17,20 @@
     <div class="feature-content-wrapper">
       <span>{index}/{total}</span>
       <div class="feature-content">
-        <h3>{title}</h3>
-        <p>{intro}</p>
-        <ContentAccordion hiddenLabel="about {title}">
-          <p>{details}</p>
-        </ContentAccordion>
+        <ul class="requirements">
+          <h3>{title}</h3>
+          {#each requirements as requirement, i}
+            <li>
+              <p>{requirement.intro}</p>
+
+              {#if requirement.details}
+                <ContentAccordion hiddenLabel="about {title}">
+                  <p>{requirement.details}</p>
+                </ContentAccordion>
+              {/if}
+            </li>
+          {/each}
+        </ul>
       </div>
     </div>
     <figure class="feature-image-wrapper">
