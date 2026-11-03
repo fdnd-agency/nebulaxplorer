@@ -113,7 +113,7 @@
     --spacing-2xl:             4rem;    
 
 	 /* Styling =======================================================================*/
-	 --border-radius:          50px 0 50px 0;
+	 --border-radius-brand:          50px 0 50px 0;
 }
 
 html{
