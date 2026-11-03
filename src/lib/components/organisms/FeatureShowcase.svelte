@@ -1,239 +1,52 @@
 <script>
+  import FeatureItem from "$lib/components/molecules/FeatureItem.svelte";
   import xrayReverberation from "$lib/assets/images/x-ray-reverberation.jpg";
   import neutronStarPulsar from "$lib/assets/images/neutron-star-pulsar.jpg";
   import windEvolution from "$lib/assets/images/wind-evolution.jpg";
+
+  const scienceObjectives = [
+    {
+      title: "X-ray reverberation",
+      intro:
+        "NEBULA-Xplorer shall be able to determine the mass and spin of accreting stellar-mass black holes in Galactic X-ray binaries by measuring the amplitude and energy dependence of X-ray reverberation lags during outburst, using long, high-cadence observations.",
+      details: `Reverberation mapping using X-ray "light echoes" (photons emitted in one region of the plasma can either reach the observer directly, or first interact with other parts of the plasma, be re-processed and re-emitted at different energies, and only then reach the observer), can help us understand the geometry and properties of the accreting plasma directly surrounding the black hole. Reverberation mapping measures time delays between the direct and re-emitted photons and uses these light travel delays to reconstruct a map of the accretion flow. Because the reflected path is longer, this delay encodes distances at the light-crossing scale of the system. Mass and spin come from two different parts of the same signal. The overall size of the lag tells us the mass: bigger black holes mean bigger gravitational radii, so light takes longer to make the round trip. Spin shows up in how the lag changes with energy across the broadened iron K line, because a faster-spinning black hole lets the disk's inner edge sit closer in, shortening the path light must travel from the innermost region and reshaping the lag-energy profile. To measure this, we need long, near-continuous observations within fine time-tagging resolution, sufficient effective area, and energy resolution near the iron K line to detect the reverberation signal and resolve the lag-energy profile.`,
+      image: xrayReverberation,
+      alt: "X-ray Reverberation visualization",
+    },
+    {
+      title: "Quasi-Periodic Oscillations",
+      intro:
+        "NEBULA-Xplorer shall be able to detect quasi-periodic oscillations (QPOs) in galactic black holes and neutron star X-ray binaries during outburst and other high-accretion states, to constrain the neutron star equation of state and test the universality of QPO mechanisms (e.g., Lense-Thirring precession or spiral density waves) across compact object types.",
+      details: `Reverberation mapping using X-ray "light echoes" (photons emitted in one region of the plasma can either reach the observer directly, or first interact with other parts of the plasma, be re-processed and re-emitted at different energies, and only then reach the observer), can help us understand the geometry and properties of the accreting plasma directly surrounding the black hole. Reverberation mapping measures time delays between the direct and re-emitted photons and uses these light travel delays to reconstruct a map of the accretion flow. Because the reflected path is longer, this delay encodes distances at the light-crossing scale of the system. Mass and spin come from two different parts of the same signal. The overall size of the lag tells us the mass: bigger black holes mean bigger gravitational radii, so light takes longer to make the round trip. Spin shows up in how the lag changes with energy across the broadened iron K line, because a faster-spinning black hole lets the disk's inner edge sit closer in, shortening the path light must travel from the innermost region and reshaping the lag-energy profile. To measure this, we need long, near-continuous observations within fine time-tagging resolution, sufficient effective area, and energy resolution near the iron K line to detect the reverberation signal and resolve the lag-energy profile.`,
+      image: neutronStarPulsar,
+      alt: "Neutron star pulsar visualization",
+    },
+    {
+      title: "Wind Evolution over an Outburst",
+      intro:
+        "NEBULA-Xplorer shall be able to detect blue shifted absorption lines in high-sensitivity X-ray spectra with high-cadence to determine mass outflow rates in compact objects to understand linked stellar formation and accretion disk makeup.",
+      details: `Reverberation mapping using X-ray "light echoes" (photons emitted in one region of the plasma can either reach the observer directly, or first interact with other parts of the plasma, be re-processed and re-emitted at different energies, and only then reach the observer), can help us understand the geometry and properties of the accreting plasma directly surrounding the black hole. Reverberation mapping measures time delays between the direct and re-emitted photons and uses these light travel delays to reconstruct a map of the accretion flow. Because the reflected path is longer, this delay encodes distances at the light-crossing scale of the system. Mass and spin come from two different parts of the same signal. The overall size of the lag tells us the mass: bigger black holes mean bigger gravitational radii, so light takes longer to make the round trip. Spin shows up in how the lag changes with energy across the broadened iron K line, because a faster-spinning black hole lets the disk's inner edge sit closer in, shortening the path light must travel from the innermost region and reshaping the lag-energy profile. To measure this, we need long, near-continuous observations within fine time-tagging resolution, sufficient effective area, and energy resolution near the iron K line to detect the reverberation signal and resolve the lag-energy profile.`,
+      image: windEvolution,
+      alt: "Wind evolution visualization",
+    },
+  ];
 </script>
 
 <section>
-  <article>
-    <div class="feature-content-wrapper">
-      <span>01/09</span>
-      <div class="feature-content">
-        <h3>X-ray reverberation</h3>
-        <p>
-          NEBULA-Xplorer shall be able to determine the mass and spin of
-          accreting stellar-mass black holes in Galactic X-ray binaries by
-          measuring the amplitude and energy dependence of X-ray reverberation
-          lags during outburst, using long, high-cadence observations.
-        </p>
-        <details>
-          <summary>Read more</summary>
-          <div>
-            <p>
-              Reverberation mapping using X-ray "light echoes" (photons emitted
-              in one region of the plasma can either reach the observer
-              directly, or first interact with other parts of the plasma, be
-              re-processed and re-emitted at different energies, and only then
-              reach the observer), can help us understand the geometry and
-              properties of the accreting plasma directly surrounding the black
-              hole. Reverberation mapping measures time delays between the
-              direct and re-emitted photons and uses these light travel delays
-              to reconstruct a map of the accretion flow. Because the reflected
-              path is longer, this delay encodes distances at the light-crossing
-              scale of the system. Mass and spin come from two different parts
-              of the same signal. The overall size of the lag tells us the mass:
-              bigger black holes mean bigger gravitational radii, so light takes
-              longer to make the round trip. Spin shows up in how the lag
-              changes with energy across the broadened iron K line, because a
-              faster-spinning black hole lets the disk's inner edge sit closer
-              in, shortening the path light must travel from the innermost
-              region and reshaping the lag-energy profile. To measure this, we
-              need long, near-continuous observations within fine time-tagging
-              resolution, sufficient effective area, and energy resolution near
-              the iron K line to detect the reverberation signal and resolve the
-              lag-energy profile.
-            </p>
-          </div>
-        </details>
-      </div>
-    </div>
-
-    <div class="feature-image-wrapper">
-      <img src={xrayReverberation} alt="X-ray Reverberation visualization" />
-    </div>
-  </article>
-
-  <article>
-    <div class="feature-content-wrapper">
-      <span>02/09</span>
-      <div class="feature-content">
-        <h3>Quasi-Periodic Oscillations</h3>
-        <p>
-          NEBULA-Xplorer shall be able to detect quasi-periodic oscillations
-          (QPOs) in galactic black holes and neutron star X-ray binaries during
-          outburst and other high-accretion states, to constrain the neutron
-          star equation of state and test the universality of QPO mechanisms
-          (e.g., Lense-Thirring precession or spiral density waves) across
-          compact object types.
-        </p>
-        <details>
-          <summary>Read more</summary>
-          <div>
-            <p>
-              Reverberation mapping using X-ray "light echoes" (photons emitted
-              in one region of the plasma can either reach the observer
-              directly, or first interact with other parts of the plasma, be
-              re-processed and re-emitted at different energies, and only then
-              reach the observer), can help us understand the geometry and
-              properties of the accreting plasma directly surrounding the black
-              hole. Reverberation mapping measures time delays between the
-              direct and re-emitted photons and uses these light travel delays
-              to reconstruct a map of the accretion flow. Because the reflected
-              path is longer, this delay encodes distances at the light-crossing
-              scale of the system. Mass and spin come from two different parts
-              of the same signal. The overall size of the lag tells us the mass:
-              bigger black holes mean bigger gravitational radii, so light takes
-              longer to make the round trip. Spin shows up in how the lag
-              changes with energy across the broadened iron K line, because a
-              faster-spinning black hole lets the disk's inner edge sit closer
-              in, shortening the path light must travel from the innermost
-              region and reshaping the lag-energy profile. To measure this, we
-              need long, near-continuous observations within fine time-tagging
-              resolution, sufficient effective area, and energy resolution near
-              the iron K line to detect the reverberation signal and resolve the
-              lag-energy profile.
-            </p>
-          </div>
-        </details>
-      </div>
-    </div>
-
-    <div class="feature-image-wrapper">
-      <img src={neutronStarPulsar} alt="Neutron star pulsar visualization" />
-    </div>
-  </article>
-
-  <article>
-    <div class="feature-content-wrapper">
-      <span>03/09</span>
-      <div class="feature-content">
-        <h3>Wind Evolution over an Outburst</h3>
-        <p>
-          NEBULA-Xplorer shall be able to detect blue shifted absorption lines
-          in high-sensitivity X-ray spectra with high-cadence to determine mass
-          outflow rates in compact objects to understand linked stellar
-          formation and accretion disk makeup.
-        </p>
-        <details>
-          <summary>Read more</summary>
-          <div>
-            <p>
-              Reverberation mapping using X-ray "light echoes" (photons emitted
-              in one region of the plasma can either reach the observer
-              directly, or first interact with other parts of the plasma, be
-              re-processed and re-emitted at different energies, and only then
-              reach the observer), can help us understand the geometry and
-              properties of the accreting plasma directly surrounding the black
-              hole. Reverberation mapping measures time delays between the
-              direct and re-emitted photons and uses these light travel delays
-              to reconstruct a map of the accretion flow. Because the reflected
-              path is longer, this delay encodes distances at the light-crossing
-              scale of the system. Mass and spin come from two different parts
-              of the same signal. The overall size of the lag tells us the mass:
-              bigger black holes mean bigger gravitational radii, so light takes
-              longer to make the round trip. Spin shows up in how the lag
-              changes with energy across the broadened iron K line, because a
-              faster-spinning black hole lets the disk's inner edge sit closer
-              in, shortening the path light must travel from the innermost
-              region and reshaping the lag-energy profile. To measure this, we
-              need long, near-continuous observations within fine time-tagging
-              resolution, sufficient effective area, and energy resolution near
-              the iron K line to detect the reverberation signal and resolve the
-              lag-energy profile.
-            </p>
-          </div>
-        </details>
-      </div>
-    </div>
-
-    <div class="feature-image-wrapper">
-      <img src={windEvolution} alt="Wind evolution visualization" />
-    </div>
-  </article>
+  {#each scienceObjectives as scienceObjective, index}
+    <FeatureItem
+      {...scienceObjective}
+      index={index + 1}
+      total={scienceObjectives.length}
+    />
+  {/each}
 </section>
+z
 
 <style>
   section {
-    * {
-      color: var(--color-neutral-lightest);
-    }
-
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xl);
-
-    article {
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-lg);
-      border-bottom: 1px solid var(--color-neutral-lightest);
-      padding-bottom: var(--spacing-xl);
-
-      @media (min-width: 768px) {
-        flex-direction: row;
-        gap: var(--spacing-2xl);
-        justify-content: space-between;
-      }
-
-      .feature-content-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-md);
-
-        @media (min-width: 768px) {
-          flex-direction: row;
-          gap: var(--spacing-lg);
-          align-items: baseline;
-        }
-
-        span {
-          color: var(--color-accent-mid);
-          font-family: var(--font-heading);
-          font-weight: bold;
-          display: contents;
-        }
-
-        details {
-          padding-top: var(--spacing-md);
-
-          &[open] summary:after {
-            transform: rotate(45deg);
-          }
-
-          summary {
-            border-top: 1px solid var(--color-neutral-lightest);
-            cursor: pointer;
-            position: relative;
-            list-style: none;
-            padding-top: var(--spacing-sm);
-
-            &::after {
-              content: "+";
-              position: absolute;
-              right: 0;
-              transform-origin: center;
-              transition: 0.3s linear;
-            }
-          }
-
-          p {
-            padding-top: var(--spacing-md);
-          }
-        }
-      }
-
-      .feature-image-wrapper {
-        img {
-          height: 300px;
-          width: 100%;
-          object-fit: cover;
-          border-radius: 50px 0 50px 0;
-
-          @media (min-width: 768px) {
-            height: 400px;
-          }
-        }
-      }
-    }
   }
 </style>
