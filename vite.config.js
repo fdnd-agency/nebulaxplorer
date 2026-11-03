@@ -22,6 +22,10 @@ export default defineConfig({
     // See https://svelte.dev/docs/kit/adapters for more information about adapters.
     adapter: adapter()
   })],
+  // The satellite explorer simplifies meshes in a module worker
+  worker: {
+    format: 'es'
+  },
   test: {
     projects: [{
       extends: true,

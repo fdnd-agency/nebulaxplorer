@@ -24,3 +24,9 @@ vite.config.ts.timestamp-*
 
 *storybook.log
 storybook-static
+
+# Satellite explorer: local source model over GitHub's 100 MB limit
+src/lib/assets/models/source/Nebula_Assembly_V2_Stowed.glb
+
+# Python environment for scripts/convert-step.py
+.venv
