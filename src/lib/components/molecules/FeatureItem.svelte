@@ -20,7 +20,7 @@
       <div class="feature-content">
         <h3>{title}</h3>
         <p>{intro}</p>
-        <ContentAccordion>
+        <ContentAccordion hiddenLabel="about {title}">
           <p>{details}</p>
         </ContentAccordion>
       </div>
