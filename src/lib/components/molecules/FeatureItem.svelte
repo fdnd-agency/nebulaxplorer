@@ -16,9 +16,9 @@
         </ContentAccordion>
       </div>
     </div>
-    <div class="feature-image-wrapper">
+    <figure class="feature-image-wrapper">
       <img src={image} {alt} />
-    </div>
+    </figure>
   </article>
 </div>
 
