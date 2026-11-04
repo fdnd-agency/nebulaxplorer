@@ -8,6 +8,7 @@
     requirements = [],
     image,
     alt = "",
+    credit = "",
     loading = "lazy",
   } = $props();
 </script>
@@ -44,6 +45,9 @@
         sizes="(min-width: 48rem) 50vw, 100vw"
         {loading}
       />
+      {#if credit}
+        <figcaption>Image: {credit}</figcaption>
+      {/if}
     </figure>
   </article>
 </div>

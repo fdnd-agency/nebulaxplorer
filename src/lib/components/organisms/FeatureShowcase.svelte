@@ -10,6 +10,7 @@
       title: "X-ray reverberation",
       image: neutronStarPulsar,
       alt: "X-ray reverberation visualisation",
+      credit: "SRON",
       requirements: [
         {
           intro: `NEBULA-Xplorer shall be able to determine the mass and spin of accreting stellar-mass black holes in Galactic X-ray binaries by measuring the amplitude and energy dependence of X-ray reverberation lags during outburst, using long, high-cadence observations.`,
@@ -22,6 +23,7 @@ To measure this, we need long, near-continuous observations within fine time-tag
       title: "Quasi-Periodic Oscillations",
       image: xrayReverberation,
       alt: "Quasi-Periodic Oscillations visualisation",
+      credit: "SRON",
       requirements: [
         {
           intro: `NEBULA-Xplorer shall be able to detect quasi-periodic oscillations (QPOs) in galactic black holes and neutron star X-ray binaries during outburst and other high-accretion states, to constrain the neutron star equation of state and test the universality of QPO mechanisms (e.g., Lense-Thirring precession or spiral density waves) across compact object types.`,
@@ -34,6 +36,7 @@ This can be done via long uninterrupted observations combining broad energy cove
       title: "Wind Evolution over an Outburst",
       image: neutronStarPulsar,
       alt: "Wind Evolution over an Outburst visualisation",
+      credit: "SRON",
       requirements: [
         {
           intro: `NEBULA-Xplorer shall be able to detect blue shifted absorption lines in high-sensitivity X-ray spectra with high-cadence to determine mass outflow rates in compact objects to understand linked stellar formation and accretion disk makeup.`,
@@ -45,6 +48,7 @@ This can be done via long uninterrupted observations combining broad energy cove
       title: "Thermonuclear Explosions on Neutron Star Surfaces",
       image: windEvolution,
       alt: "Thermonuclear Explosions on Neutron Star Surfaces visualisation",
+      credit: "SRON",
       requirements: [
         {
           intro: `NEBULA-Xplorer shall monitor known accreting neutron stars during quiescence, conducting long-term continuous observations of their behaviour as they peak into Type-I X-ray bursts.
@@ -59,6 +63,7 @@ With the goal of being able to identify super bursts on top of regular ones, NEB
       title: "Relativistic Jets",
       image: neutronStarPulsar,
       alt: "Relativistic Jets visualisation",
+      credit: "SRON",
       requirements: [
         {
           intro: `NEBULA-Xplorer shall characterise relativistic jets in accreting neutron star systems, by observing how they propagate in response to Type-I thermonuclear bursts, tracking their speed and geometry to understand jet launching mechanisms.`,
@@ -74,6 +79,7 @@ With the goal of being able to identify super bursts on top of regular ones, NEB
       title: "Neutron Star Pulsars",
       image: xrayReverberation,
       alt: "Neutron Star Pulsars visualisation",
+      credit: "SRON",
       requirements: [
         {
           intro: `NEBULA-Xplorer shall observe hot spots on the surface of neutron stars, measuring variations in location and intensity over time to determine the mass and radius of the neutron star.`,
@@ -93,6 +99,7 @@ With the goal of being able to identify super bursts on top of regular ones, NEB
       title: "Tidal Disruption Events",
       image: windEvolution,
       alt: "Tidal Disruption Events visualisation",
+      credit: "SRON",
       requirements: [
         {
           intro: `NEBULA-Xplorer shall characterise the temporal and spectral evolution of X-ray emission from Tidal Disruption Events to determine how stellar debris evolves into an accretion flow around a super massive black holes and to constrain the properties of the inner accretion disk.`,
@@ -108,6 +115,7 @@ With the goal of being able to identify super bursts on top of regular ones, NEB
       title: "Accretion Disk Instabilities and Outburst Beginnings",
       image: xrayReverberation,
       alt: "Accretion Disk Instabilities and Outburst Beginnings visualisation",
+      credit: "SRON",
       requirements: [
         {
           intro: `NEBULA-Xplorer shall characterise the early temporal evolution of X-ray outbursts in low mass X-ray binaries, in coordination with optical observations, in order to determine where and how accretion disk outbursts are triggered.`,
@@ -123,6 +131,7 @@ With the goal of being able to identify super bursts on top of regular ones, NEB
       title: "Additional Science Goals and Required Pre-Requisites",
       image: neutronStarPulsar,
       alt: "Additional Science Goals and Required Pre-Requisites visualisation",
+      credit: "SRON",
       requirements: [
         {
           intro: `NEBULA-Xplorer shall characterise the temporal and spectral evolution of X-ray emission from Gamma-Ray Burst afterglows to determine the physical processes responsible for the afterglow, including the external forward shock and continued energy injection from the central engine.`,
