@@ -102,14 +102,26 @@
       display: contents;
     }
 
-    img {
-      height: 300px;
-      width: 100%;
-      object-fit: cover;
-      border-radius: var(--border-radius);
+    figure {
+      position: relative;
+      img {
+        height: 300px;
+        width: 100%;
+        object-fit: cover;
+        border-radius: var(--border-radius);
 
-      @container feature-item (min-width: 48rem) {
-        height: 400px;
+        @container feature-item (min-width: 48rem) {
+          height: 400px;
+        }
+      }
+
+      figcaption {
+        position: absolute;
+        right: 0;
+        bottom: var(--spacing-sm);
+        padding: var(--spacing-xs) var(--spacing-sm);
+        background: rgb(0 0 0 / 0.6);
+        color: var(--color-neutral-lightest);
       }
     }
   }
