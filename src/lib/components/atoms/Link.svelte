@@ -15,7 +15,7 @@
 -->
 
 <script>
-    import { Arrow } from "$lib/assets/icons/icons.js";
+    import { ArrowIcon } from '$lib/assets/icons';
     let { href, classes, text, hiddenText, size, color="var(--color-neutral-darkest)", bold = false, stretched = false, ...rest} = $props()
 </script>
 
@@ -23,7 +23,7 @@
     { text }
     {#if hiddenText}<span class="visually-hidden">{hiddenText}</span>{/if}
     <span class="icon-wrapper">
-        <Arrow />
+        <ArrowIcon />
     </span>
 </a>
 

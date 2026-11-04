@@ -1,7 +1,7 @@
-import Close from "$lib/assets/icons/Close.svelte";
+import Close from "$lib/assets/icons/CloseIcon.svelte";
 
 export default {
-    title: "components/Icons/Close",
+    title: "components/Icons/CloseIcon",
     component: Close,
     tags: ['autodocs'],
     args: {

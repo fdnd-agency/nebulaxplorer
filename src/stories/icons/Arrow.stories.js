@@ -1,7 +1,7 @@
-import Arrow from "$lib/assets/icons/Arrow.svelte";
+import Arrow from "$lib/assets/icons/ArrowIcon.svelte";
 
 export default {
-    title: "components/Icons/Arrow",
+    title: "components/Icons/ArrowIcon",
     component: Arrow,
     tags: ['autodocs'],
     args: {

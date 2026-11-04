@@ -1,7 +1,7 @@
-import Search from "$lib/assets/icons/Search.svelte";
+import Search from "$lib/assets/icons/SearchIcon.svelte";
 
 export default {
-    title: "components/Icons/Search",
+    title: "components/Icons/SearchIcon",
     component: Search,
     tags: ['autodocs'],
     args: {

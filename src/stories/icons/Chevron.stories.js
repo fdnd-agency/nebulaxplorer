@@ -1,7 +1,7 @@
-import Chevron from "$lib/assets/icons/Chevron.svelte";
+import Chevron from "$lib/assets/icons/ChevronIcon.svelte";
 
 export default {
-    title: "components/Icons/Chevron",
+    title: "components/Icons/ChevronIcon",
     component: Chevron,
     tags: ['autodocs'],
     args: {
