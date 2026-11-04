@@ -5,12 +5,17 @@ export default {
     component: Search,
     tags: ['autodocs'],
     args: {
+        direction: 'right',
         width: 24,
         height: 24,
         hidden: true,
         title: "",
     },
     argTypes: {
+        direction: {
+			control: 'select',
+			options: ['left', 'right']
+		},
         width: { control: "number" },
         height: { control: "number" },
         hidden: { control: "boolean" },
@@ -19,6 +24,14 @@ export default {
 };
 
 export const Default = {};
+
+export const Left = {
+	args: { direction: 'left' }
+}
+
+export const Right = {
+	args: { direction: 'right' }
+}
 
 export const Large = {
     args: { width: 48, height: 48 },
