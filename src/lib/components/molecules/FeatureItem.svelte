@@ -24,7 +24,11 @@
               <p class="requirement-intro">{requirement.intro}</p>
 
               {#if requirement.details}
-                <ContentAccordion hiddenLabel="about {title}">
+                <ContentAccordion
+                  hiddenLabel={requirements.length > 1
+                    ? `about ${title}, part ${i + 1}`
+                    : `about ${title}`}
+                >
                   <p>{requirement.details}</p>
                 </ContentAccordion>
               {/if}
