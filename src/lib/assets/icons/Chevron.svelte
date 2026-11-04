@@ -1,5 +1,5 @@
 <script>
-    let { hidden = true, title = '', width = 24, height =24 } = $props();
+    let { direction = "right", hidden = true, title = '', width = 24, height =24 } = $props();
 </script>
 
 <svg 
@@ -9,8 +9,25 @@
     {width}
     {height}
     aria-hidden={hidden}
+    class="chevron {direction}"
 >
     {#if title}<title>{title}</title>{/if}
     <path d="M.294.294a1 1 0 0 1 1.421 0L8.08 6.658a1 1 0 0 1 0 1.421l-6.364 6.365a1.005 1.005 0 0 1-1.422-1.421l5.654-5.654L.294 1.715a1 1 0 0 1 0-1.421" data-name="Path 520"></path>
 </svg>
 
+<style>
+    .chevron{
+        &.right{
+            rotate: 0deg;
+        }
+        &.down {
+            rotate: 90deg;
+        }
+        &.left {
+            rotate: 180deg;
+        }
+        &.up {
+            rotate: -90deg;
+        }
+    }
+</style>
