@@ -79,6 +79,7 @@
         display: flex;
         flex-direction: column;
         gap: var(--spacing-md);
+        list-style: none;
 
         .requirement-intro {
           font-weight: bold;
