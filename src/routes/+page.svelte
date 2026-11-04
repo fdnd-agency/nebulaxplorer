@@ -12,12 +12,3 @@
   text="To the stars by the genius of youth"
   image={missionImage}
 />
-
-<main>
-  
-
-  <h2>
-    test
-  </h2>
-
-</main>
