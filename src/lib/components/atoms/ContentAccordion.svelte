@@ -24,11 +24,11 @@
   }
 
   summary {
-    border-top: 1px solid var(--color-neutral-lightest);
+    border-bottom: 1px solid var(--color-neutral-lightest);
     cursor: pointer;
     position: relative;
     list-style: none;
-    padding-top: var(--spacing-sm);
+    padding-bottom: var(--spacing-sm);
 
     &::after {
       content: "+";
