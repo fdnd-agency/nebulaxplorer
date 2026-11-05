@@ -190,13 +190,20 @@ for (let i = 0; i < 100; i++) quality.update(60, true, false)
 frames(50, 45)
 frames(200, 16.7)
 assert.equal(ratio, 2)
+assert.equal(quality.isReduced(), false)
 for (let i = 0; i < 60; i++) frames(1, i % 10 === 0 ? 180 : 16.7)
 assert.equal(ratio, 2)
+// The first step down simplifies meshes and keeps full sharpness
+frames(30, 40)
+assert.equal(ratio, 2)
+assert(quality.isReduced())
 // Something else briefly using the GPU lowers the ratio, which recovers afterwards
 frames(300, 40)
 assert(ratio < 2)
+assert(quality.isReduced())
 frames(5000, 16.7)
 assert.equal(ratio, 2)
+assert.equal(quality.isReduced(), false)
 // A 60 Hz device whose frame cost grows with the pixels settles at the sharpest
 // ratio that keeps up, and retries a sharper one less and less often
 const device = createRenderQuality(

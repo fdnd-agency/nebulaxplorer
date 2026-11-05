@@ -149,11 +149,13 @@ export function createViewerController(
 				root?.userData.cadInstances?.sync()
 			cadStateKey = nextCadStateKey
 		}
-		// Simplified meshes only while the view moves fast; the slow ambient
-		// orbit keeps full detail
+		// Simplified meshes only while the view moves fast on a device that
+		// cannot keep up with full detail; everywhere else the model keeps full
+		// detail, also while dragging
 		motionDetail.update(
 			explorerScene.getRoots(),
-			runtime.interacting || tweening || offsetMoving,
+			(runtime.interacting || tweening || offsetMoving) &&
+				renderQuality.isReduced(),
 		)
 		lighting.update(camera, controls.target)
 		explorerScene.update(time)
