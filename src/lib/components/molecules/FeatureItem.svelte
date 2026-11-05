@@ -118,7 +118,7 @@
       figcaption {
         position: absolute;
         right: 0;
-        bottom: var(--spacing-sm);
+        top: 0;
         padding: var(--spacing-xs) var(--spacing-sm);
         background: rgb(0 0 0 / 0.6);
         color: var(--color-neutral-lightest);
