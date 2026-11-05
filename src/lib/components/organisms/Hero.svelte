@@ -1,12 +1,17 @@
 <script>
-  import imageFallback from "$lib/assets/images/hero-background-01.jpg";
+  import imageFallback from "$lib/assets/images/hero-background-01.jpg?enhanced";
 
   let { title, text, image, alt = "" } = $props();
   let backgroundImage = $derived(image || imageFallback);
 </script>
 
 <section class="hero">
-  <img src={backgroundImage} {alt} />
+  <enhanced:img
+    src={backgroundImage}
+    {alt}
+    sizes="100vw"
+    fetchpriority="high"
+  />
   <div>
     <h1>{title}</h1>
     {#if text}
