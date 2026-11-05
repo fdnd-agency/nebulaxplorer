@@ -18,6 +18,10 @@
   details {
     padding-top: var(--spacing-md);
 
+    div {
+      color: var(--color-neutral-light);
+    }
+
     &[open] summary::after {
       transform: rotate(45deg);
     }
