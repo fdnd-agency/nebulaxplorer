@@ -17,31 +17,38 @@
 
 <style>
   .hero {
-    background-size: cover;
-    background-position: 25% 75%;
-    height: 50vh;
+    min-height: 35svh;
     position: relative;
-    padding-left: var(--spacing-md);
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: var(--spacing-xs);
 
-    @media (min-width: 768px) {
-      gap: var(--spacing-2xl);
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: var(--spacing-xs);
+      padding-left: var(--spacing-md);
+
+      @media (min-width: 768px) {
+        gap: var(--spacing-2xl);
+        padding-left: var(--spacing-xl);
+      }
     }
 
-    h1,
-    p {
-      position: relative;
-      color: var(--color-neutral-lightest);
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: bottom;
+      z-index: -2;
     }
 
-    &::before {
+    &::after {
       content: "";
       position: absolute;
-      inset: 0;
       background-color: rgb(0 0 0 / 50%);
+      z-index: -1;
+      inset: 0;
     }
   }
 </style>
