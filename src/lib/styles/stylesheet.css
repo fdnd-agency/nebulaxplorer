@@ -91,12 +91,14 @@
 	--step-min-2:              calc(var(--step-min-1) / var(--ratio));
 	--step-min-3:              calc(var(--step-min-2) / var(--ratio));
 
+	--line-height-tight:       1;
     --line-height-normal:      1.5;
     --line-height-relaxed:     1.8;
 
     --ratio-text:              1.2;
 	--font-size-body-sm:       calc(var(--font-size-body-md) / var(--ratio-text));
     --font-size-body-md:       var(--step-0);
+	--font-size-body-sm:       calc(var(--font-size-body-md) / var(--ratio-text));
     --font-size-body-lg:       calc(var(--font-size-body-md) * var(--ratio-text));
     --font-size-body-xl:       calc(var(--font-size-body-lg) * var(--ratio-text));
     --font-size-body-2xl:      calc(var(--font-size-body-xl) * var(--ratio-text));
@@ -109,20 +111,15 @@
     --spacing-lg:              1.5rem;  
     --spacing-xl:              3rem;      
     --spacing-2xl:             4rem;    
+
+	 /* Styling =======================================================================*/
+	 --border-radius-brand:          50px 0 50px 0;
 }
 
 html{
     @media (prefers-reduced-motion: no-preference) {
         scroll-behavior: smooth;
     }
-}
-
-body{
-    background:                var(--background);
-    font-family:               var(--font-body);
-	font-size:                 var(--step-0);
-	line-height:               var(--line-height-normal);
-    color:                     var(--color-neutral-surface);
 }
 
 * {
@@ -132,9 +129,26 @@ body{
     box-sizing:                border-box;
 }
 
+body{
+    background:                var(--background);
+    font-family:               var(--font-body);
+	font-size:                 var(--step-0);
+	line-height:               var(--line-height-normal);
+    color:                     var(--color-neutral-lightest);
+}
+
+main {
+	padding:				   0 var(--spacing-md) ;
+
+	@media (min-width: 768px) {
+		padding:			   0 var(--spacing-xl);
+	}
+}
+
 /* headings=========================================================================================== */
 h1, h2, h3, h4, h5, h6{
     font-family:               var(--font-heading);
+	text-wrap:				   balance;
 }
 
 h1 { font-size:                var(--step-3); }
@@ -172,9 +186,10 @@ h6 { font-weight:              500; }
 /* paragraph =========================================================================================== */
 p{
     font-family:               var(--font-body);
-    font-size:                 var(--font-size-body-md);
+    font-size:                 var(--font-size-body-sm);
     max-width:                 70ch;
     line-height:               var(--line-height-relaxed);
+	text-wrap:				   pretty;
 }
 
 .prose :is(ul, ol) {
@@ -194,3 +209,15 @@ a {
     outline-style: dotted;
 	outline-offset: 0.15em;
 }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }

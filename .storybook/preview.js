@@ -1,4 +1,11 @@
 import '../src/lib/styles/stylesheet.css';
+import '@fontsource/space-grotesk/500.css';
+import '@fontsource/space-grotesk/700.css';
+import '@fontsource/space-mono/400.css';
+import '@fontsource/space-mono/700.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 
 /** @type { import('@storybook/sveltekit').Preview } */
 const preview = {
