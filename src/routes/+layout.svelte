@@ -22,6 +22,7 @@
 
 {@render children()}
 
-<Footer />
+
 <Locations />
+<Footer />
 
