@@ -111,20 +111,15 @@
     --spacing-lg:              1.5rem;  
     --spacing-xl:              3rem;      
     --spacing-2xl:             4rem;    
+
+	 /* Styling =======================================================================*/
+	 --border-radius-brand:          50px 0 50px 0;
 }
 
 html{
     @media (prefers-reduced-motion: no-preference) {
         scroll-behavior: smooth;
     }
-}
-
-body{
-    background:                var(--background);
-    font-family:               var(--font-body);
-	font-size:                 var(--step-0);
-	line-height:               var(--line-height-normal);
-    color:                     var(--color-neutral-surface);
 }
 
 * {
@@ -134,9 +129,26 @@ body{
     box-sizing:                border-box;
 }
 
+body{
+    background:                var(--background);
+    font-family:               var(--font-body);
+	font-size:                 var(--step-0);
+	line-height:               var(--line-height-normal);
+    color:                     var(--color-neutral-lightest);
+}
+
+main {
+	padding:				   0 var(--spacing-md) ;
+
+	@media (min-width: 768px) {
+		padding:			   0 var(--spacing-xl);
+	}
+}
+
 /* headings=========================================================================================== */
 h1, h2, h3, h4, h5, h6{
     font-family:               var(--font-heading);
+	text-wrap:				   balance;
 }
 
 h1 { font-size:                var(--step-3); }
@@ -174,9 +186,10 @@ h6 { font-weight:              500; }
 /* paragraph =========================================================================================== */
 p{
     font-family:               var(--font-body);
-    font-size:                 var(--font-size-body-md);
+    font-size:                 var(--font-size-body-sm);
     max-width:                 70ch;
     line-height:               var(--line-height-relaxed);
+	text-wrap:				   pretty;
 }
 
 .prose :is(ul, ol) {
@@ -193,25 +206,18 @@ a {
 
 :focus-visible {
 	outline: 0.15em solid var(--color-accent-light);
-    outline-style: dotted;
+  outline-style: dotted;
 	outline-offset: 0.15em;
 }
 
 .visually-hidden {
-  border: 0;
-  clip-path: inset(50%);
-  height: 1px;
-  margin: 0;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-.visually-hidden:not(:focus):not(:active) {
-	clip: rect(0 0 0 0); 
-	clip-path: inset(50%);
-	height: 1px;
-	overflow: hidden;
-	position: absolute;
-	white-space: nowrap; 
-	width: 1px;
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   margin: -1px;
+   padding: 0;
+   overflow: hidden;
+   clip-path: inset(50%);
+   white-space: nowrap;
+   border: 0;
 }
