@@ -14,12 +14,12 @@
 		sizes="100vw"
 		fetchpriority="high"
 	/>
-	<div>
+	<div class="content">
+    <div class="text">
+      <h1>{title}</h1>
+      {#if text}<p>{text}</p>{/if}
+    </div>
 		<enhanced:img src={WhiteNebulaXplorerLogo} alt="NEBULA Xplorer Logo" />
-		<h1>{title}</h1>
-		{#if text}
-			<p>{text}</p>
-		{/if}
 	</div>
 </section>
 
@@ -46,18 +46,22 @@
 			z-index: -2;
 		}
 
-		div {
+		.content {
+      flex: 1;
 			min-height: 35svh;
 			display: flex;
-			flex-direction: column;
+			flex-direction: column-reverse;
 			justify-content: center;
 			gap: var(--spacing-xs);
 			padding-left: var(--spacing-md);
 
 			@container (min-width: 768px) {
-				min-height: 40svh;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+				min-height: 30svh;
 				gap: var(--spacing-md);
-				padding-left: var(--spacing-xl);
+				padding-inline: var(--spacing-xl);
 			}
 
 			img {
@@ -67,6 +71,16 @@
 
 				@container (min-width: 768px) {
 					width: 10rem;
+				}
+			}
+
+      .text {
+				display: flex;
+				flex-direction: column;
+				gap: var(--spacing-xs);
+
+				@container (min-width: 768px) {
+				  gap: var(--spacing-md);
 				}
 			}
 		}
