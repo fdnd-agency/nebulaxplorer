@@ -1,6 +1,8 @@
 import fs from 'node:fs/promises'
 import assert from 'node:assert/strict'
 import { createExplorerTree } from '../../src/lib/state/explorerTree.js'
+import { readExplorerItems } from '../../src/lib/state/explorerItems.js'
+import { explorerContent } from '../../src/lib/server/explorerContent.js'
 import { explorerScenes } from '../../src/lib/scene/explorerScene.js'
 import { opticalComponents } from '../../src/lib/scene/objects/OpticalComponents.js'
 import { satelliteComponents } from '../../src/lib/scene/objects/Satellite.js'
@@ -141,12 +143,26 @@ assert.deepEqual(
 	tree.getPath('instrument-detectors').map((item) => item.id),
 	[
 		'satellite',
-		'xray-instrument',
+		'x-ray-instrument',
 		'instrument-components',
 		'instrument-detectors',
 	],
 )
 assert.equal(tree.getChildren('satellite').length, satelliteComponents.length)
+// The anchors other pages and the site navigation link to
+for (const id of [
+	'x-ray-instrument',
+	'star-tracker',
+	'sun-sensor',
+	'solar-panel',
+])
+	assert(tree.has(id) && new RegExp(`id="${id}"`).test(page), id)
+// Earlier anchors still lead to the same item
+const contentTree = createExplorerTree(readExplorerItems(explorerContent))
+assert.equal(contentTree.resolve('xray-instrument'), 'x-ray-instrument')
+assert.equal(contentTree.resolve('star-tracker-module'), 'star-tracker')
+assert.equal(contentTree.resolve('sun-sensor'), 'sun-sensor')
+assert.equal(contentTree.resolve('unknown'), null)
 for (const component of satelliteComponents)
 	assert(tree.find('satellite-component', component), component)
 for (const component of instrumentComponents)

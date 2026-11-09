@@ -5,6 +5,7 @@ export function readExplorerItems(content) {
 			id: item.id,
 			scene: item.scene,
 			component: item.component ?? null,
+			aliases: item.aliases ?? [],
 			title: item.title,
 			childIds: item.children.map((child) => child.id),
 		})

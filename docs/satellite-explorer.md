@@ -36,6 +36,28 @@ With JavaScript Svelte hydrates the same HTML into the explorer, and the 3D mode
 - controls expose their state (`aria-expanded`, `aria-pressed`) and change their label where the action changes
 - `prefers-reduced-motion` removes camera flights, the ambient orbit, expand animations and the X-ray animation
 
+## Linking to a component
+
+Every item can be opened with a normal link to its id, from this page or from any other page of the site. The main satellite components are:
+
+| Component | Link |
+| --- | --- |
+| X-Ray Instrument | `/technology#x-ray-instrument` |
+| Star Tracker Module | `/technology#star-tracker` |
+| Dawn 4U CubeDrive | `/technology#dawn-4u-cubedrive` |
+| S-Band Antenna | `/technology#s-band-antenna` |
+| Sun Sensor | `/technology#sun-sensor` |
+| Magnetorquers | `/technology#magnetorquers` |
+| Solar Panel | `/technology#solar-panel` |
+
+The HTML and the 3D viewer talk through the URL hash and the selected item:
+
+- a link to `#sun-sensor` (in the explorer, in a menu on the page or on another page) selects the Sun Sensor: the list expands to it, the model highlights it, the camera flies to it and the right view (satellite, instrument, schematic or CAD part) is shown
+- clicking the model or a marker selects the item the same way, updates the hash and marks the item in the list with `aria-current`
+- Back and Forward move through earlier selections
+
+Without JavaScript the same link simply scrolls to the item on the page. The earlier ids `#xray-instrument` and `#star-tracker-module` still work and are replaced by the current ones (`aliases` in `explorerContent.js`).
+
 Only confirmed content is shown. An item without a confirmed description simply has no description paragraph; there are no placeholder texts.
 
 ## Camera behaviour

@@ -16,6 +16,11 @@ export function createExplorerTree(items) {
 		}
 	}
 	const rootId = items[0]?.id ?? null
+	const idsByAlias = new Map(
+		items.flatMap((item) =>
+			(item.aliases ?? []).map((alias) => [alias, item.id]),
+		),
+	)
 
 	function get(id) {
 		return itemsById.get(id) ?? null
@@ -54,6 +59,9 @@ export function createExplorerTree(items) {
 		getPath,
 		getSiblings,
 		has: (id) => itemsById.has(id),
+		// The item for an id or an earlier anchor of it, or null
+		resolve: (id) =>
+			itemsById.has(id) ? id : (idsByAlias.get(id) ?? null),
 		getDepth: (id) => getPath(id).length - 1,
 		getNumber(id) {
 			const index = getIndex(id)

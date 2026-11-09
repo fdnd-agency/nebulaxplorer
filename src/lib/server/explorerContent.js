@@ -32,7 +32,9 @@ export const explorerContent = {
 	},
 	children: [
 		{
-			id: 'xray-instrument',
+			id: 'x-ray-instrument',
+			// Earlier anchors that still lead here
+			aliases: ['xray-instrument'],
 			scene: 'satellite-component',
 			title: {
 				en: 'X-Ray Instrument',
@@ -494,7 +496,8 @@ export const explorerContent = {
 			component: 'xrayInstrument',
 		},
 		{
-			id: 'star-tracker-module',
+			id: 'star-tracker',
+			aliases: ['star-tracker-module'],
 			scene: 'satellite-component',
 			title: {
 				en: 'Star Tracker Module',

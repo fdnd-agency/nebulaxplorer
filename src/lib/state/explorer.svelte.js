@@ -7,7 +7,7 @@ import { readLayoutMode } from '../utils/layoutMode.js'
 
 const selectionSources = new Set(['list', 'marker', 'canvas'])
 
-function getHashId() {
+function readHash() {
 	try {
 		return decodeURIComponent(window.location.hash.slice(1))
 	} catch {
@@ -43,6 +43,14 @@ export function createExplorer(content) {
 
 	function getTitle(id) {
 		return id === tree.rootId ? pick(content.shortLabel) : getFullTitle(id)
+	}
+
+	// The item in the address bar; an earlier anchor is replaced by the current one
+	function getHashId() {
+		const hash = readHash()
+		const id = tree.resolve(hash)
+		if (id && id !== hash) history.replaceState(history.state, '', `#${id}`)
+		return id ?? ''
 	}
 
 	function getPath(id) {
@@ -122,7 +130,7 @@ export function createExplorer(content) {
 		id,
 		{ source = 'list', push = true, focus = false, keyboard = false } = {},
 	) {
-		const nextId = tree.has(id) ? id : tree.rootId
+		const nextId = tree.resolve(id) ?? tree.rootId
 		const previousId = state.selectedId
 		const changed = nextId !== previousId
 		if (push && changed) history.pushState(null, '', `#${nextId}`)
@@ -176,7 +184,7 @@ export function createExplorer(content) {
 
 	function initialize(layoutMode) {
 		state.layoutMode = layoutMode
-		const initialId = tree.has(getHashId()) ? getHashId() : tree.rootId
+		const initialId = getHashId() || tree.rootId
 		state.selectedId = initialId
 		if (initialId !== tree.rootId) {
 			state.explorerOpen = !isMobile()
