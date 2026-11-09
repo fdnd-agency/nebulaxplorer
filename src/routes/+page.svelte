@@ -7,8 +7,3 @@
   <title>Home - NebulaXPlorer</title>
 </svelte:head>
 
-<Hero
-  title="Mission"
-  text="To the stars by the genius of youth"
-  image={missionImage}
-/>
