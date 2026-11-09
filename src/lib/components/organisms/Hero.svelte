@@ -24,39 +24,49 @@
 </section>
 
 <style>
-  .hero {
-    min-height: 35svh;
-    position: relative;
-    display: flex;
+	.hero {
+		container-type: inline-size;
+		position: relative;
+		display: flex;
 
-    div {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: var(--spacing-xs);
-      padding-left: var(--spacing-md);
+		&::after {
+			content: '';
+			position: absolute;
+			background-color: rgb(0 0 0 / 50%);
+			z-index: -1;
+			inset: 0;
+		}
 
-      @media (min-width: 768px) {
-        gap: var(--spacing-2xl);
-        padding-left: var(--spacing-xl);
-      }
-    }
+		.hero-background {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: bottom;
+			z-index: -2;
+		}
 
-    img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: bottom;
-      z-index: -2;
-    }
+		div {
+			min-height: 35svh;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			gap: var(--spacing-xs);
+			padding-left: var(--spacing-md);
 
-    &::after {
-      content: "";
-      position: absolute;
-      background-color: rgb(0 0 0 / 50%);
-      z-index: -1;
-      inset: 0;
-    }
-  }
+			@container (min-width: 768px) {
+				padding-left: var(--spacing-xl);
+			}
+
+			img {
+				width: 7.5rem;
+				height: 100%;
+				object-fit: contain;
+
+				@container (min-width: 768px) {
+					width: 10rem;
+				}
+			}
+		}
+	}
 </style>
