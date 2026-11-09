@@ -206,18 +206,18 @@ a {
 
 :focus-visible {
 	outline: 0.15em solid var(--color-accent-light);
-    outline-style: dotted;
+  outline-style: dotted;
 	outline-offset: 0.15em;
 }
 
-  .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
-    border: 0;
-  }
+.visually-hidden {
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   margin: -1px;
+   padding: 0;
+   overflow: hidden;
+   clip-path: inset(50%);
+   white-space: nowrap;
+   border: 0;
+}
