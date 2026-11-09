@@ -1,5 +1,10 @@
 <script>
-	let { hidden = true, title = '', width = 24, height = 24 } = $props()
+	let { 
+		hidden = true, 
+		title = '', 
+		width = 24, 
+		height = 24 
+	} = $props()
 </script>
 
 <svg
