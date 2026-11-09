@@ -55,6 +55,8 @@
 			padding-left: var(--spacing-md);
 
 			@container (min-width: 768px) {
+				min-height: 40svh;
+				gap: var(--spacing-md);
 				padding-left: var(--spacing-xl);
 			}
 
