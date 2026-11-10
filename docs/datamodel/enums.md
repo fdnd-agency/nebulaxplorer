@@ -19,14 +19,14 @@
 ## vacancies.location
 | Value | Label |
 |---|---|
-| 'groningen' | Groningen |
-| 'leiden' | Leiden |
+| `groningen` | Groningen |
+| `leiden` | Leiden |
 
 ## news.type
 | Value | Label |
 |---|---|
-| 'blog' | Blog|
-| 'news' | News|
+| `blog` | Blog|
+| `news` | News|
 
 ## news.status
 | Value | Label |
