@@ -1,9 +1,16 @@
 <script>
+	import { page } from '$app/state'
+
 	import imageFallback from '$lib/assets/images/hero-background-01.jpg?enhanced'
 	import WhiteNebulaXplorerLogo from '$lib/assets/logos/NEBULA-Xplorer-logo-white.png?enhanced'
 
-	let { title, text, image, alt = '' } = $props()
-	let backgroundImage = $derived(image || imageFallback)
+	let { pages } = $props()
+
+	const currentPage = $derived(
+		pages.find(({ href }) => href === page.url.pathname),
+	)
+
+	const backgroundImage = $derived(currentPage?.image ?? imageFallback)
 </script>
 
 <section class="hero">
@@ -47,7 +54,7 @@
 		}
 
 		.content {
-      flex: 1;
+			flex: 1;
 			min-height: 35svh;
 			display: flex;
 			flex-direction: column-reverse;
@@ -56,9 +63,9 @@
 			padding-left: var(--spacing-md);
 
 			@container (min-width: 768px) {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-between;
 				min-height: 30svh;
 				gap: var(--spacing-md);
 				padding-inline: var(--spacing-xl);
@@ -74,13 +81,13 @@
 				}
 			}
 
-      .text {
+			.text {
 				display: flex;
 				flex-direction: column;
 				gap: var(--spacing-xs);
 
 				@container (min-width: 768px) {
-				  gap: var(--spacing-md);
+					gap: var(--spacing-md);
 				}
 			}
 		}
