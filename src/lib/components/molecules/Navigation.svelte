@@ -1,5 +1,5 @@
 <script>
-    import NavigationLink from "../atoms/NavigationLink.svelte";
+    import { NavigationLink } from '../atoms';
     import { page } from "$app/state";
 
     const navItems = [

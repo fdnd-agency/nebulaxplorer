@@ -13,7 +13,7 @@
   	import Footer from '$lib/components/organisms/Footer.svelte';
   	import Locations from '$lib/components/organisms/Locations.svelte';
 
-	import NavigationBar from '$lib/components/organisms/NavigationBar.svelte'
+	import Header from '$lib/components/organisms/Header.svelte'
 
 	let { children } = $props()
 </script>
@@ -22,11 +22,18 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<NavigationBar />
+<Header />
 
 <main id="main">
 	{@render children()}
+	<section></section>
 </main>
 
 <Locations />
 <Footer />
+
+<style>
+	section{
+		margin: 15rem;
+	}
+</style>
