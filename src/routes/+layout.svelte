@@ -15,7 +15,7 @@
 
 	import NavigationBar from '$lib/components/organisms/NavigationBar.svelte'
 
-	let { children } = $props();
+	let { children } = $props()
 </script>
 
 <svelte:head>
@@ -30,5 +30,3 @@
 
 <Locations />
 <Footer />
-
-
