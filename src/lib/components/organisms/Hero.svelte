@@ -13,22 +13,27 @@
 	const backgroundImage = $derived(currentPage?.image ?? imageFallback)
 </script>
 
-<section class="hero">
-	<enhanced:img
-		class="hero-background"
-		src={backgroundImage}
-		{alt}
-		sizes="100vw"
-		fetchpriority="high"
-	/>
-	<div class="content">
-    <div class="text">
-      <h1>{title}</h1>
-      {#if text}<p>{text}</p>{/if}
-    </div>
-		<enhanced:img src={WhiteNebulaXplorerLogo} alt="NEBULA Xplorer Logo" />
-	</div>
-</section>
+{#if currentPage}
+	<section class="hero">
+		<enhanced:img
+			class="hero-background"
+			src={backgroundImage}
+			alt=""
+			sizes="100vw"
+			fetchpriority="high"
+		/>
+		<div class="content">
+			<div class="text">
+				<h1>{currentPage?.title ?? 'NEBULA Xplorer'}</h1>
+				{#if currentPage?.text}<p>{currentPage.text}</p>{/if}
+			</div>
+			<enhanced:img
+				src={WhiteNebulaXplorerLogo}
+				alt="NEBULA Xplorer logo"
+			/>
+		</div>
+	</section>
+{/if}
 
 <style>
 	.hero {
