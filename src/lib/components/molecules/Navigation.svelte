@@ -1,14 +1,14 @@
 <script>
     import { NavigationLink } from '../atoms';
     import { page } from "$app/state";
-    let { pages } = $props()
+    let { pages, layout = 'row', onclick } = $props()
 </script>
 
 <nav>
-    <ul>
+    <ul class={layout}>
         {#each pages as { href, label }}
             <li>
-                <NavigationLink {href} {label} active={page.url.pathname === href}/>
+                <NavigationLink {href} {label} {onclick} active={page.url.pathname === href}/>
             </li>
         {/each}
     </ul>
@@ -25,5 +25,9 @@
             gap: var(--spacing-xl);
             color: var(--color-neutral-lighter);
         }
+    }
+    .column{
+        flex-direction: column;
+        gap: var(--spacing-lg);
     }
 </style>
