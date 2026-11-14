@@ -14,6 +14,9 @@
 	import Hero from '$lib/components/organisms/Hero.svelte'
 	import Footer from '$lib/components/organisms/Footer.svelte'
 	import Locations from '$lib/components/organisms/Locations.svelte'
+	import Image from '$lib/components/atoms/Image.svelte'
+
+	import foto from '$lib/assets/images/x-ray-reverberation.jpg?enhanced'
 
 	let { children } = $props()
 </script>
@@ -23,6 +26,15 @@
 </svelte:head>
 
 <Hero {pages} />
+
+<Image
+    src={foto}
+    alt=""
+    credit="gjhdsjkfh"
+    loading="lazy"
+    sizes="(min-width: 48rem) 50vw, 100vw"
+    ratio="wide"
+/>
 
 <main>
 	{@render children()}
