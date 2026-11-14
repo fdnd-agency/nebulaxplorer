@@ -1,5 +1,5 @@
 <script>
-	import { HamburgerButton } from '../atoms'
+	import { HamburgerButton, SkipLink } from '../atoms'
 	import { Navigation, Search } from '../molecules'
 	import logo from '$lib/assets/logos/sron-logo.webp'
 
@@ -19,6 +19,8 @@
 
 <!--https://www.youtube.com/watch?v=K3CM7j9GIxk-->
 <svelte:window bind:scrollY />
+
+<SkipLink />
 
 <header class={{ scrolled }}>
 	<HamburgerButton />

@@ -8,7 +8,7 @@
     a {
         position: absolute;
         left: 0;
-        z-index: 999;
+        z-index: 1000;
         top: var(--spacing-sm);
         background-color: var(--color-brand-darkest);
         color: var(--color-accent-mid); 
