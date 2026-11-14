@@ -1,3 +1,16 @@
+<!--
+    Props:
+    - src          (required) enhanced image import (`?enhanced`), not a string path
+    - alt          string - default = "" (decorative). Describe the image if it carries content
+    - credit       string - shows "Image: {credit}" in a caption, no credit = no figcaption
+    - loading      "lazy" "eager" - default = "lazy"
+    - sizes        string - default = "100vw"
+    - rounded      boolean - default = true
+    - ratio        "auto" "square" "landscape" "wide" - default = "auto"
+
+    <Image src={foto} alt="X-ray reverberation" credit="NASA" ratio="wide" sizes="(min-width: 48rem) 50vw, 100vw" />
+-->
+
 <script>
     let { 
         src, 
