@@ -1,24 +1,14 @@
 <script>
     import { NavigationLink } from '../atoms';
     import { page } from "$app/state";
-
-    const navItems = [
-        { href: '/', text: 'Home' },
-        { href: '/mission', text: 'Mission' },
-        { href: '/science', text: 'Science' },
-        { href: '/technology', text: 'Technology' },
-        { href: '/teams', text: 'Teams' },
-        { href: '/assignments', text: 'Assignments' },
-        { href: '/partners', text: 'Partners' }
-    ]
-
+    let { pages } = $props()
 </script>
 
 <nav>
     <ul>
-        {#each navItems as navItem}
+        {#each pages as { href, label }}
             <li>
-                <NavigationLink href={navItem.href} text={navItem.text} active={page.url.pathname === navItem.href}/>
+                <NavigationLink {href} {label} active={page.url.pathname === href}/>
             </li>
         {/each}
     </ul>

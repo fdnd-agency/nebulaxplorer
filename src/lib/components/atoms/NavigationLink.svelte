@@ -1,9 +1,9 @@
 <script>
-    let { href, text, active = false, classes, ...rest } = $props();
+    let { href, label, active = false, classes } = $props();
 </script>
 
-<a { href } class={[classes, { active }]} aria-current={ active ? "page" : undefined } { ...rest }>
-    { text }
+<a { href } class={[classes, { active }]} aria-current={ active ? "page" : undefined }>
+    { label }
 </a>
 
 <style>

@@ -2,6 +2,7 @@
     import { HamburgerButton } from '../atoms';
     import { Navigation, Search } from '../molecules';
     import logo from "$lib/assets/logos/sron-logo.webp"
+    let { pages } = $props();
 
     let scrollY = $state(0);
     let scrolled = $derived(scrollY > 10);
@@ -13,7 +14,7 @@
 <header class={{ scrolled }}>
     <HamburgerButton />
     <section>
-        <Navigation />
+        <Navigation {pages} />
         <Search />
     </section>
     <img src="{ logo }" alt="SRON logo">

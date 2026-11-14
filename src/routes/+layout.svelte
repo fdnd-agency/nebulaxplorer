@@ -14,6 +14,7 @@
   	import Locations from '$lib/components/organisms/Locations.svelte';
 
 	import Header from '$lib/components/organisms/Header.svelte'
+	import { pages } from '$lib/data/pages'
 
 	let { children } = $props()
 </script>
@@ -22,7 +23,7 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<Header />
+<Header {pages} />
 
 <main id="main">
 	{@render children()}
