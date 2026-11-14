@@ -11,7 +11,6 @@
 	import '$lib/styles/stylesheet.css'
 
 	import { pages } from '$lib/data/pages'
-	import Navigation from '$lib/components/molecules/Navigation.svelte'
 	import Hero from '$lib/components/organisms/Hero.svelte'
 	import Footer from '$lib/components/organisms/Footer.svelte'
 	import Locations from '$lib/components/organisms/Locations.svelte'
@@ -22,8 +21,6 @@
 <svelte:head>
 	<link rel="icon" href={favicon} />
 </svelte:head>
-
-<Navigation {pages} />
 
 <Hero {pages} />
 
