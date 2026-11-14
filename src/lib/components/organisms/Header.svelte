@@ -8,6 +8,10 @@
 	let scrollY = $state(0)
 	let scrolled = $derived(scrollY > 10)
 
+    function handleToggle(event) {
+        document.body.style.overflow = event.newState === 'open' ? 'hidden' : ''
+    }
+
 	function closeMenu() {
 		document.getElementById('menu').hidePopover()
 	}
@@ -26,7 +30,7 @@
 
 	<img src={logo} alt="SRON logo" />
 
-	<section id="menu" popover>
+	<section id="menu" popover ontoggle={handleToggle}>
 		<div class="menu-close">
 			<HamburgerButton close />
 		</div>
