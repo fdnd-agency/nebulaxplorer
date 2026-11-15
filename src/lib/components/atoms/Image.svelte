@@ -30,7 +30,15 @@
 </script>
 
 <figure class={[ratio, { rounded }]}>
-	<enhanced:img {src} {alt} {sizes} {loading}></enhanced:img>
+	{#if typeof src === 'string'}
+		<img
+			src="https://fdnd-agency.directus.app/assets/{src}"
+			{alt}
+			{loading}
+		/>
+	{:else}
+		<enhanced:img {src} {alt} {sizes} {loading}></enhanced:img>
+	{/if}
 	{#if credit}
 		<figcaption class={creditPosition}>Image: {credit}</figcaption>
 	{/if}
