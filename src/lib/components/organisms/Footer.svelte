@@ -122,6 +122,7 @@
     }
 
      .quote {
+        color: var(	--color-brand-darkest);
         text-align: center;
         font-family: var(--font-caption);
         background-color: var(--color-accent-mid);
