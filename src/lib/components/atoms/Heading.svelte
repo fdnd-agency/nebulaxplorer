@@ -51,7 +51,7 @@
 	}
 
     .subheading {
-        --subheading-text: light-dark(var(--color-accent-darker), var(--color-accent-mid));
+        --subheading-text: light-dark(var(--color-accent-dark), var(--color-accent-mid));
         color: var(--subheading-text);
         letter-spacing: 0.05em;
         font-family: var(--font-caption);
