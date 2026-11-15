@@ -20,7 +20,7 @@
 		{/if}
 	</figure>
 {:else}
-	<q class={['quote', 'inline-quote', theme]}>{@render children?.()}</q>
+	<q class={['inline-quote', theme]}>{@render children?.()}</q>
 {/if}
 
 <style>
@@ -101,6 +101,17 @@
 	.inline-quote {
 		color: var(--quote-text);
 		font-style: italic;
+
+		--quote-text: light-dark(
+			var(--color-brand-darkest),
+			var(--color-neutral-lightest)
+			
+		);
+		--quote-accent: light-dark(
+			var(--color-accent-dark),
+			var(--color-accent-mid)
+			
+		);
 
 		&::before,
 		&::after {
