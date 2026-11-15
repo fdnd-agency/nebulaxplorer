@@ -16,6 +16,7 @@ export default {
         sizes: "30vw",
         rounded: true,
         ratio: "auto",
+        overlay: false,
     },
     argTypes: {
         src: { control: false },
@@ -28,6 +29,7 @@ export default {
         sizes: { control: "text" },
         rounded: { control: "boolean" },
         ratio: { control: "select", options: ["auto", "square", "landscape", "wide"] },
+        overlay: { control: 'boolean' },
     },
 };
 
@@ -73,3 +75,7 @@ export const LabelWithCredit = {
         ratio: "wide",
     },
 };
+
+export const Overlay = {
+	args: { overlay: true, ratio: 'wide' },
+}

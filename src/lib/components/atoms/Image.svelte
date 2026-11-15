@@ -1,6 +1,7 @@
 <!--
     Props:
-    - src            (required) enhanced image import (`?enhanced`), not a string path
+    - src            (required) enhanced image import (`?enhanced`) OR a Directus asset id (string)
+	- overlay        boolean - default = false, slightly darkens the image
     - alt            string - default = "" (decorative). Describe the image if it carries content
     - credit         string - shows "Image: {credit}" in a caption, no credit = no figcaption
     - creditPosition "top" "bottom" - default = "top"
@@ -26,10 +27,11 @@
 		ratio = 'auto',
 		label = '',
 		labelColor = 'accent',
+		overlay = false
 	} = $props()
 </script>
 
-<figure class={[ratio, { rounded }]}>
+<figure class={[ratio, { rounded, overlay }]}>
 	{#if typeof src === 'string'}
 		<img
 			src="https://fdnd-agency.directus.app/assets/{src}"
@@ -121,6 +123,24 @@
 
 		&.wide img {
 			aspect-ratio: 16 / 9;
+		}
+	}
+	figure{
+		&.overlay::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background-color: hsl(var(--neutral-h) var(--neutral-s) var(--neutral-darkest-l) / 0.15);
+			pointer-events: none;
+		}
+
+		&.overlay.rounded::after {
+			border-radius: var(--border-radius-brand);
+		}
+
+		figcaption,
+		.label {
+			z-index: 1;
 		}
 	}
 </style>
