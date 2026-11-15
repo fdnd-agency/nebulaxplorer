@@ -8,9 +8,9 @@
 	let scrollY = $state(0)
 	let scrolled = $derived(scrollY > 10)
 
-    function handleToggle(event) {
-        document.body.style.overflow = event.newState === 'open' ? 'hidden' : ''
-    }
+	function handleToggle(event) {
+		document.body.style.overflow = event.newState === 'open' ? 'hidden' : ''
+	}
 
 	function closeMenu() {
 		document.getElementById('menu').hidePopover()
@@ -81,42 +81,42 @@
 	}
 
 	#menu {
-        inset: 0;
+		inset: 0;
 		width: min(20rem, 100%);
 		height: 100dvh;
-        padding: var(--spacing-2xl) var(--spacing-md);
+		padding: var(--spacing-2xl) var(--spacing-md);
 		border: none;
 		background-color: var(--color-brand-darkest);
 		translate: -100% 0;
 
 		@media (prefers-reduced-motion: no-preference) {
-            transition: all 0.4s allow-discrete;
-        }
+			transition: all 0.4s allow-discrete;
+		}
 
-        &:popover-open {
-            translate: 0 0;
+		&:popover-open {
+			translate: 0 0;
 
-            @starting-style {
-                translate: -100% 0;
-            }
-        }
-        &::backdrop {
-            background: rgb(0 0 0 / 0.4);
-            backdrop-filter: blur(0.5rem);
-            opacity: 0;
+			@starting-style {
+				translate: -100% 0;
+			}
+		}
+		&::backdrop {
+			background: rgb(0 0 0 / 0.4);
+			backdrop-filter: blur(0.5rem);
+			opacity: 0;
 
-            @media (prefers-reduced-motion: no-preference) {
-                transition: all 0.4s allow-discrete;
-            }
-        }
+			@media (prefers-reduced-motion: no-preference) {
+				transition: all 0.4s allow-discrete;
+			}
+		}
 
-        &:popover-open::backdrop {
-            opacity: 1;
+		&:popover-open::backdrop {
+			opacity: 1;
 
-            @starting-style {
-                opacity: 0;
-            }
-        }
+			@starting-style {
+				opacity: 0;
+			}
+		}
 	}
 
 	.menu-close {

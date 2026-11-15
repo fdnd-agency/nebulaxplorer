@@ -1,5 +1,5 @@
 <script>
-	let { close = false } = $props();
+	let { close = false } = $props()
 </script>
 
 <button
