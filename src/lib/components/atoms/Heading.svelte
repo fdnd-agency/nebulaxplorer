@@ -1,5 +1,5 @@
 <script>
-    let { headingLevel = 2,theme = 'dark', children } = $props()
+    let { headingLevel = 2, theme = 'dark', children } = $props()
 </script>
 
 <svelte:element this={`h${headingLevel}`} class={['heading', theme]}>
