@@ -20,10 +20,11 @@ export default {
     },
 };
 
+export const Light = {
+    args: { theme: "light" }
+};
+
 export const Dark = {
     args: { theme: "dark" }
 };
 
-export const Light = {
-    args: { theme: "light" }
-};

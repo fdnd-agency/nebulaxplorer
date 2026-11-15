@@ -26,7 +26,9 @@ export default {
     },
 };
 
-export const Inline = { args: { variant: "inline" } };
+export const InlineDark = { args: { variant: "inline", theme: "dark" } };
+
+export const InlineLight = { args: { variant: "inline", theme: "light" } };
 
 export const BigLight = { args: { variant: "big", theme: "light" } };
 

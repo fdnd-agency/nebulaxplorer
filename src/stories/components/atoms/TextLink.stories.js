@@ -22,4 +22,6 @@ export default {
     },
 };
 
-export const Default = {};
+export const Light = { args: { theme: "light" } };
+
+export const Dark = { args: { theme: "dark" } };
