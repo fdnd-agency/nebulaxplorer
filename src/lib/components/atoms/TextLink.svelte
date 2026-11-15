@@ -1,16 +1,17 @@
 <script>
-	let { href, children } = $props()
+	let { href, theme = 'auto', children } = $props()
 </script>
 
 {#if href}
-    <a {href}>
+    <a {href} class={['link', theme]}>
         {@render children?.()}
     </a>
 {/if}
 
 <style>
-	a {
-		color: var(--color-accent-mid);
+	.link {
+		--link-color: light-dark(var(--color-accent-darker), var(--color-accent-mid));
+		color: var(--link-color);
         text-decoration: underline;
 		text-decoration-color: transparent;
         text-underline-offset: 0.2rem;
@@ -21,7 +22,9 @@
 		&:hover,
 		&:focus-visible {
 			cursor: pointer;
-            text-decoration: underline;
+            text-decoration-color: currentColor;
         }
+		&.light { color-scheme: light; }
+		&.dark { color-scheme: dark; }
 	}
 </style>

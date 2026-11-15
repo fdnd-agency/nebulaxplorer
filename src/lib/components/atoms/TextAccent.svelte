@@ -1,11 +1,15 @@
 <script>
-	let { children } = $props()
+	let { theme = 'auto', children } = $props()
 </script>
 
-<span>{@render children?.()}</span>
+<span class={['accent', theme]}>{@render children?.()}</span>
 
 <style>
-	span {
-		color: var(--color-accent-mid);
+	.accent {
+		--accent-color: light-dark(var(--color-accent-dark), var(--color-accent-mid));
+		color: var(--accent-color);
+
+		&.light { color-scheme: light; }
+		&.dark { color-scheme: dark; }
 	}
 </style>

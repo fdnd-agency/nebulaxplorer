@@ -1,10 +1,10 @@
 <script>
-    let { variant = 'inline', author, source, children } = $props()
+    let { variant = 'inline', theme = 'auto', author, source, children } = $props()
 </script>
 
 
 {#if variant === 'big'}
-    <figure>
+    <figure class={['quote', theme]}>
 		<blockquote>
 			{@render children?.()}
             
@@ -16,65 +16,74 @@
         {/if}
 	</figure>
 {:else}
-    <q class="inline-quote">{@render children?.()}</q>
+    <q class={['quote', 'inline-quote', theme]}>{@render children?.()}</q>
 {/if}
 
 <style>
+    .quote {
+        --quote-bg: light-dark(var(--color-brand-darker), var(--color-neutral-lighter));
+        --quote-text: light-dark(var(--color-neutral-lightest), var(--color-brand-darkest));
+        --quote-caption: light-dark(var(--color-neutral-light), var(--color-brand-dark));
+        --quote-accent: light-dark(var(--color-accent-mid), var(--color-accent-dark));
+
+        &.light { color-scheme: light; }
+        &.dark { color-scheme: dark; }
+    }
+    .inline-quote, blockquote {
+        quotes: '“' '”' '‘' '’';
+        &::before,
+        &::after{
+            color: var(--quote-accent);
+        }
+        &::before { 
+            content: open-quote;  
+        }
+        &::after { 
+            content: close-quote; 
+        }
+    }
     blockquote {
         position: relative;
         text-align: left;
-        font-size: 1.5em;
+        font-size: 1.2em;
       
         font-weight: 500;
         line-height: 1.3;
         font-style: italic;
         padding-left: 1.5rem;
-        
+        color: var(--quote-text);
         &::before,
         &::after{
 			font-size: 1.5em;
         }
         &::before{
-            content: '“';
             position: absolute;
-            color: var(--color-accent-mid);
             inset-block-start: 0;
             inset-inline-start: 0;
             line-height: 1;
-        }
-        &::after{
-            content: '”';
-            color: var(--color-accent-mid);
         }
     }
     figure{
         padding: var(--spacing-md);
         padding-inline-start: var(--spacing-lg);
+        color: var(--quote-text);
+        background: var(--quote-bg);
 
-        color: var(--color-neutral-lightest);
-        background: var(--color-brand-darker);
         border-radius: 0px 0.2rem 0.2rem 0px;
-        border-inline-start: 5px solid var(--color-accent-mid);
+        border-inline-start: 5px solid var(--quote-accent);
     }
     figcaption {
-		color: var(--color-neutral-lighter);
+		color: var(--quote-caption);
 		font-size: var(--font-size-body-sm);
         text-align: right;
 	}
     .inline-quote {
+        color: var(--quote-text);
         font-style: italic;
 
         &::before,
         &::after{
             font-size: 1.2em;
-        }
-        &::before{
-            content: '“';
-            color: var(--color-accent-mid);
-        }
-        &::after{
-            content: '”';
-            color: var(--color-accent-mid);
         }
     }
 </style>

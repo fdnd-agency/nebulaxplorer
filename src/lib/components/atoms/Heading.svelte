@@ -1,5 +1,5 @@
 <script>
-    let { headingLevel = 2, theme = 'dark', children } = $props()
+    let { headingLevel = 2, theme = 'auto', children } = $props()
 </script>
 
 <svelte:element this={`h${headingLevel}`} class={['heading', theme]}>
@@ -8,16 +8,10 @@
 
 <style>
     .heading {
-		& :global(span) {
-			color: var(--color-accent-mid);
-		}
-	}
-    .light {
-		color: var(--color-brand-darkest);
-	}
+        --heading-text: light-dark(var(--color-brand-darkest), var(--color-neutral-lightest));
+        color: var(--heading-text);
 
-    .dark {
-        color: var(--color-neutral-lightest);
+        &.light { color-scheme: light; }
+        &.dark { color-scheme: dark; }
     }
-
 </style>
