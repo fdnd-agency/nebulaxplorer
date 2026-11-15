@@ -1,14 +1,14 @@
 <script>
-import { Heading, Paragraph, Image } from '$lib/components/atoms'
+    import { Heading, Paragraph, Image } from '$lib/components/atoms'
 	let { newsItem } = $props()
 </script>
 
-<article>
+<article class="prose">
     {#if newsItem.image}
 		<Image src={newsItem.image} ratio="wide" rounded={false} label={newsItem.type} overlay={true}/>
 	{/if}
 	<Heading headingLevel={5} theme="dark">{newsItem.title}</Heading>
-    <time datetime="{newsItem.date}">{newsItem.date}</time>
+    <time datetime={newsItem.date}>{newsItem.date}</time>
 </article>
 
 <style>
