@@ -29,7 +29,7 @@
 	button {
 		background: var(--color-accent-dark);
 		border: none;
-		padding: 1rem;
+		padding: var(--spacing-md);
 		svg {
 			width: 2rem;
 		}
