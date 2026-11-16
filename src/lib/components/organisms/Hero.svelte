@@ -24,12 +24,13 @@
 		/>
 		<div class="content">
 			<div class="text">
-				<h1>{currentPage?.title ?? 'NEBULA Xplorer'}</h1>
-				{#if currentPage?.text}<p>{currentPage.text}</p>{/if}
+				<h1>{currentPage.title}</h1>
+				{#if currentPage.text}<p>{currentPage.text}</p>{/if}
 			</div>
 			<enhanced:img
 				src={WhiteNebulaXplorerLogo}
 				alt="NEBULA Xplorer logo"
+				sizes="(min-width: 48rem) 10rem, 7.5rem"
 			/>
 		</div>
 	</section>
@@ -44,7 +45,11 @@
 		&::after {
 			content: '';
 			position: absolute;
-			background-color: rgb(0 0 0 / 50%);
+			background-color: color-mix(
+				in srgb,
+				var(--color-neutral-darkest) 50%,
+				transparent
+			);
 			z-index: -1;
 			inset: 0;
 		}
