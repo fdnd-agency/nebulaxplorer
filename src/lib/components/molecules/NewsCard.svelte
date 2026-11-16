@@ -1,26 +1,25 @@
 <script>
-    import { Heading, Paragraph, Image } from '$lib/components/atoms'
+    import { Heading, Image, TextDate } from '$lib/components/atoms'
 	let { newsItem } = $props()
 </script>
 
-<article class="prose">
+<article>
     {#if newsItem.image}
 		<Image src={newsItem.image} ratio="wide" rounded={false} label={newsItem.type} overlay={true}/>
 	{/if}
-	<Heading headingLevel={5} theme="dark">{newsItem.title}</Heading>
-    <time datetime={newsItem.date}>{newsItem.date}</time>
+    <header class="prose">
+        <Heading headingLevel={5} theme="dark">{newsItem.title}</Heading>
+        <TextDate date={newsItem.date} theme="dark">{newsItem.date}</TextDate>
+    </header>
 </article>
 
 <style>
     article{
         display: flex;
         flex-direction: column;
-        width: 20vw;
-        margin: 3rem;
+        width: 35vw;
     }
-    time{
-        font-style: italic;
-        font-size: var(--font-size-body-sm);
-        color: light-dark(var(--color-brand-dark), var(--color-neutral-light));
+    header{
+        padding: var(--spacing-sm);
     }
 </style>
