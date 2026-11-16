@@ -35,7 +35,7 @@
 		align-items: center;
 
 		&:hover {
-			color: var(--color-accent-dark);
+			color: var(--color-accent-mid);
 		}
 	}
 </style>
