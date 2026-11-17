@@ -23,8 +23,21 @@ export default defineConfig({
     // adapter-auto only supports some environments, see https://svelte.dev/docs/kit/adapter-auto for a list.
     // If your environment is not supported, or you settled on a specific environment, switch out the adapter.
     // See https://svelte.dev/docs/kit/adapters for more information about adapters.
-    adapter: adapter()
+    adapter: adapter(),
+    prerender: {
+      // The Technology page is prerendered so it works without JavaScript.
+      // The footer links its images from src/ (Footer.svelte); report those
+      // instead of failing the build, and fail on anything else.
+      handleHttpError: ({ path, message }) => {
+        if (path.startsWith('/src/lib/assets/')) return console.warn(message)
+        throw new Error(message)
+      }
+    }
   })],
+  // The satellite explorer simplifies meshes in a module worker
+  worker: {
+    format: 'es'
+  },
   test: {
     projects: [{
       extends: true,
