@@ -183,7 +183,8 @@
 		var(--neutral-lightest-l)
 	);
 
-	--background: var(--color-brand-darkest);
+	color-scheme: light dark;
+	--background: light-dark(var(--color-neutral-lightest), var(--color-brand-darkest));
 
 	/*typografie===================================================================================*/
 	--font-heading:
