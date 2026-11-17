@@ -1,4 +1,3 @@
 // molecules
-
-export { default as FeatureItem } from "./FeatureItem.svelte"
-export { default as LoactionCard } from "./LocationCard.svelte"
+export { default as FeatureItem } from './FeatureItem.svelte'
+export { default as LocationCard } from './LocationCard.svelte'
