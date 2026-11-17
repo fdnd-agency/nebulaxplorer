@@ -42,14 +42,8 @@
 <Hero {pages} />
 
 <main id="main">
-	{@render children()}
-<main>
+  {@render children()}
+</main>
 
 <Locations />
 <Footer />
-
-<style>
-	section{
-		margin: 15rem;
-	}
-</style>
