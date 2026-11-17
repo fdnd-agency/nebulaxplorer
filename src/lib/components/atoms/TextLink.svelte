@@ -15,7 +15,7 @@
 <style>
 	.link {
 		--link-color: light-dark(
-			var(--color-accent-darker),
+			var(--color-accent-dark),
 			var(--color-accent-mid)
 		);
 		color: var(--link-color);
