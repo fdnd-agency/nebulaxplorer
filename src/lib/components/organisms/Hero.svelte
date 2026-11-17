@@ -2,7 +2,7 @@
 	import { page } from '$app/state'
 
 	import imageFallback from '$lib/assets/images/hero-background-01.jpg?enhanced'
-	import WhiteNebulaXplorerLogo from '$lib/assets/logos/NEBULA-Xplorer-logo-white.png?enhanced'
+	import WhiteNebulaXplorerLogo from '$lib/assets/logos/NEBULA-Xplorer-logo-white.png?enhanced&w=150;300'
 
 	let { pages } = $props()
 
@@ -31,6 +31,7 @@
 				src={WhiteNebulaXplorerLogo}
 				alt="NEBULA Xplorer logo"
 				sizes="(min-width: 48rem) 10rem, 7.5rem"
+				loading="eager"
 			/>
 		</div>
 	</section>
@@ -83,7 +84,7 @@
 
 			img {
 				width: 7.5rem;
-				height: 100%;
+				height: auto;
 				object-fit: contain;
 
 				@container (min-width: 768px) {
