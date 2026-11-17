@@ -16,9 +16,7 @@
 	import Header from '$lib/components/organisms/Header.svelte'
 	import { pages } from '$lib/data/pages'
 	import Hero from '$lib/components/organisms/Hero.svelte'
-	import Footer from '$lib/components/organisms/Footer.svelte'
-	import Locations from '$lib/components/organisms/Locations.svelte'
-
+	
 	let { children } = $props()
 
 	import { onNavigate } from '$app/navigation'
