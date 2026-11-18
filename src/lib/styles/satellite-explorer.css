@@ -1,0 +1,2167 @@
+/* The explorer's design tokens. Colours, fonts, spacing and type sizes come
+   from the site's tokens (stylesheet.css). Only the viewer's own colours stay
+   here: the dark 3D scene (--scene), the studio backdrop of the rendered
+   close-ups (--studio) and the blue of a selected part (--select). */
+.satellite-page {
+	color-scheme: dark;
+	--scene: hsl(228 50% 3.9%);
+	--text: hsl(
+		var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 80%
+	);
+	--text-muted: hsl(
+		var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 64%
+	);
+	--line: hsl(
+		var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 16%
+	);
+	--ease: cubic-bezier(0.2, 0, 0, 1);
+	/* The height of the site header (Header.svelte), which stays on top. The
+	   3D view fills the rest of the screen below it. */
+	--header-height: 4.25rem;
+	--stage-height: calc(100dvh - var(--header-height));
+	--explorer-mode: panel;
+	--explorer-width: clamp(300px, 34vw, 420px);
+	--sheet-peek-height: 120px;
+	--sheet-expanded-top: var(--spacing-2xl);
+	/* The team's menu button (HamburgerButton) */
+	--toggle-width: 4rem;
+}
+
+.satellite-page *,
+.satellite-page *::before,
+.satellite-page *::after {
+	box-sizing: border-box;
+}
+
+/* The explorer is a section of the Technology page. Inside it, the site's
+   base spacing and text sizes (stylesheet.css) make room for its own layout;
+   everything around it keeps the site's styles. */
+.satellite-page {
+	display: block;
+	margin-inline: calc(var(--spacing-md) * -1);
+	color: var(--color-neutral-lightest);
+	background: var(--scene);
+	-webkit-font-smoothing: antialiased;
+}
+
+@media (min-width: 768px) {
+	.satellite-page {
+		margin-inline: calc(var(--spacing-xl) * -1);
+	}
+}
+
+.satellite-page [hidden] {
+	display: none !important;
+}
+
+.satellite-page :where(img) {
+	display: block;
+	max-width: 100%;
+}
+
+.satellite-page :where(button) {
+	font: inherit;
+	color: inherit;
+}
+
+:where(.satellite-page) .page-notice {
+	margin: 0;
+	padding: var(--spacing-md) var(--spacing-lg);
+	color: var(--color-brand-darkest);
+	background: var(--color-accent-mid);
+	font: 500 13px/20px var(--font-body);
+}
+
+.explorer-credits a {
+	color: var(--color-neutral-lightest);
+	font: 500 var(--font-size-body-sm)/20px var(--font-heading);
+	text-decoration: none;
+}
+
+.explorer-credits a:hover {
+	text-decoration: underline 1px var(--color-accent-mid);
+	text-underline-offset: 6px;
+}
+
+.explorer {
+	color: var(--color-neutral-lightest);
+	background: var(--color-brand-darkest);
+}
+
+.explorer-kicker {
+	margin: var(--spacing-lg) 0 var(--spacing-sm);
+}
+
+.explorer-title {
+	margin: 0 0 var(--spacing-md);
+}
+
+.explorer-title .heading:focus {
+	outline: none;
+}
+
+.explorer-title .heading:focus-visible {
+	outline: 2px solid var(--color-accent-mid);
+}
+
+.explorer-lead {
+	margin: 0 0 var(--spacing-md);
+}
+
+.explorer-note {
+	margin: 0 0 var(--spacing-md);
+}
+
+.explorer-section-label {
+	margin: 40px 0 12px;
+	color: var(--color-neutral-lightest);
+	font: 500 13px/16px var(--font-body);
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+/* The kicker (subheading) above the title of the team's Heading */
+.explorer-title hgroup {
+	gap: var(--spacing-xs);
+}
+
+/* The section labels are small: the team's Heading takes the label's text
+   style instead of the size of an h2 */
+.explorer-section-label .heading {
+	font: inherit;
+	letter-spacing: inherit;
+	text-transform: inherit;
+}
+
+.explorer-tree {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.explorer-tree-navigation > .explorer-tree {
+	border-bottom: 1px solid var(--line);
+}
+
+.explorer-tree-navigation > .explorer-tree > .explorer-node {
+	border-top: 1px solid var(--line);
+}
+
+.explorer-tree .explorer-tree {
+	margin: var(--spacing-xs) 0 12px;
+	padding-left: 10px;
+	border-left: 1px solid var(--line);
+}
+
+.explorer-node-heading {
+	margin: 0;
+	font: inherit;
+}
+
+.explorer-node-link {
+	display: grid;
+	grid-template-columns: 36px minmax(0, 1fr) auto auto;
+	align-items: center;
+	min-height: 52px;
+	padding: var(--spacing-sm) 12px var(--spacing-sm) var(--spacing-xs);
+	color: var(--color-neutral-lightest);
+	text-decoration: none;
+	transition:
+		background-color 150ms var(--ease),
+		box-shadow 150ms var(--ease);
+}
+
+.explorer-tree .explorer-tree .explorer-node-link {
+	grid-template-columns: 28px minmax(0, 1fr) auto auto;
+	min-height: 44px;
+}
+
+.explorer-node-link:hover,
+.explorer-node-link.is-previewed {
+	background: hsl(
+		var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 5%
+	);
+}
+
+.explorer-node-link:focus-visible {
+	outline-offset: -2px;
+}
+
+.explorer-list-number {
+	color: var(--color-accent-mid);
+	font: 400 12px/var(--line-height-tight) var(--font-caption);
+}
+
+.explorer-node-title {
+	font: 500 17px/24px var(--font-heading);
+}
+
+.explorer-tree .explorer-tree .explorer-node-title {
+	font-size: 15px;
+	line-height: 22px;
+}
+
+.explorer-list-meta {
+	color: var(--text-muted);
+	font: 400 12px/var(--line-height-tight) var(--font-caption);
+}
+
+.js-enhanced .explorer-node-link::after {
+	content: '';
+	width: 7px;
+	height: 7px;
+	margin-left: 14px;
+	border-top: 1.5px solid currentColor;
+	border-right: 1.5px solid currentColor;
+	opacity: 0.72;
+	transform: rotate(45deg);
+	transition: transform 240ms var(--ease);
+}
+
+.js-enhanced
+	.explorer-node.is-expanded
+	> .explorer-node-heading
+	.explorer-node-link::after {
+	transform: translateY(-2px) rotate(135deg);
+}
+
+.js-enhanced
+	.explorer-node.is-in-path
+	> .explorer-node-heading
+	.explorer-node-title {
+	color: var(--color-neutral-lightest);
+}
+
+.js-enhanced
+	.explorer-node.is-selected
+	> .explorer-node-heading
+	.explorer-node-link {
+	background: hsl(
+		var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 6%
+	);
+	box-shadow: inset 2px 0 0 var(--color-accent-mid);
+}
+
+.js-enhanced
+	.explorer-node.is-selected
+	> .explorer-node-heading
+	.explorer-node-title {
+	font-weight: 700;
+}
+
+.explorer-node-content {
+	padding: var(--spacing-xs) var(--spacing-xs) 12px 40px;
+}
+
+.explorer-tree .explorer-tree .explorer-node-content {
+	padding-left: 32px;
+}
+
+.explorer-node-content > .explorer-tree {
+	margin-left: -30px;
+}
+
+.explorer-tree .explorer-tree .explorer-node-content > .explorer-tree {
+	margin-left: -22px;
+}
+
+.js-enhanced .explorer-node-body {
+	display: grid;
+	grid-template-rows: 0fr;
+	opacity: 0;
+	transition:
+		grid-template-rows 260ms var(--ease),
+		opacity 200ms var(--ease);
+}
+
+.js-enhanced .explorer-node.is-expanded > .explorer-node-body {
+	grid-template-rows: 1fr;
+	opacity: 1;
+}
+
+.js-enhanced .explorer-node-body > .explorer-node-content {
+	min-height: 0;
+	overflow: hidden;
+}
+
+.explorer-about p {
+	margin: 0 0 var(--spacing-md);
+}
+
+.viewer-poster {
+	position: absolute;
+	inset: 0;
+	display: grid;
+	align-items: end;
+	justify-items: center;
+	padding: var(--spacing-lg);
+}
+
+.viewer-poster img {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.viewer-poster-panel {
+	position: relative;
+	display: grid;
+	gap: var(--spacing-md);
+	max-width: 420px;
+	padding: 20px var(--spacing-lg);
+	background: var(--color-brand-darkest);
+}
+
+.viewer-poster-panel p {
+	margin: 0;
+	color: var(--text);
+	font: 400 13px/22px var(--font-caption);
+}
+
+.viewer-load-model {
+	justify-self: start;
+}
+
+.explorer-root > .explorer-about {
+	margin-top: 40px;
+}
+
+.explorer-credits {
+	margin-top: var(--spacing-xl);
+	color: var(--text-muted);
+	font: 400 12px/20px var(--font-caption);
+}
+
+.explorer-credits p {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: var(--spacing-sm);
+	margin: 0 0 12px;
+}
+
+.explorer-credits img {
+	width: auto;
+	height: 16px;
+}
+
+.explorer-credits a {
+	font-size: 14px;
+}
+
+.explorer-current {
+	display: none;
+}
+
+.satellite-page:not(.js) .language-switcher {
+	display: none;
+}
+
+/* The explorer's language switch, below the site header */
+.js-enhanced .explorer-layout > .language-switcher {
+	position: fixed;
+	top: var(--spacing-md);
+	right: var(--spacing-lg);
+	z-index: 35;
+}
+
+.explorer-breadcrumb ol {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 0;
+	color: var(--text-muted);
+	font: 400 12px/20px var(--font-caption);
+	list-style: none;
+}
+
+.explorer-breadcrumb li + li::before {
+	content: '›';
+	margin: 0 var(--spacing-sm);
+	color: hsl(
+		var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 32%
+	);
+}
+
+.explorer-breadcrumb a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.explorer-breadcrumb a:hover {
+	color: var(--color-neutral-lightest);
+	text-decoration: underline 1px var(--color-accent-mid);
+	text-underline-offset: 4px;
+}
+
+.explorer-breadcrumb [aria-current] {
+	color: var(--color-neutral-lightest);
+}
+
+.explorer-breadcrumb-more {
+	padding: 0 2px;
+	border: 0;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+}
+
+.explorer-grabber,
+.explorer-sheet-toggle,
+.viewer {
+	display: none;
+}
+
+.satellite-page:not(.js-enhanced) .explorer-bar {
+	display: none;
+}
+
+.satellite-page:not(.js-enhanced) .explorer-scroll {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 0 clamp(20px, 4vw, var(--spacing-xl)) 96px;
+}
+
+/* With the 3D model the explorer is one screen high. The fixed parts of the
+   explorer (viewer, panel, sheet) are placed in this screen, not in the
+   window, so the rest of the page scrolls as usual. */
+/* While the 3D view starts (js-pending, set before the page is drawn) the
+   section is already the 3D view's dark screen, instead of showing the page
+   without JavaScript for a moment */
+.satellite-page.js-pending {
+	height: var(--stage-height);
+	overflow: clip;
+}
+
+.satellite-page.js-pending > * {
+	visibility: hidden;
+}
+
+/* Full screen: the 3D view and the explorer fill the screen, without the
+   site's header */
+.satellite-page.js-enhanced:fullscreen {
+	--stage-height: 100dvh;
+}
+
+.satellite-page.js-enhanced {
+	position: relative;
+	height: var(--stage-height);
+	scroll-margin-top: var(--header-height);
+	overflow: clip;
+	contain: layout;
+}
+
+.js-enhanced .viewer {
+	position: fixed;
+	inset: 0;
+	display: block;
+	--visible-left: 0px;
+	--visible-right: 0px;
+	--visible-bottom: 0px;
+}
+
+.viewer-visible-area {
+	position: absolute;
+	top: 0;
+	right: var(--visible-right);
+	bottom: var(--visible-bottom);
+	left: var(--visible-left);
+	container: viewer-hud / inline-size;
+	pointer-events: none;
+}
+
+.viewer-controls,
+.viewer-poster {
+	pointer-events: auto;
+}
+
+.js-enhanced .viewer canvas {
+	display: block;
+	width: 100%;
+	height: 100%;
+	outline: none;
+	transition: opacity 180ms var(--ease);
+	touch-action: pan-y;
+}
+
+.viewer.is-switching canvas {
+	opacity: 0;
+}
+
+.viewer-markers {
+	position: absolute;
+	inset: 0;
+	overflow: hidden;
+	clip-path: inset(
+		0 var(--visible-right) var(--visible-bottom) var(--visible-left)
+	);
+	pointer-events: none;
+	transition: opacity 150ms var(--ease);
+}
+
+.viewer-markers.is-hidden,
+.viewer[data-sheet='expanded'] .viewer-markers {
+	opacity: 0;
+}
+
+.viewer[data-sheet='expanded'] .viewer-marker {
+	pointer-events: none;
+}
+
+.viewer-markers.is-hidden .viewer-marker {
+	pointer-events: none;
+}
+
+.viewer-marker {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	color: var(--color-neutral-lightest);
+	text-decoration: none;
+	pointer-events: auto;
+	transition: opacity 150ms var(--ease);
+}
+
+.viewer-marker::before {
+	content: '';
+	position: absolute;
+	top: -3px;
+	left: -3px;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: var(--color-neutral-lightest);
+	box-shadow: 0 0 0 1px
+		hsl(var(--brand-h) var(--brand-s) var(--brand-darkest-l) / 64%);
+}
+
+.viewer-marker::after {
+	content: '';
+	position: absolute;
+	bottom: 3px;
+	left: -0.5px;
+	width: 1px;
+	height: 20px;
+	background: hsl(
+		var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 56%
+	);
+}
+
+.viewer-marker-number {
+	position: absolute;
+	bottom: 23px;
+	left: -12px;
+	display: grid;
+	place-items: center;
+	width: 24px;
+	height: 24px;
+	border: 1px solid
+		hsl(var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 48%);
+	border-radius: 2px;
+	color: var(--color-neutral-lightest);
+	background: hsl(var(--brand-h) var(--brand-s) var(--brand-darkest-l) / 92%);
+	font: 700 11px/var(--line-height-tight) var(--font-caption);
+	transition:
+		background-color 150ms var(--ease),
+		color 150ms var(--ease);
+}
+
+.viewer-marker-number::before {
+	content: '';
+	position: absolute;
+	inset: -10px;
+}
+
+.viewer-marker-label {
+	position: absolute;
+	bottom: 23px;
+	left: var(--spacing-md);
+	display: flex;
+	align-items: center;
+	height: 24px;
+	padding: 0 var(--spacing-sm);
+	color: var(--color-neutral-lightest);
+	background: var(--color-brand-darkest);
+	font: 500 13px/var(--line-height-tight) var(--font-heading);
+	white-space: nowrap;
+	opacity: 0;
+	transform: translateX(-4px);
+	transition:
+		opacity 150ms var(--ease),
+		transform 150ms var(--ease);
+	pointer-events: none;
+}
+
+.viewer-marker:hover .viewer-marker-number,
+.viewer-marker.is-previewed .viewer-marker-number {
+	border-color: var(--color-neutral-lightest);
+	color: var(--color-brand-darkest);
+	background: var(--color-neutral-lightest);
+}
+
+.viewer-marker:hover .viewer-marker-label,
+.viewer-marker.is-previewed .viewer-marker-label {
+	opacity: 1;
+	transform: none;
+}
+
+.viewer-marker.is-behind {
+	opacity: 0.36;
+}
+
+.viewer-label,
+.viewer-status,
+.viewer-hint {
+	position: absolute;
+	left: 32px;
+	margin: 0;
+}
+
+.viewer-label {
+	top: var(--spacing-lg);
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: 10px;
+	max-width: calc(100cqi - 64px);
+	pointer-events: none;
+}
+
+.viewer-label-number {
+	color: var(--color-accent-mid);
+	font: 400 13px/var(--line-height-tight) var(--font-caption);
+}
+
+.viewer-label-name {
+	font: 500 var(--font-size-body-sm)/24px var(--font-heading);
+}
+
+.viewer-tag {
+	padding: var(--spacing-xs) var(--spacing-sm);
+	color: var(--color-neutral-lightest);
+	background: var(--color-brand-mid);
+	font: 500 11px/var(--line-height-tight) var(--font-body);
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+.viewer-status {
+	top: var(--spacing-2xl);
+	color: var(--text);
+	font: 400 12px/20px var(--font-caption);
+}
+
+.viewer.is-loading::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: var(--visible-right);
+	left: var(--visible-left);
+	z-index: 1;
+	height: 2px;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		var(--color-accent-mid),
+		transparent
+	);
+	background-size: 40% 100%;
+	background-repeat: no-repeat;
+	animation: loading-line 1.4s var(--ease) infinite;
+}
+
+.viewer-hint {
+	bottom: var(--spacing-lg);
+	color: var(--text-muted);
+	font: 400 12px/20px var(--font-caption);
+	transition: opacity 400ms var(--ease);
+}
+
+.viewer-poster:not([hidden]) ~ .viewer-hint,
+.viewer-hint.is-dismissed {
+	opacity: 0;
+}
+
+.viewer-controls {
+	position: absolute;
+	right: var(--spacing-lg);
+	bottom: var(--spacing-lg);
+	display: flex;
+	gap: var(--spacing-sm);
+}
+
+.viewer-control[aria-pressed='true'] {
+	box-shadow: inset 0 -2px 0 var(--color-accent-mid);
+}
+
+@keyframes loading-line {
+	from {
+		background-position: -40% 0;
+	}
+
+	to {
+		background-position: 140% 0;
+	}
+}
+
+.explorer-scroll {
+	container: explorer / inline-size;
+}
+
+.explorer-bar {
+	container: explorer-bar / inline-size;
+}
+
+@media (width >= 720px) {
+	/* The explorer is always open, on the right of the 3D view */
+	.js-enhanced .viewer {
+		--visible-right: var(--explorer-width);
+	}
+
+	.js-enhanced .explorer-layout > .language-switcher {
+		right: calc(var(--explorer-width) + var(--spacing-lg));
+	}
+
+	.js-enhanced .explorer {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 30;
+		display: flex;
+		flex-direction: column;
+		width: var(--explorer-width);
+		box-shadow: 0 0 40px
+			hsl(
+				var(--neutral-h) var(--neutral-s) var(--neutral-darkest-l) / 40%
+			);
+		border-left: 1px solid var(--line);
+	}
+
+	.js-enhanced .explorer-bar {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto;
+		align-items: center;
+		gap: var(--spacing-sm);
+		padding: var(--spacing-md) 20px var(--spacing-sm) 40px;
+	}
+
+	.js-enhanced .explorer-scroll {
+		flex: 1;
+		overflow-y: auto;
+		overscroll-behavior: contain;
+		padding: 0 32px 40px 40px;
+		scrollbar-color: hsl(
+				var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) /
+					20%
+			)
+			transparent;
+		scrollbar-width: thin;
+	}
+}
+
+@media (width >= 720px) and (height < 520px) {
+	.js-enhanced .explorer-bar {
+		padding-top: var(--spacing-sm);
+	}
+}
+
+@media (width < 720px) {
+	.satellite-page {
+		--explorer-mode: sheet;
+	}
+
+	.js-enhanced .viewer {
+		--visible-bottom: var(--sheet-peek-height);
+	}
+
+	.js-enhanced .viewer[data-sheet='peek'] {
+		--visible-bottom: var(--sheet-peek-height);
+	}
+
+	.js-enhanced .viewer[data-sheet='expanded'] {
+		--visible-bottom: calc(var(--stage-height) - var(--sheet-expanded-top));
+	}
+
+	.js-enhanced .explorer {
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 30;
+		display: flex;
+		flex-direction: column;
+		height: calc(var(--stage-height) - var(--sheet-expanded-top));
+		border-top: 1px solid var(--line);
+		box-shadow: 0 -12px 40px
+			hsl(
+				var(--neutral-h) var(--neutral-s) var(--neutral-darkest-l) / 40%
+			);
+		visibility: hidden;
+		transform: translateY(100%);
+		transition:
+			transform 250ms var(--ease),
+			visibility 0s 250ms;
+	}
+
+	.js-enhanced .explorer[data-sheet='peek'],
+	.js-enhanced .explorer[data-sheet='expanded'] {
+		visibility: visible;
+		transition: transform 250ms var(--ease);
+	}
+
+	.js-enhanced .explorer[data-sheet='peek'] {
+		transform: translateY(calc(100% - var(--sheet-peek-height)));
+	}
+
+	.js-enhanced .explorer[data-sheet='expanded'] {
+		transform: none;
+	}
+
+	.js-enhanced .explorer-bar {
+		position: relative;
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto;
+		align-items: center;
+		gap: var(--spacing-xs);
+		padding: 20px var(--spacing-xs) 0 var(--spacing-md);
+		touch-action: none;
+	}
+
+	.js-enhanced .explorer[data-sheet='peek'] .explorer-bar {
+		cursor: pointer;
+	}
+
+	.js-enhanced .explorer-grabber {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		display: block;
+		width: 72px;
+		height: 20px;
+		transform: translateX(-50%);
+	}
+
+	/* The arrow that opens the sheet, beside the selected item */
+	.js-enhanced .explorer-sheet-toggle {
+		grid-row: 1 / span 2;
+		grid-column: 2;
+		width: 44px;
+		height: 44px;
+		margin-right: var(--spacing-sm);
+	}
+
+	.js-enhanced .explorer-grabber::before {
+		content: '';
+		display: block;
+		width: 32px;
+		height: 3px;
+		margin: var(--spacing-sm) auto 0;
+		background: hsl(
+			var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 32%
+		);
+	}
+
+	.js-enhanced .explorer-scroll {
+		flex: 1;
+		overflow-y: auto;
+		overscroll-behavior: contain;
+		padding: 0 var(--spacing-md) 32px;
+	}
+
+	.js-enhanced .explorer[data-sheet='peek'] .explorer-scroll {
+		visibility: hidden;
+	}
+
+	.js-enhanced .explorer[data-sheet='peek'] .explorer-current {
+		display: flex;
+		grid-column: 1;
+		align-items: baseline;
+		gap: 10px;
+		margin: 2px 0 12px;
+		padding-right: 12px;
+	}
+
+	.explorer-current-number {
+		color: var(--color-accent-mid);
+		font: 400 13px/var(--line-height-tight) var(--font-caption);
+	}
+
+	.explorer-current-title {
+		overflow: hidden;
+		font: 400 22px/28px var(--font-heading);
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+	.js-enhanced .viewer-label {
+		display: none;
+	}
+
+	.viewer-status {
+		top: 40px;
+		left: var(--spacing-md);
+	}
+
+	.viewer-hint {
+		top: 12px;
+		bottom: auto;
+		left: var(--spacing-md);
+	}
+
+	.viewer-controls {
+		top: 12px;
+		right: 12px;
+		bottom: auto;
+		flex-direction: column;
+	}
+
+	.viewer-marker-number {
+		left: -13px;
+		width: 26px;
+		height: 26px;
+		font-size: 12px;
+	}
+
+	.viewer-marker-label {
+		display: none;
+	}
+}
+
+@media (horizontal-viewport-segments: 2) {
+	.satellite-page {
+		--explorer-mode: docked-columns;
+	}
+}
+
+@media (vertical-viewport-segments: 2) {
+	.satellite-page {
+		--explorer-mode: docked-rows;
+	}
+}
+
+.satellite-page[data-layout='docked-columns'].js-enhanced {
+	--docked-explorer-width: env(viewport-segment-width 0 0, 50vw);
+	--docked-viewer-left: env(viewport-segment-left 1 0, 50vw);
+}
+
+.satellite-page[data-layout='docked-columns'].js-enhanced .explorer {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: auto;
+	left: 0;
+	z-index: 50;
+	display: flex;
+	flex-direction: column;
+	width: var(--docked-explorer-width);
+	height: auto;
+	visibility: visible;
+	transform: none;
+	transition: none;
+}
+
+.satellite-page[data-layout='docked-columns'].js-enhanced .viewer {
+	--visible-left: var(--docked-viewer-left);
+	--visible-right: 0px;
+	--visible-bottom: 0px;
+}
+
+.satellite-page[data-layout='docked-rows'].js-enhanced {
+	--docked-explorer-top: env(viewport-segment-top 0 1, 50dvh);
+}
+
+.satellite-page[data-layout='docked-rows'].js-enhanced .explorer {
+	position: fixed;
+	top: var(--docked-explorer-top);
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 30;
+	display: flex;
+	flex-direction: column;
+	width: auto;
+	height: auto;
+	visibility: visible;
+	transform: none;
+	transition: none;
+}
+
+.satellite-page[data-layout='docked-rows'].js-enhanced .viewer {
+	--visible-left: 0px;
+	--visible-right: 0px;
+	--visible-bottom: calc(var(--stage-height) - var(--docked-explorer-top));
+}
+
+.satellite-page[data-layout='docked-rows'].js-enhanced .viewer-controls {
+	top: 12px;
+	bottom: auto;
+}
+
+.satellite-page[data-layout^='docked'].js-enhanced .explorer-grabber,
+.satellite-page[data-layout^='docked'].js-enhanced .explorer-sheet-toggle {
+	display: none;
+}
+
+@container explorer (width < 340px) {
+	.explorer-node-link {
+		grid-template-columns: 30px minmax(0, 1fr) auto auto;
+		padding-right: var(--spacing-sm);
+	}
+
+	.explorer-node-title {
+		font-size: var(--font-size-body-sm);
+	}
+
+	.explorer-node-content {
+		padding-left: 30px;
+	}
+
+	.explorer-node-content > .explorer-tree {
+		margin-left: -22px;
+	}
+
+	.explorer-tree .explorer-tree .explorer-node-content {
+		padding-left: var(--spacing-lg);
+	}
+
+	.explorer-tree .explorer-tree .explorer-node-content > .explorer-tree {
+		margin-left: -16px;
+	}
+}
+
+@container explorer (width >= 520px) {
+	.explorer-lead {
+		max-width: 60ch;
+	}
+
+	.explorer-node-link {
+		min-height: 56px;
+		padding-right: var(--spacing-md);
+	}
+
+	.explorer-node-title {
+		font-size: 18px;
+		line-height: 26px;
+	}
+
+	.explorer-node-content {
+		padding-left: var(--spacing-xl);
+	}
+
+	.explorer-node-content > .explorer-tree {
+		margin-left: -38px;
+	}
+
+	.explorer-about p,
+	.explorer-node-content .explorer-lead,
+	.explorer-note {
+		max-width: 62ch;
+	}
+}
+
+@container explorer-bar (width < 320px) {
+	.explorer-breadcrumb ol {
+		font-size: 11px;
+	}
+
+	.explorer-current-title {
+		font-size: 19px;
+	}
+}
+
+@container viewer-hud (width < 640px) {
+	.viewer-control {
+		width: 40px;
+		height: 40px;
+	}
+}
+
+@media (prefers-reduced-transparency: reduce) {
+	.viewer-control,
+	.viewer-marker-number {
+		background: var(--color-brand-darkest);
+	}
+
+	.explorer {
+		box-shadow: none;
+	}
+}
+
+@media (prefers-contrast: more) {
+	.satellite-page {
+		--text: var(--color-neutral-lightest);
+		--text-muted: hsl(
+			var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 90%
+		);
+		--line: hsl(
+			var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 48%
+		);
+	}
+
+	.satellite-page :focus-visible {
+		outline-width: 3px;
+	}
+
+	.viewer-marker-number {
+		border-color: var(--color-neutral-lightest);
+		background: var(--color-brand-darkest);
+	}
+
+	.viewer-control {
+		outline: 1px solid var(--color-neutral-lightest);
+		outline-offset: -1px;
+	}
+
+	.js-enhanced
+		.explorer-node.is-selected
+		> .explorer-node-heading
+		.explorer-node-link {
+		box-shadow: inset 4px 0 0 var(--color-accent-mid);
+	}
+}
+
+@media (forced-colors: active) {
+	.explorer-node-link,
+	.viewer-control,
+	.language-option {
+		forced-color-adjust: auto;
+	}
+
+	.js-enhanced
+		.explorer-node.is-selected
+		> .explorer-node-heading
+		.explorer-node-link {
+		outline: 2px solid Highlight;
+		outline-offset: -2px;
+	}
+
+	.js-enhanced
+		.explorer-node.is-selected
+		> .explorer-node-heading
+		.explorer-node-title {
+		text-decoration: underline;
+		text-underline-offset: 4px;
+	}
+
+	.viewer-control,
+	.viewer-marker-number,
+	.language-switcher {
+		border: 1px solid ButtonText;
+	}
+
+	.viewer-control[aria-pressed='true'] {
+		outline: 2px solid Highlight;
+	}
+
+	.viewer-marker::before,
+	.viewer-marker::after {
+		background: CanvasText;
+	}
+
+	.explorer-tree .explorer-tree {
+		border-left-color: CanvasText;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 1ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 1ms !important;
+	}
+}
+
+/* Exhibit: the page without the 3D model ====================================
+   Without JavaScript (or WebGL) the same content reads as an exhibit: the
+   spacecraft and what it is first, then its components by name. Each one
+   opens with where it sits on the spacecraft and a close-up, rendered from
+   the CAD model (scripts/render-stills.mjs). Navy surrounds everything, white
+   names the parts and a restrained cool blue marks the selection. */
+
+.satellite-page:not(.js-enhanced) {
+	--accent-line: hsl(
+		var(--accent-h) var(--accent-s) var(--accent-mid-l) / 55%
+	);
+	/* Selection in the location views and the controls */
+	--select: hsl(218 100% 77.1%);
+	/* The studio backdrop of the close-ups */
+	--studio: hsl(216 17.2% 88.6%);
+}
+
+/* Earlier anchors (aliases) take no room in the layout */
+.satellite-page:not(.js-enhanced) .explorer-node {
+	position: relative;
+}
+
+.satellite-page:not(.js-enhanced) .explorer-node > span[id] {
+	position: absolute;
+	top: 0;
+}
+
+.satellite-page:not(.js-enhanced) .explorer {
+	background: var(--color-brand-darkest);
+}
+
+.satellite-page:not(.js-enhanced) .explorer-root {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	grid-template-areas:
+		'intro'
+		'hero'
+		'components'
+		'about';
+}
+
+.satellite-page:not(.js-enhanced) .explorer-intro {
+	grid-area: intro;
+	padding-top: clamp(var(--spacing-lg), 6vw, var(--spacing-xl));
+}
+
+.satellite-page:not(.js-enhanced) .explorer-kicker {
+	margin-top: 0;
+}
+
+.satellite-page:not(.js-enhanced) .explorer-title {
+	margin-bottom: 20px;
+}
+
+.satellite-page:not(.js-enhanced) .explorer-intro > .explorer-lead {
+	max-width: 34em;
+	margin-bottom: 28px;
+}
+
+.explorer-call-to-action {
+	display: inline-flex;
+	align-items: center;
+	gap: 12px;
+	padding: 15px 22px;
+	background: var(--color-accent-mid);
+	text-decoration: none;
+	transition:
+		box-shadow 200ms var(--ease),
+		background-color 200ms var(--ease);
+}
+
+.explorer-static-note {
+	max-width: 34em;
+	margin: 28px 0 0;
+	padding-left: 14px;
+	border-left: 1px solid var(--accent-line);
+	color: var(--text-muted);
+	font: 400 12px/20px var(--font-caption);
+}
+
+.explorer-hero {
+	grid-area: hero;
+	margin: var(--spacing-lg) 0 0;
+}
+
+.explorer-hero-media {
+	display: block;
+	width: 100%;
+	height: auto;
+	background: var(--color-brand-darkest);
+}
+
+/* Phone: name and purpose, the button, then the whole upright satellite
+   with both panel tips in the rest of the first screen */
+@media (width < 700px) {
+	.satellite-page:not(.js-enhanced) .explorer-intro > .explorer-lead {
+		margin-bottom: 20px;
+	}
+
+	.explorer-call-to-action {
+		display: flex;
+		justify-content: center;
+		min-height: 52px;
+	}
+
+	.explorer-static-note {
+		margin-top: var(--spacing-md);
+	}
+
+	.explorer-hero-media {
+		width: auto;
+		max-width: 100%;
+		height: clamp(320px, calc(100svh - 430px), 560px);
+		margin: 0 auto;
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.explorer-hero-media {
+		animation: explorer-hero-in 1600ms var(--ease) both;
+	}
+}
+
+@keyframes explorer-hero-in {
+	from {
+		opacity: 0;
+		transform: scale(0.985);
+	}
+}
+
+.satellite-page:not(.js-enhanced) .explorer-tree-navigation {
+	grid-area: components;
+	margin-top: clamp(40px, 7vw, 96px);
+}
+
+.satellite-page:not(.js-enhanced)
+	.explorer-tree-navigation
+	> .explorer-section-label {
+	margin: 0 0 var(--spacing-md);
+	color: var(--text-muted);
+	scroll-margin-top: var(--spacing-md);
+}
+
+.satellite-page:not(.js-enhanced) .explorer-root > .explorer-about {
+	grid-area: about;
+	max-width: 70ch;
+	margin-top: 72px;
+}
+
+@media (width >= 900px) {
+	.satellite-page:not(.js-enhanced) .explorer-root {
+		grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+		grid-template-areas:
+			'intro hero'
+			'components components'
+			'about about';
+		align-items: center;
+		column-gap: clamp(32px, 4vw, var(--spacing-2xl));
+	}
+
+	.satellite-page:not(.js-enhanced) .explorer-intro {
+		padding-top: 0;
+	}
+
+	.explorer-hero {
+		margin: 0;
+	}
+
+	/* The whole satellite fits beside the name on the first screen */
+	.explorer-hero-media {
+		width: auto;
+		max-width: 100%;
+		max-height: calc(100svh - var(--header-height) - 48px);
+		margin-left: auto;
+	}
+}
+
+/* The components: a list of names that opens in place ----------------------
+   Every main component (and every part of the X-ray instrument) is a row with
+   a close-up thumbnail and its name. Following its link opens it (:target):
+   "On the spacecraft" and "Close-up", one sentence about what it does, the
+   deeper text and a way back. Without a target the list stays compact. */
+
+.satellite-page:not(.js-enhanced) .explorer-tree {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	list-style: none;
+}
+
+.satellite-page:not(.js-enhanced) .explorer-tree-navigation > .explorer-tree {
+	border-top: 1px solid var(--line);
+	border-bottom: 0;
+}
+
+.satellite-page:not(.js-enhanced) .explorer-node-content,
+.satellite-page:not(.js-enhanced)
+	.explorer-tree
+	.explorer-tree
+	.explorer-node-content {
+	padding: 0;
+}
+
+.satellite-page:not(.js-enhanced) .explorer-node-content > .explorer-tree,
+.satellite-page:not(.js-enhanced)
+	.explorer-tree
+	.explorer-tree
+	.explorer-node-content
+	> .explorer-tree {
+	margin-left: 0;
+}
+
+.satellite-page:not(.js-enhanced) .explorer-list-number {
+	color: var(--color-accent-mid);
+}
+
+.satellite-page:not(.js-enhanced) .explorer-node-content .explorer-lead,
+.satellite-page:not(.js-enhanced) .explorer-node-content .explorer-about p,
+.satellite-page:not(.js-enhanced) .explorer-node-content .explorer-note {
+	max-width: 62ch;
+}
+
+.explorer-node.is-exhibit {
+	border-bottom: 1px solid var(--line);
+	scroll-margin-top: 0;
+}
+
+.explorer-tree-navigation > .explorer-tree > .explorer-node.is-exhibit {
+	border-top: 0;
+}
+
+.satellite-page:not(.js-enhanced)
+	.is-exhibit
+	> .explorer-node-heading
+	> .explorer-node-link {
+	display: grid;
+	grid-template-columns: 96px auto minmax(0, 1fr) auto;
+	align-items: center;
+	column-gap: var(--spacing-md);
+	min-height: 88px;
+	padding: 10px var(--spacing-xs) 10px 0;
+}
+
+.satellite-page:not(.js-enhanced)
+	.is-exhibit
+	.is-exhibit
+	> .explorer-node-heading
+	> .explorer-node-link {
+	grid-template-columns: 80px auto minmax(0, 1fr) auto;
+	min-height: 76px;
+}
+
+/* A chevron: down while closed, up while open */
+.satellite-page:not(.js-enhanced)
+	.is-exhibit
+	> .explorer-node-heading
+	> .explorer-node-link::after {
+	content: '';
+	width: 9px;
+	height: 9px;
+	margin: 0 10px var(--spacing-xs) 0;
+	border-right: 1.5px solid currentColor;
+	border-bottom: 1.5px solid currentColor;
+	opacity: 0.8;
+	transform: rotate(45deg);
+}
+
+.explorer-node-thumb {
+	display: block;
+	overflow: hidden;
+	aspect-ratio: 4 / 3;
+	background: var(--studio);
+}
+
+.explorer-node-thumb .component-image {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 400ms var(--ease);
+}
+
+.satellite-page:not(.js-enhanced)
+	.is-exhibit
+	> .explorer-node-heading
+	.explorer-node-title {
+	font: 500 clamp(17px, 1.8vw, 22px) / 1.25 var(--font-heading);
+}
+
+.satellite-page:not(.js-enhanced)
+	.is-exhibit
+	.is-exhibit
+	> .explorer-node-heading
+	.explorer-node-title {
+	font-size: 17px;
+}
+
+.satellite-page:not(.js-enhanced)
+	.is-exhibit
+	> .explorer-node-heading
+	.explorer-list-meta {
+	display: none;
+}
+
+.satellite-page:not(.js-enhanced)
+	.is-exhibit
+	> .explorer-node-heading
+	> .explorer-node-link:hover {
+	background: hsl(
+		var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 4%
+	);
+}
+
+.satellite-page:not(.js-enhanced)
+	.is-exhibit
+	> .explorer-node-heading
+	> .explorer-node-link:is(:hover, :focus-visible)
+	.component-image {
+	transform: scale(1.04);
+}
+
+.satellite-page:not(.js-enhanced)
+	.is-exhibit
+	> .explorer-node-heading
+	> .explorer-node-link:focus-visible {
+	outline: 2px solid var(--select);
+	outline-offset: -2px;
+}
+
+/* One sentence about what it does: under the name once opened, and beside
+   the name in the closed list on large screens */
+.explorer-node-summary {
+	display: none;
+	max-width: 58ch;
+	margin: 0;
+}
+
+.satellite-page:not(.js-enhanced) .is-exhibit > .explorer-node-body {
+	display: none;
+}
+
+/* Open: the component whose link was followed, or that holds the target */
+.satellite-page:not(.js-enhanced)
+	.is-exhibit:is(:target, :has(:target))
+	> .explorer-node-body {
+	display: block;
+	padding: 0 0 var(--spacing-xl);
+}
+
+.satellite-page:not(.js-enhanced)
+	.is-exhibit:is(:target, :has(:target))
+	> .explorer-node-summary {
+	display: block;
+	margin: 0 0 20px;
+}
+
+.satellite-page:not(.js-enhanced)
+	.is-exhibit:is(:target, :has(:target))
+	> .explorer-node-heading
+	> .explorer-node-link {
+	box-shadow: inset 3px 0 0 var(--select);
+	padding-left: 12px;
+}
+
+.satellite-page:not(.js-enhanced)
+	.is-exhibit:is(:target, :has(:target))
+	> .explorer-node-heading
+	> .explorer-node-link::after {
+	transform: translateY(4px) rotate(-135deg);
+}
+
+.explorer-back {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	min-height: 44px;
+	margin: 0 0 12px;
+	text-decoration: underline 1px var(--line);
+	text-underline-offset: 6px;
+}
+
+@media (width >= 900px) {
+	/* Closed rows read as a directory: name on the left, what it does on the
+	   right */
+	.satellite-page:not(.js-enhanced) .explorer-node.is-exhibit {
+		display: grid;
+		grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+		column-gap: var(--spacing-xl);
+		align-items: center;
+	}
+
+	.satellite-page:not(.js-enhanced)
+		.is-exhibit
+		> .explorer-node-heading
+		> .explorer-node-link {
+		grid-template-columns: 128px auto minmax(0, 1fr) auto;
+		column-gap: var(--spacing-lg);
+		min-height: 112px;
+	}
+
+	.satellite-page:not(.js-enhanced)
+		.is-exhibit
+		.is-exhibit
+		> .explorer-node-heading
+		> .explorer-node-link {
+		grid-template-columns: 96px auto minmax(0, 1fr) auto;
+		min-height: 88px;
+	}
+
+	.satellite-page:not(.js-enhanced) .is-exhibit > .explorer-node-summary {
+		display: block;
+	}
+
+	.satellite-page:not(.js-enhanced) .is-exhibit > .explorer-node-heading,
+	.satellite-page:not(.js-enhanced) .is-exhibit > .explorer-node-body {
+		grid-column: 1;
+	}
+
+	.satellite-page:not(.js-enhanced) .is-exhibit > .explorer-node-body {
+		grid-column: 1 / -1;
+	}
+
+	.satellite-page:not(.js-enhanced) .is-exhibit:is(:target, :has(:target)) {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+/* On the spacecraft / Close-up -------------------------------------------- */
+
+.component-views {
+	display: grid;
+	gap: var(--spacing-md);
+	margin: 0 0 32px;
+}
+
+.component-views-choice {
+	display: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.component-view {
+	margin: 0;
+}
+
+/* The same name sits above both views */
+.component-view-caption {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: var(--spacing-xs) 12px;
+	padding: 0 0 10px;
+}
+
+.component-view-name {
+	color: var(--color-neutral-lightest);
+	font: 500 var(--font-size-body-sm)/1.3 var(--font-heading);
+}
+
+.component-view-kind {
+	color: var(--text-muted);
+	font: 500 11px/var(--line-height-tight) var(--font-body);
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+.component-view-frame {
+	position: relative;
+	aspect-ratio: 4 / 3;
+	overflow: hidden;
+	background: var(--color-brand-darkest);
+	box-shadow: inset 0 0 0 1px var(--line);
+}
+
+/* Close-ups on a quiet studio backdrop, so dark sensors and mirror edges
+   stay visible; the colour matches the render's own background */
+.component-view-frame.is-studio {
+	background: var(--studio);
+	box-shadow: none;
+}
+
+.component-view-image,
+.component-view-frame .component-image {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+/* The labelled pointer: a ring on the part, a line and its name */
+.component-pointer {
+	position: absolute;
+	width: 0;
+	height: 0;
+}
+
+.component-pointer::before {
+	content: '';
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	width: 20px;
+	height: 20px;
+	border: 2px solid var(--color-neutral-lightest);
+	border-radius: 50%;
+	box-shadow:
+		0 0 0 2px
+			hsl(var(--brand-h) var(--brand-s) var(--brand-darkest-l) / 70%),
+		inset 0 0 0 2px
+			hsl(var(--brand-h) var(--brand-s) var(--brand-darkest-l) / 70%);
+}
+
+.component-pointer::after {
+	content: '';
+	position: absolute;
+	left: -0.5px;
+	width: 1px;
+	height: 36px;
+	background: var(--color-neutral-lightest);
+}
+
+.component-pointer.is-above::after {
+	bottom: 10px;
+}
+
+.component-pointer.is-below::after {
+	top: 10px;
+}
+
+.component-pointer-label {
+	position: absolute;
+	padding: 7px 11px;
+	color: var(--color-neutral-lightest);
+	background: hsl(var(--brand-h) var(--brand-s) var(--brand-darkest-l) / 92%);
+	box-shadow: inset 0 0 0 1px
+		hsl(var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 45%);
+	font: 500 14px/1.2 var(--font-heading);
+	white-space: nowrap;
+}
+
+.is-above > .component-pointer-label {
+	bottom: 46px;
+}
+
+.is-below > .component-pointer-label {
+	top: 46px;
+}
+
+.is-end > .component-pointer-label {
+	left: -14px;
+}
+
+.is-start > .component-pointer-label {
+	right: -14px;
+}
+
+@media (width >= 900px) {
+	.component-views {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: var(--spacing-lg);
+	}
+}
+
+/* Small screens show one view at a time, chosen with native radio buttons.
+   Browsers without :has() show both, one above the other. */
+@media (width < 900px) {
+	@supports selector(:has(*)) {
+		.component-views-choice {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			box-shadow: inset 0 0 0 1px var(--line);
+		}
+
+		.component-views:has(.component-views-input[value='close-up']:checked)
+			> .is-location,
+		.component-views:not(
+				:has(.component-views-input[value='close-up']:checked)
+			)
+			> .is-close-up {
+			display: none;
+		}
+	}
+}
+
+.component-views-input {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	opacity: 0;
+}
+
+.component-views-option {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 48px;
+	padding: var(--spacing-sm) 12px;
+	color: var(--text-muted);
+	font: 500 14px/1.2 var(--font-heading);
+	text-align: center;
+	cursor: pointer;
+}
+
+.component-views-input:checked + .component-views-option {
+	color: var(--color-neutral-lightest);
+	background: hsl(218 100% 77.1% / 14%);
+	box-shadow: inset 0 -3px 0 var(--select);
+}
+
+.component-views-input:focus-visible + .component-views-option {
+	outline: 2px solid var(--select);
+	outline-offset: -2px;
+}
+
+/* How the X-ray instrument's parts fit together ---------------------------- */
+
+.instrument-map {
+	margin: var(--spacing-sm) 0 32px;
+}
+
+.instrument-map-frame {
+	position: relative;
+	aspect-ratio: 16 / 10;
+	background: var(--studio);
+}
+
+.instrument-map-image {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.instrument-map-lines {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.instrument-map-lines polyline {
+	fill: none;
+	stroke: var(--color-brand-darkest);
+	stroke-width: 1.25;
+	vector-effect: non-scaling-stroke;
+}
+
+.instrument-map-point {
+	position: absolute;
+	width: 9px;
+	height: 9px;
+	margin: -4.5px 0 0 -4.5px;
+	border-radius: 50%;
+	background: var(--color-brand-darkest);
+	box-shadow: 0 0 0 2px var(--color-neutral-lightest);
+}
+
+.instrument-map-label {
+	position: absolute;
+	display: flex;
+	align-items: baseline;
+	gap: var(--spacing-sm);
+	padding: 6px 10px;
+	color: var(--color-neutral-lightest);
+	background: var(--color-brand-darkest);
+	font: 500 13px/1.2 var(--font-heading);
+	white-space: nowrap;
+	transform: translateY(-50%);
+}
+
+.instrument-map-label.is-start {
+	transform: translate(-100%, -50%);
+}
+
+.instrument-map-number {
+	color: var(--select);
+	font: 400 11px/var(--line-height-tight) var(--font-caption);
+}
+
+.instrument-map figcaption {
+	margin-top: 10px;
+	color: var(--text-muted);
+	font: 400 12px/1.6 var(--font-caption);
+}
+
+@media (width < 700px) {
+	.instrument-map-name {
+		display: none;
+	}
+
+	.instrument-map-label {
+		padding: var(--spacing-xs) 6px;
+	}
+}
+
+/* The branches of the X-ray instrument: native disclosures ------------------ */
+
+.satellite-page:not(.js-enhanced)
+	.is-exhibit
+	.explorer-node-content
+	> .explorer-tree {
+	margin-top: 40px;
+	border-top: 1px solid var(--line);
+}
+
+.explorer-disclosure {
+	border-bottom: 1px solid var(--line);
+}
+
+.explorer-disclosure-summary {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-md);
+	min-height: 64px;
+	padding: 12px var(--spacing-xs);
+	cursor: pointer;
+	list-style: none;
+	transition: background-color 200ms var(--ease);
+}
+
+.explorer-disclosure-summary::-webkit-details-marker {
+	display: none;
+}
+
+.explorer-disclosure-summary::after {
+	content: '';
+	flex: none;
+	width: 9px;
+	height: 9px;
+	margin: 0 10px var(--spacing-xs) auto;
+	border-right: 1.5px solid currentColor;
+	border-bottom: 1.5px solid currentColor;
+	opacity: 0.8;
+	transform: rotate(45deg);
+}
+
+.explorer-disclosure[open] > .explorer-disclosure-summary::after {
+	transform: translateY(4px) rotate(-135deg);
+}
+
+.explorer-disclosure-summary:hover {
+	background: hsl(
+		var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 4%
+	);
+}
+
+.explorer-disclosure-summary:focus-visible {
+	outline: 2px solid var(--select);
+	outline-offset: -2px;
+}
+
+.explorer-disclosure-summary .explorer-node-heading {
+	display: flex;
+	flex: 1;
+	align-items: baseline;
+	gap: var(--spacing-md);
+}
+
+.explorer-disclosure-summary .explorer-node-title {
+	font: 500 clamp(17px, 1.8vw, 20px) / 1.3 var(--font-heading);
+}
+
+.explorer-disclosure > .explorer-node-body {
+	padding: var(--spacing-xs) 0 32px;
+}
+
+.explorer-disclosure .explorer-disclosure {
+	margin-top: var(--spacing-lg);
+	border-top: 1px solid var(--line);
+	border-bottom: 0;
+}
+
+/* Inside a branch: the parts list of the instrument, and the optics parts */
+.satellite-page:not(.js-enhanced) .explorer-disclosure .explorer-tree {
+	border-top: 1px solid var(--line);
+}
+
+.satellite-page:not(.js-enhanced)
+	.explorer-disclosure
+	.explorer-node.has-figure {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	padding: var(--spacing-lg) 0;
+	border-bottom: 1px solid var(--line);
+	scroll-margin-top: var(--spacing-md);
+}
+
+.satellite-page:not(.js-enhanced)
+	.explorer-disclosure
+	.explorer-node.has-figure
+	> .explorer-node-body,
+.satellite-page:not(.js-enhanced)
+	.explorer-disclosure
+	.explorer-node.has-figure
+	> .explorer-node-body
+	> .explorer-node-content {
+	display: contents;
+}
+
+.satellite-page:not(.js-enhanced)
+	.explorer-disclosure
+	.explorer-node.has-figure
+	.explorer-node-link {
+	display: flex;
+	align-items: baseline;
+	gap: var(--spacing-md);
+	min-height: 0;
+	padding: 0 0 var(--spacing-sm);
+}
+
+.satellite-page:not(.js-enhanced)
+	.explorer-disclosure
+	.explorer-node.has-figure
+	.explorer-node-title {
+	font: 500 17px/24px var(--font-heading);
+}
+
+.satellite-page:not(.js-enhanced)
+	.explorer-disclosure
+	.explorer-node:not(.has-figure, .is-exhibit) {
+	padding: var(--spacing-md) 0;
+	border-bottom: 1px solid var(--line);
+}
+
+.explorer-node-figure {
+	margin: 0;
+}
+
+.explorer-node-figure .component-image {
+	width: 100%;
+	height: auto;
+	background: var(--studio);
+}
+
+.explorer-node-figure.is-schematic .component-image {
+	background: none;
+}
+
+.explorer-node-figure figcaption {
+	margin-top: var(--spacing-sm);
+	color: var(--text-muted);
+	font: 500 11px/16px var(--font-body);
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+.explorer-disclosure
+	> .explorer-node-body
+	> .explorer-node-content
+	> .explorer-node-figure {
+	max-width: 720px;
+	margin: var(--spacing-sm) 0 var(--spacing-lg);
+}
+
+@media (width >= 640px) {
+	.satellite-page:not(.js-enhanced)
+		.explorer-disclosure
+		.explorer-node.has-figure {
+		grid-template-columns: minmax(180px, 2fr) minmax(0, 3fr);
+		grid-auto-rows: min-content;
+		column-gap: 32px;
+	}
+
+	.satellite-page:not(.js-enhanced)
+		.explorer-disclosure
+		.explorer-node.has-figure
+		> .explorer-node-heading,
+	.satellite-page:not(.js-enhanced)
+		.explorer-disclosure
+		.explorer-node.has-figure
+		> .explorer-node-body
+		> .explorer-node-content
+		> * {
+		grid-column: 2;
+	}
+
+	.satellite-page:not(.js-enhanced)
+		.explorer-disclosure
+		.explorer-node.has-figure
+		> .explorer-node-body
+		> .explorer-node-content
+		> .explorer-node-figure {
+		grid-column: 1;
+		grid-row: 1 / span 4;
+	}
+}
+
+@media (forced-colors: active) {
+	.explorer-disclosure,
+	.explorer-call-to-action,
+	.component-view-frame,
+	.component-views-option,
+	.instrument-map-label,
+	.component-pointer-label {
+		border: 1px solid CanvasText;
+	}
+
+	.component-views-input:checked + .component-views-option {
+		outline: 3px solid Highlight;
+		outline-offset: -3px;
+	}
+}
+
+/* Buttons of the 3D view: the team's Button. Without a label they are
+   square; on a narrow 3D view the label is only for screen readers. */
+.viewer-controls .button.is-icon-only,
+.explorer-bar .button.explorer-hide,
+.explorer-bar .button.explorer-sheet-toggle {
+	width: 2.75rem;
+	height: 2.75rem;
+	padding: 0;
+}
+
+.language-switcher {
+	display: flex;
+}
+
+@container viewer-hud (width < 640px) {
+	.viewer-controls .button.viewer-control {
+		width: 2.75rem;
+		height: 2.75rem;
+		padding: 0;
+		gap: 0;
+		font-size: 0;
+	}
+}
+
+/* Full screen: the explorer can be hidden ===================================
+   On the page the explorer is always open. In full screen its close button
+   hides it, so the satellite has the whole screen; the team's menu button
+   (explorer-toggle) in the top right corner brings it back. */
+.js-enhanced .explorer-toggle {
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 45;
+}
+
+.js-enhanced .explorer[data-hidden='true'] {
+	visibility: hidden;
+}
+
+.explorer-layout:has(> .viewer[data-explorer='hidden']) > .language-switcher {
+	right: calc(var(--toggle-width) + var(--spacing-lg));
+}
+
+@media (width >= 720px) {
+	.js-enhanced .explorer {
+		transition:
+			transform 320ms var(--ease),
+			visibility 0s;
+	}
+
+	.js-enhanced .explorer[data-hidden='true'] {
+		transform: translateX(100%);
+		transition:
+			transform 320ms var(--ease),
+			visibility 0s 320ms;
+	}
+
+	.js-enhanced .viewer[data-explorer='hidden'] {
+		--visible-right: 0px;
+	}
+}
+
+@media (width < 720px) {
+	.js-enhanced .explorer-bar {
+		grid-template-columns: minmax(0, 1fr) auto auto;
+	}
+
+	.js-enhanced .explorer-sheet-toggle {
+		grid-column: 3;
+	}
+
+	.js-enhanced .explorer-hide {
+		grid-row: 1 / span 2;
+		grid-column: 2;
+	}
+
+	.js-enhanced .explorer[data-hidden='true'] {
+		transform: translateY(100%);
+	}
+
+	.js-enhanced .viewer[data-explorer='hidden'] {
+		--visible-bottom: 0px;
+	}
+}
