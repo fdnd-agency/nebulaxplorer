@@ -1409,7 +1409,7 @@ html:not(.js-enhanced) .explorer-scroll {
    the CAD model (scripts/render-stills.mjs). Navy surrounds everything, white
    names the parts and a restrained cool blue marks the selection. */
 
-html:not(.js-enhanced) {
+html:not(.js-enhanced) .satellite-page {
 	--catalogue-background: var(--navy);
 	--catalogue-raised: var(--color-brand-darker);
 	--accent: var(--orange);
