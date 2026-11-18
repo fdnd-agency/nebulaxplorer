@@ -1,16 +1,24 @@
-/* The explorer's design tokens. Colours and fonts come from the team's tokens
-   (stylesheet.css); the rest belongs to the viewer. */
+/* The explorer's design tokens. Colours, fonts, spacing and type sizes come
+   from the site's tokens (stylesheet.css). Only the viewer's own colours stay
+   here: the dark 3D scene (--scene), the studio backdrop of the rendered
+   close-ups (--studio) and the blue of a selected part (--select). */
 .satellite-page {
 	color-scheme: dark;
 	--navy: var(--color-brand-darkest);
 	--orange: var(--color-accent-mid);
-	--indigo: #292f6b;
-	--white: #ffffff;
+	--indigo: var(--color-brand-mid);
+	--white: var(--color-neutral-lightest);
 	--scene: #05070f;
-	--text-strong: rgb(255 255 255 / 100%);
-	--text: rgb(255 255 255 / 80%);
-	--text-muted: rgb(255 255 255 / 64%);
-	--line: rgb(255 255 255 / 16%);
+	--text-strong: var(--color-neutral-lightest);
+	--text: hsl(
+		var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 80%
+	);
+	--text-muted: hsl(
+		var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 64%
+	);
+	--line: hsl(
+		var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 16%
+	);
 	--font-display: var(--font-heading);
 	--font-text: var(--font-caption);
 	--font-label: var(--font-body);
@@ -100,7 +108,7 @@
 
 :where(.satellite-page) .page-notice {
 	margin: 0;
-	padding: 16px 24px;
+	padding: var(--spacing-md) var(--spacing-lg);
 	color: var(--navy);
 	background: var(--orange);
 	font: 500 13px/20px var(--font-label);
@@ -108,7 +116,7 @@
 
 .explorer-credits a {
 	color: var(--text-strong);
-	font: 500 16px/20px var(--font-display);
+	font: 500 var(--font-size-body-sm)/20px var(--font-display);
 	text-decoration: none;
 }
 
@@ -128,13 +136,14 @@
 	border: 0;
 	color: var(--navy);
 	background: none;
-	font: 500 13px/1 var(--font-label);
+	font: 500 13px/var(--line-height-tight) var(--font-label);
 	letter-spacing: 0.08em;
 	cursor: pointer;
 }
 
 .language-switcher button + button {
-	border-left: 1px solid rgb(24 25 50 / 32%);
+	border-left: 1px solid
+		hsl(var(--brand-h) var(--brand-s) var(--brand-darkest-l) / 32%);
 }
 
 .language-switcher button[aria-pressed='true'] {
@@ -154,7 +163,7 @@
 }
 
 .explorer-kicker {
-	margin: 24px 0 8px;
+	margin: var(--spacing-lg) 0 var(--spacing-sm);
 	color: var(--orange);
 	font: 500 13px/16px var(--font-label);
 	letter-spacing: 0.1em;
@@ -162,7 +171,7 @@
 }
 
 .explorer-title {
-	margin: 0 0 16px;
+	margin: 0 0 var(--spacing-md);
 	color: var(--text-strong);
 	font: 400 40px/48px var(--font-display);
 	letter-spacing: -0.01em;
@@ -178,13 +187,13 @@
 }
 
 .explorer-lead {
-	margin: 0 0 16px;
+	margin: 0 0 var(--spacing-md);
 	color: var(--text);
-	font: 400 16px/26px var(--font-display);
+	font: 400 var(--font-size-body-sm)/26px var(--font-display);
 }
 
 .explorer-note {
-	margin: 0 0 16px;
+	margin: 0 0 var(--spacing-md);
 	color: var(--text-muted);
 	font: 400 12px/20px var(--font-text);
 }
@@ -212,7 +221,7 @@
 }
 
 .explorer-tree .explorer-tree {
-	margin: 4px 0 12px;
+	margin: var(--spacing-xs) 0 12px;
 	padding-left: 10px;
 	border-left: 1px solid var(--line);
 }
@@ -227,7 +236,7 @@
 	grid-template-columns: 36px minmax(0, 1fr) auto auto;
 	align-items: center;
 	min-height: 52px;
-	padding: 8px 12px 8px 4px;
+	padding: var(--spacing-sm) 12px var(--spacing-sm) var(--spacing-xs);
 	color: var(--text-strong);
 	text-decoration: none;
 	transition:
@@ -242,7 +251,9 @@
 
 .explorer-node-link:hover,
 .explorer-node-link.is-previewed {
-	background: rgb(255 255 255 / 5%);
+	background: hsl(
+		var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 5%
+	);
 }
 
 .explorer-node-link:focus-visible {
@@ -251,7 +262,7 @@
 
 .explorer-list-number {
 	color: var(--orange);
-	font: 400 12px/1 var(--font-text);
+	font: 400 12px/var(--line-height-tight) var(--font-text);
 }
 
 .explorer-node-title {
@@ -265,7 +276,7 @@
 
 .explorer-list-meta {
 	color: var(--text-muted);
-	font: 400 12px/1 var(--font-text);
+	font: 400 12px/var(--line-height-tight) var(--font-text);
 }
 
 .js-enhanced .explorer-node-link::after {
@@ -298,7 +309,9 @@
 	.explorer-node.is-selected
 	> .explorer-node-heading
 	.explorer-node-link {
-	background: rgb(255 255 255 / 6%);
+	background: hsl(
+		var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 6%
+	);
 	box-shadow: inset 2px 0 0 var(--orange);
 }
 
@@ -310,7 +323,7 @@
 }
 
 .explorer-node-content {
-	padding: 4px 4px 12px 40px;
+	padding: var(--spacing-xs) var(--spacing-xs) 12px 40px;
 }
 
 .explorer-tree .explorer-tree .explorer-node-content {
@@ -350,7 +363,7 @@
 }
 
 .explorer-about p {
-	margin: 0 0 16px;
+	margin: 0 0 var(--spacing-md);
 	color: var(--text);
 	font: 400 13px/24px var(--font-text);
 }
@@ -361,7 +374,7 @@
 	display: grid;
 	align-items: end;
 	justify-items: center;
-	padding: 24px;
+	padding: var(--spacing-lg);
 }
 
 .viewer-poster img {
@@ -375,9 +388,9 @@
 .viewer-poster-panel {
 	position: relative;
 	display: grid;
-	gap: 16px;
+	gap: var(--spacing-md);
 	max-width: 420px;
-	padding: 20px 24px;
+	padding: 20px var(--spacing-lg);
 	background: var(--navy);
 }
 
@@ -393,7 +406,7 @@
 	border: 0;
 	color: var(--navy);
 	background: var(--orange);
-	font: 500 13px/1 var(--font-label);
+	font: 500 13px/var(--line-height-tight) var(--font-label);
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
 	cursor: pointer;
@@ -410,7 +423,7 @@
 }
 
 .explorer-credits {
-	margin-top: 48px;
+	margin-top: var(--spacing-xl);
 	color: var(--text-muted);
 	font: 400 12px/20px var(--font-text);
 }
@@ -419,7 +432,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	gap: 8px;
+	gap: var(--spacing-sm);
 	margin: 0 0 12px;
 }
 
@@ -443,8 +456,8 @@ html:not(.js) .language-switcher {
 /* The explorer's language switch, below the site header */
 .js-enhanced .explorer-layout > .language-switcher {
 	position: fixed;
-	top: calc(var(--header-height) + 16px);
-	right: 24px;
+	top: calc(var(--header-height) + var(--spacing-md));
+	right: var(--spacing-lg);
 	z-index: 35;
 }
 
@@ -460,8 +473,10 @@ html:not(.js) .language-switcher {
 
 .explorer-breadcrumb li + li::before {
 	content: '›';
-	margin: 0 8px;
-	color: rgb(255 255 255 / 32%);
+	margin: 0 var(--spacing-sm);
+	color: hsl(
+		var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 32%
+	);
 }
 
 .explorer-breadcrumb a {
@@ -515,7 +530,7 @@ html:not(.js-enhanced) .explorer-bar {
 html:not(.js-enhanced) .explorer-scroll {
 	max-width: 1280px;
 	margin: 0 auto;
-	padding: 0 clamp(20px, 4vw, 48px) 96px;
+	padding: 0 clamp(20px, 4vw, var(--spacing-xl)) 96px;
 }
 
 /* With the 3D model the explorer is one screen high. The fixed parts of the
@@ -609,7 +624,8 @@ html:not(.js-enhanced) .explorer-scroll {
 	height: 6px;
 	border-radius: 50%;
 	background: var(--text-strong);
-	box-shadow: 0 0 0 1px rgb(24 25 50 / 64%);
+	box-shadow: 0 0 0 1px
+		hsl(var(--brand-h) var(--brand-s) var(--brand-darkest-l) / 64%);
 }
 
 .viewer-marker::after {
@@ -619,7 +635,9 @@ html:not(.js-enhanced) .explorer-scroll {
 	left: -0.5px;
 	width: 1px;
 	height: 20px;
-	background: rgb(255 255 255 / 56%);
+	background: hsl(
+		var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 56%
+	);
 }
 
 .viewer-marker-number {
@@ -630,11 +648,12 @@ html:not(.js-enhanced) .explorer-scroll {
 	place-items: center;
 	width: 24px;
 	height: 24px;
-	border: 1px solid rgb(255 255 255 / 48%);
+	border: 1px solid
+		hsl(var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 48%);
 	border-radius: 2px;
 	color: var(--text-strong);
-	background: rgb(24 25 50 / 92%);
-	font: 700 11px/1 var(--font-text);
+	background: hsl(var(--brand-h) var(--brand-s) var(--brand-darkest-l) / 92%);
+	font: 700 11px/var(--line-height-tight) var(--font-text);
 	transition:
 		background-color 150ms var(--ease),
 		color 150ms var(--ease);
@@ -649,14 +668,14 @@ html:not(.js-enhanced) .explorer-scroll {
 .viewer-marker-label {
 	position: absolute;
 	bottom: 23px;
-	left: 16px;
+	left: var(--spacing-md);
 	display: flex;
 	align-items: center;
 	height: 24px;
-	padding: 0 8px;
+	padding: 0 var(--spacing-sm);
 	color: var(--text-strong);
 	background: var(--navy);
-	font: 500 13px/1 var(--font-display);
+	font: 500 13px/var(--line-height-tight) var(--font-display);
 	white-space: nowrap;
 	opacity: 0;
 	transform: translateX(-4px);
@@ -692,7 +711,7 @@ html:not(.js-enhanced) .explorer-scroll {
 }
 
 .viewer-label {
-	top: calc(var(--header-height) + 24px);
+	top: calc(var(--header-height) + var(--spacing-lg));
 	display: flex;
 	flex-wrap: wrap;
 	align-items: baseline;
@@ -703,24 +722,24 @@ html:not(.js-enhanced) .explorer-scroll {
 
 .viewer-label-number {
 	color: var(--orange);
-	font: 400 13px/1 var(--font-text);
+	font: 400 13px/var(--line-height-tight) var(--font-text);
 }
 
 .viewer-label-name {
-	font: 500 16px/24px var(--font-display);
+	font: 500 var(--font-size-body-sm)/24px var(--font-display);
 }
 
 .viewer-tag {
-	padding: 4px 8px;
+	padding: var(--spacing-xs) var(--spacing-sm);
 	color: var(--text-strong);
 	background: var(--indigo);
-	font: 500 11px/1 var(--font-label);
+	font: 500 11px/var(--line-height-tight) var(--font-label);
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
 }
 
 .viewer-status {
-	top: calc(var(--header-height) + 64px);
+	top: calc(var(--header-height) + var(--spacing-2xl));
 	color: var(--text);
 	font: 400 12px/20px var(--font-text);
 }
@@ -740,7 +759,7 @@ html:not(.js-enhanced) .explorer-scroll {
 }
 
 .viewer-hint {
-	bottom: 24px;
+	bottom: var(--spacing-lg);
 	color: var(--text-muted);
 	font: 400 12px/20px var(--font-text);
 	transition: opacity 400ms var(--ease);
@@ -753,23 +772,23 @@ html:not(.js-enhanced) .explorer-scroll {
 
 .viewer-controls {
 	position: absolute;
-	right: 24px;
-	bottom: 24px;
+	right: var(--spacing-lg);
+	bottom: var(--spacing-lg);
 	display: flex;
-	gap: 8px;
+	gap: var(--spacing-sm);
 }
 
 .viewer-control {
 	display: inline-flex;
 	align-items: center;
-	gap: 8px;
+	gap: var(--spacing-sm);
 	height: 36px;
 	padding: 0 14px;
 	border: 0;
 	border-radius: 0;
 	color: var(--text-strong);
-	background: rgb(24 25 50 / 92%);
-	font: 500 12px/1 var(--font-label);
+	background: hsl(var(--brand-h) var(--brand-s) var(--brand-darkest-l) / 92%);
+	font: 500 12px/var(--line-height-tight) var(--font-label);
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
 	cursor: pointer;
@@ -848,7 +867,7 @@ html:not(.js-enhanced) .explorer-scroll {
 	}
 
 	.explorer-toggle-label {
-		font: 500 12px/1 var(--font-label);
+		font: 500 12px/var(--line-height-tight) var(--font-label);
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
 		white-space: nowrap;
@@ -865,7 +884,10 @@ html:not(.js-enhanced) .explorer-scroll {
 		display: flex;
 		flex-direction: column;
 		width: var(--explorer-width);
-		box-shadow: 0 0 40px rgb(0 0 0 / 40%);
+		box-shadow: 0 0 40px
+			hsl(
+				var(--neutral-h) var(--neutral-s) var(--neutral-darkest-l) / 40%
+			);
 		visibility: hidden;
 		transform: translateX(-100%);
 		transition:
@@ -883,8 +905,8 @@ html:not(.js-enhanced) .explorer-scroll {
 		display: grid;
 		grid-template-columns: minmax(0, 1fr) auto;
 		align-items: center;
-		gap: 8px;
-		padding: 16px 20px 8px 40px;
+		gap: var(--spacing-sm);
+		padding: var(--spacing-md) 20px var(--spacing-sm) 40px;
 	}
 
 	.js-enhanced .explorer-scroll {
@@ -892,14 +914,18 @@ html:not(.js-enhanced) .explorer-scroll {
 		overflow-y: auto;
 		overscroll-behavior: contain;
 		padding: 0 32px 40px 40px;
-		scrollbar-color: rgb(255 255 255 / 20%) transparent;
+		scrollbar-color: hsl(
+				var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) /
+					20%
+			)
+			transparent;
 		scrollbar-width: thin;
 	}
 }
 
 @media (width >= 720px) and (height < 520px) {
 	.js-enhanced .explorer-bar {
-		padding-top: 8px;
+		padding-top: var(--spacing-sm);
 	}
 }
 
@@ -951,7 +977,7 @@ html:not(.js-enhanced) .explorer-scroll {
 	}
 
 	.explorer-toggle-label {
-		font: 500 13px/1 var(--font-label);
+		font: 500 13px/var(--line-height-tight) var(--font-label);
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
 	}
@@ -970,7 +996,10 @@ html:not(.js-enhanced) .explorer-scroll {
 		flex-direction: column;
 		height: calc(var(--stage-height) - var(--sheet-expanded-top));
 		border-top: 1px solid var(--line);
-		box-shadow: 0 -12px 40px rgb(0 0 0 / 40%);
+		box-shadow: 0 -12px 40px
+			hsl(
+				var(--neutral-h) var(--neutral-s) var(--neutral-darkest-l) / 40%
+			);
 		visibility: hidden;
 		transform: translateY(100%);
 		transition:
@@ -997,8 +1026,8 @@ html:not(.js-enhanced) .explorer-scroll {
 		display: grid;
 		grid-template-columns: minmax(0, 1fr) auto;
 		align-items: center;
-		gap: 4px;
-		padding: 20px 4px 0 16px;
+		gap: var(--spacing-xs);
+		padding: 20px var(--spacing-xs) 0 var(--spacing-md);
 		touch-action: none;
 	}
 
@@ -1025,15 +1054,17 @@ html:not(.js-enhanced) .explorer-scroll {
 		display: block;
 		width: 32px;
 		height: 3px;
-		margin: 8px auto 0;
-		background: rgb(255 255 255 / 32%);
+		margin: var(--spacing-sm) auto 0;
+		background: hsl(
+			var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 32%
+		);
 	}
 
 	.js-enhanced .explorer-scroll {
 		flex: 1;
 		overflow-y: auto;
 		overscroll-behavior: contain;
-		padding: 0 16px 32px;
+		padding: 0 var(--spacing-md) 32px;
 	}
 
 	.js-enhanced .explorer[data-sheet='peek'] .explorer-scroll {
@@ -1056,7 +1087,7 @@ html:not(.js-enhanced) .explorer-scroll {
 
 	.explorer-current-number {
 		color: var(--orange);
-		font: 400 13px/1 var(--font-text);
+		font: 400 13px/var(--line-height-tight) var(--font-text);
 	}
 
 	.explorer-current-title {
@@ -1072,13 +1103,13 @@ html:not(.js-enhanced) .explorer-scroll {
 
 	.viewer-status {
 		top: calc(var(--header-height) + 40px);
-		left: 16px;
+		left: var(--spacing-md);
 	}
 
 	.viewer-hint {
 		top: calc(var(--header-height) + 12px);
 		bottom: auto;
-		left: 16px;
+		left: var(--spacing-md);
 	}
 
 	.viewer-controls {
@@ -1181,11 +1212,11 @@ html:not(.js-enhanced) .explorer-scroll {
 
 	.explorer-node-link {
 		grid-template-columns: 30px minmax(0, 1fr) auto auto;
-		padding-right: 8px;
+		padding-right: var(--spacing-sm);
 	}
 
 	.explorer-node-title {
-		font-size: 16px;
+		font-size: var(--font-size-body-sm);
 	}
 
 	.explorer-node-content {
@@ -1197,7 +1228,7 @@ html:not(.js-enhanced) .explorer-scroll {
 	}
 
 	.explorer-tree .explorer-tree .explorer-node-content {
-		padding-left: 24px;
+		padding-left: var(--spacing-lg);
 	}
 
 	.explorer-tree .explorer-tree .explorer-node-content > .explorer-tree {
@@ -1219,7 +1250,7 @@ html:not(.js-enhanced) .explorer-scroll {
 
 	.explorer-node-link {
 		min-height: 56px;
-		padding-right: 16px;
+		padding-right: var(--spacing-md);
 	}
 
 	.explorer-node-title {
@@ -1228,7 +1259,7 @@ html:not(.js-enhanced) .explorer-scroll {
 	}
 
 	.explorer-node-content {
-		padding-left: 48px;
+		padding-left: var(--spacing-xl);
 	}
 
 	.explorer-node-content > .explorer-tree {
@@ -1283,9 +1314,13 @@ html:not(.js-enhanced) .explorer-scroll {
 
 @media (prefers-contrast: more) {
 	.satellite-page {
-		--text: rgb(255 255 255 / 100%);
-		--text-muted: rgb(255 255 255 / 90%);
-		--line: rgb(255 255 255 / 48%);
+		--text: var(--color-neutral-lightest);
+		--text-muted: hsl(
+			var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 90%
+		);
+		--line: hsl(
+			var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 48%
+		);
 	}
 
 	.satellite-page :focus-visible {
@@ -1376,9 +1411,11 @@ html:not(.js-enhanced) .explorer-scroll {
 
 html:not(.js-enhanced) {
 	--catalogue-background: var(--navy);
-	--catalogue-raised: #202244;
+	--catalogue-raised: var(--color-brand-darker);
 	--accent: var(--orange);
-	--accent-line: rgb(235 93 52 / 55%);
+	--accent-line: hsl(
+		var(--accent-h) var(--accent-s) var(--accent-mid-l) / 55%
+	);
 	/* Selection in the location views and the controls */
 	--select: #8ab4ff;
 	/* The studio backdrop of the close-ups */
@@ -1411,7 +1448,7 @@ html:not(.js-enhanced) .explorer-root {
 
 html:not(.js-enhanced) .explorer-intro {
 	grid-area: intro;
-	padding-top: clamp(24px, 6vw, 48px);
+	padding-top: clamp(var(--spacing-lg), 6vw, var(--spacing-xl));
 }
 
 html:not(.js-enhanced) .explorer-kicker {
@@ -1439,7 +1476,7 @@ html:not(.js-enhanced) .explorer-intro > .explorer-lead {
 	padding: 15px 22px;
 	color: var(--navy);
 	background: var(--orange);
-	font: 500 13px/1 var(--font-label);
+	font: 500 13px/var(--line-height-tight) var(--font-label);
 	letter-spacing: 0.1em;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -1475,7 +1512,7 @@ html:not(.js-enhanced) .explorer-intro > .explorer-lead {
 
 .explorer-hero {
 	grid-area: hero;
-	margin: 24px 0 0;
+	margin: var(--spacing-lg) 0 0;
 }
 
 .explorer-hero-media {
@@ -1499,7 +1536,7 @@ html:not(.js-enhanced) .explorer-intro > .explorer-lead {
 	}
 
 	.explorer-static-note {
-		margin-top: 16px;
+		margin-top: var(--spacing-md);
 	}
 
 	.explorer-hero-media {
@@ -1529,9 +1566,9 @@ html:not(.js-enhanced) .explorer-tree-nav {
 }
 
 html:not(.js-enhanced) .explorer-tree-nav > .explorer-section-label {
-	margin: 0 0 16px;
+	margin: 0 0 var(--spacing-md);
 	color: var(--text-muted);
-	scroll-margin-top: 16px;
+	scroll-margin-top: var(--spacing-md);
 }
 
 html:not(.js-enhanced) .explorer-root > .explorer-about {
@@ -1548,7 +1585,7 @@ html:not(.js-enhanced) .explorer-root > .explorer-about {
 			'components components'
 			'about about';
 		align-items: center;
-		column-gap: clamp(32px, 4vw, 64px);
+		column-gap: clamp(32px, 4vw, var(--spacing-2xl));
 	}
 
 	html:not(.js-enhanced) .explorer-intro {
@@ -1626,9 +1663,9 @@ html:not(.js-enhanced)
 	display: grid;
 	grid-template-columns: 96px auto minmax(0, 1fr) auto;
 	align-items: center;
-	column-gap: 16px;
+	column-gap: var(--spacing-md);
 	min-height: 88px;
-	padding: 10px 4px 10px 0;
+	padding: 10px var(--spacing-xs) 10px 0;
 }
 
 html:not(.js-enhanced)
@@ -1648,7 +1685,7 @@ html:not(.js-enhanced)
 	content: '';
 	width: 9px;
 	height: 9px;
-	margin: 0 10px 4px 0;
+	margin: 0 10px var(--spacing-xs) 0;
 	border-right: 1.5px solid currentColor;
 	border-bottom: 1.5px solid currentColor;
 	opacity: 0.8;
@@ -1696,7 +1733,9 @@ html:not(.js-enhanced)
 	.is-exhibit
 	> .explorer-node-heading
 	> .explorer-node-link:hover {
-	background: rgb(255 255 255 / 4%);
+	background: hsl(
+		var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 4%
+	);
 }
 
 html:not(.js-enhanced)
@@ -1734,7 +1773,7 @@ html:not(.js-enhanced)
 	.is-exhibit:is(:target, :has(:target))
 	> .explorer-node-body {
 	display: block;
-	padding: 0 0 48px;
+	padding: 0 0 var(--spacing-xl);
 }
 
 html:not(.js-enhanced)
@@ -1767,7 +1806,7 @@ html:not(.js-enhanced)
 	min-height: 44px;
 	margin: 0 0 12px;
 	color: var(--text-strong);
-	font: 500 13px/1 var(--font-label);
+	font: 500 13px/var(--line-height-tight) var(--font-label);
 	letter-spacing: 0.08em;
 	text-decoration: underline 1px var(--line);
 	text-underline-offset: 6px;
@@ -1789,7 +1828,7 @@ html:not(.js-enhanced)
 	html:not(.js-enhanced) .explorer-node.is-exhibit {
 		display: grid;
 		grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
-		column-gap: 48px;
+		column-gap: var(--spacing-xl);
 		align-items: center;
 	}
 
@@ -1798,7 +1837,7 @@ html:not(.js-enhanced)
 		> .explorer-node-heading
 		> .explorer-node-link {
 		grid-template-columns: 128px auto minmax(0, 1fr) auto;
-		column-gap: 24px;
+		column-gap: var(--spacing-lg);
 		min-height: 112px;
 	}
 
@@ -1843,7 +1882,7 @@ html:not(.js-enhanced)
 
 .component-views {
 	display: grid;
-	gap: 16px;
+	gap: var(--spacing-md);
 	margin: 0 0 32px;
 }
 
@@ -1863,18 +1902,18 @@ html:not(.js-enhanced)
 	display: flex;
 	flex-wrap: wrap;
 	align-items: baseline;
-	gap: 4px 12px;
+	gap: var(--spacing-xs) 12px;
 	padding: 0 0 10px;
 }
 
 .component-view-name {
 	color: var(--text-strong);
-	font: 500 16px/1.3 var(--font-display);
+	font: 500 var(--font-size-body-sm)/1.3 var(--font-display);
 }
 
 .component-view-kind {
 	color: var(--text-muted);
-	font: 500 11px/1 var(--font-label);
+	font: 500 11px/var(--line-height-tight) var(--font-label);
 	letter-spacing: 0.12em;
 	text-transform: uppercase;
 }
@@ -1916,11 +1955,13 @@ html:not(.js-enhanced)
 	left: -10px;
 	width: 20px;
 	height: 20px;
-	border: 2px solid #fff;
+	border: 2px solid var(--color-neutral-lightest);
 	border-radius: 50%;
 	box-shadow:
-		0 0 0 2px rgb(24 25 50 / 70%),
-		inset 0 0 0 2px rgb(24 25 50 / 70%);
+		0 0 0 2px
+			hsl(var(--brand-h) var(--brand-s) var(--brand-darkest-l) / 70%),
+		inset 0 0 0 2px
+			hsl(var(--brand-h) var(--brand-s) var(--brand-darkest-l) / 70%);
 }
 
 .component-pointer::after {
@@ -1929,7 +1970,7 @@ html:not(.js-enhanced)
 	left: -0.5px;
 	width: 1px;
 	height: 36px;
-	background: #fff;
+	background: var(--color-neutral-lightest);
 }
 
 .component-pointer.is-above::after {
@@ -1943,9 +1984,10 @@ html:not(.js-enhanced)
 .component-pointer-label {
 	position: absolute;
 	padding: 7px 11px;
-	color: #fff;
-	background: rgb(24 25 50 / 92%);
-	box-shadow: inset 0 0 0 1px rgb(255 255 255 / 45%);
+	color: var(--color-neutral-lightest);
+	background: hsl(var(--brand-h) var(--brand-s) var(--brand-darkest-l) / 92%);
+	box-shadow: inset 0 0 0 1px
+		hsl(var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 45%);
 	font: 500 14px/1.2 var(--font-display);
 	white-space: nowrap;
 }
@@ -1969,7 +2011,7 @@ html:not(.js-enhanced)
 @media (width >= 900px) {
 	.component-views {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 24px;
+		gap: var(--spacing-lg);
 	}
 }
 
@@ -2006,7 +2048,7 @@ html:not(.js-enhanced)
 	align-items: center;
 	justify-content: center;
 	min-height: 48px;
-	padding: 8px 12px;
+	padding: var(--spacing-sm) 12px;
 	color: var(--text-muted);
 	font: 500 14px/1.2 var(--font-display);
 	text-align: center;
@@ -2027,7 +2069,7 @@ html:not(.js-enhanced)
 /* How the X-ray instrument's parts fit together ---------------------------- */
 
 .instrument-map {
-	margin: 8px 0 32px;
+	margin: var(--spacing-sm) 0 32px;
 }
 
 .instrument-map-frame {
@@ -2063,16 +2105,16 @@ html:not(.js-enhanced)
 	margin: -4.5px 0 0 -4.5px;
 	border-radius: 50%;
 	background: var(--navy);
-	box-shadow: 0 0 0 2px #fff;
+	box-shadow: 0 0 0 2px var(--color-neutral-lightest);
 }
 
 .instrument-map-label {
 	position: absolute;
 	display: flex;
 	align-items: baseline;
-	gap: 8px;
+	gap: var(--spacing-sm);
 	padding: 6px 10px;
-	color: #fff;
+	color: var(--color-neutral-lightest);
 	background: var(--navy);
 	font: 500 13px/1.2 var(--font-display);
 	white-space: nowrap;
@@ -2085,7 +2127,7 @@ html:not(.js-enhanced)
 
 .instrument-map-number {
 	color: var(--select);
-	font: 400 11px/1 var(--font-text);
+	font: 400 11px/var(--line-height-tight) var(--font-text);
 }
 
 .instrument-map figcaption {
@@ -2100,7 +2142,7 @@ html:not(.js-enhanced)
 	}
 
 	.instrument-map-label {
-		padding: 4px 6px;
+		padding: var(--spacing-xs) 6px;
 	}
 }
 
@@ -2118,9 +2160,9 @@ html:not(.js-enhanced) .is-exhibit .explorer-node-content > .explorer-tree {
 .explorer-disclosure-summary {
 	display: flex;
 	align-items: center;
-	gap: 16px;
+	gap: var(--spacing-md);
 	min-height: 64px;
-	padding: 12px 4px;
+	padding: 12px var(--spacing-xs);
 	cursor: pointer;
 	list-style: none;
 	transition: background-color 200ms var(--ease);
@@ -2135,7 +2177,7 @@ html:not(.js-enhanced) .is-exhibit .explorer-node-content > .explorer-tree {
 	flex: none;
 	width: 9px;
 	height: 9px;
-	margin: 0 10px 4px auto;
+	margin: 0 10px var(--spacing-xs) auto;
 	border-right: 1.5px solid currentColor;
 	border-bottom: 1.5px solid currentColor;
 	opacity: 0.8;
@@ -2147,7 +2189,9 @@ html:not(.js-enhanced) .is-exhibit .explorer-node-content > .explorer-tree {
 }
 
 .explorer-disclosure-summary:hover {
-	background: rgb(255 255 255 / 4%);
+	background: hsl(
+		var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 4%
+	);
 }
 
 .explorer-disclosure-summary:focus-visible {
@@ -2159,7 +2203,7 @@ html:not(.js-enhanced) .is-exhibit .explorer-node-content > .explorer-tree {
 	display: flex;
 	flex: 1;
 	align-items: baseline;
-	gap: 16px;
+	gap: var(--spacing-md);
 }
 
 .explorer-disclosure-summary .explorer-node-title {
@@ -2167,11 +2211,11 @@ html:not(.js-enhanced) .is-exhibit .explorer-node-content > .explorer-tree {
 }
 
 .explorer-disclosure > .explorer-node-body {
-	padding: 4px 0 32px;
+	padding: var(--spacing-xs) 0 32px;
 }
 
 .explorer-disclosure .explorer-disclosure {
-	margin-top: 24px;
+	margin-top: var(--spacing-lg);
 	border-top: 1px solid var(--line);
 	border-bottom: 0;
 }
@@ -2184,9 +2228,9 @@ html:not(.js-enhanced) .explorer-disclosure .explorer-tree {
 html:not(.js-enhanced) .explorer-disclosure .explorer-node.has-figure {
 	display: grid;
 	grid-template-columns: minmax(0, 1fr);
-	padding: 24px 0;
+	padding: var(--spacing-lg) 0;
 	border-bottom: 1px solid var(--line);
-	scroll-margin-top: 16px;
+	scroll-margin-top: var(--spacing-md);
 }
 
 html:not(.js-enhanced)
@@ -2207,9 +2251,9 @@ html:not(.js-enhanced)
 	.explorer-node-link {
 	display: flex;
 	align-items: baseline;
-	gap: 16px;
+	gap: var(--spacing-md);
 	min-height: 0;
-	padding: 0 0 8px;
+	padding: 0 0 var(--spacing-sm);
 }
 
 html:not(.js-enhanced)
@@ -2222,7 +2266,7 @@ html:not(.js-enhanced)
 html:not(.js-enhanced)
 	.explorer-disclosure
 	.explorer-node:not(.has-figure, .is-exhibit) {
-	padding: 16px 0;
+	padding: var(--spacing-md) 0;
 	border-bottom: 1px solid var(--line);
 }
 
@@ -2241,7 +2285,7 @@ html:not(.js-enhanced)
 }
 
 .explorer-node-figure figcaption {
-	margin-top: 8px;
+	margin-top: var(--spacing-sm);
 	color: var(--text-muted);
 	font: 500 11px/16px var(--font-label);
 	letter-spacing: 0.1em;
@@ -2253,7 +2297,7 @@ html:not(.js-enhanced)
 	> .explorer-node-content
 	> .explorer-node-figure {
 	max-width: 720px;
-	margin: 8px 0 24px;
+	margin: var(--spacing-sm) 0 var(--spacing-lg);
 }
 
 @media (width >= 640px) {
