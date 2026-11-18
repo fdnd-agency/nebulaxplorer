@@ -24,6 +24,7 @@
 	--sheet-peek-height: 120px;
 	--sheet-expanded-top: var(--spacing-2xl);
 	--sheet-toggle-height: 64px;
+	--toggle-width: 40px;
 }
 
 .satellite-page *,
@@ -513,6 +514,24 @@
 /* With the 3D model the explorer is one screen high. The fixed parts of the
    explorer (viewer, panel, sheet) are placed in this screen, not in the
    window, so the rest of the page scrolls as usual. */
+/* While the 3D view starts (js-pending, set before the page is drawn) the
+   section is already the 3D view's dark screen, instead of showing the page
+   without JavaScript for a moment */
+.satellite-page.js-pending {
+	height: var(--stage-height);
+	overflow: clip;
+}
+
+.satellite-page.js-pending > * {
+	visibility: hidden;
+}
+
+/* Full screen: the 3D view and the explorer fill the screen, without the
+   site's header */
+.satellite-page.js-enhanced:fullscreen {
+	--stage-height: 100dvh;
+}
+
 .satellite-page.js-enhanced {
 	position: relative;
 	height: var(--stage-height);
@@ -777,6 +796,21 @@
 	text-transform: uppercase;
 	cursor: pointer;
 	transition: color 150ms var(--ease);
+}
+
+.viewer-control.is-icon-only {
+	justify-content: center;
+	width: 36px;
+	padding: 0;
+}
+
+.viewer-control.is-icon-only .viewer-control-label {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
 }
 
 .viewer-control:hover {
@@ -2273,5 +2307,141 @@
 	.component-views-input:checked + .component-views-option {
 		outline: 3px solid Highlight;
 		outline-offset: -3px;
+	}
+}
+
+/* Full screen: the explorer can be hidden ===================================
+   On the page the explorer is always open. In full screen its close button
+   hides it, so the satellite has the whole screen; the orange menu bar
+   (explorer-toggle) brings it back. */
+.explorer-hide,
+.explorer-toggle {
+	display: none;
+}
+
+.js-enhanced .explorer-toggle {
+	position: fixed;
+	z-index: 45;
+	display: flex;
+	align-items: center;
+	border: 0;
+	cursor: pointer;
+}
+
+.explorer-toggle-label {
+	font: 500 12px/var(--line-height-tight) var(--font-body);
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.satellite-page.js-enhanced:fullscreen .explorer-hide {
+	display: grid;
+	place-items: center;
+	width: 44px;
+	height: 44px;
+	border: 0;
+	color: var(--color-neutral-lightest);
+	background: none;
+	cursor: pointer;
+}
+
+.satellite-page.js-enhanced:fullscreen .explorer-hide:hover {
+	color: var(--color-accent-mid);
+}
+
+.js-enhanced .explorer[data-hidden='true'] {
+	visibility: hidden;
+}
+
+@media (width >= 720px) {
+	.js-enhanced .explorer {
+		transition:
+			transform 320ms var(--ease),
+			visibility 0s;
+	}
+
+	.js-enhanced .explorer[data-hidden='true'] {
+		transform: translateX(100%);
+		transition:
+			transform 320ms var(--ease),
+			visibility 0s 320ms;
+	}
+
+	.js-enhanced .viewer[data-explorer='hidden'] {
+		--visible-right: var(--toggle-width);
+	}
+
+	.explorer-layout:has(> .viewer[data-explorer='hidden'])
+		> .language-switcher {
+		right: calc(var(--toggle-width) + var(--spacing-lg));
+	}
+
+	/* A vertical orange bar on the right edge, where the explorer was */
+	.js-enhanced .explorer-toggle {
+		top: 0;
+		right: 0;
+		bottom: 0;
+		flex-direction: column;
+		gap: 20px;
+		width: var(--toggle-width);
+		padding: 20px 0;
+		color: var(--color-brand-darkest);
+		background: var(--color-accent-mid);
+		transition:
+			color 150ms var(--ease),
+			background-color 150ms var(--ease);
+	}
+
+	.js-enhanced .explorer-toggle:hover {
+		color: var(--color-accent-mid);
+		background: var(--color-brand-darkest);
+	}
+
+	.explorer-toggle-label {
+		writing-mode: vertical-rl;
+	}
+}
+
+@media (width < 720px) {
+	.js-enhanced .explorer-bar {
+		grid-template-columns: minmax(0, 1fr) auto auto;
+	}
+
+	.js-enhanced .explorer-sheet-toggle {
+		grid-column: 3;
+	}
+
+	.js-enhanced .explorer-hide {
+		grid-row: 1 / span 2;
+		grid-column: 2;
+	}
+
+	.js-enhanced .explorer[data-hidden='true'] {
+		transform: translateY(100%);
+	}
+
+	.js-enhanced .viewer[data-explorer='hidden'] {
+		--visible-bottom: var(--sheet-toggle-height);
+	}
+
+	/* A bar along the bottom, where the sheet was */
+	.js-enhanced .explorer-toggle {
+		right: 0;
+		bottom: 0;
+		left: 0;
+		justify-content: center;
+		gap: 12px;
+		height: var(--sheet-toggle-height);
+		border-top: 1px solid var(--line);
+		color: var(--color-neutral-lightest);
+		background: var(--color-brand-darkest);
+	}
+
+	.js-enhanced .explorer-toggle .icon {
+		box-sizing: content-box;
+		padding: 6px;
+		color: var(--color-brand-darkest);
+		background: var(--color-accent-mid);
 	}
 }

@@ -365,7 +365,7 @@ export function createViewerController(
 	}
 
 	function activateFallback() {
-		getExplorerPage()?.classList.remove('js-enhanced')
+		getExplorerPage()?.classList.remove('js-pending', 'js-enhanced')
 		state.enhanced = false
 		state.fallback = true
 		markers.set([])

@@ -29,10 +29,19 @@ export function createExplorer(content) {
 		return state.layoutMode.startsWith('docked')
 	}
 
-	// The explorer is always open: a panel beside the 3D view, or on a phone a
-	// sheet that folds back to its peek row
+	// On the page the explorer is always open: a panel beside the 3D view, or
+	// on a phone a sheet that folds back to its peek row. Only in full screen
+	// can it be hidden, so the satellite has the whole screen.
 	function isVisible() {
-		return true
+		return !state.explorerHidden
+	}
+
+	async function setExplorerHidden(hidden) {
+		state.explorerHidden = hidden && state.fullscreen
+		await tick()
+		if (state.explorerHidden)
+			document.querySelector('.explorer-toggle')?.focus()
+		else focusItem(state.selectedId)
 	}
 
 	function getFullTitle(id) {
@@ -173,6 +182,7 @@ export function createExplorer(content) {
 		initialize(layoutMode)
 		state.enhanced = true
 		page.dataset.layout = layoutMode
+		page.classList.remove('js-pending')
 		page.classList.add('js-enhanced')
 		flushSync()
 		if (state.selectedId !== tree.rootId) showViewer()
@@ -180,6 +190,17 @@ export function createExplorer(content) {
 
 	function showFallback() {
 		state.fallback = true
+		getExplorerPage()?.classList.remove('js-pending')
+	}
+
+	// Full screen shows the 3D view and the explorer without the rest of the
+	// site, like a video player. Esc or the same button returns to the page.
+	function toggleFullscreen() {
+		if (document.fullscreenElement) document.exitFullscreen()
+		else
+			getExplorerPage()
+				?.requestFullscreen()
+				.catch(() => {})
 	}
 
 	function connect() {
@@ -188,16 +209,25 @@ export function createExplorer(content) {
 		const updatePointer = () => {
 			state.coarsePointer = coarsePointer.matches
 		}
+		const updateFullscreen = () => {
+			state.fullscreen = document.fullscreenElement === page
+			if (!state.fullscreen) state.explorerHidden = false
+		}
+		// Not on iPhones: Safari only shows video full screen there
+		state.fullscreenAvailable = Boolean(document.fullscreenEnabled)
 		page.classList.add('js')
 		state.scriptActive = true
 		restoreLanguage()
 		updatePointer()
 		coarsePointer.addEventListener('change', updatePointer)
+		document.addEventListener('fullscreenchange', updateFullscreen)
 		document.addEventListener('keydown', handleKeydown)
 		window.addEventListener('popstate', handlePopstate)
 		// The explorer is one page of the site: stop listening when it closes
 		return () => {
 			coarsePointer.removeEventListener('change', updatePointer)
+			document.removeEventListener('fullscreenchange', updateFullscreen)
+			if (document.fullscreenElement === page) document.exitFullscreen()
 			document.removeEventListener('keydown', handleKeydown)
 			window.removeEventListener('popstate', handlePopstate)
 		}
@@ -218,6 +248,8 @@ export function createExplorer(content) {
 		toggleSelectedItem,
 		setPreview,
 		setSheetState,
+		setExplorerHidden,
+		toggleFullscreen,
 		handleKeydown,
 		handlePopstate,
 		initialize,

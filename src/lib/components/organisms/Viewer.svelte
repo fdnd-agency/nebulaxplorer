@@ -94,6 +94,7 @@
 			? state.sheetState
 			: 'none'
 		: undefined}
+	data-explorer={state.explorerHidden ? 'hidden' : undefined}
 	data-representation={state.representation ?? undefined}
 	bind:this={viewer}
 >
@@ -132,6 +133,6 @@
 		>
 			{text(state.coarsePointer ? 'hintTouch' : 'hintPointer')}
 		</p>
-		<ViewerControls {state} {controller} />
+		<ViewerControls {state} {controller} {explorer} />
 	</div>
 </div>

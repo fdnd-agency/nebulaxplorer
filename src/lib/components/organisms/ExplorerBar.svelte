@@ -50,6 +50,18 @@
 				: ''}</span
 		>
 	</p>
+	{#if state.fullscreen}
+		<button
+			type="button"
+			class="explorer-hide"
+			aria-controls="explorer"
+			aria-label={text('hideExplorer')}
+			title={text('hideExplorer')}
+			onclick={() => explorer.setExplorerHidden(true)}
+		>
+			<Icon name="close" />
+		</button>
+	{/if}
 	<!-- On a phone: opens and folds the sheet; points up while it can open -->
 	<button
 		type="button"

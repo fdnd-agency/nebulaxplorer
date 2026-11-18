@@ -118,6 +118,7 @@
 	id="explorer"
 	aria-label={text('explorerLabel')}
 	data-sheet={state.sheetState}
+	data-hidden={String(state.explorerHidden)}
 	inert={state.enhanced && !visible}
 	onclick={handleClick}
 	onpointerover={previewFromEvent}

@@ -2,7 +2,7 @@
 	import ViewerControl from '$lib/components/molecules/ViewerControl.svelte'
 	import { text } from '$lib/state/language.svelte.js'
 
-	let { state, controller } = $props()
+	let { state, controller, explorer } = $props()
 
 	const {
 		availableControls,
@@ -11,6 +11,8 @@
 		outerPanelsVisible,
 		cameraAdjusted,
 		satelliteReady,
+		fullscreen,
+		fullscreenAvailable,
 	} = $derived(state)
 </script>
 
@@ -43,5 +45,13 @@
 		label={text('resetView')}
 		hidden={!(cameraAdjusted && satelliteReady)}
 		onclick={() => controller?.resetView()}
+	/>
+	<ViewerControl
+		control="fullscreen"
+		icon={fullscreen ? 'fullscreenExit' : 'fullscreen'}
+		label={text(fullscreen ? 'exitFullscreen' : 'fullscreen')}
+		iconOnly
+		hidden={!fullscreenAvailable}
+		onclick={() => explorer.toggleFullscreen()}
 	/>
 </div>

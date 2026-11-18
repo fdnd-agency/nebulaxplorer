@@ -8,6 +8,7 @@
 		hidden,
 		playing = undefined,
 		pressed = undefined,
+		iconOnly = false,
 		onclick,
 	} = $props()
 
@@ -16,8 +17,9 @@
 
 <button
 	type="button"
-	class="viewer-control"
+	class={['viewer-control', iconOnly && 'is-icon-only']}
 	data-control={control}
+	title={iconOnly ? label : undefined}
 	data-state={toggles ? (playing ? 'playing' : 'paused') : undefined}
 	aria-pressed={pressed === undefined ? undefined : String(pressed)}
 	{hidden}
