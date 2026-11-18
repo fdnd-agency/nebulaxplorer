@@ -27,7 +27,8 @@ export function createRenderQuality(
 	const minimumRatio = Math.min(devicePixelRatio, 0.75)
 	// Step 0 is full detail, step 1 simplified meshes, every further step a
 	// lower pixel ratio
-	const lowestStep = 1 + Math.ceil((fullRatio - minimumRatio) / stepSize - 1e-9)
+	const lowestStep =
+		1 + Math.ceil((fullRatio - minimumRatio) / stepSize - 1e-9)
 	const ratioAt = (step) =>
 		Math.max(minimumRatio, fullRatio - stepSize * Math.max(0, step - 1))
 	const frames = []
