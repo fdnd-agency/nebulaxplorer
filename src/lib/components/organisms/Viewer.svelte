@@ -89,7 +89,6 @@
 	class="viewer"
 	class:is-loading={state.status === 'loading'}
 	class:is-switching={state.switching}
-	data-explorer={visible ? 'open' : 'closed'}
 	data-sheet={state.enhanced
 		? explorer.isMobile()
 			? state.sheetState

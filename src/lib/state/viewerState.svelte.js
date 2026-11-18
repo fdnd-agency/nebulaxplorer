@@ -1,5 +1,5 @@
+// On a phone the explorer is a sheet: its peek row, or expanded
 export const SHEET_STATES = Object.freeze({
-	CLOSED: 'closed',
 	PEEK: 'peek',
 	EXPANDED: 'expanded',
 })
@@ -9,8 +9,7 @@ export function createViewerState(rootId) {
 		selectedId: rootId,
 		selectedCollapsed: false,
 		previewId: null,
-		explorerOpen: false,
-		sheetState: SHEET_STATES.CLOSED,
+		sheetState: SHEET_STATES.PEEK,
 		layoutMode: 'panel',
 		scriptActive: false,
 		enhanced: false,

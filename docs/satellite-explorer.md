@@ -2,7 +2,7 @@
 
 The 3D satellite explorer lives on the `/technology` page. It is built with Svelte 5 and Three.js and follows the folder structure in [`CONTRIBUTING.md`](../CONTRIBUTING.md).
 
-The `/technology` page of the site shows the 3D model of the satellite in a section one screen high, below the site's header and hero and above its footer. **Explore satellite** opens the explorer: a panel on the left on desktop, a bottom sheet with peek and expanded states on mobile. Inside the section only the explorer content scrolls; the page around it scrolls as usual. The mouse wheel scrolls the page; Ctrl or ⌘ with the wheel (or pinching on a trackpad) zooms the model. On touch screens a vertical swipe scrolls the page, a sideways swipe rotates and pinching zooms.
+The `/technology` page of the site shows the 3D model of the satellite in a section one screen high, below the site's header and hero and above its footer. The explorer is always open: a panel on the right on desktop (the site's own menu stays on the left), and on mobile a bottom sheet that folds between its peek row and expanded, and never closes. Inside the section only the explorer content scrolls; the page around it scrolls as usual. The mouse wheel scrolls the page; Ctrl or ⌘ with the wheel (or pinching on a trackpad) zooms the model. On touch screens a vertical swipe scrolls the page, a sideways swipe rotates and pinching zooms.
 
 The page uses the site's layout: its header and navigation (the **Technology** link), hero, locations and footer, and its colours, fonts and focus style (`stylesheet.css`). The explorer's own styles in `satellite-explorer.css` start from `.satellite-page`, so they do not change the rest of the site, also after visiting the page. The NL/EN switch only changes the explorer and sets `lang` on its section. The explorer's state is kept on that section too (`js`, `js-enhanced` and `data-layout` on `.satellite-page`), not on `<html>`.
 
@@ -34,7 +34,7 @@ With JavaScript Svelte hydrates the same HTML into the explorer, and the 3D mode
 - item links expose `aria-expanded` and `aria-controls`; collapsed parts are inert, so they are skipped by keyboard and screen readers
 - the selected item is marked with `aria-current`, and selections are announced through a status message ("05, Sun Sensor, selected")
 - the canvas is a single labelled image; the numbered markers on the model are hidden from assistive technology because the matching links carry the same action
-- Escape moves up one level inside the explorer and closes it at the top level
+- Escape moves up one level inside the explorer; on mobile it folds the expanded sheet back to its peek row
 - controls expose their state (`aria-expanded`, `aria-pressed`) and change their label where the action changes
 - `prefers-reduced-motion` removes camera flights, the ambient orbit, expand animations and the X-ray animation
 

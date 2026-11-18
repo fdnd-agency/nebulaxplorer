@@ -117,7 +117,6 @@
 	class="explorer"
 	id="explorer"
 	aria-label={text('explorerLabel')}
-	data-open={String(state.explorerOpen)}
 	data-sheet={state.sheetState}
 	inert={state.enhanced && !visible}
 	onclick={handleClick}

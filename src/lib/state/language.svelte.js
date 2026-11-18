@@ -1,7 +1,5 @@
 const interfaceCopy = {
 	en: {
-		exploreSatellite: 'Explore satellite',
-		closeExplorer: 'Close explorer',
 		expandExplorer: 'Show more',
 		collapseExplorer: 'Show less',
 		breadcrumb: 'Breadcrumb',
@@ -45,8 +43,6 @@ const interfaceCopy = {
 			'How the parts fit together: the X-ray instrument with its outer panels hidden. The numbers match the list below.',
 	},
 	nl: {
-		exploreSatellite: 'Verken satelliet',
-		closeExplorer: 'Verkenner sluiten',
 		expandExplorer: 'Meer tonen',
 		collapseExplorer: 'Minder tonen',
 		breadcrumb: 'Kruimelpad',

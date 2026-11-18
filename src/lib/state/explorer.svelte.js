@@ -29,13 +29,10 @@ export function createExplorer(content) {
 		return state.layoutMode.startsWith('docked')
 	}
 
+	// The explorer is always open: a panel beside the 3D view, or on a phone a
+	// sheet that folds back to its peek row
 	function isVisible() {
-		return (
-			isDocked() ||
-			(isMobile()
-				? state.sheetState !== SHEET_STATES.CLOSED
-				: state.explorerOpen)
-		)
+		return true
 	}
 
 	function getFullTitle(id) {
@@ -72,11 +69,6 @@ export function createExplorer(content) {
 			?.focus({ preventScroll: true })
 	}
 
-	async function focusToggle() {
-		await tick()
-		document.querySelector('.explorer-toggle')?.focus()
-	}
-
 	function requestScroll(id, smooth = true) {
 		state.scrollRequest = {
 			id,
@@ -93,38 +85,16 @@ export function createExplorer(content) {
 		}, 60)
 	}
 
-	function setExplorerOpen(open, { focus = false } = {}) {
-		state.explorerOpen = open
-		if (!focus) return
-		if (open) focusItem(state.selectedId)
-		else focusToggle()
-	}
-
 	function setSheetState(sheetState, { focus = false } = {}) {
 		state.sheetState = sheetState
-		if (!focus) return
-		if (sheetState === SHEET_STATES.CLOSED) focusToggle()
-		else focusItem(state.selectedId)
+		if (focus) focusItem(state.selectedId)
 	}
 
-	function openExplorer() {
-		if (isDocked()) focusItem(state.selectedId)
-		else if (isMobile())
-			setSheetState(SHEET_STATES.EXPANDED, { focus: true })
-		else setExplorerOpen(true, { focus: true })
-	}
-
-	function closeExplorer() {
-		if (isDocked()) return
-		if (isMobile()) setSheetState(SHEET_STATES.CLOSED, { focus: true })
-		else setExplorerOpen(false, { focus: true })
-	}
-
+	// On a phone a selected part without parts of its own folds the sheet back,
+	// so the part itself is in view
 	function revealSelection(id, source, keyboard) {
 		if (!isMobile() || !selectionSources.has(source) || keyboard) return
-		const isLeaf = tree.getChildren(id).length === 0
-		if (isLeaf || state.sheetState === SHEET_STATES.CLOSED)
-			setSheetState(SHEET_STATES.PEEK)
+		if (tree.getChildren(id).length === 0) setSheetState(SHEET_STATES.PEEK)
 	}
 
 	function navigate(
@@ -168,14 +138,8 @@ export function createExplorer(content) {
 			})
 			return
 		}
-		if (isMobile()) {
-			if (state.sheetState === SHEET_STATES.EXPANDED)
-				setSheetState(SHEET_STATES.PEEK)
-			else if (state.sheetState === SHEET_STATES.PEEK)
-				setSheetState(SHEET_STATES.CLOSED, { focus: true })
-		} else if (state.explorerOpen && !isDocked()) {
-			setExplorerOpen(false, { focus: true })
-		}
+		if (isMobile() && state.sheetState === SHEET_STATES.EXPANDED)
+			setSheetState(SHEET_STATES.PEEK)
 	}
 
 	function handlePopstate() {
@@ -187,12 +151,6 @@ export function createExplorer(content) {
 		state.layoutMode = layoutMode
 		const initialId = getHashId() || tree.rootId
 		state.selectedId = initialId
-		if (initialId !== tree.rootId) {
-			state.explorerOpen = !isMobile()
-			state.sheetState = isMobile()
-				? SHEET_STATES.PEEK
-				: SHEET_STATES.CLOSED
-		}
 		requestScroll(initialId, false)
 	}
 
@@ -208,12 +166,6 @@ export function createExplorer(content) {
 
 	function showFallback() {
 		state.fallback = true
-	}
-
-	function skipToExplorer(event) {
-		if (!state.enhanced) return
-		event.preventDefault()
-		openExplorer()
 	}
 
 	function connect() {
@@ -251,16 +203,12 @@ export function createExplorer(content) {
 		navigate,
 		toggleSelectedItem,
 		setPreview,
-		setExplorerOpen,
 		setSheetState,
-		openExplorer,
-		closeExplorer,
 		handleKeydown,
 		handlePopstate,
 		initialize,
 		enhance,
 		showFallback,
-		skipToExplorer,
 		connect,
 	}
 }

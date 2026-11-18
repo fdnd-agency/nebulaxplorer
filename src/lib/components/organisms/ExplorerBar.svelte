@@ -1,5 +1,4 @@
 <script>
-	import Icon from '$lib/components/atoms/Icon.svelte'
 	import ExplorerBreadcrumb from '$lib/components/molecules/ExplorerBreadcrumb.svelte'
 	import { SHEET_STATES } from '$lib/state/viewerState.svelte.js'
 	import { text } from '$lib/state/language.svelte.js'
@@ -12,8 +11,7 @@
 	let dragStart = null
 
 	function handlePointerdown(event) {
-		if (!explorer.isMobile() || event.target.closest('a, .explorer-close'))
-			return
+		if (!explorer.isMobile() || event.target.closest('a')) return
 		dragStart = event.clientY
 	}
 
@@ -22,12 +20,7 @@
 		const distance = event.clientY - dragStart
 		dragStart = null
 		if (distance < -40) explorer.setSheetState(SHEET_STATES.EXPANDED)
-		else if (distance > 40)
-			explorer.setSheetState(
-				state.sheetState === SHEET_STATES.EXPANDED
-					? SHEET_STATES.PEEK
-					: SHEET_STATES.CLOSED,
-			)
+		else if (distance > 40) explorer.setSheetState(SHEET_STATES.PEEK)
 	}
 
 	function toggleSheet() {
@@ -63,12 +56,4 @@
 				: ''}</span
 		>
 	</p>
-	<button
-		type="button"
-		class="explorer-close"
-		aria-label={text('closeExplorer')}
-		onclick={() => explorer.closeExplorer()}
-	>
-		<Icon name="close" />
-	</button>
 </div>

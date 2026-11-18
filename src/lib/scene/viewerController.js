@@ -178,6 +178,7 @@ export function createViewerController(
 		viewOffset.setTarget(
 			{
 				left: Math.max(0, visibleBounds.left - viewerBounds.left),
+				right: Math.max(0, viewerBounds.right - visibleBounds.right),
 				bottom: Math.max(0, viewerBounds.bottom - visibleBounds.bottom),
 			},
 			immediate || reduceMotion.matches,
@@ -400,8 +401,9 @@ export function createViewerController(
 		state.posterVisible = false
 		scene.userData.loadBackground()
 		loadInitialSatellite()
+		// The load button is gone: continue in the explorer
 		requestAnimationFrame(() =>
-			document.querySelector('.explorer-toggle')?.focus(),
+			document.querySelector('#explorer a, #explorer button')?.focus(),
 		)
 	}
 

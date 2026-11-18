@@ -39,7 +39,7 @@ await page.waitForFunction(
 )
 await page.addStyleTag({
 	content:
-		'body > div > header, .explorer-toggle, .viewer-visible-area, .viewer-markers, .explorer { visibility: hidden !important; }',
+		'body > div > header, .viewer-visible-area, .viewer-markers, .explorer { visibility: hidden !important; }',
 })
 await page.waitForTimeout(6000)
 const png = await page.locator('#app').screenshot()
