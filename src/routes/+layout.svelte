@@ -1,10 +1,8 @@
 <script>
 	import favicon from '$lib/assets/favicon.svg'
 	import '$lib/styles/stylesheet.css'
-	import '$lib/styles/fonts.css'
 	import { pages } from '$lib/data/pages'
-	import { Hero, Footer, Locations } from '$lib/components/organisms'
-	import Header from '$lib/components/organisms/Header.svelte'
+	import { Hero, Footer, Locations, Header } from '$lib/components/organisms'
 	
 	let { children } = $props()
 
