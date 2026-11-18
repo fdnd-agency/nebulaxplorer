@@ -85,93 +85,94 @@
 </footer>
 
 <style>
-	.footer-top {
-		margin: var(--spacing-lg) var(--spacing-xl);
-		color: var(--color-neutral-lightest);
+    .footer-top {
+        margin: var(--spacing-lg) var(--spacing-xl);
+        color: var(--color-neutral-lightest);
 
-		@media (width > 850px) {
-			display: grid;
-			grid-template-columns: 1fr auto auto auto;
-			margin: var(--spacing-xl);
-			align-items: end;
-			column-gap: var(--spacing-lg);
-			margin: var(--spacing-xl);
-			font-size: var(--step-0);
-		}
-	}
-	address {
-		@media (width > 1150px) {
-			display: flex;
-			font-style: normal;
-			border: 0;
-			position: static;
-			clip-path: none;
-			width: auto;
-			height: auto;
-		}
-	}
-	.white-logo-sron {
-		margin-top: var(--spacing-lg);
+        @media (width > 850px) {
+            display: grid;
+            grid-template-columns: 1fr auto auto auto;
+            margin: var(--spacing-xl);
+            align-items: end;
+            column-gap: var(--spacing-lg);
+            margin: var(--spacing-xl);
+            font-size:  var(--step-0);  
+        }
+    }
+    address {
+        @media (width > 1150px) {
+            display: flex;
+            font-style: normal;
+            border: 0;
+            position: static;
+            clip-path: none;
+            width: auto;
+            height: auto;
+        }
+    }
+    .white-logo-sron {
+        margin-top: var(--spacing-lg);
 
-		@media (width > 850px) {
-			align-self: end;
-			margin-left: var(--spacing-md);
-			margin-top: 0rem;
-		}
-	}
+        @media (width > 850px) {
+            align-self: end;
+            margin-left: var(--spacing-md);
+            margin-top: 0rem;
+        }
+    }
 
-	.footer-nav {
-		margin: var(--spacing-lg) var(--spacing-xl);
-		color: var(--color-neutral-lightest);
-		text-transform: uppercase;
+    .footer-nav {
+        margin: var(--spacing-lg) var(--spacing-xl);
+        color: var(--color-neutral-lightest);
+        text-transform: uppercase;
+        
+        border-top: 3px solid;
+        border-top-color: var(--color-accent-mid);
+        padding-top: var(--spacing-lg);
+        
+        ul {
+            list-style: none;
 
-		border-top: 3px solid;
-		border-top-color: var(--color-accent-mid);
-		padding-top: var(--spacing-lg);
+             @media (width > 850px) {
+                display: flex;
+                gap: var(--spacing-lg);
+            }
+        }
+        p {
+            margin-bottom: var(--spacing-sm);
+        }
 
-		ul {
-			list-style: none;
+        a {
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+                text-underline-offset: 5px;
+            }
+        }
 
-			@media (width > 850px) {
-				display: flex;
-				gap: var(--spacing-lg);
-			}
-		}
-		p {
-			margin-bottom: var(--spacing-sm);
-		}
+        @media (width > 850px) {
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            align-items: center;
+            column-gap: var(--spacing-lg);
+            margin: var(--spacing-lg) var(--spacing-xl);
+            color: var(--color-neutral-lightest);
+            text-transform: uppercase;
+        }
+    }
 
-		a {
-			text-decoration: none;
-			&:hover {
-				text-decoration: underline;
-				text-underline-offset: 5px;
-			}
-		}
+    .social-icons {
+        display: flex;
+        gap: var(--spacing-sm);
+        align-items: center;
+        list-style: none;
+    }
 
-		@media (width > 850px) {
-			display: grid;
-			grid-template-columns: 1fr auto auto;
-			align-items: center;
-			column-gap: var(--spacing-lg);
-			margin: var(--spacing-lg) var(--spacing-xl);
-			color: var(--color-neutral-lightest);
-			text-transform: uppercase;
-		}
-	}
-
-	.social-icons {
-		display: flex;
-		gap: var(--spacing-sm);
-		align-items: center;
-		list-style: none;
-	}
-
-	.quote {
-		text-align: center;
-		font-family: var(--font-caption);
-		background-color: var(--color-accent-mid);
-		font-size: 1rem;
-		max-width: none;
-	}
+     .quote {
+        color: var(	--color-brand-darkest);
+        text-align: center;
+        font-family: var(--font-caption);
+        background-color: var(--color-accent-mid);
+        font-size: 1rem;
+        max-width: none;
+    }
 </style>
