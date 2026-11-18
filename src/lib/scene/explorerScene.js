@@ -29,6 +29,9 @@ const representationsByScene = {
 	'cad-part': 'part',
 }
 
+// The slow automatic turn while nothing is touched: a full turn takes `period`
+// seconds; `azimuth`/`elevation` (degrees) limit how far it swings around a
+// selected component, so the component stays in view
 const orbitDefaults = { period: 46, easeIn: 3 }
 const componentOrbits = {
 	xrayInstrument: { azimuth: 14, elevation: 4 },
@@ -52,6 +55,8 @@ export function getOrbitSettings(item) {
 	return settings ? { ...orbitDefaults, ...settings } : null
 }
 
+// Camera framing per view: `padding` is the margin around the model (1.12 =
+// 12 %), `direction` the side the camera looks from (x right, y up, z front)
 const satelliteFraming = { padding: 1.12, direction: [0.8, 0.5, 1] }
 const instrumentFraming = { padding: 1.24, direction: [0.9, -0.25, 1] }
 const opticsFraming = { padding: 1.28 }

@@ -1,5 +1,6 @@
 <script>
-	import Icon from '$lib/components/atoms/Icon.svelte'
+	import { Button } from '$lib/components/atoms'
+	import { ChevronIcon, CloseIcon } from '$lib/assets/icons'
 	import ExplorerBreadcrumb from '$lib/components/molecules/ExplorerBreadcrumb.svelte'
 	import { SHEET_STATES } from '$lib/state/viewerState.svelte.js'
 	import { text } from '$lib/state/language.svelte.js'
@@ -51,26 +52,36 @@
 		>
 	</p>
 	{#if state.fullscreen}
-		<button
-			type="button"
-			class="explorer-hide"
+		<Button
+			text=""
+			variant="primary-solid"
+			classes="explorer-hide"
 			aria-controls="explorer"
 			aria-label={text('hideExplorer')}
 			title={text('hideExplorer')}
 			onclick={() => explorer.setExplorerHidden(true)}
 		>
-			<Icon name="close" />
-		</button>
+			{#snippet icon()}<CloseIcon width={16} height={16} />{/snippet}
+		</Button>
 	{/if}
 	<!-- On a phone: opens and folds the sheet; points up while it can open -->
-	<button
-		type="button"
-		class="explorer-sheet-toggle"
-		aria-controls="explorer"
-		aria-expanded={String(sheetExpanded)}
-		aria-label={text(sheetExpanded ? 'collapseExplorer' : 'expandExplorer')}
-		onclick={toggleSheet}
-	>
-		<Icon name="chevron" />
-	</button>
+	{#if explorer.isMobile()}
+		<Button
+			text=""
+			variant="secondary-solid"
+			classes="explorer-sheet-toggle"
+			aria-controls="explorer"
+			aria-expanded={String(sheetExpanded)}
+			aria-label={text(
+				sheetExpanded ? 'collapseExplorer' : 'expandExplorer',
+			)}
+			onclick={toggleSheet}
+		>
+			{#snippet icon()}<ChevronIcon
+					direction={sheetExpanded ? 'down' : 'up'}
+					width={14}
+					height={14}
+				/>{/snippet}
+		</Button>
+	{/if}
 </div>

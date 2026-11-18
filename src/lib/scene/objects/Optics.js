@@ -3,6 +3,10 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js'
 import { createSelectionHighlight } from './SelectionHighlight.js'
 
+// A schematic of the X-ray optics (Wolter mirrors): three nested mirror shells,
+// drawn from simple profiles (radius, height) in scene units rather than CAD, so
+// the path of the X-rays is easy to follow. The real CAD parts (fpm, fpcm,
+// primary, secondary in assets/models/cad) are shown by createPartViewer.
 export function createOptics(scene) {
 	const root = new THREE.Group()
 	root.name = 'WolterExplanation'

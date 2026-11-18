@@ -1,5 +1,8 @@
 import * as THREE from 'three'
 
+// The selected component keeps its own CAD colours with a soft orange glow;
+// everything else becomes a translucent grey "ghost", so the selection stands
+// out without hiding where it sits. Materials are made once and reused.
 const highlightColor = new THREE.Color(0xffaa70)
 const ghostColor = new THREE.Color(0x607080)
 

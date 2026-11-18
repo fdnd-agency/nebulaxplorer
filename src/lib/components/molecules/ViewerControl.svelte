@@ -1,9 +1,19 @@
 <script>
-	import Icon from '$lib/components/atoms/Icon.svelte'
+	import { Button } from '$lib/components/atoms'
+	import {
+		FullscreenIcon,
+		LayersIcon,
+		PauseIcon,
+		PlayIcon,
+		ResetIcon,
+	} from '$lib/assets/icons'
 
+	// A button of the 3D view (the team's Button): `playing` makes it a
+	// pause/play toggle, `iconOnly` shows only the icon with the label as
+	// tooltip and for screen readers
 	let {
 		control,
-		icon,
+		icon: iconName,
 		label,
 		hidden,
 		playing = undefined,
@@ -12,24 +22,34 @@
 		onclick,
 	} = $props()
 
-	const toggles = $derived(playing !== undefined)
+	const icons = {
+		layers: LayersIcon,
+		reset: ResetIcon,
+		fullscreen: FullscreenIcon,
+		fullscreenExit: FullscreenIcon,
+	}
+	const Glyph = $derived(
+		playing === undefined
+			? icons[iconName]
+			: playing
+				? PauseIcon
+				: PlayIcon,
+	)
 </script>
 
-<button
-	type="button"
-	class={['viewer-control', iconOnly && 'is-icon-only']}
+<Button
+	text={iconOnly ? '' : label}
+	variant="primary-solid"
+	iconPosition="before"
+	classes={['viewer-control', iconOnly && 'is-icon-only']}
 	data-control={control}
-	title={iconOnly ? label : undefined}
-	data-state={toggles ? (playing ? 'playing' : 'paused') : undefined}
 	aria-pressed={pressed === undefined ? undefined : String(pressed)}
+	aria-label={iconOnly ? label : undefined}
+	title={iconOnly ? label : undefined}
 	{hidden}
 	{onclick}
 >
-	{#if toggles}
-		<Icon name="pause" stateful />
-		<Icon name="play" stateful />
-	{:else}
-		<Icon name={icon} />
-	{/if}
-	<span class="viewer-control-label">{label}</span>
-</button>
+	{#snippet icon()}
+		<Glyph exit={iconName === 'fullscreenExit'} width={16} height={16} />
+	{/snippet}
+</Button>

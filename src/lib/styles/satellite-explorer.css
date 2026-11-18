@@ -23,8 +23,8 @@
 	--explorer-width: clamp(300px, 34vw, 420px);
 	--sheet-peek-height: 120px;
 	--sheet-expanded-top: var(--spacing-2xl);
-	--sheet-toggle-height: 64px;
-	--toggle-width: 40px;
+	/* The team's menu button (HamburgerButton) */
+	--toggle-width: 4rem;
 }
 
 .satellite-page *,
@@ -41,7 +41,6 @@
 	margin-inline: calc(var(--spacing-md) * -1);
 	color: var(--color-neutral-lightest);
 	background: var(--scene);
-	font: 400 13px/24px var(--font-caption);
 	-webkit-font-smoothing: antialiased;
 }
 
@@ -49,25 +48,6 @@
 	.satellite-page {
 		margin-inline: calc(var(--spacing-xl) * -1);
 	}
-}
-
-.satellite-page :where(*) {
-	margin: revert;
-	padding: revert;
-	min-width: revert;
-}
-
-.satellite-page :where(h1, h2, h3, h4, h5, h6, p) {
-	font-family: revert;
-	font-size: revert;
-	font-weight: revert;
-	line-height: revert;
-	max-width: revert;
-}
-
-.satellite-page :where(ul, a) {
-	list-style: revert;
-	color: revert;
 }
 
 .satellite-page [hidden] {
@@ -82,21 +62,6 @@
 .satellite-page :where(button) {
 	font: inherit;
 	color: inherit;
-}
-
-:where(.satellite-page) .icon {
-	flex: none;
-	width: 16px;
-	height: 16px;
-	fill: none;
-	stroke: currentColor;
-	stroke-width: 1.5;
-	stroke-linecap: square;
-}
-
-:where(.satellite-page) .icon-play path {
-	fill: currentColor;
-	stroke: none;
 }
 
 :where(.satellite-page) .page-notice {
@@ -118,38 +83,6 @@
 	text-underline-offset: 6px;
 }
 
-.language-switcher {
-	display: flex;
-	height: 32px;
-	background: var(--color-accent-mid);
-}
-
-.language-switcher button {
-	padding: 0 10px;
-	border: 0;
-	color: var(--color-brand-darkest);
-	background: none;
-	font: 500 13px/var(--line-height-tight) var(--font-body);
-	letter-spacing: 0.08em;
-	cursor: pointer;
-}
-
-.language-switcher button + button {
-	border-left: 1px solid
-		hsl(var(--brand-h) var(--brand-s) var(--brand-darkest-l) / 32%);
-}
-
-.language-switcher button[aria-pressed='true'] {
-	font-weight: 700;
-	text-decoration: underline 2px;
-	text-underline-offset: 4px;
-}
-
-.language-switcher button:focus-visible {
-	outline-color: var(--color-neutral-lightest);
-	outline-offset: -4px;
-}
-
 .explorer {
 	color: var(--color-neutral-lightest);
 	background: var(--color-brand-darkest);
@@ -157,38 +90,26 @@
 
 .explorer-kicker {
 	margin: var(--spacing-lg) 0 var(--spacing-sm);
-	color: var(--color-accent-mid);
-	font: 500 13px/16px var(--font-body);
-	letter-spacing: 0.1em;
-	text-transform: uppercase;
 }
 
 .explorer-title {
 	margin: 0 0 var(--spacing-md);
-	color: var(--color-neutral-lightest);
-	font: 400 40px/48px var(--font-heading);
-	letter-spacing: -0.01em;
-	text-wrap: balance;
 }
 
-.explorer-title:focus {
+.explorer-title .heading:focus {
 	outline: none;
 }
 
-.explorer-title:focus-visible {
+.explorer-title .heading:focus-visible {
 	outline: 2px solid var(--color-accent-mid);
 }
 
 .explorer-lead {
 	margin: 0 0 var(--spacing-md);
-	color: var(--text);
-	font: 400 var(--font-size-body-sm)/26px var(--font-heading);
 }
 
 .explorer-note {
 	margin: 0 0 var(--spacing-md);
-	color: var(--text-muted);
-	font: 400 12px/20px var(--font-caption);
 }
 
 .explorer-section-label {
@@ -197,6 +118,19 @@
 	font: 500 13px/16px var(--font-body);
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
+}
+
+/* The kicker (subheading) above the title of the team's Heading */
+.explorer-title hgroup {
+	gap: var(--spacing-xs);
+}
+
+/* The section labels are small: the team's Heading takes the label's text
+   style instead of the size of an h2 */
+.explorer-section-label .heading {
+	font: inherit;
+	letter-spacing: inherit;
+	text-transform: inherit;
 }
 
 .explorer-tree {
@@ -331,11 +265,6 @@
 	margin-left: -22px;
 }
 
-.explorer-node-content .explorer-lead {
-	font-size: 15px;
-	line-height: 24px;
-}
-
 .js-enhanced .explorer-node-body {
 	display: grid;
 	grid-template-rows: 0fr;
@@ -357,8 +286,6 @@
 
 .explorer-about p {
 	margin: 0 0 var(--spacing-md);
-	color: var(--text);
-	font: 400 13px/24px var(--font-caption);
 }
 
 .viewer-poster {
@@ -395,20 +322,6 @@
 
 .viewer-load-model {
 	justify-self: start;
-	padding: 12px 20px;
-	border: 0;
-	color: var(--color-brand-darkest);
-	background: var(--color-accent-mid);
-	font: 500 13px/var(--line-height-tight) var(--font-body);
-	letter-spacing: 0.1em;
-	text-transform: uppercase;
-	cursor: pointer;
-}
-
-.viewer-load-model:hover {
-	color: var(--color-accent-mid);
-	background: var(--color-brand-darkest);
-	box-shadow: inset 0 0 0 1px var(--color-accent-mid);
 }
 
 .explorer-root > .explorer-about {
@@ -781,49 +694,8 @@
 	gap: var(--spacing-sm);
 }
 
-.viewer-control {
-	display: inline-flex;
-	align-items: center;
-	gap: var(--spacing-sm);
-	height: 36px;
-	padding: 0 14px;
-	border: 0;
-	border-radius: 0;
-	color: var(--color-neutral-lightest);
-	background: hsl(var(--brand-h) var(--brand-s) var(--brand-darkest-l) / 92%);
-	font: 500 12px/var(--line-height-tight) var(--font-body);
-	letter-spacing: 0.1em;
-	text-transform: uppercase;
-	cursor: pointer;
-	transition: color 150ms var(--ease);
-}
-
-.viewer-control.is-icon-only {
-	justify-content: center;
-	width: 36px;
-	padding: 0;
-}
-
-.viewer-control.is-icon-only .viewer-control-label {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	overflow: hidden;
-	clip-path: inset(50%);
-	white-space: nowrap;
-}
-
-.viewer-control:hover {
-	color: var(--color-accent-mid);
-}
-
 .viewer-control[aria-pressed='true'] {
 	box-shadow: inset 0 -2px 0 var(--color-accent-mid);
-}
-
-.viewer-control[data-state='playing'] .icon-play,
-.viewer-control[data-state='paused'] .icon-pause {
-	display: none;
 }
 
 @keyframes loading-line {
@@ -903,13 +775,8 @@
 		--explorer-mode: sheet;
 	}
 
-	.explorer-title {
-		font-size: 28px;
-		line-height: 34px;
-	}
-
 	.js-enhanced .viewer {
-		--visible-bottom: var(--sheet-toggle-height);
+		--visible-bottom: var(--sheet-peek-height);
 	}
 
 	.js-enhanced .viewer[data-sheet='peek'] {
@@ -981,32 +848,11 @@
 
 	/* The arrow that opens the sheet, beside the selected item */
 	.js-enhanced .explorer-sheet-toggle {
-		display: grid;
 		grid-row: 1 / span 2;
 		grid-column: 2;
-		place-items: center;
 		width: 44px;
 		height: 44px;
 		margin-right: var(--spacing-sm);
-		border: 0;
-		color: var(--color-brand-darkest);
-		background: var(--color-accent-mid);
-		cursor: pointer;
-	}
-
-	.js-enhanced .explorer-sheet-toggle .icon {
-		width: 20px;
-		height: 20px;
-		stroke-width: 2;
-		transition: transform 250ms var(--ease);
-	}
-
-	.js-enhanced .explorer-sheet-toggle[aria-expanded='true'] .icon {
-		transform: rotate(180deg);
-	}
-
-	.js-enhanced .explorer-sheet-toggle:focus-visible {
-		outline-color: var(--color-neutral-lightest);
 	}
 
 	.js-enhanced .explorer-grabber::before {
@@ -1162,11 +1008,6 @@
 }
 
 @container explorer (width < 340px) {
-	.explorer-title {
-		font-size: 26px;
-		line-height: 32px;
-	}
-
 	.explorer-node-link {
 		grid-template-columns: 30px minmax(0, 1fr) auto auto;
 		padding-right: var(--spacing-sm);
@@ -1194,15 +1035,8 @@
 }
 
 @container explorer (width >= 520px) {
-	.explorer-title {
-		font-size: 44px;
-		line-height: 52px;
-	}
-
 	.explorer-lead {
 		max-width: 60ch;
-		font-size: 17px;
-		line-height: 28px;
 	}
 
 	.explorer-node-link {
@@ -1242,19 +1076,8 @@
 
 @container viewer-hud (width < 640px) {
 	.viewer-control {
-		justify-content: center;
 		width: 40px;
 		height: 40px;
-		padding: 0;
-	}
-
-	.viewer-control .viewer-control-label {
-		position: absolute;
-		width: 1px;
-		height: 1px;
-		overflow: hidden;
-		clip-path: inset(50%);
-		white-space: nowrap;
 	}
 }
 
@@ -1290,7 +1113,6 @@
 	}
 
 	.viewer-control {
-		background: var(--color-brand-darkest);
 		outline: 1px solid var(--color-neutral-lightest);
 		outline-offset: -1px;
 	}
@@ -1306,7 +1128,7 @@
 @media (forced-colors: active) {
 	.explorer-node-link,
 	.viewer-control,
-	.language-switcher button {
+	.language-option {
 		forced-color-adjust: auto;
 	}
 
@@ -1408,16 +1230,11 @@
 
 .satellite-page:not(.js-enhanced) .explorer-title {
 	margin-bottom: 20px;
-	font-size: clamp(36px, 5.2vw, 68px);
-	line-height: 1.04;
-	letter-spacing: -0.02em;
 }
 
 .satellite-page:not(.js-enhanced) .explorer-intro > .explorer-lead {
 	max-width: 34em;
 	margin-bottom: 28px;
-	font-size: clamp(16px, 1.5vw, 19px);
-	line-height: 1.6;
 }
 
 .explorer-call-to-action {
@@ -1425,31 +1242,11 @@
 	align-items: center;
 	gap: 12px;
 	padding: 15px 22px;
-	color: var(--color-brand-darkest);
 	background: var(--color-accent-mid);
-	font: 500 13px/var(--line-height-tight) var(--font-body);
-	letter-spacing: 0.1em;
 	text-decoration: none;
-	text-transform: uppercase;
 	transition:
 		box-shadow 200ms var(--ease),
 		background-color 200ms var(--ease);
-}
-
-.explorer-call-to-action::after {
-	content: '↓';
-	font-family: var(--font-heading);
-	letter-spacing: 0;
-}
-
-.explorer-call-to-action:hover {
-	color: var(--color-accent-mid);
-	background: var(--color-brand-darkest);
-	box-shadow: inset 0 0 0 1px var(--color-accent-mid);
-}
-
-.explorer-call-to-action:focus-visible {
-	outline-color: var(--color-neutral-lightest);
 }
 
 .explorer-static-note {
@@ -1716,8 +1513,6 @@
 	display: none;
 	max-width: 58ch;
 	margin: 0;
-	color: var(--color-neutral-lightest);
-	font: 400 15px/1.6 var(--font-caption);
 }
 
 .satellite-page:not(.js-enhanced) .is-exhibit > .explorer-node-body {
@@ -1737,7 +1532,6 @@
 	> .explorer-node-summary {
 	display: block;
 	margin: 0 0 20px;
-	font-size: clamp(15px, 1.4vw, 17px);
 }
 
 .satellite-page:not(.js-enhanced)
@@ -1761,21 +1555,8 @@
 	gap: 10px;
 	min-height: 44px;
 	margin: 0 0 12px;
-	color: var(--color-neutral-lightest);
-	font: 500 13px/var(--line-height-tight) var(--font-body);
-	letter-spacing: 0.08em;
 	text-decoration: underline 1px var(--line);
 	text-underline-offset: 6px;
-	text-transform: uppercase;
-}
-
-.explorer-back::before {
-	content: '←';
-	font-family: var(--font-heading);
-}
-
-.explorer-back:hover {
-	text-decoration-color: var(--select);
 }
 
 @media (width >= 900px) {
@@ -1808,9 +1589,6 @@
 
 	.satellite-page:not(.js-enhanced) .is-exhibit > .explorer-node-summary {
 		display: block;
-		color: var(--text-muted);
-		font-size: 13px;
-		line-height: 1.6;
 	}
 
 	.satellite-page:not(.js-enhanced) .is-exhibit > .explorer-node-heading,
@@ -1824,13 +1602,6 @@
 
 	.satellite-page:not(.js-enhanced) .is-exhibit:is(:target, :has(:target)) {
 		grid-template-columns: minmax(0, 1fr);
-	}
-
-	.satellite-page:not(.js-enhanced)
-		.is-exhibit:is(:target, :has(:target))
-		> .explorer-node-summary {
-		color: var(--color-neutral-lightest);
-		font-size: 17px;
 	}
 }
 
@@ -2310,48 +2081,47 @@
 	}
 }
 
+/* Buttons of the 3D view: the team's Button. Without a label they are
+   square; on a narrow 3D view the label is only for screen readers. */
+.viewer-controls .button.is-icon-only,
+.explorer-bar .button.explorer-hide,
+.explorer-bar .button.explorer-sheet-toggle {
+	width: 2.75rem;
+	height: 2.75rem;
+	padding: 0;
+}
+
+.language-switcher {
+	display: flex;
+}
+
+@container viewer-hud (width < 640px) {
+	.viewer-controls .button.viewer-control {
+		width: 2.75rem;
+		height: 2.75rem;
+		padding: 0;
+		gap: 0;
+		font-size: 0;
+	}
+}
+
 /* Full screen: the explorer can be hidden ===================================
    On the page the explorer is always open. In full screen its close button
-   hides it, so the satellite has the whole screen; the orange menu bar
-   (explorer-toggle) brings it back. */
-.explorer-hide,
-.explorer-toggle {
-	display: none;
-}
-
+   hides it, so the satellite has the whole screen; the team's menu button
+   (explorer-toggle) in the top right corner brings it back. */
 .js-enhanced .explorer-toggle {
 	position: fixed;
+	top: 0;
+	right: 0;
 	z-index: 45;
-	display: flex;
-	align-items: center;
-	border: 0;
-	cursor: pointer;
-}
-
-.explorer-toggle-label {
-	font: 500 12px/var(--line-height-tight) var(--font-body);
-	letter-spacing: 0.12em;
-	text-transform: uppercase;
-	white-space: nowrap;
-}
-
-.satellite-page.js-enhanced:fullscreen .explorer-hide {
-	display: grid;
-	place-items: center;
-	width: 44px;
-	height: 44px;
-	border: 0;
-	color: var(--color-neutral-lightest);
-	background: none;
-	cursor: pointer;
-}
-
-.satellite-page.js-enhanced:fullscreen .explorer-hide:hover {
-	color: var(--color-accent-mid);
 }
 
 .js-enhanced .explorer[data-hidden='true'] {
 	visibility: hidden;
+}
+
+.explorer-layout:has(> .viewer[data-explorer='hidden']) > .language-switcher {
+	right: calc(var(--toggle-width) + var(--spacing-lg));
 }
 
 @media (width >= 720px) {
@@ -2369,37 +2139,7 @@
 	}
 
 	.js-enhanced .viewer[data-explorer='hidden'] {
-		--visible-right: var(--toggle-width);
-	}
-
-	.explorer-layout:has(> .viewer[data-explorer='hidden'])
-		> .language-switcher {
-		right: calc(var(--toggle-width) + var(--spacing-lg));
-	}
-
-	/* A vertical orange bar on the right edge, where the explorer was */
-	.js-enhanced .explorer-toggle {
-		top: 0;
-		right: 0;
-		bottom: 0;
-		flex-direction: column;
-		gap: 20px;
-		width: var(--toggle-width);
-		padding: 20px 0;
-		color: var(--color-brand-darkest);
-		background: var(--color-accent-mid);
-		transition:
-			color 150ms var(--ease),
-			background-color 150ms var(--ease);
-	}
-
-	.js-enhanced .explorer-toggle:hover {
-		color: var(--color-accent-mid);
-		background: var(--color-brand-darkest);
-	}
-
-	.explorer-toggle-label {
-		writing-mode: vertical-rl;
+		--visible-right: 0px;
 	}
 }
 
@@ -2422,26 +2162,6 @@
 	}
 
 	.js-enhanced .viewer[data-explorer='hidden'] {
-		--visible-bottom: var(--sheet-toggle-height);
-	}
-
-	/* A bar along the bottom, where the sheet was */
-	.js-enhanced .explorer-toggle {
-		right: 0;
-		bottom: 0;
-		left: 0;
-		justify-content: center;
-		gap: 12px;
-		height: var(--sheet-toggle-height);
-		border-top: 1px solid var(--line);
-		color: var(--color-neutral-lightest);
-		background: var(--color-brand-darkest);
-	}
-
-	.js-enhanced .explorer-toggle .icon {
-		box-sizing: content-box;
-		padding: 6px;
-		color: var(--color-brand-darkest);
-		background: var(--color-accent-mid);
+		--visible-bottom: 0px;
 	}
 }

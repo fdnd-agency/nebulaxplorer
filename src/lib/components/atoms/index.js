@@ -13,6 +13,5 @@ export { default as SkipLink } from "./SkipLink.svelte";
 
 // Satellite explorer (/technology)
 export { default as ComponentImage } from './ComponentImage.svelte';
-export { default as Icon } from './Icon.svelte';
 export { default as PageNotice } from './PageNotice.svelte';
 export { default as StatusMessage } from './StatusMessage.svelte';

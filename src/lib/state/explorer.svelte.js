@@ -67,7 +67,7 @@ export function createExplorer(content) {
 	async function focusItem(id) {
 		await tick()
 		if (id === tree.rootId) {
-			const title = document.querySelector('.explorer-title')
+			const title = document.querySelector('.explorer-title .heading')
 			title.tabIndex = -1
 			title.focus({ preventScroll: true })
 			return

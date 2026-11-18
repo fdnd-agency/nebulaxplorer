@@ -23,8 +23,7 @@ const interfaceCopy = {
 		selected: 'selected',
 		fallback:
 			'The interactive 3D model is not available on this device. All satellite information is available below.',
-		skipLink: 'Skip to the satellite explorer',
-		mainWebsite: 'Main website ↗',
+
 		explorerLabel: 'Satellite explorer',
 		canvasLabel:
 			'Interactive 3D model of the NEBULA Xplorer satellite. Use the satellite explorer for the same information.',
@@ -70,8 +69,7 @@ const interfaceCopy = {
 		selected: 'geselecteerd',
 		fallback:
 			'Het interactieve 3D-model is niet beschikbaar op dit apparaat. Alle informatie over de satelliet staat hieronder.',
-		skipLink: 'Naar de satellietverkenner',
-		mainWebsite: 'Hoofdwebsite ↗',
+
 		explorerLabel: 'Satellietverkenner',
 		canvasLabel:
 			'Interactief 3D-model van de NEBULA Xplorer-satelliet. Gebruik de satellietverkenner voor dezelfde informatie.',

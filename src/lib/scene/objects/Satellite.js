@@ -20,6 +20,11 @@ let currentView = 'satellite'
 let satelliteMaterialMap = []
 let satelliteHighlight = null
 
+// Which CAD nodes belong to each component. These are node names from the
+// STEP assembly as they arrive in the GLB (see getObjectPath for how they are
+// normalised); a name also matches its numbered instances (`_1`, `_2`, ...).
+// After a new STEP export, check these names: `npm run verify:satellite`
+// (scripts/verify/models.mjs) fails when a component loses its parts.
 const componentMeshNames = {
 	xrayInstrument: [
 		'Instrument19-6_C',
@@ -61,6 +66,8 @@ const componentMeshNames = {
 
 export const satelliteComponents = Object.keys(componentMeshNames)
 
+// The outer panels and solar arrays that the X-ray cutaway hides, so the
+// instrument inside is visible ("Outer panels" button)
 const satelliteInteriorHideNames = [
 	'Top_Side_Panel',
 	'Upper_Side_Panel',
@@ -81,6 +88,9 @@ const satelliteInteriorHideNames = [
 const meshComponents = new Map()
 const componentMeshes = new Map()
 
+// A reference look per type of part. By default the viewer keeps the colours
+// from the STEP file (Satellite.source-colors.glb); these are only applied when
+// a model is loaded with `applyReferenceAppearance`.
 const visualCategories = {
 	BODY_DARK: new THREE.MeshStandardMaterial({
 		name: 'Nebula Xplorer Base / BODY_DARK',
@@ -182,6 +192,9 @@ function getVisualCategory(object) {
 	return 'OTHER'
 }
 
+// The names of a node and its parents, lowercased, with spaces, colons, dots
+// and dashes as underscores (GLTFLoader also renames nodes), so CAD names can
+// be matched reliably
 function getObjectPath(object) {
 	const names = []
 	let current = object
@@ -550,6 +563,9 @@ export function getSelectableComponentMeshes() {
 	return [...meshComponents.keys()]
 }
 
+// Where the camera looks when a component is selected. The sun sensor is four
+// identical sensors on different sides: the camera goes to the one that was
+// clicked, or else the one facing the camera most.
 export function getComponentFocus(component, { camera, object } = {}) {
 	if (!satelliteRoot) return null
 
@@ -651,6 +667,8 @@ export function previewComponent(component) {
 	satelliteHighlight?.preview(componentMeshes.get(component) ?? [])
 }
 
+// Where the numbered marker of a component sits: on a named part, or on the
+// centre of its largest part (a solar panel is mostly empty space in the middle)
 const componentAnchorPaths = {
 	xrayInstrument: 'concentrator_sunshades',
 }

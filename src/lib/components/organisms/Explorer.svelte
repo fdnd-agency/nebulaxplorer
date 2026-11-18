@@ -1,4 +1,6 @@
 <script>
+	import { Button, Heading, Paragraph } from '$lib/components/atoms'
+	import { ArrowIcon } from '$lib/assets/icons'
 	import ExplorerCredits from '$lib/components/molecules/ExplorerCredits.svelte'
 	import ExplorerHero from '$lib/components/molecules/ExplorerHero.svelte'
 	import ExplorerBar from '$lib/components/organisms/ExplorerBar.svelte'
@@ -136,19 +138,29 @@
 			data-scene={content.scene}
 		>
 			<div class="explorer-intro">
-				<p class="explorer-kicker">{pick(kicker)}</p>
-				<h2 class="explorer-title">{pick(title)}</h2>
-				<p class="explorer-lead">{pickFor(state.enhanced, lead)}</p>
+				<div class="explorer-title">
+					<Heading headingLevel={2} subheading={pick(kicker)}
+						>{pick(title)}</Heading
+					>
+				</div>
+				<div class="explorer-lead">
+					<Paragraph>{pickFor(state.enhanced, lead)}</Paragraph>
+				</div>
 				<!-- The page without the 3D model: a catalogue of the components -->
 				{#if !state.enhanced}
-					<a
-						class="explorer-call-to-action"
+					<Button
 						href="#explorer-components-title"
-						>{pick(exploreComponents).replace(
+						text={pick(exploreComponents).replace(
 							'{count}',
 							String(children.length),
-						)}</a
+						)}
+						variant="secondary-solid"
+						classes="explorer-call-to-action"
 					>
+						{#snippet icon()}<ArrowIcon
+								direction="down"
+							/>{/snippet}
+					</Button>
 					<noscript>
 						<p class="explorer-static-note">{pick(staticNote)}</p>
 					</noscript>
@@ -161,12 +173,12 @@
 				class="explorer-tree-navigation"
 				aria-labelledby="explorer-components-title"
 			>
-				<h2
+				<div
 					class="explorer-section-label"
 					id="explorer-components-title"
 				>
-					{pick(componentsLabel)}
-				</h2>
+					<Heading headingLevel={2}>{pick(componentsLabel)}</Heading>
+				</div>
 				<ol class="explorer-tree">
 					{#each children as item, index (item.id)}
 						<ExplorerNode
@@ -179,10 +191,10 @@
 				</ol>
 			</nav>
 			<div class="explorer-about">
-				<h2 class="explorer-section-label">
-					{pick(mission.title)}
-				</h2>
-				<p>{pick(mission.text)}</p>
+				<div class="explorer-section-label">
+					<Heading headingLevel={2}>{pick(mission.title)}</Heading>
+				</div>
+				<Paragraph>{pick(mission.text)}</Paragraph>
 			</div>
 		</div>
 

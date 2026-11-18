@@ -1,4 +1,5 @@
 <script>
+	import { Link, Paragraph } from '$lib/components/atoms'
 	import ComponentImage from '$lib/components/atoms/ComponentImage.svelte'
 	import ComponentViews from '$lib/components/molecules/ComponentViews.svelte'
 	import ExplorerItemContent from '$lib/components/molecules/ExplorerItemContent.svelte'
@@ -54,9 +55,13 @@
 	>
 		<div class="explorer-node-content">
 			{#if exhibit}
-				<a class="explorer-back" href={backHref}
-					>{text(depth === 1 ? 'allComponents' : 'allParts')}</a
-				>
+				<Link
+					href={backHref}
+					text={text(depth === 1 ? 'allComponents' : 'allParts')}
+					size="sm"
+					color="var(--color-neutral-lightest)"
+					classes="explorer-back"
+				/>
 				<ComponentViews {item} {scope} />
 			{:else if catalogue && item.map}
 				<InstrumentMap map={item.map} parts={children} />
@@ -133,7 +138,9 @@
 			></svelte:element
 		>
 		{#if exhibit && item.summary}
-			<p class="explorer-node-summary">{pick(item.summary)}</p>
+			<div class="explorer-node-summary">
+				<Paragraph>{pick(item.summary)}</Paragraph>
+			</div>
 		{/if}
 		{@render body()}
 	{/if}

@@ -1,4 +1,5 @@
 <script>
+	import { Button } from '$lib/components/atoms'
 	import { language, text } from '$lib/state/language.svelte.js'
 
 	let { visible, onload } = $props()
@@ -25,8 +26,11 @@
 	{/if}
 	<div class="viewer-poster-panel">
 		<p>{text('posterText')}</p>
-		<button type="button" class="viewer-load-model" onclick={onload}
-			>{text('loadModel')}</button
-		>
+		<Button
+			text={text('loadModel')}
+			variant="secondary-solid"
+			classes="viewer-load-model"
+			onclick={onload}
+		/>
 	</div>
 </div>

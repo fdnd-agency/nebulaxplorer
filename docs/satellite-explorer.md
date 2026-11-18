@@ -1,46 +1,62 @@
-# Satellite explorer
+# Satellite explorer (handover)
 
-The 3D satellite explorer lives on the `/technology` page. It is built with Svelte 5 and Three.js and follows the folder structure in [`CONTRIBUTING.md`](../CONTRIBUTING.md).
+The Technology page (`/technology`) shows an interactive 3D model of the NEBULA Xplorer satellite with a list of its components (epic #542). This document is for whoever works on it next: where everything is, how it works together, and how to change texts, components and the 3D model.
 
-The `/technology` page of the site shows the 3D model of the satellite in a section one screen high, below the site's header and hero and above its footer. The explorer is always open: a panel on the right on desktop (the site's own menu stays on the left), and on mobile a bottom sheet that folds between its peek row and expanded, and never closes. Inside the section only the explorer content scrolls; the page around it scrolls as usual. The mouse wheel scrolls the page; Ctrl or ⌘ with the wheel (or pinching on a trackpad) zooms the model. On touch screens a vertical swipe scrolls the page, a sideways swipe rotates and pinching zooms.
+## Quick start
 
-The page uses the site's layout: its header and navigation (the **Technology** link), hero, locations and footer, and its colours, fonts and focus style (`stylesheet.css`). The explorer's own styles in `satellite-explorer.css` start from `.satellite-page`, so they do not change the rest of the site, also after visiting the page. The NL/EN switch only changes the explorer and sets `lang` on its section. The explorer's state is kept on that section too (`js`, `js-enhanced` and `data-layout` on `.satellite-page`), not on `<html>`.
-
-The explorer is one continuous, nested list. Selecting an item expands it in place, showing its description and its own numbered parts underneath, while its parents stay visible:
-
-```
-01 X-Ray Instrument
-   01 Instrument components
-      01 Detector modules … 07 Support panel
-   02 Optics
-      01 Mirror and X-ray path
-         01 Primary mirror … 06 X-ray path
-      02 Individual CAD parts
-02 Star Tracker Module
-…
-07 Solar Panel
+```sh
+npm install
+npm run dev            # http://localhost:5173/technology
+npm run build          # needed before the explorer check and before preview
+npm run preview        # the built site, http://localhost:4173/technology
+npm run verify:satellite
 ```
 
-Only the path to the selected item is expanded, so the list never turns into a long accordion; the selection scrolls into a comfortable position. Selecting the selected item again collapses it. The breadcrumb at the top of the panel is orientation and a shortcut, not the main way to move around.
+`npm run verify:satellite` runs the checks in `scripts/verify/`: viewer assets, CAD models and component mapping, optics, performance, motion detail, CAD transforms, the explorer list (read from the built page, so run `npm run build` first) and the camera orbit. Run it after every change to the explorer, the content or the models.
 
-There is one explorer state: the selected item. It determines the expanded path, the breadcrumb, the URL hash, camera framing, highlight, cutaway, which model is shown (satellite, detailed instrument, schematic or CAD part), the numbered markers and the contextual controls. Selecting an item in the explorer, clicking a marker or clicking the model produces the same state. On mobile the sheet collapses to peek after selecting an item without parts, so the camera movement is visible.
+## Where it is loaded
 
-## Progressive enhancement and accessibility
+- `src/routes/technology/+page.server.js` loads the content (`src/lib/server/explorerContent.js`) and prerenders the page, so it also works without JavaScript.
+- `src/routes/technology/+page.svelte` only passes that data to the `SatelliteExplorer` organism.
+- The page uses the site's layout (`src/routes/+layout.svelte`): header and navigation (the **Technology** link), hero, locations and footer, and the shared stylesheet `src/lib/styles/stylesheet.css`.
+- `src/lib/components/organisms/SatelliteExplorer.svelte` is the whole explorer: it imports `src/lib/styles/satellite-explorer.css`, creates the explorer state and renders the 3D viewer, the component list, the language switch and the notices inside one section, `<div class="satellite-page">`.
 
-All content lives in `src/lib/server/explorerContent.js` (English and Dutch side by side). `src/routes/technology/+page.server.js` loads it and SvelteKit prerenders it into one nested semantic list: every item is an `<li data-explorer-item>` with a heading containing a real link, a body with its confirmed description, and a nested `<ol>` of its parts. Without JavaScript or WebGL the page is an exhibit with the same hierarchy, numbering and links (see [The page without JavaScript](#the-page-without-javascript)). Every item is deep-linkable through its id, for example `/technology#instrument-detectors`.
+### Team components the explorer uses
 
-With JavaScript Svelte hydrates the same HTML into the explorer, and the 3D model enhances it:
+| Team component | Where in the explorer |
+| --- | --- |
+| `Heading` (atoms) | The title with its kicker ("Spacecraft"), the "Components" and "About the mission" labels |
+| `Paragraph` (atoms) | Every text: introduction, descriptions, notes, mission text |
+| `Button` (atoms) | "Explore 7 components" (no JavaScript), the viewer buttons (pause rotation, outer panels, X-rays, reset view, full screen), NL/EN, the phone sheet arrow, hide in full screen, "Load 3D model" |
+| `Link` (atoms) | "All components" / "All parts" (no JavaScript) |
+| `HamburgerButton` (atoms) | Brings the hidden explorer back in full screen. It got two optional props, `onclick` and `label`: without `onclick` it still opens the site menu as before |
+| `ArrowIcon`, `ChevronIcon`, `CloseIcon` (`src/lib/assets/icons`) | Call-to-action arrow, sheet arrow, hide button |
+| `PauseIcon`, `PlayIcon`, `LayersIcon`, `ResetIcon`, `FullscreenIcon` | Added to `src/lib/assets/icons` in the same style, for the viewer buttons |
+| Colour, font, spacing and type tokens (`stylesheet.css`) | All of `satellite-explorer.css`; the only colours of its own are the 3D scene background (`--scene`), the studio backdrop of the rendered close-ups (`--studio`) and the blue of a selected part (`--select`) |
 
-- item links expose `aria-expanded` and `aria-controls`; collapsed parts are inert, so they are skipped by keyboard and screen readers
-- the selected item is marked with `aria-current`, and selections are announced through a status message ("05, Sun Sensor, selected")
-- the canvas is a single labelled image; the numbered markers on the model are hidden from assistive technology because the matching links carry the same action
-- Escape moves up one level inside the explorer; on mobile it folds the expanded sheet back to its peek row
-- controls expose their state (`aria-expanded`, `aria-pressed`) and change their label where the action changes
-- `prefers-reduced-motion` removes camera flights, the ambient orbit, expand animations and the X-ray animation
+What stays specific to the explorer, and why:
 
-## Linking to a component
+- `ViewerControl` and `ViewerControls` (molecule, organism): the team `Button` with an icon, a pause/play state and an icon-only form, placed over the 3D view. On a narrow 3D view only the icons show; the label stays for screen readers.
+- The component list (`Explorer`, `ExplorerNode`, `ExplorerBreadcrumb`): a nested, numbered list where every row is a link to `#id` that expands in place. None of the team components does this (`ContentAccordion` has a fixed label and no link per row).
+- `ComponentImage`: the explorer's images are files in `static/media/`, while the team `Image` needs an imported image (`?enhanced`).
+- The 3D viewer itself (`Viewer` and everything in `src/lib/scene/`).
 
-Every item can be opened with a normal link to its id, from this page or from any other page of the site. The main satellite components are:
+### Styling rules
+
+- Every rule in `satellite-explorer.css` starts from `.satellite-page` or one of the explorer's own classes, so nothing changes on other pages, also after visiting Technology.
+- The explorer's state is set on its section, not on `<html>`: `js` (JavaScript runs), `js-pending` (the 3D view is starting), `js-enhanced` (the 3D view runs) and `data-layout` (`panel`, `sheet` or a dual-screen layout). Styles for the page without JavaScript use `.satellite-page:not(.js-enhanced)`.
+- When you leave the page, the section is removed, the explorer stops listening to keyboard, history and full screen events (`connect()` in `src/lib/state/explorer.svelte.js`) and the 3D renderer is disposed (`src/lib/scene/viewerController.js`).
+
+## How the list, links, selection and 3D view work together
+
+There is one piece of state: the selected item (`state.selectedId` in `src/lib/state/explorer.svelte.js`). Everything follows from it: which rows are expanded, the breadcrumb, the URL hash, the camera, the highlight, the cutaway, which model is shown, the numbered markers and the viewer buttons.
+
+1. Every item in the list is a link to its id, for example `/technology#sun-sensor`. Without JavaScript the browser opens it on the page (CSS `:target`).
+2. With JavaScript, `Explorer.svelte` catches the click and calls `explorer.navigate(id)`. That updates the hash (`history.pushState`), so Back and Forward move through earlier selections (`handlePopstate`).
+3. `Viewer.svelte` passes the selection to `src/lib/scene/viewerController.js`, which asks `src/lib/scene/explorerScene.js` what to show for that item (satellite, instrument, optics schematic or CAD part). It then flies the camera there (`src/lib/scene/updateCamera.js`) and highlights the component (`src/lib/scene/objects/SelectionHighlight.js`).
+4. Clicking the 3D model or a numbered marker does the same in reverse: `src/lib/scene/objects/Satellite.js` finds which component a mesh belongs to (`getComponentFromObject`), and the explorer selects it.
+
+The links of the main components:
 
 | Component | Link |
 | --- | --- |
@@ -52,84 +68,116 @@ Every item can be opened with a normal link to its id, from this page or from an
 | Magnetorquers | `/technology#magnetorquers` |
 | Solar Panel | `/technology#solar-panel` |
 
-The HTML and the 3D viewer talk through the URL hash and the selected item:
+The older ids `#xray-instrument` and `#star-tracker-module` still work (`aliases` in `explorerContent.js`).
 
-- a link to `#sun-sensor` (in the explorer, in a menu on the page or on another page) selects the Sun Sensor: the list expands to it, the model highlights it, the camera flies to it and the right view (satellite, instrument, schematic or CAD part) is shown
-- clicking the model or a marker selects the item the same way, updates the hash and marks the item in the list with `aria-current`
-- Back and Forward move through earlier selections
+### Layout and controls
 
-Without JavaScript the same link opens the item on the page and scrolls to it. The earlier ids `#xray-instrument` and `#star-tracker-module` still work and are replaced by the current ones (`aliases` in `explorerContent.js`).
+- **Desktop (720 px and wider):** the list is a panel on the right, always open; the site's own menu stays on the left. The 3D view is one screen high below the site header, and the page scrolls past it.
+- **Phone:** the list is a sheet at the bottom. It folds between its peek row (the selected item) and expanded, with the orange arrow or by dragging; it never closes.
+- **Mouse:** the wheel scrolls the page; Ctrl/⌘ + wheel or a trackpad pinch zooms (`src/lib/scene/controls.js`).
+- **Touch:** a vertical swipe scrolls the page, a sideways swipe rotates, pinching zooms.
+- **Full screen** (button bottom right, not on iPhone, where Safari only allows video full screen): the 3D view and the list fill the screen. Only there can the list be hidden (×); the team's menu button brings it back, and Esc returns to the page.
+- **Keyboard:** Tab reaches the viewer buttons and every list row; Escape moves up one level, and on a phone it folds the expanded sheet.
+- **Reduced motion** turns off camera flights, the slow automatic turn, expand animations and the X-ray animation.
 
-Only confirmed content is shown. An item without a confirmed description simply has no description paragraph; there are no placeholder texts.
+## Changing a text or a component
 
-## Camera behaviour
+All texts are in `src/lib/server/explorerContent.js`, English and Dutch side by side (`{ en, nl }`).
 
-Selecting an item flies the camera to a good viewing angle for it. After the flight a slow, eased orbit continues around the selected component within a per-item range (narrower for the X-ray cutaway, none for the optics schematic). Dragging takes over immediately; the orbit resumes after a few seconds of inactivity. **Pause rotation** stops it.
+- **Change a text:** edit it there. Texts that tell visitors to select or rotate something have a `withoutScript` version for the page without JavaScript.
+- **Add an item:** copy a sibling in the `children` of its parent, and give it a unique `id` (kebab-case, it becomes the link), a `scene`, a `title` and `blocks` (`lead`, `note` or `about`). Numbers, counts and heading levels follow from the position in the list.
+- **Scenes:** `satellite`, `satellite-component`, `instrument`, `instrument-component`, `optics`, `optical-path`, `optical-component`, `cad-parts` and `cad-part` (see `src/lib/scene/explorerScene.js`).
+- **A new satellite component** also needs its CAD names in `componentMeshNames` in `src/lib/scene/objects/Satellite.js`. Parts of the X-ray instrument are mapped in `src/lib/scene/objects/InstrumentComponents.js`.
+- **The interface texts** (buttons, labels, NL/EN) are in `src/lib/state/language.svelte.js`.
+- **Afterwards:** run `npm run build` and `npm run verify:satellite`. The explorer check reports problems in nesting, numbers, counts, heading levels or scene mapping.
 
-## Adding or removing an item
+Only confirmed texts from SRON are used; an item without a confirmed description has no description, and there are no placeholder texts.
 
-1. Add or remove an entry in the `children` of its parent in `src/lib/server/explorerContent.js`: a unique `id`, a `scene` (plus `component` where needed), a `title` and its `blocks` (`lead`, `note` or `about` paragraphs), each text with `en` and `nl`. Copy a sibling as a template.
-2. Numbers, child counts and heading levels follow from the position in the tree; there is nothing to renumber.
-3. Run `npm run build` and `node scripts/verify/explorer.mjs`. The check reads the prerendered HTML and reports any mismatch in nesting, numbers, counts, heading levels or scene mapping.
+## A new STEP file
 
-Supported scenes: `satellite`, `satellite-component`, `instrument`, `instrument-component`, `optics`, `optical-path`, `optical-component`, `cad-parts`, `cad-part`. Satellite component ids are defined in `src/lib/scene/objects/Satellite.js`; instrument part ids in `src/lib/scene/objects/InstrumentComponents.js`.
+The viewer loads `src/lib/assets/models/satellite/Satellite.viewer.glb` (and `instrument/Instrument.viewer.glb` for the detailed instrument). It is made from a STEP export in two steps.
 
-## Responsive design
+1. **STEP to GLB with the CAD colours.** This needs Python 3.12 with OpenCascade (`pip install cadquery-ocp`):
 
-Layout follows the available space: a bottom sheet below 720 px, a side panel from 720 px, and a docked layout on dual-screen devices (Viewport Segments API, as progressive enhancement). Components adapt with container queries, and the explorer respects reduced motion, reduced transparency, increased contrast, forced colours and reduced data. See [`responsive-design.md`](responsive-design.md) for the tests, decisions and remaining work.
+   ```sh
+   python scripts/convert-step.py path/to/assembly.stp src/lib/assets/models/source/Satellite.source-colors.glb
+   ```
 
-## Where the code lives
+   It keeps the colours and node names from the STEP file. A large assembly takes a few minutes.
 
-- `src/routes/technology/` – `+page.server.js` loads the explorer content and prerenders the page, `+page.svelte` passes it to the `SatelliteExplorer` organism
-- `src/lib/components/atoms/`, `molecules/` and `organisms/` – the explorer components, exported from each folder's `index.js`
-- `src/lib/state/` – explorer tree, navigation state (`explorer.svelte.js`), viewer state and language
-- `src/lib/server/explorerContent.js` – the explorer content
-- `src/lib/scene/` – renderer, camera, lighting, scene objects, markers and the viewer controller that connects the state to the 3D scene (plain JavaScript, independent of Svelte)
-- `src/lib/styles/satellite-explorer.css` – the explorer styles, built on the site's tokens and scoped to `.satellite-page`
-- `src/lib/assets/models/` – `satellite/` and `instrument/` hold the runtime viewer GLBs, `cad/` the individual CAD parts and `source/` the source models used to build them
-- `static/media/` – images used by the explorer
+2. **Reduce it for the web.** The gltf-transform packages are not dependencies of the site, so install them without saving:
 
-## The page without JavaScript
+   ```sh
+   npm install --no-save @gltf-transform/core @gltf-transform/extensions @gltf-transform/functions
+   node scripts/optimize-model.mjs src/lib/assets/models/source/Satellite.source-colors.glb src/lib/assets/models/satellite/Satellite.viewer.glb 0.3 0.002
+   ```
 
-Without JavaScript (or without WebGL) the same content reads as an exhibit. A first-time visitor should see what spacecraft this is, which part they are looking at and what it does:
+   The numbers are the share of triangles kept (`0.3`) and the allowed error (`0.002`).
 
-- **Opening.** The name and one plain sentence ("NEBULA Xplorer is a student-driven satellite mission with an X-ray instrument on board"), the **Explore 7 components** button and the whole satellite: beside the name on large screens, below it on phones. The satellite sways slowly (±10°) in an animated AVIF in a `<picture>`, so it plays without JavaScript and without player controls. Phones get an upright composition with both panel tips in frame. The animation only downloads with `(scripting: none) and (prefers-reduced-motion: no-preference)`; with reduced motion, and for visitors with JavaScript, only the still is shown.
-- **Components by name.** The seven main components are a list of rows with a close-up thumbnail and the name (on large screens also the sentence about what it does). Following a row's link opens it in place with CSS `:target`, so it works without JavaScript and every component keeps its deep link (`/technology#sun-sensor`). **All components** closes it again.
-- **On the spacecraft and Close-up.** An opened component starts with one short sentence from its approved text, then two views with the same name above both: the whole satellite with the component outlined in cool blue, the rest dimmed and a labelled pointer (so colour is never the only clue), and an isolated close-up on a quiet studio backdrop. Internal hardware is shown in a cutaway: only the hull panels between the camera and the part are hidden. Large screens show both views side by side; small screens choose one with native radio buttons ("On the spacecraft" / "Close-up"), and browsers without `:has()` show both, one above the other.
-- **The X-ray instrument.** Its branch "Instrument components" starts open with a map of how the seven groups of parts fit together (numbered labels beside the instrument, with a line to each part). Each part opens like a main component, with its place inside the opened instrument (the other parts see-through) and a close-up.
-- The deeper branches (optics, mirror and X-ray path, CAD parts) are native `<details>`; a link to a part inside one opens it in browsers that support it (tested in Chrome; browsers without that support leave the branch closed).
-- Texts that tell visitors to select or rotate something have a `withoutScript` version in `explorerContent.js`. The one-sentence summary is the first sentence of the approved text (the second for the Star Tracker); the X-ray instrument's combines the approved descriptions of the optics and detectors. That sentence is left out of the text below it.
+**Then check the CAD names.**
+- The explorer finds components by the names of CAD nodes (`componentMeshNames` and `satelliteInteriorHideNames` in `Satellite.js`; names are lowercased, and spaces, colons, dots and dashes become `_`).
+- Run `npm run verify:satellite`. `scripts/verify/models.mjs` checks that every component still has its parts and that the cutaway hides the outer panels. When a name changed in the new export, it fails with the component's name; update the name in `Satellite.js` and in that check.
+- Then click every component in the 3D view and use **Outer panels** to check the cutaway.
 
-All images are rendered from the viewer's own scene modules, so they use the same models, CAD colours, component mapping and lighting as the 3D view. `scripts/render-stills/jobs.js` lists what each image shows and from which side. After changing a model, render them again (this starts its own local server and a Chrome window):
+When the model changes, also render the images for the page without JavaScript again (next section).
+
+## Images and animations for the page without JavaScript
+
+All images are rendered from the same scene code as the 3D view, so they use the same models, colours and component mapping. `scripts/render-stills/jobs.js` lists what each image shows and from which side. The renderer starts its own local server on port 5296 and a Chrome window:
 
 ```sh
-node scripts/render-stills.mjs stills
-node scripts/render-stills.mjs locations
-node scripts/render-stills.mjs hero
+node scripts/render-stills.mjs stills      # close-ups → static/media/components/
+node scripts/render-stills.mjs locations   # "On the spacecraft" → static/media/locations/, label positions → src/lib/server/componentViews.js
+node scripts/render-stills.mjs hero        # opening stills → static/media/hero/, animation frames → .svelte-kit/render-frames/
 ```
 
-- `stills` writes the close-ups to `static/media/components/`
-- `locations` writes the "On the spacecraft" views to `static/media/locations/`, the instrument map, and the label positions to `src/lib/server/componentViews.js` (measured from the render: the largest visible area of the outlined part)
-- `hero` writes the stills to `static/media/hero/` and the frames of both loops to `.svelte-kit/render-frames/satellite/` and `.svelte-kit/render-frames/satellite-tall/`. Encode them with ffmpeg:
+Turn the animation frames into the looping AVIFs with ffmpeg:
 
 ```sh
 ffmpeg -framerate 24 -i .svelte-kit/render-frames/satellite/frame-%04d.jpg -c:v libaom-av1 -crf 34 -b:v 0 -cpu-used 6 -row-mt 1 -pix_fmt yuv420p -loop 0 static/media/hero/satellite-turn.avif
 ffmpeg -framerate 24 -i .svelte-kit/render-frames/satellite-tall/frame-%04d.jpg -c:v libaom-av1 -crf 34 -b:v 0 -cpu-used 6 -row-mt 1 -pix_fmt yuv420p -loop 0 static/media/hero/satellite-tall-turn.avif
 ```
 
-The data saver poster (`static/media/satellite-overview-*.webp`) is rendered with `node scripts/render-poster.mjs` while `npm run preview -- --port 5294` runs.
+The data-saver poster (`static/media/satellite-overview-*.webp`) is rendered with `node scripts/render-poster.mjs` while `npm run preview -- --port 5294` runs.
 
-## Replacing supplied CAD models
+Without JavaScript the page shows:
+- the opening, with an animated satellite (still image with reduced motion);
+- the seven components as rows that open with CSS `:target`;
+- per component, a view on the spacecraft and a close-up (side by side, or a switch on phones);
+- the X-ray instrument's parts as `<details>`.
 
-The viewer loads `src/lib/assets/models/satellite/Satellite.viewer.glb` and `src/lib/assets/models/instrument/Instrument.viewer.glb`. They are generated from the source-colour GLBs in `src/lib/assets/models/source/` with `scripts/optimize-model.mjs`. Keep the source file names to preserve loading and interaction.
+No 3D model is downloaded. More in [`responsive-design.md`](responsive-design.md).
 
-The satellite importer maps the component ids `xrayInstrument`, `starTrackerModule`, `dawn4UCubeDrive`, `sBandAntenna`, `sunSensor`, `magnetorquers` and `solarPanel` from the CAD hierarchy in `src/lib/scene/objects/Satellite.js`. Keep the corresponding group-name prefixes in the export, or update that mapping after verifying click selection.
+## Where things are
 
-## Checks
+| What | Where |
+| --- | --- |
+| Texts and the list of components | `src/lib/server/explorerContent.js` |
+| Label positions of the pictures without JavaScript | `src/lib/server/componentViews.js` (generated) |
+| Explorer state, selection, URL, full screen | `src/lib/state/explorer.svelte.js` |
+| Interface texts and NL/EN | `src/lib/state/language.svelte.js` |
+| CAD names → components, cutaway, camera focus | `src/lib/scene/objects/Satellite.js` |
+| Instrument parts | `src/lib/scene/objects/InstrumentComponents.js` |
+| What is shown per item, camera framing, slow turn | `src/lib/scene/explorerScene.js` |
+| Camera flights | `src/lib/scene/updateCamera.js`, `src/lib/scene/camera.js` |
+| Highlight of the selection | `src/lib/scene/objects/SelectionHighlight.js` |
+| Performance (draw calls, simplified meshes, quality steps) | `src/lib/scene/objects/CadInstances.js`, `objects/MotionDetail.js`, `renderQuality.js` |
+| The link between page and 3D scene | `src/lib/scene/viewerController.js` |
+| Components | `src/lib/components/{atoms,molecules,organisms}/`, exported from each folder's `index.js` |
+| Styling | `src/lib/styles/satellite-explorer.css` |
+| Models | `src/lib/assets/models/` (`satellite/`, `instrument/` and `cad/` are loaded; `source/` is the input for the conversion) |
+| Images | `static/media/` |
 
-```sh
-npm run build
-npm run verify:satellite
-```
+## Known problems and open tasks
 
-`npm run verify:satellite` runs the scripts in `scripts/verify/`: viewer assets, models, optics, performance, motion detail, CAD transforms, the explorer hierarchy (read from the prerendered page, so build first) and the camera orbit.
+- **Footer images:** `Footer.svelte` (footer, #493 / PR #692) links its images as `src/lib/assets/...`, which gives a 404 after a build. While prerendering Technology those five 404s are warnings (`vite.config.js`, `footerImages`); remove that exception once the footer imports its images.
+- **Small text:** some explorer labels are 11–13 px, below the 16 px minimum in the FDND conventions. Changing that changes the design of the list, so it needs a decision.
+- **No issue number in the branch name:** the branch `feature/integrate-satellite-viewer` has no issue number; the workflow in `CONTRIBUTING.md` asks for one.
+- **Satellite navigation (#605):** the branch for #605 also works on navigation for the satellite on Technology; align before merging both.
+- **Testing:**
+  - no test on real phones yet, only browser emulation;
+  - `prefers-reduced-data` is not supported by browsers yet, so the data-saver poster could not be tested in practice.
+- **In other team code** (not part of the explorer), on every page:
+  - `<html lang="nl">` on an English site;
+  - the Locations section jumps from `h1` to `h4`;
+  - the search field has no label.

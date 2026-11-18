@@ -95,6 +95,11 @@ export function moveCamera(controls, camera, framing, duration = 1000) {
 	else settle()
 }
 
+// Flies the camera to a selected component. The distance is a mix of the
+// current distance and one that fits the component in view (componentRadius),
+// within limits based on the whole satellite (satelliteRadius), so the camera
+// never ends up inside the model or so far away that the part is a dot. Small
+// parts (`detailView`, like the sun sensor) get a real close-up.
 export function updateCamera(
 	controls,
 	camera,

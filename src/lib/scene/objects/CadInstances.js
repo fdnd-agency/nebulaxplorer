@@ -1,6 +1,12 @@
 import * as THREE from 'three'
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js'
 
+// Performance: the CAD model has about 1800 separate meshes, which would be
+// as many draw calls per frame. Meshes that share geometry and material (bolts,
+// panels, detector modules) become one InstancedMesh, the rest are merged per
+// material and component, which gives about 150 draw calls. The original meshes
+// stay (hidden) for picking and highlights; `sync` keeps the batches in step
+// with what is visible and highlighted.
 export function createCadInstances(root, getComponent) {
 	const groups = new Map()
 	const sources = []

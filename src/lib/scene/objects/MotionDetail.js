@@ -1,5 +1,9 @@
 import { BufferAttribute } from 'three'
 
+// Performance on slower devices: while the satellite is dragged or the camera
+// flies, the heaviest meshes are swapped for simplified versions (made in a
+// web worker with meshoptimizer), and swapped back when the movement stops. It
+// is only used when renderQuality has stepped down (renderQuality.js).
 export function createMotionDetail() {
 	let worker
 	try {

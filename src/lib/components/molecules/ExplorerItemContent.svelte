@@ -1,4 +1,5 @@
 <script>
+	import { Paragraph } from '$lib/components/atoms'
 	import { pickFor } from '$lib/state/language.svelte.js'
 
 	let { blocks, enhanced = true } = $props()
@@ -6,15 +7,19 @@
 
 {#each blocks as block, index (index)}
 	{#if block.kind === 'lead'}
-		<p class="explorer-lead">{pickFor(enhanced, block.text)}</p>
+		<div class="explorer-lead">
+			<Paragraph>{pickFor(enhanced, block.text)}</Paragraph>
+		</div>
 	{:else if block.kind === 'note'}
-		<p class="explorer-note">{pickFor(enhanced, block.text)}</p>
+		<div class="explorer-note">
+			<Paragraph>{pickFor(enhanced, block.text)}</Paragraph>
+		</div>
 	{:else}
 		<div class="explorer-about">
 			{#each block.paragraphs as paragraph, paragraphIndex (paragraphIndex)}
 				<!-- A variant can be empty when its sentence is already shown above -->
 				{#if pickFor(enhanced, paragraph)}
-					<p>{pickFor(enhanced, paragraph)}</p>
+					<Paragraph>{pickFor(enhanced, paragraph)}</Paragraph>
 				{/if}
 			{/each}
 		</div>
