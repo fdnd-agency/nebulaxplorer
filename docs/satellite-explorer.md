@@ -4,7 +4,7 @@ The 3D satellite explorer lives on the `/technology` page. It is built with Svel
 
 The `/technology` page of the site shows the 3D model of the satellite in a section one screen high, below the site's header and hero and above its footer. **Explore satellite** opens the explorer: a panel on the left on desktop, a bottom sheet with peek and expanded states on mobile. Inside the section only the explorer content scrolls; the page around it scrolls as usual. The mouse wheel scrolls the page; Ctrl or ⌘ with the wheel (or pinching on a trackpad) zooms the model. On touch screens a vertical swipe scrolls the page, a sideways swipe rotates and pinching zooms.
 
-The page uses the site's layout: its header and navigation (the **Technology** link), hero, locations and footer, and its colours, fonts and focus style (`stylesheet.css`). The explorer's own styles in `satellite-explorer.css` start from `.satellite-page`, so they do not change the rest of the site, also after visiting the page. The NL/EN switch only changes the explorer and sets `lang` on its section.
+The page uses the site's layout: its header and navigation (the **Technology** link), hero, locations and footer, and its colours, fonts and focus style (`stylesheet.css`). The explorer's own styles in `satellite-explorer.css` start from `.satellite-page`, so they do not change the rest of the site, also after visiting the page. The NL/EN switch only changes the explorer and sets `lang` on its section. The explorer's state is kept on that section too (`js`, `js-enhanced` and `data-layout` on `.satellite-page`), not on `<html>`.
 
 The explorer is one continuous, nested list. Selecting an item expands it in place, showing its description and its own numbered parts underneath, while its parents stay visible:
 
@@ -80,7 +80,7 @@ Layout follows the available space: a bottom sheet below 720 px, a side panel fr
 
 ## Where the code lives
 
-- `src/routes/technology/` – `+page.server.js` loads the explorer content and prerenders the page, `+page.svelte` composes it from components
+- `src/routes/technology/` – `+page.server.js` loads the explorer content and prerenders the page, `+page.svelte` passes it to the `SatelliteExplorer` organism
 - `src/lib/components/atoms/`, `molecules/` and `organisms/` – the explorer components, exported from each folder's `index.js`
 - `src/lib/state/` – explorer tree, navigation state (`explorer.svelte.js`), viewer state and language
 - `src/lib/server/explorerContent.js` – the explorer content

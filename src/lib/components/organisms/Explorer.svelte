@@ -141,7 +141,9 @@
 				<p class="explorer-lead">{pickFor(state.enhanced, lead)}</p>
 				<!-- The page without the 3D model: a catalogue of the components -->
 				{#if !state.enhanced}
-					<a class="explorer-cta" href="#explorer-components-title"
+					<a
+						class="explorer-call-to-action"
+						href="#explorer-components-title"
 						>{pick(exploreComponents).replace(
 							'{count}',
 							String(children.length),
@@ -156,7 +158,7 @@
 				<ExplorerHero {hero} />
 			{/if}
 			<nav
-				class="explorer-tree-nav"
+				class="explorer-tree-navigation"
 				aria-labelledby="explorer-components-title"
 			>
 				<h2

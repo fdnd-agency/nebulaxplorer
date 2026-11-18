@@ -3,6 +3,7 @@ import { createExplorerTree } from './explorerTree.js'
 import { readExplorerItems } from './explorerItems.js'
 import { SHEET_STATES, createViewerState } from './viewerState.svelte.js'
 import { pick, restoreLanguage, text } from './language.svelte.js'
+import { getExplorerPage } from '../utils/explorerPage.js'
 import { readLayoutMode } from '../utils/layoutMode.js'
 
 const selectionSources = new Set(['list', 'marker', 'canvas'])
@@ -196,12 +197,12 @@ export function createExplorer(content) {
 	}
 
 	function enhance() {
-		const root = document.documentElement
+		const page = getExplorerPage()
 		const layoutMode = readLayoutMode()
 		initialize(layoutMode)
 		state.enhanced = true
-		root.dataset.layout = layoutMode
-		root.classList.add('js-enhanced')
+		page.dataset.layout = layoutMode
+		page.classList.add('js-enhanced')
 		flushSync()
 	}
 
@@ -216,25 +217,23 @@ export function createExplorer(content) {
 	}
 
 	function connect() {
-		const root = document.documentElement
+		const page = getExplorerPage()
 		const coarsePointer = window.matchMedia('(pointer: coarse)')
 		const updatePointer = () => {
 			state.coarsePointer = coarsePointer.matches
 		}
-		root.classList.add('js')
+		page.classList.add('js')
 		state.scriptActive = true
 		restoreLanguage()
 		updatePointer()
 		coarsePointer.addEventListener('change', updatePointer)
 		document.addEventListener('keydown', handleKeydown)
 		window.addEventListener('popstate', handlePopstate)
-		// The explorer is one page of the site: hand the document back as it was
+		// The explorer is one page of the site: stop listening when it closes
 		return () => {
 			coarsePointer.removeEventListener('change', updatePointer)
 			document.removeEventListener('keydown', handleKeydown)
 			window.removeEventListener('popstate', handlePopstate)
-			root.classList.remove('js', 'js-enhanced')
-			delete root.dataset.layout
 		}
 	}
 

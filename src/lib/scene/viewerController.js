@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import TWEEN from 'three/examples/jsm/libs/tween.module.js'
+import { getExplorerPage } from '../utils/explorerPage.js'
 import { readLayoutMode } from '../utils/layoutMode.js'
 import { createMarkers } from './markers.js'
 import { createCamera } from './camera.js'
@@ -85,7 +86,8 @@ export function createViewerController(
 
 	function syncLayout() {
 		const nextMode = readLayoutMode()
-		document.documentElement.dataset.layout = nextMode
+		const page = getExplorerPage()
+		if (page) page.dataset.layout = nextMode
 		if (nextMode === state.layoutMode) return
 		state.layoutMode = nextMode
 		if (state.satelliteReady && !state.cameraAdjusted) reframeSelection()
@@ -362,7 +364,7 @@ export function createViewerController(
 	}
 
 	function activateFallback() {
-		document.documentElement.classList.remove('js-enhanced')
+		getExplorerPage()?.classList.remove('js-enhanced')
 		state.enhanced = false
 		state.fallback = true
 		markers.set([])

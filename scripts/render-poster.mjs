@@ -30,14 +30,16 @@ await page.goto(url)
 await page.bringToFront()
 await page.waitForFunction(
 	() =>
-		document.documentElement.classList.contains('js-enhanced') &&
+		document
+			.querySelector('.satellite-page')
+			?.classList.contains('js-enhanced') &&
 		!document.querySelector('.viewer')?.classList.contains('is-loading'),
 	null,
 	{ timeout: 60000 },
 )
 await page.addStyleTag({
 	content:
-		'.site-header, .explorer-toggle, .viewer-visible-area, .viewer-markers, .explorer { visibility: hidden !important; }',
+		'body > div > header, .explorer-toggle, .viewer-visible-area, .viewer-markers, .explorer { visibility: hidden !important; }',
 })
 await page.waitForTimeout(6000)
 const png = await page.locator('#app').screenshot()
