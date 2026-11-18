@@ -75,7 +75,8 @@
 	--color-neutral-lighter: hsl(var(--neutral-h), var(--neutral-s), var(--neutral-lighter-l));
 	--color-neutral-lightest: hsl(var(--neutral-h), var(--neutral-s), var(--neutral-lightest-l));
 
-	--background: var(--color-brand-darkest);
+	color-scheme: light dark;
+	--background: light-dark(var(--color-neutral-lightest), var(--color-brand-darkest));
 
     /*typografie===================================================================================*/
     --font-heading:            "Space Grotesk", "Roboto", "Verdana", "Source Sans", "Helvetica Neue", Helvetica, "Arial Black", Arial, sans-serif; 
@@ -113,7 +114,7 @@
     --spacing-2xl:             4rem;    
 
 	 /* Styling =======================================================================*/
-	 --border-radius-brand:          50px 0 50px 0;
+	--border-radius-brand:          50px 0 50px 0;
 }
 
 html{

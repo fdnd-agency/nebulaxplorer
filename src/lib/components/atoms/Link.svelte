@@ -15,58 +15,80 @@
 -->
 
 <script>
-    import { ArrowIcon } from '$lib/assets/icons';
-    let { href, classes, text, hiddenText, size, color="var(--color-neutral-darkest)", bold = false, stretched = false, ...rest} = $props()
+	import { ArrowIcon } from '$lib/assets/icons'
+	let {
+		href,
+		classes,
+		text,
+		hiddenText,
+		size,
+		color = 'var(--color-neutral-darkest)',
+		bold = false,
+		stretched = false,
+		...rest
+	} = $props()
 </script>
 
-<a { href } class={[classes, size, { bold, stretched }]} style="--link-color: { color };" { ...rest }>
-    { text }
-    {#if hiddenText}<span class="visually-hidden">{hiddenText}</span>{/if}
-    <span class="icon-wrapper">
-        <ArrowIcon />
-    </span>
+<a
+	{href}
+	class={[classes, size, { bold, stretched }]}
+	style="--link-color: {color};"
+	{...rest}
+>
+	{text}
+	{#if hiddenText}<span class="visually-hidden">{hiddenText}</span>{/if}
+	<span class="icon-wrapper">
+		<ArrowIcon />
+	</span>
 </a>
 
 <style>
-    a{
-        color: var(--link-color);
-        padding-bottom: 0.1em;
-        text-decoration: transparent;
-        display: inline-flex;
-        border-bottom: 0.1rem solid transparent;
-        text-transform: uppercase;
-        gap: var(--spacing-lg);
-        font-family: var(--font-caption);
-        align-items: center;
+	a {
+		color: var(--link-color);
+		padding-bottom: 0.1em;
+		text-decoration: transparent;
+		display: inline-flex;
+		border-bottom: 0.1rem solid transparent;
+		text-transform: uppercase;
+		gap: var(--spacing-lg);
+		font-family: var(--font-caption);
+		align-items: center;
 
-        .icon-wrapper {
-            display: inline-flex;
-            transform: translateX(calc(var(--spacing-md) - var(--spacing-lg)));
+		.icon-wrapper {
+			display: inline-flex;
+			transform: translateX(calc(var(--spacing-md) - var(--spacing-lg)));
 
-            @media (prefers-reduced-motion: no-preference) {
-                transition: all 0.5s ease-in-out;
-            }
-        }
+			@media (prefers-reduced-motion: no-preference) {
+				transition: all 0.5s ease-in-out;
+			}
+		}
 
-        &:hover{
-            border-bottom-color: currentColor;
-            cursor: pointer;
-        }
-        &:hover .icon-wrapper {
-            transform: translateX(0);
-        }
+		&:hover {
+			border-bottom-color: currentColor;
+			cursor: pointer;
+		}
+		&:hover .icon-wrapper {
+			transform: translateX(0);
+		}
 
-        &.sm { font-size: var(--font-size-body-sm);}
-        &.md { font-size: var(--font-size-body-md);}
-        &.lg { font-size: var(--font-size-body-lg);}
+		&.sm {
+			font-size: var(--font-size-body-sm);
+		}
+		&.md {
+			font-size: var(--font-size-body-md);
+		}
+		&.lg {
+			font-size: var(--font-size-body-lg);
+		}
 
-        &.bold{ font-weight: bold;}
+		&.bold {
+			font-weight: bold;
+		}
 
-        &.stretched::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-        }
-    }
-
+		&.stretched::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+		}
+	}
 </style>
