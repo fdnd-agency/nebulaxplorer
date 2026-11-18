@@ -15,13 +15,14 @@
 		var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 16%
 	);
 	--ease: cubic-bezier(0.2, 0, 0, 1);
-	/* The height of the site header (Header.svelte), which stays on top */
+	/* The height of the site header (Header.svelte), which stays on top. The
+	   3D view fills the rest of the screen below it. */
 	--header-height: 4.25rem;
-	--stage-height: 100dvh;
+	--stage-height: calc(100dvh - var(--header-height));
 	--explorer-mode: panel;
 	--explorer-width: clamp(300px, 34vw, 420px);
 	--sheet-peek-height: 120px;
-	--sheet-expanded-top: 120px;
+	--sheet-expanded-top: var(--spacing-2xl);
 	--sheet-toggle-height: 64px;
 }
 
@@ -361,7 +362,7 @@
 
 .viewer-poster {
 	position: absolute;
-	inset: var(--header-height) 0 0;
+	inset: 0;
 	display: grid;
 	align-items: end;
 	justify-items: center;
@@ -447,7 +448,7 @@
 /* The explorer's language switch, below the site header */
 .js-enhanced .explorer-layout > .language-switcher {
 	position: fixed;
-	top: calc(var(--header-height) + var(--spacing-md));
+	top: var(--spacing-md);
 	right: var(--spacing-lg);
 	z-index: 35;
 }
@@ -494,6 +495,7 @@
 }
 
 .explorer-grabber,
+.explorer-sheet-toggle,
 .viewer {
 	display: none;
 }
@@ -514,6 +516,7 @@
 .satellite-page.js-enhanced {
 	position: relative;
 	height: var(--stage-height);
+	scroll-margin-top: var(--header-height);
 	overflow: clip;
 	contain: layout;
 }
@@ -560,8 +563,7 @@
 	inset: 0;
 	overflow: hidden;
 	clip-path: inset(
-		var(--header-height) var(--visible-right) var(--visible-bottom)
-			var(--visible-left)
+		0 var(--visible-right) var(--visible-bottom) var(--visible-left)
 	);
 	pointer-events: none;
 	transition: opacity 150ms var(--ease);
@@ -688,7 +690,7 @@
 }
 
 .viewer-label {
-	top: calc(var(--header-height) + var(--spacing-lg));
+	top: var(--spacing-lg);
 	display: flex;
 	flex-wrap: wrap;
 	align-items: baseline;
@@ -716,7 +718,7 @@
 }
 
 .viewer-status {
-	top: calc(var(--header-height) + var(--spacing-2xl));
+	top: var(--spacing-2xl);
 	color: var(--text);
 	font: 400 12px/20px var(--font-caption);
 }
@@ -724,7 +726,7 @@
 .viewer.is-loading::before {
 	content: '';
 	position: absolute;
-	top: var(--header-height);
+	top: 0;
 	right: var(--visible-right);
 	left: var(--visible-left);
 	z-index: 1;
@@ -820,7 +822,7 @@
 
 	.js-enhanced .explorer {
 		position: fixed;
-		top: var(--header-height);
+		top: 0;
 		right: 0;
 		bottom: 0;
 		z-index: 30;
@@ -940,11 +942,37 @@
 		display: block;
 		width: 72px;
 		height: 20px;
-		padding: 0;
-		border: 0;
-		background: none;
 		transform: translateX(-50%);
+	}
+
+	/* The arrow that opens the sheet, beside the selected item */
+	.js-enhanced .explorer-sheet-toggle {
+		display: grid;
+		grid-row: 1 / span 2;
+		grid-column: 2;
+		place-items: center;
+		width: 44px;
+		height: 44px;
+		margin-right: var(--spacing-sm);
+		border: 0;
+		color: var(--color-brand-darkest);
+		background: var(--color-accent-mid);
 		cursor: pointer;
+	}
+
+	.js-enhanced .explorer-sheet-toggle .icon {
+		width: 20px;
+		height: 20px;
+		stroke-width: 2;
+		transition: transform 250ms var(--ease);
+	}
+
+	.js-enhanced .explorer-sheet-toggle[aria-expanded='true'] .icon {
+		transform: rotate(180deg);
+	}
+
+	.js-enhanced .explorer-sheet-toggle:focus-visible {
+		outline-color: var(--color-neutral-lightest);
 	}
 
 	.js-enhanced .explorer-grabber::before {
@@ -971,7 +999,7 @@
 
 	.js-enhanced .explorer[data-sheet='peek'] .explorer-current {
 		display: flex;
-		grid-column: 1 / -1;
+		grid-column: 1;
 		align-items: baseline;
 		gap: 10px;
 		margin: 2px 0 12px;
@@ -995,18 +1023,18 @@
 	}
 
 	.viewer-status {
-		top: calc(var(--header-height) + 40px);
+		top: 40px;
 		left: var(--spacing-md);
 	}
 
 	.viewer-hint {
-		top: calc(var(--header-height) + 12px);
+		top: 12px;
 		bottom: auto;
 		left: var(--spacing-md);
 	}
 
 	.viewer-controls {
-		top: calc(var(--header-height) + 12px);
+		top: 12px;
 		right: 12px;
 		bottom: auto;
 		flex-direction: column;
@@ -1043,7 +1071,7 @@
 
 .satellite-page[data-layout='docked-columns'].js-enhanced .explorer {
 	position: fixed;
-	top: var(--header-height);
+	top: 0;
 	bottom: 0;
 	right: auto;
 	left: 0;
@@ -1090,11 +1118,12 @@
 }
 
 .satellite-page[data-layout='docked-rows'].js-enhanced .viewer-controls {
-	top: calc(var(--header-height) + 12px);
+	top: 12px;
 	bottom: auto;
 }
 
-.satellite-page[data-layout^='docked'].js-enhanced .explorer-grabber {
+.satellite-page[data-layout^='docked'].js-enhanced .explorer-grabber,
+.satellite-page[data-layout^='docked'].js-enhanced .explorer-sheet-toggle {
 	display: none;
 }
 

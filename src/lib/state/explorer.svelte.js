@@ -145,6 +145,19 @@ export function createExplorer(content) {
 	function handlePopstate() {
 		if (!state.enhanced) return
 		navigate(getHashId(), { source: 'history', push: false })
+		showViewer()
+	}
+
+	// A link to a part (#sun-sensor) and the Back button show the 3D view right
+	// below the site header, instead of where the browser put the part's
+	// anchor. One frame later, once the page has its final layout.
+	function showViewer() {
+		requestAnimationFrame(() =>
+			getExplorerPage()?.scrollIntoView({
+				block: 'start',
+				behavior: 'instant',
+			}),
+		)
 	}
 
 	function initialize(layoutMode) {
@@ -162,6 +175,7 @@ export function createExplorer(content) {
 		page.dataset.layout = layoutMode
 		page.classList.add('js-enhanced')
 		flushSync()
+		if (state.selectedId !== tree.rootId) showViewer()
 	}
 
 	function showFallback() {

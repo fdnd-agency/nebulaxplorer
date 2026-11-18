@@ -4,6 +4,7 @@
 	const paths = {
 		menu: 'M2 4h12M2 8h12M2 12h12',
 		close: 'M3 3l10 10M13 3L3 13',
+		chevron: 'M3 10.5l5-5 5 5',
 		pause: 'M5 3v10M11 3v10',
 		play: 'M5 3l8 5-8 5z',
 		layers: 'M2 5l6-3 6 3-6 3zM2 8l6 3 6-3M2 11l6 3 6-3',

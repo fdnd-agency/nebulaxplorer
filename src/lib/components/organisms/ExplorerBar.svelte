@@ -1,4 +1,5 @@
 <script>
+	import Icon from '$lib/components/atoms/Icon.svelte'
 	import ExplorerBreadcrumb from '$lib/components/molecules/ExplorerBreadcrumb.svelte'
 	import { SHEET_STATES } from '$lib/state/viewerState.svelte.js'
 	import { text } from '$lib/state/language.svelte.js'
@@ -11,7 +12,7 @@
 	let dragStart = null
 
 	function handlePointerdown(event) {
-		if (!explorer.isMobile() || event.target.closest('a')) return
+		if (!explorer.isMobile() || event.target.closest('a, button')) return
 		dragStart = event.clientY
 	}
 
@@ -37,14 +38,7 @@
 	onpointerup={handlePointerup}
 	onpointercancel={() => (dragStart = null)}
 >
-	<button
-		type="button"
-		class="explorer-grabber"
-		aria-controls="explorer"
-		aria-expanded={String(sheetExpanded)}
-		aria-label={text(sheetExpanded ? 'collapseExplorer' : 'expandExplorer')}
-		onclick={toggleSheet}
-	></button>
+	<span class="explorer-grabber" aria-hidden="true"></span>
 	<ExplorerBreadcrumb {explorer} />
 	<p class="explorer-current" aria-hidden="true">
 		<span class="explorer-current-number"
@@ -56,4 +50,15 @@
 				: ''}</span
 		>
 	</p>
+	<!-- On a phone: opens and folds the sheet; points up while it can open -->
+	<button
+		type="button"
+		class="explorer-sheet-toggle"
+		aria-controls="explorer"
+		aria-expanded={String(sheetExpanded)}
+		aria-label={text(sheetExpanded ? 'collapseExplorer' : 'expandExplorer')}
+		onclick={toggleSheet}
+	>
+		<Icon name="chevron" />
+	</button>
 </div>
