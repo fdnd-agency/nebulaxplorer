@@ -1,8 +1,8 @@
-const API = 'https://fdnd-agency.directus.app';
+const API = 'https://fdnd-agency.directus.app'
 
 export async function load({ fetch }) {
-  const res = await fetch(`${API}/items/nebula_xplorer_vacancies`);
-  const { data } = await res.json();
+	const res = await fetch(`${API}/items/nebula_xplorer_vacancies`)
+	const { data } = await res.json()
 
-  return { vacancies: data };
+	return { vacancies: data }
 }

@@ -1,8 +1,7 @@
 <script>
-	import { page } from '$app/state'
-
 	import imageFallback from '$lib/assets/images/hero-background-01.jpg?enhanced'
 	import WhiteNebulaXplorerLogo from '$lib/assets/logos/NEBULA-Xplorer-logo-white.png?enhanced&w=150;300'
+	import { page } from '$app/state'
 
 	let { pages } = $props()
 

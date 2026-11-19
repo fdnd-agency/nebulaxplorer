@@ -1,6 +1,5 @@
 <script>
-	import ContentAccordion from '$lib/components/atoms/ContentAccordion.svelte'
-	import Image from '$lib/components/atoms/Image.svelte'
+	import { ContentAccordion, Image } from '$lib/components/atoms'
 
 	let {
 		index,
