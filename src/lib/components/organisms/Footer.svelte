@@ -1,9 +1,18 @@
+<script>
+    import sronLogo from '$lib/assets/logos/SRON_Academy_OnSpaceBlue-1024x422.png';
+    import sronWhiteLogo from '$lib/assets/logos/SRON_Full_White.webp';
+
+    import blueSky from '$lib/assets/images/Social_Icon_BlueSky.png';
+    import instagram from '$lib/assets/images/Social_Icon_Instagram.png';
+    import linkedIn from '$lib/assets/images/Social_Icon_LinkedIn.png';
+</script>
+
 <footer>
 	<div class="footer-top">
 		<a href="/"
 			><img
 				class="logosron"
-				src="src/lib/assets/logos/SRON_Academy_OnSpaceBlue-1024x422.png"
+				src="{sronLogo}"
 				alt="logo of sron academy"
 				width="230"
 				height="100"
@@ -27,7 +36,7 @@
 		<a href="https://www.sron.nl/"
 			><img
 				class="white-logo-sron"
-				src="src/lib/assets/logos/SRON_Full_White.webp"
+				src="{sronWhiteLogo}"
 				alt="full white logo of sron"
 				width="200"
 				height="45"
@@ -53,7 +62,7 @@
 				<a
 					href="https://web-cdn.bsky.app/profile/did:plc:xskzoixc54ebxryzak45u7ra"
 					><img
-						src="src/lib/assets/images/Social_Icon_BlueSky.png"
+						src="{blueSky}"
 						alt="logo of bluesky"
 						width="25"
 						height="25"
@@ -63,7 +72,7 @@
 			<li>
 				<a href="https://www.instagram.com/sron_space/"
 					><img
-						src="src/lib/assets/images/Social_Icon_Instagram.png"
+						src="{instagram}"
 						alt="logo of instagram"
 						width="25"
 						height="25"
@@ -73,7 +82,7 @@
 			<li>
 				<a href="https://www.linkedin.com/company/nebula-xplorer"
 					><img
-						src="src/lib/assets/images/Social_Icon_LinkedIn.png"
+						src="{linkedIn}"
 						alt="logo of linkedin"
 						width="25"
 						height="25"
@@ -140,6 +149,7 @@
             }
         }
         p {
+            font-size: var(--step-0);
             margin-bottom: var(--spacing-sm);
         }
 
