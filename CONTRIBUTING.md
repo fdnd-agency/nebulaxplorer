@@ -184,6 +184,19 @@ src/
 
 Source: https://atomicdesign.bradfrost.com/chapter-2/
 
+### Imports
+
+### Imports
+
+We import from barrel files (`index.js`), never directly from an individual file. A barrel file re-exports everything a folder offers, so imports stay short and moving a file doesn't break every import path.
+
+- Always import from the barrel file, never from the individual file.
+- Every [Atomic Design](#atomic-design) level has its own barrel: `$lib/atoms`, `$lib/molecules` and `$lib/organisms`. Imports from different levels stay separate statements.
+- Merge imports from the same barrel into one statement.
+- When you add a new component or module, add it to the relevant barrel file in the same PR.
+- Asset imports with a query (such as `?enhanced`) are the exception and stay as separate imports.
+
+
 ### Team canvas
 
 ![](image-1.png)

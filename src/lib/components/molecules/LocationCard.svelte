@@ -1,5 +1,12 @@
 <script>
-	let { image, alt, city, street, postalCode, phone } = $props()
+	let { 
+		image, 
+		alt, 
+		city, 
+		street, 
+		postalCode, 
+		phone 
+	} = $props()
 </script>
 
 <li class="location">

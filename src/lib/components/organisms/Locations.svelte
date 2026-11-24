@@ -1,6 +1,5 @@
 <script>
-	import LocationCard from '$lib/components/molecules/LocationCard.svelte'
-
+	import { LocationCard } from '$lib/components/molecules'
 	import leiden from '$lib/assets/images/SRON-Leiden.webp?enhanced&w=1600;800;400'
 	import groningen from '$lib/assets/images/SRON-Groningen.webp?enhanced&w=1600;800;400'
 </script>
