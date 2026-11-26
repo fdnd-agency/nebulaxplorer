@@ -69,6 +69,7 @@ Bedankt voor de sprint review, Martin. We hebben de detailpagina, de missiepagin
 - [ ] Component-tabel (KPI) ontwerpen -roxy
 - [ ] Een vorm vinden voor meerdere alinea's en foto's per component detail pagina -lynn
 - [ ] Teamspagina ontwerpen voor studenten zonder component 
+- [ ] Naam iets groter van de quote component -roxy
 - [ ] Verder werken
 
 ## Open vragen
