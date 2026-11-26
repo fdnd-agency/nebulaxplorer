@@ -25,8 +25,8 @@ npm run verify:satellite
 
 | Team component | Where in the explorer |
 | --- | --- |
-| `Heading` (atoms) | The title with its kicker ("Spacecraft"), the "Components" and "About the mission" labels |
-| `Paragraph` (atoms) | Every text: introduction, descriptions, notes, mission text |
+| `Heading` (atoms) | The title with its kicker ("Spacecraft") and the "Components" label |
+| `Paragraph` (atoms) | Every text: introduction, descriptions and notes |
 | `Button` (atoms) | "Explore 7 components" (no JavaScript), the viewer buttons (pause rotation, outer panels, X-rays, reset view, full screen), NL/EN, the phone sheet arrow, hide in full screen, "Load 3D model" |
 | `Link` (atoms) | "All components" / "All parts" (no JavaScript) |
 | `HamburgerButton` (atoms) | Brings the hidden explorer back in full screen. It got two optional props, `onclick` and `label`: without `onclick` it still opens the site menu as before |
@@ -43,8 +43,21 @@ What stays specific to the explorer, and why:
 
 ### Styling rules
 
-- Every rule in `satellite-explorer.css` starts from `.satellite-page` or one of the explorer's own classes, so nothing changes on other pages, also after visiting Technology.
-- The explorer's state is set on its section, not on `<html>`: `js` (JavaScript runs), `js-pending` (the 3D view is starting), `js-enhanced` (the 3D view runs) and `data-layout` (`panel`, `sheet` or a dual-screen layout). Styles for the page without JavaScript use `.satellite-page:not(.js-enhanced)`.
+- **Every component styles itself** in its own `<style>`, with CSS nesting. `src/lib/styles/satellite-explorer.css` only holds what they share:
+  - the design tokens and states of the explorer section (`.satellite-page`);
+  - the markers that `src/lib/scene/markers.js` adds to the page;
+  - the placing of the team's Button, Link and Heading inside the explorer.
+- **No JavaScript first:** the page without JavaScript is the base style, and `.js-enhanced` adds the viewer layout on top (`:global(.js-enhanced) & { … }` in a component). The explorer's state is set on its section, not on `<html>`:
+  - `js`: JavaScript runs;
+  - `js-pending`: the 3D view is starting;
+  - `js-enhanced`: the 3D view runs;
+  - `data-layout`: `panel`, `sheet` or a dual-screen layout.
+- **Container queries, not media queries:** `.satellite-page` is the container `satellite` (the width of the page), `.explorer-scroll` is `explorer` and the 3D view's free area is `viewer-hud`. Media queries are only used for user preferences (reduced motion, contrast, forced colours, reduced transparency) and for the posture of dual-screen devices, which has no container query.
+- **Light and dark mode:** the explorer follows the site (`color-scheme`) with `light-dark()` tokens: `--explorer-background`, `--explorer-text`, `--explorer-text-muted`, `--explorer-line`, `--explorer-hover`, `--explorer-accent` and `--explorer-select`. The 3D view stays a dark space scene in both modes.
+- **Readability:**
+  - text is at least 16 px with a line height of at least 1.5, using the site's variables (`--font-size-body-sm/md/lg`, `--line-height-normal`);
+  - spacing between texts uses the site's `prose` class.
+- Nothing changes on other pages, also after visiting Technology: every shared rule starts from `.satellite-page`, and everything else is scoped to its component.
 - When you leave the page, the section is removed, the explorer stops listening to keyboard, history and full screen events (`connect()` in `src/lib/state/explorer.svelte.js`) and the 3D renderer is disposed (`src/lib/scene/viewerController.js`).
 
 ## How the list, links, selection and 3D view work together
@@ -164,14 +177,14 @@ No 3D model is downloaded. More in [`responsive-design.md`](responsive-design.md
 | Performance (draw calls, simplified meshes, quality steps) | `src/lib/scene/objects/CadInstances.js`, `objects/MotionDetail.js`, `renderQuality.js` |
 | The link between page and 3D scene | `src/lib/scene/viewerController.js` |
 | Components | `src/lib/components/{atoms,molecules,organisms}/`, exported from each folder's `index.js` |
-| Styling | `src/lib/styles/satellite-explorer.css` |
+| Styling | each component's own `<style>`; shared tokens, states and markers in `src/lib/styles/satellite-explorer.css` |
 | Models | `src/lib/assets/models/` (`satellite/`, `instrument/` and `cad/` are loaded; `source/` is the input for the conversion) |
 | Images | `static/media/` |
 
 ## Known problems and open tasks
 
 - **Footer images:** `Footer.svelte` (footer, #493 / PR #692) links its images as `src/lib/assets/...`, which gives a 404 after a build. While prerendering Technology those five 404s are warnings (`vite.config.js`, `footerImages`); remove that exception once the footer imports its images.
-- **Small text:** some explorer labels are 11–13 px, below the 16 px minimum in the FDND conventions. Changing that changes the design of the list, so it needs a decision.
+- **Light mode of the site:** the explorer has light and dark mode. On other pages of the site the body text is light in both modes (`stylesheet.css`), so their text is hard to read in light mode.
 - **No issue number in the branch name:** the branch `feature/integrate-satellite-viewer` has no issue number; the workflow in `CONTRIBUTING.md` asks for one.
 - **Satellite navigation (#605):** the branch for #605 also works on navigation for the satellite on Technology; align before merging both.
 - **Testing:**

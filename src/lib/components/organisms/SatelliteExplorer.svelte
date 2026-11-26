@@ -42,18 +42,73 @@
 		<!-- In full screen the explorer can be hidden; the team's menu button
 		     brings it back -->
 		{#if state.explorerHidden}
-			<HamburgerButton
-				label={text('showExplorer')}
-				onclick={() => explorer.setExplorerHidden(false)}
-				classes="explorer-toggle"
-				aria-controls="explorer"
-				aria-expanded={!state.explorerHidden}
-				title={text('showExplorer')}
-			/>
+			<div class="explorer-menu-button">
+				<HamburgerButton
+					label={text('showExplorer')}
+					onclick={() => explorer.setExplorerHidden(false)}
+					classes="explorer-toggle"
+					aria-controls="explorer"
+					aria-expanded={!state.explorerHidden}
+					title={text('showExplorer')}
+				/>
+			</div>
 		{/if}
 
-		<LanguageSwitcher />
+		<div
+			class="explorer-language"
+			class:is-beside-menu-button={state.explorerHidden}
+		>
+			<LanguageSwitcher />
+		</div>
 	</div>
 
 	<StatusMessage message={state.announcement} />
 </div>
+
+<style>
+	/* The layout mode: a panel beside the 3D view, a sheet on a phone, or the
+	   two screens of a dual-screen device. JavaScript reads it from here
+	   (src/lib/utils/layoutMode.js). */
+	.explorer-layout {
+		--explorer-mode: panel;
+
+		@container satellite (width < 720px) {
+			--explorer-mode: sheet;
+		}
+
+		/* Device posture, not available as a container query */
+		@media (horizontal-viewport-segments: 2) {
+			--explorer-mode: docked-columns;
+		}
+
+		@media (vertical-viewport-segments: 2) {
+			--explorer-mode: docked-rows;
+		}
+	}
+
+	/* The NL/EN switch, top right of the 3D view, beside the panel */
+	.explorer-language {
+		:global(.js-enhanced) & {
+			position: fixed;
+			top: var(--spacing-md);
+			right: var(--spacing-lg);
+			z-index: 35;
+
+			@container satellite (width >= 720px) {
+				right: calc(var(--explorer-width) + var(--spacing-lg));
+			}
+		}
+
+		:global(.js-enhanced) &.is-beside-menu-button {
+			right: calc(var(--toggle-width) + var(--spacing-lg));
+		}
+	}
+
+	/* The menu button that brings the hidden explorer back (full screen) */
+	.explorer-menu-button {
+		position: fixed;
+		top: 0;
+		right: 0;
+		z-index: 45;
+	}
+</style>

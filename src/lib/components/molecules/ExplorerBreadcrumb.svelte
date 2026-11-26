@@ -43,3 +43,45 @@
 		{/if}
 	</ol>
 </nav>
+
+<style>
+	.explorer-breadcrumb ol {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0;
+		padding: 0;
+		color: var(--explorer-text-muted);
+		font-family: var(--font-caption);
+		font-size: var(--font-size-body-sm);
+		line-height: var(--line-height-normal);
+		list-style: none;
+	}
+
+	li + li::before {
+		content: '›';
+		margin: 0 var(--spacing-sm);
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+
+		&:hover {
+			color: var(--explorer-text);
+			text-decoration: underline 1px var(--explorer-accent);
+			text-underline-offset: 4px;
+		}
+	}
+
+	[aria-current] {
+		color: var(--explorer-text);
+	}
+
+	.explorer-breadcrumb-more {
+		padding: 0 2px;
+		border: 0;
+		color: inherit;
+		background: none;
+		cursor: pointer;
+	}
+</style>

@@ -54,7 +54,7 @@ Yes, but only as an enhancement. It lets the hinge become a real division betwee
 | `prefers-reduced-transparency: reduce` | Header, viewer controls and markers use solid SRON navy instead of translucent navy; the panel drops its shadow. | The panel was already solid navy; this removes the remaining translucency over the 3D scene. |
 | `prefers-contrast: more` | Body text goes to full white, muted text to 90 %, dividers to 48 % opacity; focus rings become 3 px; markers and controls get solid backgrounds and white outlines; the selected bar becomes 4 px wide. | Improves legibility on top of a busy 3D background. |
 | `forced-colors: active` | System colours take over. The selected item gets a `Highlight` outline and an underlined title (not colour alone); controls, markers and the language switch get `ButtonText` borders; tree guide lines use `CanvasText`. | Box shadows disappear in forced colours, so state must survive through outlines, borders and text decoration. |
-| `prefers-color-scheme` | **Not implemented as a light theme, on purpose.** | The product is a dark space scene with original CAD colours, and SRON's own site uses navy for this kind of content. A light UI over a dark 3D scene would lower contrast where the two meet and weaken the "SRON interface + immersive scientific scene" contrast. `color-scheme: dark` keeps form controls and scrollbars consistent. |
+| `prefers-color-scheme` | The explorer (list, panel, sheet, the page without JavaScript) follows the site's light or dark mode with `light-dark()` tokens. The 3D view stays a dark space scene in both modes. | The site has both modes; the 3D scene is space, so it stays dark. |
 | `prefers-reduced-data: reduce` (and `navigator.connection.saveData`) | The 3D models (~5.5 MB) and the nebula background are **not** downloaded automatically. The viewer shows a 30 KB rendered still of the satellite and a "Load 3D model (about 5.5 MB)" button. The explorer works immediately. | The semantic content is the product; the 3D is an optional enhancement. `prefers-reduced-data` is still experimental, so the Save-Data signal, which ships in Chromium today, is checked as well. |
 
 Evidence for reduced data: before the button is pressed only the poster image (`satellite-overview-*.webp`, one size picked by the browser) and the logo load. After pressing it, `Satellite.viewer.glb` and the nebula texture load, and focus moves to "Explore satellite".
@@ -63,7 +63,7 @@ Evidence for reduced data: before the button is pressed only the poster image (`
 
 ## 3. Container queries
 
-Media queries are still used for **page layout** (sheet, panel or docked). **Component presentation** responds to the space the component actually gets.
+The layout (sheet, panel) uses the container `satellite` (`.satellite-page`, the width of the page); only the posture of dual-screen devices still needs a media query. **Component presentation** responds to the space the component actually gets.
 
 | Component | Container | Breakpoints | What adapts |
 |---|---|---|---|

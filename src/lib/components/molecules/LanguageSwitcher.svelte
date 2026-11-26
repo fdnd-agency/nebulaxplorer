@@ -16,3 +16,14 @@
 		/>
 	{/each}
 </div>
+
+<style>
+	/* Only with JavaScript: the switch needs it */
+	.language-switcher {
+		display: none;
+
+		:global(.js) & {
+			display: flex;
+		}
+	}
+</style>

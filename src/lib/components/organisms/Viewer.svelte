@@ -131,7 +131,7 @@
 		</p>
 		<p
 			class="viewer-hint"
-			class:is-dismissed={state.hintDismissed}
+			class:is-dismissed={state.hintDismissed || state.posterVisible}
 			aria-hidden="true"
 		>
 			{text(state.coarsePointer ? 'hintTouch' : 'hintPointer')}
@@ -139,3 +139,170 @@
 		<ViewerControls {state} {controller} {explorer} />
 	</div>
 </div>
+
+<style>
+	/* The 3D view: only with JavaScript, always a dark space scene. The
+	   --visible-* properties are the space the explorer covers, so the camera
+	   centres the satellite in what is left (viewerController.js). */
+	.viewer {
+		display: none;
+		color-scheme: dark;
+
+		:global(.js-enhanced) & {
+			position: fixed;
+			inset: 0;
+			display: block;
+			--visible-left: 0px;
+			--visible-right: 0px;
+			--visible-bottom: 0px;
+
+			@container satellite (width >= 720px) {
+				--visible-right: var(--explorer-width);
+
+				&[data-explorer='hidden'] {
+					--visible-right: 0px;
+				}
+			}
+
+			@container satellite (width < 720px) {
+				--visible-bottom: var(--sheet-peek-height);
+
+				&[data-sheet='expanded'] {
+					--visible-bottom: calc(
+						var(--stage-height) - var(--sheet-expanded-top)
+					);
+				}
+
+				&[data-explorer='hidden'] {
+					--visible-bottom: 0px;
+				}
+			}
+		}
+
+		:global(.satellite-page[data-layout='docked-columns'].js-enhanced) & {
+			--visible-left: var(--docked-viewer-left);
+			--visible-right: 0px;
+			--visible-bottom: 0px;
+		}
+
+		:global(.satellite-page[data-layout='docked-rows'].js-enhanced) & {
+			--visible-left: 0px;
+			--visible-right: 0px;
+			--visible-bottom: calc(
+				var(--stage-height) - var(--docked-explorer-top)
+			);
+		}
+
+		/* A moving line while the model loads */
+		&.is-loading::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: var(--visible-right);
+			left: var(--visible-left);
+			z-index: 1;
+			height: 2px;
+			background: linear-gradient(
+				90deg,
+				transparent,
+				var(--color-accent-mid),
+				transparent
+			);
+			background-size: 40% 100%;
+			background-repeat: no-repeat;
+			animation: loading-line 1.4s var(--ease) infinite;
+		}
+	}
+
+	canvas {
+		display: block;
+		width: 100%;
+		height: 100%;
+		outline: none;
+		transition: opacity 180ms var(--ease);
+		/* A vertical swipe scrolls the page (see src/lib/scene/controls.js) */
+		touch-action: pan-y;
+
+		.is-switching > & {
+			opacity: 0;
+		}
+	}
+
+	/* Where markers.js places the numbered markers (styled in
+	   satellite-explorer.css) */
+	.viewer-markers {
+		position: absolute;
+		inset: 0;
+		overflow: hidden;
+		clip-path: inset(
+			0 var(--visible-right) var(--visible-bottom) var(--visible-left)
+		);
+		pointer-events: none;
+		transition: opacity 150ms var(--ease);
+
+		[data-sheet='expanded'] > & {
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+
+	/* The part of the 3D view the explorer does not cover */
+	.viewer-visible-area {
+		position: absolute;
+		top: 0;
+		right: var(--visible-right);
+		bottom: var(--visible-bottom);
+		left: var(--visible-left);
+		container: viewer-hud / inline-size;
+		color: var(--color-neutral-lightest);
+		pointer-events: none;
+	}
+
+	.viewer-status,
+	.viewer-hint {
+		position: absolute;
+		left: var(--spacing-xl);
+		font-family: var(--font-caption);
+		font-size: var(--font-size-body-sm);
+		line-height: var(--line-height-normal);
+
+		@container satellite (width < 720px) {
+			left: var(--spacing-md);
+		}
+	}
+
+	.viewer-status {
+		top: var(--spacing-2xl);
+	}
+
+	/* "Drag to rotate": bottom left, and top left on a phone, never under the
+	   buttons */
+	.viewer-hint {
+		bottom: var(--spacing-lg);
+		max-width: calc(100cqi - 24rem);
+		color: hsl(
+			var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 75%
+		);
+		transition: opacity 400ms var(--ease);
+
+		@container satellite (width < 720px) {
+			top: var(--spacing-md);
+			bottom: auto;
+			max-width: calc(100cqi - 10rem);
+		}
+
+		&.is-dismissed {
+			opacity: 0;
+		}
+	}
+
+	@keyframes loading-line {
+		from {
+			background-position: -40% 0;
+		}
+
+		to {
+			background-position: 140% 0;
+		}
+	}
+</style>

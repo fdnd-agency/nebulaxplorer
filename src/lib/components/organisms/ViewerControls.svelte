@@ -59,3 +59,29 @@
 		onclick={() => explorer.toggleFullscreen()}
 	/>
 </div>
+
+<style>
+	/* Pause rotation, outer panels, X-rays, reset view and full screen, bottom
+	   right of the 3D view */
+	.viewer-controls {
+		position: absolute;
+		right: var(--spacing-lg);
+		bottom: var(--spacing-lg);
+		display: flex;
+		gap: var(--spacing-sm);
+		pointer-events: auto;
+
+		/* Phone: a column on the right, below the NL/EN switch */
+		@container satellite (width < 720px) {
+			top: calc(var(--spacing-md) + 3.5rem);
+			right: var(--spacing-md);
+			bottom: auto;
+			flex-direction: column;
+		}
+
+		:global(.satellite-page[data-layout='docked-rows']) & {
+			top: var(--spacing-md);
+			bottom: auto;
+		}
+	}
+</style>

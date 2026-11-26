@@ -96,3 +96,91 @@
 	</div>
 	<figcaption>{text('mapCaption')}</figcaption>
 </figure>
+
+<style>
+	/* How the X-ray instrument's parts fit together: numbered labels beside
+	   the instrument, with a line to each part */
+	.instrument-map {
+		margin: var(--spacing-sm) 0 var(--spacing-xl);
+
+		figcaption {
+			margin-top: var(--spacing-sm);
+			color: var(--explorer-text-muted);
+			font-family: var(--font-caption);
+			font-size: var(--font-size-body-sm);
+			line-height: var(--line-height-normal);
+		}
+	}
+
+	.instrument-map-frame {
+		position: relative;
+		aspect-ratio: 16 / 10;
+		background: var(--studio);
+	}
+
+	.instrument-map-image {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.instrument-map-lines {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+
+		polyline {
+			fill: none;
+			stroke: var(--color-brand-darkest);
+			stroke-width: 1.25;
+			vector-effect: non-scaling-stroke;
+		}
+	}
+
+	.instrument-map-point {
+		position: absolute;
+		width: 9px;
+		height: 9px;
+		margin: -4.5px 0 0 -4.5px;
+		border-radius: 50%;
+		background: var(--color-brand-darkest);
+		box-shadow: 0 0 0 2px var(--color-neutral-lightest);
+	}
+
+	.instrument-map-label {
+		position: absolute;
+		display: flex;
+		align-items: baseline;
+		gap: var(--spacing-sm);
+		padding: var(--spacing-xs) var(--spacing-sm);
+		color: var(--color-neutral-lightest);
+		background: var(--color-brand-darkest);
+		font-family: var(--font-heading);
+		font-size: var(--font-size-body-sm);
+		font-weight: 500;
+		line-height: var(--line-height-normal);
+		white-space: nowrap;
+		transform: translateY(-50%);
+
+		&.is-start {
+			transform: translate(-100%, -50%);
+		}
+
+		@media (forced-colors: active) {
+			border: 1px solid CanvasText;
+		}
+	}
+
+	.instrument-map-number {
+		color: hsl(218 100% 77.1%);
+		font-family: var(--font-caption);
+	}
+
+	/* Small screens: only the numbers; the list below names the parts */
+	.instrument-map-name {
+		@container satellite (width < 700px) {
+			display: none;
+		}
+	}
+</style>

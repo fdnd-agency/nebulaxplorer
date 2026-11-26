@@ -90,7 +90,8 @@ for (const match of html.matchAll(
 		continue
 	}
 	if (!current) continue
-	const className = attribute(attributes, 'class') ?? ''
+	// Svelte adds a scope class (svelte-…), so look at the first class
+	const className = (attribute(attributes, 'class') ?? '').split(/\s+/)[0]
 	if (className === 'explorer-node-heading')
 		current.headingLevel ??= Number(tag.slice(1))
 	if (className === 'explorer-node-body') current.hasBody = true

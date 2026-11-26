@@ -45,3 +45,49 @@
 		/>
 	</picture>
 </figure>
+
+<style>
+	/* The whole satellite in the opening of the page without JavaScript */
+	.explorer-hero {
+		grid-area: hero;
+		margin: var(--spacing-lg) 0 0;
+
+		@container satellite (width >= 900px) {
+			margin: 0;
+		}
+	}
+
+	.explorer-hero-media {
+		display: block;
+		width: 100%;
+		height: auto;
+		background: var(--color-brand-darkest);
+
+		/* Phone: the upright satellite, both panel tips on the first screen */
+		@container satellite (width < 700px) {
+			width: auto;
+			max-width: 100%;
+			height: clamp(320px, calc(100svh - 430px), 560px);
+			margin: 0 auto;
+		}
+
+		/* Large screens: the whole satellite beside the name */
+		@container satellite (width >= 900px) {
+			width: auto;
+			max-width: 100%;
+			max-height: calc(100svh - var(--header-height) - var(--spacing-xl));
+			margin-left: auto;
+		}
+
+		@media (prefers-reduced-motion: no-preference) {
+			animation: explorer-hero-in 1600ms var(--ease) both;
+		}
+	}
+
+	@keyframes explorer-hero-in {
+		from {
+			opacity: 0;
+			transform: scale(0.985);
+		}
+	}
+</style>

@@ -37,3 +37,42 @@
 		/>
 	</div>
 </div>
+
+<style>
+	/* Reduced data: a still of the satellite and a button to load the 3D
+	   model */
+	.viewer-poster {
+		position: absolute;
+		inset: 0;
+		display: grid;
+		align-items: end;
+		justify-items: center;
+		padding: var(--spacing-lg);
+		pointer-events: auto;
+
+		img {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	.viewer-poster-panel {
+		position: relative;
+		display: grid;
+		justify-items: start;
+		gap: var(--spacing-md);
+		max-width: 420px;
+		padding: var(--spacing-lg);
+		color: var(--color-neutral-lightest);
+		background: var(--color-brand-darkest);
+
+		p {
+			font-family: var(--font-caption);
+			font-size: var(--font-size-body-sm);
+			line-height: var(--line-height-normal);
+		}
+	}
+</style>

@@ -134,7 +134,7 @@
 			data-explorer-item
 			data-scene={content.scene}
 		>
-			<div class="explorer-intro">
+			<div class="explorer-intro prose">
 				<div class="explorer-title">
 					<Heading headingLevel={2} subheading={pick(kicker)}
 						>{pick(title)}</Heading
@@ -192,3 +192,216 @@
 		<ExplorerCredits />
 	</div>
 </section>
+
+<style>
+	/* The page without JavaScript is the base: a catalogue on the page. With
+	   the 3D view (.js-enhanced) the explorer is a panel beside it, or a sheet
+	   at the bottom on a phone. */
+	.explorer {
+		color: var(--explorer-text);
+		background: var(--explorer-background);
+
+		:global(.js-enhanced) & {
+			position: fixed;
+			z-index: 30;
+			display: flex;
+			flex-direction: column;
+
+			/* Desktop: always open on the right */
+			@container satellite (width >= 720px) {
+				top: 0;
+				right: 0;
+				bottom: 0;
+				width: var(--explorer-width);
+				border-left: 1px solid var(--explorer-line);
+				box-shadow: 0 0 40px
+					hsl(
+						var(--neutral-h) var(--neutral-s)
+							var(--neutral-darkest-l) / 40%
+					);
+				transition:
+					transform 320ms var(--ease),
+					visibility 0s;
+
+				/* Hidden in full screen */
+				&[data-hidden='true'] {
+					visibility: hidden;
+					transform: translateX(100%);
+					transition:
+						transform 320ms var(--ease),
+						visibility 0s 320ms;
+				}
+			}
+
+			/* Phone: a sheet that folds between its peek row and expanded */
+			@container satellite (width < 720px) {
+				right: 0;
+				bottom: 0;
+				left: 0;
+				height: calc(var(--stage-height) - var(--sheet-expanded-top));
+				border-top: 1px solid var(--explorer-line);
+				box-shadow: 0 -12px 40px
+					hsl(
+						var(--neutral-h) var(--neutral-s)
+							var(--neutral-darkest-l) / 40%
+					);
+				transform: translateY(calc(100% - var(--sheet-peek-height)));
+				transition: transform 250ms var(--ease);
+
+				&[data-sheet='expanded'] {
+					transform: none;
+				}
+
+				&[data-hidden='true'] {
+					visibility: hidden;
+					transform: translateY(100%);
+				}
+			}
+		}
+
+		/* Dual-screen devices: the explorer fills one screen */
+		:global(.satellite-page[data-layout='docked-columns'].js-enhanced) & {
+			top: 0;
+			right: auto;
+			bottom: 0;
+			left: 0;
+			z-index: 50;
+			width: var(--docked-explorer-width);
+			height: auto;
+			visibility: visible;
+			transform: none;
+			transition: none;
+		}
+
+		:global(.satellite-page[data-layout='docked-rows'].js-enhanced) & {
+			top: var(--docked-explorer-top);
+			right: 0;
+			bottom: 0;
+			left: 0;
+			width: auto;
+			height: auto;
+			visibility: visible;
+			transform: none;
+			transition: none;
+		}
+
+		@media (prefers-reduced-transparency: reduce) {
+			box-shadow: none;
+		}
+	}
+
+	.explorer-scroll {
+		container: explorer / inline-size;
+		max-width: 1280px;
+		margin: 0 auto;
+		padding: 0 clamp(var(--spacing-lg), 4vw, var(--spacing-xl)) 6rem;
+
+		:global(.js-enhanced) & {
+			flex: 1;
+			max-width: none;
+			margin: 0;
+			overflow-y: auto;
+			overscroll-behavior: contain;
+			padding: 0 var(--spacing-md) var(--spacing-xl);
+			scrollbar-color: var(--explorer-line) transparent;
+			scrollbar-width: thin;
+
+			@container satellite (width >= 720px) {
+				padding: 0 var(--spacing-xl) var(--spacing-xl) 2.5rem;
+			}
+		}
+
+		/* The peek row of the sheet shows only the selected item */
+		:global(.js-enhanced) .explorer[data-sheet='peek'] & {
+			@container satellite (width < 720px) {
+				visibility: hidden;
+			}
+		}
+	}
+
+	/* Without JavaScript: the opening (name and the satellite), then the
+	   components. On large screens the name sits beside the satellite. */
+	.explorer-root {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		grid-template-areas:
+			'intro'
+			'hero'
+			'components';
+
+		@container satellite (width >= 900px) {
+			grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+			grid-template-areas:
+				'intro hero'
+				'components components';
+			align-items: center;
+			column-gap: clamp(var(--spacing-xl), 4vw, var(--spacing-2xl));
+		}
+
+		:global(.js-enhanced) & {
+			display: block;
+		}
+	}
+
+	.explorer-intro {
+		grid-area: intro;
+		padding-top: clamp(var(--spacing-lg), 6vw, var(--spacing-xl));
+
+		@container satellite (width >= 900px) {
+			padding-top: 0;
+		}
+
+		:global(.js-enhanced) & {
+			padding-top: 0;
+		}
+	}
+
+	.explorer-lead {
+		max-width: 60ch;
+	}
+
+	/* So the prose spacing above the note applies */
+	.explorer-intro > noscript {
+		display: block;
+	}
+
+	.explorer-static-note {
+		max-width: 34em;
+		padding-left: var(--spacing-md);
+		border-left: 1px solid var(--explorer-accent);
+		color: var(--explorer-text-muted);
+		font-family: var(--font-caption);
+		font-size: var(--font-size-body-sm);
+		line-height: var(--line-height-normal);
+	}
+
+	.explorer-tree-navigation {
+		grid-area: components;
+		margin-top: clamp(var(--spacing-xl), 7vw, 6rem);
+	}
+
+	.explorer-section-label {
+		margin-bottom: var(--spacing-md);
+		color: var(--explorer-text-muted);
+		font-family: var(--font-body);
+		font-size: var(--font-size-body-sm);
+		font-weight: 500;
+		line-height: var(--line-height-normal);
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		scroll-margin-top: var(--spacing-md);
+	}
+
+	/* The list of the seven components */
+	.explorer-tree {
+		margin: 0;
+		padding: 0;
+		border-top: 1px solid var(--explorer-line);
+		list-style: none;
+
+		:global(.js-enhanced) & {
+			border-top: 0;
+			border-bottom: 1px solid var(--explorer-line);
+		}
+	}
+</style>

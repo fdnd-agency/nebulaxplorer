@@ -95,3 +95,228 @@
 		</div>
 	</figure>
 </div>
+
+<style>
+	/* On the spacecraft and Close-up: side by side on large screens; on small
+	   screens one at a time, chosen with native radio buttons (browsers
+	   without :has() show both, one above the other) */
+	.component-views {
+		display: grid;
+		gap: var(--spacing-md);
+		margin: 0 0 var(--spacing-xl);
+
+		@container satellite (width >= 900px) {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: var(--spacing-lg);
+		}
+
+		@container satellite (width < 900px) {
+			@supports selector(:has(*)) {
+				&:has(.component-views-input[value='close-up']:checked)
+					> .is-location,
+				&:not(:has(.component-views-input[value='close-up']:checked))
+					> .is-close-up {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.component-views-choice {
+		display: none;
+		margin: 0;
+		padding: 0;
+		border: 0;
+
+		@container satellite (width < 900px) {
+			@supports selector(:has(*)) {
+				display: grid;
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+				box-shadow: inset 0 0 0 1px var(--explorer-line);
+			}
+		}
+	}
+
+	.component-views-input {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		opacity: 0;
+	}
+
+	.component-views-option {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 3rem;
+		padding: var(--spacing-sm);
+		color: var(--explorer-text-muted);
+		font-family: var(--font-heading);
+		font-size: var(--font-size-body-sm);
+		font-weight: 500;
+		line-height: var(--line-height-normal);
+		text-align: center;
+		cursor: pointer;
+
+		:checked + & {
+			color: var(--explorer-text);
+			background: var(--explorer-hover);
+			box-shadow: inset 0 -3px 0 var(--explorer-select);
+		}
+
+		:focus-visible + & {
+			outline: 2px solid var(--explorer-select);
+			outline-offset: -2px;
+		}
+
+		@media (forced-colors: active) {
+			border: 1px solid CanvasText;
+
+			:checked + & {
+				outline: 3px solid Highlight;
+				outline-offset: -3px;
+			}
+		}
+	}
+
+	.component-view {
+		margin: 0;
+	}
+
+	/* The same name sits above both views */
+	.component-view-caption {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: var(--spacing-xs) var(--spacing-sm);
+		padding: 0 0 var(--spacing-sm);
+		line-height: var(--line-height-normal);
+	}
+
+	.component-view-name {
+		font-family: var(--font-heading);
+		font-size: var(--font-size-body-sm);
+		font-weight: 500;
+	}
+
+	.component-view-kind {
+		color: var(--explorer-text-muted);
+		font-family: var(--font-body);
+		font-size: var(--font-size-body-sm);
+		font-weight: 500;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+	}
+
+	.component-view-frame {
+		position: relative;
+		aspect-ratio: 4 / 3;
+		overflow: hidden;
+		background: var(--color-brand-darkest);
+		box-shadow: inset 0 0 0 1px var(--explorer-line);
+
+		/* Close-ups on a quiet studio backdrop, so dark sensors and mirror
+		   edges stay visible; the colour matches the render's background */
+		&.is-studio {
+			background: var(--studio);
+			box-shadow: none;
+		}
+
+		@media (forced-colors: active) {
+			border: 1px solid CanvasText;
+		}
+	}
+
+	.component-view-image {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+
+	/* The labelled pointer: a ring on the part, a line and its name. The
+	   pictures are dark renders, so it stays light in both modes. */
+	.component-pointer {
+		position: absolute;
+		width: 0;
+		height: 0;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: -10px;
+			left: -10px;
+			width: 20px;
+			height: 20px;
+			border: 2px solid var(--color-neutral-lightest);
+			border-radius: 50%;
+			box-shadow:
+				0 0 0 2px
+					hsl(
+						var(--brand-h) var(--brand-s) var(--brand-darkest-l) /
+							70%
+					),
+				inset 0 0 0 2px
+					hsl(
+						var(--brand-h) var(--brand-s) var(--brand-darkest-l) /
+							70%
+					);
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			left: -0.5px;
+			width: 1px;
+			height: 36px;
+			background: var(--color-neutral-lightest);
+		}
+
+		&.is-above::after {
+			bottom: 10px;
+		}
+
+		&.is-below::after {
+			top: 10px;
+		}
+	}
+
+	.component-pointer-label {
+		position: absolute;
+		padding: var(--spacing-xs) var(--spacing-sm);
+		color: var(--color-neutral-lightest);
+		background: hsl(
+			var(--brand-h) var(--brand-s) var(--brand-darkest-l) / 92%
+		);
+		box-shadow: inset 0 0 0 1px
+			hsl(
+				var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) /
+					45%
+			);
+		font-family: var(--font-heading);
+		font-size: var(--font-size-body-sm);
+		font-weight: 500;
+		line-height: var(--line-height-normal);
+		white-space: nowrap;
+
+		.is-above > & {
+			bottom: 46px;
+		}
+
+		.is-below > & {
+			top: 46px;
+		}
+
+		.is-end > & {
+			left: -14px;
+		}
+
+		.is-start > & {
+			right: -14px;
+		}
+
+		@media (forced-colors: active) {
+			border: 1px solid CanvasText;
+		}
+	}
+</style>
