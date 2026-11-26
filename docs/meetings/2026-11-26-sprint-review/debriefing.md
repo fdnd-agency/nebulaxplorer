@@ -66,7 +66,7 @@ Bedankt voor de sprint review, Martin. We hebben de detailpagina, de missiepagin
 - [ ] Six core values-wiel en tekst in verhouding brengen en dichter bij elkaar zetten -isaac
 - [ ] Lettergrootte van key facts en six core values gelijktrekken -isaac
 - [ ] Bronvermelding opnieuw ontwerpen onder afbeelding -roxy
-- [ ] Component-tabel (KPI) ontwerpen -roxy
+- [ ] Component-tabel (KPI) ontwerpen 
 - [ ] Een vorm vinden voor meerdere alinea's en foto's per component detail pagina -lynn
 - [ ] Teamspagina ontwerpen voor studenten zonder component 
 - [ ] Naam iets groter van de quote component -roxy
