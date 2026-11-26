@@ -149,7 +149,7 @@
             }
         }
         p {
-            font-size: var(--step-0);
+            font-size: var(--font-size-body-md);
             margin-bottom: var(--spacing-sm);
         }
 
