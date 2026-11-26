@@ -2,7 +2,10 @@
 	import { Button } from '$lib/components/atoms'
 	import { language, text } from '$lib/state/language.svelte.js'
 
-	let { visible, onload } = $props()
+	let {
+		visible,
+		onload,
+	} = $props()
 
 	const alt = {
 		en: 'Rendering of the NEBULA Xplorer satellite: a box-shaped spacecraft with two deployed solar panels.',

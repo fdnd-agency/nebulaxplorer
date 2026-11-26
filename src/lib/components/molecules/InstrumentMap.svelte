@@ -5,7 +5,10 @@
 	// instrument with a numbered label per part. Labels sit in two columns
 	// beside the instrument with a line to the part, so they never overlap
 	// the hardware or each other. The numbers match the list of parts.
-	let { map, parts } = $props()
+	let {
+		map,
+		parts,
+	} = $props()
 
 	const width = 1600
 	const height = 1000

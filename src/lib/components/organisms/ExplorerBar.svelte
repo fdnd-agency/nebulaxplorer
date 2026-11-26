@@ -1,7 +1,7 @@
 <script>
 	import { Button } from '$lib/components/atoms'
+	import { ExplorerBreadcrumb } from '$lib/components/molecules'
 	import { ChevronIcon, CloseIcon } from '$lib/assets/icons'
-	import ExplorerBreadcrumb from '$lib/components/molecules/ExplorerBreadcrumb.svelte'
 	import { SHEET_STATES } from '$lib/state/viewerState.svelte.js'
 	import { text } from '$lib/state/language.svelte.js'
 

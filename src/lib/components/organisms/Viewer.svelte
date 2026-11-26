@@ -1,12 +1,15 @@
 <script>
 	import { onMount, tick, untrack } from 'svelte'
-	import ViewerLabel from '$lib/components/molecules/ViewerLabel.svelte'
-	import ViewerPoster from '$lib/components/molecules/ViewerPoster.svelte'
-	import ViewerControls from '$lib/components/organisms/ViewerControls.svelte'
+	import { ViewerLabel, ViewerPoster } from '$lib/components/molecules'
+	import { ViewerControls } from '$lib/components/organisms'
 	import { getRepresentation } from '$lib/scene/explorerScene.js'
 	import { language, text } from '$lib/state/language.svelte.js'
 
-	let { explorer, onReady, onUnsupported } = $props()
+	let {
+		explorer,
+		onReady,
+		onUnsupported,
+	} = $props()
 
 	const { state, tree } = $derived(explorer)
 	const isRoot = $derived(state.selectedId === tree.rootId)

@@ -1,12 +1,15 @@
 <script>
-	import ComponentImage from '$lib/components/atoms/ComponentImage.svelte'
+	import { ComponentImage } from '$lib/components/atoms'
 	import { pick, text } from '$lib/state/language.svelte.js'
 
 	// Two views of one component without JavaScript: where it sits ("On the
 	// spacecraft", or inside the instrument for its parts) and a close-up.
 	// Large screens show both side by side; small screens choose one with
 	// native radio buttons, which CSS turns into the visible view.
-	let { item, scope = 'spacecraft' } = $props()
+	let {
+		item,
+		scope = 'spacecraft',
+	} = $props()
 
 	const name = $derived(pick(item.title))
 	const group = $derived(`${item.id}-view`)

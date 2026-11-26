@@ -1,5 +1,5 @@
 <script>
-	import PageNotice from '$lib/components/atoms/PageNotice.svelte'
+	import { PageNotice } from '$lib/components/atoms'
 	import { text } from '$lib/state/language.svelte.js'
 
 	// The note for visitors without JavaScript sits in the explorer introduction

@@ -11,13 +11,13 @@ Testing was done in the in-app Chromium browser with viewport emulation, plus co
 
 ### What was tested
 
-| Device / posture | Viewport | Before | After |
-|---|---|---|---|
-| Galaxy Z Fold, folded (cover screen) | 344 × 882 | ![](media/before-fold-folded-344x882.jpg) | ![](media/after-fold-folded-344x882.jpg) |
-| Galaxy Z Fold, unfolded | 882 × 1104 | ![](media/before-fold-unfolded-882x1104.jpg) | ![](media/after-fold-unfolded-882x1104.jpg) |
-| Phone in landscape | 844 × 390 | ![](media/before-phone-landscape-844x390.jpg) | ![](media/after-phone-landscape-844x390.jpg) |
-| Dual screen, book posture (simulated) | 882 × 1104 | – | ![](media/after-dual-screen-columns-simulated.jpg) |
-| ASUS Zenbook Fold, laptop posture (simulated) | 1280 × 853 | – | ![](media/after-dual-screen-rows-simulated.jpg) |
+| Device / posture | Viewport |
+|---|---|
+| Galaxy Z Fold, folded (cover screen) | 344 × 882 |
+| Galaxy Z Fold, unfolded | 882 × 1104 |
+| Phone in landscape | 844 × 390 |
+| Dual screen, book posture (simulated) | 882 × 1104 |
+| ASUS Zenbook Fold, laptop posture (simulated) | 1280 × 853 |
 
 ### What broke
 
@@ -58,7 +58,6 @@ Yes, but only as an enhancement. It lets the hinge become a real division betwee
 | `prefers-reduced-data: reduce` (and `navigator.connection.saveData`) | The 3D models (~5.5 MB) and the nebula background are **not** downloaded automatically. The viewer shows a 30 KB rendered still of the satellite and a "Load 3D model (about 5.5 MB)" button. The explorer works immediately. | The semantic content is the product; the 3D is an optional enhancement. `prefers-reduced-data` is still experimental, so the Save-Data signal, which ships in Chromium today, is checked as well. |
 
 Evidence for reduced data: before the button is pressed only the poster image (`satellite-overview-*.webp`, one size picked by the browser) and the logo load. After pressing it, `Satellite.viewer.glb` and the nebula texture load, and focus moves to "Explore satellite".
-![](media/after-reduced-data.jpg)
 
 ---
 

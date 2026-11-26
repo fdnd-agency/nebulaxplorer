@@ -1,13 +1,20 @@
 <script>
-	import { Link, Paragraph } from '$lib/components/atoms'
-	import ComponentImage from '$lib/components/atoms/ComponentImage.svelte'
-	import ComponentViews from '$lib/components/molecules/ComponentViews.svelte'
-	import ExplorerItemContent from '$lib/components/molecules/ExplorerItemContent.svelte'
-	import InstrumentMap from '$lib/components/molecules/InstrumentMap.svelte'
-	import ExplorerNode from '$lib/components/organisms/ExplorerNode.svelte'
+	import { ComponentImage, Link, Paragraph } from '$lib/components/atoms'
+	import {
+		ComponentViews,
+		ExplorerItemContent,
+		InstrumentMap,
+	} from '$lib/components/molecules'
+	import { ExplorerNode } from '$lib/components/organisms'
 	import { pick, text } from '$lib/state/language.svelte.js'
 
-	let { item, depth, number, explorer, parentId = null } = $props()
+	let {
+		item,
+		depth,
+		number,
+		explorer,
+		parentId = null,
+	} = $props()
 
 	const { state } = $derived(explorer)
 	const { id, scene, component, title, blocks, children, image } =

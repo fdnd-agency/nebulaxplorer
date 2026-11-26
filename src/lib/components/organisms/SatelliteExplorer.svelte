@@ -2,12 +2,9 @@
 	import '$lib/styles/satellite-explorer.css'
 
 	import { onMount } from 'svelte'
-	import StatusMessage from '$lib/components/atoms/StatusMessage.svelte'
-	import ExplorerToggle from '$lib/components/molecules/ExplorerToggle.svelte'
-	import LanguageSwitcher from '$lib/components/molecules/LanguageSwitcher.svelte'
-	import PageNotices from '$lib/components/molecules/PageNotices.svelte'
-	import Explorer from '$lib/components/organisms/Explorer.svelte'
-	import Viewer from '$lib/components/organisms/Viewer.svelte'
+	import { HamburgerButton, StatusMessage } from '$lib/components/atoms'
+	import { LanguageSwitcher, PageNotices } from '$lib/components/molecules'
+	import { Explorer, Viewer } from '$lib/components/organisms'
 	import { createExplorer } from '$lib/state/explorer.svelte.js'
 	import { language, text } from '$lib/state/language.svelte.js'
 
@@ -42,11 +39,16 @@
 
 		<Explorer {explorer} />
 
-		<!-- In full screen the explorer can be hidden; this bar brings it back -->
+		<!-- In full screen the explorer can be hidden; the team's menu button
+		     brings it back -->
 		{#if state.explorerHidden}
-			<ExplorerToggle
+			<HamburgerButton
 				label={text('showExplorer')}
 				onclick={() => explorer.setExplorerHidden(false)}
+				classes="explorer-toggle"
+				aria-controls="explorer"
+				aria-expanded={!state.explorerHidden}
+				title={text('showExplorer')}
 			/>
 		{/if}
 

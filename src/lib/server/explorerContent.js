@@ -836,16 +836,6 @@ export const explorerContent = {
 			component: 'solarPanel',
 		},
 	],
-	mission: {
-		title: {
-			en: 'About the mission',
-			nl: 'Over de missie',
-		},
-		text: {
-			en: 'This student-driven mission combines innovation with academic and industry expertise. Its high time resolution and continuous observations reveal how matter behaves, how jets form, and how these systems evolve.',
-			nl: 'Deze studentenmissie brengt innovatie samen met academische en industriële expertise. De hoge tijdresolutie en continue waarnemingen onthullen hoe materie zich gedraagt, hoe jets ontstaan en hoe deze systemen evolueren.',
-		},
-	},
 }
 
 // Without JavaScript every component and instrument part opens with one short

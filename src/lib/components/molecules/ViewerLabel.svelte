@@ -1,5 +1,10 @@
 <script>
-	let { hidden, number, name, tag } = $props()
+	let {
+		hidden,
+		number,
+		name,
+		tag,
+	} = $props()
 </script>
 
 <p class="viewer-label" aria-hidden="true" {hidden}>

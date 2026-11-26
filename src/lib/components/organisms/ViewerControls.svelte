@@ -1,8 +1,12 @@
 <script>
-	import ViewerControl from '$lib/components/molecules/ViewerControl.svelte'
+	import { ViewerControl } from '$lib/components/molecules'
 	import { text } from '$lib/state/language.svelte.js'
 
-	let { state, controller, explorer } = $props()
+	let {
+		state,
+		controller,
+		explorer,
+	} = $props()
 
 	const {
 		availableControls,

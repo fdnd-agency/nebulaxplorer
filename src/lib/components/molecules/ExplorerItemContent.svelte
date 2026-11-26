@@ -2,7 +2,10 @@
 	import { Paragraph } from '$lib/components/atoms'
 	import { pickFor } from '$lib/state/language.svelte.js'
 
-	let { blocks, enhanced = true } = $props()
+	let {
+		blocks,
+		enhanced = true,
+	} = $props()
 </script>
 
 {#each blocks as block, index (index)}

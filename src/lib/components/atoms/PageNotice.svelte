@@ -1,5 +1,8 @@
 <script>
-	let { children, ...attributes } = $props()
+	let {
+		children,
+		...attributes
+	} = $props()
 </script>
 
 <p class="page-notice" {...attributes}>

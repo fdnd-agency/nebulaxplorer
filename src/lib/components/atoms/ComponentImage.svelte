@@ -4,7 +4,11 @@
 	// A close-up rendered from the CAD model on a studio backdrop
 	// (scripts/render-stills.mjs), stored in three widths in
 	// static/media/components/
-	let { image, sizes, alt = pick(image.alt) } = $props()
+	let {
+		image,
+		sizes,
+		alt = pick(image.alt),
+	} = $props()
 
 	const base = $derived(`/media/components/${image.name}`)
 </script>

@@ -1,10 +1,8 @@
 <script>
 	import { Button, Heading, Paragraph } from '$lib/components/atoms'
+	import { ExplorerCredits, ExplorerHero } from '$lib/components/molecules'
+	import { ExplorerBar, ExplorerNode } from '$lib/components/organisms'
 	import { ArrowIcon } from '$lib/assets/icons'
-	import ExplorerCredits from '$lib/components/molecules/ExplorerCredits.svelte'
-	import ExplorerHero from '$lib/components/molecules/ExplorerHero.svelte'
-	import ExplorerBar from '$lib/components/organisms/ExplorerBar.svelte'
-	import ExplorerNode from '$lib/components/organisms/ExplorerNode.svelte'
 	import { SHEET_STATES } from '$lib/state/viewerState.svelte.js'
 	import { pick, pickFor, text } from '$lib/state/language.svelte.js'
 
@@ -20,7 +18,6 @@
 		staticNote,
 		exploreComponents,
 		componentsLabel,
-		mission,
 		children,
 	} = $derived(content)
 	const visible = $derived(state.enhanced && explorer.isVisible())
@@ -190,12 +187,6 @@
 					{/each}
 				</ol>
 			</nav>
-			<div class="explorer-about">
-				<div class="explorer-section-label">
-					<Heading headingLevel={2}>{pick(mission.title)}</Heading>
-				</div>
-				<Paragraph>{pick(mission.text)}</Paragraph>
-			</div>
 		</div>
 
 		<ExplorerCredits />

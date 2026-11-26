@@ -10,7 +10,13 @@
 -->
 
 <script>
-	let { close = false, label, onclick, classes, ...rest } = $props()
+	let {
+		close = false,
+		label,
+		onclick,
+		classes,
+		...rest
+	} = $props()
 </script>
 
 <button
