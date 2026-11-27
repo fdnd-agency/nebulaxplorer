@@ -46,3 +46,44 @@
         {/if}
     </div>
 </article>
+
+<style>
+    /* even voor het testen */
+    article {
+        padding-top: 15rem;
+        margin-bottom: var(--spacing-xl)
+    }
+    .landscape {
+        p {
+            max-width: 900px;
+        }
+        img {
+            width: 50%;
+            max-height: 500px;
+            object-fit: contain;
+            margin-block: var(--spacing-lg);
+        }
+    }
+    .portrait {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        p {
+            flex: 1;
+            max-width: 900px;
+        }
+        img {
+            display: block;
+            width: 100%;
+            max-height: 700px;
+            object-fit: contain;
+        }
+    }
+
+    .no-image {
+        p {
+            max-width: 900px;
+        }
+    }
+</style>
