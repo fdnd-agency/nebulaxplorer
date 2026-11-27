@@ -1,3 +1,20 @@
+<script>
+  import Button from '$lib/components/atoms/Button.svelte';
+  
+  let { technology } = $props();
+  let imageOrientation = $state('');
+
+  function checkImage(event) {
+    const img = event.currentTarget;
+
+    if (img.naturalWidth > img.naturalHeight) {
+        imageOrientation = 'landscape';
+    } else {
+        imageOrientation = 'portrait';
+    }
+  }
+</script>
+
 <article>
     <nav>
         <ul class="breadcrumbs">
