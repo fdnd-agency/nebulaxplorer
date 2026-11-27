@@ -39,7 +39,6 @@
 
 	.label {
 		color: var(--color-neutral-lightest);
-		z-index: 1000;
 
 		@container (width > 30ch) {
 			width: auto;
