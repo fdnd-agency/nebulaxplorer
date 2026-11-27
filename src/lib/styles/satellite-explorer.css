@@ -1,0 +1,424 @@
+/* Satellite explorer: what its components share ============================
+   Every explorer component styles itself in its own <style>. This file holds
+   only what they share:
+   - the design tokens and states of the explorer section (.satellite-page)
+   - the markers that the 3D code (src/lib/scene/markers.js) adds to the page
+   - how the team's components (Button, Link, Heading) sit inside the explorer
+   Colours, fonts, spacing and type sizes come from stylesheet.css. The page
+   without JavaScript is the base; .js-enhanced (set on .satellite-page once
+   the 3D view runs) adds the viewer layout. */
+
+.satellite-page {
+	/* Light and dark mode follow the site */
+	--explorer-background: light-dark(
+		var(--color-neutral-lightest),
+		var(--color-brand-darkest)
+	);
+	--explorer-raised: light-dark(
+		var(--color-neutral-lighter),
+		var(--color-brand-darker)
+	);
+	--explorer-text: light-dark(
+		var(--color-brand-darkest),
+		var(--color-neutral-lightest)
+	);
+	--explorer-text-muted: light-dark(
+		hsl(var(--brand-h) var(--brand-s) var(--brand-darkest-l) / 75%),
+		hsl(var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 75%)
+	);
+	--explorer-line: light-dark(
+		hsl(var(--brand-h) var(--brand-s) var(--brand-darkest-l) / 18%),
+		hsl(var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 18%)
+	);
+	--explorer-hover: light-dark(
+		hsl(var(--brand-h) var(--brand-s) var(--brand-darkest-l) / 6%),
+		hsl(var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 6%)
+	);
+	--explorer-accent: light-dark(
+		var(--color-accent-dark),
+		var(--color-accent-mid)
+	);
+	/* The selection in the pictures without JavaScript */
+	--explorer-select: light-dark(hsl(218 75% 42%), hsl(218 100% 77.1%));
+	/* The 3D view is always a dark space scene */
+	--scene: hsl(228 50% 3.9%);
+	/* The studio backdrop of the rendered close-ups (the colour of the image's
+	   own background) */
+	--studio: hsl(216 17.2% 88.6%);
+	--ease: cubic-bezier(0.2, 0, 0, 1);
+	/* The height of the site header (Header.svelte), which stays on top. The
+	   3D view fills the rest of the screen below it. */
+	--header-height: 4.25rem;
+	--stage-height: calc(100dvh - var(--header-height));
+	--explorer-width: clamp(300px, 34vw, 420px);
+	--sheet-peek-height: 120px;
+	--sheet-expanded-top: var(--spacing-2xl);
+	/* The team's menu button (HamburgerButton) */
+	--toggle-width: 4rem;
+
+	container: satellite / inline-size;
+	display: block;
+	/* Full width inside <main>, which has the site's side padding: 1rem, and
+	   3rem from 768px (stylesheet.css). The clamp switches between the two at
+	   768px without a media query. */
+	margin-inline: calc(
+		-1 * clamp(var(--spacing-md), (100vw - 767px) * 1000, var(--spacing-xl))
+	);
+	color: var(--explorer-text);
+	background: var(--explorer-background);
+	-webkit-font-smoothing: antialiased;
+
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+
+	[hidden] {
+		display: none !important;
+	}
+
+	:where(img) {
+		display: block;
+		max-width: 100%;
+	}
+
+	:where(button) {
+		font: inherit;
+		color: inherit;
+	}
+
+	/* While the 3D view starts (js-pending is set before the page is drawn)
+	   the section is already the 3D view's dark screen, instead of showing the
+	   page without JavaScript for a moment */
+	&.js-pending {
+		height: var(--stage-height);
+		overflow: clip;
+		background: var(--scene);
+
+		> * {
+			visibility: hidden;
+		}
+	}
+
+	/* With the 3D model the explorer is one screen high. Its fixed parts
+	   (viewer, panel, sheet) are placed in this screen, not in the window, so
+	   the rest of the page scrolls as usual. */
+	&.js-enhanced {
+		position: relative;
+		height: var(--stage-height);
+		scroll-margin-top: var(--header-height);
+		overflow: clip;
+		contain: layout;
+		background: var(--scene);
+	}
+
+	/* Full screen: the 3D view and the explorer fill the screen, without the
+	   site's header */
+	&.js-enhanced:fullscreen {
+		--stage-height: 100dvh;
+	}
+
+	/* Dual-screen devices (Viewport Segments API): the explorer on one screen,
+	   the 3D view on the other */
+	&[data-layout='docked-columns'].js-enhanced {
+		--docked-explorer-width: env(viewport-segment-width 0 0, 50vw);
+		--docked-viewer-left: env(viewport-segment-left 1 0, 50vw);
+	}
+
+	&[data-layout='docked-rows'].js-enhanced {
+		--docked-explorer-top: env(viewport-segment-top 0 1, 50dvh);
+	}
+}
+
+/* User preferences (media queries are only used for these) */
+@media (prefers-contrast: more) {
+	.satellite-page {
+		--explorer-text-muted: var(--explorer-text);
+		--explorer-line: light-dark(
+			hsl(var(--brand-h) var(--brand-s) var(--brand-darkest-l) / 50%),
+			hsl(
+				var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) /
+					50%
+			)
+		);
+
+		:focus-visible {
+			outline-width: 3px;
+		}
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.satellite-page {
+		*,
+		*::before,
+		*::after {
+			animation-duration: 1ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 1ms !important;
+		}
+	}
+}
+
+/* Markers on the 3D model ===================================================
+   src/lib/scene/markers.js adds these to .viewer-markers (Viewer.svelte), so
+   they are not part of a component's markup. */
+/* markers.js hides all markers while the camera flies */
+.viewer-markers.is-hidden {
+	opacity: 0;
+
+	.viewer-marker {
+		pointer-events: none;
+	}
+}
+
+.viewer-marker {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	color: var(--color-neutral-lightest);
+	text-decoration: none;
+	pointer-events: auto;
+	transition: opacity 150ms var(--ease);
+
+	/* The dot on the part and the line up to the number */
+	&::before {
+		content: '';
+		position: absolute;
+		top: -3px;
+		left: -3px;
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		background: var(--color-neutral-lightest);
+		box-shadow: 0 0 0 1px
+			hsl(var(--brand-h) var(--brand-s) var(--brand-darkest-l) / 64%);
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: 3px;
+		left: -0.5px;
+		width: 1px;
+		height: 20px;
+		background: hsl(
+			var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 56%
+		);
+	}
+
+	&.is-behind {
+		opacity: 0.36;
+	}
+
+	&:is(:hover, .is-previewed) .viewer-marker-number {
+		border-color: var(--color-neutral-lightest);
+		color: var(--color-brand-darkest);
+		background: var(--color-neutral-lightest);
+	}
+
+	&:is(:hover, .is-previewed) .viewer-marker-label {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+.viewer-marker-number {
+	position: absolute;
+	bottom: 23px;
+	left: -1rem;
+	display: grid;
+	place-items: center;
+	width: 2rem;
+	height: 2rem;
+	border: 1px solid
+		hsl(var(--neutral-h) var(--neutral-s) var(--neutral-lightest-l) / 48%);
+	border-radius: 2px;
+	color: var(--color-neutral-lightest);
+	background: hsl(var(--brand-h) var(--brand-s) var(--brand-darkest-l) / 92%);
+	font-family: var(--font-caption);
+	font-size: var(--font-size-body-sm);
+	font-weight: 700;
+	line-height: var(--line-height-normal);
+	transition:
+		background-color 150ms var(--ease),
+		color 150ms var(--ease);
+
+	/* A larger area to tap */
+	&::before {
+		content: '';
+		position: absolute;
+		inset: -10px;
+	}
+}
+
+.viewer-marker-label {
+	position: absolute;
+	bottom: 23px;
+	left: 1.25rem;
+	display: flex;
+	align-items: center;
+	height: 2rem;
+	padding: 0 var(--spacing-sm);
+	color: var(--color-neutral-lightest);
+	background: var(--color-brand-darkest);
+	font-family: var(--font-heading);
+	font-size: var(--font-size-body-sm);
+	line-height: var(--line-height-normal);
+	white-space: nowrap;
+	opacity: 0;
+	transform: translateX(-4px);
+	transition:
+		opacity 150ms var(--ease),
+		transform 150ms var(--ease);
+	pointer-events: none;
+
+	/* On a phone the list in the sheet names the parts */
+	@container satellite (width < 720px) {
+		display: none;
+	}
+}
+
+@media (prefers-reduced-transparency: reduce) {
+	.viewer-marker-number {
+		background: var(--color-brand-darkest);
+	}
+}
+
+@media (forced-colors: active) {
+	.viewer-marker-number {
+		border: 1px solid ButtonText;
+	}
+
+	.viewer-marker::before,
+	.viewer-marker::after {
+		background: CanvasText;
+	}
+}
+
+/* The team's components inside the explorer ================================
+   Button, Link and Heading style themselves; these rules only place them in
+   the explorer. They are here because a component's own <style> cannot reach
+   inside another component. */
+
+/* Title with its kicker (Heading with a subheading) */
+.explorer-title {
+	hgroup {
+		gap: var(--spacing-xs);
+	}
+
+	.heading:focus {
+		outline: none;
+	}
+
+	.heading:focus-visible {
+		outline: 2px solid var(--explorer-accent);
+	}
+}
+
+/* The section label is a small heading: the Heading takes the label's style
+   instead of the size of an h2 */
+.explorer-section-label .heading {
+	font: inherit;
+	letter-spacing: inherit;
+	text-transform: inherit;
+}
+
+/* "Explore 7 components" (Button), full width on a phone */
+.button.explorer-call-to-action {
+	@container satellite (width < 700px) {
+		display: flex;
+		width: 100%;
+	}
+}
+
+/* "All components" (Link) */
+.explorer-back {
+	min-height: 2.75rem;
+	margin-bottom: var(--spacing-sm);
+}
+
+/* Buttons of the 3D view and the sheet (Button): without a label they are
+   square; on a narrow 3D view the label is only for screen readers */
+.viewer-controls .button.is-icon-only,
+.explorer-bar .button:is(.explorer-hide, .explorer-sheet-toggle) {
+	width: 2.75rem;
+	height: 2.75rem;
+	padding: 0;
+}
+
+.viewer-control[aria-pressed='true'] {
+	box-shadow: inset 0 -2px 0 var(--color-accent-mid);
+}
+
+@container viewer-hud (width < 640px) {
+	.viewer-controls .button.viewer-control {
+		width: 2.75rem;
+		height: 2.75rem;
+		padding: 0;
+		gap: 0;
+		font-size: 0;
+	}
+}
+
+/* The arrow and the hide button in the sheet's bar on a phone */
+.explorer-bar .button {
+	&.explorer-sheet-toggle {
+		grid-row: 1 / span 2;
+		grid-column: 3;
+		margin-right: var(--spacing-sm);
+	}
+
+	&.explorer-hide {
+		grid-row: 1 / span 2;
+		grid-column: 2;
+	}
+}
+
+@media (forced-colors: active) {
+	.viewer-control,
+	.language-option {
+		forced-color-adjust: auto;
+		border: 1px solid ButtonText;
+	}
+
+	.viewer-control[aria-pressed='true'] {
+		outline: 2px solid Highlight;
+	}
+}
+
+/* "Load 3D model" (Button) in the reduced-data poster */
+.viewer-poster-panel .viewer-load-model {
+	justify-self: start;
+}
+
+/* Images (ComponentImage) in the list, the views and the figures */
+.explorer-node-thumb .component-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 400ms var(--ease);
+
+	.explorer-node-link:is(:hover, :focus-visible) & {
+		transform: scale(1.04);
+	}
+}
+
+.component-view-frame .component-image {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.explorer-node-figure .component-image {
+	width: 100%;
+	height: auto;
+	background: var(--studio);
+}
+
+.explorer-node-figure.is-schematic .component-image {
+	background: none;
+}

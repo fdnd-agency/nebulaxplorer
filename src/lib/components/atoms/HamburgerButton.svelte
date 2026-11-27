@@ -1,13 +1,35 @@
+<!--
+    Props:
+    - close     boolean - shows a cross instead of the three lines
+    - label     string - text for screen readers, default "Menu" / "Sluit menu"
+    - onclick   function - without it, the button opens the site menu
+                (popover #menu); with it, the button does something else,
+                e.g. open the satellite explorer
+    - classes   string - extra classes
+    - ...rest   other attributes (aria-controls, aria-expanded, ...)
+-->
+
 <script>
-	let { close = false } = $props()
+	let {
+		close = false,
+		label,
+		onclick,
+		classes,
+		...rest
+	} = $props()
 </script>
 
 <button
-	class={{ close }}
-	popovertarget="menu"
-	popovertargetaction={close ? 'hide' : 'show'}
+	type="button"
+	class={[classes, { close }]}
+	popovertarget={onclick ? undefined : 'menu'}
+	popovertargetaction={onclick ? undefined : close ? 'hide' : 'show'}
+	{onclick}
+	{...rest}
 >
-	<span class="visually-hidden">{close ? 'Sluit menu' : 'Menu'}</span>
+	<span class="visually-hidden"
+		>{label ?? (close ? 'Sluit menu' : 'Menu')}</span
+	>
 	<svg
 		fill="var(--color-brand-darkest)"
 		class="hamburger"

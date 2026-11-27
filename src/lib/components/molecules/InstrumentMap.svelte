@@ -1,0 +1,186 @@
+<script>
+	import { pick, text } from '$lib/state/language.svelte.js'
+
+	// How the parts of the X-ray instrument fit together: the opened
+	// instrument with a numbered label per part. Labels sit in two columns
+	// beside the instrument with a line to the part, so they never overlap
+	// the hardware or each other. The numbers match the list of parts.
+	let {
+		map,
+		parts,
+	} = $props()
+
+	const width = 1600
+	const height = 1000
+	const gap = 92
+
+	const labels = $derived.by(() => {
+		const placed = parts
+			.map((part, index) => {
+				const [x, y] = map.anchors[part.id] ?? [0.5, 0.5]
+				return {
+					id: part.id,
+					number: String(index + 1).padStart(2, '0'),
+					name: pick(part.title),
+					x: x * width,
+					y: y * height,
+				}
+			})
+			.sort((a, b) => a.y - b.y)
+		const columns = { start: [], end: [] }
+		// Alternate sides from top to bottom, so both columns stay short
+		placed.forEach((label, index) =>
+			columns[index % 2 ? 'end' : 'start'].push(label),
+		)
+		for (const [side, list] of Object.entries(columns)) {
+			let last = -Infinity
+			for (const label of list) {
+				label.side = side
+				label.labelY = Math.max(label.y, last + gap, 60)
+				last = label.labelY
+				label.labelX = side === 'start' ? 330 : width - 330
+			}
+		}
+		return placed
+	})
+</script>
+
+<figure class="instrument-map">
+	<div class="instrument-map-frame">
+		<img
+			class="instrument-map-image"
+			src="{map.image}-1200.webp"
+			srcset="{map.image}-640.webp 640w, {map.image}-1200.webp 1200w, {map.image}-1600.webp 1600w"
+			sizes="(min-width: 1280px) 1180px, 100vw"
+			width="1600"
+			height="1000"
+			loading="lazy"
+			decoding="async"
+			alt={pick(map.alt)}
+		/>
+		<svg
+			class="instrument-map-lines"
+			viewBox="0 0 {width} {height}"
+			preserveAspectRatio="none"
+			aria-hidden="true"
+		>
+			{#each labels as label (label.id)}
+				<polyline
+					points="{label.labelX},{label.labelY} {label.side ===
+					'start'
+						? label.labelX + 40
+						: label.labelX - 40},{label.labelY} {label.x},{label.y}"
+				/>
+			{/each}
+		</svg>
+		{#each labels as label (label.id)}
+			<span
+				class="instrument-map-point"
+				style="left: {(label.x / width) * 100}%; top: {(label.y /
+					height) *
+					100}%"
+				aria-hidden="true"
+			></span>
+			<!-- Not links: the list of parts below is the way in, with large tap
+			     areas; these labels only name what is where -->
+			<span
+				class="instrument-map-label is-{label.side}"
+				style="left: {(label.labelX / width) *
+					100}%; top: {(label.labelY / height) * 100}%"
+				aria-hidden="true"
+				><span class="instrument-map-number">{label.number}</span><span
+					class="instrument-map-name">{label.name}</span
+				></span
+			>
+		{/each}
+	</div>
+	<figcaption>{text('mapCaption')}</figcaption>
+</figure>
+
+<style>
+	/* How the X-ray instrument's parts fit together: numbered labels beside
+	   the instrument, with a line to each part */
+	.instrument-map {
+		margin: var(--spacing-sm) 0 var(--spacing-xl);
+
+		figcaption {
+			margin-top: var(--spacing-sm);
+			color: var(--explorer-text-muted);
+			font-family: var(--font-caption);
+			font-size: var(--font-size-body-sm);
+			line-height: var(--line-height-normal);
+		}
+	}
+
+	.instrument-map-frame {
+		position: relative;
+		aspect-ratio: 16 / 10;
+		background: var(--studio);
+	}
+
+	.instrument-map-image {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.instrument-map-lines {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+
+		polyline {
+			fill: none;
+			stroke: var(--color-brand-darkest);
+			stroke-width: 1.25;
+			vector-effect: non-scaling-stroke;
+		}
+	}
+
+	.instrument-map-point {
+		position: absolute;
+		width: 9px;
+		height: 9px;
+		margin: -4.5px 0 0 -4.5px;
+		border-radius: 50%;
+		background: var(--color-brand-darkest);
+		box-shadow: 0 0 0 2px var(--color-neutral-lightest);
+	}
+
+	.instrument-map-label {
+		position: absolute;
+		display: flex;
+		align-items: baseline;
+		gap: var(--spacing-sm);
+		padding: var(--spacing-xs) var(--spacing-sm);
+		color: var(--color-neutral-lightest);
+		background: var(--color-brand-darkest);
+		font-family: var(--font-heading);
+		font-size: var(--font-size-body-sm);
+		font-weight: 500;
+		line-height: var(--line-height-normal);
+		white-space: nowrap;
+		transform: translateY(-50%);
+
+		&.is-start {
+			transform: translate(-100%, -50%);
+		}
+
+		@media (forced-colors: active) {
+			border: 1px solid CanvasText;
+		}
+	}
+
+	.instrument-map-number {
+		color: hsl(218 100% 77.1%);
+		font-family: var(--font-caption);
+	}
+
+	/* Small screens: only the numbers; the list below names the parts */
+	.instrument-map-name {
+		@container satellite (width < 700px) {
+			display: none;
+		}
+	}
+</style>
